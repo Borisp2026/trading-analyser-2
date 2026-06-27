@@ -134,7 +134,7 @@ def run_nightly():
 
     # Build outputs
     today_str = datetime.now().strftime("%Y-%m-%d")
-    dashboard_file = os.path.join(REPORTS_DIR, "index.html")
+    dashboard_file = os.path.join(BASE, "index.html")
     pdf_file = os.path.join(REPORTS_DIR, f"report_{today_str}.pdf")
 
     print("\nBuilding dashboard...")
