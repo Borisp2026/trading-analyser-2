@@ -35,6 +35,6 @@ jobs:
         run: |
           git config user.name "Trading Analyser Bot"
           git config user.email "bot@trading-analyser"
-          git add reports/
+          git add index.html reports/
           git diff --staged --quiet || git commit -m "Nightly report $(date -u +%Y-%m-%d)"
           git push
