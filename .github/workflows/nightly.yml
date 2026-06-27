@@ -1,0 +1,40 @@
+name: Nightly Trading Report
+
+on:
+  schedule:
+    # 6pm AWST = 10:00 UTC (Perth is UTC+8)
+    - cron: '0 10 * * 1-5'
+  workflow_dispatch:  # allow manual run from Actions tab
+
+jobs:
+  run-report:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # needed to push dashboard to repo
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run nightly analyser
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+        run: python src/analyser.py
+
+      - name: Commit dashboard and reports
+        run: |
+          git config user.name "Trading Analyser Bot"
+          git config user.email "bot@trading-analyser"
+          git add reports/
+          git diff --staged --quiet || git commit -m "Nightly report $(date -u +%Y-%m-%d)"
+          git push

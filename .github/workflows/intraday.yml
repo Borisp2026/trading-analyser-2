@@ -1,0 +1,40 @@
+name: Live Intraday Alerts
+
+on:
+  schedule:
+    # Every 30 min, Mon-Fri, during ASX hours (10am-4pm AWST = 2:00-8:00 UTC)
+    # and NASDAQ hours (9:30am-4pm EST = 14:30-21:00 UTC)
+    # Combined window: 2:00 UTC to 21:00 UTC Mon-Fri
+    - cron: '0,30 2-21 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  intraday-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run intraday scanner
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+        run: python src/intraday_scanner.py
+
+      - name: Save alerts log
+        run: |
+          git config user.name "Trading Analyser Bot"
+          git config user.email "bot@trading-analyser"
+          git add data/alerts_log.json || true
+          git diff --staged --quiet || git commit -m "Alerts log $(date -u +%H:%M)"
+          git push || true
