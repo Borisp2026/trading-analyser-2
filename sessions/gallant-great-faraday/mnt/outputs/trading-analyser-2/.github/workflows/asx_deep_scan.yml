@@ -1,0 +1,39 @@
+name: ASX Deep Scan
+
+on:
+  schedule:
+    # Every Saturday at 08:00 UTC (4pm AWST) — outside market hours
+    - cron: '0 8 * * 6'
+  workflow_dispatch:
+    # Also allows manual trigger from GitHub Actions tab
+
+jobs:
+  deep-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run ASX deep scan
+        run: python src/asx_scanner.py
+        env:
+          PYTHONPATH: src
+
+      - name: Commit scan results
+        run: |
+          git config user.name "Trading Analyser Bot"
+          git config user.email "bot@trading-analyser"
+          git add -A
+          git diff --staged --quiet || git commit -m "ASX deep scan $(date -u +%Y-%m-%d)"
+          git push

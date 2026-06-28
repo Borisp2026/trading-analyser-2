@@ -1,16 +1,16 @@
-name: Nightly Trading Report
+name: Live Intraday Alerts
 
 on:
   schedule:
-    # 6pm AWST = 10:00 UTC (Perth is UTC+8)
-    - cron: '0 10 * * 1-5'
-  workflow_dispatch:  # allow manual run from Actions tab
+    # Every 30 min, Mon-Fri, during ASX hours (10am-4pm AWST = 2:00-8:00 UTC)
+    # and NASDAQ hours (9:30am-4pm EST = 14:30-21:00 UTC)
+    # Combined window: 2:00 UTC to 21:00 UTC Mon-Fri
+    - cron: '0,30 2-21 * * 1-5'
+  workflow_dispatch:
 
 jobs:
-  run-report:
+  intraday-scan:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # needed to push dashboard to repo
 
     steps:
       - name: Checkout repo
@@ -24,17 +24,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run nightly analyser
+      - name: Run intraday scanner
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
-        run: python src/analyser.py
+        run: python src/intraday_scanner.py
 
-      - name: Commit dashboard and reports
+      - name: Save alerts log
         run: |
           git config user.name "Trading Analyser Bot"
           git config user.email "bot@trading-analyser"
-          git add reports/
-          git diff --staged --quiet || git commit -m "Nightly report $(date -u +%Y-%m-%d)"
-          git push
+          git add data/alerts_log.json || true
+          git diff --staged --quiet || git commit -m "Alerts log $(date -u +%H:%M)"
+          git push || true
