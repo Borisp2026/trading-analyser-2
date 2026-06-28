@@ -1,16 +1,32 @@
 {
   "asx": [
-    "EOS.AX", "TOR.AX", "MIN.AX", "IPX.AX", "GLN.AX",
-    "AFG.AX", "GMD.AX", "CU6.AX", "MSB.AX", "TLX.AX", "NXT.AX"
+    "EOS.AX",
+    "TOR.AX",
+    "MIN.AX",
+    "IPX.AX",
+    "GLN.AX",
+    "AFG.AX",
+    "GMD.AX",
+    "CU6.AX",
+    "MSB.AX",
+    "TLX.AX",
+    "NXT.AX"
   ],
   "nasdaq": [
-    "AAPL", "MSFT", "NVDA", "AMD", "TSLA"
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMD",
+    "TSLA"
   ],
   "etf": [
-    "VAS.AX", "IOZ.AX", "NDQ.AX", "IVV.AX"
+    "VAS.AX",
+    "IOZ.AX",
+    "NDQ.AX",
+    "IVV.AX"
   ],
   "settings": {
-    "max_price_asx": 30.0,
+    "max_price_asx": 50.0,
     "max_price_nasdaq": 30.0,
     "report_time_aest": "18:00",
     "intraday_interval_minutes": 30,
