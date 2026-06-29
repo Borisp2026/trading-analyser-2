@@ -10,7 +10,8 @@
     "CU6.AX",
     "MSB.AX",
     "TLX.AX",
-    "NXT.AX"
+    "NXT.AX",
+    "APA.AX"
   ],
   "nasdaq": [
     "AAPL",
@@ -26,8 +27,8 @@
     "IVV.AX"
   ],
   "settings": {
-    "max_price_asx": 50.0,
-    "max_price_nasdaq": 30.0,
+    "max_price_asx": 50,
+    "max_price_nasdaq": 30,
     "report_time_aest": "18:00",
     "intraday_interval_minutes": 30,
     "timezone": "Australia/Perth"
