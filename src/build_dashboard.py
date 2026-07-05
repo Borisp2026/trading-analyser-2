@@ -138,7 +138,7 @@ def _build_signal_history_html(signal_history, accuracy):
                 f'<span style="color:{actual_color}">{actual_str}</span>',
                 f'<span style="color:{out_color}">{outcome}</span>',
             ))
-    rows_data.sort(key=lambda x: x[0], reverse=True)
+    rows_data.sort(key=lambda x: (x[0], int(x[3] or 0)), reverse=True)
     current_date=None
     for rd in rows_data:
         if rd[0]!=current_date:
