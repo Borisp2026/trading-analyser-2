@@ -621,6 +621,34 @@ const PORTFOLIO_PATH='data/portfolio.json';
 const WATCHLIST_PATH='data/watchlist.json';
 
 function getToken(){return localStorage.getItem('gh_token')||'';}
+async function triggerNightlyRun(){
+    const token=getToken();
+    if(!token){alert('Enter your GitHub token first (Settings → Token tab).');return;}
+    const btn=document.getElementById('nightlyBtn');
+    const orig=btn.textContent;
+    btn.textContent='Triggering...';
+    btn.disabled=true;
+    try{
+        const r=await fetch('https://api.github.com/repos/Borisp2026/trading-analyser-2/actions/workflows/nightly.yml/dispatches',{
+            method:'POST',
+            headers:{'Authorization':'token '+token,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
+            body:JSON.stringify({ref:'main'})
+        });
+        if(r.status===204){
+            btn.textContent='✓ Triggered!';
+            setTimeout(()=>{btn.textContent=orig;btn.disabled=false;},5000);
+            setTimeout(()=>alert('Workflow started! Data updates in ~3-5 min. Refresh the page after.'),300);
+        }else{
+            const err=await r.json().catch(()=>({}));
+            alert('Error '+r.status+': '+(err.message||'check your token has workflow scope'));
+            btn.textContent=orig;btn.disabled=false;
+        }
+    }catch(e){
+        alert('Network error: '+e.message);
+        btn.textContent=orig;btn.disabled=false;
+    }
+}
+
 function saveToken(){
     const t=document.getElementById('ghToken').value.trim();
     if(t){localStorage.setItem('gh_token',t);alert('Token saved.');}
