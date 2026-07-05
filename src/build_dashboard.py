@@ -948,6 +948,7 @@ window.addEventListener('resize',()=>{
 
 <nav class="tab-nav">
   <button class="tab-btn active" onclick="showTab('market')">Market Analysis</button>
+  <button class="tab-btn" onclick="showTab('market_status')">Market Status</button>
   <button class="tab-btn" onclick="showTab('portfolio')">Portfolio</button>
   <button class="tab-btn" onclick="showTab('addholder')">Add Holding</button>
   <button class="tab-btn" onclick="showTab('paper')">Paper Trades</button>
@@ -955,8 +956,6 @@ window.addEventListener('resize',()=>{
   <button class="tab-btn" onclick="showTab('watchlist')">Watchlist</button>
   <button class="tab-btn" onclick="showTab('history')">Signal History</button>
   <button class="tab-btn" onclick="showTab('backtest')">Backtest</button>
-  <button class="tab-btn" onclick="showTab('quantitative')">Quantitative</button>
-  <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
   <button class="tab-btn" onclick="showTab('quantitative')">Quantitative</button>
   <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
   <button class="tab-btn" onclick="showTab('token')">Token</button>
@@ -1209,25 +1208,6 @@ window.addEventListener('resize',()=>{
 
 
 <!-- TAB: Market Status -->
-<div id="tab-market_status" class="tab-content">
-<div class="section">
-<h2>Macro Deployment Gate</h2>
-<p style="color:#888;font-size:13px;margin-bottom:20px">6 macro signals scored 0–100, blended into a composite deployment score. Answers: <em>"Should I be deploying capital right now?"</em></p>
-<div class="macro-zone-card" id="macroZoneCard">
-  <div style="font-size:12px;color:#888;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px">Composite Deployment Score</div>
-  <div id="macroComposite" style="font-size:72px;font-weight:bold;color:#888">—</div>
-  <div id="macroZone" style="font-size:22px;font-weight:bold;margin:8px 0">—</div>
-  <div id="macroZoneDesc" style="font-size:13px;color:#888">Click Run Nightly Now to load macro data</div>
-  <div style="margin-top:16px;height:12px;background:#0f0f1a;border-radius:6px;max-width:400px;margin:16px auto 0">
-    <div id="macroCompositeBar" style="height:12px;border-radius:6px;width:0%;background:#888;transition:width 0.8s"></div>
-  </div>
-</div>
-<div class="macro-grid" id="macroSignalsGrid">
-  <p style="color:#888">Loading signals...</p>
-</div>
-</div>
-</div>
-
 
 <!-- TAB: Quantitative Analysis -->
 <div id="tab-quantitative" class="tab-content">
