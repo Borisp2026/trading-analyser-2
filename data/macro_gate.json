@@ -18,10 +18,10 @@
     },
     {
       "name": "Market Breadth",
-      "value": 90.0,
-      "value_label": "9/10 sectors above 200MA",
+      "value": 90.9,
+      "value_label": "10/11 sectors above 200MA",
       "score": 100,
-      "detail": "9 of 10 SPDR sector ETFs above their 200-day SMA (90%)",
+      "detail": "10 of 11 SPDR sector ETFs above their 200-day SMA (91%)",
       "interpretation": "BROAD"
     },
     {
@@ -53,5 +53,5 @@
   "zone": "DEPLOY",
   "zone_desc": "Conditions favourable \u2014 deploy capital aggressively",
   "zone_color": "#44bb44",
-  "scanned_at": "2026-07-05T10:52:42.935079"
+  "scanned_at": "2026-07-05T10:53:16.913958"
 }
