@@ -310,9 +310,7 @@ function showTab(id) {
     if(id==='backtest') populateBacktestSelect();
     if(id==='history') { /* already rendered server-side */ }
     if(id==='intraday') renderIntradayTable();
-    if(id==='quantitative') renderQuantTab('earnings');
-    if(id==='intraday') renderIntradayTable();
-    if(id==='quantitative') renderQuantTab('earnings');
+    if(id==='quantitative') renderQuantTab(window._activeQuantSection||'earnings');
 }
 
 // ── Market Analysis filters ───────────────────────────────────────────────────
@@ -807,6 +805,7 @@ function renderMacroGate(){
 const QUANT_DATA = __QUANT_DATA__;
 // ── Quantitative Analysis tab ─────────────────────────────────────────────────
 function renderQuantTab(section){
+  if(section) window._activeQuantSection = section;
     document.querySelectorAll('.quant-btn').forEach(b=>b.classList.remove('active'));
     const btn=document.getElementById('qbtn-'+section);
     if(btn)btn.classList.add('active');
