@@ -666,7 +666,12 @@ window.addEventListener('resize',()=>{
 <body>
 <header>
   <div><h1>Trading Analyser 2.0</h1><p>DJRTrading Hurst Cycle Method</p></div>
-  <div style="text-align:right"><p style="color:#aaa;font-size:12px">Last updated: {today}</p>
+  <div style="display:flex;align-items:center;gap:20px">
+    <div style="text-align:center">
+      <button id="nightlyBtn" onclick="triggerNightlyRun()" style="background:linear-gradient(135deg,#1a6b3c,#0d4a2a);color:white;border:none;padding:9px 20px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:bold">Run Nightly Now</button>
+      <div id="nightlyStatus" style="font-size:11px;color:#aaa;margin-top:4px;max-width:200px"></div>
+    </div>
+    <div style="text-align:right"><p style="color:#aaa;font-size:12px">Last updated: {today}</p>
   <p style="color:#aaa;font-size:12px">Signal Accuracy: <span style="color:{'#44bb44' if overall_acc>=60 else '#ff9900' if overall_acc>=50 else '#cc0000'}">{overall_acc:.1f}%</span></p></div>
 </header>
 
