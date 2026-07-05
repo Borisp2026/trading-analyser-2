@@ -195,6 +195,15 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
     history_json=json.dumps(signal_history or {})
     accuracy_json=json.dumps(accuracy or {})
 
+    # Parse macro for template vars
+    try:
+        _m=json.loads(macro_json)
+        macro_composite=_m.get("composite",50)
+        macro_zone=_m.get("zone","—")
+        macro_zone_color=_m.get("zone_color","#888")
+    except Exception:
+        macro_composite=50; macro_zone="—"; macro_zone_color="#888"
+
     CSS="""<style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f1a;color:#e0e0e0}
