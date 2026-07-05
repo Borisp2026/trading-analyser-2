@@ -148,7 +148,7 @@ def _build_signal_history_html(signal_history, accuracy):
     html+='</tbody></table>'
     return html
 
-def build_dashboard(results, portfolio, output_path, signal_history=None, accuracy=None):
+def build_dashboard(results, portfolio, output_path, signal_history=None, accuracy=None, intraday=None, quant=None):
     today=datetime.now().strftime("%d %B %Y, %H:%M")
     cards_html="\n".join(build_stock_card(r) for r in results)
     stock_advice={r["ticker"]:{"rec":r["reasoning"].get("recommendation",""),"score":r["reasoning"].get("blended_score",0)} for r in results}
