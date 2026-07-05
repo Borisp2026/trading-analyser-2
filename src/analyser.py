@@ -2,6 +2,9 @@
 import json, os, sys, traceback
 from datetime import datetime
 import yfinance as yf
+import sys, os
+sys.path.insert(0, os.path.dirname(__file__))
+from indicators import calc_macd, calc_rs_vs_xjo, calc_52w_high, calc_supertrend, calc_bollinger
 
 sys.path.insert(0, os.path.dirname(__file__))
 from technical import analyse_technicals
@@ -66,6 +69,13 @@ def filter_by_price(results, max_price):
     return [r for r in results if r.get("tech", {}).get("price", 999) <= max_price]
 
 def run_nightly():
+    # Fetch XJO once for RS calculations
+    try:
+        import yfinance as yf
+        xjo_df = yf.Ticker("^AXJO").history(period="1y", auto_adjust=True)
+    except Exception:
+        xjo_df = None
+
     print(f"\n{'='*60}")
     print(f"Trading Analyser 2.0 — Nightly Scan")
     print(f"Run time: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
