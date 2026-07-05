@@ -10,9 +10,14 @@
   "stats": {
     "total_trades": 0,
     "closed_trades": 0,
+    "open_trades": 0,
     "wins": 0,
+    "losses": 0,
     "win_rate": 0,
     "avg_pnl_pct": 0,
-    "current_capital": 1000.0
-  }
+    "total_pnl_pct": 0,
+    "current_capital": 1000.0,
+    "capital_growth": 0.0
+  },
+  "last_scan": "2026-07-05T09:49:22.515980"
 }
