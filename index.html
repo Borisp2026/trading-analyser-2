@@ -1383,7 +1383,9 @@ function triggerNightlyRun(){
   if(!token){alert('Enter your GitHub token first (Settings tab).');return;}
   var btn=document.getElementById('nightlyBtn');
   var orig=btn.textContent;
+  var origBg=btn.style.background;
   btn.textContent='Triggering...';
+  btn.style.background='linear-gradient(135deg,#b86e00,#7a4800)';
   btn.disabled=true;
   fetch('https://api.github.com/repos/Borisp2026/trading-analyser-2/actions/workflows/nightly.yml/dispatches',{
     method:'POST',
@@ -1391,18 +1393,19 @@ function triggerNightlyRun(){
     body:JSON.stringify({ref:'main'})
   }).then(function(r){
     if(r.status===204){
-      btn.textContent='Done!';
-      setTimeout(function(){btn.textContent=orig;btn.disabled=false;},5000);
+      btn.textContent='✓ Done!';
+      btn.style.background='linear-gradient(135deg,#1a9e3c,#0d6b2a)';
+      setTimeout(function(){btn.textContent=orig;btn.style.background=origBg;btn.disabled=false;},5000);
       alert('Workflow triggered! Data updates in ~3-5 min. Refresh after.');
     }else{
       return r.json().then(function(e){
         alert('Error '+r.status+': '+(e.message||'check token has workflow scope'));
-        btn.textContent=orig;btn.disabled=false;
+        btn.textContent=orig;btn.style.background=origBg;btn.disabled=false;
       });
     }
   }).catch(function(e){
     alert('Network error: '+e.message);
-    btn.textContent=orig;btn.disabled=false;
+    btn.textContent=orig;btn.style.background=origBg;btn.disabled=false;
   });
 }
 </script>
