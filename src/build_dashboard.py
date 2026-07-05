@@ -970,6 +970,7 @@ window.addEventListener('resize',()=>{
     <div class="stat-card"><div class="stat-label">Hold</div><div class="stat-value" style="color:#ff9900">{holds}</div></div>
     <div class="stat-card"><div class="stat-label">Avoid</div><div class="stat-value" style="color:#cc0000">{avoids}</div></div>
     <div class="stat-card"><div class="stat-label">Signal Accuracy</div><div class="stat-value" style="color:{'#44bb44' if overall_acc>=60 else '#ff9900' if overall_acc>=50 else '#cc0000'}">{overall_acc:.1f}%</div></div>
+    <div class="stat-card" style="cursor:pointer" onclick="showTab('market_status');document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelector('[onclick=\'showTab(\'market_status\')\'  ]')?.classList.add('active')"><div class="stat-label">Market Score</div><div class="stat-value" style="color:{macro_zone_color}">{macro_composite:.0f}<span style="font-size:13px;margin-left:6px">{macro_zone}</span></div></div>
   </div>
 </div>
 <div class="filter-bar">
