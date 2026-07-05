@@ -813,6 +813,46 @@ function renderQuantTab(section){
     const results=QUANT_DATA||{};
     const tickers=Object.keys(results);
     if(!tickers.length){
+        if(section==='top5'){
+        const scored = tickers.map(t=>{
+            const r = results[t]||{};
+            const scores = [];
+            if(r.momentum?.percentile_rank!=null) scores.push(r.momentum.percentile_rank);
+            if(r.rsi_strategy?.win_rate!=null)    scores.push(r.rsi_strategy.win_rate);
+            if(r.ma_strategy?.win_rate!=null)      scores.push(r.ma_strategy.win_rate);
+            if(r.walk_forward?.avg_test_return!=null) scores.push(Math.max(0,Math.min(100,(r.walk_forward.avg_test_return+5)/10*100)));
+            if(r.monte_carlo?.prob_profit!=null)   scores.push(r.monte_carlo.prob_profit*100);
+            const avg = scores.length ? scores.reduce((a,b)=>a+b,0)/scores.length : 0;
+            return {ticker:t, score:Math.round(avg), scores, r};
+        }).sort((a,b)=>b.score-a.score).slice(0,5);
+        document.getElementById('quantContent').innerHTML=
+            '<h3 style="color:#ccc;margin-bottom:16px">Top 5 Stocks — Overall Quantitative Score</h3>'
+            +'<p style="color:#666;font-size:12px;margin-bottom:20px">Averaged across: 12-1 Momentum, RSI Win Rate, MA Win Rate, Walk Forward Return, Monte Carlo Profit Probability</p>'
+            +'<div style="display:grid;gap:12px">'
+            +scored.map((s,i)=>{
+                const col=s.score>=70?'#44bb44':s.score>=50?'#ff9900':s.score>=40?'#ff6600':'#cc0000';
+                const bar=Math.min(100,s.score);
+                const mom=s.r.momentum?.percentile_rank?.toFixed(0)||'—';
+                const rsi=s.r.rsi_strategy?.win_rate?.toFixed(0)||'—';
+                const ma=s.r.ma_strategy?.win_rate?.toFixed(0)||'—';
+                const mc=s.r.monte_carlo?.prob_profit!=null?(s.r.monte_carlo.prob_profit*100).toFixed(0):'—';
+                return '<div style="background:#1a1a2e;border-radius:12px;padding:20px;border:1px solid '+(i===0?col:'#2a2a4a')+'">'
+                    +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">'
+                    +'<div><span style="font-size:28px;font-weight:bold;color:#666;margin-right:12px">#'+(i+1)+'</span>'
+                    +'<span style="font-size:22px;font-weight:bold;color:#fff">'+s.ticker+'</span></div>'
+                    +'<span style="font-size:32px;font-weight:bold;color:'+col+'">'+s.score+'</span></div>'
+                    +'<div style="background:#0f0f1a;border-radius:6px;height:10px;margin-bottom:12px">'
+                    +'<div style="height:10px;border-radius:6px;background:'+col+';width:'+bar+'%"></div></div>'
+                    +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-size:12px">'
+                    +'<div style="text-align:center"><div style="color:#666">Momentum</div><div style="color:#ccc;font-weight:bold">'+mom+'%ile</div></div>'
+                    +'<div style="text-align:center"><div style="color:#666">RSI Win</div><div style="color:#ccc;font-weight:bold">'+rsi+'%</div></div>'
+                    +'<div style="text-align:center"><div style="color:#666">MA Win</div><div style="color:#ccc;font-weight:bold">'+ma+'%</div></div>'
+                    +'<div style="text-align:center"><div style="color:#666">MC Profit</div><div style="color:#ccc;font-weight:bold">'+mc+'%</div></div>'
+                    +'</div></div>';
+            }).join('')
+            +'</div>';
+        return;
+    }
         document.getElementById('quantContent').innerHTML='<p style="color:#888;padding:20px">No quantitative data yet — click "Run Nightly Now" to generate.</p>';return;
     }
     if(section==='earnings')     renderEarnings(results,tickers);

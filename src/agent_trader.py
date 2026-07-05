@@ -19,8 +19,9 @@ MACRO_FILE    = os.path.join(BASE, "data", "macro_gate.json")
 AEST          = pytz.timezone('Australia/Sydney')
 
 TARGET_TRADES = 30
-START_CAPITAL = 1000.0
+START_CAPITAL = 5000.0
 MAX_POSITIONS = 2
+POS_SIZE      = 2500.0  # fixed $2500 per trade
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -113,7 +114,8 @@ def run_agent_scan():
             if ex["exit"]:
                 pnl_pct    = ex["pnl_pct"]
                 pos_size   = pos.get("position_size", capital / MAX_POSITIONS)
-                pnl_dollar = round(pos_size * pnl_pct / 100, 2)
+                exit_fee   = round(pos_size * 0.001, 2)
+                pnl_dollar = round(pos_size * pnl_pct / 100 - exit_fee, 2)
                 capital   += pos_size + pnl_dollar
                 # Update trade record
                 for t in d["trades"]:
@@ -159,7 +161,7 @@ def run_agent_scan():
 
             if sig and sig["signal"] == "BUY":
                 trade_id  = trades_done + 1
-                pos_size  = round(capital / MAX_POSITIONS, 2)
+                pos_size  = min(POS_SIZE, round(capital * 0.5, 2))
                 trade = {
                     "id":             trade_id,
                     "ticker":         ticker,
@@ -190,7 +192,8 @@ def run_agent_scan():
                     "stop":         sig["stop"],
                     "position_size":pos_size,
                 }
-                capital      -= pos_size
+                fee = round(pos_size * 0.001, 2)  # entry fee
+                capital      -= pos_size + fee
                 d["capital"]  = round(capital, 2)
                 open_count   += 1
                 trades_done  += 1

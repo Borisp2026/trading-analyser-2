@@ -9,8 +9,9 @@ import pytz
 
 AEST = pytz.timezone('Australia/Sydney')
 NYSE  = pytz.timezone('America/New_York')
-TARGET_PCT  = 0.05   # 5% take profit
-STOP_PCT    = 0.02   # 2% stop loss
+TARGET_PCT  = 0.052  # 5% net after ~0.2% round-trip fees
+STOP_PCT    = 0.022  # 2% + 0.2% fees
+FEES_PCT    = 0.001  # 0.1% per side (Moomoo ASX)
 ORB_BARS    = 30     # Opening range = first 30 x 1-min bars
 MAX_POSITIONS = 2
 MIN_MACRO   = 50     # Skip all trades if macro gate < 50
