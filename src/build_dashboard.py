@@ -817,11 +817,9 @@ function renderQuantTab(section){
         const scored = tickers.map(t=>{
             const r = results[t]||{};
             const scores = [];
-            if(r.momentum?.percentile_rank!=null) scores.push(r.momentum.percentile_rank);
-            if(r.rsi_strategy?.win_rate!=null)    scores.push(r.rsi_strategy.win_rate);
-            if(r.ma_strategy?.win_rate!=null)      scores.push(r.ma_strategy.win_rate);
-            if(r.walk_forward?.avg_test_return!=null) scores.push(Math.max(0,Math.min(100,(r.walk_forward.avg_test_return+5)/10*100)));
-            if(r.monte_carlo?.prob_profit!=null)   scores.push(r.monte_carlo.prob_profit*100);
+            if(r.momentum?.percentile!=null)          scores.push(r.momentum.percentile);
+            if(r.monte_carlo?.prob_up!=null)             scores.push(r.monte_carlo.prob_up);
+            if(r.ma_strategy?.avg_golden_return_60d!=null) scores.push(Math.min(100,Math.max(0,r.ma_strategy.avg_golden_return_60d/3)));
             const avg = scores.length ? scores.reduce((a,b)=>a+b,0)/scores.length : 0;
             return {ticker:t, score:Math.round(avg), scores, r};
         }).sort((a,b)=>b.score-a.score).slice(0,5);
@@ -832,10 +830,10 @@ function renderQuantTab(section){
             +scored.map((s,i)=>{
                 const col=s.score>=70?'#44bb44':s.score>=50?'#ff9900':s.score>=40?'#ff6600':'#cc0000';
                 const bar=Math.min(100,s.score);
-                const mom=s.r.momentum?.percentile_rank?.toFixed(0)||'—';
-                const rsi=s.r.rsi_strategy?.win_rate?.toFixed(0)||'—';
-                const ma=s.r.ma_strategy?.win_rate?.toFixed(0)||'—';
-                const mc=s.r.monte_carlo?.prob_profit!=null?(s.r.monte_carlo.prob_profit*100).toFixed(0):'—';
+                const mom=s.r.momentum?.percentile?.toFixed(0)||'—';
+                const mc=s.r.monte_carlo?.prob_up?.toFixed(0)||'—';
+                const ma=s.r.ma_strategy?.avg_golden_return_60d?.toFixed(0)||'—';
+                const trend=s.r.ma_strategy?.trend||'—';
                 return '<div style="background:#1a1a2e;border-radius:12px;padding:20px;border:1px solid '+(i===0?col:'#2a2a4a')+'">'
                     +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">'
                     +'<div><span style="font-size:28px;font-weight:bold;color:#666;margin-right:12px">#'+(i+1)+'</span>'
