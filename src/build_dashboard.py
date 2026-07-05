@@ -754,6 +754,7 @@ function renderAgentDashboard(d) {
     }
 }
 
+const MACRO_DATA = {json.dumps(macro or {{}})};
 // ── Macro Deployment Gate ─────────────────────────────────────────────────────
 function renderMacroGate(){
     const d=MACRO_DATA;
