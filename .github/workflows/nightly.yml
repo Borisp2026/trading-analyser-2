@@ -3,7 +3,7 @@ name: Nightly Trading Report
 on:
   schedule:
     # 6pm AWST = 10:00 UTC (Perth is UTC+8)
-    - cron: '0 10 * * 1-5'
+    - cron: '0 10 * * *'
   workflow_dispatch:  # allow manual run from Actions tab
 
 jobs:

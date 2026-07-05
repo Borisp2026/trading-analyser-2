@@ -64,7 +64,7 @@ def build_stock_card(r):
         f'<details><summary>Full Analysis</summary><ul class="reasons">{reasons_html}</ul></details>'
         f"</div></div>")
 
-def build_portfolio_html(portfolio):
+def build_portfolio_html(portfolio, stock_advice=None):
     real=portfolio.get("real",{}); paper=portfolio.get("paper",{})
     holdings=real.get("holdings",[]); pnl=real.get("total_pnl",0)
     pnl_color="green" if pnl>=0 else "red"; pnl_prefix="+" if pnl>=0 else ""
@@ -139,7 +139,11 @@ def _build_signal_history_html(signal_history, accuracy):
                 f'<span style="color:{out_color}">{outcome}</span>',
             ))
     rows_data.sort(key=lambda x: x[0], reverse=True)
+    current_date=None
     for rd in rows_data:
+        if rd[0]!=current_date:
+            current_date=rd[0]
+            html+=f'<tr><td colspan="10" style="background:#0a0a15;color:#4a90d9;font-weight:bold;padding:6px 12px;font-size:12px;letter-spacing:1px">{current_date}</td></tr>'
         html+=f'<tr data-ticker="{rd[1]}">'+''.join(f'<td>{v}</td>' for v in rd)+'</tr>'
     html+='</tbody></table>'
     return html
@@ -147,7 +151,8 @@ def _build_signal_history_html(signal_history, accuracy):
 def build_dashboard(results, portfolio, output_path, signal_history=None, accuracy=None):
     today=datetime.now().strftime("%d %B %Y, %H:%M")
     cards_html="\n".join(build_stock_card(r) for r in results)
-    portfolio_html=build_portfolio_html(portfolio)
+    stock_advice={r["ticker"]:{"rec":r["reasoning"].get("recommendation",""),"score":r["reasoning"].get("blended_score",0)} for r in results}
+    portfolio_html=build_portfolio_html(portfolio, stock_advice)
     signal_history_html=_build_signal_history_html(signal_history or {}, accuracy or {})
     buys=sum(1 for r in results if "BUY" in r["reasoning"].get("recommendation",""))
     holds=sum(1 for r in results if "HOLD" in r["reasoning"].get("recommendation",""))
