@@ -675,6 +675,83 @@ function renderChart(data){
 }
 
 
+
+// ── Agent Trader tab ─────────────────────────────────────────────────────────
+const AGENT_RAW_URL = 'https://raw.githubusercontent.com/Borisp2026/trading-analyser-2/main/data/agent_trades.json';
+
+async function loadAgentTrades() {
+    document.getElementById('agentProgress').textContent = 'Loading...';
+    try {
+        const r = await fetch(AGENT_RAW_URL + '?t=' + Date.now());
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        const d = await r.json();
+        renderAgentDashboard(d);
+    } catch(e) {
+        document.getElementById('agentTradeBody').innerHTML =
+            '<tr><td colspan="11" style="color:#cc0000;text-align:center;padding:20px">Error: ' + e.message + '</td></tr>';
+        document.getElementById('agentProgress').textContent = 'Error loading data';
+    }
+}
+
+function renderAgentDashboard(d) {
+    const s = d.stats || {};
+    const trades = d.trades || [];
+    const closed = trades.filter(t=>t.status==='CLOSED').length;
+    const pct = Math.min(100, (closed/30)*100);
+
+    document.getElementById('agentProgress').textContent = closed + ' / 30 trades';
+    document.getElementById('agentProgressBar').style.width = pct + '%';
+    const statusEl = document.getElementById('agentStatus');
+    statusEl.textContent = d.status==='COMPLETED' ? '✓ COMPLETE — Ready for paper trading'
+                         : d.status==='RUNNING'   ? '● Running' : (d.status||'—');
+    statusEl.style.color = d.status==='COMPLETED'?'#44bb44':d.status==='RUNNING'?'#ff9900':'#888';
+
+    const wr = s.win_rate || 0;
+    document.getElementById('agentWinRate').innerHTML = '<span style="color:'+(wr>=60?'#44bb44':wr>=50?'#ff9900':'#cc0000')+'">'+wr+'%</span>';
+    const ag = s.avg_pnl_pct || 0;
+    document.getElementById('agentAvgGain').innerHTML = '<span style="color:'+(ag>=0?'#44bb44':'#cc0000')+'">'+(ag>=0?'+':'')+ag.toFixed(1)+'%</span>';
+    document.getElementById('agentWL').innerHTML = '<span class="trade-win">'+(s.wins||0)+'W</span> / <span class="trade-loss">'+(s.losses||0)+'L</span>';
+    document.getElementById('agentCapital').textContent = '$'+(s.current_capital||1000).toFixed(2);
+    const gr = s.capital_growth || 0;
+    document.getElementById('agentGrowth').innerHTML = '<span style="color:'+(gr>=0?'#44bb44':'#cc0000')+'">'+(gr>=0?'+':'')+gr.toFixed(1)+'%</span>';
+    document.getElementById('agentOpen').textContent = Object.keys(d.open_positions||{}).length;
+
+    const tbody = document.getElementById('agentTradeBody');
+    if (!trades.length) {
+        tbody.innerHTML = '<tr><td colspan="11" style="color:#888;text-align:center;padding:20px">No trades yet — agent scans at next ASX open (10am AEST weekdays)</td></tr>';
+    } else {
+        tbody.innerHTML = [...trades].reverse().map(t => {
+            const oc = t.outcome==='WIN'?'#44bb44':t.outcome==='LOSS'?'#cc0000':'#ff9900';
+            const pc = (t.pnl_pct||0)>=0?'#44bb44':'#cc0000';
+            return '<tr><td>'+t.id+'</td><td><b>'+t.ticker+'</b></td>'
+                +'<td>$'+(t.entry_price||0).toFixed(3)+'</td>'
+                +'<td style="font-size:11px;color:#888">'+(t.entry_time||'').substring(0,16).replace('T',' ')+'</td>'
+                +'<td style="color:#44bb44">$'+(t.target||0).toFixed(3)+'</td>'
+                +'<td style="color:#cc0000">$'+(t.stop||0).toFixed(3)+'</td>'
+                +'<td>'+(t.exit_price?'$'+t.exit_price.toFixed(3):'—')+'</td>'
+                +'<td style="font-size:11px">'+(t.exit_reason||'OPEN')+'</td>'
+                +'<td style="color:'+pc+';font-weight:bold">'+(t.pnl_pct!=null?(t.pnl_pct>=0?'+':'')+t.pnl_pct.toFixed(1)+'%':'—')+'</td>'
+                +'<td style="color:'+oc+';font-weight:bold">'+(t.outcome||'OPEN')+'</td>'
+                +'<td style="font-size:11px;color:#666">'+(t.conditions_met||0)+'/5 ✓</td></tr>';
+        }).join('');
+    }
+
+    const scanLog = (d.scan_log||[]).slice(-30).reverse();
+    const sbody = document.getElementById('agentScanBody');
+    if (!scanLog.length) {
+        sbody.innerHTML = '<tr><td colspan="5" style="color:#888;text-align:center;padding:10px">No scans yet</td></tr>';
+    } else {
+        sbody.innerHTML = scanLog.map(l => {
+            const sc = l.signal==='BUY'?'#44bb44':'#888';
+            return '<tr><td style="color:#666;font-size:11px">'+(l.time||'')+'</td>'
+                +'<td><b>'+(l.ticker||'')+'</b></td>'
+                +'<td><span style="color:'+sc+';font-weight:bold">'+(l.signal||'')+'</span></td>'
+                +'<td>'+(l.price?'$'+l.price.toFixed(3):'—')+'</td>'
+                +'<td style="font-size:11px;color:#888">'+(l.notes||'').substring(0,60)+'</td></tr>';
+        }).join('');
+    }
+}
+
 // ── Macro Deployment Gate ─────────────────────────────────────────────────────
 function renderMacroGate(){
     const d=MACRO_DATA;
