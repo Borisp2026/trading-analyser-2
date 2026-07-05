@@ -797,6 +797,7 @@ function renderMacroGate(){
     }).join('');
 }
 
+const QUANT_DATA = __QUANT_DATA__;
 // ── Quantitative Analysis tab ─────────────────────────────────────────────────
 function renderQuantTab(section){
     document.querySelectorAll('.quant-btn').forEach(b=>b.classList.remove('active'));
@@ -1461,6 +1462,7 @@ window.addEventListener('resize',()=>{
 </html>"""
 
     HTML = HTML.replace('__MACRO_DATA__', json.dumps(macro or {}))
+    HTML = HTML.replace('__QUANT_DATA__', json.dumps(quant or {}))
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(HTML)
     print(f"Dashboard written: {output_path}")
