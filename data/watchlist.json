@@ -28,7 +28,7 @@
   ],
   "settings": {
     "max_price_asx": 50,
-    "max_price_nasdaq": 30,
+    "max_price_nasdaq": 1000.0,
     "report_time_aest": "18:00",
     "intraday_interval_minutes": 30,
     "timezone": "Australia/Perth"
