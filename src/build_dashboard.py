@@ -774,27 +774,34 @@ function renderMacroGate(){
     const _sh=document.getElementById('macroScoreHeader'); if(_sh){_sh.textContent=comp.toFixed(0);_sh.style.color=col;}
 
     const grid=document.getElementById('macroSignalsGrid');
-    grid.innerHTML=d.signals.map(s=>{
+    function signalCard(s){
         const sc=s.score||0;
         const bc=sc>=70?'#44bb44':sc>=50?'#ff9900':sc>=30?'#ff6600':'#cc0000';
-        const ic=s.interpretation==='CALM'||s.interpretation==='TIGHT'||s.interpretation==='BROAD'||s.interpretation==='UPTREND'||s.interpretation==='CONTANGO'||s.interpretation==='GREEDY'?'#44bb44':
-                 s.interpretation==='NEUTRAL'||s.interpretation==='NARROW'||s.interpretation==='NORMAL'||s.interpretation==='MIXED'?'#ff9900':'#cc0000';
-        return `<div class="macro-signal-card">
-            <div class="macro-signal-name">${s.name}</div>
-            <div class="macro-signal-value" style="color:${bc}">${s.value_label||'—'}</div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-                <span style="font-size:11px;color:#666">Score</span>
-                <span style="font-size:16px;font-weight:bold;color:${bc}">${sc.toFixed(0)}/100</span>
-            </div>
-            <div class="macro-score-bar-wrap">
-                <div class="macro-score-bar" style="width:${sc}%;background:${bc}"></div>
-            </div>
-            <div style="display:flex;justify-content:flex-end">
-                <span style="font-size:11px;padding:2px 8px;border-radius:10px;background:${ic}22;color:${ic}">${s.interpretation||'?'}</span>
-            </div>
-            <div class="macro-signal-detail">${s.detail||''}</div>
-        </div>`;
-    }).join('');
+        const calm=['CALM','TIGHT','BROAD','UPTREND','CONTANGO','GREEDY'];
+        const ic=calm.includes(s.interpretation)?'#44bb44':['NEUTRAL','MIXED','ABOVE 200MA'].includes(s.interpretation)?'#ff9900':'#cc0000';
+        return '<div class="macro-signal-card">'
+            +'<div class="macro-signal-name">'+s.name+'</div>'
+            +'<div class="macro-signal-value" style="color:'+bc+'">'+(s.value_label||'--')+'</div>'
+            +'<div style="display:flex;justify-content:space-between;margin-bottom:4px">'
+            +'<span style="font-size:11px;color:#666">Score</span>'
+            +'<span style="font-size:16px;font-weight:bold;color:'+bc+'">'+sc.toFixed(0)+'/100</span></div>'
+            +'<div class="macro-score-bar-wrap"><div class="macro-score-bar" style="width:'+sc+'%;background:'+bc+'"></div></div>'
+            +'<div style="text-align:right"><span style="font-size:11px;padding:2px 8px;border-radius:10px;background:'+ic+'22;color:'+ic+'">'+(s.interpretation||'')+'</span></div>'
+            +'<div style="font-size:11px;color:#666;margin-top:6px">'+(s.detail||'')+'</div>'
+            +'</div>';
+    }
+    const usS=d.us_signals||d.signals.slice(0,6);
+    const asxS=d.asx_signals||d.signals.slice(6);
+    const usC=d.us_composite||d.composite||0;
+    const axC=d.asx_composite||d.composite||0;
+    const uc=usC>=70?'#44bb44':usC>=50?'#ff9900':'#cc0000';
+    const ac=axC>=70?'#44bb44':axC>=50?'#ff9900':'#cc0000';
+    grid.innerHTML='<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">'
+        +'<div><h3 style="color:#ccc;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid #2a2a4a">US / S&P500 <span style="font-size:20px;font-weight:bold;color:'+uc+'">'+usC.toFixed(0)+'</span></h3>'
+        +'<div class="macro-signals-grid">'+usS.map(signalCard).join('')+'</div></div>'
+        +'<div><h3 style="color:#ccc;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid #2a2a4a">ASX / Australia <span style="font-size:20px;font-weight:bold;color:'+ac+'">'+axC.toFixed(0)+'</span></h3>'
+        +'<div class="macro-signals-grid">'+asxS.map(signalCard).join('')+'</div></div>'
+        +'</div>';
 }
 
 const QUANT_DATA = __QUANT_DATA__;
