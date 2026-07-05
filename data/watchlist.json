@@ -11,7 +11,8 @@
     "MSB.AX",
     "TLX.AX",
     "NXT.AX",
-    "APA.AX"
+    "APA.AX",
+    "GWA.AX"
   ],
   "nasdaq": [
     "AAPL",
@@ -28,7 +29,7 @@
   ],
   "settings": {
     "max_price_asx": 50,
-    "max_price_nasdaq": 1000.0,
+    "max_price_nasdaq": 1000,
     "report_time_aest": "18:00",
     "intraday_interval_minutes": 30,
     "timezone": "Australia/Perth"
