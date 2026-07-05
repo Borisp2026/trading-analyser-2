@@ -1,0 +1,39 @@
+name: Agent Trader Scan
+
+on:
+  schedule:
+    # Every 5 min during ASX hours: 10:00am-4:00pm AEST = 00:00-06:00 UTC
+    - cron: '*/5 0-6 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  agent-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run agent scan
+        run: python src/agent_trader.py
+
+      - name: Commit results
+        run: |
+          git config user.name "Agent Trader Bot"
+          git config user.email "agent@trading-analyser"
+          git pull --rebase origin main
+          git add data/agent_trades.json
+          git diff --staged --quiet || git commit -m "Agent scan $(date -u +'%H:%M UTC')"
+          git push

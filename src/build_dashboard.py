@@ -967,6 +967,7 @@ window.addEventListener('resize',()=>{
   <button class="tab-btn" onclick="showTab('backtest')">Backtest</button>
   <button class="tab-btn" onclick="showTab('quantitative')">Quantitative</button>
   <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
+  <button class="tab-btn" onclick="showTab('agent')">Agent Trader</button>
   <button class="tab-btn" onclick="showTab('token')">Token</button>
 </nav>
 
@@ -1279,6 +1280,67 @@ window.addEventListener('resize',()=>{
     <div id="intradayChartBox2" style="height:350px"></div>
   </div>
 </div>
+
+<!-- TAB: Agent Trader -->
+<div id="tab-agent" class="tab-content">
+<div class="section">
+<h2>Agent Trader — 30-Trade Strategy Test</h2>
+<p style="color:#888;font-size:13px;margin-bottom:20px">
+  Autonomous agent running ORB + VWAP breakout strategy. Scans every 5 min during ASX market hours (10am–4pm AEST) via GitHub Actions.
+  Reviews entry/exit signals independently and records simulated trades. After 30 trades, strategy goes to paper trading.
+</p>
+
+<!-- Progress -->
+<div style="background:#1a1a2e;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #2a2a4a">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+    <span style="color:#ccc;font-weight:bold">Test Progress</span>
+    <span id="agentProgress" style="color:#4a90d9;font-weight:bold">Loading...</span>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar" id="agentProgressBar" style="width:0%"></div></div>
+  <div style="display:flex;justify-content:space-between;font-size:11px;color:#666">
+    <span>0 trades</span><span id="agentStatus" style="color:#ff9900">Loading...</span><span>30 trades</span>
+  </div>
+</div>
+
+<!-- Stats grid -->
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px" id="agentStatsGrid">
+  <div class="agent-stat"><div class="stat-label">Win Rate</div><div class="stat-value" id="agentWinRate">—</div></div>
+  <div class="agent-stat"><div class="stat-label">Avg Gain</div><div class="stat-value" id="agentAvgGain">—</div></div>
+  <div class="agent-stat"><div class="stat-label">Wins / Losses</div><div class="stat-value" id="agentWL">—</div></div>
+  <div class="agent-stat"><div class="stat-label">Capital</div><div class="stat-value" id="agentCapital">—</div></div>
+  <div class="agent-stat"><div class="stat-label">Growth</div><div class="stat-value" id="agentGrowth">—</div></div>
+  <div class="agent-stat"><div class="stat-label">Open Trades</div><div class="stat-value" id="agentOpen">—</div></div>
+</div>
+
+<div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap">
+  <button class="btn-primary" onclick="loadAgentTrades()" style="padding:8px 20px;font-size:13px">↻ Refresh</button>
+  <span style="color:#666;font-size:12px;align-self:center">Auto-updates every 5 min during ASX hours (10am–4pm AEST)</span>
+</div>
+
+<!-- Trade log -->
+<h3 style="color:#ccc;margin-bottom:12px">Trade Log</h3>
+<div class="asx-table-wrap">
+<table class="asx-table"><thead><tr>
+  <th>#</th><th>Ticker</th><th>Entry</th><th>Entry Time</th>
+  <th>Target</th><th>Stop</th><th>Exit</th><th>Exit Reason</th>
+  <th>P&amp;L %</th><th>Outcome</th><th>Conditions</th>
+</tr></thead><tbody id="agentTradeBody">
+<tr><td colspan="11" style="color:#888;text-align:center;padding:20px">Loading trade history...</td></tr>
+</tbody></table>
+</div>
+
+<!-- Scan log -->
+<h3 style="color:#ccc;margin:25px 0 12px">Recent Scan Log <span style="font-size:12px;color:#666">(last 30 scans)</span></h3>
+<div class="asx-table-wrap" style="max-height:300px">
+<table class="asx-table"><thead><tr>
+  <th>Time</th><th>Ticker</th><th>Decision</th><th>Price</th><th>Notes</th>
+</tr></thead><tbody id="agentScanBody">
+<tr><td colspan="5" style="color:#888;text-align:center;padding:20px">Loading scan log...</td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
 
 <!-- TAB 9: GitHub Token -->
 <div id="tab-token" class="tab-content">
