@@ -768,12 +768,10 @@ function renderMacroGate(){
     document.getElementById('macroComposite').style.color=col;
     document.getElementById('macroZone').textContent=d.zone||'—';
     document.getElementById('macroZone').style.color=col;
-    document.getElementById('macroZoneDesc').textContent=d.zone_desc||'';
-    document.getElementById('macroZoneCard').style.borderColor=col;
-    document.getElementById('macroCompositeBar').style.width=comp+'%';
-    document.getElementById('macroCompositeBar').style.background=col;
-    document.getElementById('macroScoreHeader').textContent=comp.toFixed(0);
-    document.getElementById('macroScoreHeader').style.color=col;
+    const _zd=document.getElementById('macroZoneDesc'); if(_zd) _zd.textContent=d.zone_desc||'';
+    const _zc=document.getElementById('macroZoneCard'); if(_zc) _zc.style.borderColor=col;
+    const _cb=document.getElementById('macroCompositeBar'); if(_cb){_cb.style.width=comp+'%';_cb.style.background=col;}
+    const _sh=document.getElementById('macroScoreHeader'); if(_sh){_sh.textContent=comp.toFixed(0);_sh.style.color=col;}
 
     const grid=document.getElementById('macroSignalsGrid');
     grid.innerHTML=d.signals.map(s=>{
