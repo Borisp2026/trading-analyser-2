@@ -14,6 +14,7 @@ from build_pdf import build_pdf_report
 from correlation import run_correlation
 from signal_history import record_signals, load_history, get_accuracy_summary
 from chart_builder import build_chart_data
+from intraday import run_intraday
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WATCHLIST_FILE = os.path.join(BASE, "data", "watchlist.json")

@@ -259,6 +259,7 @@ details summary{cursor:pointer;color:#4a90d9;font-size:12px;margin-top:8px;paddi
 .backtest-table tr:hover td{background:#1e1e3a}
 #chartModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center}
 #chartModal.open{display:flex}
+#intradayChartModal.open{display:flex}
 #chartBox{background:#0f0f1a;border:1px solid #2a2a4a;border-radius:12px;width:90%;max-width:1000px;padding:20px}
 #chartBox h3{color:white;margin-bottom:12px}
 #chartContainer{height:420px;position:relative}
@@ -286,6 +287,8 @@ function showTab(id) {
     if(id==='watchlist') renderWatchlist();
     if(id==='backtest') populateBacktestSelect();
     if(id==='history') { /* already rendered server-side */ }
+    if(id==='intraday') renderIntradayTable();
+    if(id==='intraday') renderIntradayTable();
 }
 
 // ── Market Analysis filters ───────────────────────────────────────────────────
@@ -689,6 +692,8 @@ window.addEventListener('resize',()=>{
   <button class="tab-btn" onclick="showTab('watchlist')">Watchlist</button>
   <button class="tab-btn" onclick="showTab('history')">Signal History</button>
   <button class="tab-btn" onclick="showTab('backtest')">Backtest</button>
+  <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
+  <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
   <button class="tab-btn" onclick="showTab('token')">Token</button>
 </nav>
 
@@ -852,6 +857,90 @@ window.addEventListener('resize',()=>{
 </div>
 <div id="btResults"><p style="color:#888">Select a stock and click Run Backtest.</p></div>
 </div>
+</div>
+
+
+<!-- TAB: Day Trading -->
+<div id="tab-intraday" class="tab-content">
+<div class="section">
+<h2>Intraday Day Trading Analysis</h2>
+<p style="color:#888;font-size:13px;margin-bottom:15px">15-min bar analysis with VWAP, gap detection and intraday signals. Run "Run Nightly Now" during market hours for live data.</p>
+<div style="display:flex;gap:15px;align-items:center;flex-wrap:wrap;margin-bottom:15px">
+  <div><label style="color:#aaa;font-size:12px">Signal</label><br>
+    <select id="intradaySigFilter" onchange="renderIntradayTable()" style="background:#1e1e3a;color:#ccc;border:1px solid #444;padding:6px;border-radius:6px">
+      <option value="ALL">All</option>
+      <option value="DAY BUY">Day Buy</option>
+      <option value="WATCH">Watch</option>
+      <option value="NEUTRAL">Neutral</option>
+      <option value="AVOID">Avoid</option>
+    </select>
+  </div>
+  <div><label style="color:#aaa;font-size:12px">Search</label><br>
+    <input type="text" id="intradaySearch" placeholder="Ticker..." oninput="renderIntradayTable()">
+  </div>
+  <div style="margin-top:16px"><span id="intradayCount" style="color:#aaa;font-size:13px"></span></div>
+</div>
+<div style="overflow-x:auto">
+<table class="asx-table"><thead><tr>
+  <th>Ticker</th><th>Price</th><th>Gap %</th><th>Gap Type</th><th>VWAP</th><th>vs VWAP</th><th>RSI 15m</th><th>Momentum</th><th>Signal</th><th>Chart</th>
+</tr></thead><tbody id="intradayBody">
+<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Click Run Nightly Now during market hours to load intraday data.</td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+<!-- Intraday Chart Modal -->
+<div id="intradayChartModal" onclick="if(event.target===this)closeIntradayModal()" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:1001;align-items:center;justify-content:center">
+  <div style="background:#0f0f1a;border:1px solid #2a2a4a;border-radius:12px;width:90%;max-width:900px;padding:20px">
+    <div style="display:flex;justify-content:space-between;margin-bottom:12px">
+      <h3 id="intradayChartTitle" style="color:white"></h3>
+      <button class="close-modal" onclick="closeIntradayModal()">&#215;</button>
+    </div>
+    <div id="intradayChartBox2" style="height:350px"></div>
+  </div>
+</div>
+
+
+<!-- TAB: Day Trading -->
+<div id="tab-intraday" class="tab-content">
+<div class="section">
+<h2>Intraday Day Trading Analysis</h2>
+<p style="color:#888;font-size:13px;margin-bottom:15px">15-min bar analysis with VWAP, gap detection and intraday signals. Run "Run Nightly Now" during market hours for live data.</p>
+<div style="display:flex;gap:15px;align-items:center;flex-wrap:wrap;margin-bottom:15px">
+  <div><label style="color:#aaa;font-size:12px">Signal</label><br>
+    <select id="intradaySigFilter" onchange="renderIntradayTable()" style="background:#1e1e3a;color:#ccc;border:1px solid #444;padding:6px;border-radius:6px">
+      <option value="ALL">All</option>
+      <option value="DAY BUY">Day Buy</option>
+      <option value="WATCH">Watch</option>
+      <option value="NEUTRAL">Neutral</option>
+      <option value="AVOID">Avoid</option>
+    </select>
+  </div>
+  <div><label style="color:#aaa;font-size:12px">Search</label><br>
+    <input type="text" id="intradaySearch" placeholder="Ticker..." oninput="renderIntradayTable()">
+  </div>
+  <div style="margin-top:16px"><span id="intradayCount" style="color:#aaa;font-size:13px"></span></div>
+</div>
+<div style="overflow-x:auto">
+<table class="asx-table"><thead><tr>
+  <th>Ticker</th><th>Price</th><th>Gap %</th><th>Gap Type</th><th>VWAP</th><th>vs VWAP</th><th>RSI 15m</th><th>Momentum</th><th>Signal</th><th>Chart</th>
+</tr></thead><tbody id="intradayBody">
+<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Click Run Nightly Now during market hours to load intraday data.</td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+<!-- Intraday Chart Modal -->
+<div id="intradayChartModal" onclick="if(event.target===this)closeIntradayModal()" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:1001;align-items:center;justify-content:center">
+  <div style="background:#0f0f1a;border:1px solid #2a2a4a;border-radius:12px;width:90%;max-width:900px;padding:20px">
+    <div style="display:flex;justify-content:space-between;margin-bottom:12px">
+      <h3 id="intradayChartTitle" style="color:white"></h3>
+      <button class="close-modal" onclick="closeIntradayModal()">&#215;</button>
+    </div>
+    <div id="intradayChartBox2" style="height:350px"></div>
+  </div>
 </div>
 
 <!-- TAB 9: GitHub Token -->
