@@ -1295,6 +1295,7 @@ window.addEventListener('resize',()=>{
   <button id="qbtn-walkforward"  class="quant-btn"         onclick="renderQuantTab('walkforward')">Walk Forward</button>
   <button id="qbtn-montecarlo"   class="quant-btn"         onclick="renderQuantTab('montecarlo')">Monte Carlo</button>
   <button id="qbtn-sensitivity"  class="quant-btn"         onclick="renderQuantTab('sensitivity')">Sensitivity</button>
+  <button id="qbtn-top5" class="quant-btn" onclick="renderQuantTab('top5')">⭐ Top 5</button>
 </div>
 <div id="quantContent">
   <p style="color:#888">Click Run Nightly Now to generate quantitative data, then come back to this tab.</p>
@@ -1359,6 +1360,7 @@ window.addEventListener('resize',()=>{
   <button id="qbtn-walkforward"  class="quant-btn"         onclick="renderQuantTab('walkforward')">Walk Forward</button>
   <button id="qbtn-montecarlo"   class="quant-btn"         onclick="renderQuantTab('montecarlo')">Monte Carlo</button>
   <button id="qbtn-sensitivity"  class="quant-btn"         onclick="renderQuantTab('sensitivity')">Sensitivity</button>
+  <button id="qbtn-top5" class="quant-btn" onclick="renderQuantTab('top5')">⭐ Top 5</button>
 </div>
 <div id="quantContent">
   <p style="color:#888">Click Run Nightly Now to generate quantitative data, then come back to this tab.</p>
