@@ -175,6 +175,13 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
         asx_scan={"results":[],"scanned_at":"Not yet run","total_scanned":0}
     asx_scan_json=json.dumps(asx_scan)
 
+    # Quantitative results
+    quant_file=os.path.join(BASE2,"data","quant_results.json")
+    quant_json=json.dumps({"results":{},"tickers":[]})
+    if os.path.exists(quant_file):
+        with open(quant_file) as f:
+            quant_json=json.dumps(json.load(f))
+
     # Watchlist
     watchlist_file=os.path.join(BASE,"data","watchlist.json")
     if os.path.exists(watchlist_file):
@@ -267,6 +274,10 @@ details summary{cursor:pointer;color:#4a90d9;font-size:12px;margin-top:8px;paddi
 .close-modal{float:right;background:none;border:none;color:#888;font-size:20px;cursor:pointer}
 .accuracy-bar-wrap{height:8px;background:#1e1e3a;border-radius:4px;overflow:hidden;margin-top:6px}
 .accuracy-bar{height:100%;background:#44bb44;border-radius:4px}
+.quant-subnav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid #2a2a4a}
+.quant-btn{padding:6px 14px;border-radius:20px;border:1px solid #444;cursor:pointer;font-size:12px;background:#1e1e3a;color:#ccc;transition:all 0.2s}
+.quant-btn:hover{background:#2a2a5a}.quant-btn.active{background:#4a90d9;color:white;border-color:#4a90d9}
+#intradayChartModal.open{display:flex}
 </style>"""
 
     JS=r"""<script>
@@ -288,7 +299,9 @@ function showTab(id) {
     if(id==='backtest') populateBacktestSelect();
     if(id==='history') { /* already rendered server-side */ }
     if(id==='intraday') renderIntradayTable();
+    if(id==='quantitative') renderQuantTab('earnings');
     if(id==='intraday') renderIntradayTable();
+    if(id==='quantitative') renderQuantTab('earnings');
 }
 
 // ── Market Analysis filters ───────────────────────────────────────────────────
@@ -651,6 +664,211 @@ function renderChart(data){
         _chart.timeScale().subscribeVisibleTimeRangeChange(r=>{if(r&&_rsiChart)_rsiChart.timeScale().setVisibleRange(r);});
     }
 }
+
+// ── Quantitative Analysis tab ─────────────────────────────────────────────────
+function renderQuantTab(section){
+    document.querySelectorAll('.quant-btn').forEach(b=>b.classList.remove('active'));
+    const btn=document.getElementById('qbtn-'+section);
+    if(btn)btn.classList.add('active');
+    const results=QUANT_DATA.results||{};
+    const tickers=Object.keys(results);
+    if(!tickers.length){
+        document.getElementById('quantContent').innerHTML='<p style="color:#888;padding:20px">No quantitative data yet — click "Run Nightly Now" to generate.</p>';return;
+    }
+    if(section==='earnings')     renderEarnings(results,tickers);
+    else if(section==='momentum')    renderMomentum(results,tickers);
+    else if(section==='rsi')         renderRSIStrategy(results,tickers);
+    else if(section==='ma')          renderMAStrategy(results,tickers);
+    else if(section==='walkforward') renderWalkForward(results,tickers);
+    else if(section==='montecarlo')  renderMonteCarlo(results,tickers);
+    else if(section==='sensitivity') renderSensitivity(results,tickers);
+}
+
+function renderEarnings(results,tickers){
+    let h='<h3 style="color:#ccc;margin-bottom:15px">Earnings Reports — Next Date &amp; Last 4 Quarters</h3>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>Next Earnings</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr></thead><tbody>';
+    tickers.forEach(t=>{
+        const e=(results[t]||{}).earnings||{};
+        const hist=e.history||[];
+        h+=`<tr><td><b>${t}</b></td><td style="color:#4a90d9">${e.next_earnings||'N/A'}</td>`;
+        for(let i=0;i<4;i++){
+            const q=hist[i]||{};
+            const surp=(q.actual!=null&&q.estimate)?((q.actual-q.estimate)/Math.abs(q.estimate)*100).toFixed(1):null;
+            const sc=surp>0?'#44bb44':surp<0?'#cc0000':'#888';
+            h+=`<td style="font-size:11px">${q.date?q.date.substring(0,7):'—'}<br>`;
+            h+=`A:<b>${q.actual!=null?q.actual.toFixed(2):'—'}</b> E:${q.estimate!=null?q.estimate.toFixed(2):'—'}`;
+            if(surp!==null)h+=` <span style="color:${sc}">${surp>0?'+':''}${surp}%</span>`;
+            h+='</td>';
+        }
+        h+='</tr>';
+    });
+    h+='</tbody></table></div>';
+    document.getElementById('quantContent').innerHTML=h;
+}
+
+function renderMomentum(results,tickers){
+    let h='<h3 style="color:#ccc;margin-bottom:5px">12-1 Month Momentum Strategy</h3>';
+    h+='<p style="color:#888;font-size:12px;margin-bottom:15px">Momentum = 12-month return minus last-month return. BUY signal when percentile ≥ 80th across the universe (avoids reversal).</p>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>12m Return</th><th>1m Return</th><th>Momentum Score</th><th>Percentile</th><th>Signal</th></tr></thead><tbody>';
+    const sorted=[...tickers].sort((a,b)=>((results[b]||{}).momentum?.momentum||0)-((results[a]||{}).momentum?.momentum||0));
+    sorted.forEach(t=>{
+        const m=(results[t]||{}).momentum||{};
+        if(m.error){h+=`<tr><td><b>${t}</b></td><td colspan="5" style="color:#666">${m.error}</td></tr>`;return;}
+        const rc12=m.ret_12m>=0?'#44bb44':'#cc0000'; const rc1=m.ret_1m>=0?'#44bb44':'#cc0000';
+        const rcp=m.percentile>=80?'#44bb44':m.percentile>=50?'#ff9900':'#cc0000';
+        const sc=m.signal==='BUY'?'background:#44bb44;color:white':m.signal==='WATCH'?'background:#ff9900;color:white':'background:#333;color:#aaa';
+        h+=`<tr><td><b>${t}</b></td>
+            <td style="color:${rc12}">${m.ret_12m>=0?'+':''}${(m.ret_12m||0).toFixed(1)}%</td>
+            <td style="color:${rc1}">${m.ret_1m>=0?'+':''}${(m.ret_1m||0).toFixed(1)}%</td>
+            <td style="font-weight:bold">${(m.momentum||0).toFixed(1)}</td>
+            <td style="color:${rcp}">${(m.percentile||0).toFixed(0)}th</td>
+            <td><span style="padding:2px 8px;border-radius:4px;font-size:11px;${sc}">${m.signal||'?'}</span></td></tr>`;
+    });
+    h+='</tbody></table></div>';
+    document.getElementById('quantContent').innerHTML=h;
+}
+
+function renderRSIStrategy(results,tickers){
+    let h='<h3 style="color:#ccc;margin-bottom:5px">RSI Crossover Strategy Backtest</h3>';
+    h+='<p style="color:#888;font-size:12px;margin-bottom:15px">Buy when RSI crosses above 30 (oversold recovery). Win rate = % of signals where price was higher 20 days later.</p>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>Current RSI</th><th>Buy Signals Tested</th><th>Win Rate</th><th>Wins</th><th>Recent Signals</th></tr></thead><tbody>';
+    tickers.forEach(t=>{
+        const r=(results[t]||{}).rsi_strategy||{};
+        if(r.error){h+=`<tr><td><b>${t}</b></td><td colspan="5" style="color:#666">${r.error}</td></tr>`;return;}
+        const rc=r.current_rsi<30?'#44bb44':r.current_rsi>70?'#cc0000':'#ccc';
+        const wc=(r.win_rate||0)>=60?'#44bb44':(r.win_rate||0)>=50?'#ff9900':'#cc0000';
+        const sigs=(r.signals||[]).slice(-3).map(s=>`<span style="font-size:10px;padding:1px 5px;border-radius:3px;${s.type==='BUY'?'background:#224422;color:#44bb44':'background:#440000;color:#cc0000'}">${s.type} ${(s.date||'').substring(5)}</span>`).join(' ');
+        h+=`<tr><td><b>${t}</b></td>
+            <td style="color:${rc};font-weight:bold">${(r.current_rsi||50).toFixed(0)}</td>
+            <td>${r.total_signals||0}</td>
+            <td style="color:${wc};font-weight:bold">${r.win_rate!=null?r.win_rate+'%':'N/A'}</td>
+            <td>${r.wins||0}</td>
+            <td>${sigs||'—'}</td></tr>`;
+    });
+    h+='</tbody></table></div>';
+    document.getElementById('quantContent').innerHTML=h;
+}
+
+function renderMAStrategy(results,tickers){
+    let h='<h3 style="color:#ccc;margin-bottom:5px">Moving Average Crossover</h3>';
+    h+='<p style="color:#888;font-size:12px;margin-bottom:15px">Golden cross = 50MA above 200MA (bullish). Avg 60-day return measured after each historical golden cross.</p>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>Price</th><th>MA50</th><th>MA200</th><th>Trend</th><th>Last Cross</th><th>Days Since</th><th>Hist Avg 60d Return</th></tr></thead><tbody>';
+    tickers.forEach(t=>{
+        const m=(results[t]||{}).ma_strategy||{};
+        if(m.error){h+=`<tr><td><b>${t}</b></td><td colspan="7" style="color:#666">${m.error}</td></tr>`;return;}
+        const tc=m.trend==='UPTREND'?'#44bb44':'#cc0000';
+        const cc=m.cross_type==='GOLDEN'?'#44bb44':m.cross_type==='DEATH'?'#cc0000':'#888';
+        const rc=(m.avg_golden_return_60d||0)>=0?'#44bb44':'#cc0000';
+        h+=`<tr><td><b>${t}</b></td>
+            <td>$${(m.price||0).toFixed(3)}</td>
+            <td style="color:${m.price>m.ma50?'#44bb44':'#cc0000'}">$${(m.ma50||0).toFixed(3)}</td>
+            <td style="color:${m.price>m.ma200?'#44bb44':'#cc0000'}">$${(m.ma200||0).toFixed(3)}</td>
+            <td style="color:${tc};font-weight:bold">${m.trend||'?'}</td>
+            <td style="color:${cc}">${m.cross_type||'NONE'}${m.cross_date?' ('+m.cross_date+')':''}</td>
+            <td>${m.days_since_cross!=null?m.days_since_cross+'d':'—'}</td>
+            <td style="color:${rc}">${m.avg_golden_return_60d!=null?(m.avg_golden_return_60d>=0?'+':'')+m.avg_golden_return_60d.toFixed(1)+'% ('+m.n_golden_crosses+' crosses)':'N/A'}</td></tr>`;
+    });
+    h+='</tbody></table></div>';
+    document.getElementById('quantContent').innerHTML=h;
+}
+
+function renderWalkForward(results,tickers){
+    let h='<h3 style="color:#ccc;margin-bottom:5px">Walk Forward Validation</h3>';
+    h+='<p style="color:#888;font-size:12px;margin-bottom:15px">Optimize RSI threshold on 6-month train window → test on next 21 trading days. 5 rolling windows. Measures out-of-sample robustness.</p>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>Avg Win Rate</th><th>Win 1</th><th>Win 2</th><th>Win 3</th><th>Win 4</th><th>Win 5</th></tr></thead><tbody>';
+    tickers.forEach(t=>{
+        const wf=(results[t]||{}).walk_forward||{};
+        if(wf.error){h+=`<tr><td><b>${t}</b></td><td colspan="6" style="color:#666">${wf.error}</td></tr>`;return;}
+        const aw=wf.avg_win_rate; const awc=aw>=60?'#44bb44':aw>=50?'#ff9900':'#cc0000';
+        h+=`<tr><td><b>${t}</b></td><td style="color:${awc};font-weight:bold">${aw!=null?aw+'%':'N/A'}</td>`;
+        const wins=wf.windows||[];
+        for(let i=0;i<5;i++){
+            const w=wins[i];
+            if(!w){h+='<td style="color:#555">—</td>';continue;}
+            const wc=(w.win_rate||0)>=60?'#44bb44':(w.win_rate||0)>=50?'#ff9900':'#cc0000';
+            h+=`<td><small style="color:#555">${(w.period||'').substring(0,10)}</small><br><span style="color:${wc}">${w.win_rate!=null?w.win_rate+'%':'—'}</span></td>`;
+        }
+        h+='</tr>';
+    });
+    h+='</tbody></table></div>';
+    document.getElementById('quantContent').innerHTML=h;
+}
+
+function renderMonteCarlo(results,tickers){
+    let h='<h3 style="color:#ccc;margin-bottom:5px">Monte Carlo Simulation — 63 Trading Day Outlook</h3>';
+    h+='<p style="color:#888;font-size:12px;margin-bottom:15px">300 simulated price paths based on historical daily return distribution (μ, σ). P10/P90 = bear/bull extremes.</p>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>Current</th><th>P10 Bear</th><th>P25</th><th>P50 Median</th><th>P75</th><th>P90 Bull</th><th>Prob Up</th><th>Daily σ</th></tr></thead><tbody>';
+    tickers.forEach(t=>{
+        const mc=(results[t]||{}).monte_carlo||{};
+        if(mc.error){h+=`<tr><td><b>${t}</b></td><td colspan="8" style="color:#666">${mc.error}</td></tr>`;return;}
+        const cp=mc.current_price||0; const pu=mc.prob_up||0;
+        const puc=pu>=60?'#44bb44':pu>=50?'#ff9900':'#cc0000';
+        const p50c=(mc.p50||0)>cp?'#44bb44':'#cc0000';
+        h+=`<tr><td><b>${t}</b></td>
+            <td>$${cp.toFixed(3)}</td>
+            <td style="color:#cc0000">$${(mc.p10||0).toFixed(3)}</td>
+            <td style="color:#ff9900">$${(mc.p25||0).toFixed(3)}</td>
+            <td style="color:${p50c};font-weight:bold">$${(mc.p50||0).toFixed(3)}</td>
+            <td style="color:#ff9900">$${(mc.p75||0).toFixed(3)}</td>
+            <td style="color:#44bb44">$${(mc.p90||0).toFixed(3)}</td>
+            <td style="color:${puc};font-weight:bold">${pu.toFixed(0)}%</td>
+            <td style="color:#888">${(mc.sigma_daily||0).toFixed(2)}%</td></tr>`;
+    });
+    h+='</tbody></table></div>';
+    document.getElementById('quantContent').innerHTML=h;
+}
+
+function renderSensitivity(results,tickers){
+    let h='<h3 style="color:#ccc;margin-bottom:5px">Sensitivity Analysis</h3>';
+    h+='<p style="color:#888;font-size:12px;margin-bottom:10px">Score stability across RSI periods (7/10/14/21) and MA pairs. Small range = robust signal. Large range = parameter-sensitive.</p>';
+    h+='<div style="display:flex;gap:10px;align-items:center;margin-bottom:15px"><label style="color:#aaa">Stock: </label>';
+    h+='<select id="sensSelect" onchange="renderSensGrid()" style="background:#1e1e3a;color:#ccc;border:1px solid #444;padding:6px;border-radius:6px">';
+    tickers.forEach(t=>{h+=`<option value="${t}">${t}</option>`;});
+    h+='</select></div><div id="sensGrid"></div>';
+    h+='<h3 style="color:#ccc;margin:20px 0 10px">Robustness Summary</h3>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>Mean Score</th><th>Min</th><th>Max</th><th>Range</th><th>Robustness</th></tr></thead><tbody>';
+    tickers.forEach(t=>{
+        const s=(results[t]||{}).sensitivity||{};
+        if(s.error)return;
+        const rng=s.score_range||0; const rc=rng<=10?'#44bb44':rng<=20?'#ff9900':'#cc0000';
+        const rob=rng<=10?'HIGH':rng<=20?'MEDIUM':'LOW';
+        h+=`<tr><td><b>${t}</b></td>
+            <td style="font-weight:bold">${(s.score_mean||0).toFixed(0)}</td>
+            <td>${s.score_min||0}</td><td>${s.score_max||0}</td>
+            <td style="color:${rc}">${rng.toFixed(0)} pts</td>
+            <td style="color:${rc};font-weight:bold">${rob}</td></tr>`;
+    });
+    h+='</tbody></table></div>';
+    document.getElementById('quantContent').innerHTML=h;
+    setTimeout(()=>renderSensGrid(),50);
+}
+
+function renderSensGrid(){
+    const t=(document.getElementById('sensSelect')||{value:''}).value;
+    const s=(QUANT_DATA.results||{})[t]?.sensitivity||{};
+    const grid=s.grid||[];
+    if(!grid.length)return;
+    const rsiPs=[...new Set(grid.map(r=>r.rsi_period))];
+    const maCombos=[...new Set(grid.map(r=>r.ma_short+'d/'+r.ma_long+'d'))];
+    let h=`<p style="color:#aaa;font-size:12px;margin-bottom:8px">Score grid for <b>${t}</b>:</p>`;
+    h+='<table class="asx-table"><thead><tr><th>RSI Period</th>';
+    maCombos.forEach(c=>{h+=`<th>MA ${c}</th>`;});
+    h+='</tr></thead><tbody>';
+    rsiPs.forEach(rp=>{
+        h+=`<tr><td>RSI ${rp}</td>`;
+        maCombos.forEach(c=>{
+            const [sh,lo]=c.split('/').map(v=>parseInt(v));
+            const cell=grid.find(r=>r.rsi_period===rp&&r.ma_short===sh&&r.ma_long===lo);
+            if(!cell){h+='<td>—</td>';return;}
+            const sc=cell.score>=70?'#44bb44':cell.score>=55?'#ff9900':cell.score<=40?'#cc0000':'#ccc';
+            h+=`<td style="color:${sc};font-weight:bold;text-align:center">${cell.score}</td>`;
+        });
+        h+='</tr>';
+    });
+    h+='</tbody></table>';
+    document.getElementById('sensGrid').innerHTML=h;
+}
+
 window.addEventListener('resize',()=>{
     if(_chart){_chart.resize(document.getElementById('chartContainer').clientWidth,380);}
     if(_rsiChart){_rsiChart.resize(document.getElementById('rsiContainer').clientWidth,100);}
@@ -692,7 +910,9 @@ window.addEventListener('resize',()=>{
   <button class="tab-btn" onclick="showTab('watchlist')">Watchlist</button>
   <button class="tab-btn" onclick="showTab('history')">Signal History</button>
   <button class="tab-btn" onclick="showTab('backtest')">Backtest</button>
+  <button class="tab-btn" onclick="showTab('quantitative')">Quantitative</button>
   <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
+  <button class="tab-btn" onclick="showTab('quantitative')">Quantitative</button>
   <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
   <button class="tab-btn" onclick="showTab('token')">Token</button>
 </nav>
@@ -860,6 +1080,26 @@ window.addEventListener('resize',()=>{
 </div>
 
 
+<!-- TAB: Quantitative Analysis -->
+<div id="tab-quantitative" class="tab-content">
+<div class="section">
+<h2>Quantitative Analysis</h2>
+<div class="quant-subnav">
+  <button id="qbtn-earnings"     class="quant-btn active"  onclick="renderQuantTab('earnings')">Earnings Reports</button>
+  <button id="qbtn-momentum"     class="quant-btn"         onclick="renderQuantTab('momentum')">12-1 Momentum</button>
+  <button id="qbtn-rsi"          class="quant-btn"         onclick="renderQuantTab('rsi')">RSI Strategy</button>
+  <button id="qbtn-ma"           class="quant-btn"         onclick="renderQuantTab('ma')">MA Crossover</button>
+  <button id="qbtn-walkforward"  class="quant-btn"         onclick="renderQuantTab('walkforward')">Walk Forward</button>
+  <button id="qbtn-montecarlo"   class="quant-btn"         onclick="renderQuantTab('montecarlo')">Monte Carlo</button>
+  <button id="qbtn-sensitivity"  class="quant-btn"         onclick="renderQuantTab('sensitivity')">Sensitivity</button>
+</div>
+<div id="quantContent">
+  <p style="color:#888">Click Run Nightly Now to generate quantitative data, then come back to this tab.</p>
+</div>
+</div>
+</div>
+
+
 <!-- TAB: Day Trading -->
 <div id="tab-intraday" class="tab-content">
 <div class="section">
@@ -882,7 +1122,7 @@ window.addEventListener('resize',()=>{
 </div>
 <div style="overflow-x:auto">
 <table class="asx-table"><thead><tr>
-  <th>Ticker</th><th>Price</th><th>Gap %</th><th>Gap Type</th><th>VWAP</th><th>vs VWAP</th><th>RSI 15m</th><th>Momentum</th><th>Signal</th><th>Chart</th>
+  <th>Ticker</th><th>Price</th><th>Gap %</th><th>Gap Type</th><th>VWAP</th><th>vs VWAP</th><th>RSI 15m</th><th>Momentum</th><th>Signal</th><th>Buy Zone</th><th>Sell Zone</th><th>Chart</th>
 </tr></thead><tbody id="intradayBody">
 <tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Click Run Nightly Now during market hours to load intraday data.</td></tr>
 </tbody></table>
@@ -902,6 +1142,26 @@ window.addEventListener('resize',()=>{
 </div>
 
 
+<!-- TAB: Quantitative Analysis -->
+<div id="tab-quantitative" class="tab-content">
+<div class="section">
+<h2>Quantitative Analysis</h2>
+<div class="quant-subnav">
+  <button id="qbtn-earnings"     class="quant-btn active"  onclick="renderQuantTab('earnings')">Earnings Reports</button>
+  <button id="qbtn-momentum"     class="quant-btn"         onclick="renderQuantTab('momentum')">12-1 Momentum</button>
+  <button id="qbtn-rsi"          class="quant-btn"         onclick="renderQuantTab('rsi')">RSI Strategy</button>
+  <button id="qbtn-ma"           class="quant-btn"         onclick="renderQuantTab('ma')">MA Crossover</button>
+  <button id="qbtn-walkforward"  class="quant-btn"         onclick="renderQuantTab('walkforward')">Walk Forward</button>
+  <button id="qbtn-montecarlo"   class="quant-btn"         onclick="renderQuantTab('montecarlo')">Monte Carlo</button>
+  <button id="qbtn-sensitivity"  class="quant-btn"         onclick="renderQuantTab('sensitivity')">Sensitivity</button>
+</div>
+<div id="quantContent">
+  <p style="color:#888">Click Run Nightly Now to generate quantitative data, then come back to this tab.</p>
+</div>
+</div>
+</div>
+
+
 <!-- TAB: Day Trading -->
 <div id="tab-intraday" class="tab-content">
 <div class="section">
@@ -924,7 +1184,7 @@ window.addEventListener('resize',()=>{
 </div>
 <div style="overflow-x:auto">
 <table class="asx-table"><thead><tr>
-  <th>Ticker</th><th>Price</th><th>Gap %</th><th>Gap Type</th><th>VWAP</th><th>vs VWAP</th><th>RSI 15m</th><th>Momentum</th><th>Signal</th><th>Chart</th>
+  <th>Ticker</th><th>Price</th><th>Gap %</th><th>Gap Type</th><th>VWAP</th><th>vs VWAP</th><th>RSI 15m</th><th>Momentum</th><th>Signal</th><th>Buy Zone</th><th>Sell Zone</th><th>Chart</th>
 </tr></thead><tbody id="intradayBody">
 <tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Click Run Nightly Now during market hours to load intraday data.</td></tr>
 </tbody></table>

@@ -28,6 +28,15 @@ def analyse_intraday(ticker):
             return {"ticker": ticker, "error": "Insufficient bars"}
 
         yesterday_close = float(prev_df["Close"].iloc[-1])
+        yesterday_high  = float(prev_df["High"].iloc[-1])
+        yesterday_low   = float(prev_df["Low"].iloc[-1])
+
+        # Pivot points
+        pp  = (yesterday_high + yesterday_low + yesterday_close) / 3
+        r1  = round(2 * pp - yesterday_low, 3)
+        r2  = round(pp + (yesterday_high - yesterday_low), 3)
+        s1  = round(2 * pp - yesterday_high, 3)
+        s2  = round(pp - (yesterday_high - yesterday_low), 3)
         today_open  = float(today_df["Open"].iloc[0])
         today_high  = float(today_df["High"].max())
         today_low   = float(today_df["Low"].min())
