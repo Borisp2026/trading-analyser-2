@@ -303,6 +303,8 @@ function showTab(id) {
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     document.getElementById('tab-'+id).classList.add('active');
     document.querySelector(`[onclick="showTab('${id}')"]`).classList.add('active');
+    if(id==='agent') loadAgentTrades();
+    if(id==='market_status') renderMacroGate();
     if(id==='asx') renderASXTable();
     if(id==='watchlist') renderWatchlist();
     if(id==='backtest') populateBacktestSelect();
