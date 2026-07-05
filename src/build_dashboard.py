@@ -859,8 +859,44 @@ function renderQuantTab(section){
     else if(section==='walkforward') renderWalkForward(results,tickers);
     else if(section==='montecarlo')  renderMonteCarlo(results,tickers);
     else if(section==='sensitivity') renderSensitivity(results,tickers);
+    else if(section==='top5')      renderTop5Stocks(results,tickers);
 }
 
+function renderTop5Stocks(results,tickers){
+    const scored=tickers.map(function(t){
+        var r=results[t]||{};
+        var scores=[];
+        if(r.momentum&&r.momentum.percentile!=null) scores.push(r.momentum.percentile);
+        if(r.monte_carlo&&r.monte_carlo.prob_up!=null) scores.push(r.monte_carlo.prob_up);
+        if(r.ma_strategy&&r.ma_strategy.avg_golden_return_60d!=null) scores.push(Math.min(100,Math.max(0,r.ma_strategy.avg_golden_return_60d/3)));
+        var avg=scores.length?scores.reduce(function(a,b){return a+b},0)/scores.length:0;
+        return {ticker:t,score:Math.round(avg),r:r};
+    }).sort(function(a,b){return b.score-a.score}).slice(0,5);
+    if(!scored.length){document.getElementById('quantContent').innerHTML='<p style="color:#888;padding:20px">No quantitative data yet.</p>';return;}
+    document.getElementById('quantContent').innerHTML=
+        '<h3 style="color:#ccc;margin-bottom:16px">&#11088; Top 5 Stocks &mdash; Overall Score</h3>'
+        +'<div style="display:grid;gap:12px">'
+        +scored.map(function(s,i){
+            var col=s.score>=70?'#44bb44':s.score>=50?'#ff9900':s.score>=40?'#ff6600':'#cc0000';
+            var mom=s.r.momentum&&s.r.momentum.percentile!=null?s.r.momentum.percentile.toFixed(0):'n/a';
+            var mc=s.r.monte_carlo&&s.r.monte_carlo.prob_up!=null?s.r.monte_carlo.prob_up.toFixed(0):'n/a';
+            var ma=s.r.ma_strategy&&s.r.ma_strategy.avg_golden_return_60d!=null?s.r.ma_strategy.avg_golden_return_60d.toFixed(1):'n/a';
+            var trend=s.r.ma_strategy?s.r.ma_strategy.trend||'n/a':'n/a';
+            return '<div style=\"background:#1a1a2e;border-radius:12px;padding:20px;border:1px solid '+(i===0?col:'#2a2a4a')+'\">'
+                +'<div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:10px\">'
+                +'<div><span style=\"font-size:26px;font-weight:bold;color:#555;margin-right:10px\">#'+(i+1)+'</span>'
+                +'<span style=\"font-size:20px;font-weight:bold;color:#fff\">'+s.ticker+'</span></div>'
+                +'<span style=\"font-size:28px;font-weight:bold;color:'+col+'\">'+s.score+'</span></div>'
+                +'<div style=\"background:#0f0f1a;border-radius:6px;height:8px;margin-bottom:10px\">'
+                +'<div style=\"height:8px;border-radius:6px;background:'+col+';width:'+Math.min(100,s.score)+'%\"></div></div>'
+                +'<div style=\"display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center\">'
+                +'<div><div style=\"color:#666\">Momentum</div><div style=\"color:#ccc;font-weight:bold\">'+mom+'th</div></div>'
+                +'<div><div style=\"color:#666\">MC Prob</div><div style=\"color:#ccc;font-weight:bold\">'+mc+'%</div></div>'
+                +'<div><div style=\"color:#666\">MA Return</div><div style=\"color:#ccc;font-weight:bold\">'+ma+'%</div></div>'
+                +'<div><div style=\"color:#666\">Trend</div><div style=\"color:#ccc;font-weight:bold\">'+trend+'</div></div>'
+                +'</div></div>';
+        }).join('')+'</div>';
+}
 function renderEarnings(results,tickers){
     let h='<h3 style="color:#ccc;margin-bottom:15px">Earnings Reports — Next Date &amp; Last 4 Quarters</h3>';
     h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>Next Earnings</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr></thead><tbody>';
