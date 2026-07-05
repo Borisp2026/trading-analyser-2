@@ -1323,5 +1323,22 @@ window.addEventListener('resize',()=>{
     if(_rsiChart){_rsiChart.resize(document.getElementById('rsiContainer').clientWidth,100);}
 });
 </script>
+<script>
+function activateTop5() {
+  if(window._q5obs){window._q5obs.disconnect();window._q5obs=null;}
+  renderQuantTab('top5');
+  var el=document.getElementById('quantContent');
+  var busy=false;
+  var obs=new MutationObserver(function(){
+    if(busy)return;
+    if(!el.innerHTML.includes('Top 5 Stocks')){
+      busy=true; renderQuantTab('top5'); busy=false;
+    }
+  });
+  obs.observe(el,{childList:true,subtree:true});
+  window._q5obs=obs;
+  setTimeout(function(){if(window._q5obs){window._q5obs.disconnect();window._q5obs=null;}},5000);
+}
+</script>
 </body>
 </html>
