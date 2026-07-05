@@ -754,7 +754,7 @@ function renderAgentDashboard(d) {
     }
 }
 
-const MACRO_DATA = {json.dumps(macro or {{}})};
+const MACRO_DATA = {macro_js_data};
 // ── Macro Deployment Gate ─────────────────────────────────────────────────────
 function renderMacroGate(){
     const d=MACRO_DATA;
@@ -1016,6 +1016,7 @@ window.addEventListener('resize',()=>{
     JS=JS.replace("__SIGNAL_HISTORY__", history_json)
     JS=JS.replace("__ACCURACY__", accuracy_json)
 
+    macro_js_data = json.dumps(macro) if macro else "{}"
     HTML=f"""<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
