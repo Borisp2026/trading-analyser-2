@@ -754,7 +754,7 @@ function renderAgentDashboard(d) {
     }
 }
 
-const MACRO_DATA = {macro_js_data};
+const MACRO_DATA = __MACRO_DATA__;
 // ── Macro Deployment Gate ─────────────────────────────────────────────────────
 function renderMacroGate(){
     const d=MACRO_DATA;
@@ -1462,6 +1462,7 @@ window.addEventListener('resize',()=>{
 </body>
 </html>"""
 
+    HTML = HTML.replace('__MACRO_DATA__', json.dumps(macro or {}))
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(HTML)
     print(f"Dashboard written: {output_path}")
