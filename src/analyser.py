@@ -102,6 +102,8 @@ def run_nightly():
     pdf_file = os.path.join(REPORTS_DIR, f"report_{today_str}.pdf")
     # Intraday analysis (15-min bars, VWAP, gap, pivot points)
     print("Running intraday scan...")
+    macro_results = run_macro_gate()
+
     intraday_results = run_intraday(all_tickers)
 
     # Quantitative analysis (earnings, momentum, RSI/MA strategy, MC, walk-forward)
@@ -109,7 +111,8 @@ def run_nightly():
     quant_results = run_quantitative(all_tickers)
 
     print("\nBuilding dashboard...")
-    build_dashboard(all_results, portfolio_summary, dashboard_file, signal_history=history, accuracy=accuracy, intraday=intraday_results, quant=quant_results, macro=macro_results)
+    build_dashboard(all_results, portfolio_summary, dashboard_file,
+                    signal_history=history, accuracy=accuracy, intraday=intraday_results, quant=quant_results, macro=macro_results)
     print("Building PDF report...")
     build_pdf_report(all_results, portfolio_summary, pdf_file, signal_history=history, accuracy=accuracy)
     print("Sending email...")
