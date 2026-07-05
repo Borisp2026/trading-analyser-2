@@ -176,7 +176,7 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
     asx_scan_json=json.dumps(asx_scan)
 
     # Quantitative results
-    quant_file=os.path.join(BASE2,"data","quant_results.json")
+    quant_file=os.path.join(BASE,"data","quant_results.json")
     quant_json=json.dumps({"results":{},"tickers":[]})
     if os.path.exists(quant_file):
         with open(quant_file) as f:

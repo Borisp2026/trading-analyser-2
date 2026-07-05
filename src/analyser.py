@@ -100,7 +100,7 @@ def run_nightly():
     dashboard_file = os.path.join(BASE, "index.html")
     pdf_file = os.path.join(REPORTS_DIR, f"report_{today_str}.pdf")
     print("\nBuilding dashboard...")
-    build_dashboard(all_results, portfolio_summary, dashboard_file, signal_history=history, accuracy=accuracy)
+    build_dashboard(all_results, portfolio_summary, dashboard_file, signal_history=history, accuracy=accuracy, intraday=intraday_results, quant=quant_results)
     print("Building PDF report...")
     build_pdf_report(all_results, portfolio_summary, pdf_file, signal_history=history, accuracy=accuracy)
     print("Sending email...")
