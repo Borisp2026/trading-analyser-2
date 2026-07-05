@@ -15,6 +15,7 @@ from correlation import run_correlation
 from signal_history import record_signals, load_history, get_accuracy_summary
 from chart_builder import build_chart_data
 from quantitative import run_quantitative
+from macro_gate import run_macro_gate
 from intraday import run_intraday
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -108,7 +109,7 @@ def run_nightly():
     quant_results = run_quantitative(all_tickers)
 
     print("\nBuilding dashboard...")
-    build_dashboard(all_results, portfolio_summary, dashboard_file, signal_history=history, accuracy=accuracy, intraday=intraday_results, quant=quant_results)
+    build_dashboard(all_results, portfolio_summary, dashboard_file, signal_history=history, accuracy=accuracy, intraday=intraday_results, quant=quant_results, macro=macro_results)
     print("Building PDF report...")
     build_pdf_report(all_results, portfolio_summary, pdf_file, signal_history=history, accuracy=accuracy)
     print("Sending email...")

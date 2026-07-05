@@ -665,6 +665,51 @@ function renderChart(data){
     }
 }
 
+
+// ── Macro Deployment Gate ─────────────────────────────────────────────────────
+function renderMacroGate(){
+    const d=MACRO_DATA;
+    if(!d||!d.signals||!d.signals.length){
+        document.getElementById('macroSignalsGrid').innerHTML='<p style="color:#888">No data yet — click Run Nightly Now.</p>';
+        return;
+    }
+    const comp=d.composite||0;
+    const col=d.zone_color||'#888';
+    document.getElementById('macroComposite').textContent=comp.toFixed(0);
+    document.getElementById('macroComposite').style.color=col;
+    document.getElementById('macroZone').textContent=d.zone||'—';
+    document.getElementById('macroZone').style.color=col;
+    document.getElementById('macroZoneDesc').textContent=d.zone_desc||'';
+    document.getElementById('macroZoneCard').style.borderColor=col;
+    document.getElementById('macroCompositeBar').style.width=comp+'%';
+    document.getElementById('macroCompositeBar').style.background=col;
+    document.getElementById('macroScoreHeader').textContent=comp.toFixed(0);
+    document.getElementById('macroScoreHeader').style.color=col;
+
+    const grid=document.getElementById('macroSignalsGrid');
+    grid.innerHTML=d.signals.map(s=>{
+        const sc=s.score||0;
+        const bc=sc>=70?'#44bb44':sc>=50?'#ff9900':sc>=30?'#ff6600':'#cc0000';
+        const ic=s.interpretation==='CALM'||s.interpretation==='TIGHT'||s.interpretation==='BROAD'||s.interpretation==='UPTREND'||s.interpretation==='CONTANGO'||s.interpretation==='GREEDY'?'#44bb44':
+                 s.interpretation==='NEUTRAL'||s.interpretation==='NARROW'||s.interpretation==='NORMAL'||s.interpretation==='MIXED'?'#ff9900':'#cc0000';
+        return `<div class="macro-signal-card">
+            <div class="macro-signal-name">${s.name}</div>
+            <div class="macro-signal-value" style="color:${bc}">${s.value_label||'—'}</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                <span style="font-size:11px;color:#666">Score</span>
+                <span style="font-size:16px;font-weight:bold;color:${bc}">${sc.toFixed(0)}/100</span>
+            </div>
+            <div class="macro-score-bar-wrap">
+                <div class="macro-score-bar" style="width:${sc}%;background:${bc}"></div>
+            </div>
+            <div style="display:flex;justify-content:flex-end">
+                <span style="font-size:11px;padding:2px 8px;border-radius:10px;background:${ic}22;color:${ic}">${s.interpretation||'?'}</span>
+            </div>
+            <div class="macro-signal-detail">${s.detail||''}</div>
+        </div>`;
+    }).join('');
+}
+
 // ── Quantitative Analysis tab ─────────────────────────────────────────────────
 function renderQuantTab(section){
     document.querySelectorAll('.quant-btn').forEach(b=>b.classList.remove('active'));
@@ -1080,6 +1125,27 @@ window.addEventListener('resize',()=>{
 </div>
 
 
+<!-- TAB: Market Status -->
+<div id="tab-market_status" class="tab-content">
+<div class="section">
+<h2>Macro Deployment Gate</h2>
+<p style="color:#888;font-size:13px;margin-bottom:20px">6 macro signals scored 0–100, blended into a composite deployment score. Answers: <em>"Should I be deploying capital right now?"</em></p>
+<div class="macro-zone-card" id="macroZoneCard">
+  <div style="font-size:12px;color:#888;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px">Composite Deployment Score</div>
+  <div id="macroComposite" style="font-size:72px;font-weight:bold;color:#888">—</div>
+  <div id="macroZone" style="font-size:22px;font-weight:bold;margin:8px 0">—</div>
+  <div id="macroZoneDesc" style="font-size:13px;color:#888">Click Run Nightly Now to load macro data</div>
+  <div style="margin-top:16px;height:12px;background:#0f0f1a;border-radius:6px;max-width:400px;margin:16px auto 0">
+    <div id="macroCompositeBar" style="height:12px;border-radius:6px;width:0%;background:#888;transition:width 0.8s"></div>
+  </div>
+</div>
+<div class="macro-grid" id="macroSignalsGrid">
+  <p style="color:#888">Loading signals...</p>
+</div>
+</div>
+</div>
+
+
 <!-- TAB: Quantitative Analysis -->
 <div id="tab-quantitative" class="tab-content">
 <div class="section">
@@ -1139,6 +1205,27 @@ window.addEventListener('resize',()=>{
     </div>
     <div id="intradayChartBox2" style="height:350px"></div>
   </div>
+</div>
+
+
+<!-- TAB: Market Status -->
+<div id="tab-market_status" class="tab-content">
+<div class="section">
+<h2>Macro Deployment Gate</h2>
+<p style="color:#888;font-size:13px;margin-bottom:20px">6 macro signals scored 0–100, blended into a composite deployment score. Answers: <em>"Should I be deploying capital right now?"</em></p>
+<div class="macro-zone-card" id="macroZoneCard">
+  <div style="font-size:12px;color:#888;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px">Composite Deployment Score</div>
+  <div id="macroComposite" style="font-size:72px;font-weight:bold;color:#888">—</div>
+  <div id="macroZone" style="font-size:22px;font-weight:bold;margin:8px 0">—</div>
+  <div id="macroZoneDesc" style="font-size:13px;color:#888">Click Run Nightly Now to load macro data</div>
+  <div style="margin-top:16px;height:12px;background:#0f0f1a;border-radius:6px;max-width:400px;margin:16px auto 0">
+    <div id="macroCompositeBar" style="height:12px;border-radius:6px;width:0%;background:#888;transition:width 0.8s"></div>
+  </div>
+</div>
+<div class="macro-grid" id="macroSignalsGrid">
+  <p style="color:#888">Loading signals...</p>
+</div>
+</div>
 </div>
 
 
