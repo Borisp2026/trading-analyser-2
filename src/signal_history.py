@@ -83,7 +83,10 @@ def record_signals(results: list):
             "outcome": "PENDING",
         }
 
-        history[ticker].append(entry)
+        if history[ticker] and history[ticker][-1].get("date") == today_str:
+            history[ticker][-1] = entry  # overwrite today's entry -- one per day
+        else:
+            history[ticker].append(entry)
 
         # Keep only last MAX_DAYS entries
         history[ticker] = history[ticker][-MAX_DAYS:]
