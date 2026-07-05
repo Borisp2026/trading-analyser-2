@@ -147,6 +147,63 @@ def signal_spx_trend():
 
 
 # ── Main runner ───────────────────────────────────────────────────────────────
+
+
+def signal_asx_trend():
+    """XJO (ASX 200) vs MA50/MA200."""
+    import yfinance as yf
+    try:
+        df = yf.Ticker("^AXJO").history(period="1y", auto_adjust=True)
+        if df is None or len(df) < 50: return {"name":"ASX Trend","score":50,"value":0,"value_label":"—","detail":"Insufficient data","interpretation":"NEUTRAL"}
+        price = float(df["Close"].iloc[-1])
+        ma50  = float(df["Close"].tail(50).mean())
+        ma200 = float(df["Close"].tail(200).mean()) if len(df)>=200 else ma50
+        above50  = price > ma50
+        above200 = price > ma200
+        golden   = ma50 > ma200
+        if above50 and above200 and golden: score,interp = 100,"UPTREND"
+        elif above200: score,interp = 70,"ABOVE 200MA"
+        elif above50:  score,interp = 40,"BELOW 200MA"
+        else:          score,interp = 10,"DOWNTREND"
+        return {"name":"ASX Trend","score":score,"value":round(price,0),
+                "value_label":f"XJO {price:,.0f}","detail":f"XJO vs MA50({'✓' if above50 else '✗'}) MA200({'✓' if above200 else '✗'})","interpretation":interp}
+    except Exception as e:
+        return {"name":"ASX Trend","score":50,"value":0,"value_label":"—","detail":str(e),"interpretation":"NEUTRAL"}
+
+def signal_asx_breadth():
+    """% of ASX sector ETFs above their 50-day MA."""
+    import yfinance as yf
+    ASX_ETFS = ["^AXEJ","^AXFJ","^AXHJ","^AXIJ","^AXMJ","^AXNJ","^AXPJ","^AXSJ","^AXUJ"]
+    above = 0
+    for sym in ASX_ETFS:
+        try:
+            df = yf.Ticker(sym).history(period="90d",auto_adjust=True)
+            if df is not None and len(df)>=50:
+                if float(df["Close"].iloc[-1]) > float(df["Close"].tail(50).mean()):
+                    above += 1
+        except: pass
+    pct = above/len(ASX_ETFS)*100
+    score = min(100,max(0,(pct-30)/50*100))
+    interp = "BROAD" if pct>=70 else "MIXED" if pct>=40 else "NARROW"
+    return {"name":"ASX Breadth","score":round(score,1),"value":round(pct,0),
+            "value_label":f"{pct:.0f}% above 50MA","detail":f"{above}/{len(ASX_ETFS)} ASX sectors above 50-day MA","interpretation":interp}
+
+def signal_asx_vix():
+    """Australia VIX (XVI) as ASX fear gauge."""
+    import yfinance as yf
+    try:
+        df = yf.Ticker("^XVI").history(period="1y",auto_adjust=True)
+        if df is None or len(df)<20:
+            df = yf.Ticker("^VIX").history(period="1y",auto_adjust=True)
+        val = float(df["Close"].iloc[-1])
+        rank = (df["Close"] > val).sum() / len(df) * 100
+        score = round(rank,1)
+        interp = "CALM" if val<15 else "NEUTRAL" if val<20 else "FEARFUL"
+        return {"name":"ASX Volatility","score":score,"value":round(val,1),
+                "value_label":f"XVI {val:.1f}","detail":f"Lower than {rank:.0f}% of past year","interpretation":interp}
+    except Exception as e:
+        return {"name":"ASX Volatility","score":50,"value":0,"value_label":"—","detail":str(e),"interpretation":"NEUTRAL"}
+
 def run_macro_gate():
     print("\n--- Macro Deployment Gate ---")
     vix_hist  = yf.Ticker("^VIX").history(period="1y", auto_adjust=True)

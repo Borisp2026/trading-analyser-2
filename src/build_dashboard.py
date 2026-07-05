@@ -803,7 +803,7 @@ function renderQuantTab(section){
     document.querySelectorAll('.quant-btn').forEach(b=>b.classList.remove('active'));
     const btn=document.getElementById('qbtn-'+section);
     if(btn)btn.classList.add('active');
-    const results=QUANT_DATA.results||{};
+    const results=QUANT_DATA||{};
     const tickers=Object.keys(results);
     if(!tickers.length){
         document.getElementById('quantContent').innerHTML='<p style="color:#888;padding:20px">No quantitative data yet — click "Run Nightly Now" to generate.</p>';return;
@@ -978,7 +978,7 @@ function renderSensitivity(results,tickers){
 
 function renderSensGrid(){
     const t=(document.getElementById('sensSelect')||{value:''}).value;
-    const s=(QUANT_DATA.results||{})[t]?.sensitivity||{};
+    const s=(QUANT_DATA||{})[t]?.sensitivity||{};
     const grid=s.grid||[];
     if(!grid.length)return;
     const rsiPs=[...new Set(grid.map(r=>r.rsi_period))];
