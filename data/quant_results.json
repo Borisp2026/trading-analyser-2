@@ -1,0 +1,5028 @@
+{
+  "results": {
+    "EOS.AX": {
+      "ticker": "EOS.AX",
+      "earnings": {
+        "ticker": "EOS.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "EOS.AX",
+        "ret_12m": 274.54,
+        "ret_1m": -6.02,
+        "momentum": 280.56,
+        "percentile": 100.0,
+        "signal": "BUY"
+      },
+      "rsi_strategy": {
+        "ticker": "EOS.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "EOS.AX",
+        "price": 10.15,
+        "ma50": 9.636,
+        "ma200": 8.301,
+        "trend": "UPTREND",
+        "cross_type": "NONE",
+        "cross_date": null,
+        "cross_price": null,
+        "days_since_cross": null,
+        "avg_golden_return_60d": 186.47,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "EOS.AX",
+        "current_price": 10.15,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 7.621,
+        "p25": 9.867,
+        "p50": 13.127,
+        "p75": 16.973,
+        "p90": 22.407,
+        "prob_up": 74.3,
+        "mu_daily": 0.5222,
+        "sigma_daily": 5.7163
+      },
+      "walk_forward": {
+        "ticker": "EOS.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 25,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "EOS.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 59.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 59.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 59.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 59.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 41.5
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 41.5
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 41.5
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 41.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 62.2
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 62.2
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 62.2
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 62.2
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 73,
+            "rsi_val": 39.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 73,
+            "rsi_val": 39.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 73,
+            "rsi_val": 39.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 73,
+            "rsi_val": 39.6
+          }
+        ],
+        "score_min": 57,
+        "score_max": 73,
+        "score_range": 16,
+        "score_mean": 65.0
+      }
+    },
+    "TOR.AX": {
+      "ticker": "TOR.AX",
+      "earnings": {
+        "ticker": "TOR.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "TOR.AX",
+        "ret_12m": 66.67,
+        "ret_1m": -23.08,
+        "momentum": 89.74,
+        "percentile": 81.8,
+        "signal": "BUY"
+      },
+      "rsi_strategy": {
+        "ticker": "TOR.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "TOR.AX",
+        "price": 0.25,
+        "ma50": 0.35,
+        "ma200": 0.332,
+        "trend": "UPTREND",
+        "cross_type": "NONE",
+        "cross_date": null,
+        "cross_price": null,
+        "days_since_cross": null,
+        "avg_golden_return_60d": null,
+        "n_golden_crosses": 0
+      },
+      "monte_carlo": {
+        "ticker": "TOR.AX",
+        "current_price": 0.25,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 0.167,
+        "p25": 0.213,
+        "p50": 0.279,
+        "p75": 0.354,
+        "p90": 0.461,
+        "prob_up": 62.3,
+        "mu_daily": 0.2682,
+        "sigma_daily": 5.3581
+      },
+      "walk_forward": {
+        "ticker": "TOR.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 25,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "TOR.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 28.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 28.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 28.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 28.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 41.7
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 41.7
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 41.7
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 55,
+            "rsi_val": 41.7
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 27.8
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 27.8
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 27.8
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 27.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 43,
+            "rsi_val": 36.4
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 43,
+            "rsi_val": 36.4
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 43,
+            "rsi_val": 36.4
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 36.4
+          }
+        ],
+        "score_min": 35,
+        "score_max": 70,
+        "score_range": 35,
+        "score_mean": 49.5
+      }
+    },
+    "MIN.AX": {
+      "ticker": "MIN.AX",
+      "earnings": {
+        "ticker": "MIN.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "MIN.AX",
+        "ret_12m": 168.77,
+        "ret_1m": -8.6,
+        "momentum": 177.37,
+        "percentile": 86.4,
+        "signal": "BUY"
+      },
+      "rsi_strategy": {
+        "ticker": "MIN.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "MIN.AX",
+        "price": 65.07,
+        "ma50": 67.437,
+        "ma200": 55.764,
+        "trend": "UPTREND",
+        "cross_type": "NONE",
+        "cross_date": null,
+        "cross_price": null,
+        "days_since_cross": null,
+        "avg_golden_return_60d": 38.49,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "MIN.AX",
+        "current_price": 65.07,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 45.984,
+        "p25": 55.236,
+        "p50": 67.955,
+        "p75": 81.556,
+        "p90": 99.793,
+        "prob_up": 57.3,
+        "mu_daily": 0.115,
+        "sigma_daily": 4.0814
+      },
+      "walk_forward": {
+        "ticker": "MIN.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "MIN.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 44.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 55,
+            "rsi_val": 44.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 44.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 55,
+            "rsi_val": 44.2
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 32.9
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 32.9
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 32.9
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 32.9
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 38.0
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 38.0
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 38.0
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 38.0
+          }
+        ],
+        "score_min": 55,
+        "score_max": 63,
+        "score_range": 8,
+        "score_mean": 61.0
+      }
+    },
+    "IPX.AX": {
+      "ticker": "IPX.AX",
+      "earnings": {
+        "ticker": "IPX.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "IPX.AX",
+        "ret_12m": -3.94,
+        "ret_1m": -26.55,
+        "momentum": 22.61,
+        "percentile": 45.5,
+        "signal": "NEUTRAL"
+      },
+      "rsi_strategy": {
+        "ticker": "IPX.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "IPX.AX",
+        "price": 4.15,
+        "ma50": 4.887,
+        "ma200": 5.716,
+        "trend": "DOWNTREND",
+        "cross_type": "DEATH",
+        "cross_date": "2026-03-27",
+        "cross_price": 3.21,
+        "days_since_cross": 67,
+        "avg_golden_return_60d": 52.07,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "IPX.AX",
+        "current_price": 4.15,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 2.888,
+        "p25": 3.59,
+        "p50": 4.582,
+        "p75": 5.687,
+        "p90": 7.209,
+        "prob_up": 62.3,
+        "mu_daily": 0.2302,
+        "sigma_daily": 4.8289
+      },
+      "walk_forward": {
+        "ticker": "IPX.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 28,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 28,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "IPX.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 47.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 47.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 47.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 47.2
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 43.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 43.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 43.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 43.6
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 26.2
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 26.2
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 26.2
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 26.2
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 27.9
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 27.9
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 27.9
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 27.9
+          }
+        ],
+        "score_min": 35,
+        "score_max": 50,
+        "score_range": 15,
+        "score_mean": 42.5
+      }
+    },
+    "GLN.AX": {
+      "ticker": "GLN.AX",
+      "earnings": {
+        "ticker": "GLN.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "GLN.AX",
+        "ret_12m": 170.37,
+        "ret_1m": -12.05,
+        "momentum": 182.42,
+        "percentile": 90.9,
+        "signal": "BUY"
+      },
+      "rsi_strategy": {
+        "ticker": "GLN.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "GLN.AX",
+        "price": 0.365,
+        "ma50": 0.445,
+        "ma200": 0.332,
+        "trend": "UPTREND",
+        "cross_type": "NONE",
+        "cross_date": null,
+        "cross_price": null,
+        "days_since_cross": null,
+        "avg_golden_return_60d": -3.45,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "GLN.AX",
+        "current_price": 0.365,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 0.243,
+        "p25": 0.313,
+        "p50": 0.414,
+        "p75": 0.532,
+        "p90": 0.699,
+        "prob_up": 63.7,
+        "mu_daily": 0.3077,
+        "sigma_daily": 5.5873
+      },
+      "walk_forward": {
+        "ticker": "GLN.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "GLN.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 27.3
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 27.3
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 70,
+            "rsi_val": 27.3
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 27.3
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 17.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 17.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 70,
+            "rsi_val": 17.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 17.6
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 43,
+            "rsi_val": 35.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 35.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 35.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 35.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 43,
+            "rsi_val": 35.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 35.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 35.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 35.8
+          }
+        ],
+        "score_min": 43,
+        "score_max": 70,
+        "score_range": 27,
+        "score_mean": 61.5
+      }
+    },
+    "AFG.AX": {
+      "ticker": "AFG.AX",
+      "earnings": {
+        "ticker": "AFG.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "AFG.AX",
+        "ret_12m": -16.96,
+        "ret_1m": 1.24,
+        "momentum": -18.19,
+        "percentile": 4.5,
+        "signal": "NEUTRAL"
+      },
+      "rsi_strategy": {
+        "ticker": "AFG.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "AFG.AX",
+        "price": 1.635,
+        "ma50": 1.729,
+        "ma200": 2.039,
+        "trend": "DOWNTREND",
+        "cross_type": "DEATH",
+        "cross_date": "2026-01-23",
+        "cross_price": 2.019,
+        "days_since_cross": 111,
+        "avg_golden_return_60d": null,
+        "n_golden_crosses": 0
+      },
+      "monte_carlo": {
+        "ticker": "AFG.AX",
+        "current_price": 1.635,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 1.382,
+        "p25": 1.53,
+        "p50": 1.722,
+        "p75": 1.906,
+        "p90": 2.14,
+        "prob_up": 63.0,
+        "mu_daily": 0.087,
+        "sigma_daily": 2.2951
+      },
+      "walk_forward": {
+        "ticker": "AFG.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 25,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "AFG.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 43,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 43,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 43,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 43,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 43,
+            "rsi_val": 39.1
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 43,
+            "rsi_val": 39.1
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 43,
+            "rsi_val": 39.1
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 43,
+            "rsi_val": 39.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 46.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 46.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 46.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 46.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 52.2
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 52.2
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 52.2
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 52.2
+          }
+        ],
+        "score_min": 35,
+        "score_max": 43,
+        "score_range": 8,
+        "score_mean": 39.0
+      }
+    },
+    "GMD.AX": {
+      "ticker": "GMD.AX",
+      "earnings": {
+        "ticker": "GMD.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "GMD.AX",
+        "ret_12m": 46.96,
+        "ret_1m": 12.12,
+        "momentum": 34.84,
+        "percentile": 72.7,
+        "signal": "WATCH"
+      },
+      "rsi_strategy": {
+        "ticker": "GMD.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "GMD.AX",
+        "price": 6.29,
+        "ma50": 5.873,
+        "ma200": 6.419,
+        "trend": "DOWNTREND",
+        "cross_type": "DEATH",
+        "cross_date": "2026-05-18",
+        "cross_price": 6.04,
+        "days_since_cross": 33,
+        "avg_golden_return_60d": null,
+        "n_golden_crosses": 0
+      },
+      "monte_carlo": {
+        "ticker": "GMD.AX",
+        "current_price": 6.29,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 5.391,
+        "p25": 6.293,
+        "p50": 7.504,
+        "p75": 8.739,
+        "p90": 10.374,
+        "prob_up": 75.0,
+        "mu_daily": 0.3067,
+        "sigma_daily": 3.4512
+      },
+      "walk_forward": {
+        "ticker": "GMD.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "GMD.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 37,
+            "rsi_val": 69.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 37,
+            "rsi_val": 69.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 37,
+            "rsi_val": 69.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 37,
+            "rsi_val": 69.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 56.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 56.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 56.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 56.4
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 57.9
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 57.9
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 57.9
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 57.9
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 53.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 53.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 53.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 53.6
+          }
+        ],
+        "score_min": 37,
+        "score_max": 45,
+        "score_range": 8,
+        "score_mean": 43.0
+      }
+    },
+    "CU6.AX": {
+      "ticker": "CU6.AX",
+      "earnings": {
+        "ticker": "CU6.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "CU6.AX",
+        "ret_12m": -16.29,
+        "ret_1m": -4.33,
+        "momentum": -11.96,
+        "percentile": 9.1,
+        "signal": "NEUTRAL"
+      },
+      "rsi_strategy": {
+        "ticker": "CU6.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "CU6.AX",
+        "price": 2.21,
+        "ma50": 2.5,
+        "ma200": 3.383,
+        "trend": "DOWNTREND",
+        "cross_type": "DEATH",
+        "cross_date": "2026-02-03",
+        "cross_price": 2.96,
+        "days_since_cross": 105,
+        "avg_golden_return_60d": 17.3,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "CU6.AX",
+        "current_price": 2.21,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 1.235,
+        "p25": 1.567,
+        "p50": 2.043,
+        "p75": 2.587,
+        "p90": 3.351,
+        "prob_up": 42.3,
+        "mu_daily": -0.0327,
+        "sigma_daily": 5.259
+      },
+      "walk_forward": {
+        "ticker": "CU6.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 25,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 25,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 25,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 28,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "CU6.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 56.8
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 56.8
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 56.8
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 56.8
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 52.1
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 52.1
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 52.1
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 52.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 48.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 48.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 48.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 48.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 46.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 46.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 46.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 46.6
+          }
+        ],
+        "score_min": 35,
+        "score_max": 45,
+        "score_range": 10,
+        "score_mean": 40.0
+      }
+    },
+    "MSB.AX": {
+      "ticker": "MSB.AX",
+      "earnings": {
+        "ticker": "MSB.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "MSB.AX",
+        "ret_12m": 29.56,
+        "ret_1m": 1.98,
+        "momentum": 27.58,
+        "percentile": 59.1,
+        "signal": "WATCH"
+      },
+      "rsi_strategy": {
+        "ticker": "MSB.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "MSB.AX",
+        "price": 2.06,
+        "ma50": 2.067,
+        "ma200": 2.365,
+        "trend": "DOWNTREND",
+        "cross_type": "DEATH",
+        "cross_date": "2026-03-24",
+        "cross_price": 2.06,
+        "days_since_cross": 70,
+        "avg_golden_return_60d": 35.18,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "MSB.AX",
+        "current_price": 2.06,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 1.446,
+        "p25": 1.804,
+        "p50": 2.312,
+        "p75": 2.881,
+        "p90": 3.667,
+        "prob_up": 64.0,
+        "mu_daily": 0.2598,
+        "sigma_daily": 4.9157
+      },
+      "walk_forward": {
+        "ticker": "MSB.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "MSB.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 53,
+            "rsi_val": 33.7
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 53,
+            "rsi_val": 33.7
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 43,
+            "rsi_val": 33.7
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 43,
+            "rsi_val": 33.7
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 44.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 44.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 44.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 44.4
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 56.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 56.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 56.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 56.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 52.1
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 52.1
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 35,
+            "rsi_val": 52.1
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 52.1
+          }
+        ],
+        "score_min": 35,
+        "score_max": 53,
+        "score_range": 18,
+        "score_mean": 42.0
+      }
+    },
+    "TLX.AX": {
+      "ticker": "TLX.AX",
+      "earnings": {
+        "ticker": "TLX.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "TLX.AX",
+        "ret_12m": -29.78,
+        "ret_1m": 30.95,
+        "momentum": -60.74,
+        "percentile": 0.0,
+        "signal": "NEUTRAL"
+      },
+      "rsi_strategy": {
+        "ticker": "TLX.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "TLX.AX",
+        "price": 16.88,
+        "ma50": 14.473,
+        "ma200": 13.419,
+        "trend": "UPTREND",
+        "cross_type": "GOLDEN",
+        "cross_date": "2026-05-19",
+        "cross_price": 14.21,
+        "days_since_cross": 32,
+        "avg_golden_return_60d": null,
+        "n_golden_crosses": 0
+      },
+      "monte_carlo": {
+        "ticker": "TLX.AX",
+        "current_price": 16.88,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 12.409,
+        "p25": 14.399,
+        "p50": 17.048,
+        "p75": 19.727,
+        "p90": 23.262,
+        "prob_up": 51.3,
+        "mu_daily": 0.0382,
+        "sigma_daily": 3.3032
+      },
+      "walk_forward": {
+        "ticker": "TLX.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 32,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "TLX.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 72.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 72.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 72.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 72.5
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 77.3
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 77.3
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 77.3
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 77.3
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 80.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 80.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 80.5
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 80.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 84.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 84.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 84.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 84.5
+          }
+        ],
+        "score_min": 50,
+        "score_max": 50,
+        "score_range": 0,
+        "score_mean": 50.0
+      }
+    },
+    "NXT.AX": {
+      "ticker": "NXT.AX",
+      "earnings": {
+        "ticker": "NXT.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "NXT.AX",
+        "ret_12m": -3.53,
+        "ret_1m": -18.08,
+        "momentum": 14.56,
+        "percentile": 40.9,
+        "signal": "NEUTRAL"
+      },
+      "rsi_strategy": {
+        "ticker": "NXT.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "NXT.AX",
+        "price": 13.41,
+        "ma50": 14.773,
+        "ma200": 14.226,
+        "trend": "UPTREND",
+        "cross_type": "GOLDEN",
+        "cross_date": "2026-06-15",
+        "cross_price": 14.81,
+        "days_since_cross": 14,
+        "avg_golden_return_60d": 4.01,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "NXT.AX",
+        "current_price": 13.41,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 10.423,
+        "p25": 11.607,
+        "p50": 13.144,
+        "p75": 14.625,
+        "p90": 16.521,
+        "prob_up": 44.7,
+        "mu_daily": -0.0254,
+        "sigma_daily": 2.4153
+      },
+      "walk_forward": {
+        "ticker": "NXT.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 28,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "NXT.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 70,
+            "rsi_val": 21.9
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 21.9
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 70,
+            "rsi_val": 21.9
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 21.9
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 70,
+            "rsi_val": 25.9
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 25.9
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 70,
+            "rsi_val": 25.9
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 25.9
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 33.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 33.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 33.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 33.1
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 70,
+            "rsi_val": 26.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 26.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 70,
+            "rsi_val": 26.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 70,
+            "rsi_val": 26.6
+          }
+        ],
+        "score_min": 63,
+        "score_max": 70,
+        "score_range": 7,
+        "score_mean": 68.2
+      }
+    },
+    "APA.AX": {
+      "ticker": "APA.AX",
+      "earnings": {
+        "ticker": "APA.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "APA.AX",
+        "ret_12m": 26.24,
+        "ret_1m": -1.07,
+        "momentum": 27.31,
+        "percentile": 54.5,
+        "signal": "WATCH"
+      },
+      "rsi_strategy": {
+        "ticker": "APA.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "APA.AX",
+        "price": 9.93,
+        "ma50": 10.091,
+        "ma200": 9.134,
+        "trend": "UPTREND",
+        "cross_type": "NONE",
+        "cross_date": null,
+        "cross_price": null,
+        "days_since_cross": null,
+        "avg_golden_return_60d": null,
+        "n_golden_crosses": 0
+      },
+      "monte_carlo": {
+        "ticker": "APA.AX",
+        "current_price": 9.93,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 9.365,
+        "p25": 9.849,
+        "p50": 10.452,
+        "p75": 10.993,
+        "p90": 11.662,
+        "prob_up": 73.3,
+        "mu_daily": 0.0778,
+        "sigma_daily": 1.1457
+      },
+      "walk_forward": {
+        "ticker": "APA.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "APA.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 37.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 37.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 37.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 37.5
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 46.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 55,
+            "rsi_val": 46.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 46.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 55,
+            "rsi_val": 46.6
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 30.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 51.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 55,
+            "rsi_val": 51.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 51.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 55,
+            "rsi_val": 51.8
+          }
+        ],
+        "score_min": 55,
+        "score_max": 63,
+        "score_range": 8,
+        "score_mean": 59.0
+      }
+    },
+    "GWA.AX": {
+      "ticker": "GWA.AX",
+      "earnings": {
+        "ticker": "GWA.AX",
+        "next_earnings": "N/A",
+        "history": [],
+        "error": "list index out of range"
+      },
+      "momentum": {
+        "ticker": "GWA.AX",
+        "ret_12m": 5.4,
+        "ret_1m": 11.06,
+        "momentum": -5.66,
+        "percentile": 18.2,
+        "signal": "NEUTRAL"
+      },
+      "rsi_strategy": {
+        "ticker": "GWA.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "GWA.AX",
+        "price": 2.31,
+        "ma50": 2.134,
+        "ma200": 2.313,
+        "trend": "DOWNTREND",
+        "cross_type": "DEATH",
+        "cross_date": "2026-04-01",
+        "cross_price": 2.12,
+        "days_since_cross": 64,
+        "avg_golden_return_60d": 13.97,
+        "n_golden_crosses": 2
+      },
+      "monte_carlo": {
+        "ticker": "GWA.AX",
+        "current_price": 2.31,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 2.0,
+        "p25": 2.16,
+        "p50": 2.364,
+        "p75": 2.554,
+        "p90": 2.79,
+        "prob_up": 58.3,
+        "mu_daily": 0.0361,
+        "sigma_daily": 1.7426
+      },
+      "walk_forward": {
+        "ticker": "GWA.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 28,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "GWA.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 57.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 57.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 57.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 57.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 47.8
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 47.8
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 47.8
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 47.8
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 60.3
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 37,
+            "rsi_val": 60.3
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 37,
+            "rsi_val": 60.3
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 37,
+            "rsi_val": 60.3
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 65.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 37,
+            "rsi_val": 65.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 37,
+            "rsi_val": 65.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 37,
+            "rsi_val": 65.5
+          }
+        ],
+        "score_min": 37,
+        "score_max": 65,
+        "score_range": 28,
+        "score_mean": 46.0
+      }
+    },
+    "AAPL": {
+      "ticker": "AAPL",
+      "earnings": {
+        "ticker": "AAPL",
+        "next_earnings": "2026-07-30",
+        "history": []
+      },
+      "momentum": {
+        "ticker": "AAPL",
+        "ret_12m": 45.86,
+        "ret_1m": -0.53,
+        "momentum": 46.38,
+        "percentile": 77.3,
+        "signal": "WATCH"
+      },
+      "rsi_strategy": {
+        "ticker": "AAPL",
+        "error": "Cannot compare dtypes datetime64[s, America/New_York] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "AAPL",
+        "price": 308.63,
+        "ma50": 293.457,
+        "ma200": 270.321,
+        "trend": "UPTREND",
+        "cross_type": "NONE",
+        "cross_date": null,
+        "cross_price": null,
+        "days_since_cross": null,
+        "avg_golden_return_60d": 17.22,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "AAPL",
+        "current_price": 308.63,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 274.057,
+        "p25": 296.687,
+        "p50": 325.389,
+        "p75": 352.28,
+        "p90": 385.878,
+        "prob_up": 66.7,
+        "mu_daily": 0.084,
+        "sigma_daily": 1.7915
+      },
+      "walk_forward": {
+        "ticker": "AAPL",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-02 to 2026-03-03",
+            "optimal_rsi_thresh": 28,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-04 to 2026-04-01",
+            "optimal_rsi_thresh": 28,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-02 to 2026-05-01",
+            "optimal_rsi_thresh": 28,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-04 to 2026-06-02",
+            "optimal_rsi_thresh": 28,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-03 to 2026-07-02",
+            "optimal_rsi_thresh": 28,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "AAPL",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 62.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 62.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 62.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 62.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 60.1
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 60.1
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 60.1
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 60.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 58.3
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 58.3
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 58.3
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 58.3
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 47.0
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 47.0
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 47.0
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 47.0
+          }
+        ],
+        "score_min": 57,
+        "score_max": 65,
+        "score_range": 8,
+        "score_mean": 61.0
+      }
+    },
+    "MSFT": {
+      "ticker": "MSFT",
+      "earnings": {
+        "ticker": "MSFT",
+        "next_earnings": "2026-07-29",
+        "history": []
+      },
+      "momentum": {
+        "ticker": "MSFT",
+        "ret_12m": -19.85,
+        "ret_1m": -8.62,
+        "momentum": -11.23,
+        "percentile": 13.6,
+        "signal": "NEUTRAL"
+      },
+      "rsi_strategy": {
+        "ticker": "MSFT",
+        "error": "Cannot compare dtypes datetime64[s, America/New_York] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "MSFT",
+        "price": 390.49,
+        "ma50": 407.216,
+        "ma200": 443.785,
+        "trend": "DOWNTREND",
+        "cross_type": "DEATH",
+        "cross_date": "2026-01-22",
+        "cross_price": 449.14,
+        "days_since_cross": 111,
+        "avg_golden_return_60d": 7.63,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "MSFT",
+        "current_price": 390.49,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 329.81,
+        "p25": 354.994,
+        "p50": 386.739,
+        "p75": 416.299,
+        "p90": 453.084,
+        "prob_up": 46.0,
+        "mu_daily": -0.0162,
+        "sigma_daily": 1.6595
+      },
+      "walk_forward": {
+        "ticker": "MSFT",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-02 to 2026-03-03",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-04 to 2026-04-01",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-02 to 2026-05-01",
+            "optimal_rsi_thresh": 32,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-04 to 2026-06-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-03 to 2026-07-02",
+            "optimal_rsi_thresh": 32,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "MSFT",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 37,
+            "rsi_val": 62.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 37,
+            "rsi_val": 62.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 47,
+            "rsi_val": 62.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 27,
+            "rsi_val": 62.2
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 56.7
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 56.7
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 56.7
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 56.7
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 50.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 45,
+            "rsi_val": 50.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 50.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 50.1
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 53,
+            "rsi_val": 35.0
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 53,
+            "rsi_val": 35.0
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 35.0
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 43,
+            "rsi_val": 35.0
+          }
+        ],
+        "score_min": 27,
+        "score_max": 63,
+        "score_range": 36,
+        "score_mean": 45.0
+      }
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "earnings": {
+        "ticker": "NVDA",
+        "next_earnings": "2026-08-26",
+        "history": []
+      },
+      "momentum": {
+        "ticker": "NVDA",
+        "ret_12m": 24.06,
+        "ret_1m": -9.17,
+        "momentum": 33.23,
+        "percentile": 68.2,
+        "signal": "WATCH"
+      },
+      "rsi_strategy": {
+        "ticker": "NVDA",
+        "error": "Cannot compare dtypes datetime64[s, America/New_York] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "NVDA",
+        "price": 194.83,
+        "ma50": 209.647,
+        "ma200": 190.82,
+        "trend": "UPTREND",
+        "cross_type": "NONE",
+        "cross_date": null,
+        "cross_price": null,
+        "days_since_cross": null,
+        "avg_golden_return_60d": 13.12,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "NVDA",
+        "current_price": 194.83,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 156.778,
+        "p25": 179.407,
+        "p50": 209.278,
+        "p75": 238.841,
+        "p90": 277.525,
+        "prob_up": 63.7,
+        "mu_daily": 0.1291,
+        "sigma_daily": 3.0038
+      },
+      "walk_forward": {
+        "ticker": "NVDA",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-02 to 2026-03-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-04 to 2026-04-01",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-02 to 2026-05-01",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-04 to 2026-06-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-03 to 2026-07-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "NVDA",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 37.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 37.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 37.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 37.2
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 36.7
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 36.7
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 36.7
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 36.7
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 40.4
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 55,
+            "rsi_val": 40.4
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 40.4
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 55,
+            "rsi_val": 40.4
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 35.3
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 35.3
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 63,
+            "rsi_val": 35.3
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 63,
+            "rsi_val": 35.3
+          }
+        ],
+        "score_min": 55,
+        "score_max": 63,
+        "score_range": 8,
+        "score_mean": 61.0
+      }
+    },
+    "AMD": {
+      "ticker": "AMD",
+      "earnings": {
+        "ticker": "AMD",
+        "next_earnings": "2026-08-04",
+        "history": []
+      },
+      "momentum": {
+        "ticker": "AMD",
+        "ret_12m": 273.82,
+        "ret_1m": -4.55,
+        "momentum": 278.38,
+        "percentile": 95.5,
+        "signal": "BUY"
+      },
+      "rsi_strategy": {
+        "ticker": "AMD",
+        "error": "Cannot compare dtypes datetime64[s, America/New_York] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "AMD",
+        "price": 517.82,
+        "ma50": 460.381,
+        "ma200": 278.186,
+        "trend": "UPTREND",
+        "cross_type": "NONE",
+        "cross_date": null,
+        "cross_price": null,
+        "days_since_cross": null,
+        "avg_golden_return_60d": 45.48,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "AMD",
+        "current_price": 517.82,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 421.936,
+        "p25": 502.108,
+        "p50": 611.54,
+        "p75": 727.004,
+        "p90": 880.976,
+        "prob_up": 72.7,
+        "mu_daily": 0.3041,
+        "sigma_daily": 3.884
+      },
+      "walk_forward": {
+        "ticker": "AMD",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-02 to 2026-03-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-04 to 2026-04-01",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-02 to 2026-05-01",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-04 to 2026-06-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-03 to 2026-07-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "AMD",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 49.3
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 49.3
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 49.3
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 49.3
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 51.2
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 51.2
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 51.2
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 51.2
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 54.6
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 54.6
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 54.6
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 54.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 49.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 49.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 49.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 49.6
+          }
+        ],
+        "score_min": 65,
+        "score_max": 65,
+        "score_range": 0,
+        "score_mean": 65.0
+      }
+    },
+    "TSLA": {
+      "ticker": "TSLA",
+      "earnings": {
+        "ticker": "TSLA",
+        "next_earnings": "2026-07-22",
+        "history": []
+      },
+      "momentum": {
+        "ticker": "TSLA",
+        "ret_12m": 24.65,
+        "ret_1m": -7.14,
+        "momentum": 31.79,
+        "percentile": 63.6,
+        "signal": "WATCH"
+      },
+      "rsi_strategy": {
+        "ticker": "TSLA",
+        "error": "Cannot compare dtypes datetime64[s, America/New_York] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "TSLA",
+        "price": 393.45,
+        "ma50": 406.42,
+        "ma200": 418.608,
+        "trend": "DOWNTREND",
+        "cross_type": "DEATH",
+        "cross_date": "2026-04-09",
+        "cross_price": 345.62,
+        "days_since_cross": 58,
+        "avg_golden_return_60d": 23.94,
+        "n_golden_crosses": 2
+      },
+      "monte_carlo": {
+        "ticker": "TSLA",
+        "current_price": 393.45,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 295.218,
+        "p25": 350.754,
+        "p50": 426.491,
+        "p75": 506.17,
+        "p90": 612.357,
+        "prob_up": 62.7,
+        "mu_daily": 0.1665,
+        "sigma_daily": 3.8438
+      },
+      "walk_forward": {
+        "ticker": "TSLA",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-02 to 2026-03-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-04 to 2026-04-01",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-02 to 2026-05-01",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-04 to 2026-06-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-03 to 2026-07-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "TSLA",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 56.7
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 56.7
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 56.7
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 56.7
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 48.8
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 48.8
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 48.8
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 48.8
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 48.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 48.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 48.1
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 48.1
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 43.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 43.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 55,
+            "rsi_val": 43.8
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 35,
+            "rsi_val": 43.8
+          }
+        ],
+        "score_min": 35,
+        "score_max": 55,
+        "score_range": 20,
+        "score_mean": 45.0
+      }
+    },
+    "VAS.AX": {
+      "ticker": "VAS.AX",
+      "earnings": {
+        "ticker": "VAS.AX",
+        "next_earnings": "Unknown",
+        "history": []
+      },
+      "momentum": {
+        "ticker": "VAS.AX",
+        "ret_12m": 6.4,
+        "ret_1m": 2.98,
+        "momentum": 3.42,
+        "percentile": 22.7,
+        "signal": "NEUTRAL"
+      },
+      "rsi_strategy": {
+        "ticker": "VAS.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "VAS.AX",
+        "price": 109.65,
+        "ma50": 107.953,
+        "ma200": 107.697,
+        "trend": "UPTREND",
+        "cross_type": "GOLDEN",
+        "cross_date": "2026-06-03",
+        "cross_price": 108.911,
+        "days_since_cross": 21,
+        "avg_golden_return_60d": 2.74,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "VAS.AX",
+        "current_price": 109.65,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 104.548,
+        "p25": 108.274,
+        "p50": 112.9,
+        "p75": 116.946,
+        "p90": 121.922,
+        "prob_up": 69.0,
+        "mu_daily": 0.0425,
+        "sigma_daily": 0.8026
+      },
+      "walk_forward": {
+        "ticker": "VAS.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 32,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 32,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 32,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "VAS.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 57.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 57.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 57.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 57.5
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 52.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 52.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 52.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 52.4
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 45.0
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 45.0
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 45.0
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 45.0
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 52.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 52.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 52.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 52.5
+          }
+        ],
+        "score_min": 45,
+        "score_max": 65,
+        "score_range": 20,
+        "score_mean": 60.0
+      }
+    },
+    "IOZ.AX": {
+      "ticker": "IOZ.AX",
+      "earnings": {
+        "ticker": "IOZ.AX",
+        "next_earnings": "Unknown",
+        "history": []
+      },
+      "momentum": {
+        "ticker": "IOZ.AX",
+        "ret_12m": 6.26,
+        "ret_1m": 1.88,
+        "momentum": 4.39,
+        "percentile": 27.3,
+        "signal": "NEUTRAL"
+      },
+      "rsi_strategy": {
+        "ticker": "IOZ.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "IOZ.AX",
+        "price": 35.43,
+        "ma50": 34.907,
+        "ma200": 34.772,
+        "trend": "UPTREND",
+        "cross_type": "GOLDEN",
+        "cross_date": "2026-05-27",
+        "cross_price": 34.867,
+        "days_since_cross": 26,
+        "avg_golden_return_60d": 2.47,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "IOZ.AX",
+        "current_price": 35.43,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 33.795,
+        "p25": 34.992,
+        "p50": 36.478,
+        "p75": 37.778,
+        "p90": 39.376,
+        "prob_up": 69.0,
+        "mu_daily": 0.0424,
+        "sigma_daily": 0.798
+      },
+      "walk_forward": {
+        "ticker": "IOZ.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "IOZ.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 55.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 55.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 55.6
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 55.6
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 52.0
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 52.0
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 52.0
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 52.0
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 44.9
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 44.9
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 44.9
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 44.9
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 52.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 52.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 45,
+            "rsi_val": 52.5
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 52.5
+          }
+        ],
+        "score_min": 45,
+        "score_max": 65,
+        "score_range": 20,
+        "score_mean": 60.0
+      }
+    },
+    "NDQ.AX": {
+      "ticker": "NDQ.AX",
+      "earnings": {
+        "ticker": "NDQ.AX",
+        "next_earnings": "Unknown",
+        "history": []
+      },
+      "momentum": {
+        "ticker": "NDQ.AX",
+        "ret_12m": 22.74,
+        "ret_1m": 0.06,
+        "momentum": 22.69,
+        "percentile": 50.0,
+        "signal": "WATCH"
+      },
+      "rsi_strategy": {
+        "ticker": "NDQ.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "NDQ.AX",
+        "price": 62.07,
+        "ma50": 59.947,
+        "ma200": 55.394,
+        "trend": "UPTREND",
+        "cross_type": "GOLDEN",
+        "cross_date": "2026-05-26",
+        "cross_price": 60.399,
+        "days_since_cross": 27,
+        "avg_golden_return_60d": 7.43,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "NDQ.AX",
+        "current_price": 62.07,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 58.02,
+        "p25": 61.262,
+        "p50": 65.316,
+        "p75": 68.975,
+        "p90": 73.501,
+        "prob_up": 71.7,
+        "mu_daily": 0.0777,
+        "sigma_daily": 1.2359
+      },
+      "walk_forward": {
+        "ticker": "NDQ.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "NDQ.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 50.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 50.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 50.2
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 50.2
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 46.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 46.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 46.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 46.4
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 49.9
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 49.9
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 49.9
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 49.9
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 49.7
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 49.7
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 49.7
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 49.7
+          }
+        ],
+        "score_min": 65,
+        "score_max": 65,
+        "score_range": 0,
+        "score_mean": 65.0
+      }
+    },
+    "IVV.AX": {
+      "ticker": "IVV.AX",
+      "earnings": {
+        "ticker": "IVV.AX",
+        "next_earnings": "Unknown",
+        "history": []
+      },
+      "momentum": {
+        "ticker": "IVV.AX",
+        "ret_12m": 13.7,
+        "ret_1m": 2.36,
+        "momentum": 11.34,
+        "percentile": 36.4,
+        "signal": "NEUTRAL"
+      },
+      "rsi_strategy": {
+        "ticker": "IVV.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "IVV.AX",
+        "price": 71.86,
+        "ma50": 69.353,
+        "ma200": 67.134,
+        "trend": "UPTREND",
+        "cross_type": "GOLDEN",
+        "cross_date": "2026-06-05",
+        "cross_price": 70.472,
+        "days_since_cross": 19,
+        "avg_golden_return_60d": 6.55,
+        "n_golden_crosses": 1
+      },
+      "monte_carlo": {
+        "ticker": "IVV.AX",
+        "current_price": 71.86,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 68.656,
+        "p25": 71.432,
+        "p50": 74.887,
+        "p75": 77.93,
+        "p90": 81.678,
+        "prob_up": 73.3,
+        "mu_daily": 0.0616,
+        "sigma_daily": 0.907
+      },
+      "walk_forward": {
+        "ticker": "IVV.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 32,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 32,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "IVV.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 63.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 63.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 63.5
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 63.5
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 62.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 62.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 62.4
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 62.4
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 61.0
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 61.0
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 61.0
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 61.0
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 57.4
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 57.4
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 65,
+            "rsi_val": 57.4
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 65,
+            "rsi_val": 57.4
+          }
+        ],
+        "score_min": 57,
+        "score_max": 65,
+        "score_range": 8,
+        "score_mean": 59.0
+      }
+    },
+    "VTEK.AX": {
+      "ticker": "VTEK.AX",
+      "earnings": {
+        "ticker": "VTEK.AX",
+        "next_earnings": "Unknown",
+        "history": []
+      },
+      "momentum": {
+        "ticker": "VTEK.AX",
+        "error": "Need 1y+ of data"
+      },
+      "rsi_strategy": {
+        "ticker": "VTEK.AX",
+        "current_rsi": 49.0,
+        "signals": [
+          {
+            "date": "2026-04-16",
+            "type": "SELL",
+            "price": 54.77
+          }
+        ],
+        "total_signals": 0,
+        "win_rate": null,
+        "wins": 0
+      },
+      "ma_strategy": {
+        "ticker": "VTEK.AX",
+        "price": 64.57,
+        "ma50": 62.603,
+        "ma200": null,
+        "trend": "DOWNTREND",
+        "cross_type": "NONE",
+        "cross_date": null,
+        "cross_price": null,
+        "days_since_cross": null,
+        "avg_golden_return_60d": null,
+        "n_golden_crosses": 0
+      },
+      "monte_carlo": {
+        "ticker": "VTEK.AX",
+        "current_price": 64.57,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 72.412,
+        "p25": 76.607,
+        "p50": 81.856,
+        "p75": 86.608,
+        "p90": 92.491,
+        "prob_up": 99.3,
+        "mu_daily": 0.3741,
+        "sigma_daily": 1.2827
+      },
+      "walk_forward": {
+        "ticker": "VTEK.AX",
+        "windows": [],
+        "avg_win_rate": null
+      },
+      "sensitivity": {
+        "ticker": "VTEK.AX",
+        "error": "min() iterable argument is empty"
+      }
+    },
+    "VGS.AX": {
+      "ticker": "VGS.AX",
+      "earnings": {
+        "ticker": "VGS.AX",
+        "next_earnings": "Unknown",
+        "history": []
+      },
+      "momentum": {
+        "ticker": "VGS.AX",
+        "ret_12m": 14.03,
+        "ret_1m": 3.28,
+        "momentum": 10.75,
+        "percentile": 31.8,
+        "signal": "NEUTRAL"
+      },
+      "rsi_strategy": {
+        "ticker": "VGS.AX",
+        "error": "Cannot compare dtypes datetime64[s, Australia/Sydney] and datetime64[us]"
+      },
+      "ma_strategy": {
+        "ticker": "VGS.AX",
+        "price": 161.15,
+        "ma50": 154.692,
+        "ma200": 150.388,
+        "trend": "UPTREND",
+        "cross_type": "GOLDEN",
+        "cross_date": "2026-06-04",
+        "cross_price": 156.039,
+        "days_since_cross": 20,
+        "avg_golden_return_60d": null,
+        "n_golden_crosses": 0
+      },
+      "monte_carlo": {
+        "ticker": "VGS.AX",
+        "current_price": 161.15,
+        "horizon_days": 63,
+        "n_sims": 300,
+        "p10": 155.673,
+        "p25": 161.224,
+        "p50": 168.116,
+        "p75": 174.144,
+        "p90": 181.558,
+        "prob_up": 76.0,
+        "mu_daily": 0.0633,
+        "sigma_daily": 0.8032
+      },
+      "walk_forward": {
+        "ticker": "VGS.AX",
+        "windows": [
+          {
+            "window": 1,
+            "period": "2026-02-04 to 2026-03-04",
+            "optimal_rsi_thresh": 30,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 2,
+            "period": "2026-03-05 to 2026-04-02",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 3,
+            "period": "2026-04-07 to 2026-05-05",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 4,
+            "period": "2026-05-06 to 2026-06-03",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          },
+          {
+            "window": 5,
+            "period": "2026-06-04 to 2026-07-03",
+            "optimal_rsi_thresh": 35,
+            "test_wins": 0,
+            "test_total": 0,
+            "win_rate": null
+          }
+        ],
+        "avg_win_rate": NaN
+      },
+      "sensitivity": {
+        "ticker": "VGS.AX",
+        "grid": [
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 70.3
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 70.3
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 50,
+            "rsi_val": 70.3
+          },
+          {
+            "rsi_period": 7,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 50,
+            "rsi_val": 70.3
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 68.0
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 68.0
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 68.0
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 68.0
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 65.6
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 65.6
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 65.6
+          },
+          {
+            "rsi_period": 14,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 65.6
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 62.2
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 20,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 62.2
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 100,
+            "score": 57,
+            "rsi_val": 62.2
+          },
+          {
+            "rsi_period": 21,
+            "ma_short": 50,
+            "ma_long": 200,
+            "score": 57,
+            "rsi_val": 62.2
+          }
+        ],
+        "score_min": 50,
+        "score_max": 57,
+        "score_range": 7,
+        "score_mean": 55.2
+      }
+    }
+  },
+  "scanned_at": "2026-07-05T07:30:56.187496",
+  "tickers": [
+    "EOS.AX",
+    "TOR.AX",
+    "MIN.AX",
+    "IPX.AX",
+    "GLN.AX",
+    "AFG.AX",
+    "GMD.AX",
+    "CU6.AX",
+    "MSB.AX",
+    "TLX.AX",
+    "NXT.AX",
+    "APA.AX",
+    "GWA.AX",
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMD",
+    "TSLA",
+    "VAS.AX",
+    "IOZ.AX",
+    "NDQ.AX",
+    "IVV.AX",
+    "VTEK.AX",
+    "VGS.AX"
+  ]
+}
