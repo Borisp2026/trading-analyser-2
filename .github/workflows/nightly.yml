@@ -24,17 +24,21 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Run macro gate
+        run: python src/macro_gate.py
       - name: Run nightly analyser
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
         run: python src/analyser.py
+      - name: Build dashboard
+        run: python src/build_dashboard.py
 
       - name: Commit dashboard and reports
         run: |
           git config user.name "Trading Analyser Bot"
           git config user.email "bot@trading-analyser"
-          git add reports/
+          git add reports/ index.html data/macro_gate.json
           git diff --staged --quiet || git commit -m "Nightly report $(date -u +%Y-%m-%d)"
           git push
