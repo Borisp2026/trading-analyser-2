@@ -562,6 +562,7 @@ function showTab(id) {
     if(id==='backtest') populateBacktestSelect();
     if(id==='history') { /* already rendered server-side */ }
     if(id==='intraday') renderIntradayTable();
+    if(id==='portfolio') refreshPortfolioPrices();
     if(id==='quantitative') renderQuantTab(window._activeQuantSection||'earnings');
 }
 
@@ -649,6 +650,57 @@ async function ghPut(path,content,sha){
     if(!r.ok){const e=await r.json();throw new Error(e.message||'GitHub PUT failed');}
     return r.json();
 }
+
+async function fetchLivePrice(ticker){
+    try{
+        const url='https://corsproxy.io/?'+encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/chart/'+ticker);
+        const r=await fetch(url);
+        const j=await r.json();
+        return j.chart.result[0].meta.regularMarketPrice;
+    }catch(e){return null;}
+}
+async function refreshPortfolioPrices(){
+    const tbody=document.querySelector('#tab-portfolio .holdings-table tbody');
+    if(!tbody) return;
+    const rows=[...tbody.querySelectorAll('tr')];
+    if(!rows.length) return;
+    const h2=document.querySelector('#tab-portfolio .section h2');
+    let ind=document.getElementById('port-live-ind');
+    if(!ind){ind=document.createElement('span');ind.id='port-live-ind';ind.style.cssText='font-size:12px;color:#888;margin-left:12px;';h2.appendChild(ind);}
+    ind.textContent='fetching live prices...';
+    let totalValue=0,totalCost=0;
+    const fetches=rows.map(async row=>{
+        const cells=[...row.querySelectorAll('td')];
+        if(cells.length<6) return;
+        const ticker=cells[0].querySelector('b')?.textContent?.trim();
+        const shares=parseFloat(cells[1].textContent.replace(/,/g,''))||0;
+        const buyPrice=parseFloat(cells[2].textContent.replace(/[$,]/g,''))||0;
+        if(!ticker||!shares) return;
+        const price=await fetchLivePrice(ticker);
+        if(price===null) return;
+        const value=price*shares;
+        const cost=buyPrice*shares;
+        const pl=value-cost;
+        const plPct=cost>0?((pl/cost)*100):0;
+        totalValue+=value;
+        totalCost+=cost;
+        cells[3].textContent='$'+price.toFixed(3);
+        cells[4].textContent='$'+value.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});
+        cells[5].style.color=pl>=0?'green':'red';
+        cells[5].textContent=(pl>=0?'+':'')+' $'+Math.abs(pl).toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2})+' ('+(pl>=0?'+':'')+plPct.toFixed(1)+'%)';
+    });
+    await Promise.all(fetches);
+    const cards=[...document.querySelectorAll('#tab-portfolio .stats-grid .stat-value')];
+    if(cards.length>=3){
+        cards[0].textContent='$'+totalValue.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});
+        const totalPL=totalValue-totalCost;
+        const pct=totalCost>0?((totalPL/totalCost)*100):0;
+        cards[2].style.color=totalPL>=0?'green':'red';
+        cards[2].textContent=(totalPL>=0?'+':'')+' $'+Math.abs(totalPL).toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2})+' ('+(totalPL>=0?'+':'')+pct.toFixed(1)+'%)';
+    }
+    ind.textContent='live as of '+new Date().toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'});
+}
+setInterval(()=>{if(document.getElementById('tab-portfolio')?.classList.contains('active')) refreshPortfolioPrices();},15*60*1000);
 async function readPortfolio(){
     const f=await ghGet(PORTFOLIO_PATH);
     return {data:JSON.parse(atob(f.content)),sha:f.sha};
