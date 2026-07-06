@@ -21,7 +21,7 @@ MIN_ATR_STOP = 0.015  # floor stop at 1.5%
 ORB_BARS     = 30
 MAX_POSITIONS= 2
 MIN_MACRO    = 50
-REQUIRED_CONDITIONS = 5   # out of 8
+REQUIRED_CONDITIONS = 3   # out of 8
 
 
 def _rsi(series, period=7):
@@ -156,7 +156,7 @@ def check_exit(position, current_price):
 def is_trading_window(ticker):
     if ticker.endswith(".AX"):
         now = datetime.now(AEST)
-        return now.weekday() < 5 and (now.hour > 10 or (now.hour == 10 and now.minute >= 30)) and now.hour < 15
+        return now.weekday() < 5 and (now.hour > 10 or (now.hour == 10 and now.minute >= 30)) and now.hour < 16
     else:
         now = datetime.now(NYSE)
         return now.weekday() < 5 and (now.hour > 10 or (now.hour == 10)) and now.hour < 15
