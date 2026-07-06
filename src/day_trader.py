@@ -1,5 +1,5 @@
-"""Day Trading Strategy Engine — ORB + VWAP + MACD + SuperTrend + BB Squeeze + ATR
-8 conditions, require 5/8 for BUY signal.
+"""Day Trading Strategy Engine — ORB + VWAP + MACD + SuperTrend + BB Squeeze + ATR + PDH/PDL
+Tiered entry: trend (VWAP or SuperTrend) + momentum (MACD or RSI) + volume all required.
 Target: +5% net (incl fees) | Stop: 1.5x ATR | Max 2 positions.
 """
 import pandas as pd
@@ -86,6 +86,11 @@ def check_entry(ticker, df, macro_score=100):
     # Bollinger Bands on today's bars
     bb_info   = calc_bollinger(day["Close"]) if len(day) >= 25 else {"squeeze": False, "breakout_upper": False, "pct_b": 0.5}
 
+    # Previous Day High / Low
+    dates = sorted(set(df.index.date))
+    pdh = float(df[df.index.date == dates[-2]]["High"].max()) if len(dates) >= 2 else orb_high
+    pdl = float(df[df.index.date == dates[-2]]["Low"].min())  if len(dates) >= 2 else orb_low
+
     conditions = {
         "ORB breakout":       price > orb_high,
         "Above VWAP":         price > vwap,
@@ -95,6 +100,7 @@ def check_entry(ticker, df, macro_score=100):
         "MACD bullish":       macd_info.get("bullish", False),
         "SuperTrend bullish": st_info.get("bullish", False),
         "BB squeeze/breakout":bb_info.get("squeeze", False) or bb_info.get("breakout_upper", False),
+        "PDH breakout":       price > pdh,
     }
 
     met     = [k for k, v in conditions.items() if v]
@@ -104,7 +110,12 @@ def check_entry(ticker, df, macro_score=100):
     target = round(price * (1 + TARGET_PCT), 3)
     stop   = round(price * (1 - stop_pct), 3)
 
-    if score >= REQUIRED_CONDITIONS:
+    # Tiered: trend + momentum + volume all required
+    trend_ok    = conditions["Above VWAP"] or conditions["SuperTrend bullish"]
+    momentum_ok = conditions["MACD bullish"] or (45 <= rsi <= 75)
+    volume_ok   = conditions["Volume spike"]
+
+    if trend_ok and momentum_ok and volume_ok:
         return {
             "ticker":         ticker,
             "signal":         "BUY",
@@ -119,6 +130,8 @@ def check_entry(ticker, df, macro_score=100):
             "bb_squeeze":     bb_info.get("squeeze"),
             "orb_high":       round(orb_high, 3),
             "orb_low":        round(orb_low, 3),
+            "pdh":            round(pdh, 3),
+            "pdl":            round(pdl, 3),
             "conditions_met": score,
             "reasons":        [f"✓ {c}" for c in met],
             "timestamp":      datetime.now().isoformat(),
