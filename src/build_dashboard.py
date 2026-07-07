@@ -1619,7 +1619,265 @@ window.addEventListener('resize',()=>{
   </div>
 </div>
 
-{JS}
+<!-- Stock Detail Side Panel -->
+<div id="stock-side-panel" style="position:fixed;right:0;top:0;height:100%;width:420px;max-width:95vw;background:#0d0d1a;border-left:1px solid #2a2a4a;z-index:1000;transform:translateX(100%);transition:transform 0.3s ease;overflow-y:auto;padding:20px;box-sizing:border-box;box-shadow:-4px 0 20px rgba(0,0,0,0.5)">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #2a2a4a">
+    <div>
+      <h3 id="panel-ticker-name" style="color:white;font-size:20px;margin:0;font-weight:bold">—</h3>
+      <div id="panel-ticker-price" style="color:#888;font-size:13px;margin-top:2px"></div>
+    </div>
+    <button onclick="closeStockPanel()" style="background:none;border:none;color:#888;font-size:24px;cursor:pointer;padding:0;line-height:1">×</button>
+  </div>
+  <div style="display:flex;gap:4px;margin-bottom:16px;flex-wrap:wrap">
+    <button id="ptab-prediction" onclick="showPanelTab('prediction')" style="padding:5px 10px;font-size:12px;border:1px solid #3a3a6a;border-radius:4px;cursor:pointer;background:#2a2a4a;color:#4a90d9">📊 Prediction</button>
+    <button id="ptab-dividends" onclick="showPanelTab('dividends')" style="padding:5px 10px;font-size:12px;border:1px solid #2a2a3a;border-radius:4px;cursor:pointer;background:#1a1a2e;color:#888">💰 Dividends</button>
+    <button id="ptab-analyst" onclick="showPanelTab('analyst')" style="padding:5px 10px;font-size:12px;border:1px solid #2a2a3a;border-radius:4px;cursor:pointer;background:#1a1a2e;color:#888">🎯 Analyst</button>
+    <button id="ptab-news" onclick="showPanelTab('news')" style="padding:5px 10px;font-size:12px;border:1px solid #2a2a3a;border-radius:4px;cursor:pointer;background:#1a1a2e;color:#888">📰 News</button>
+  </div>
+  <div id="panel-prediction"><p style="color:#888">Loading...</p></div>
+  <div id="panel-dividends" style="display:none"><p style="color:#888">Loading...</p></div>
+  <div id="panel-analyst" style="display:none"><p style="color:#888">Loading...</p></div>
+  <div id="panel-news" style="display:none"><p style="color:#888">Loading...</p></div>
+</div>
+<div id="panel-overlay" onclick="closeStockPanel()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:999"></div>
+
+<script>
+async function fetchLivePrice(ticker){
+  try{
+    const url='https://corsproxy.io/?'+encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/chart/'+ticker+'?interval=1d&range=15d');
+    const r=await fetch(url);const j=await r.json();
+    return j.chart.result[0].meta.regularMarketPrice;
+  }catch(e){return null;}
+}
+async function fetch5DayHistory(ticker){
+  try{
+    const url='https://corsproxy.io/?'+encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/chart/'+ticker+'?interval=1d&range=15d');
+    const r=await fetch(url);const j=await r.json();
+    const res=j.chart.result[0];
+    const ts=res.timestamp,cl=res.indicators.quote[0].close;
+    return ts.map((t,i)=>({d:new Date(t*1000).toLocaleDateString('en-AU',{weekday:'short',day:'numeric'}),c:cl[i]})).filter(x=>x.c!=null).slice(-5);
+  }catch(e){return null;}
+}
+function sparklineSVG(prices,isUp){
+  if(!prices||prices.length<2) return '<span style="color:#555">—</span>';
+  const vals=prices.map(p=>p.c);
+  const mn=Math.min(...vals),mx=Math.max(...vals),rng=(mx-mn)||0.01;
+  const W=70,H=26;
+  const pts=vals.map((v,i)=>((i/(vals.length-1))*W).toFixed(1)+','+(H-(v-mn)/rng*H*0.8-H*0.1).toFixed(1)).join(' ');
+  const color=isUp?'#44bb44':'#cc0000';
+  return '<div style="display:flex;align-items:center;gap:4px"><svg width="'+W+'" height="'+H+'"><polyline points="'+pts+'" fill="none" stroke="'+color+'" stroke-width="1.5" stroke-linejoin="round"/></svg><span style="font-size:10px;color:#888">$'+vals[vals.length-1].toFixed(2)+'</span></div>';
+}
+async function refreshPortfolioPrices(){
+  const tbody=document.querySelector('#tab-portfolio .holdings-table tbody');
+  if(!tbody) return;
+  const rows=[...tbody.querySelectorAll('tr')];
+  if(!rows.length) return;
+  const h2=document.querySelector('#tab-portfolio .section h2');
+  let ind=document.getElementById('port-live-ind');
+  if(!ind){ind=document.createElement('span');ind.id='port-live-ind';ind.style.cssText='font-size:12px;color:#888;margin-left:12px;';h2.appendChild(ind);}
+  ind.textContent='fetching live prices...';
+  const thead=document.querySelector('#tab-portfolio .holdings-table thead tr');
+  if(thead&&thead.cells.length<=9){
+    ['5-Day',''].forEach(txt=>{
+      const th=document.createElement('th');th.textContent=txt;
+      thead.insertBefore(th,thead.cells[thead.cells.length-1]);
+    });
+  }
+  let totalValue=0,totalCost=0;
+  const fetches=rows.map(async row=>{
+    const cells=[...row.querySelectorAll('td')];
+    if(cells.length<6) return;
+    const ticker=cells[0].querySelector('b')?.textContent?.trim()||cells[0].textContent.trim();
+    const shares=parseFloat(cells[1].textContent.replace(/,/g,''))||0;
+    const buyPrice=parseFloat(cells[2].textContent.replace(/[$,]/g,''))||0;
+    if(!ticker||!shares) return;
+    const bEl=cells[0].querySelector('b')||cells[0];
+    if(bEl&&!bEl._wired){bEl._wired=1;bEl.style.cssText='cursor:pointer;color:#4a90d9;text-decoration:underline';bEl.onclick=()=>openStockPanel(ticker);}
+    const [price,history]=await Promise.all([fetchLivePrice(ticker),fetch5DayHistory(ticker)]);
+    if(price===null) return;
+    const value=price*shares,cost=buyPrice*shares,pl=value-cost,plPct=cost>0?((pl/cost)*100):0;
+    totalValue+=value;totalCost+=cost;
+    cells[3].textContent='$'+price.toFixed(3);
+    cells[4].textContent='$'+value.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});
+    cells[5].style.color=pl>=0?'green':'red';
+    cells[5].textContent=(pl>=0?'+':'')+' $'+Math.abs(pl).toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2})+' ('+(pl>=0?'+':'')+plPct.toFixed(1)+'%)';
+    const removeCell=row.cells[row.cells.length-1];
+    row.removeChild(removeCell);
+    while(row.cells.length<8){row.appendChild(document.createElement('td'));}
+    const sparkTd=document.createElement('td');const btnTd=document.createElement('td');
+    row.appendChild(sparkTd);row.appendChild(btnTd);row.appendChild(removeCell);
+    if(history&&sparkTd) sparkTd.innerHTML=sparklineSVG(history,history.length>=2&&price>=history[0].c);
+    if(btnTd&&!btnTd.querySelector('button')) btnTd.innerHTML='<button onclick="openStockPanel(\''+ticker+'\')" style="padding:3px 8px;font-size:11px;background:#1a1a3a;border:1px solid #3a3a6a;border-radius:4px;color:#4a90d9;cursor:pointer">📊</button>';
+  });
+  await Promise.all(fetches);
+  const cards=[...document.querySelectorAll('#tab-portfolio .stats-grid .stat-value')];
+  if(cards.length>=3){
+    cards[0].textContent='$'+totalValue.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});
+    const totalPL=totalValue-totalCost,pct=totalCost>0?((totalPL/totalCost)*100):0;
+    cards[2].style.color=totalPL>=0?'green':'red';
+    cards[2].textContent=(totalPL>=0?'+':'')+' $'+Math.abs(totalPL).toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2})+' ('+(totalPL>=0?'+':'')+pct.toFixed(1)+'%)';
+  }
+  ind.textContent='live as of '+new Date().toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'});
+}
+setInterval(()=>{if(document.getElementById('tab-portfolio')?.classList.contains('active')) refreshPortfolioPrices();},15*60*1000);
+function openStockPanel(ticker){
+  const panel=document.getElementById('stock-side-panel');
+  const ov=document.getElementById('panel-overlay');
+  if(!panel) return;
+  document.getElementById('panel-ticker-name').textContent=ticker;
+  document.getElementById('panel-ticker-price').textContent='Loading...';
+  ['prediction','dividends','analyst','news'].forEach(t=>{document.getElementById('panel-'+t).innerHTML='<p style="color:#888;padding:12px">Loading...</p>';});
+  panel.style.transform='translateX(0)';
+  if(ov) ov.style.display='block';
+  showPanelTab('prediction');
+  loadPanelData(ticker);
+}
+function closeStockPanel(){
+  const panel=document.getElementById('stock-side-panel');
+  const ov=document.getElementById('panel-overlay');
+  if(panel) panel.style.transform='translateX(100%)';
+  if(ov) ov.style.display='none';
+}
+function showPanelTab(tab){
+  ['prediction','dividends','analyst','news'].forEach(t=>{
+    const el=document.getElementById('panel-'+t);
+    const btn=document.getElementById('ptab-'+t);
+    if(el) el.style.display=t===tab?'block':'none';
+    if(btn){btn.style.background=t===tab?'#2a2a4a':'#1a1a2e';btn.style.color=t===tab?'#4a90d9':'#888';btn.style.borderColor=t===tab?'#3a3a6a':'#2a2a3a';}
+  });
+}
+function computeRSI(closes,period=14){
+  if(closes.length<period+1) return 50;
+  const gains=[],losses=[];
+  for(let i=1;i<closes.length;i++){const d=closes[i]-closes[i-1];gains.push(d>0?d:0);losses.push(d<0?-d:0);}
+  const ag=gains.slice(-period).reduce((a,b)=>a+b,0)/period;
+  const al=losses.slice(-period).reduce((a,b)=>a+b,0)/period;
+  return al===0?100:100-100/(1+ag/al);
+}
+function computeEMA(arr,p){
+  if(arr.length<p) return arr[arr.length-1];
+  const k=2/(p+1);let em=arr.slice(0,p).reduce((a,b)=>a+b,0)/p;
+  for(let i=p;i<arr.length;i++) em=arr[i]*k+em*(1-k);
+  return em;
+}
+function computeMACD(closes){
+  if(closes.length<26) return{bullish:null};
+  return{bullish:computeEMA(closes,12)>computeEMA(closes,26)};
+}
+async function loadPanelData(ticker){
+  try{
+    const [qr,hr]=await Promise.all([
+      fetch('https://corsproxy.io/?'+encodeURIComponent('https://query1.finance.yahoo.com/v10/finance/quoteSummary/'+ticker+'?modules=calendarEvents,financialData,recommendationTrend,defaultKeyStatistics,price')),
+      fetch('https://corsproxy.io/?'+encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/chart/'+ticker+'?interval=1d&range=90d'))
+    ]);
+    const qj=await qr.json();const hj=await hr.json();
+    const res=(qj.quoteSummary.result||[{}])[0]||{};
+    const hres=hj.chart.result[0];
+    const closes=hres.indicators.quote[0].close.filter(c=>c!=null);
+    const currentPrice=hres.meta.regularMarketPrice;
+    document.getElementById('panel-ticker-price').textContent='$'+currentPrice.toFixed(3)+' AUD';
+    renderPredictionPanel(closes,res,currentPrice);
+    renderDividendsPanel(res);
+    renderAnalystPanel(res,currentPrice);
+  }catch(e){
+    document.getElementById('panel-prediction').innerHTML='<p style="color:#cc4444;padding:12px">Error: '+e.message+'</p>';
+  }
+  try{
+    const nr=await fetch('https://corsproxy.io/?'+encodeURIComponent('https://query2.finance.yahoo.com/v1/finance/search?q='+ticker+'&newsCount=6&lang=en-AU'));
+    const nj=await nr.json();
+    renderNewsPanel(nj.news||[]);
+  }catch(e){document.getElementById('panel-news').innerHTML='<p style="color:#888;padding:12px">News unavailable</p>';}
+}
+function renderPredictionPanel(closes,quote,current){
+  const rsi=computeRSI(closes);
+  const macd=computeMACD(closes);
+  const ma20=closes.slice(-20).reduce((a,b)=>a+b,0)/Math.min(20,closes.length);
+  const mom5=closes.length>=6?((current-closes[closes.length-6])/closes[closes.length-6]*100):0;
+  const p=quote.price||{};const fd=quote.financialData||{};
+  const yHigh=p.fiftyTwoWeekHigh?.raw||current;const yLow=p.fiftyTwoWeekLow?.raw||current;
+  const yearPos=(current-yLow)/((yHigh-yLow)||1)*100;
+  const target=fd.targetMeanPrice?.raw||0;
+  const analystUp=target?((target-current)/current*100):null;
+  const signals=[
+    {name:'RSI (14)',val:rsi.toFixed(0),bull:rsi>=40&&rsi<=65,note:rsi>70?'Overbought — caution':rsi<30?'Oversold — bounce zone':'Healthy range (40–65)'},
+    {name:'MACD',val:macd.bullish===null?'N/A':macd.bullish?'Bullish':'Bearish',bull:macd.bullish,note:macd.bullish?'12EMA above 26EMA':'12EMA below 26EMA'},
+    {name:'vs 20-Day MA',val:((current-ma20)/ma20*100>=0?'+':'')+((current-ma20)/ma20*100).toFixed(1)+'%',bull:current>ma20,note:current>ma20?'Price above 20-day average':'Price below 20-day average'},
+    {name:'5-Day Momentum',val:(mom5>=0?'+':'')+mom5.toFixed(1)+'%',bull:mom5>0,note:mom5>3?'Strong uptrend':mom5<-3?'Downtrend':'Sideways'},
+    {name:'52-Week Position',val:yearPos.toFixed(0)+'%',bull:yearPos<80&&yearPos>15,note:yearPos>85?'Near 52W high — resistance ahead':yearPos<15?'Near 52W low — potential support':'Mid-range'},
+    ...(analystUp!==null?[{name:'Analyst Target',val:(analystUp>=0?'+':'')+analystUp.toFixed(1)+'%',bull:analystUp>5,note:'Consensus target $'+target.toFixed(2)}]:[]),
+  ];
+  const bulls=signals.filter(s=>s.bull===true).length;
+  const total=signals.length;
+  const pct=Math.round(bulls/total*100);
+  let sig,col;
+  if(pct>=70){sig='▲ BULLISH';col='#44bb44';}
+  else if(pct>=55){sig='↗ MILDLY BULLISH';col='#88cc44';}
+  else if(pct>=40){sig='→ NEUTRAL';col='#ff9900';}
+  else{sig='▼ BEARISH';col='#cc0000';}
+  let html='<div style="text-align:center;padding:16px;background:#0f1f0f;border-radius:8px;border:1px solid '+col+'33;margin-bottom:16px">'
+    +'<div style="font-size:24px;font-weight:bold;color:'+col+'">'+sig+'</div>'
+    +'<div style="font-size:13px;color:#888;margin-top:6px">'+pct+'% bullish · '+bulls+' of '+total+' signals agree</div>'
+    +'<div style="font-size:10px;color:#444;margin-top:4px">Based on 90 days of price data</div>'
+    +'</div>'
+    +'<div style="display:grid;gap:8px">'
+    +signals.map(s=>{
+      const ic=s.bull===true?'▲':s.bull===false?'▼':'→';
+      const c=s.bull===true?'#44bb44':s.bull===false?'#cc0000':'#ff9900';
+      return '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#141428;border-radius:6px;border-left:3px solid '+c+'">'
+        +'<div><div style="font-size:12px;color:#ccc;font-weight:500">'+s.name+'</div><div style="font-size:10px;color:#555;margin-top:2px">'+s.note+'</div></div>'
+        +'<span style="color:'+c+';font-weight:bold;font-size:13px;white-space:nowrap;margin-left:8px">'+ic+' '+s.val+'</span></div>';
+    }).join('')
+    +'</div>'
+    +'<p style="font-size:10px;color:#333;margin-top:14px;text-align:center">⚠ Not financial advice. Technical analysis only.</p>';
+  document.getElementById('panel-prediction').innerHTML=html;
+}
+function renderDividendsPanel(quote){
+  const cal=quote.calendarEvents||{};const dks=quote.defaultKeyStatistics||{};
+  const rows=[
+    {label:'Dividend Yield (TTM)',val:dks.trailingAnnualDividendYield?.raw?(dks.trailingAnnualDividendYield.raw*100).toFixed(2)+'%':'N/A'},
+    {label:'Annual Dividend / Share',val:dks.trailingAnnualDividendRate?.raw?'$'+dks.trailingAnnualDividendRate.raw.toFixed(3):'N/A'},
+    {label:'Ex-Dividend Date',val:cal.exDividendDate?.fmt||'N/A'},
+    {label:'Dividend Pay Date',val:cal.dividendDate?.fmt||'N/A'},
+    {label:'Payout Ratio',val:dks.payoutRatio?.raw?(dks.payoutRatio.raw*100).toFixed(1)+'%':'N/A'},
+    {label:'5-Year Avg Yield',val:dks.fiveYearAvgDividendYield?.raw?dks.fiveYearAvgDividendYield.raw.toFixed(2)+'%':'N/A'},
+  ];
+  document.getElementById('panel-dividends').innerHTML='<div style="display:grid;gap:8px">'+rows.map(r=>'<div style="display:flex;justify-content:space-between;padding:10px 12px;background:#141428;border-radius:6px"><span style="color:#888;font-size:13px">'+r.label+'</span><span style="color:#ccc;font-weight:bold;font-size:13px">'+r.val+'</span></div>').join('')+'</div>';
+}
+function renderAnalystPanel(quote,current){
+  const fd=quote.financialData||{};
+  const rec=(quote.recommendationTrend?.trend||[])[0]||{};
+  const sb=rec.strongBuy||0,b=rec.buy||0,h=rec.hold||0,s=rec.sell||0,ss=rec.strongSell||0;
+  const tot=sb+b+h+s+ss||1;
+  const bars=[{n:'Strong Buy',v:sb,c:'#00aa00'},{n:'Buy',v:b,c:'#44bb44'},{n:'Hold',v:h,c:'#ff9900'},{n:'Sell',v:s,c:'#cc4444'},{n:'Strong Sell',v:ss,c:'#cc0000'}];
+  let html='<div style="padding:12px;background:#141428;border-radius:6px;margin-bottom:8px">'
+    +'<div style="font-size:11px;color:#666;margin-bottom:8px">ANALYST RATINGS ('+tot+' analysts)</div>'
+    +'<div style="display:flex;gap:4px;align-items:flex-end;height:48px">'
+    +bars.map(r=>'<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px"><span style="font-size:9px;color:#666">'+r.v+'</span><div style="width:100%;background:'+r.c+';height:'+Math.max(4,Math.round(r.v/tot*40))+'px;border-radius:2px 2px 0 0"></div></div>').join('')
+    +'</div>'
+    +'<div style="display:flex;justify-content:space-between;margin-top:4px">'
+    +bars.map(r=>'<span style="font-size:8px;color:#555;flex:1;text-align:center">'+r.n.replace('Strong ','').toUpperCase()+'</span>').join('')
+    +'</div></div>';
+  const targets=[
+    {label:'Target Low',val:fd.targetLowPrice?.raw?'$'+fd.targetLowPrice.raw.toFixed(2):null},
+    {label:'Target Mean',val:fd.targetMeanPrice?.raw?'$'+fd.targetMeanPrice.raw.toFixed(2):null},
+    {label:'Target High',val:fd.targetHighPrice?.raw?'$'+fd.targetHighPrice.raw.toFixed(2):null},
+    {label:'Upside (Mean)',val:fd.targetMeanPrice?.raw?((fd.targetMeanPrice.raw-current)/current*100>=0?'+':'')+((fd.targetMeanPrice.raw-current)/current*100).toFixed(1)+'%':null},
+    {label:'Recommendation',val:fd.recommendationKey?fd.recommendationKey.toUpperCase().replace(/_/g,' '):null},
+  ];
+  html+=targets.filter(t=>t.val).map(t=>'<div style="display:flex;justify-content:space-between;padding:10px 12px;background:#141428;border-radius:6px;margin-bottom:6px"><span style="color:#888;font-size:13px">'+t.label+'</span><span style="color:#ccc;font-weight:bold;font-size:13px">'+t.val+'</span></div>').join('');
+  document.getElementById('panel-analyst').innerHTML=html;
+}
+function renderNewsPanel(news){
+  if(!news.length){document.getElementById('panel-news').innerHTML='<p style="color:#888;padding:12px">No recent news found.</p>';return;}
+  document.getElementById('panel-news').innerHTML='<div style="display:grid;gap:8px">'+news.slice(0,6).map(item=>{
+    const d=item.providerPublishTime?new Date(item.providerPublishTime*1000).toLocaleDateString('en-AU',{day:'numeric',month:'short'}):'';
+    return '<div style="padding:10px 12px;background:#141428;border-radius:6px">'
+      +'<div style="font-size:12px;color:#ccc;line-height:1.4;margin-bottom:6px">'+item.title+'</div>'
+      +'<div style="display:flex;justify-content:space-between;font-size:10px;color:#555"><span>'+(item.publisher||'')+'</span><span>'+d+'</span></div>'
+      +'</div>';
+  }).join('')+'</div>';
+}
+</script>
 </body>
 </html>"""
 
