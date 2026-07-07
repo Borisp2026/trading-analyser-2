@@ -2,18 +2,18 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 15.89,
-      "value_label": "VIX 15.9",
-      "score": 75.5,
-      "detail": "VIX 15.9 \u2014 lower than 75% of the past year",
+      "value": 16.31,
+      "value_label": "VIX 16.3",
+      "score": 68.4,
+      "detail": "VIX 16.3 \u2014 lower than 68% of the past year",
       "interpretation": "CALM"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.835,
-      "value_label": "Ratio 0.835",
-      "score": 100,
-      "detail": "VIX/VIX3M = 0.835 (CONTANGO) \u2014 below 1.0 = calm",
+      "value": 0.851,
+      "value_label": "Ratio 0.851",
+      "score": 99.7,
+      "detail": "VIX/VIX3M = 0.851 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -26,32 +26,32 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 1.49,
-      "value_label": "Z-score +1.49",
-      "score": 12.8,
-      "detail": "HYG/TLT ratio z-score +1.49 vs 1-year avg (negative = tight = bullish)",
+      "value": 1.56,
+      "value_label": "Z-score +1.56",
+      "score": 11.0,
+      "detail": "HYG/TLT ratio z-score +1.56 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -26.13,
-      "value_label": "VIX ROC -26.1%",
-      "score": 95.2,
-      "detail": "VIX 20-day rate of change -26.1% (rapidly rising = fear = low score)",
+      "value": -24.17,
+      "value_label": "VIX ROC -24.2%",
+      "score": 92.7,
+      "detail": "VIX 20-day rate of change -24.2% (rapidly rising = fear = low score)",
       "interpretation": "GREEDY"
     },
     {
       "name": "SPX Trend",
-      "value": 8.19,
-      "value_label": "SPX +8.2% vs 200MA",
+      "value": 7.73,
+      "value_label": "SPX +7.7% vs 200MA",
       "score": 100,
-      "detail": "S&P 500 $7,522 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,490 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "UPTREND"
     }
   ],
-  "composite": 80.6,
+  "composite": 78.6,
   "zone": "DEPLOY",
   "zone_desc": "Conditions favourable \u2014 deploy capital aggressively",
   "zone_color": "#44bb44",
-  "scanned_at": "2026-07-07T13:42:19.344999"
+  "scanned_at": "2026-07-07T14:34:57.520458"
 }
