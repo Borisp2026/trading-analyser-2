@@ -366,6 +366,9 @@ details summary{cursor:pointer;color:#4a90d9;font-size:12px;margin-top:8px;paddi
 <tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Click Run Nightly Now during market hours to load intraday data.</td></tr>
 </tbody></table>
 </div>
+<div id="eod-assessment-wrap" style="margin-top:24px;display:none">
+<h3 style="color:#ccc;margin-bottom:12px;font-size:15px">Stock Assessment — Days in Scan List</h3>
+<div style="overflow-x:auto"><table class="asx-table"><thead><tr><th>Ticker</th><th>Days</th><th>Progress</th><th>Scans Today</th><th>BUY Signals</th><th>Watchlist</th></tr></thead><tbody id="eod-assessment-body"><tr><td colspan="6" style="color:#555;text-align:center;padding:12px">Loading...</td></tr></tbody></table></div></div>
 </div>
 </div>
 
@@ -1366,7 +1369,7 @@ async function loadScanCounter(){
         const todayTrades=(d.trades||[]).filter(function(t){return (t.entry_time||'').startsWith(today);});
         document.getElementById('signals-today-num').textContent=todayTrades.length;
         if(log.length>0){
-            const last=new Date(log[log.length-1].time);
+            const last=new Date(log[log.length-1].time+'Z');
             document.getElementById('last-scan-time').textContent='Last scan: '+last.toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'});
             const age=Math.round((Date.now()-last.getTime())/60000);
             const active=age<8;
@@ -1376,6 +1379,35 @@ async function loadScanCounter(){
         }else{
             document.getElementById('last-scan-time').textContent='No scans yet today';
             document.getElementById('scan-status-dot').textContent='Market opens 10am AEST weekdays';
+        }
+        // Render EOD assessment table
+        const assess=d.eod_assessment||[];
+        const wrap=document.getElementById('eod-assessment-wrap');
+        const tbody2=document.getElementById('eod-assessment-body');
+        if(assess.length&&wrap&&tbody2){
+            wrap.style.display='block';
+            tbody2.innerHTML=assess.map(function(a){
+                const days=a.days_in_list||0;
+                const dots=['○','○','○','○','○'].map(function(_,i){
+                    return i<days?'<span style="color:#44bb44">●</span>':'<span style="color:#333">○</span>';
+                }).join('');
+                const flag=days>=5?'<span style="color:#ff9900;margin-left:4px">🔥 Auto-add</span>':
+                           days>=3?'<span style="color:#4a90d9;margin-left:4px">↑ Rising</span>':'';
+                const wlBadge=a.in_watchlist
+                    ?'<span style="color:#44bb44">✓ Yes</span>'
+                    :'<span style="color:#555">—</span>';
+                const buyCol=a.buys_today>0
+                    ?'<span style="color:#44bb44;font-weight:bold">'+a.buys_today+'</span>'
+                    :'<span style="color:#555">0</span>';
+                return '<tr>'
+                    +'<td><b>'+a.ticker+'</b></td>'
+                    +'<td style="font-weight:bold;color:'+(days>=5?'#ff9900':days>=3?'#4a90d9':'#aaa')+'">'+days+' / 5'+flag+'</td>'
+                    +'<td style="letter-spacing:3px">'+dots+'</td>'
+                    +'<td style="color:#aaa">'+a.scans_today+'</td>'
+                    +'<td>'+buyCol+'</td>'
+                    +'<td>'+wlBadge+'</td>'
+                    +'</tr>';
+            }).join('');
         }
     }catch(e){
         document.getElementById('scans-today-num').textContent='?';

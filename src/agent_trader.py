@@ -49,13 +49,76 @@ def macro_score():
     except Exception:
         return 50.0
 
-def watchlist_tickers():
+def scan_tickers():
+    """Watchlist tickers + top nightly report tickers, capped at 50."""
+    import glob
+    seen, result = set(), []
     try:
         with open(WATCHLIST_FILE) as f:
             wl = json.load(f)
-        return (wl.get("asx", []) + wl.get("etf", []))[:12]
+        for t in wl.get("asx", []) + wl.get("etf", []):
+            if t not in seen:
+                seen.add(t); result.append(t)
     except Exception:
-        return []
+        pass
+    wl_count = len(result)
+    try:
+        files = sorted(glob.glob(os.path.join(BASE, "reports", "*.json")))
+        if files:
+            rep = json.load(open(files[-1]))
+            ranked = sorted(rep.get("results", []),
+                key=lambda x: x.get("reasoning", {}).get("blended_score", 0), reverse=True)
+            for r in ranked:
+                t = r.get("ticker", "")
+                if t and t not in seen and len(result) < 50:
+                    seen.add(t); result.append(t)
+    except Exception as e:
+        print(f"  Report tickers error: {e}")
+    print(f"  Scan list: {len(result)} tickers ({wl_count} watchlist + {len(result)-wl_count} report)")
+    return result[:50]
+
+
+def update_eod_tracking(d, tickers):
+    """Track days each ticker appears, build EOD assessment, auto-add after 5 days."""
+    today = datetime.now(AEST).strftime("%Y-%m-%d")
+    td = d.setdefault("ticker_days", {})
+    for t in tickers:
+        days = td.setdefault(t, [])
+        if today not in days:
+            days.append(today)
+    try:
+        with open(WATCHLIST_FILE) as f:
+            wl = json.load(f)
+    except Exception:
+        wl = {"asx": [], "etf": [], "nasdaq": [], "settings": {}}
+    wl_set = set(wl.get("asx", []) + wl.get("etf", []) + wl.get("nasdaq", []))
+    assessment, auto_added = [], []
+    for t in tickers:
+        days_list = td.get(t, [])
+        t_logs = [e for e in d.get("scan_log", []) if e.get("ticker") == t and e.get("date") == today]
+        assessment.append({
+            "ticker":       t,
+            "days_in_list": len(days_list),
+            "last_5_days":  days_list[-5:],
+            "scans_today":  len(t_logs),
+            "buys_today":   sum(1 for e in t_logs if e.get("signal") == "BUY"),
+            "in_watchlist": t in wl_set,
+            "add_pending":  len(days_list) >= 5 and t not in wl_set,
+        })
+        if len(days_list) >= 5 and t not in wl_set:
+            key = "asx" if t.endswith(".AX") else "nasdaq"
+            wl.setdefault(key, []).append(t)
+            wl_set.add(t)
+            auto_added.append(t)
+            print(f"  AUTO-WATCHLIST: {t} ({len(days_list)} days)")
+    d["eod_assessment"] = sorted(assessment, key=lambda x: x["days_in_list"], reverse=True)
+    if auto_added:
+        try:
+            with open(WATCHLIST_FILE, "w") as f:
+                json.dump(wl, f, indent=2)
+            print(f"  Watchlist updated with: {auto_added}")
+        except Exception as e:
+            print(f"  Watchlist save error: {e}")
 
 def fetch_1min(ticker):
     df = yf.Ticker(ticker).history(period="1d", interval="1m", auto_adjust=True)
@@ -100,7 +163,7 @@ def run_agent_scan():
         return
 
     ms     = macro_score()
-    tickers = watchlist_tickers()
+    tickers = scan_tickers()
     capital = d.get("capital", START_CAPITAL)
     print(f"Macro: {ms:.0f} | Capital: ${capital:.2f} | Open: {len(d['open_positions'])} | Trades: {len(d['trades'])}/{TARGET_TRADES}")
 
@@ -151,6 +214,7 @@ def run_agent_scan():
             sig    = check_entry(ticker, df, ms)
             log_e  = {
                 "time":   datetime.now(AEST).strftime('%H:%M'),
+                "date":   datetime.now(AEST).strftime('%Y-%m-%d'),
                 "ticker": ticker,
                 "signal": sig.get("signal", "ERR"),
                 "price":  sig.get("entry_price") or sig.get("price", 0),
@@ -209,6 +273,7 @@ def run_agent_scan():
 
     d["stats"]     = calc_stats(d)
     d["last_scan"] = datetime.now().isoformat()
+    update_eod_tracking(d, tickers)
     save_data(d)
 
     s = d["stats"]
