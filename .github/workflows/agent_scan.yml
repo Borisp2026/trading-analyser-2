@@ -34,6 +34,7 @@ jobs:
         run: |
           git config user.name "Agent Trader Bot"
           git config user.email "agent@trading-analyser"
+          git pull --rebase origin main || true
           git add data/agent_trades.json
           git diff --staged --quiet || git commit -m "Agent scan $(date -u +'%H:%M UTC')"
-          git push origin HEAD:main
+          git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)
