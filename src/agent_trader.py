@@ -4,7 +4,7 @@ Tracks 30 simulated trades before paper/live go-live.
 Strategy: ORB + VWAP breakout, 5% target, 2% stop.
 """
 import json, os, sys, time
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 import yfinance as yf
 import pandas as pd
 import pytz
@@ -16,6 +16,7 @@ BASE          = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AGENT_FILE    = os.path.join(BASE, "data", "agent_trades.json")
 WATCHLIST_FILE= os.path.join(BASE, "data", "watchlist.json")
 MACRO_FILE    = os.path.join(BASE, "data", "macro_gate.json")
+INTRADAY_SIGNALS_FILE = os.path.join(BASE, "data", "intraday_signals.json")
 AEST          = pytz.timezone('Australia/Sydney')
 
 TARGET_TRADES = 30
@@ -144,6 +145,18 @@ def calc_stats(d):
     }
 
 
+def get_fresh_intraday_signals():
+    """Return HIGH priority BUY signals written by intraday_scanner, < 40 min old."""
+    try:
+        if not os.path.exists(INTRADAY_SIGNALS_FILE):
+            return []
+        with open(INTRADAY_SIGNALS_FILE) as f:
+            signals = json.load(f)
+        cutoff = datetime.now() - timedelta(minutes=40)
+        return [s for s in signals if datetime.fromisoformat(s["time"]) > cutoff]
+    except Exception:
+        return []
+
 # ── Main scan ─────────────────────────────────────────────────────────────────
 def run_agent_scan():
     now_str = datetime.now(AEST).strftime('%H:%M:%S AEST')
@@ -270,6 +283,47 @@ def run_agent_scan():
             time.sleep(0.3)
         except Exception as e:
             print(f"  Entry error {ticker}: {e}")
+
+
+    # ── 3. Intraday scanner BUY signals ──────────────────────────────────────
+    for isig in get_fresh_intraday_signals():
+        if open_count >= MAX_POSITIONS or trades_done >= TARGET_TRADES:
+            break
+        iticker = isig["ticker"]
+        if iticker in d["open_positions"]: continue
+        if not is_trading_window(iticker): continue
+        try:
+            idf = fetch_1min(iticker)
+            if idf is None or len(idf) == 0: continue
+            iprice   = float(idf["Close"].iloc[-1])
+            pos_size = min(POS_SIZE, round(capital * 0.5, 2))
+            trade_id = trades_done + 1
+            itarget  = round(iprice * 1.04, 3)
+            istop    = round(iprice * 0.985, 3)
+            trade = {
+                "id": trade_id, "ticker": iticker,
+                "entry_price": iprice, "entry_time": datetime.now().isoformat(),
+                "target": itarget, "stop": istop,
+                "position_size": pos_size, "macro_score": ms,
+                "status": "OPEN", "signal_source": "INTRADAY_SCANNER",
+                "signal_type": isig.get("signal_type",""),
+                "exit_price": None, "exit_time": None, "exit_reason": None,
+                "pnl_pct": None, "pnl_dollar": None, "outcome": "PENDING",
+                "conditions_met": None, "reasons": [isig.get("message","")],
+                "vwap": None, "rsi": isig.get("rsi"), "orb_high": None,
+            }
+            d["trades"].append(trade)
+            d["open_positions"][iticker] = {
+                "trade_id": trade_id, "entry_price": iprice,
+                "target": itarget, "stop": istop, "position_size": pos_size,
+            }
+            fee = round(pos_size * 0.001, 2)
+            capital -= pos_size + fee
+            d["capital"] = round(capital, 2)
+            open_count += 1; trades_done += 1
+            print(f"  INTRADAY BUY {iticker} @ ${iprice} | T:${itarget} S:${istop} | {isig.get('signal_type','')}")
+        except Exception as e:
+            print(f"  Intraday entry error {iticker}: {e}")
 
     d["stats"]     = calc_stats(d)
     d["last_scan"] = datetime.now().isoformat()

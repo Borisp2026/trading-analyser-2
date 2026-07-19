@@ -60,7 +60,9 @@ def check_entry(ticker, df, macro_score=100):
     orb_low  = float(orb["Low"].min())
     price    = float(now["Close"])
     vol      = float(now["Volume"])
-    avg_vol  = float(day["Volume"].mean()) or 1
+    roll    = day["Volume"].rolling(20, min_periods=5).mean()
+    avg_vol = float(roll.iloc[-1]) if not pd.isna(roll.iloc[-1]) else float(day["Volume"].mean())
+    avg_vol = avg_vol or 1
 
     # VWAP
     vwap_ser = _vwap(day)
@@ -95,7 +97,7 @@ def check_entry(ticker, df, macro_score=100):
         "ORB breakout":       price > orb_high,
         "Above VWAP":         price > vwap,
         "RSI 45–75":          45 <= rsi <= 75,
-        "Volume spike":       vol >= avg_vol * 1.2,
+        "Volume spike":       vol >= avg_vol * 1.1,
         "Not overextended":   price < orb_high * 1.08,
         "MACD bullish":       macd_info.get("bullish", False),
         "SuperTrend bullish": st_info.get("bullish", False),

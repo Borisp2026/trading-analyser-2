@@ -11,7 +11,7 @@ import sys
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from datetime import datetime, time
+from datetime import datetime, time, timedelta
 import pytz
 import yfinance as yf
 
@@ -21,6 +21,32 @@ from technical import analyse_technicals, calc_rsi, calc_macd, calc_volume_signa
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WATCHLIST_FILE = os.path.join(BASE, "data", "watchlist.json")
 ALERTS_LOG = os.path.join(BASE, "data", "alerts_log.json")
+INTRADAY_SIGNALS_FILE = os.path.join(BASE, "data", "intraday_signals.json")
+
+def save_actionable_signal(ticker: str, sig: dict):
+    """Persist HIGH priority BUY signals for agent_trader to act on."""
+    if sig.get("priority") != "HIGH":
+        return
+    if not any(w in sig.get("action","") for w in ("BUY","MOMENTUM")):
+        return
+    try:
+        signals = []
+        if os.path.exists(INTRADAY_SIGNALS_FILE):
+            with open(INTRADAY_SIGNALS_FILE) as f:
+                signals = json.load(f)
+        cutoff = datetime.now() - timedelta(minutes=60)
+        signals = [s for s in signals if datetime.fromisoformat(s["time"]) > cutoff]
+        signals.append({
+            "ticker": ticker, "signal_type": sig["type"],
+            "priority": sig["priority"], "action": sig["action"],
+            "price": sig["price"], "rsi": sig.get("rsi"),
+            "time": datetime.now().isoformat(), "message": sig["message"],
+        })
+        with open(INTRADAY_SIGNALS_FILE,"w") as f:
+            json.dump(signals, f, indent=2)
+    except Exception as e:
+        print(f"  Signal save error: {e}")
+
 
 GMAIL_ADDRESS = os.environ.get("GMAIL_ADDRESS", "")
 GMAIL_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "")
