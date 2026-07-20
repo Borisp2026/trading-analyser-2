@@ -2,18 +2,18 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 18.27,
-      "value_label": "VIX 18.3",
-      "score": 33.7,
-      "detail": "VIX 18.3 \u2014 lower than 34% of the past year",
-      "interpretation": "ELEVATED"
+      "value": 17.67,
+      "value_label": "VIX 17.7",
+      "score": 40.1,
+      "detail": "VIX 17.7 \u2014 lower than 40% of the past year",
+      "interpretation": "CALM"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.889,
-      "value_label": "Ratio 0.889",
-      "score": 86.8,
-      "detail": "VIX/VIX3M = 0.889 (CONTANGO) \u2014 below 1.0 = calm",
+      "value": 0.892,
+      "value_label": "Ratio 0.892",
+      "score": 86.0,
+      "detail": "VIX/VIX3M = 0.892 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -26,32 +26,32 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 1.66,
-      "value_label": "Z-score +1.66",
-      "score": 8.4,
-      "detail": "HYG/TLT ratio z-score +1.66 vs 1-year avg (negative = tight = bullish)",
+      "value": 1.86,
+      "value_label": "Z-score +1.86",
+      "score": 3.4,
+      "detail": "HYG/TLT ratio z-score +1.86 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 11.4,
-      "value_label": "VIX ROC +11.4%",
-      "score": 48.2,
-      "detail": "VIX 20-day rate of change +11.4% (rapidly rising = fear = low score)",
+      "value": 7.74,
+      "value_label": "VIX ROC +7.7%",
+      "score": 52.8,
+      "detail": "VIX 20-day rate of change +7.7% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
       "name": "SPX Trend",
-      "value": 6.73,
-      "value_label": "SPX +6.7% vs 200MA",
-      "score": 70,
-      "detail": "S&P 500 $7,458 \u2014 MA50 above MA200 (Golden cross)",
-      "interpretation": "MIXED"
+      "value": 7.17,
+      "value_label": "SPX +7.2% vs 200MA",
+      "score": 100,
+      "detail": "S&P 500 $7,492 \u2014 MA50 above MA200 (Golden cross)",
+      "interpretation": "UPTREND"
     }
   ],
-  "composite": 57.8,
+  "composite": 63.7,
   "zone": "SELECTIVE",
   "zone_desc": "Mixed conditions \u2014 selective deployment, reduce size",
   "zone_color": "#ff9900",
-  "scanned_at": "2026-07-20T12:18:06.164052"
+  "scanned_at": "2026-07-20T13:52:44.559063"
 }
