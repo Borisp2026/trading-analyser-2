@@ -2,18 +2,18 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 18.77,
-      "value_label": "VIX 18.8",
-      "score": 28.5,
-      "detail": "VIX 18.8 \u2014 lower than 28% of the past year",
+      "value": 18.27,
+      "value_label": "VIX 18.3",
+      "score": 33.7,
+      "detail": "VIX 18.3 \u2014 lower than 34% of the past year",
       "interpretation": "ELEVATED"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.914,
-      "value_label": "Ratio 0.914",
-      "score": 78.7,
-      "detail": "VIX/VIX3M = 0.914 (CONTANGO) \u2014 below 1.0 = calm",
+      "value": 0.889,
+      "value_label": "Ratio 0.889",
+      "score": 86.8,
+      "detail": "VIX/VIX3M = 0.889 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -34,10 +34,10 @@
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 1.79,
-      "value_label": "VIX ROC +1.8%",
-      "score": 60.3,
-      "detail": "VIX 20-day rate of change +1.8% (rapidly rising = fear = low score)",
+      "value": 11.4,
+      "value_label": "VIX ROC +11.4%",
+      "score": 48.2,
+      "detail": "VIX 20-day rate of change +11.4% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
@@ -49,9 +49,9 @@
       "interpretation": "MIXED"
     }
   ],
-  "composite": 57.6,
+  "composite": 57.8,
   "zone": "SELECTIVE",
   "zone_desc": "Mixed conditions \u2014 selective deployment, reduce size",
   "zone_color": "#ff9900",
-  "scanned_at": "2026-07-19T13:21:15.777257"
+  "scanned_at": "2026-07-20T12:18:06.164052"
 }
