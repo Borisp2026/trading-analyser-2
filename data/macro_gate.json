@@ -2,18 +2,18 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 17.76,
-      "value_label": "VIX 17.8",
-      "score": 39.9,
-      "detail": "VIX 17.8 \u2014 lower than 40% of the past year",
+      "value": 17.47,
+      "value_label": "VIX 17.5",
+      "score": 43.1,
+      "detail": "VIX 17.5 \u2014 lower than 43% of the past year",
       "interpretation": "CALM"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.865,
-      "value_label": "Ratio 0.865",
-      "score": 95.1,
-      "detail": "VIX/VIX3M = 0.865 (CONTANGO) \u2014 below 1.0 = calm",
+      "value": 0.851,
+      "value_label": "Ratio 0.851",
+      "score": 99.8,
+      "detail": "VIX/VIX3M = 0.851 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -26,32 +26,32 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 2.05,
-      "value_label": "Z-score +2.05",
+      "value": 2.15,
+      "value_label": "Z-score +2.15",
       "score": 0,
-      "detail": "HYG/TLT ratio z-score +2.05 vs 1-year avg (negative = tight = bullish)",
+      "detail": "HYG/TLT ratio z-score +2.15 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 2.78,
-      "value_label": "VIX ROC +2.8%",
-      "score": 59.0,
-      "detail": "VIX 20-day rate of change +2.8% (rapidly rising = fear = low score)",
-      "interpretation": "NEUTRAL"
+      "value": -10.36,
+      "value_label": "VIX ROC -10.4%",
+      "score": 75.5,
+      "detail": "VIX 20-day rate of change -10.4% (rapidly rising = fear = low score)",
+      "interpretation": "GREEDY"
     },
     {
       "name": "SPX Trend",
-      "value": 6.47,
-      "value_label": "SPX +6.5% vs 200MA",
-      "score": 70,
-      "detail": "S&P 500 $7,443 \u2014 MA50 above MA200 (Golden cross)",
-      "interpretation": "MIXED"
+      "value": 7.35,
+      "value_label": "SPX +7.4% vs 200MA",
+      "score": 100,
+      "detail": "S&P 500 $7,509 \u2014 MA50 above MA200 (Golden cross)",
+      "interpretation": "UPTREND"
     }
   ],
-  "composite": 60.7,
+  "composite": 69.7,
   "zone": "SELECTIVE",
   "zone_desc": "Mixed conditions \u2014 selective deployment, reduce size",
   "zone_color": "#ff9900",
-  "scanned_at": "2026-07-21T11:47:13.656429"
+  "scanned_at": "2026-07-22T11:48:09.800779"
 }
