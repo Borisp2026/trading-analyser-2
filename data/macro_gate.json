@@ -2,18 +2,18 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 17.47,
-      "value_label": "VIX 17.5",
-      "score": 43.1,
-      "detail": "VIX 17.5 \u2014 lower than 43% of the past year",
-      "interpretation": "CALM"
+      "value": 18.23,
+      "value_label": "VIX 18.2",
+      "score": 34.0,
+      "detail": "VIX 18.2 \u2014 lower than 34% of the past year",
+      "interpretation": "ELEVATED"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.851,
-      "value_label": "Ratio 0.851",
-      "score": 99.8,
-      "detail": "VIX/VIX3M = 0.851 (CONTANGO) \u2014 below 1.0 = calm",
+      "value": 0.888,
+      "value_label": "Ratio 0.888",
+      "score": 87.5,
+      "detail": "VIX/VIX3M = 0.888 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -26,32 +26,32 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 2.15,
-      "value_label": "Z-score +2.15",
+      "value": 2.17,
+      "value_label": "Z-score +2.17",
       "score": 0,
-      "detail": "HYG/TLT ratio z-score +2.15 vs 1-year avg (negative = tight = bullish)",
+      "detail": "HYG/TLT ratio z-score +2.17 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -10.36,
-      "value_label": "VIX ROC -10.4%",
-      "score": 75.5,
-      "detail": "VIX 20-day rate of change -10.4% (rapidly rising = fear = low score)",
-      "interpretation": "GREEDY"
+      "value": -2.15,
+      "value_label": "VIX ROC -2.1%",
+      "score": 65.2,
+      "detail": "VIX 20-day rate of change -2.1% (rapidly rising = fear = low score)",
+      "interpretation": "NEUTRAL"
     },
     {
       "name": "SPX Trend",
-      "value": 7.35,
-      "value_label": "SPX +7.4% vs 200MA",
+      "value": 7.14,
+      "value_label": "SPX +7.1% vs 200MA",
       "score": 100,
-      "detail": "S&P 500 $7,509 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,499 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "UPTREND"
     }
   ],
-  "composite": 69.7,
+  "composite": 64.4,
   "zone": "SELECTIVE",
   "zone_desc": "Mixed conditions \u2014 selective deployment, reduce size",
   "zone_color": "#ff9900",
-  "scanned_at": "2026-07-22T11:48:09.800779"
+  "scanned_at": "2026-07-23T11:51:16.561865"
 }
