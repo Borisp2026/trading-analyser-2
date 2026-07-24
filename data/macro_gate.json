@@ -2,18 +2,18 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 18.23,
-      "value_label": "VIX 18.2",
-      "score": 34.0,
-      "detail": "VIX 18.2 \u2014 lower than 34% of the past year",
+      "value": 18.78,
+      "value_label": "VIX 18.8",
+      "score": 28.5,
+      "detail": "VIX 18.8 \u2014 lower than 28% of the past year",
       "interpretation": "ELEVATED"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.888,
-      "value_label": "Ratio 0.888",
-      "score": 87.5,
-      "detail": "VIX/VIX3M = 0.888 (CONTANGO) \u2014 below 1.0 = calm",
+      "value": 0.914,
+      "value_label": "Ratio 0.914",
+      "score": 78.6,
+      "detail": "VIX/VIX3M = 0.914 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -26,32 +26,32 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 2.17,
-      "value_label": "Z-score +2.17",
+      "value": 2.12,
+      "value_label": "Z-score +2.12",
       "score": 0,
-      "detail": "HYG/TLT ratio z-score +2.17 vs 1-year avg (negative = tight = bullish)",
+      "detail": "HYG/TLT ratio z-score +2.12 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -2.15,
-      "value_label": "VIX ROC -2.1%",
-      "score": 65.2,
-      "detail": "VIX 20-day rate of change -2.1% (rapidly rising = fear = low score)",
+      "value": -0.58,
+      "value_label": "VIX ROC -0.6%",
+      "score": 63.2,
+      "detail": "VIX 20-day rate of change -0.6% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
       "name": "SPX Trend",
-      "value": 7.14,
-      "value_label": "SPX +7.1% vs 200MA",
-      "score": 100,
-      "detail": "S&P 500 $7,499 \u2014 MA50 above MA200 (Golden cross)",
-      "interpretation": "UPTREND"
+      "value": 5.8,
+      "value_label": "SPX +5.8% vs 200MA",
+      "score": 70,
+      "detail": "S&P 500 $7,408 \u2014 MA50 above MA200 (Golden cross)",
+      "interpretation": "MIXED"
     }
   ],
-  "composite": 64.4,
+  "composite": 56.7,
   "zone": "SELECTIVE",
   "zone_desc": "Mixed conditions \u2014 selective deployment, reduce size",
   "zone_color": "#ff9900",
-  "scanned_at": "2026-07-23T11:51:16.561865"
+  "scanned_at": "2026-07-24T11:43:18.310118"
 }
