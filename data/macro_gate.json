@@ -2,56 +2,56 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 17.76,
-      "value_label": "VIX 17.8",
-      "score": 40.9,
-      "detail": "VIX 17.8 \u2014 lower than 41% of the past year",
-      "interpretation": "CALM"
+      "value": 19.08,
+      "value_label": "VIX 19.1",
+      "score": 25.4,
+      "detail": "VIX 19.1 \u2014 lower than 25% of the past year",
+      "interpretation": "ELEVATED"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.866,
-      "value_label": "Ratio 0.866",
-      "score": 94.7,
-      "detail": "VIX/VIX3M = 0.866 (CONTANGO) \u2014 below 1.0 = calm",
+      "value": 0.945,
+      "value_label": "Ratio 0.945",
+      "score": 68.5,
+      "detail": "VIX/VIX3M = 0.945 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
       "name": "Market Breadth",
-      "value": 80.0,
-      "value_label": "8/10 sectors above 200MA",
+      "value": 81.8,
+      "value_label": "9/11 sectors above 200MA",
       "score": 100,
-      "detail": "8 of 10 SPDR sector ETFs above their 200-day SMA (80%)",
+      "detail": "9 of 11 SPDR sector ETFs above their 200-day SMA (82%)",
       "interpretation": "BROAD"
     },
     {
       "name": "Credit Spreads",
-      "value": 2.12,
-      "value_label": "Z-score +2.12",
-      "score": 0,
-      "detail": "HYG/TLT ratio z-score +2.12 vs 1-year avg (negative = tight = bullish)",
+      "value": 1.79,
+      "value_label": "Z-score +1.79",
+      "score": 5.4,
+      "detail": "HYG/TLT ratio z-score +1.79 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -3.53,
-      "value_label": "VIX ROC -3.5%",
-      "score": 66.9,
-      "detail": "VIX 20-day rate of change -3.5% (rapidly rising = fear = low score)",
+      "value": 3.64,
+      "value_label": "VIX ROC +3.6%",
+      "score": 58.0,
+      "detail": "VIX 20-day rate of change +3.6% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
       "name": "SPX Trend",
-      "value": NaN,
-      "value_label": "SPX +nan% vs 200MA",
-      "score": 0,
-      "detail": "S&P 500 $nan \u2014 MA50 below MA200 (Death cross)",
+      "value": 5.82,
+      "value_label": "SPX +5.8% vs 200MA",
+      "score": 70,
+      "detail": "S&P 500 $7,413 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "MIXED"
     }
   ],
-  "composite": 50.4,
+  "composite": 54.6,
   "zone": "SELECTIVE",
   "zone_desc": "Mixed conditions \u2014 selective deployment, reduce size",
   "zone_color": "#ff9900",
-  "scanned_at": "2026-07-27T12:55:42.207202"
+  "scanned_at": "2026-07-28T11:58:45.606737"
 }
