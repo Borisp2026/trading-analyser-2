@@ -4,7 +4,7 @@
       "name": "VIX Level",
       "value": 15.99,
       "value_label": "VIX 16.0",
-      "score": 76.3,
+      "score": 75.8,
       "detail": "VIX 16.0 \u2014 lower than 76% of the past year",
       "interpretation": "CALM"
     },
@@ -34,10 +34,10 @@
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -0.99,
-      "value_label": "VIX ROC -1.0%",
-      "score": 63.7,
-      "detail": "VIX 20-day rate of change -1.0% (rapidly rising = fear = low score)",
+      "value": 2.7,
+      "value_label": "VIX ROC +2.7%",
+      "score": 59.1,
+      "detail": "VIX 20-day rate of change +2.7% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
@@ -49,9 +49,9 @@
       "interpretation": "UPTREND"
     }
   ],
-  "composite": 70.9,
+  "composite": 70.1,
   "zone": "DEPLOY",
   "zone_desc": "Conditions favourable \u2014 deploy capital aggressively",
   "zone_color": "#44bb44",
-  "scanned_at": "2026-08-02T11:17:00.949593"
+  "scanned_at": "2026-08-03T12:55:26.120923"
 }
