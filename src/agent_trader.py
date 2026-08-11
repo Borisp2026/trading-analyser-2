@@ -146,6 +146,36 @@ def calc_stats(d):
     }
 
 
+def update_condition_stats(d, sig):
+    """Persistent tally of why entries do/don't fire — survives scan_log
+    rotation, so the bottleneck is visible even over weeks of scans."""
+    stats = d.setdefault("condition_stats", {
+        "total_scans": 0, "buys": 0,
+        "early_skip_reasons": {},   # e.g. "Insufficient bars", "Macro gate X < 50"
+        "tier_fail_counts": {"trend_ok": 0, "momentum_ok": 0, "volume_ok": 0},
+        "condition_true_counts": {},
+        "condition_total": 0,
+    })
+    stats["total_scans"] += 1
+    if not sig:
+        return
+    if sig.get("signal") == "BUY":
+        stats["buys"] += 1
+        return
+    if "conditions" not in sig:
+        # early return in check_entry (insufficient bars / macro gate / etc.)
+        reason = (sig.get("reasons", ["Unknown"]) or ["Unknown"])[0]
+        stats["early_skip_reasons"][reason] = stats["early_skip_reasons"].get(reason, 0) + 1
+        return
+    stats["condition_total"] += 1
+    for tier in ("trend_ok", "momentum_ok", "volume_ok"):
+        if not sig.get(tier):
+            stats["tier_fail_counts"][tier] += 1
+    for cond, met in sig.get("conditions", {}).items():
+        if met:
+            stats["condition_true_counts"][cond] = stats["condition_true_counts"].get(cond, 0) + 1
+
+
 def get_fresh_intraday_signals():
     """Return HIGH priority BUY signals written by intraday_scanner, < 40 min old."""
     try:
@@ -238,8 +268,13 @@ def run_agent_scan():
                 "signal": sig.get("signal", "ERR"),
                 "price":  sig.get("entry_price") or sig.get("price", 0),
                 "notes":  (sig.get("reasons", [])[:1] or [""])[0][:60],
+                "trend_ok":    sig.get("trend_ok"),
+                "momentum_ok": sig.get("momentum_ok"),
+                "volume_ok":   sig.get("volume_ok"),
+                "conditions":  sig.get("conditions"),
             }
-            d["scan_log"] = d["scan_log"][-300:]
+            update_condition_stats(d, sig)
+            d["scan_log"] = d["scan_log"][-1500:]
             d["scan_log"].append(log_e)
 
             if sig and sig["signal"] == "BUY":

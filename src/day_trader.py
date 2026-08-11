@@ -136,6 +136,10 @@ def check_entry(ticker, df, macro_score=100):
             "pdl":            round(pdl, 3),
             "conditions_met": score,
             "reasons":        [f"✓ {c}" for c in met],
+            "trend_ok":       trend_ok,
+            "momentum_ok":    momentum_ok,
+            "volume_ok":      volume_ok,
+            "conditions":     conditions,
             "timestamp":      datetime.now().isoformat(),
         }
 
@@ -147,6 +151,10 @@ def check_entry(ticker, df, macro_score=100):
         "rsi":            round(rsi, 1),
         "conditions_met": score,
         "reasons":        [f"✓ {c}" for c in met] + [f"✗ {c}" for c in not_met],
+        "trend_ok":       trend_ok,
+        "momentum_ok":    momentum_ok,
+        "volume_ok":      volume_ok,
+        "conditions":     conditions,
         "timestamp":      datetime.now().isoformat(),
     }
 
