@@ -222,6 +222,14 @@ def run_macro_gate():
         signal_spx_trend(),
     ]
 
+    # ASX-local signals — informational only, not blended into the deployment gate below.
+    asx_signals = [
+        signal_asx_trend(),
+        signal_asx_breadth(),
+        signal_asx_vix(),
+    ]
+    asx_composite = round(sum(s["score"] for s in asx_signals) / len(asx_signals), 1)
+
     composite = round(sum(s["score"] for s in signals) / len(signals), 1)
 
     if composite >= 70:
@@ -239,9 +247,14 @@ def run_macro_gate():
 
     for s in signals:
         print(f"  {s['name']:26} | {s['score']:5.1f}/100 | {s['value_label']:25} | {s['interpretation']}")
-    print(f"  {'COMPOSITE':26} | {composite:5.1f}/100 | Zone: {zone}")
+    print(f"  {'COMPOSITE (US, gates deploy)':26} | {composite:5.1f}/100 | Zone: {zone}")
+    for s in asx_signals:
+        print(f"  {s['name']:26} | {s['score']:5.1f}/100 | {s['value_label']:25} | {s['interpretation']}")
+    print(f"  {'ASX COMPOSITE (info only)':26} | {asx_composite:5.1f}/100")
 
     result = {"signals": signals, "composite": composite,
+              "us_signals": signals, "us_composite": composite,
+              "asx_signals": asx_signals, "asx_composite": asx_composite,
               "zone": zone, "zone_desc": zone_desc, "zone_color": zone_color,
               "scanned_at": datetime.now().isoformat()}
     with open(MACRO_FILE, "w") as f:

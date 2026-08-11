@@ -23,6 +23,11 @@ WATCHLIST_FILE = os.path.join(BASE, "data", "watchlist.json")
 ALERTS_LOG = os.path.join(BASE, "data", "alerts_log.json")
 INTRADAY_SIGNALS_FILE = os.path.join(BASE, "data", "intraday_signals.json")
 
+def load_watchlist() -> dict:
+    with open(WATCHLIST_FILE) as f:
+        return json.load(f)
+
+
 def save_actionable_signal(ticker: str, sig: dict):
     """Persist HIGH priority BUY signals for agent_trader to act on."""
     if sig.get("priority") != "HIGH":

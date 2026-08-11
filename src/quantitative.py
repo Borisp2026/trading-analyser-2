@@ -178,17 +178,13 @@ def run_monte_carlo(ticker, df, n_sims=300, horizon=63):
         mu, sigma = float(rets.mean()), float(rets.std())
         last = float(closes.iloc[-1])
         np.random.seed(42)
-        ends = []
-        for _ in range(n_sims):
-            r = np.random.normal(mu, sigma, horizon)
-            path = last
-            for ri in r: path *= (1+ri)
-            ends.append(path)
+        r = np.random.normal(mu, sigma, (n_sims, horizon))
+        ends = last * np.cumprod(1 + r, axis=1)[:, -1]
         return {"ticker": ticker, "current_price": round(last,3), "horizon_days": horizon, "n_sims": n_sims,
                 "p10": round(float(np.percentile(ends,10)),3), "p25": round(float(np.percentile(ends,25)),3),
                 "p50": round(float(np.percentile(ends,50)),3), "p75": round(float(np.percentile(ends,75)),3),
                 "p90": round(float(np.percentile(ends,90)),3),
-                "prob_up": round(sum(1 for p in ends if p>last)/n_sims*100,1),
+                "prob_up": round(float(np.sum(ends>last))/n_sims*100,1),
                 "mu_daily": round(mu*100,4), "sigma_daily": round(sigma*100,4)}
     except Exception as e:
         return {"ticker": ticker, "error": str(e)}

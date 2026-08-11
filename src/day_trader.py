@@ -163,7 +163,7 @@ def check_exit(position, current_price):
         return {"exit": True,  "reason": "TARGET HIT ✓", "pnl_pct": pnl, "exit_price": round(current_price, 3)}
     if current_price <= stop:
         return {"exit": True,  "reason": "STOP HIT ✗",   "pnl_pct": pnl, "exit_price": round(current_price, 3)}
-    if now_aest.hour >= 15 and now_aest.minute >= 30:
+    if (now_aest.hour, now_aest.minute) >= (15, 30):
         return {"exit": True,  "reason": "EOD EXIT",      "pnl_pct": pnl, "exit_price": round(current_price, 3)}
     return {"exit": False, "reason": "HOLDING",           "pnl_pct": pnl, "current_price": round(current_price, 3)}
 

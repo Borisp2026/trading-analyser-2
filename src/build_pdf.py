@@ -342,4 +342,33 @@ def build_pdf_report(results: list, portfolio: dict, output_path: str,
         corr = r.get("correlation", {})
         if corr and corr.get("status") == "ok":
             story.append(Spacer(1, 2 * mm))
-            story.append
+            story.append(Paragraph("US Market Correlation", h3))
+            bench = corr.get("benchmarks", {})
+            corr_data = [["Benchmark", "Correlation", "Beta"]]
+            for name, b in bench.items():
+                corr_data.append([name, str(b.get("correlation", "—")), str(b.get("beta", "—"))])
+            corr_table = Table(corr_data, colWidths=[(PAGE_W - 2 * MARGIN) * 0.4, (PAGE_W - 2 * MARGIN) * 0.3, (PAGE_W - 2 * MARGIN) * 0.3])
+            corr_table.setStyle(TableStyle([
+                ("BACKGROUND", (0, 0), (-1, 0), LIGHT_GREY),
+                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+                ("FONTSIZE", (0, 0), (-1, -1), 9),
+                ("ROWBACKGROUNDS", (0, 1), (-1, -1), [WHITE, LIGHT_GREY]),
+                ("GRID", (0, 0), (-1, -1), 0.3, colors.lightgrey),
+                ("TOPPADDING", (0, 0), (-1, -1), 4),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+            ]))
+            story.append(corr_table)
+            story.append(Paragraph(
+                f"Avg correlation: {corr.get('avg_correlation', '—')} | US trend: {corr.get('us_trend', '—')}",
+                small
+            ))
+            story.append(Paragraph(corr.get("outlook", ""), small))
+
+    # ── Build PDF ──────────────────────────────────────────────────────────
+    doc = SimpleDocTemplate(
+        output_path, pagesize=A4,
+        leftMargin=MARGIN, rightMargin=MARGIN, topMargin=MARGIN, bottomMargin=MARGIN,
+        title="Trading Analyser 2.0 — Nightly Report",
+    )
+    doc.build(story)
+    return output_path

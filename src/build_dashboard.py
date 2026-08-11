@@ -197,7 +197,7 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
 
     # Parse macro for template vars
     try:
-        _m=json.loads(macro_json)
+        _m=macro or {}
         macro_composite=_m.get("composite",50)
         macro_zone=_m.get("zone","—")
         macro_zone_color=_m.get("zone_color","#888")
@@ -892,44 +892,6 @@ function renderQuantTab(section){
     const results=QUANT_DATA.results||QUANT_DATA||{};
     const tickers=Object.keys(results);
     if(!tickers.length){
-        if(section==='top5'){
-        const scored = tickers.map(t=>{
-            const r = results[t]||{};
-            const scores = [];
-            if(r.momentum?.percentile!=null)          scores.push(r.momentum.percentile);
-            if(r.monte_carlo?.prob_up!=null)             scores.push(r.monte_carlo.prob_up);
-            if(r.ma_strategy?.avg_golden_return_60d!=null) scores.push(Math.min(100,Math.max(0,r.ma_strategy.avg_golden_return_60d/3)));
-            const avg = scores.length ? scores.reduce((a,b)=>a+b,0)/scores.length : 0;
-            return {ticker:t, score:Math.round(avg), scores, r};
-        }).sort((a,b)=>b.score-a.score).slice(0,5);
-        document.getElementById('quantContent').innerHTML=
-            '<h3 style="color:#ccc;margin-bottom:16px">Top 5 Stocks — Overall Quantitative Score</h3>'
-            +'<p style="color:#666;font-size:12px;margin-bottom:20px">Averaged across: 12-1 Momentum, RSI Win Rate, MA Win Rate, Walk Forward Return, Monte Carlo Profit Probability</p>'
-            +'<div style="display:grid;gap:12px">'
-            +scored.map((s,i)=>{
-                const col=s.score>=70?'#44bb44':s.score>=50?'#ff9900':s.score>=40?'#ff6600':'#cc0000';
-                const bar=Math.min(100,s.score);
-                const mom=s.r.momentum?.percentile?.toFixed(0)||'—';
-                const mc=s.r.monte_carlo?.prob_up?.toFixed(0)||'—';
-                const ma=s.r.ma_strategy?.avg_golden_return_60d?.toFixed(0)||'—';
-                const trend=s.r.ma_strategy?.trend||'—';
-                return '<div style="background:#1a1a2e;border-radius:12px;padding:20px;border:1px solid '+(i===0?col:'#2a2a4a')+'">'
-                    +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">'
-                    +'<div><span style="font-size:28px;font-weight:bold;color:#666;margin-right:12px">#'+(i+1)+'</span>'
-                    +'<span style="font-size:22px;font-weight:bold;color:#fff">'+s.ticker+'</span></div>'
-                    +'<span style="font-size:32px;font-weight:bold;color:'+col+'">'+s.score+'</span></div>'
-                    +'<div style="background:#0f0f1a;border-radius:6px;height:10px;margin-bottom:12px">'
-                    +'<div style="height:10px;border-radius:6px;background:'+col+';width:'+bar+'%"></div></div>'
-                    +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-size:12px">'
-                    +'<div style="text-align:center"><div style="color:#666">Momentum</div><div style="color:#ccc;font-weight:bold">'+mom+'%ile</div></div>'
-                    +'<div style="text-align:center"><div style="color:#666">RSI Win</div><div style="color:#ccc;font-weight:bold">'+rsi+'%</div></div>'
-                    +'<div style="text-align:center"><div style="color:#666">MA Win</div><div style="color:#ccc;font-weight:bold">'+ma+'%</div></div>'
-                    +'<div style="text-align:center"><div style="color:#666">MC Profit</div><div style="color:#ccc;font-weight:bold">'+mc+'%</div></div>'
-                    +'</div></div>';
-            }).join('')
-            +'</div>';
-        return;
-    }
         document.getElementById('quantContent').innerHTML='<p style="color:#888;padding:20px">No quantitative data yet — click "Run Nightly Now" to generate.</p>';return;
     }
     if(section==='earnings')     renderEarnings(results,tickers);
@@ -1411,71 +1373,6 @@ window.addEventListener('resize',()=>{
 </div>
 </div>
 
-
-<!-- TAB: Quantitative Analysis -->
-<div id="tab-quantitative" class="tab-content">
-<div class="section">
-<h2>Quantitative Analysis</h2>
-<div class="quant-subnav">
-  <button id="qbtn-earnings"     class="quant-btn active"  onclick="renderQuantTab('earnings')">Earnings Reports</button>
-  <button id="qbtn-momentum"     class="quant-btn"         onclick="renderQuantTab('momentum')">12-1 Momentum</button>
-  <button id="qbtn-rsi"          class="quant-btn"         onclick="renderQuantTab('rsi')">RSI Strategy</button>
-  <button id="qbtn-ma"           class="quant-btn"         onclick="renderQuantTab('ma')">MA Crossover</button>
-  <button id="qbtn-walkforward"  class="quant-btn"         onclick="renderQuantTab('walkforward')">Walk Forward</button>
-  <button id="qbtn-montecarlo"   class="quant-btn"         onclick="renderQuantTab('montecarlo')">Monte Carlo</button>
-  <button id="qbtn-sensitivity"  class="quant-btn"         onclick="renderQuantTab('sensitivity')">Sensitivity</button>
-  <button id="qbtn-top5" class="quant-btn" onclick="renderQuantTab('top5')">⭐ Top 5</button>
-</div>
-<div id="quantContent">
-  <p style="color:#888">Click Run Nightly Now to generate quantitative data, then come back to this tab.</p>
-</div>
-</div>
-</div>
-
-
-<!-- TAB: Day Trading -->
-<div id="tab-intraday" class="tab-content">
-<div class="section">
-<h2>Intraday Day Trading Analysis</h2>
-<p style="color:#888;font-size:13px;margin-bottom:15px">15-min bar analysis with VWAP, gap detection and intraday signals. Run "Run Nightly Now" during market hours for live data.</p>
-<div style="display:flex;gap:15px;align-items:center;flex-wrap:wrap;margin-bottom:15px">
-  <div><label style="color:#aaa;font-size:12px">Signal</label><br>
-    <select id="intradaySigFilter" onchange="renderIntradayTable()" style="background:#1e1e3a;color:#ccc;border:1px solid #444;padding:6px;border-radius:6px">
-      <option value="ALL">All</option>
-      <option value="DAY BUY">Day Buy</option>
-      <option value="WATCH">Watch</option>
-      <option value="NEUTRAL">Neutral</option>
-      <option value="AVOID">Avoid</option>
-    </select>
-  </div>
-  <div><label style="color:#aaa;font-size:12px">Search</label><br>
-    <input type="text" id="intradaySearch" placeholder="Ticker..." oninput="renderIntradayTable()">
-  </div>
-  <div style="margin-top:16px"><span id="intradayCount" style="color:#aaa;font-size:13px"></span></div>
-</div>
-<div style="overflow-x:auto">
-<table class="asx-table"><thead><tr>
-  <th>Ticker</th><th>Price</th><th>Gap %</th><th>Gap Type</th><th>VWAP</th><th>vs VWAP</th><th>RSI 15m</th><th>Momentum</th><th>Signal</th><th>Buy Zone</th><th>Sell Zone</th><th>Chart</th>
-</tr></thead><tbody id="intradayBody">
-<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Click Run Nightly Now during market hours to load intraday data.</td></tr>
-</tbody></table>
-</div>
-</div>
-</div>
-
-<!-- Intraday Chart Modal -->
-<div id="intradayChartModal" onclick="if(event.target===this)closeIntradayModal()" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:1001;align-items:center;justify-content:center">
-  <div style="background:#0f0f1a;border:1px solid #2a2a4a;border-radius:12px;width:90%;max-width:900px;padding:20px">
-    <div style="display:flex;justify-content:space-between;margin-bottom:12px">
-      <h3 id="intradayChartTitle" style="color:white"></h3>
-      <button class="close-modal" onclick="closeIntradayModal()">&#215;</button>
-    </div>
-    <div id="intradayChartBox2" style="height:350px"></div>
-  </div>
-</div>
-
-
-<!-- TAB: Market Status -->
 
 <!-- TAB: Quantitative Analysis -->
 <div id="tab-quantitative" class="tab-content">

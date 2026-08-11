@@ -23,6 +23,7 @@ TARGET_TRADES = 30
 START_CAPITAL = 5000.0
 MAX_POSITIONS = 2
 POS_SIZE      = 2500.0  # fixed $2500 per trade
+MAX_DRAWDOWN_PCT = 20.0  # halt new entries once capital falls this far below START_CAPITAL
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -216,7 +217,12 @@ def run_agent_scan():
     open_count  = len(d["open_positions"])
     trades_done = len(d["trades"])
 
-    for ticker in tickers:
+    drawdown_pct = (START_CAPITAL - capital) / START_CAPITAL * 100
+    drawdown_halt = drawdown_pct >= MAX_DRAWDOWN_PCT
+    if drawdown_halt:
+        print(f"  DRAWDOWN HALT: capital ${capital:.2f} is {drawdown_pct:.1f}% below start (limit {MAX_DRAWDOWN_PCT}%) — no new entries this scan")
+
+    for ticker in (tickers if not drawdown_halt else []):
         if open_count >= MAX_POSITIONS: break
         if trades_done >= TARGET_TRADES: break
         if ticker in d["open_positions"]: continue
@@ -286,7 +292,7 @@ def run_agent_scan():
 
 
     # ── 3. Intraday scanner BUY signals ──────────────────────────────────────
-    for isig in get_fresh_intraday_signals():
+    for isig in (get_fresh_intraday_signals() if not drawdown_halt else []):
         if open_count >= MAX_POSITIONS or trades_done >= TARGET_TRADES:
             break
         iticker = isig["ticker"]
