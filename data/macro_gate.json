@@ -2,18 +2,18 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 15.51,
-      "value_label": "VIX 15.5",
-      "score": 82.6,
-      "detail": "VIX 15.5 \u2014 lower than 83% of the past year",
+      "value": 15.45,
+      "value_label": "VIX 15.4",
+      "score": 83.0,
+      "detail": "VIX 15.4 \u2014 lower than 83% of the past year",
       "interpretation": "CALM"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.817,
-      "value_label": "Ratio 0.817",
+      "value": 0.813,
+      "value_label": "Ratio 0.813",
       "score": 100,
-      "detail": "VIX/VIX3M = 0.817 (CONTANGO) \u2014 below 1.0 = calm",
+      "detail": "VIX/VIX3M = 0.813 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -26,32 +26,110 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 2.55,
-      "value_label": "Z-score +2.55",
+      "value": 2.44,
+      "value_label": "Z-score +2.44",
       "score": 0,
-      "detail": "HYG/TLT ratio z-score +2.55 vs 1-year avg (negative = tight = bullish)",
+      "detail": "HYG/TLT ratio z-score +2.44 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -6.0,
-      "value_label": "VIX ROC -6.0%",
-      "score": 70.0,
-      "detail": "VIX 20-day rate of change -6.0% (rapidly rising = fear = low score)",
+      "value": -6.36,
+      "value_label": "VIX ROC -6.4%",
+      "score": 70.5,
+      "detail": "VIX 20-day rate of change -6.4% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
       "name": "SPX Trend",
-      "value": 9.89,
+      "value": 9.87,
       "value_label": "SPX +9.9% vs 200MA",
       "score": 100,
-      "detail": "S&P 500 $7,753 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,757 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "UPTREND"
     }
   ],
-  "composite": 75.4,
+  "composite": 75.6,
+  "us_signals": [
+    {
+      "name": "VIX Level",
+      "value": 15.45,
+      "value_label": "VIX 15.4",
+      "score": 83.0,
+      "detail": "VIX 15.4 \u2014 lower than 83% of the past year",
+      "interpretation": "CALM"
+    },
+    {
+      "name": "VIX Term Structure",
+      "value": 0.813,
+      "value_label": "Ratio 0.813",
+      "score": 100,
+      "detail": "VIX/VIX3M = 0.813 (CONTANGO) \u2014 below 1.0 = calm",
+      "interpretation": "CALM"
+    },
+    {
+      "name": "Market Breadth",
+      "value": 81.8,
+      "value_label": "9/11 sectors above 200MA",
+      "score": 100,
+      "detail": "9 of 11 SPDR sector ETFs above their 200-day SMA (82%)",
+      "interpretation": "BROAD"
+    },
+    {
+      "name": "Credit Spreads",
+      "value": 2.44,
+      "value_label": "Z-score +2.44",
+      "score": 0,
+      "detail": "HYG/TLT ratio z-score +2.44 vs 1-year avg (negative = tight = bullish)",
+      "interpretation": "WIDE"
+    },
+    {
+      "name": "Put/Call Sentiment",
+      "value": -6.36,
+      "value_label": "VIX ROC -6.4%",
+      "score": 70.5,
+      "detail": "VIX 20-day rate of change -6.4% (rapidly rising = fear = low score)",
+      "interpretation": "NEUTRAL"
+    },
+    {
+      "name": "SPX Trend",
+      "value": 9.87,
+      "value_label": "SPX +9.9% vs 200MA",
+      "score": 100,
+      "detail": "S&P 500 $7,757 \u2014 MA50 above MA200 (Golden cross)",
+      "interpretation": "UPTREND"
+    }
+  ],
+  "us_composite": 75.6,
+  "asx_signals": [
+    {
+      "name": "ASX Trend",
+      "score": 100,
+      "value": 9233.0,
+      "value_label": "XJO 9,233",
+      "detail": "XJO vs MA50(\u2713) MA200(\u2713)",
+      "interpretation": "UPTREND"
+    },
+    {
+      "name": "ASX Breadth",
+      "score": 100,
+      "value": 89.0,
+      "value_label": "89% above 50MA",
+      "detail": "8/9 ASX sectors above 50-day MA",
+      "interpretation": "BROAD"
+    },
+    {
+      "name": "ASX Volatility",
+      "score": 83.0,
+      "value": 15.4,
+      "value_label": "XVI 15.4",
+      "detail": "Lower than 83% of past year",
+      "interpretation": "NEUTRAL"
+    }
+  ],
+  "asx_composite": 94.3,
   "zone": "DEPLOY",
   "zone_desc": "Conditions favourable \u2014 deploy capital aggressively",
   "zone_color": "#44bb44",
-  "scanned_at": "2026-08-11T10:51:14.840624"
+  "scanned_at": "2026-08-11T14:24:23.599368"
 }
