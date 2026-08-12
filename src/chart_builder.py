@@ -7,6 +7,7 @@ import os
 import json
 import base64
 from io import BytesIO
+from datetime import datetime, timezone
 import pandas as pd
 import numpy as np
 
@@ -209,3 +210,98 @@ def build_chart_data(df: pd.DataFrame, ticker: str) -> dict:
     except Exception as e:
         print(f"Chart data error {ticker}: {e}")
         return {}
+
+
+# ── Cycle Trading chart (PDF) ───────────────────────────────────────────────────
+
+def build_cycle_chart(chart_data: dict, overlay: dict, ticker: str,
+                       cycle_signal: str = None, entry_zone: str = None) -> bytes:
+    """
+    Candles + Daily/Intermediate Cycle support/resistance band + DCL0/HCH/HCL/DCH
+    markers + entry/stop/target lines, matching the DJRTrading example chart style.
+    Built from chart_data (already computed per ticker for the dashboard) and the
+    cycle_overlay geometry from cycle_analysis.py — no extra yfinance fetch needed.
+    """
+    if not MATPLOTLIB_AVAILABLE or not chart_data or not chart_data.get("candles"):
+        return None
+    candles = chart_data["candles"]
+    if len(candles) < 10:
+        return None
+
+    try:
+        dates = [datetime.fromtimestamp(c["time"], tz=timezone.utc).strftime("%Y-%m-%d") for c in candles]
+        date_to_idx = {d: i for i, d in enumerate(dates)}
+        n = len(candles)
+
+        fig, ax1 = plt.subplots(figsize=(10, 5.5), facecolor="#0f0f1a")
+        ax1.set_facecolor("#13132a")
+        ax1.tick_params(colors="#888", labelsize=7)
+        ax1.spines[:].set_color("#2a2a4a")
+
+        for i, c in enumerate(candles):
+            color = "#44bb44" if c["close"] >= c["open"] else "#cc0000"
+            ax1.plot([i, i], [c["low"], c["high"]], color=color, linewidth=0.8)
+            height = max(abs(c["close"] - c["open"]), c["high"] * 0.0005)
+            rect = plt.Rectangle((i - 0.3, min(c["open"], c["close"])), 0.6, height, color=color, linewidth=0)
+            ax1.add_patch(rect)
+
+        def line_xy(points):
+            return sorted((date_to_idx[p["date"]], p["price"]) for p in (points or [])
+                          if p.get("date") in date_to_idx and p.get("price") is not None)
+
+        def plot_line(points, color, style, label):
+            xy = line_xy(points)
+            if len(xy) >= 2:
+                xs, ys = zip(*xy)
+                ax1.plot(xs, ys, color=color, linewidth=1.6, linestyle=style, alpha=0.9, label=label)
+
+        overlay = overlay or {}
+        plot_line(overlay.get("daily_support_line"), "#4a90d9", "-", "Daily Support")
+        plot_line(overlay.get("daily_resistance_line"), "#ff9900", "-", "Daily Resistance")
+        plot_line(overlay.get("intermediate_support_line"), "#4a90d9", "--", "IC Support")
+        plot_line(overlay.get("intermediate_resistance_line"), "#ff9900", "--", "IC Resistance")
+
+        markers = overlay.get("daily_markers") or {}
+        label_map = {"dcl0": ("DCL0", "#44bb44", "below"), "hch": ("HCH", "#cc0000", "above"),
+                     "hcl": ("HCL", "#44bb44", "below"), "dch": ("DCH", "#cc0000", "above")}
+        for key, (label, color, side) in label_map.items():
+            m = markers.get(key)
+            if m and m.get("date") in date_to_idx and m.get("price") is not None:
+                xi = date_to_idx[m["date"]]
+                offset = 12 if side == "above" else -12
+                ax1.annotate(label, (xi, m["price"]), color=color, fontsize=7, fontweight="bold",
+                             ha="center", va="bottom" if side == "above" else "top",
+                             xytext=(0, offset), textcoords="offset points",
+                             arrowprops=dict(arrowstyle="-", color=color, lw=0.8))
+
+        for price, color, label in (
+            (overlay.get("entry_price"), "#4a90d9", "Entry"),
+            (overlay.get("stop_price"), "#cc0000", "Stop"),
+            (overlay.get("target_price"), "#44bb44", "Target"),
+        ):
+            if price is not None:
+                ax1.axhline(price, color=color, linewidth=1, linestyle=":", alpha=0.8)
+                ax1.text(n - 1, price, f" {label} ${price:.3f}", color=color, fontsize=7, va="center", ha="left")
+
+        title = f"{ticker} — Cycle Trading"
+        sub = " ".join(p for p in (entry_zone, cycle_signal) if p)
+        if sub:
+            title += f" ({sub})"
+        ax1.set_title(title, color="white", fontsize=11, pad=8)
+        ax1.legend(loc="upper left", fontsize=6, facecolor="#13132a", edgecolor="#2a2a4a", labelcolor="white")
+
+        step = max(1, n // 6)
+        xtick_pos = list(range(0, n, step))
+        ax1.set_xticks(xtick_pos)
+        ax1.set_xticklabels([dates[i][5:] for i in xtick_pos], fontsize=7, color="#888")
+        ax1.set_xlim(-2, n + 9)  # room for the entry/stop/target labels on the right edge
+
+        plt.tight_layout()
+        buf = BytesIO()
+        fig.savefig(buf, format="png", dpi=120, bbox_inches="tight", facecolor="#0f0f1a", edgecolor="none")
+        plt.close(fig)
+        buf.seek(0)
+        return buf.read()
+    except Exception as e:
+        print(f"Cycle chart error for {ticker}: {e}")
+        return None

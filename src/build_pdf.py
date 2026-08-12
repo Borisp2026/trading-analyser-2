@@ -16,7 +16,7 @@ from reportlab.platypus import (
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT
 
 try:
-    from chart_builder import build_pdf_chart
+    from chart_builder import build_pdf_chart, build_cycle_chart
     CHARTS_ENABLED = True
 except ImportError:
     CHARTS_ENABLED = False
@@ -58,7 +58,7 @@ def rec_color(rec: str):
 
 
 def build_pdf_report(results: list, portfolio: dict, output_path: str,
-                     signal_history: dict = None, accuracy: dict = None):
+                     signal_history: dict = None, accuracy: dict = None, cycle: dict = None):
     h1, h2, h3, body, small, label = make_styles()
     story = []
     today = datetime.now().strftime("%d %B %Y")
@@ -239,6 +239,64 @@ def build_pdf_report(results: list, portfolio: dict, output_path: str,
         ]))
 
     story.append(opp_table)
+
+    # ── Cycle Trading — Best Candidates ───────────────────────────────────────
+    cycle_candidates = (cycle or {}).get("candidates", [])[:3]
+    if cycle_candidates:
+        results_by_ticker = {r["ticker"]: r for r in results}
+        story.append(PageBreak())
+        story.append(Paragraph("Cycle Trading — Best Candidates", h2))
+        story.append(Paragraph(
+            "DJRTrading Daily/Intermediate Cycle screen of the watchlist. Entry/stop/target below "
+            "are a guide, not a guarantee — exits on open paper positions are phase-based "
+            "(failed cycle, trendline break, or rolling into the high-risk Daily-Cycle-3/4 zone), "
+            "not a fixed price hit.", small
+        ))
+        story.append(Spacer(1, 3 * mm))
+
+        for c in cycle_candidates:
+            r = results_by_ticker.get(c["ticker"], {})
+            chart_data = r.get("chart_data") or {}
+            overlay = c.get("chart_overlay") or {}
+            png_bytes = None
+            if CHARTS_ENABLED:
+                png_bytes = build_cycle_chart(chart_data, overlay, c["ticker"],
+                                               cycle_signal=c.get("cycle_signal"), entry_zone=c.get("entry_zone"))
+
+            status = c.get("paper_trade_status", "")
+            status_label = {"OPENED_THIS_RUN": "OPENED TONIGHT", "ALREADY_OPEN": "POSITION OPEN"}.get(status, "NOT ENTERED")
+            story.append(Paragraph(
+                f"{c['ticker']} — {c.get('entry_zone','?')} | Score {c.get('cycle_score','?')} | {status_label}", h3
+            ))
+
+            pm = c.get("predicted_move") or {}
+            guide_data = [
+                ["Anticipated Entry", f"${c.get('price','—')}"],
+                ["Stop", (f"${c['stop_price']}" if c.get("stop_price") else "—")],
+                ["Target (soft, not a fixed exit)", (f"${pm['target_price']}" if pm.get("target_price") else "—")],
+                ["Basis", pm.get("target_basis") or "—"],
+            ]
+            guide_table = Table(guide_data, colWidths=[(PAGE_W - 2 * MARGIN) * 0.28, (PAGE_W - 2 * MARGIN) * 0.72])
+            guide_table.setStyle(TableStyle([
+                ("FONTNAME", (0, 0), (0, -1), "Helvetica-Bold"),
+                ("FONTSIZE", (0, 0), (-1, -1), 8),
+                ("ROWBACKGROUNDS", (0, 0), (-1, -1), [LIGHT_GREY, WHITE]),
+                ("GRID", (0, 0), (-1, -1), 0.3, colors.lightgrey),
+                ("TOPPADDING", (0, 0), (-1, -1), 3),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+            ]))
+            story.append(guide_table)
+            story.append(Spacer(1, 2 * mm))
+
+            if png_bytes:
+                img_w = PAGE_W - 2 * MARGIN
+                story.append(Image(BytesIO(png_bytes), width=img_w, height=img_w * 0.55))
+            else:
+                story.append(Paragraph("(chart unavailable — insufficient data)", small))
+
+            for reason in (c.get("reasons") or [])[:3]:
+                story.append(Paragraph(f"• {reason}", small))
+            story.append(Spacer(1, 6 * mm))
 
     # ── Per-stock detail pages ────────────────────────────────────────────────
     for r in results:

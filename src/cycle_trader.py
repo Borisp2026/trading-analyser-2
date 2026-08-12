@@ -70,14 +70,19 @@ def screen_candidates(all_results: list) -> dict:
         eligible = (ez.get("eligible_for_entry") and not cfn.get("failing")
                     and not cyc.get("daily_trendline", {}).get("broken"))
         if eligible and price:
+            stop_price = compute_stop_price(ez, live_daily, cyc.get("live_intermediate_cycle", {}))
+            target_price = (cyc.get("predicted_move") or {}).get("target_price")
+            overlay = dict(cyc.get("chart_overlay") or {})
+            overlay.update({"entry_price": price, "stop_price": stop_price, "target_price": target_price})
             candidates.append({
                 "ticker": ticker, "name": name, "price": price,
                 "cycle_score": cyc.get("cycle_score", 50), "cycle_signal": cyc.get("cycle_signal"),
                 "entry_zone": ez.get("zone"), "risk": ez.get("risk"),
                 "dc_num_in_ic": live_daily.get("cycle_num"),
                 "predicted_move": cyc.get("predicted_move", {}),
-                "stop_price": compute_stop_price(ez, live_daily, cyc.get("live_intermediate_cycle", {})),
+                "stop_price": stop_price,
                 "reasons": (ez.get("reasons", []) + cyc.get("reasons", []))[:5],
+                "chart_overlay": overlay,
             })
 
     candidates.sort(key=lambda c: c["cycle_score"], reverse=True)
@@ -92,7 +97,9 @@ def check_exit_conditions(fresh_cycle: dict) -> dict:
     only (predicted_move) and doesn't trigger the exit by itself."""
     if fresh_cycle.get("cycle_failing_now", {}).get("failing") or fresh_cycle.get("current_cycle", {}).get("failed"):
         return {"exit": True, "reason": "FAILED_CYCLE"}
-    if fresh_cycle.get("daily_trendline", {}).get("broken") or fresh_cycle.get("intermediate_trendline", {}).get("broken"):
+    if (fresh_cycle.get("daily_trendline", {}).get("broken")
+            or fresh_cycle.get("live_daily_trendline", {}).get("broken")
+            or fresh_cycle.get("intermediate_trendline", {}).get("broken")):
         return {"exit": True, "reason": "TRENDLINE_BREAK"}
     if fresh_cycle.get("entry_zone", {}).get("zone") == "HIGH_RISK_DC3_4":
         return {"exit": True, "reason": "HIGH_RISK_ZONE_DC3_4"}
@@ -189,6 +196,20 @@ def run_cycle_trading(all_results: list) -> dict:
     for t in open_trades:
         r = all_by_ticker.get(t["ticker"])
         t["_current_price"] = r.get("tech", {}).get("price") if r else None
+        overlay = dict((r.get("cycle", {}).get("chart_overlay") or {}) if r else {})
+        overlay.update({"entry_price": t.get("buy_price"), "stop_price": t.get("stop_price"),
+                         "target_price": t.get("target_price")})
+        t["chart_overlay"] = overlay
+
+    opened_tickers = {o["ticker"] for o in opened}
+    open_ticker_set = {t["ticker"] for t in open_trades}
+    for c in screened["candidates"]:
+        if c["ticker"] in opened_tickers:
+            c["paper_trade_status"] = "OPENED_THIS_RUN"
+        elif c["ticker"] in open_ticker_set:
+            c["paper_trade_status"] = "ALREADY_OPEN"
+        else:
+            c["paper_trade_status"] = "NOT_OPENED"
 
     signals = {
         "generated_at": datetime.now().isoformat()[:19],

@@ -226,6 +226,65 @@ def check_trendline_break(close: pd.Series, cycle: dict, dates_list: list = None
             "trendline_price": round(line_price, 4), "slope_pct_per_bar": slope_pct}
 
 
+def _resistance_pair(cycle_dict: dict) -> dict:
+    """A cycle's resistance line is HCH->DCH, the same construction as the support
+    line (DCL0->HCL) one level up. Repackaging into the dcl0_date/hcl_date schema
+    lets check_trendline_break() compute it with no new line-math."""
+    if not cycle_dict:
+        return {}
+    return {"dcl0_date": cycle_dict.get("hch_date"), "dcl0_price": cycle_dict.get("hch_price"),
+            "hcl_date": cycle_dict.get("dch_date"), "hcl_price": cycle_dict.get("dch_price")}
+
+
+def _line_points(cycle_dict: dict, trendline_info: dict, latest_date: str) -> list:
+    """Chart-ready (date, price) points for a support/resistance line: the two
+    original anchors plus a third point projecting the same line to the latest
+    bar (so the drawn line visibly extends up to "today", not just to the HCL/DCH
+    anchor date) — all three are colinear by construction, so a 3-point line
+    series renders as one continuous trendline."""
+    x0, y0 = cycle_dict.get("dcl0_date"), cycle_dict.get("dcl0_price")
+    x1, y1 = cycle_dict.get("hcl_date"), cycle_dict.get("hcl_price")
+    pts = []
+    if x0 and y0 is not None:
+        pts.append({"date": x0, "price": y0})
+    if x1 and y1 is not None:
+        pts.append({"date": x1, "price": y1})
+    tp = (trendline_info or {}).get("trendline_price")
+    if tp is not None and latest_date and (not pts or pts[-1]["date"] != latest_date):
+        pts.append({"date": latest_date, "price": tp})
+    return pts
+
+
+def _cycle_markers(cycle_dict: dict) -> dict:
+    """DCL0/HCH/HCL/DCH (or ICL0/IC-HCH/IC-HCL/ICH) as labeled chart points."""
+    if not cycle_dict:
+        return {}
+    out = {}
+    for key, label in (("dcl0", "dcl0"), ("hch", "hch"), ("hcl", "hcl"), ("dch", "dch")):
+        d, p = cycle_dict.get(f"{key}_date"), cycle_dict.get(f"{key}_price")
+        if d and p is not None:
+            out[label] = {"date": d, "price": p}
+    return out
+
+
+def build_chart_overlay(live_daily: dict, live_intermediate: dict,
+                         live_daily_trendline: dict, live_daily_resistance: dict,
+                         intermediate_trendline: dict, live_intermediate_resistance: dict,
+                         latest_date: str) -> dict:
+    """Assembles everything a chart renderer needs to draw the DJRTrading-style
+    channel (support + resistance trendlines) and DCL/HCH/HCL/DCH markers for the
+    LIVE (still-forming) Daily and Intermediate Cycles — the forward-looking ones,
+    since that's what "anticipated" entry/exit is drawn against."""
+    return {
+        "daily_support_line": _line_points(live_daily, live_daily_trendline, latest_date),
+        "daily_resistance_line": _line_points(_resistance_pair(live_daily), live_daily_resistance, latest_date),
+        "intermediate_support_line": _line_points(live_intermediate, intermediate_trendline, latest_date),
+        "intermediate_resistance_line": _line_points(_resistance_pair(live_intermediate), live_intermediate_resistance, latest_date),
+        "daily_markers": _cycle_markers(live_daily),
+        "intermediate_markers": _cycle_markers(live_intermediate),
+    }
+
+
 def check_confirmation_signal(close: pd.Series, cycle: dict, mas: dict) -> bool:
     """
     Returns True if 90% confirmation signal is present:
@@ -514,10 +573,16 @@ def _empty_cycle_extras() -> dict:
         "live_intermediate_cycle": {},
         "daily_trendline": dict(neutral_trendline),
         "intermediate_trendline": dict(neutral_trendline),
+        "live_daily_trendline": dict(neutral_trendline),
+        "live_daily_resistance": dict(neutral_trendline),
+        "live_intermediate_resistance": dict(neutral_trendline),
         "cycle_failing_now": {"failing": False, "lowest_since_dcl0": None, "pct_below_dcl0": None},
         "entry_zone": {"zone": "NO_DATA", "risk": "MEDIUM", "eligible_for_entry": False, "reasons": []},
         "predicted_move": {"target_price": None, "target_basis": None, "prior_cycle_amplitude_pct": None,
                             "bars_to_dc3_estimate": None, "est_date_dc3": None},
+        "chart_overlay": {"daily_support_line": [], "daily_resistance_line": [],
+                           "intermediate_support_line": [], "intermediate_resistance_line": [],
+                           "daily_markers": {}, "intermediate_markers": {}},
     }
 
 
@@ -577,6 +642,19 @@ def analyse_cycles(df: pd.DataFrame, mas: dict) -> dict:
                                       trendline_info, intermediate_trendline, confirmation, cycle_failing_now)
 
     p_move = predicted_move(close, live_daily, cycles, cycle_len)
+
+    # Live-cycle's own support/resistance — separate from `trendline_info` above
+    # (which is against the last COMPLETED cycle) since exits/charts need to know
+    # whether the position's OWN cycle structure is holding, not the previous one.
+    live_daily_trendline = check_trendline_break(close, live_daily, dates_list)
+    live_daily_resistance = check_trendline_break(close, _resistance_pair(live_daily), dates_list)
+    live_intermediate_resistance = check_trendline_break(close, _resistance_pair(live_intermediate), dates_list) \
+        if live_intermediate else {"applicable": False, "broken": False, "trendline_price": None, "slope_pct_per_bar": None}
+
+    chart_overlay = build_chart_overlay(live_daily, live_intermediate,
+                                         live_daily_trendline, live_daily_resistance,
+                                         intermediate_trendline, live_intermediate_resistance,
+                                         dates_list[-1])
 
     # Estimate where we are in the current incomplete cycle
     last_dcl1_date = current["dcl1_date"]
@@ -682,7 +760,11 @@ def analyse_cycles(df: pd.DataFrame, mas: dict) -> dict:
         "live_intermediate_cycle": live_intermediate,
         "daily_trendline": trendline_info,
         "intermediate_trendline": intermediate_trendline,
+        "live_daily_trendline": live_daily_trendline,
+        "live_daily_resistance": live_daily_resistance,
+        "live_intermediate_resistance": live_intermediate_resistance,
         "cycle_failing_now": cycle_failing_now,
         "entry_zone": entry_zone,
         "predicted_move": p_move,
+        "chart_overlay": chart_overlay,
     }

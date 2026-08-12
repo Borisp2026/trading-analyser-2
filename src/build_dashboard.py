@@ -694,19 +694,19 @@ function filterHistory(){
 
 // ── Chart modal (lightweight-charts from CDN) ─────────────────────────────────
 let _chart=null,_candleSeries=null,_rsiChart=null;
-function showChart(ticker){
+function showChart(ticker,overlay){
     const data=CHART_DATA[ticker];
     if(!data||!data.candles||!data.candles.length){alert('No chart data for '+ticker);return;}
-    document.getElementById('chartTitle').textContent=ticker+' — 90 Day Chart';
+    document.getElementById('chartTitle').textContent=ticker+' — 90 Day Chart'+(overlay?' — Cycle Trading':'');
     document.getElementById('chartModal').classList.add('open');
-    setTimeout(()=>renderChart(data),50);
+    setTimeout(()=>renderChart(data,overlay),50);
 }
 function closeChartModal(){
     document.getElementById('chartModal').classList.remove('open');
     if(_chart){_chart.remove();_chart=null;}
     if(_rsiChart){_rsiChart.remove();_rsiChart=null;}
 }
-function renderChart(data){
+function renderChart(data,overlay){
     const container=document.getElementById('chartContainer');
     const rsiContainer=document.getElementById('rsiContainer');
     container.innerHTML='';rsiContainer.innerHTML='';
@@ -756,6 +756,38 @@ function renderChart(data){
         const os=_rsiChart.addLineSeries({color:'rgba(68,187,68,0.4)',lineWidth:1,lineStyle:2});
         os.setData(data.rsi.map(d=>({time:d.time,value:30})));
         _chart.timeScale().subscribeVisibleTimeRangeChange(r=>{if(r&&_rsiChart)_rsiChart.timeScale().setVisibleRange(r);});
+    }
+    // Cycle Trading overlay: support/resistance band, DCL/HCH/HCL/DCH markers, entry/stop/target
+    if(overlay){
+        const toTime=d=>Math.floor(new Date(d+'T00:00:00Z').getTime()/1000);
+        const asSeries=pts=>(pts||[]).filter(p=>p.date&&p.price!=null).map(p=>({time:toTime(p.date),value:p.price}));
+        if(overlay.daily_support_line&&overlay.daily_support_line.length>=2){
+            const s=_chart.addLineSeries({color:'#4a90d9',lineWidth:2,title:'Daily Support'});
+            s.setData(asSeries(overlay.daily_support_line));
+        }
+        if(overlay.daily_resistance_line&&overlay.daily_resistance_line.length>=2){
+            const s=_chart.addLineSeries({color:'#ff9900',lineWidth:2,title:'Daily Resistance'});
+            s.setData(asSeries(overlay.daily_resistance_line));
+        }
+        if(overlay.intermediate_support_line&&overlay.intermediate_support_line.length>=2){
+            const s=_chart.addLineSeries({color:'rgba(74,144,217,0.45)',lineWidth:1,lineStyle:2,title:'IC Support'});
+            s.setData(asSeries(overlay.intermediate_support_line));
+        }
+        if(overlay.intermediate_resistance_line&&overlay.intermediate_resistance_line.length>=2){
+            const s=_chart.addLineSeries({color:'rgba(255,153,0,0.45)',lineWidth:1,lineStyle:2,title:'IC Resistance'});
+            s.setData(asSeries(overlay.intermediate_resistance_line));
+        }
+        const markers=[];
+        const mk=(m,label,color,shape,position)=>{ if(m&&m.date&&m.price!=null) markers.push({time:toTime(m.date),position:position,color:color,shape:shape,text:label}); };
+        const dm=overlay.daily_markers||{};
+        mk(dm.dcl0,'DCL0','#44bb44','arrowUp','belowBar');
+        mk(dm.hch,'HCH','#cc0000','arrowDown','aboveBar');
+        mk(dm.hcl,'HCL','#44bb44','arrowUp','belowBar');
+        mk(dm.dch,'DCH','#cc0000','arrowDown','aboveBar');
+        if(markers.length){ markers.sort((a,b)=>a.time-b.time); _candleSeries.setMarkers(markers); }
+        if(overlay.entry_price!=null) _candleSeries.createPriceLine({price:overlay.entry_price,color:'#4a90d9',lineWidth:1,lineStyle:0,axisLabelVisible:true,title:'Entry'});
+        if(overlay.stop_price!=null) _candleSeries.createPriceLine({price:overlay.stop_price,color:'#cc0000',lineWidth:1,lineStyle:2,axisLabelVisible:true,title:'Stop'});
+        if(overlay.target_price!=null) _candleSeries.createPriceLine({price:overlay.target_price,color:'#44bb44',lineWidth:1,lineStyle:2,axisLabelVisible:true,title:'Target'});
     }
 }
 
@@ -965,6 +997,19 @@ function renderCycleAlerts(list, elId, label, color){
     +'<div class="alert-detail">'+(a.detail||'')+'</div></div>'
   ).join('') : '';
 }
+function showCandidateChart(ticker){
+  const c=(CYCLE_DATA.candidates||[]).find(x=>x.ticker===ticker);
+  showChart(ticker, c?c.chart_overlay:null);
+}
+function showOpenTradeChart(ticker){
+  const t=(CYCLE_DATA.open_trades||[]).find(x=>x.ticker===ticker);
+  showChart(ticker, t?t.chart_overlay:null);
+}
+function cycleTradeStatusBadge(status){
+  if(status==='OPENED_THIS_RUN') return '<span style="background:#44bb4422;color:#44bb44;font-size:10px;font-weight:bold;padding:3px 8px;border-radius:10px">✓ OPENED TONIGHT</span>';
+  if(status==='ALREADY_OPEN') return '<span style="background:#4a90d922;color:#4a90d9;font-size:10px;font-weight:bold;padding:3px 8px;border-radius:10px">✓ POSITION OPEN</span>';
+  return '<span style="background:#88888822;color:#888;font-size:10px;font-weight:bold;padding:3px 8px;border-radius:10px">NOT ENTERED</span>';
+}
 function renderCycleCandidates(list){
   const el=document.getElementById('cycleCandidatesGrid');
   if(!el) return;
@@ -973,16 +1018,19 @@ function renderCycleCandidates(list){
     const col=c.cycle_score>=70?'#44bb44':c.cycle_score>=50?'#ff9900':c.cycle_score>=40?'#ff6600':'#cc0000';
     const pm=c.predicted_move||{};
     return '<div style="background:#1a1a2e;border-radius:12px;padding:20px;border:1px solid '+(i===0?col:'#2a2a4a')+'">'
-      +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">'
+      +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">'
       +'<div><span style="font-size:20px;font-weight:bold;color:#fff">'+c.ticker+'</span>'
       +'<span style="color:#888;font-size:12px;margin-left:8px">'+(c.entry_zone||'—')+' ('+(c.risk||'—')+' risk)</span></div>'
       +'<span style="font-size:26px;font-weight:bold;color:'+col+'">'+c.cycle_score+'</span></div>'
+      +'<div style="margin-bottom:10px">'+cycleTradeStatusBadge(c.paper_trade_status)+'</div>'
       +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center">'
       +'<div><div style="color:#666">Price</div><div style="color:#ccc">$'+c.price+'</div></div>'
       +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+(pm.target_price?('$'+pm.target_price):'—')+'</div></div>'
       +'<div><div style="color:#666">Stop</div><div style="color:#cc0000">'+(c.stop_price?('$'+c.stop_price):'—')+'</div></div>'
       +'<div><div style="color:#666">DC in IC</div><div style="color:#ccc">'+(c.dc_num_in_ic||'—')+'</div></div></div>'
-      +'<div style="font-size:11px;color:#aaa;margin-top:8px">'+(c.reasons||[]).join(' | ')+'</div></div>';
+      +'<div style="font-size:11px;color:#aaa;margin-top:8px">'+(c.reasons||[]).join(' | ')+'</div>'
+      +'<button class="btn-primary" style="margin-top:10px;padding:6px 14px;font-size:12px" onclick="showCandidateChart(\''+c.ticker+'\')">📈 Chart</button>'
+      +'</div>';
   }).join('');
 }
 function renderCycleOpenTrades(list){
@@ -995,8 +1043,9 @@ function renderCycleOpenTrades(list){
     return '<tr><td><b>'+t.ticker+'</b></td><td>$'+t.buy_price+'</td><td>'+t.buy_date+'</td>'
       +'<td style="color:red">'+(t.stop_price?('$'+t.stop_price):'—')+'</td>'
       +'<td style="color:green">'+(t.target_price?('$'+t.target_price):'—')+'</td>'
-      +'<td>'+ez+'</td><td>'+(cp?('$'+cp):'—')+'</td><td>'+pnl+'</td></tr>';
-  }).join('') : '<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
+      +'<td>'+ez+'</td><td>'+(cp?('$'+cp):'—')+'</td><td>'+pnl+'</td>'
+      +'<td><button class="btn-primary" style="padding:4px 10px;font-size:11px" onclick="showOpenTradeChart(\''+t.ticker+'\')">📈</button></td></tr>';
+  }).join('') : '<tr><td colspan="9" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
 }
 function renderCycleClosedTrades(list){
   const b=document.getElementById('cycleClosedTradesBody');
@@ -1575,18 +1624,19 @@ window.addEventListener('resize',()=>{
   cycle score and entry-zone risk, flags failed cycles and high-risk Daily-Cycle-3/4 zones,
   and manages up to 3 concurrent $2,000 paper positions with phase-based exits.
 </p>
+<h3 style="color:#ccc;margin:0 0 12px">Best Candidates</h3>
+<div id="cycleCandidatesGrid" style="display:grid;gap:12px"></div>
+
+<h3 style="color:#ccc;margin:25px 0 12px">Alerts</h3>
 <div id="cycleFailedAlerts"></div>
 <div id="cycleHighRiskAlerts"></div>
-
-<h3 style="color:#ccc;margin:20px 0 12px">Best Candidates</h3>
-<div id="cycleCandidatesGrid" style="display:grid;gap:12px"></div>
 
 <h3 style="color:#ccc;margin:25px 0 12px">Open Cycle Trading Positions</h3>
 <div class="asx-table-wrap"><table class="asx-table"><thead><tr>
   <th>Ticker</th><th>Entry</th><th>Entry Date</th><th>Stop</th><th>Target</th>
-  <th>Entry Zone</th><th>Current Price</th><th>P&amp;L %</th>
+  <th>Entry Zone</th><th>Current Price</th><th>P&amp;L %</th><th>Chart</th>
 </tr></thead><tbody id="cycleOpenTradesBody">
-<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
+<tr><td colspan="9" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
 </tbody></table></div>
 
 <h3 style="color:#ccc;margin:25px 0 12px">Recently Closed Cycle Trades</h3>

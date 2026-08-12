@@ -129,7 +129,7 @@ def run_nightly():
                     signal_history=history, accuracy=accuracy, intraday=intraday_results, quant=quant_results,
                     macro=macro_results, cycle=cycle_signals)
     print("Building PDF report...")
-    build_pdf_report(all_results, portfolio_summary, pdf_file, signal_history=history, accuracy=accuracy)
+    build_pdf_report(all_results, portfolio_summary, pdf_file, signal_history=history, accuracy=accuracy, cycle=cycle_signals)
     print("Sending email...")
     send_email_report(all_results, portfolio_summary, pdf_file)
     print(f"\n{'='*60}")
