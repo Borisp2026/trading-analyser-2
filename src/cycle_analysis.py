@@ -318,7 +318,15 @@ def check_cycle_failing_now(low: pd.Series, close: pd.Series, dcl0_date: str, dc
     start_pos = _pos(dcl0_date, dates_list) if dcl0_date else None
     if start_pos is None or not dcl0_price:
         return {"failing": False, "lowest_since_dcl0": None, "pct_below_dcl0": None}
-    lowest = float(low.iloc[start_pos:].min())
+    # Exclude the DCL0 bar itself: dcl0_price is a *rounded* low from that same bar,
+    # so re-including it and comparing against the unrounded series here produces
+    # false positives from floating-point noise (e.g. 190.01 stored as
+    # 190.00999999999999) — the cycle can't be "failing below its own start" on the
+    # day it started; failing means a *later* bar traded lower.
+    after_start = low.iloc[start_pos + 1:]
+    if after_start.empty:
+        return {"failing": False, "lowest_since_dcl0": None, "pct_below_dcl0": None}
+    lowest = float(after_start.min())
     failing = lowest < dcl0_price
     pct = round((lowest - dcl0_price) / dcl0_price * 100, 2) if failing else 0.0
     return {"failing": failing, "lowest_since_dcl0": round(lowest, 4), "pct_below_dcl0": pct}
