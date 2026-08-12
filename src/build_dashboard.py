@@ -148,7 +148,7 @@ def _build_signal_history_html(signal_history, accuracy):
     html+='</tbody></table>'
     return html
 
-def build_dashboard(results, portfolio, output_path, signal_history=None, accuracy=None, intraday=None, quant=None, macro=None):
+def build_dashboard(results, portfolio, output_path, signal_history=None, accuracy=None, intraday=None, quant=None, macro=None, cycle=None):
     today=datetime.now().strftime("%d %B %Y, %H:%M")
     cards_html="\n".join(build_stock_card(r) for r in results)
     stock_advice={r["ticker"]:{"rec":r["reasoning"].get("recommendation",""),"score":r["reasoning"].get("blended_score",0)} for r in results}
@@ -242,6 +242,10 @@ input[type=range]{width:200px;accent-color:#4a90d9}
 .timing{font-size:11px;color:#aaa;margin:6px 0}
 .cycle-block{font-size:11px;color:#aaa;background:#0f0f1a;padding:6px 10px;border-radius:6px;margin:6px 0;border-left:3px solid #4a90d9}
 .corr-block{font-size:11px;color:#aaa;background:#0f0f1a;padding:6px 10px;border-radius:6px;margin:6px 0;border-left:3px solid #ff9900}
+.alert-card{font-size:12px;color:#eee;background:#1a1a2e;border:1px solid #2a2a4a;border-left:4px solid #cc0000;border-radius:8px;padding:12px 16px;margin-bottom:10px}
+.alert-card.warn{border-left-color:#ff9900}
+.alert-card .alert-ticker{font-weight:bold;font-size:14px;margin-right:8px}
+.alert-card .alert-detail{color:#aaa;margin-top:4px;font-size:11px}
 details summary{cursor:pointer;color:#4a90d9;font-size:12px;margin-top:8px;padding:4px 0}
 .reasons{padding-left:16px;font-size:12px;color:#aaa;margin-top:6px}
 .reasons li{margin-bottom:3px}
@@ -312,6 +316,7 @@ function showTab(id) {
     if(id==='intraday') renderIntradayTable();
     if(id==='portfolio') refreshPortfolioPrices();
     if(id==='quantitative') renderQuantTab(window._activeQuantSection||'earnings');
+    if(id==='cycle') renderCycleTab();
 }
 
 // ── Market Analysis filters ───────────────────────────────────────────────────
@@ -883,6 +888,7 @@ function renderMacroGate(){
 }
 
 const QUANT_DATA = __QUANT_DATA__;
+const CYCLE_DATA = __CYCLE_DATA__;
 // ── Quantitative Analysis tab ─────────────────────────────────────────────────
 function renderQuantTab(section){
   if(section) window._activeQuantSection = section;
@@ -939,6 +945,68 @@ function renderTop5Stocks(results,tickers){
                 +'</div></div>';
         }).join('')+'</div>';
 }
+
+// ── Cycle Trading tab ────────────────────────────────────────────────────────
+function renderCycleTab(){
+  const d = CYCLE_DATA || {};
+  renderCycleAlerts(d.failed_cycle_alerts||[], 'cycleFailedAlerts', 'FAILED CYCLE', '#cc0000');
+  renderCycleAlerts(d.high_risk_alerts||[], 'cycleHighRiskAlerts', 'HIGH RISK ZONE', '#ff9900');
+  renderCycleCandidates(d.candidates||[]);
+  renderCycleOpenTrades(d.open_trades||[]);
+  renderCycleClosedTrades(d.closed_trades||[]);
+}
+function renderCycleAlerts(list, elId, label, color){
+  const el=document.getElementById(elId);
+  if(!el) return;
+  el.innerHTML = list.length ? list.map(a=>
+    '<div class="alert-card" style="border-left-color:'+color+'">'
+    +'<span class="alert-ticker">'+a.ticker+'</span>'
+    +'<span style="color:'+color+';font-weight:bold;font-size:11px">'+label+'</span>'
+    +'<div class="alert-detail">'+(a.detail||'')+'</div></div>'
+  ).join('') : '';
+}
+function renderCycleCandidates(list){
+  const el=document.getElementById('cycleCandidatesGrid');
+  if(!el) return;
+  if(!list.length){ el.innerHTML='<p style="color:#888;padding:20px">No qualifying candidates tonight.</p>'; return; }
+  el.innerHTML = list.map((c,i)=>{
+    const col=c.cycle_score>=70?'#44bb44':c.cycle_score>=50?'#ff9900':c.cycle_score>=40?'#ff6600':'#cc0000';
+    const pm=c.predicted_move||{};
+    return '<div style="background:#1a1a2e;border-radius:12px;padding:20px;border:1px solid '+(i===0?col:'#2a2a4a')+'">'
+      +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">'
+      +'<div><span style="font-size:20px;font-weight:bold;color:#fff">'+c.ticker+'</span>'
+      +'<span style="color:#888;font-size:12px;margin-left:8px">'+(c.entry_zone||'—')+' ('+(c.risk||'—')+' risk)</span></div>'
+      +'<span style="font-size:26px;font-weight:bold;color:'+col+'">'+c.cycle_score+'</span></div>'
+      +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center">'
+      +'<div><div style="color:#666">Price</div><div style="color:#ccc">$'+c.price+'</div></div>'
+      +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+(pm.target_price?('$'+pm.target_price):'—')+'</div></div>'
+      +'<div><div style="color:#666">Stop</div><div style="color:#cc0000">'+(c.stop_price?('$'+c.stop_price):'—')+'</div></div>'
+      +'<div><div style="color:#666">DC in IC</div><div style="color:#ccc">'+(c.dc_num_in_ic||'—')+'</div></div></div>'
+      +'<div style="font-size:11px;color:#aaa;margin-top:8px">'+(c.reasons||[]).join(' | ')+'</div></div>';
+  }).join('');
+}
+function renderCycleOpenTrades(list){
+  const b=document.getElementById('cycleOpenTradesBody');
+  if(!b) return;
+  b.innerHTML = list.length ? list.map(t=>{
+    const cp=t._current_price;
+    const pnl = (cp && t.buy_price) ? (((cp-t.buy_price)/t.buy_price)*100).toFixed(1)+'%' : '—';
+    const ez = (t.meta||{}).entry_zone||'—';
+    return '<tr><td><b>'+t.ticker+'</b></td><td>$'+t.buy_price+'</td><td>'+t.buy_date+'</td>'
+      +'<td style="color:red">'+(t.stop_price?('$'+t.stop_price):'—')+'</td>'
+      +'<td style="color:green">'+(t.target_price?('$'+t.target_price):'—')+'</td>'
+      +'<td>'+ez+'</td><td>'+(cp?('$'+cp):'—')+'</td><td>'+pnl+'</td></tr>';
+  }).join('') : '<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
+}
+function renderCycleClosedTrades(list){
+  const b=document.getElementById('cycleClosedTradesBody');
+  if(!b) return;
+  b.innerHTML = list.length ? list.map(t=>
+    '<tr><td><b>'+t.ticker+'</b></td><td>$'+t.buy_price+'</td><td>$'+(t.sell_price!=null?t.sell_price:'—')+'</td>'
+    +'<td>'+(t.close_reason||'')+'</td><td style="color:'+((t.pnl_pct||0)>=0?'green':'red')+'">'+(t.pnl_pct||0)+'%</td></tr>'
+  ).join('') : '<tr><td colspan="5" style="color:#888;text-align:center;padding:20px">No closed trades yet</td></tr>';
+}
+
 function renderEarnings(results,tickers){
     let h='<h3 style="color:#ccc;margin-bottom:15px">Earnings Reports — Next Date &amp; Last 4 Quarters</h3>';
     h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>Next Earnings</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr></thead><tbody>';
@@ -1186,6 +1254,7 @@ window.addEventListener('resize',()=>{
   <button class="tab-btn" onclick="showTab('quantitative')">Quantitative</button>
   <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
   <button class="tab-btn" onclick="showTab('agent')">Agent Trader</button>
+  <button class="tab-btn" onclick="showTab('cycle')">Cycle Trading</button>
   <button class="tab-btn" onclick="showTab('token')">Token</button>
 </nav>
 
@@ -1497,6 +1566,39 @@ window.addEventListener('resize',()=>{
 </div>
 
 
+<!-- TAB: Cycle Trading -->
+<div id="tab-cycle" class="tab-content">
+<div class="section">
+<h2>Cycle Trading — DJRTrading Daily/Intermediate Cycle Analysis</h2>
+<p style="color:#888;font-size:13px;margin-bottom:20px">
+  Nightly screen of the watchlist for Daily/Intermediate Cycle setups. Ranks candidates by
+  cycle score and entry-zone risk, flags failed cycles and high-risk Daily-Cycle-3/4 zones,
+  and manages up to 3 concurrent $2,000 paper positions with phase-based exits.
+</p>
+<div id="cycleFailedAlerts"></div>
+<div id="cycleHighRiskAlerts"></div>
+
+<h3 style="color:#ccc;margin:20px 0 12px">Best Candidates</h3>
+<div id="cycleCandidatesGrid" style="display:grid;gap:12px"></div>
+
+<h3 style="color:#ccc;margin:25px 0 12px">Open Cycle Trading Positions</h3>
+<div class="asx-table-wrap"><table class="asx-table"><thead><tr>
+  <th>Ticker</th><th>Entry</th><th>Entry Date</th><th>Stop</th><th>Target</th>
+  <th>Entry Zone</th><th>Current Price</th><th>P&amp;L %</th>
+</tr></thead><tbody id="cycleOpenTradesBody">
+<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
+</tbody></table></div>
+
+<h3 style="color:#ccc;margin:25px 0 12px">Recently Closed Cycle Trades</h3>
+<div class="asx-table-wrap"><table class="asx-table"><thead><tr>
+  <th>Ticker</th><th>Entry</th><th>Exit</th><th>Exit Reason</th><th>P&amp;L %</th>
+</tr></thead><tbody id="cycleClosedTradesBody">
+<tr><td colspan="5" style="color:#888;text-align:center;padding:20px">No closed trades yet</td></tr>
+</tbody></table></div>
+</div>
+</div>
+
+
 <!-- TAB 9: GitHub Token -->
 <div id="tab-token" class="tab-content">
 <div class="section">
@@ -1538,6 +1640,7 @@ window.addEventListener('resize',()=>{
 
     HTML = HTML.replace('__MACRO_DATA__', json.dumps(macro or {}))
     HTML = HTML.replace('__QUANT_DATA__', json.dumps(quant or {}))
+    HTML = HTML.replace('__CYCLE_DATA__', json.dumps(cycle or {}))
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(HTML)
     print(f"Dashboard written: {output_path}")

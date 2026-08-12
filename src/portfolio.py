@@ -37,8 +37,9 @@ def add_holding(ticker: str, shares: float, buy_price: float, buy_date: str, exc
     print(f"Added {shares} x {ticker} @ ${buy_price}")
 
 
-def add_paper_trade(ticker: str, shares: float, buy_price: float, signal: str, reason: str):
-    """Add a paper trade (simulated)."""
+def add_paper_trade(ticker: str, shares: float, buy_price: float, signal: str, reason: str,
+                     stop_price: float = None, target_price: float = None, meta: dict = None) -> bool:
+    """Add a paper trade (simulated). Returns True if opened, False if insufficient cash."""
     portfolio = load_portfolio()
     trade = {
         "ticker": ticker.upper(),
@@ -48,23 +49,32 @@ def add_paper_trade(ticker: str, shares: float, buy_price: float, signal: str, r
         "signal": signal,
         "reason": reason,
         "status": "open",
-        "type": "paper"
+        "type": "paper",
+        "stop_price": stop_price,
+        "target_price": target_price,
+        "meta": meta or {},
     }
     cost = shares * buy_price
     if portfolio["paper_cash"] < cost:
         print(f"Insufficient paper cash: ${portfolio['paper_cash']:.2f} < ${cost:.2f}")
-        return
+        return False
     portfolio["paper_trades"].append(trade)
     portfolio["paper_cash"] -= cost
     save_portfolio(portfolio)
     print(f"Paper trade: {shares} x {ticker} @ ${buy_price} | Cash left: ${portfolio['paper_cash']:.2f}")
+    return True
 
 
-def close_paper_trade(ticker: str, sell_price: float, reason: str = ""):
-    """Close an open paper trade."""
+def close_paper_trade(ticker: str, sell_price: float, reason: str = "", strategy: str = None) -> bool:
+    """Close an open paper trade. If `strategy` is given, only closes a trade whose
+    meta.strategy matches (so two strategies holding the same ticker can't close
+    each other's positions). Returns True if a matching trade was closed."""
     portfolio = load_portfolio()
+    closed = False
     for trade in portfolio["paper_trades"]:
         if trade["ticker"] == ticker.upper() and trade["status"] == "open":
+            if strategy and trade.get("meta", {}).get("strategy") != strategy:
+                continue
             proceeds = trade["shares"] * sell_price
             cost = trade["shares"] * trade["buy_price"]
             pnl = proceeds - cost
@@ -77,8 +87,10 @@ def close_paper_trade(ticker: str, sell_price: float, reason: str = ""):
             trade["close_reason"] = reason
             portfolio["paper_cash"] += proceeds
             print(f"Closed {ticker}: P&L = ${pnl:.2f} ({pnl_pct}%)")
+            closed = True
             break
     save_portfolio(portfolio)
+    return closed
 
 
 def get_current_price(ticker: str) -> float:
