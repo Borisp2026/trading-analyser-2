@@ -123,7 +123,7 @@
       "buy_date": "2026-08-12",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #1 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 6.6738,
       "target_price": 6.1215,
@@ -132,7 +132,12 @@
         "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
         "entered_dc_num": 2,
         "entered_score": 35
-      }
+      },
+      "sell_price": 7.4,
+      "sell_date": "2026-08-12",
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "close_reason": "FAILED_CYCLE"
     },
     {
       "ticker": "TSLA",
@@ -141,7 +146,7 @@
       "buy_date": "2026-08-12",
       "signal": "CYCLE_BUY",
       "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #5 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 291.4324,
       "target_price": 349.2238,
@@ -150,10 +155,51 @@
         "entry_zone": "DC1_RECOVERY",
         "entered_dc_num": 1,
         "entered_score": 20
+      },
+      "sell_price": 325.08,
+      "sell_date": "2026-08-12",
+      "pnl": -16.96,
+      "pnl_pct": -0.85,
+      "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "AMP.AX",
+      "shares": 847.4576,
+      "buy_price": 2.36,
+      "buy_date": "2026-08-12",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 1.4259,
+      "target_price": 3.0754,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "entered_dc_num": 3,
+        "entered_score": 80
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "shares": 4.0528,
+      "buy_price": 493.49,
+      "buy_date": "2026-08-12",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #1 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 342.216,
+      "target_price": 438.7645,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "entered_dc_num": 2,
+        "entered_score": 80
       }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 3999.987957999999,
+  "paper_cash": 3983.024985999999,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
