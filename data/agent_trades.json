@@ -2467,6 +2467,424 @@
       "signal": "SKIP",
       "price": 164.05,
       "notes": "\u2713 ORB breakout"
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "EOS.AX",
+      "signal": "SKIP",
+      "price": 8.1,
+      "notes": "\u2713 Above VWAP",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": true,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "TOR.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "MIN.AX",
+      "signal": "SKIP",
+      "price": 64.56,
+      "notes": "\u2713 Not overextended",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "IPX.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "GLN.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "AFG.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "GMD.AX",
+      "signal": "SKIP",
+      "price": 7.345,
+      "notes": "\u2713 RSI 45\u201375",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "CU6.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "MSB.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "TLX.AX",
+      "signal": "SKIP",
+      "price": 16.85,
+      "notes": "\u2713 RSI 45\u201375",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "NXT.AX",
+      "signal": "SKIP",
+      "price": 14.4,
+      "notes": "\u2713 RSI 45\u201375",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "APA.AX",
+      "signal": "SKIP",
+      "price": 10.04,
+      "notes": "\u2713 Above VWAP",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": true,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "GWA.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "MMI.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "NWH.AX",
+      "signal": "SKIP",
+      "price": 7.32,
+      "notes": "\u2713 ORB breakout",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": true,
+        "Above VWAP": true,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": true,
+        "PDH breakout": true
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "PNV.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "AMP.AX",
+      "signal": "SKIP",
+      "price": 2.335,
+      "notes": "\u2713 Not overextended",
+      "trend_ok": true,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "ILU.AX",
+      "signal": "SKIP",
+      "price": 7.265,
+      "notes": "\u2713 Not overextended",
+      "trend_ok": true,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "VAS.AX",
+      "signal": "SKIP",
+      "price": 114.29,
+      "notes": "\u2713 ORB breakout",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": true,
+        "Above VWAP": true,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": true
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "IOZ.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "NDQ.AX",
+      "signal": "SKIP",
+      "price": 60.76,
+      "notes": "\u2713 Not overextended",
+      "trend_ok": true,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "IVV.AX",
+      "signal": "SKIP",
+      "price": 72.76,
+      "notes": "\u2713 Not overextended",
+      "trend_ok": true,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "VTEK.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "11:03",
+      "date": "2026-08-12",
+      "ticker": "VGS.AX",
+      "signal": "SKIP",
+      "price": 163.04,
+      "notes": "\u2713 Not overextended",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
     }
   ],
   "status": "RUNNING",
@@ -2484,7 +2902,7 @@
     "current_capital": 5163.0,
     "capital_growth": 3.26
   },
-  "last_scan": "2026-08-11T07:46:33.435658",
+  "last_scan": "2026-08-12T01:03:21.241765",
   "ticker_days": {
     "EOS.AX": [
       "2026-07-08",
@@ -2511,7 +2929,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "TOR.AX": [
       "2026-07-08",
@@ -2538,7 +2957,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "MIN.AX": [
       "2026-07-08",
@@ -2565,7 +2985,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "IPX.AX": [
       "2026-07-08",
@@ -2592,7 +3013,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "GLN.AX": [
       "2026-07-08",
@@ -2619,7 +3041,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "AFG.AX": [
       "2026-07-08",
@@ -2646,7 +3069,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "GMD.AX": [
       "2026-07-08",
@@ -2673,7 +3097,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "CU6.AX": [
       "2026-07-08",
@@ -2700,7 +3125,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "MSB.AX": [
       "2026-07-08",
@@ -2727,7 +3153,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "TLX.AX": [
       "2026-07-08",
@@ -2754,7 +3181,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "NXT.AX": [
       "2026-07-08",
@@ -2781,7 +3209,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "APA.AX": [
       "2026-07-08",
@@ -2808,7 +3237,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "GWA.AX": [
       "2026-07-08",
@@ -2835,7 +3265,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "MMI.AX": [
       "2026-07-08",
@@ -2862,7 +3293,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "NWH.AX": [
       "2026-07-08",
@@ -2889,7 +3321,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "VAS.AX": [
       "2026-07-08",
@@ -2916,7 +3349,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "IOZ.AX": [
       "2026-07-08",
@@ -2943,7 +3377,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "NDQ.AX": [
       "2026-07-08",
@@ -2970,7 +3405,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "IVV.AX": [
       "2026-07-08",
@@ -2997,7 +3433,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "VTEK.AX": [
       "2026-07-08",
@@ -3024,7 +3461,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "VGS.AX": [
       "2026-07-08",
@@ -3051,7 +3489,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "PNV.AX": [
       "2026-07-09",
@@ -3077,7 +3516,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "AMP.AX": [
       "2026-07-13",
@@ -3101,7 +3541,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ],
     "ILU.AX": [
       "2026-07-20",
@@ -3120,369 +3561,393 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-10",
-      "2026-08-11"
+      "2026-08-11",
+      "2026-08-12"
     ]
   },
   "eod_assessment": [
     {
       "ticker": "EOS.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "TOR.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "MIN.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "IPX.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "GLN.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "AFG.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "GMD.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "CU6.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "MSB.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "TLX.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "NXT.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "APA.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "GWA.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "MMI.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "NWH.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "VAS.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "IOZ.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "NDQ.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "IVV.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "VTEK.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "VGS.AX",
-      "days_in_list": 25,
+      "days_in_list": 26,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "PNV.AX",
-      "days_in_list": 24,
+      "days_in_list": 25,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "AMP.AX",
-      "days_in_list": 22,
+      "days_in_list": 23,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "ILU.AX",
-      "days_in_list": 17,
+      "days_in_list": 18,
       "last_5_days": [
-        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
-      "scans_today": 4,
+      "scans_today": 1,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     }
-  ]
+  ],
+  "condition_stats": {
+    "total_scans": 24,
+    "buys": 0,
+    "early_skip_reasons": {
+      "Insufficient bars": 11
+    },
+    "tier_fail_counts": {
+      "trend_ok": 0,
+      "momentum_ok": 4,
+      "volume_ok": 13
+    },
+    "condition_true_counts": {
+      "Above VWAP": 4,
+      "RSI 45\u201375": 5,
+      "Not overextended": 13,
+      "SuperTrend bullish": 13,
+      "MACD bullish": 7,
+      "ORB breakout": 2,
+      "BB squeeze/breakout": 1,
+      "PDH breakout": 2
+    },
+    "condition_total": 13
+  }
 }
