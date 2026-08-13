@@ -197,9 +197,27 @@
         "entered_dc_num": 2,
         "entered_score": 80
       }
+    },
+    {
+      "ticker": "NVDA",
+      "shares": 8.925,
+      "buy_price": 224.09,
+      "buy_date": "2026-08-13",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 160.7972,
+      "target_price": 214.6272,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "entered_dc_num": 4,
+        "entered_score": 72
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 3983.024985999999,
+  "paper_cash": 1983.0217359999988,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

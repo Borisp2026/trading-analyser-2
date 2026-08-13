@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-13T11:01:02",
+  "generated_at": "2026-08-13T11:35:17",
   "watchlist_count": 23,
   "candidates": [
     {
       "ticker": "AMP.AX",
-      "name": "AMP Limited",
+      "name": "AMP FPO [AMP]",
       "price": 2.33,
       "cycle_score": 80,
       "cycle_signal": "CYCLE_BUY",
@@ -254,7 +254,7 @@
         "target_price": 214.6272
       },
       "rank": 3,
-      "paper_trade_status": "NOT_OPENED"
+      "paper_trade_status": "OPENED_THIS_RUN"
     },
     {
       "ticker": "IOZ.AX",
@@ -433,7 +433,7 @@
     },
     {
       "ticker": "MSB.AX",
-      "name": "Mesoblast Limited",
+      "name": "MESOBLAST FPO [MSB]",
       "price": 2.38,
       "cycle_score": 35,
       "cycle_signal": "CYCLE_CAUTION",
@@ -606,7 +606,7 @@
   "failed_cycle_alerts": [
     {
       "ticker": "MSB.AX",
-      "name": "Mesoblast Limited",
+      "name": "MESOBLAST FPO [MSB]",
       "price": 2.38,
       "type": "completed_cycle_failed",
       "dcl0_price": 1.88,
@@ -992,6 +992,94 @@
         "stop_price": 342.216,
         "target_price": 438.7645
       }
+    },
+    {
+      "ticker": "NVDA",
+      "shares": 8.925,
+      "buy_price": 224.09,
+      "buy_date": "2026-08-13",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 160.7972,
+      "target_price": 214.6272,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "entered_dc_num": 4,
+        "entered_score": 72
+      },
+      "_current_price": 224.09,
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-07-29",
+            "price": 190.01
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-12",
+            "price": 225.1
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-03-30",
+            "price": 164.0788
+          },
+          {
+            "date": "2026-06-29",
+            "price": 189.8
+          },
+          {
+            "date": "2026-08-12",
+            "price": 202.6606
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-05-14",
+            "price": 236.2646
+          },
+          {
+            "date": "2026-05-14",
+            "price": 236.2646
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-07-29",
+            "price": 190.01
+          },
+          "dch": {
+            "date": "2026-08-12",
+            "price": 225.1
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-03-30",
+            "price": 164.0788
+          },
+          "hch": {
+            "date": "2026-05-14",
+            "price": 236.2646
+          },
+          "hcl": {
+            "date": "2026-06-29",
+            "price": 189.8
+          },
+          "dch": {
+            "date": "2026-05-14",
+            "price": 236.2646
+          }
+        },
+        "entry_price": 224.09,
+        "stop_price": 160.7972,
+        "target_price": 214.6272
+      }
     }
   ],
   "closed_trades": [
@@ -1044,6 +1132,14 @@
   ],
   "actions_this_run": {
     "closed": [],
-    "opened": []
+    "opened": [
+      {
+        "ticker": "NVDA",
+        "entry_price": 224.09,
+        "shares": 8.925,
+        "stop_price": 160.7972,
+        "target_price": 214.6272
+      }
+    ]
   }
 }

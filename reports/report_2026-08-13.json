@@ -112,9 +112,9 @@
             "hcl_date": "2024-10-04",
             "hcl_price": 30.8108,
             "dch_date": "2024-10-17",
-            "dch_price": 31.877,
+            "dch_price": 31.8769,
             "dcl1_date": "2024-11-01",
-            "dcl1_price": 30.6386,
+            "dcl1_price": 30.6385,
             "translation": "RIGHT",
             "failed": true,
             "length": 27,
@@ -123,7 +123,7 @@
           {
             "cycle_num": 3,
             "dcl0_date": "2024-11-01",
-            "dcl0_price": 30.6386,
+            "dcl0_price": 30.6385,
             "hch_date": "2024-11-08",
             "hch_price": 31.669,
             "hcl_date": "2024-11-13",
@@ -182,7 +182,7 @@
             "dch_date": "2025-02-14",
             "dch_price": 32.9582,
             "dcl1_date": "2025-02-24",
-            "dcl1_price": 31.4661,
+            "dcl1_price": 31.4662,
             "translation": "RIGHT",
             "failed": true,
             "length": 15,
@@ -191,7 +191,7 @@
           {
             "cycle_num": 4,
             "dcl0_date": "2025-02-24",
-            "dcl0_price": 31.4661,
+            "dcl0_price": 31.4662,
             "hch_date": "2025-02-27",
             "hch_price": 31.8558,
             "hcl_date": null,
@@ -571,7 +571,7 @@
             "ic_hch_date": "2024-09-30",
             "ic_hch_price": 31.4818,
             "ic_hcl_date": "2024-11-01",
-            "ic_hcl_price": 30.6386,
+            "ic_hcl_price": 30.6385,
             "ich_date": "2024-12-03",
             "ich_price": 32.5009,
             "icl1_date": "2024-12-20",
@@ -652,10 +652,10 @@
           {
             "icl0_date": "2025-09-03",
             "icl0_price": 34.1149,
-            "ic_hch_date": "2025-10-21",
-            "ic_hch_price": 35.7633,
-            "ic_hcl_date": null,
-            "ic_hcl_price": null,
+            "ic_hch_date": "2025-09-16",
+            "ic_hch_price": 34.8689,
+            "ic_hcl_date": "2025-09-25",
+            "ic_hcl_price": 34.2502,
             "ich_date": "2025-10-21",
             "ich_price": 35.7633,
             "icl1_date": "2025-11-21",
@@ -911,9 +911,9 @@
     },
     {
       "ticker": "AMP.AX",
-      "name": "AMP Limited",
+      "name": "AMP FPO [AMP]",
       "sector": "Financial Services",
-      "market_cap": 5668405248,
+      "market_cap": null,
       "tech": {
         "price": 2.33,
         "price_1d_pct": -1.27,
@@ -938,11 +938,11 @@
         "take_profit": 2.5502,
         "stoch_k": 66.67,
         "stoch_d": 73.15,
-        "volume": 5509216,
+        "volume": 5376589,
         "volume_signal": {
-          "ratio": 0.39,
+          "ratio": 0.38,
           "signal": "LOW_VOLUME",
-          "avg_volume": 14213087
+          "avg_volume": 14232280
         },
         "moving_averages": {
           "sma_10": 2.275,
@@ -1038,28 +1038,28 @@
             "hcl_price": null,
             "dch_date": "2024-11-12",
             "dch_price": 1.5152,
-            "dcl1_date": "2024-11-14",
-            "dcl1_price": 1.4403,
+            "dcl1_date": "2024-11-21",
+            "dcl1_price": 1.45,
             "translation": "RIGHT",
             "failed": false,
-            "length": 14,
+            "length": 19,
             "intermediate_cycle_start": "2024-10-11"
           },
           {
             "cycle_num": 2,
-            "dcl0_date": "2024-11-14",
-            "dcl0_price": 1.4403,
-            "hch_date": "2024-11-18",
-            "hch_price": 1.5031,
-            "hcl_date": "2024-11-21",
-            "hcl_price": 1.45,
+            "dcl0_date": "2024-11-21",
+            "dcl0_price": 1.45,
+            "hch_date": "2024-12-05",
+            "hch_price": 1.6143,
+            "hcl_date": null,
+            "hcl_price": null,
             "dch_date": "2024-12-05",
             "dch_price": 1.6143,
             "dcl1_date": "2024-12-20",
             "dcl1_price": 1.4935,
-            "translation": "RIGHT",
+            "translation": "LEFT",
             "failed": false,
-            "length": 26,
+            "length": 21,
             "intermediate_cycle_start": "2024-10-11"
           },
           {
@@ -1083,11 +1083,11 @@
             "cycle_num": 4,
             "dcl0_date": "2025-01-13",
             "dcl0_price": 1.4983,
-            "hch_date": "2025-02-03",
+            "hch_date": "2025-01-24",
             "hch_price": 1.7303,
             "hcl_date": null,
             "hcl_price": null,
-            "dch_date": "2025-02-03",
+            "dch_date": "2025-01-24",
             "dch_price": 1.7303,
             "dcl1_date": "2025-02-05",
             "dcl1_price": 1.636,
@@ -1412,7 +1412,7 @@
             "ic_hch_price": 1.5418,
             "ic_hcl_date": "2025-01-02",
             "ic_hcl_price": 1.4693,
-            "ich_date": "2025-02-03",
+            "ich_date": "2025-01-24",
             "ich_price": 1.7303,
             "icl1_date": "2025-04-07",
             "icl1_price": 1.0127,
@@ -1422,7 +1422,7 @@
             "daily_cycle_count": 7,
             "member_daily_cycles": [
               "2024-10-25",
-              "2024-11-14",
+              "2024-11-21",
               "2024-12-20",
               "2025-01-13",
               "2025-02-05",
@@ -2348,8 +2348,8 @@
             "beta": 1.346
           },
           "Dow": {
-            "correlation": 0.463,
-            "beta": 1.494
+            "correlation": 0.461,
+            "beta": 1.457
           }
         },
         "avg_correlation": 0.624,
@@ -2370,7 +2370,7 @@
           "Dow": {
             "price": 53770.27,
             "5d_pct": -1.07,
-            "20d_pct": 2.11,
+            "20d_pct": 2.15,
             "trend": "MIXED"
           }
         },
@@ -2490,7 +2490,7 @@
             "dch_date": "2024-12-26",
             "dch_price": 258.226,
             "dcl1_date": "2025-01-21",
-            "dcl1_price": 217.7995,
+            "dcl1_price": 217.7994,
             "translation": "RIGHT",
             "failed": true,
             "length": 51,
@@ -2499,7 +2499,7 @@
           {
             "cycle_num": 3,
             "dcl0_date": "2025-01-21",
-            "dcl0_price": 217.7995,
+            "dcl0_price": 217.7994,
             "hch_date": "2025-01-31",
             "hch_price": 245.409,
             "hcl_date": "2025-02-03",
@@ -2586,13 +2586,13 @@
             "dcl0_date": "2025-10-10",
             "dcl0_price": 243.102,
             "hch_date": "2025-10-31",
-            "hch_price": 276.2994,
+            "hch_price": 276.2993,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2025-10-31",
-            "dch_price": 276.2994,
+            "dch_price": 276.2993,
             "dcl1_date": "2025-11-18",
-            "dcl1_price": 264.5998,
+            "dcl1_price": 264.5997,
             "translation": "RIGHT",
             "failed": false,
             "length": 27,
@@ -2601,7 +2601,7 @@
           {
             "cycle_num": 6,
             "dcl0_date": "2025-11-18",
-            "dcl0_price": 264.5998,
+            "dcl0_price": 264.5997,
             "hch_date": "2025-12-15",
             "hch_price": 279.3895,
             "hcl_date": null,
@@ -2905,11 +2905,11 @@
             "beta": 0.13
           },
           "Dow": {
-            "correlation": 0.184,
-            "beta": 0.453
+            "correlation": 0.217,
+            "beta": 0.471
           }
         },
-        "avg_correlation": 0.129,
+        "avg_correlation": 0.14,
         "us_trend": "BULLISH",
         "us_benchmark_trends": {
           "S&P500": {
@@ -2927,7 +2927,7 @@
           "Dow": {
             "price": 53770.27,
             "5d_pct": -1.07,
-            "20d_pct": 2.11,
+            "20d_pct": 2.15,
             "trend": "MIXED"
           }
         },
@@ -2964,11 +2964,11 @@
         "take_profit": 2.5489,
         "stoch_k": 41.18,
         "stoch_d": 45.1,
-        "volume": 64630,
+        "volume": 55526,
         "volume_signal": {
-          "ratio": 0.25,
+          "ratio": 0.21,
           "signal": "LOW_VOLUME",
-          "avg_volume": 261780
+          "avg_volume": 261325
         },
         "moving_averages": {
           "sma_10": 2.4,
@@ -3027,39 +3027,22 @@
             "hch_price": 2.2399,
             "hcl_date": "2024-10-03",
             "hcl_price": 2.1168,
-            "dch_date": "2024-10-15",
+            "dch_date": "2024-10-16",
             "dch_price": 2.2901,
-            "dcl1_date": "2024-11-01",
-            "dcl1_price": 2.1076,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 36,
-            "intermediate_cycle_start": null
-          },
-          {
-            "cycle_num": null,
-            "dcl0_date": "2024-11-01",
-            "dcl0_price": 2.1076,
-            "hch_date": "2024-11-07",
-            "hch_price": 2.2354,
-            "hcl_date": "2024-11-11",
-            "hcl_price": 2.135,
-            "dch_date": "2024-11-19",
-            "dch_price": 2.2582,
-            "dcl1_date": "2024-11-29",
+            "dcl1_date": "2024-11-26",
             "dcl1_price": 2.0985,
-            "translation": "RIGHT",
-            "failed": true,
-            "length": 20,
+            "translation": "LEFT",
+            "failed": false,
+            "length": 53,
             "intermediate_cycle_start": null
           },
           {
             "cycle_num": null,
-            "dcl0_date": "2024-11-29",
+            "dcl0_date": "2024-11-26",
             "dcl0_price": 2.0985,
             "hch_date": "2024-12-05",
             "hch_price": 2.1989,
-            "hcl_date": "2024-12-12",
+            "hcl_date": "2024-12-10",
             "hcl_price": 2.1076,
             "dch_date": "2025-01-06",
             "dch_price": 2.3722,
@@ -3067,16 +3050,16 @@
             "dcl1_price": 2.1806,
             "translation": "RIGHT",
             "failed": false,
-            "length": 28,
+            "length": 31,
             "intermediate_cycle_start": null
           },
           {
             "cycle_num": null,
             "dcl0_date": "2025-01-13",
             "dcl0_price": 2.1806,
-            "hch_date": "2025-01-16",
+            "hch_date": "2025-01-22",
             "hch_price": 2.3084,
-            "hcl_date": "2025-01-29",
+            "hcl_date": "2025-01-28",
             "hcl_price": 2.2263,
             "dch_date": "2025-02-19",
             "dch_price": 2.3722,
@@ -3607,7 +3590,7 @@
             "dch_date": "2024-09-17",
             "dch_price": 435.7976,
             "dcl1_date": "2024-10-08",
-            "dcl1_price": 402.5789,
+            "dcl1_price": 402.5788,
             "translation": "LEFT",
             "failed": false,
             "length": 22,
@@ -3616,7 +3599,7 @@
           {
             "cycle_num": null,
             "dcl0_date": "2024-10-08",
-            "dcl0_price": 402.5789,
+            "dcl0_price": 402.5788,
             "hch_date": "2024-10-14",
             "hch_price": 418.2315,
             "hcl_date": "2024-10-16",
@@ -3637,7 +3620,7 @@
             "hch_date": "2024-11-13",
             "hch_price": 423.449,
             "hcl_date": "2024-11-20",
-            "hcl_price": 404.9558,
+            "hcl_price": 404.9559,
             "dch_date": "2024-12-12",
             "dch_price": 450.8121,
             "dcl1_date": "2025-01-14",
@@ -3688,9 +3671,9 @@
             "hch_date": "2025-03-17",
             "hch_price": 388.8841,
             "hcl_date": "2025-03-18",
-            "hcl_price": 377.3873,
+            "hcl_price": 377.3872,
             "dch_date": "2025-03-25",
-            "dch_price": 392.4986,
+            "dch_price": 392.4985,
             "dcl1_date": "2025-04-07",
             "dcl1_price": 341.431,
             "translation": "RIGHT",
@@ -3703,7 +3686,7 @@
             "dcl0_date": "2025-04-07",
             "dcl0_price": 341.431,
             "hch_date": "2025-04-14",
-            "hch_price": 390.8053,
+            "hch_price": 390.8052,
             "hcl_date": "2025-04-21",
             "hcl_price": 352.205,
             "dch_date": "2025-05-22",
@@ -3737,7 +3720,7 @@
             "dcl0_date": "2025-06-23",
             "dcl0_price": 468.7657,
             "hch_date": "2025-06-30",
-            "hch_price": 496.7919,
+            "hch_price": 496.7918,
             "hcl_date": "2025-07-02",
             "hcl_price": 484.8274,
             "dch_date": "2025-07-18",
@@ -3758,7 +3741,7 @@
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2025-07-31",
-            "dch_price": 551.0484,
+            "dch_price": 551.0485,
             "dcl1_date": "2025-09-05",
             "dcl1_price": 489.2713,
             "translation": "LEFT",
@@ -3918,7 +3901,7 @@
             "ic_hcl_date": null,
             "ic_hcl_price": null,
             "ich_date": "2025-07-31",
-            "ich_price": 551.0484,
+            "ich_price": 551.0485,
             "icl1_date": "2026-06-25",
             "icl1_price": 349.2,
             "translation": "LEFT",
@@ -4095,7 +4078,7 @@
         "stop_loss": 369.6165,
         "stop_note": "Stop just below cycle HCL trendline ($373.35)",
         "take_profit": 536.884,
-        "dividend_note": "Dividend yield: 72.0% | Ex-dividend: 1787184000",
+        "dividend_note": "Dividend yield: 74.0% | Ex-dividend: 1787184000",
         "risk_reward": 0.36
       },
       "correlation": {
@@ -4110,11 +4093,11 @@
             "beta": 0.761
           },
           "Dow": {
-            "correlation": 0.286,
-            "beta": 1.034
+            "correlation": 0.29,
+            "beta": 1.038
           }
         },
-        "avg_correlation": 0.332,
+        "avg_correlation": 0.334,
         "us_trend": "BULLISH",
         "us_benchmark_trends": {
           "S&P500": {
@@ -4132,7 +4115,7 @@
           "Dow": {
             "price": 53770.27,
             "5d_pct": -1.07,
-            "20d_pct": 2.11,
+            "20d_pct": 2.15,
             "trend": "MIXED"
           }
         },
@@ -5473,11 +5456,11 @@
             "beta": 2.768
           },
           "Dow": {
-            "correlation": 0.355,
-            "beta": 2.162
+            "correlation": 0.343,
+            "beta": 2.047
           }
         },
-        "avg_correlation": 0.611,
+        "avg_correlation": 0.607,
         "us_trend": "BULLISH",
         "us_benchmark_trends": {
           "S&P500": {
@@ -5495,7 +5478,7 @@
           "Dow": {
             "price": 53770.27,
             "5d_pct": -1.07,
-            "20d_pct": 2.11,
+            "20d_pct": 2.15,
             "trend": "MIXED"
           }
         },
@@ -5909,7 +5892,7 @@
     },
     {
       "ticker": "MSB.AX",
-      "name": "Mesoblast Limited",
+      "name": "MESOBLAST FPO [MSB]",
       "sector": "Healthcare",
       "market_cap": 3086767104,
       "tech": {
@@ -7236,7 +7219,7 @@
         "exit_note": "Reduce or exit existing longs",
         "all_cycles": [
           {
-            "cycle_num": null,
+            "cycle_num": 1,
             "dcl0_date": "2024-09-11",
             "dcl0_price": 5.4162,
             "hch_date": "2024-09-13",
@@ -7250,10 +7233,10 @@
             "translation": "LEFT",
             "failed": false,
             "length": 31,
-            "intermediate_cycle_start": null
+            "intermediate_cycle_start": "2024-09-11"
           },
           {
-            "cycle_num": null,
+            "cycle_num": 2,
             "dcl0_date": "2024-10-24",
             "dcl0_price": 5.721,
             "hch_date": "2024-11-19",
@@ -7267,10 +7250,10 @@
             "translation": "LEFT",
             "failed": true,
             "length": 41,
-            "intermediate_cycle_start": null
+            "intermediate_cycle_start": "2024-09-11"
           },
           {
-            "cycle_num": null,
+            "cycle_num": 3,
             "dcl0_date": "2024-12-20",
             "dcl0_price": 4.62,
             "hch_date": "2025-01-14",
@@ -7284,10 +7267,10 @@
             "translation": "RIGHT",
             "failed": true,
             "length": 27,
-            "intermediate_cycle_start": null
+            "intermediate_cycle_start": "2024-09-11"
           },
           {
-            "cycle_num": null,
+            "cycle_num": 4,
             "dcl0_date": "2025-02-03",
             "dcl0_price": 4.1973,
             "hch_date": "2025-02-17",
@@ -7301,10 +7284,10 @@
             "translation": "LEFT",
             "failed": true,
             "length": 26,
-            "intermediate_cycle_start": null
+            "intermediate_cycle_start": "2024-09-11"
           },
           {
-            "cycle_num": null,
+            "cycle_num": 5,
             "dcl0_date": "2025-03-11",
             "dcl0_price": 3.939,
             "hch_date": "2025-03-19",
@@ -7318,7 +7301,7 @@
             "translation": "RIGHT",
             "failed": true,
             "length": 21,
-            "intermediate_cycle_start": null
+            "intermediate_cycle_start": "2024-09-11"
           },
           {
             "cycle_num": 1,
@@ -7629,6 +7612,29 @@
         ],
         "cycle_len_intermediate": 96,
         "intermediate_cycles": [
+          {
+            "icl0_date": "2024-09-11",
+            "icl0_price": 5.4162,
+            "ic_hch_date": "2024-12-04",
+            "ic_hch_price": 5.6128,
+            "ic_hcl_date": null,
+            "ic_hcl_price": null,
+            "ich_date": "2024-09-30",
+            "ich_price": 7.0775,
+            "icl1_date": "2025-04-09",
+            "icl1_price": 3.1155,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 146,
+            "daily_cycle_count": 5,
+            "member_daily_cycles": [
+              "2024-09-11",
+              "2024-10-24",
+              "2024-12-20",
+              "2025-02-03",
+              "2025-03-11"
+            ]
+          },
           {
             "icl0_date": "2025-04-09",
             "icl0_price": 3.1155,
@@ -8611,11 +8617,11 @@
             "beta": 1.831
           },
           "Dow": {
-            "correlation": 0.454,
-            "beta": 1.95
+            "correlation": 0.397,
+            "beta": 1.692
           }
         },
-        "avg_correlation": 0.625,
+        "avg_correlation": 0.606,
         "us_trend": "BULLISH",
         "us_benchmark_trends": {
           "S&P500": {
@@ -8633,7 +8639,7 @@
           "Dow": {
             "price": 53770.27,
             "5d_pct": -1.07,
-            "20d_pct": 2.11,
+            "20d_pct": 2.15,
             "trend": "MIXED"
           }
         },
@@ -9161,11 +9167,11 @@
         "take_profit": 3.3553,
         "stoch_k": 82.8,
         "stoch_d": 85.3,
-        "volume": 1340798,
+        "volume": 1338598,
         "volume_signal": {
           "ratio": 0.55,
           "signal": "NORMAL",
-          "avg_volume": 2441609
+          "avg_volume": 2441499
         },
         "moving_averages": {
           "sma_10": 2.663,
@@ -10040,7 +10046,7 @@
             "hch_price": 1.5908,
             "hcl_date": null,
             "hcl_price": null,
-            "dch_date": "2025-02-10",
+            "dch_date": "2025-02-13",
             "dch_price": 1.6888,
             "dcl1_date": "2025-04-07",
             "dcl1_price": 1.3619,
@@ -10174,11 +10180,11 @@
           {
             "icl0_date": "2024-11-25",
             "icl0_price": 1.3809,
-            "ic_hch_date": "2025-02-10",
+            "ic_hch_date": "2025-02-13",
             "ic_hch_price": 1.6888,
             "ic_hcl_date": null,
             "ic_hcl_price": null,
-            "ich_date": "2025-02-10",
+            "ich_date": "2025-02-13",
             "ich_price": 1.6888,
             "icl1_date": "2025-04-07",
             "icl1_price": 1.3619,
@@ -11017,34 +11023,17 @@
             "cycle_num": null,
             "dcl0_date": "2024-09-05",
             "dcl0_price": 6.3052,
-            "hch_date": "2024-10-01",
+            "hch_date": "2024-10-09",
             "hch_price": 6.8744,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2024-10-01",
-            "dch_price": 6.8744,
-            "dcl1_date": "2024-10-08",
-            "dcl1_price": 6.4629,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 23,
-            "intermediate_cycle_start": null
-          },
-          {
-            "cycle_num": null,
-            "dcl0_date": "2024-10-08",
-            "dcl0_price": 6.4629,
-            "hch_date": "2024-10-17",
-            "hch_price": 6.7606,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2024-10-09",
-            "dch_price": 6.8744,
+            "dch_price": 6.8745,
             "dcl1_date": "2024-11-13",
             "dcl1_price": 5.7973,
             "translation": "LEFT",
             "failed": true,
-            "length": 26,
+            "length": 49,
             "intermediate_cycle_start": null
           },
           {
@@ -11102,10 +11091,10 @@
             "cycle_num": 4,
             "dcl0_date": "2025-04-07",
             "dcl0_price": 6.9145,
-            "hch_date": "2025-04-23",
-            "hch_price": 7.615,
-            "hcl_date": "2025-05-01",
-            "hcl_price": 7.3784,
+            "hch_date": "2025-05-12",
+            "hch_price": 7.8879,
+            "hcl_date": null,
+            "hcl_price": null,
             "dch_date": "2025-05-12",
             "dch_price": 7.8879,
             "dcl1_date": "2025-05-14",
@@ -11125,16 +11114,16 @@
             "hcl_price": null,
             "dch_date": "2025-06-20",
             "dch_price": 7.9789,
-            "dcl1_date": "2025-06-30",
+            "dcl1_date": "2025-06-27",
             "dcl1_price": 7.6773,
             "translation": "RIGHT",
             "failed": false,
-            "length": 32,
+            "length": 31,
             "intermediate_cycle_start": "2024-11-13"
           },
           {
             "cycle_num": 1,
-            "dcl0_date": "2025-06-30",
+            "dcl0_date": "2025-06-27",
             "dcl0_price": 7.6773,
             "hch_date": "2025-07-08",
             "hch_price": 7.9886,
@@ -11146,7 +11135,7 @@
             "dcl1_price": 7.932,
             "translation": "RIGHT",
             "failed": false,
-            "length": 36,
+            "length": 37,
             "intermediate_cycle_start": "2025-05-26"
           },
           {
@@ -11171,7 +11160,7 @@
             "dcl0_date": "2025-09-24",
             "dcl0_price": 8.2715,
             "hch_date": "2025-10-02",
-            "hch_price": 8.5734,
+            "hch_price": 8.5733,
             "hcl_date": "2025-10-22",
             "hcl_price": 8.3941,
             "dch_date": "2025-10-29",
@@ -11310,7 +11299,7 @@
             "length": 162,
             "daily_cycle_count": 4,
             "member_daily_cycles": [
-              "2025-06-30",
+              "2025-06-27",
               "2025-08-19",
               "2025-09-24",
               "2025-11-04"
