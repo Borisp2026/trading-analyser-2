@@ -17,7 +17,7 @@ REPORTS_DIR = os.path.join(BASE, "reports")
 
 STRATEGY_TAG = "cycle_trading"
 POSITION_SIZE = 2000.0
-MAX_OPEN_POSITIONS = 3
+MAX_OPEN_POSITIONS = 5
 
 
 def compute_stop_price(entry_zone: dict, live_daily: dict, live_intermediate: dict):

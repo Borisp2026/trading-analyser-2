@@ -60,8 +60,17 @@ def check_entry(ticker, df, macro_score=100):
     orb_low  = float(orb["Low"].min())
     price    = float(now["Close"])
     vol      = float(now["Volume"])
-    roll    = day["Volume"].rolling(20, min_periods=5).mean()
-    avg_vol = float(roll.iloc[-1]) if not pd.isna(roll.iloc[-1]) else float(day["Volume"].mean())
+    # Baseline excludes the current (often still-forming/partial) bar — a rolling
+    # average that includes the bar being tested against it makes "spike" almost
+    # impossible to trigger, since the current bar drags its own baseline toward it.
+    prior_vol = day["Volume"].iloc[:-1]
+    roll    = prior_vol.rolling(20, min_periods=5).mean()
+    if len(roll) and not pd.isna(roll.iloc[-1]):
+        avg_vol = float(roll.iloc[-1])
+    elif len(prior_vol):
+        avg_vol = float(prior_vol.mean())
+    else:
+        avg_vol = vol
     avg_vol = avg_vol or 1
 
     # VWAP
@@ -97,7 +106,7 @@ def check_entry(ticker, df, macro_score=100):
         "ORB breakout":       price > orb_high,
         "Above VWAP":         price > vwap,
         "RSI 45–75":          45 <= rsi <= 75,
-        "Volume spike":       vol >= avg_vol * 1.1,
+        "Volume spike":       vol >= avg_vol * 1.05,
         "Not overextended":   price < orb_high * 1.08,
         "MACD bullish":       macd_info.get("bullish", False),
         "SuperTrend bullish": st_info.get("bullish", False),
