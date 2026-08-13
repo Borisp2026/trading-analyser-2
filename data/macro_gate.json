@@ -4,7 +4,7 @@
       "name": "VIX Level",
       "value": 14.57,
       "value_label": "VIX 14.6",
-      "score": 99.8,
+      "score": 99.9,
       "detail": "VIX 14.6 \u2014 lower than 95% of the past year",
       "interpretation": "CALM"
     },
@@ -34,10 +34,10 @@
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -15.09,
-      "value_label": "VIX ROC -15.1%",
-      "score": 81.4,
-      "detail": "VIX 20-day rate of change -15.1% (rapidly rising = fear = low score)",
+      "value": -12.91,
+      "value_label": "VIX ROC -12.9%",
+      "score": 78.6,
+      "detail": "VIX 20-day rate of change -12.9% (rapidly rising = fear = low score)",
       "interpretation": "GREEDY"
     },
     {
@@ -49,13 +49,13 @@
       "interpretation": "UPTREND"
     }
   ],
-  "composite": 80.2,
+  "composite": 79.8,
   "us_signals": [
     {
       "name": "VIX Level",
       "value": 14.57,
       "value_label": "VIX 14.6",
-      "score": 99.8,
+      "score": 99.9,
       "detail": "VIX 14.6 \u2014 lower than 95% of the past year",
       "interpretation": "CALM"
     },
@@ -85,10 +85,10 @@
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -15.09,
-      "value_label": "VIX ROC -15.1%",
-      "score": 81.4,
-      "detail": "VIX 20-day rate of change -15.1% (rapidly rising = fear = low score)",
+      "value": -12.91,
+      "value_label": "VIX ROC -12.9%",
+      "score": 78.6,
+      "detail": "VIX 20-day rate of change -12.9% (rapidly rising = fear = low score)",
       "interpretation": "GREEDY"
     },
     {
@@ -100,7 +100,7 @@
       "interpretation": "UPTREND"
     }
   ],
-  "us_composite": 80.2,
+  "us_composite": 79.8,
   "asx_signals": [
     {
       "name": "ASX Trend",
@@ -120,7 +120,7 @@
     },
     {
       "name": "ASX Volatility",
-      "score": 94.8,
+      "score": 94.9,
       "value": 14.6,
       "value_label": "XVI 14.6",
       "detail": "Lower than 95% of past year",
@@ -131,5 +131,5 @@
   "zone": "DEPLOY",
   "zone_desc": "Conditions favourable \u2014 deploy capital aggressively",
   "zone_color": "#44bb44",
-  "scanned_at": "2026-08-13T12:31:13.928393"
+  "scanned_at": "2026-08-13T12:39:08.804951"
 }
