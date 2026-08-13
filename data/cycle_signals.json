@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T11:35:17",
+  "generated_at": "2026-08-13T12:31:03",
   "watchlist_count": 23,
   "candidates": [
     {
@@ -254,7 +254,7 @@
         "target_price": 214.6272
       },
       "rank": 3,
-      "paper_trade_status": "OPENED_THIS_RUN"
+      "paper_trade_status": "ALREADY_OPEN"
     },
     {
       "ticker": "IOZ.AX",
@@ -1132,14 +1132,6 @@
   ],
   "actions_this_run": {
     "closed": [],
-    "opened": [
-      {
-        "ticker": "NVDA",
-        "entry_price": 224.09,
-        "shares": 8.925,
-        "stop_price": 160.7972,
-        "target_price": 214.6272
-      }
-    ]
+    "opened": []
   }
 }

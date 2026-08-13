@@ -2,18 +2,18 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 14.58,
+      "value": 14.57,
       "value_label": "VIX 14.6",
-      "score": 99.9,
+      "score": 99.8,
       "detail": "VIX 14.6 \u2014 lower than 95% of the past year",
       "interpretation": "CALM"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.787,
-      "value_label": "Ratio 0.787",
+      "value": 0.786,
+      "value_label": "Ratio 0.786",
       "score": 100,
-      "detail": "VIX/VIX3M = 0.787 (CONTANGO) \u2014 below 1.0 = calm",
+      "detail": "VIX/VIX3M = 0.786 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -34,10 +34,10 @@
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -12.85,
-      "value_label": "VIX ROC -12.9%",
-      "score": 78.6,
-      "detail": "VIX 20-day rate of change -12.9% (rapidly rising = fear = low score)",
+      "value": -15.09,
+      "value_label": "VIX ROC -15.1%",
+      "score": 81.4,
+      "detail": "VIX 20-day rate of change -15.1% (rapidly rising = fear = low score)",
       "interpretation": "GREEDY"
     },
     {
@@ -49,22 +49,22 @@
       "interpretation": "UPTREND"
     }
   ],
-  "composite": 79.8,
+  "composite": 80.2,
   "us_signals": [
     {
       "name": "VIX Level",
-      "value": 14.58,
+      "value": 14.57,
       "value_label": "VIX 14.6",
-      "score": 99.9,
+      "score": 99.8,
       "detail": "VIX 14.6 \u2014 lower than 95% of the past year",
       "interpretation": "CALM"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.787,
-      "value_label": "Ratio 0.787",
+      "value": 0.786,
+      "value_label": "Ratio 0.786",
       "score": 100,
-      "detail": "VIX/VIX3M = 0.787 (CONTANGO) \u2014 below 1.0 = calm",
+      "detail": "VIX/VIX3M = 0.786 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -85,10 +85,10 @@
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -12.85,
-      "value_label": "VIX ROC -12.9%",
-      "score": 78.6,
-      "detail": "VIX 20-day rate of change -12.9% (rapidly rising = fear = low score)",
+      "value": -15.09,
+      "value_label": "VIX ROC -15.1%",
+      "score": 81.4,
+      "detail": "VIX 20-day rate of change -15.1% (rapidly rising = fear = low score)",
       "interpretation": "GREEDY"
     },
     {
@@ -100,7 +100,7 @@
       "interpretation": "UPTREND"
     }
   ],
-  "us_composite": 79.8,
+  "us_composite": 80.2,
   "asx_signals": [
     {
       "name": "ASX Trend",
@@ -120,7 +120,7 @@
     },
     {
       "name": "ASX Volatility",
-      "score": 94.9,
+      "score": 94.8,
       "value": 14.6,
       "value_label": "XVI 14.6",
       "detail": "Lower than 95% of past year",
@@ -131,5 +131,5 @@
   "zone": "DEPLOY",
   "zone_desc": "Conditions favourable \u2014 deploy capital aggressively",
   "zone_color": "#44bb44",
-  "scanned_at": "2026-08-13T11:35:23.025346"
+  "scanned_at": "2026-08-13T12:31:13.928393"
 }
