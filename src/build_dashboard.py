@@ -638,7 +638,8 @@ function runBacktest(){
     const ticker=document.getElementById('btStockSelect').value;
     if(!ticker){alert('Select a stock first.');return;}
     const entries=SIGNAL_HISTORY[ticker]||[];
-    const resolved=entries.filter(e=>e.outcome&&e.outcome!=='PENDING');
+    // NEUTRAL (HOLD/WATCH) made no directional call -- exclude from accuracy, same as the server-side calc.
+    const resolved=entries.filter(e=>e.outcome==='CORRECT'||e.outcome==='WRONG');
     const correct=resolved.filter(e=>e.signal_correct).length;
     const accuracy=resolved.length?((correct/resolved.length)*100).toFixed(1):0;
     const accColor=accuracy>=60?'#44bb44':accuracy>=50?'#ff9900':'#cc0000';

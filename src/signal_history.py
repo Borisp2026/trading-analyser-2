@@ -59,11 +59,18 @@ def record_signals(results: list):
                         actual = round(((price_today - price_yesterday) / price_yesterday) * 100, 2)
                         last["actual_next_day_pct"] = actual
                         last["actual_direction"] = "UP" if actual > 0 else "DOWN"
-                        # Was the signal correct?
-                        predicted_up = "BUY" in last.get("recommendation", "")
-                        actually_up = actual > 0
-                        last["signal_correct"] = predicted_up == actually_up
-                        last["outcome"] = "CORRECT" if last["signal_correct"] else "WRONG"
+                        # Was the signal correct? HOLD/WATCH makes no directional call, so it
+                        # isn't graded right/wrong -- only BUY-side and SELL-side recommendations are.
+                        rec_text = last.get("recommendation", "")
+                        predicted_up = "BUY" in rec_text
+                        predicted_down = ("SELL" in rec_text) or ("REDUCE" in rec_text)
+                        if predicted_up or predicted_down:
+                            actually_up = actual > 0
+                            last["signal_correct"] = predicted_up == actually_up
+                            last["outcome"] = "CORRECT" if last["signal_correct"] else "WRONG"
+                        else:
+                            last["signal_correct"] = None
+                            last["outcome"] = "NEUTRAL"
                 except Exception:
                     pass
 
@@ -103,7 +110,9 @@ def get_accuracy_summary(history: dict) -> dict:
     by_stock = {}
 
     for ticker, entries in history.items():
-        resolved = [e for e in entries if e.get("outcome") not in (None, "PENDING")]
+        # NEUTRAL (HOLD/WATCH) entries made no directional call -- exclude them from
+        # the accuracy denominator, not just from counting toward "correct".
+        resolved = [e for e in entries if e.get("outcome") in ("CORRECT", "WRONG")]
         stock_correct = sum(1 for e in resolved if e.get("signal_correct"))
         if resolved:
             by_stock[ticker] = {
