@@ -1,5 +1,6 @@
 """Day Trading Strategy Engine — ORB + VWAP + MACD + SuperTrend + BB Squeeze + ATR + PDH/PDL
-Tiered entry: trend (VWAP or SuperTrend) + momentum (MACD or RSI) + volume all required.
+Tiered entry: trend (VWAP or SuperTrend) + momentum (MACD or RSI) required.
+Volume spike is tracked and scored but not a hard gate (see check_entry).
 Target: +5% net (incl fees) | Stop: 1.5x ATR | Max 2 positions.
 """
 import pandas as pd
@@ -121,12 +122,17 @@ def check_entry(ticker, df, macro_score=100):
     target = round(price * (1 + TARGET_PCT), 3)
     stop   = round(price * (1 - stop_pct), 3)
 
-    # Tiered: trend + momentum + volume all required
+    # Tiered: trend + momentum required. Volume spike is tracked (volume_ok,
+    # conditions["Volume spike"]) and still counts toward conditions_met/score,
+    # but is no longer a hard gate -- it failed ~100% of live scans even after
+    # fixing a self-inclusion bug in its baseline (see condition_stats), i.e.
+    # real 1-min ASX volume too rarely clears even a slim above-average bar
+    # this early in a session for it to be a usable required condition.
     trend_ok    = conditions["Above VWAP"] or conditions["SuperTrend bullish"]
     momentum_ok = conditions["MACD bullish"] or (45 <= rsi <= 75)
     volume_ok   = conditions["Volume spike"]
 
-    if trend_ok and momentum_ok and volume_ok:
+    if trend_ok and momentum_ok:
         return {
             "ticker":         ticker,
             "signal":         "BUY",
