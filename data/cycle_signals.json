@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T01:31:31",
+  "generated_at": "2026-08-14T10:58:12",
   "watchlist_count": 24,
   "candidates": [
     {
@@ -79,7 +79,7 @@
     },
     {
       "ticker": "AMP.AX",
-      "name": "AMP Limited",
+      "name": "AMP FPO [AMP]",
       "price": 2.33,
       "cycle_score": 80,
       "cycle_signal": "CYCLE_BUY",
@@ -259,7 +259,7 @@
     {
       "ticker": "GMD.AX",
       "name": "Genesis Minerals Limited",
-      "price": 7.135,
+      "price": 7.18,
       "cycle_score": 55,
       "cycle_signal": "CYCLE_HOLD",
       "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
@@ -324,7 +324,7 @@
             "price": 7.61
           }
         },
-        "entry_price": 7.135,
+        "entry_price": 7.18,
         "stop_price": 4.4198,
         "target_price": 7.563
       },
@@ -333,8 +333,8 @@
     },
     {
       "ticker": "MSB.AX",
-      "name": "Mesoblast Limited",
-      "price": 2.27,
+      "name": "MESOBLAST FPO [MSB]",
+      "price": 2.21,
       "cycle_score": 20,
       "cycle_signal": "CYCLE_AVOID",
       "entry_zone": "DC1_HCL",
@@ -419,7 +419,7 @@
             "price": 2.78
           }
         },
-        "entry_price": 2.27,
+        "entry_price": 2.21,
         "stop_price": 1.9551,
         "target_price": 2.2627
       },
@@ -504,25 +504,25 @@
   ],
   "failed_cycle_alerts": [
     {
-      "ticker": "TEA.AX",
-      "name": "Tasmea Limited",
-      "price": 9.31,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 7.95,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
       "ticker": "ILU.AX",
       "name": "Iluka Resources Limited",
-      "price": 7.0,
+      "price": 7.09,
       "type": "completed_cycle_failed",
       "dcl0_price": 5.75,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
+      "ticker": "TEA.AX",
+      "name": "Tasmea Limited",
+      "price": 9.48,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 7.95,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+    },
+    {
       "ticker": "MSB.AX",
-      "name": "Mesoblast Limited",
-      "price": 2.27,
+      "name": "MESOBLAST FPO [MSB]",
+      "price": 2.21,
       "type": "completed_cycle_failed",
       "dcl0_price": 1.88,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
@@ -538,33 +538,9 @@
     {
       "ticker": "IPX.AX",
       "name": "IperionX Limited",
-      "price": 3.24,
+      "price": 3.29,
       "type": "completed_cycle_failed",
       "dcl0_price": 2.8,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
-      "ticker": "NXT.AX",
-      "name": "NEXTDC Limited",
-      "price": 14.69,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 12.4,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
-      "ticker": "AFG.AX",
-      "name": "Australian Finance Group Limited",
-      "price": 1.545,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 1.49,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
-      "ticker": "EOS.AX",
-      "name": "Electro Optic Systems Holdings Limited",
-      "price": 8.41,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 6.1,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
@@ -576,11 +552,19 @@
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
-      "ticker": "GLN.AX",
-      "name": "Galan Lithium Limited",
-      "price": 0.345,
+      "ticker": "PNV.AX",
+      "name": "PolyNovo Limited",
+      "price": 0.965,
       "type": "completed_cycle_failed",
-      "dcl0_price": 0.2625,
+      "dcl0_price": 0.81,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+    },
+    {
+      "ticker": "NXT.AX",
+      "name": "NEXTDC Limited",
+      "price": 14.88,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 12.4,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
@@ -594,48 +578,57 @@
     {
       "ticker": "APA.AX",
       "name": "APA Group",
-      "price": 10.055,
+      "price": 10.06,
       "type": "live_cycle_failing",
       "dcl0_price": 9.775,
       "detail": "Live cycle printed a lower low than its own DCL0 (-0.15% below)"
     },
     {
-      "ticker": "PNV.AX",
-      "name": "PolyNovo Limited",
-      "price": 0.937,
+      "ticker": "AFG.AX",
+      "name": "Australian Finance Group Limited",
+      "price": 1.54,
       "type": "completed_cycle_failed",
-      "dcl0_price": 0.81,
+      "dcl0_price": 1.49,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+    },
+    {
+      "ticker": "EOS.AX",
+      "name": "Electro Optic Systems Holdings Limited",
+      "price": 8.47,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 6.1,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+    },
+    {
+      "ticker": "GLN.AX",
+      "name": "Galan Lithium Limited",
+      "price": 0.37,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 0.2625,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     }
   ],
   "high_risk_alerts": [
     {
-      "ticker": "GWA.AX",
-      "name": "GWA Group Limited",
-      "price": 2.35,
-      "dc_num_in_ic": 3,
-      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-    },
-    {
-      "ticker": "IOZ.AX",
-      "name": "iShares Core S&P/ASX 200 ETF",
-      "price": 36.59,
-      "dc_num_in_ic": 4,
-      "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-    },
-    {
       "ticker": "TLX.AX",
       "name": "Telix Pharmaceuticals Limited",
-      "price": 16.98,
+      "price": 16.73,
       "dc_num_in_ic": 12,
       "detail": "Daily Cycle 12 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
-      "ticker": "NWH.AX",
-      "name": "NRW Holdings Limited",
-      "price": 7.3,
+      "ticker": "IOZ.AX",
+      "name": "iShares Core S&P/ASX 200 ETF",
+      "price": 36.51,
       "dc_num_in_ic": 4,
       "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+    },
+    {
+      "ticker": "GWA.AX",
+      "name": "GWA Group Limited",
+      "price": 2.36,
+      "dc_num_in_ic": 3,
+      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "AMD",
@@ -645,25 +638,11 @@
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
-      "ticker": "NXT.AX",
-      "name": "NEXTDC Limited",
-      "price": 14.69,
-      "dc_num_in_ic": 3,
-      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-    },
-    {
-      "ticker": "AFG.AX",
-      "name": "Australian Finance Group Limited",
-      "price": 1.545,
-      "dc_num_in_ic": 3,
-      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-    },
-    {
-      "ticker": "EOS.AX",
-      "name": "Electro Optic Systems Holdings Limited",
-      "price": 8.41,
-      "dc_num_in_ic": 5,
-      "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+      "ticker": "NWH.AX",
+      "name": "NRW Holdings Limited",
+      "price": 7.49,
+      "dc_num_in_ic": 4,
+      "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "MMI.AX",
@@ -673,11 +652,18 @@
       "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
-      "ticker": "GLN.AX",
-      "name": "Galan Lithium Limited",
-      "price": 0.345,
-      "dc_num_in_ic": 5,
-      "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+      "ticker": "PNV.AX",
+      "name": "PolyNovo Limited",
+      "price": 0.965,
+      "dc_num_in_ic": 3,
+      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+    },
+    {
+      "ticker": "NXT.AX",
+      "name": "NEXTDC Limited",
+      "price": 14.88,
+      "dc_num_in_ic": 3,
+      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "TOR.AX",
@@ -687,11 +673,25 @@
       "detail": "Daily Cycle 6 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
-      "ticker": "PNV.AX",
-      "name": "PolyNovo Limited",
-      "price": 0.937,
+      "ticker": "AFG.AX",
+      "name": "Australian Finance Group Limited",
+      "price": 1.54,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+    },
+    {
+      "ticker": "EOS.AX",
+      "name": "Electro Optic Systems Holdings Limited",
+      "price": 8.47,
+      "dc_num_in_ic": 5,
+      "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+    },
+    {
+      "ticker": "GLN.AX",
+      "name": "Galan Lithium Limited",
+      "price": 0.37,
+      "dc_num_in_ic": 5,
+      "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     }
   ],
   "open_trades": [
@@ -712,7 +712,7 @@
         "entered_dc_num": 2,
         "entered_score": 55
       },
-      "_current_price": 7.135,
+      "_current_price": 7.18,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -1016,8 +1016,8 @@
       },
       "sell_price": 7.4,
       "sell_date": "2026-08-12",
-      "pnl": 0.0,
-      "pnl_pct": 0.0,
+      "pnl": 0,
+      "pnl_pct": 0,
       "close_reason": "FAILED_CYCLE"
     },
     {
