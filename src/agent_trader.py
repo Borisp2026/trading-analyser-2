@@ -11,6 +11,7 @@ import pytz
 
 sys.path.insert(0, os.path.dirname(__file__))
 from day_trader import check_entry, check_exit, is_trading_window
+from cycle_trader import check_intraday_hard_stops
 
 BASE          = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AGENT_FILE    = os.path.join(BASE, "data", "agent_trades.json")
@@ -194,6 +195,15 @@ def run_agent_scan():
     print(f"\n{'='*50}")
     print(f"Agent Scan — {now_str}")
     print(f"{'='*50}")
+
+    # Cycle Trading hard-stop check, piggybacking on this 5-min cadence so a stop
+    # breach is caught same-day instead of waiting for the next nightly cycle re-run.
+    try:
+        cycle_stops = check_intraday_hard_stops()
+        if cycle_stops:
+            print(f"  Cycle Trading hard stop hit: {cycle_stops}")
+    except Exception as e:
+        print(f"  Cycle Trading intraday stop check error: {e}")
 
     d = load_data()
 

@@ -982,11 +982,42 @@ function renderTop5Stocks(results,tickers){
 // ── Cycle Trading tab ────────────────────────────────────────────────────────
 function renderCycleTab(){
   const d = CYCLE_DATA || {};
+  renderCombinedRisk(d);
   renderCycleAlerts(d.failed_cycle_alerts||[], 'cycleFailedAlerts', 'FAILED CYCLE', '#cc0000');
   renderCycleAlerts(d.high_risk_alerts||[], 'cycleHighRiskAlerts', 'HIGH RISK ZONE', '#ff9900');
   renderCycleCandidates(d.candidates||[]);
   renderCycleOpenTrades(d.open_trades||[]);
   renderCycleClosedTrades(d.closed_trades||[]);
+}
+async function renderCombinedRisk(cycleData){
+  const el=document.getElementById('combinedRiskPanel');
+  if(!el) return;
+  const cd=cycleData.drawdown||{};
+  const cycleCapital=10000, cycleAtRisk=cycleCapital*(cd.drawdown_pct||0)/100;
+  let agentCapital=5000, agentStart=5000, agentDrawdownPct=0;
+  try{
+    const r=await fetch(AGENT_RAW_URL+'?t='+Date.now());
+    if(r.ok){
+      const ad=await r.json();
+      agentCapital=ad.capital!=null?ad.capital:agentCapital;
+      agentStart=ad.starting_capital||agentStart;
+      agentDrawdownPct=Math.max(0,(agentStart-agentCapital)/agentStart*100);
+    }
+  }catch(e){/* Agent Trader data unavailable, show Cycle Trading only */}
+  const combinedCapital=cycleCapital+agentStart;
+  const combinedAtRisk=cycleAtRisk+(agentStart*agentDrawdownPct/100);
+  const ddColor=p=>p>=15?'#cc0000':p>=8?'#ff9900':'#44bb44';
+  el.innerHTML='<h3 style="color:#ccc;margin-bottom:10px">Combined Risk (Cycle Trading + Agent Trader)</h3>'
+    +'<div class="stats-grid">'
+    +'<div class="stat-card"><div class="stat-label">Cycle Trading Drawdown</div>'
+    +'<div class="stat-value" style="color:'+ddColor(cd.drawdown_pct||0)+'">'+(cd.drawdown_pct||0).toFixed(1)+'%'+(cd.halted?' (HALTED)':'')+'</div></div>'
+    +'<div class="stat-card"><div class="stat-label">Agent Trader Drawdown</div>'
+    +'<div class="stat-value" style="color:'+ddColor(agentDrawdownPct)+'">'+agentDrawdownPct.toFixed(1)+'%</div></div>'
+    +'<div class="stat-card"><div class="stat-label">Combined Capital Deployed</div>'
+    +'<div class="stat-value">$'+combinedCapital.toLocaleString()+'</div></div>'
+    +'<div class="stat-card"><div class="stat-label">Combined $ At Risk (drawdown)</div>'
+    +'<div class="stat-value" style="color:'+ddColor(combinedAtRisk/combinedCapital*100)+'">$'+combinedAtRisk.toFixed(0)+'</div></div>'
+    +'</div>';
 }
 function renderCycleAlerts(list, elId, label, color){
   const el=document.getElementById(elId);
@@ -1623,8 +1654,11 @@ window.addEventListener('resize',()=>{
 <p style="color:#888;font-size:13px;margin-bottom:20px">
   Nightly screen of the watchlist for Daily/Intermediate Cycle setups. Ranks candidates by
   cycle score and entry-zone risk, flags failed cycles and high-risk Daily-Cycle-3/4 zones,
-  and manages up to 3 concurrent $2,000 paper positions with phase-based exits.
+  and manages up to 5 concurrent risk-sized paper positions (capped at $2,000 each) with
+  phase-based exits plus a hard stop-loss backstop.
 </p>
+<div id="combinedRiskPanel" style="margin-bottom:20px"></div>
+
 <h3 style="color:#ccc;margin:0 0 12px">Best Candidates</h3>
 <div id="cycleCandidatesGrid" style="display:grid;gap:12px"></div>
 

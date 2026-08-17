@@ -28,7 +28,15 @@ def generate_reasoning(ticker: str, tech: dict, cycle: dict, info: dict = None) 
     blended_score = round(0.6 * tech_score + 0.4 * cycle_score, 1)
 
     # Overall recommendation
-    if blended_score >= 70:
+    # STRONG BUY threshold recalibrated 2026-08-17 from 668 recorded signals: the observed
+    # blended_score distribution never exceeded 70.8 and only 2/668 signals ever reached the
+    # old >=70 cutoff -- it was set above the system's own achievable range. 63 sits at the
+    # ~p95-97 mark of what's actually produced, so it now designates a genuine top few percent
+    # instead of a tier that never fires. BUY/HOLD/WEAK/AVOID boundaries were checked against
+    # the same data and left alone -- AVOID/SELL's <30 cutoff in particular already sits right
+    # where weekday accuracy climbs sharply (72% at 25-30 vs 55% at 30-35), so moving it would
+    # have diluted a boundary that's already well-placed.
+    if blended_score >= 63:
         recommendation = "STRONG BUY"
         rec_color = "#00aa00"
         timing = "Consider entering NOW or on next minor pullback"
