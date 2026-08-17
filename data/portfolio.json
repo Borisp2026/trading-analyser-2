@@ -177,7 +177,7 @@
       "buy_date": "2026-08-12",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 1.4259,
       "target_price": 3.0754,
@@ -186,7 +186,12 @@
         "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
         "entered_dc_num": 3,
         "entered_score": 80
-      }
+      },
+      "sell_price": 2.3,
+      "sell_date": "2026-08-17",
+      "pnl": -50.85,
+      "pnl_pct": -2.54,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "MSFT",
@@ -223,9 +228,27 @@
         "entered_dc_num": 4,
         "entered_score": 72
       }
+    },
+    {
+      "ticker": "CMM.AX",
+      "shares": 121.2121,
+      "buy_price": 16.5,
+      "buy_date": "2026-08-17",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 9.2218,
+      "target_price": 15.5274,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "entered_dc_num": 3,
+        "entered_score": 80
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 1983.0217359999988,
+  "paper_cash": 1932.1745659999983,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
