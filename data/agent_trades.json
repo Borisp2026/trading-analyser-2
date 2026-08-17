@@ -132,13 +132,13 @@
       ],
       "position_size": 2500.0,
       "macro_score": 81.8,
-      "status": "OPEN",
-      "exit_price": null,
-      "exit_time": null,
-      "exit_reason": null,
-      "pnl_pct": null,
-      "pnl_dollar": null,
-      "outcome": "PENDING"
+      "status": "CLOSED",
+      "exit_price": 8.94,
+      "exit_time": "2026-08-17T05:53:47.012121",
+      "exit_reason": "EOD EXIT",
+      "pnl_pct": 3.47,
+      "pnl_dollar": 84.25,
+      "outcome": "WIN"
     },
     {
       "id": 6,
@@ -162,6 +162,63 @@
       ],
       "position_size": 1314.3,
       "macro_score": 81.8,
+      "status": "CLOSED",
+      "exit_price": 1.552,
+      "exit_time": "2026-08-17T05:53:47.141475",
+      "exit_reason": "EOD EXIT",
+      "pnl_pct": 0.32,
+      "pnl_dollar": 2.9,
+      "outcome": "WIN"
+    },
+    {
+      "id": 7,
+      "ticker": "AFG.AX",
+      "entry_price": 1.552,
+      "entry_time": "2026-08-17T05:53:49.192449",
+      "target": 1.633,
+      "stop": 1.529,
+      "vwap": 1.544,
+      "rsi": 50.0,
+      "orb_high": 1.545,
+      "conditions_met": 6,
+      "reasons": [
+        "\u2713 ORB breakout",
+        "\u2713 Above VWAP",
+        "\u2713 RSI 45\u201375",
+        "\u2713 Not overextended",
+        "\u2713 MACD bullish",
+        "\u2713 PDH breakout"
+      ],
+      "position_size": 2500.0,
+      "macro_score": 81.8,
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "exit_reason": null,
+      "pnl_pct": null,
+      "pnl_dollar": null,
+      "outcome": "PENDING"
+    },
+    {
+      "id": 8,
+      "ticker": "GWA.AX",
+      "entry_price": 2.395,
+      "entry_time": "2026-08-17T05:53:52.100887",
+      "target": 2.52,
+      "stop": 2.359,
+      "vwap": 2.415,
+      "rsi": 50.0,
+      "orb_high": 2.5,
+      "conditions_met": 5,
+      "reasons": [
+        "\u2713 RSI 45\u201375",
+        "\u2713 Not overextended",
+        "\u2713 MACD bullish",
+        "\u2713 SuperTrend bullish",
+        "\u2713 BB squeeze/breakout"
+      ],
+      "position_size": 1355.97,
+      "macro_score": 81.8,
       "status": "OPEN",
       "exit_price": null,
       "exit_time": null,
@@ -172,22 +229,22 @@
     }
   ],
   "open_positions": {
-    "EOS.AX": {
-      "trade_id": 5,
-      "entry_price": 8.64,
-      "target": 9.089,
-      "stop": 8.51,
+    "AFG.AX": {
+      "trade_id": 7,
+      "entry_price": 1.552,
+      "target": 1.633,
+      "stop": 1.529,
       "position_size": 2500.0
     },
-    "AFG.AX": {
-      "trade_id": 6,
-      "entry_price": 1.547,
-      "target": 1.627,
-      "stop": 1.524,
-      "position_size": 1314.3
+    "GWA.AX": {
+      "trade_id": 8,
+      "entry_price": 2.395,
+      "target": 2.52,
+      "stop": 2.359,
+      "position_size": 1355.97
     }
   },
-  "capital": 1312.98,
+  "capital": 1354.6,
   "starting_capital": 5000.0,
   "scan_log": [
     {
@@ -6765,24 +6822,310 @@
         "BB squeeze/breakout": false,
         "PDH breakout": true
       }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "EOS.AX",
+      "signal": "SKIP",
+      "price": 8.94,
+      "notes": "\u2713 ORB breakout",
+      "trend_ok": true,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": true,
+        "Above VWAP": true,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": false,
+        "BB squeeze/breakout": true,
+        "PDH breakout": true
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "TOR.AX",
+      "signal": "SKIP",
+      "price": 0.22,
+      "notes": "\u2713 Not overextended",
+      "trend_ok": false,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": false,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "MIN.AX",
+      "signal": "SKIP",
+      "price": 67.45,
+      "notes": "\u2713 RSI 45\u201375",
+      "trend_ok": false,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": false,
+        "BB squeeze/breakout": true,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "IPX.AX",
+      "signal": "SKIP",
+      "price": 3.52,
+      "notes": "\u2713 ORB breakout",
+      "trend_ok": true,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": true,
+        "Above VWAP": true,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": false,
+        "BB squeeze/breakout": false,
+        "PDH breakout": true
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "GLN.AX",
+      "signal": "SKIP",
+      "price": 0.38,
+      "notes": "\u2713 Not overextended",
+      "trend_ok": false,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": false,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "AFG.AX",
+      "signal": "BUY",
+      "price": 1.552,
+      "notes": "\u2713 ORB breakout",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": true,
+        "Above VWAP": true,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": false,
+        "BB squeeze/breakout": false,
+        "PDH breakout": true
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "GMD.AX",
+      "signal": "SKIP",
+      "price": 7.44,
+      "notes": "\u2713 ORB breakout",
+      "trend_ok": true,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": true,
+        "Above VWAP": true,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": false,
+        "BB squeeze/breakout": true,
+        "PDH breakout": true
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "CU6.AX",
+      "signal": "SKIP",
+      "price": 2.59,
+      "notes": "\u2713 RSI 45\u201375",
+      "trend_ok": false,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": false,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "MSB.AX",
+      "signal": "SKIP",
+      "price": 2.425,
+      "notes": "\u2713 ORB breakout",
+      "trend_ok": true,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": true,
+        "Above VWAP": true,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": true
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "TLX.AX",
+      "signal": "SKIP",
+      "price": 16.475,
+      "notes": "\u2713 Not overextended",
+      "trend_ok": true,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "NXT.AX",
+      "signal": "SKIP",
+      "price": 14.78,
+      "notes": "\u2713 Not overextended",
+      "trend_ok": true,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "APA.AX",
+      "signal": "SKIP",
+      "price": 9.985,
+      "notes": "\u2713 RSI 45\u201375",
+      "trend_ok": false,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": false,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "15:53",
+      "date": "2026-08-17",
+      "ticker": "GWA.AX",
+      "signal": "BUY",
+      "price": 2.395,
+      "notes": "\u2713 RSI 45\u201375",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": true,
+        "PDH breakout": false
+      }
     }
   ],
   "status": "RUNNING",
   "target_trades": 30,
   "started_at": "2026-07-05T11:02:50.033576",
   "stats": {
-    "total_trades": 6,
-    "closed_trades": 4,
+    "total_trades": 8,
+    "closed_trades": 6,
     "open_trades": 2,
-    "wins": 2,
+    "wins": 4,
     "losses": 2,
-    "win_rate": 50.0,
-    "avg_pnl_pct": 1.38,
-    "total_pnl_pct": 5.51,
-    "current_capital": 1312.98,
-    "capital_growth": -73.74
+    "win_rate": 66.7,
+    "avg_pnl_pct": 1.55,
+    "total_pnl_pct": 9.3,
+    "current_capital": 1354.6,
+    "capital_growth": -72.91
   },
-  "last_scan": "2026-08-17T05:19:30.901773",
+  "last_scan": "2026-08-17T05:53:52.401123",
   "ticker_days": {
     "EOS.AX": [
       "2026-07-08",
@@ -7563,7 +7906,7 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 2,
+      "scans_today": 3,
       "buys_today": 1,
       "in_watchlist": true,
       "add_pending": false
@@ -7578,7 +7921,7 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 2,
+      "scans_today": 3,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
@@ -7593,7 +7936,7 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 2,
+      "scans_today": 3,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
@@ -7608,7 +7951,7 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 2,
+      "scans_today": 3,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
@@ -7623,7 +7966,7 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 2,
+      "scans_today": 3,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
@@ -7638,8 +7981,8 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 2,
-      "buys_today": 1,
+      "scans_today": 3,
+      "buys_today": 2,
       "in_watchlist": true,
       "add_pending": false
     },
@@ -7653,7 +7996,7 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 1,
+      "scans_today": 2,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
@@ -7668,7 +8011,7 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 1,
+      "scans_today": 2,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
@@ -7683,7 +8026,7 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 1,
+      "scans_today": 2,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
@@ -7698,7 +8041,7 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 1,
+      "scans_today": 2,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
@@ -7713,7 +8056,7 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 1,
+      "scans_today": 2,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
@@ -7728,7 +8071,7 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 1,
+      "scans_today": 2,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
@@ -7743,8 +8086,8 @@
         "2026-08-14",
         "2026-08-17"
       ],
-      "scans_today": 1,
-      "buys_today": 0,
+      "scans_today": 2,
+      "buys_today": 1,
       "in_watchlist": true,
       "add_pending": false
     },
@@ -8014,26 +8357,26 @@
     }
   ],
   "condition_stats": {
-    "total_scans": 229,
-    "buys": 4,
+    "total_scans": 242,
+    "buys": 6,
     "early_skip_reasons": {
       "Insufficient bars": 87
     },
     "tier_fail_counts": {
-      "trend_ok": 18,
-      "momentum_ok": 38,
-      "volume_ok": 138
+      "trend_ok": 23,
+      "momentum_ok": 46,
+      "volume_ok": 149
     },
     "condition_true_counts": {
-      "Above VWAP": 64,
-      "RSI 45\u201375": 66,
-      "Not overextended": 138,
-      "SuperTrend bullish": 106,
-      "MACD bullish": 72,
-      "ORB breakout": 34,
-      "BB squeeze/breakout": 27,
-      "PDH breakout": 34
+      "Above VWAP": 68,
+      "RSI 45\u201375": 69,
+      "Not overextended": 149,
+      "SuperTrend bullish": 109,
+      "MACD bullish": 73,
+      "ORB breakout": 38,
+      "BB squeeze/breakout": 30,
+      "PDH breakout": 38
     },
-    "condition_total": 138
+    "condition_total": 149
   }
 }
