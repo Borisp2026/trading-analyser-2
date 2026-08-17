@@ -246,9 +246,28 @@
         "entered_dc_num": 3,
         "entered_score": 80
       }
+    },
+    {
+      "ticker": "ILU.AX",
+      "shares": 64.7242,
+      "buy_price": 7.18,
+      "buy_date": "2026-08-17",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 5.635,
+      "target_price": 6.1215,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 1932.1745659999983,
+  "paper_cash": 1467.4548099999984,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

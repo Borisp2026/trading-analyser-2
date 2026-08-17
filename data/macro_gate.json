@@ -10,10 +10,10 @@
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.811,
-      "value_label": "Ratio 0.811",
+      "value": 0.794,
+      "value_label": "Ratio 0.794",
       "score": 100,
-      "detail": "VIX/VIX3M = 0.811 (CONTANGO) \u2014 below 1.0 = calm",
+      "detail": "VIX/VIX3M = 0.794 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -26,10 +26,10 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 2.53,
-      "value_label": "Z-score +2.53",
+      "value": 2.62,
+      "value_label": "Z-score +2.62",
       "score": 0,
-      "detail": "HYG/TLT ratio z-score +2.53 vs 1-year avg (negative = tight = bullish)",
+      "detail": "HYG/TLT ratio z-score +2.62 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
@@ -42,10 +42,10 @@
     },
     {
       "name": "SPX Trend",
-      "value": 10.05,
-      "value_label": "SPX +10.0% vs 200MA",
+      "value": 9.81,
+      "value_label": "SPX +9.8% vs 200MA",
       "score": 100,
-      "detail": "S&P 500 $7,786 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,773 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "UPTREND"
     }
   ],
@@ -61,10 +61,10 @@
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.811,
-      "value_label": "Ratio 0.811",
+      "value": 0.794,
+      "value_label": "Ratio 0.794",
       "score": 100,
-      "detail": "VIX/VIX3M = 0.811 (CONTANGO) \u2014 below 1.0 = calm",
+      "detail": "VIX/VIX3M = 0.794 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -77,10 +77,10 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 2.53,
-      "value_label": "Z-score +2.53",
+      "value": 2.62,
+      "value_label": "Z-score +2.62",
       "score": 0,
-      "detail": "HYG/TLT ratio z-score +2.53 vs 1-year avg (negative = tight = bullish)",
+      "detail": "HYG/TLT ratio z-score +2.62 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
@@ -93,10 +93,10 @@
     },
     {
       "name": "SPX Trend",
-      "value": 10.05,
-      "value_label": "SPX +10.0% vs 200MA",
+      "value": 9.81,
+      "value_label": "SPX +9.8% vs 200MA",
       "score": 100,
-      "detail": "S&P 500 $7,786 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,773 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "UPTREND"
     }
   ],
@@ -105,18 +105,18 @@
     {
       "name": "ASX Trend",
       "score": 100,
-      "value": 9073.0,
-      "value_label": "XJO 9,073",
+      "value": 9115.0,
+      "value_label": "XJO 9,115",
       "detail": "XJO vs MA50(\u2713) MA200(\u2713)",
       "interpretation": "UPTREND"
     },
     {
       "name": "ASX Breadth",
-      "score": 73.3,
-      "value": 67.0,
-      "value_label": "67% above 50MA",
-      "detail": "6/9 ASX sectors above 50-day MA",
-      "interpretation": "MIXED"
+      "score": 95.6,
+      "value": 78.0,
+      "value_label": "78% above 50MA",
+      "detail": "7/9 ASX sectors above 50-day MA",
+      "interpretation": "BROAD"
     },
     {
       "name": "ASX Volatility",
@@ -127,9 +127,9 @@
       "interpretation": "CALM"
     }
   ],
-  "asx_composite": 87.8,
+  "asx_composite": 95.2,
   "zone": "DEPLOY",
   "zone_desc": "Conditions favourable \u2014 deploy capital aggressively",
   "zone_color": "#44bb44",
-  "scanned_at": "2026-08-17T10:20:03.596423"
+  "scanned_at": "2026-08-17T15:00:35.981847"
 }
