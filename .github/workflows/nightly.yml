@@ -9,8 +9,11 @@ on:
 jobs:
   run-report:
     runs-on: ubuntu-latest
+    timeout-minutes: 25  # fail loudly instead of silently hanging for hours (default cap is 6h)
     permissions:
       contents: write  # needed to push dashboard to repo
+    env:
+      PYTHONUNBUFFERED: "1"  # stream print() output live instead of buffering it until the process exits
 
     steps:
       - name: Checkout repo

@@ -10,8 +10,11 @@ on:
 jobs:
   deep-scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 90  # 220 tickers legitimately takes a while, but not 6 hours if something hangs
     permissions:
       contents: write
+    env:
+      PYTHONUNBUFFERED: "1"
 
     steps:
       - name: Checkout repo

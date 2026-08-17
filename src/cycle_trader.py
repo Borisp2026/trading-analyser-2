@@ -77,13 +77,18 @@ def compute_cycle_drawdown(all_by_ticker: dict) -> dict:
         r = all_by_ticker.get(t["ticker"])
         current_price = r.get("tech", {}).get("price") if r else None
         if current_price:
-            unrealized_pnl += (current_price - t["buy_price"]) * t["shares"]
+            # tech['price'] is a numpy.float64 (technical.py rounds a pandas value without
+            # casting) -- harmless on its own since it subclasses float, but arithmetic that
+            # carries it forward keeps everything numpy-typed, and a numpy comparison later
+            # (>=) returns numpy.bool_, which -- unlike numpy.float64 -- is NOT a bool
+            # subclass and isn't JSON-serializable. Cast here so nothing downstream inherits it.
+            unrealized_pnl += (float(current_price) - t["buy_price"]) * t["shares"]
     total_pnl = realized_pnl + unrealized_pnl
     drawdown_pct = max(0.0, round(-total_pnl / RISK_CAPITAL_BASE * 100, 2))
     return {
         "realized_pnl": round(realized_pnl, 2), "unrealized_pnl": round(unrealized_pnl, 2),
         "total_pnl": round(total_pnl, 2), "drawdown_pct": drawdown_pct,
-        "halted": drawdown_pct >= CYCLE_MAX_DRAWDOWN_PCT,
+        "halted": bool(drawdown_pct >= CYCLE_MAX_DRAWDOWN_PCT),
     }
 
 

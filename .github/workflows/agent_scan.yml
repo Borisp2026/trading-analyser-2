@@ -6,11 +6,18 @@ on:
     - cron: '*/5 0-6 * * 1-5'
   workflow_dispatch:
 
+concurrency:
+  group: agent-scan
+  cancel-in-progress: false  # queue behind a still-running scan rather than overlap it
+
 jobs:
   agent-scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 4  # this fires every 5 min -- a hung run must die well before the next tick
     permissions:
       contents: write
+    env:
+      PYTHONUNBUFFERED: "1"
 
     steps:
       - name: Checkout
