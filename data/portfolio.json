@@ -236,7 +236,7 @@
       "buy_date": "2026-08-17",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 9.2218,
       "target_price": 15.5274,
@@ -245,13 +245,61 @@
         "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
         "entered_dc_num": 3,
         "entered_score": 80
-      }
+      },
+      "sell_price": 16.05,
+      "sell_date": "2026-08-18",
+      "pnl": -54.55,
+      "pnl_pct": -2.73,
+      "close_reason": "TRENDLINE_BREAK"
     },
     {
       "ticker": "ILU.AX",
       "shares": 64.7242,
       "buy_price": 7.18,
       "buy_date": "2026-08-17",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 5.635,
+      "target_price": 6.1215,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      },
+      "sell_price": 7.09,
+      "sell_date": "2026-08-18",
+      "pnl": -5.83,
+      "pnl_pct": -1.25,
+      "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "AMP.AX",
+      "shares": 108.2128,
+      "buy_price": 2.35,
+      "buy_date": "2026-08-18",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 1.4259,
+      "target_price": 3.0754,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Financial Services",
+        "entered_dc_num": 3,
+        "entered_score": 80
+      }
+    },
+    {
+      "ticker": "ILU.AX",
+      "shares": 68.7292,
+      "buy_price": 7.09,
+      "buy_date": "2026-08-18",
       "signal": "CYCLE_BUY",
       "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
       "status": "open",
@@ -268,6 +316,6 @@
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 1467.4548099999984,
+  "paper_cash": 3130.2134849999984,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
