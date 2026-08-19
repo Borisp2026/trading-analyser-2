@@ -218,7 +218,7 @@
       "buy_date": "2026-08-13",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 160.7972,
       "target_price": 214.6272,
@@ -227,7 +227,12 @@
         "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
         "entered_dc_num": 4,
         "entered_score": 72
-      }
+      },
+      "sell_price": 219.74,
+      "sell_date": "2026-08-19",
+      "pnl": -38.82,
+      "pnl_pct": -1.94,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "CMM.AX",
@@ -302,6 +307,30 @@
       "buy_date": "2026-08-18",
       "signal": "CYCLE_BUY",
       "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 5.635,
+      "target_price": 6.1215,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      },
+      "sell_price": 6.93,
+      "sell_date": "2026-08-19",
+      "pnl": -11.0,
+      "pnl_pct": -2.26,
+      "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "ILU.AX",
+      "shares": 77.2208,
+      "buy_price": 6.93,
+      "buy_date": "2026-08-19",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #5 of IC)",
       "status": "open",
       "type": "paper",
       "stop_price": 5.635,
@@ -313,9 +342,28 @@
         "entered_dc_num": 1,
         "entered_score": 20
       }
+    },
+    {
+      "ticker": "PLS.AX",
+      "shares": 115.021,
+      "buy_price": 4.76,
+      "buy_date": "2026-08-19",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 3.8906,
+      "target_price": 4.4001,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 3130.2134849999984,
+  "paper_cash": 4485.046236999999,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
