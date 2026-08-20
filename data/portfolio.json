@@ -200,7 +200,7 @@
       "buy_date": "2026-08-12",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #1 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 342.216,
       "target_price": 438.7645,
@@ -209,7 +209,12 @@
         "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
         "entered_dc_num": 2,
         "entered_score": 80
-      }
+      },
+      "sell_price": 484.31,
+      "sell_date": "2026-08-20",
+      "pnl": -37.2,
+      "pnl_pct": -1.86,
+      "close_reason": "FAILED_CYCLE"
     },
     {
       "ticker": "NVDA",
@@ -331,6 +336,92 @@
       "buy_date": "2026-08-19",
       "signal": "CYCLE_BUY",
       "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #5 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 5.635,
+      "target_price": 6.1215,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      },
+      "sell_price": 7.05,
+      "sell_date": "2026-08-20",
+      "pnl": 9.27,
+      "pnl_pct": 1.73,
+      "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "PLS.AX",
+      "shares": 115.021,
+      "buy_price": 4.76,
+      "buy_date": "2026-08-19",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 3.8906,
+      "target_price": 4.4001,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      },
+      "sell_price": 4.83,
+      "sell_date": "2026-08-20",
+      "pnl": 8.05,
+      "pnl_pct": 1.47,
+      "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "CMM.AX",
+      "shares": 11.95,
+      "buy_price": 17.59,
+      "buy_date": "2026-08-20",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 9.2218,
+      "target_price": 15.5274,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Basic Materials",
+        "entered_dc_num": 3,
+        "entered_score": 80
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "shares": 3.1898,
+      "buy_price": 217.56,
+      "buy_date": "2026-08-20",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 186.2098,
+      "target_price": 214.6272,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Technology",
+        "entered_dc_num": 1,
+        "entered_score": 57
+      }
+    },
+    {
+      "ticker": "ILU.AX",
+      "shares": 70.6709,
+      "buy_price": 7.05,
+      "buy_date": "2026-08-20",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #5 of IC)",
       "status": "open",
       "type": "paper",
       "stop_price": 5.635,
@@ -342,28 +433,9 @@
         "entered_dc_num": 1,
         "entered_score": 20
       }
-    },
-    {
-      "ticker": "PLS.AX",
-      "shares": 115.021,
-      "buy_price": 4.76,
-      "buy_date": "2026-08-19",
-      "signal": "CYCLE_BUY",
-      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
-      "status": "open",
-      "type": "paper",
-      "stop_price": 3.8906,
-      "target_price": 4.4001,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "DC1_RECOVERY",
-        "sector": "Basic Materials",
-        "entered_dc_num": 1,
-        "entered_score": 20
-      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 4485.046236999999,
+  "paper_cash": 6145.412641999998,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
