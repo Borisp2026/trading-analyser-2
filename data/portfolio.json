@@ -293,7 +293,7 @@
       "buy_date": "2026-08-18",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 1.4259,
       "target_price": 3.0754,
@@ -303,7 +303,12 @@
         "sector": "Financial Services",
         "entered_dc_num": 3,
         "entered_score": 80
-      }
+      },
+      "sell_price": 2.39,
+      "sell_date": "2026-08-21",
+      "pnl": 4.33,
+      "pnl_pct": 1.7,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "ILU.AX",
@@ -422,6 +427,49 @@
       "buy_date": "2026-08-20",
       "signal": "CYCLE_BUY",
       "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #5 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 5.635,
+      "target_price": 6.1215,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      },
+      "sell_price": 7.01,
+      "sell_date": "2026-08-21",
+      "pnl": -2.83,
+      "pnl_pct": -0.57,
+      "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "APA.AX",
+      "shares": 40.3498,
+      "buy_price": 10.52,
+      "buy_date": "2026-08-21",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #4 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 8.0417,
+      "target_price": 10.9763,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Utilities",
+        "entered_dc_num": 5,
+        "entered_score": 47
+      }
+    },
+    {
+      "ticker": "ILU.AX",
+      "shares": 72.7275,
+      "buy_price": 7.01,
+      "buy_date": "2026-08-21",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
       "status": "open",
       "type": "paper",
       "stop_price": 5.635,
@@ -436,6 +484,6 @@
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 6145.412641999998,
+  "paper_cash": 5965.144571999998,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
