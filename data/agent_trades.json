@@ -465,13 +465,13 @@
       ],
       "position_size": 2500.0,
       "macro_score": 79.1,
-      "status": "OPEN",
-      "exit_price": null,
-      "exit_time": null,
-      "exit_reason": null,
-      "pnl_pct": null,
-      "pnl_dollar": null,
-      "outcome": "PENDING"
+      "status": "CLOSED",
+      "exit_price": 66.62,
+      "exit_time": "2026-08-21T05:50:10.408783",
+      "exit_reason": "EOD EXIT",
+      "pnl_pct": 0.85,
+      "pnl_dollar": 18.75,
+      "outcome": "WIN"
     },
     {
       "id": 18,
@@ -500,18 +500,79 @@
       "pnl_pct": 6.11,
       "pnl_dollar": 80.83,
       "outcome": "WIN"
+    },
+    {
+      "id": 19,
+      "ticker": "EOS.AX",
+      "entry_price": 8.83,
+      "entry_time": "2026-08-21T05:50:10.571985",
+      "target": 9.289,
+      "stop": 8.698,
+      "vwap": 8.773,
+      "rsi": 60.0,
+      "orb_high": 8.87,
+      "conditions_met": 4,
+      "reasons": [
+        "\u2713 Above VWAP",
+        "\u2713 RSI 45\u201375",
+        "\u2713 Not overextended",
+        "\u2713 SuperTrend bullish"
+      ],
+      "position_size": 2500.0,
+      "macro_score": 79.1,
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "exit_reason": null,
+      "pnl_pct": null,
+      "pnl_dollar": null,
+      "outcome": "PENDING"
+    },
+    {
+      "id": 20,
+      "ticker": "TOR.AX",
+      "entry_price": 0.225,
+      "entry_time": "2026-08-21T05:50:10.981821",
+      "target": 0.237,
+      "stop": 0.222,
+      "vwap": 0.224,
+      "rsi": 50.0,
+      "orb_high": 0.225,
+      "conditions_met": 4,
+      "reasons": [
+        "\u2713 Above VWAP",
+        "\u2713 RSI 45\u201375",
+        "\u2713 Not overextended",
+        "\u2713 MACD bullish"
+      ],
+      "position_size": 1392.76,
+      "macro_score": 79.1,
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "exit_reason": null,
+      "pnl_pct": null,
+      "pnl_dollar": null,
+      "outcome": "PENDING"
     }
   ],
   "open_positions": {
-    "MIN.AX": {
-      "trade_id": 17,
-      "entry_price": 66.06,
-      "target": 69.495,
-      "stop": 65.069,
+    "EOS.AX": {
+      "trade_id": 19,
+      "entry_price": 8.83,
+      "target": 9.289,
+      "stop": 8.698,
       "position_size": 2500.0
+    },
+    "TOR.AX": {
+      "trade_id": 20,
+      "entry_price": 0.225,
+      "target": 0.237,
+      "stop": 0.222,
+      "position_size": 1392.76
     }
   },
-  "capital": 2769.27,
+  "capital": 1391.37,
   "starting_capital": 5000.0,
   "scan_log": [
     {
@@ -11113,24 +11174,68 @@
         "BB squeeze/breakout": false,
         "PDH breakout": false
       }
+    },
+    {
+      "time": "15:50",
+      "date": "2026-08-21",
+      "ticker": "EOS.AX",
+      "signal": "BUY",
+      "price": 8.83,
+      "notes": "\u2713 Above VWAP",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": true,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "15:50",
+      "date": "2026-08-21",
+      "ticker": "TOR.AX",
+      "signal": "BUY",
+      "price": 0.225,
+      "notes": "\u2713 Above VWAP",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": true,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": false,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
     }
   ],
   "status": "RUNNING",
   "target_trades": 30,
   "started_at": "2026-07-05T11:02:50.033576",
   "stats": {
-    "total_trades": 18,
-    "closed_trades": 17,
-    "open_trades": 1,
-    "wins": 8,
+    "total_trades": 20,
+    "closed_trades": 18,
+    "open_trades": 2,
+    "wins": 9,
     "losses": 9,
-    "win_rate": 47.1,
+    "win_rate": 50.0,
     "avg_pnl_pct": 0.91,
-    "total_pnl_pct": 15.52,
-    "current_capital": 2769.27,
-    "capital_growth": -44.61
+    "total_pnl_pct": 16.37,
+    "current_capital": 1391.37,
+    "capital_growth": -72.17
   },
-  "last_scan": "2026-08-21T05:17:20.487981",
+  "last_scan": "2026-08-21T05:50:11.282118",
   "ticker_days": {
     "EOS.AX": [
       "2026-07-08",
@@ -12034,8 +12139,8 @@
         "2026-08-20",
         "2026-08-21"
       ],
-      "scans_today": 2,
-      "buys_today": 0,
+      "scans_today": 3,
+      "buys_today": 1,
       "in_watchlist": true,
       "add_pending": false
     },
@@ -12049,8 +12154,8 @@
         "2026-08-20",
         "2026-08-21"
       ],
-      "scans_today": 2,
-      "buys_today": 0,
+      "scans_today": 3,
+      "buys_today": 1,
       "in_watchlist": true,
       "add_pending": false
     },
@@ -12506,8 +12611,8 @@
     }
   ],
   "condition_stats": {
-    "total_scans": 536,
-    "buys": 16,
+    "total_scans": 538,
+    "buys": 18,
     "early_skip_reasons": {
       "Insufficient bars": 204,
       "Macro gate 49 < 50": 156
