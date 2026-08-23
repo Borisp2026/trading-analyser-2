@@ -468,6 +468,9 @@ def assign_daily_cycle_numbers(daily_cycles: list, intermediate_cycles: list) ->
 # ── Entry-zone classification (the 5 low-risk types + high-risk DC3/4) ──────
 AT_LOW_BAR_THRESHOLD = 5          # bars since dcl0 to count as "right at the low"
 AT_LOW_PRICE_TOLERANCE_PCT = 3.0  # price within this % of dcl0_price
+DC1_RECOVERY_BUFFER_PCT = 2.0     # require price to have cleared DCL0 by a margin, not merely
+                                   # ticked above it -- a bare `price > dcl0` re-triggers on every
+                                   # tiny wobble around a chopping low, producing same-day whipsaws
 
 
 def classify_entry_zone(current_price: float, live_daily: dict, live_intermediate: dict,
@@ -509,9 +512,9 @@ def classify_entry_zone(current_price: float, live_daily: dict, live_intermediat
         return {"zone": "DC1_HCL", "risk": "LOW", "eligible_for_entry": True,
                 "reasons": ["At/above 1st Daily Cycle HCL, trendline drawable"]}
 
-    if dc_num == 1 and dcl0 and current_price > dcl0:
+    if dc_num == 1 and dcl0 and current_price > dcl0 * (1 + DC1_RECOVERY_BUFFER_PCT / 100):
         return {"zone": "DC1_RECOVERY", "risk": "LOW", "eligible_for_entry": True,
-                "reasons": ["1st Daily Cycle of IC, price recovering off DCL"]}
+                "reasons": [f"1st Daily Cycle of IC, price recovering >{DC1_RECOVERY_BUFFER_PCT}% off DCL"]}
 
     if dc_num == 2 and live_daily.get("hcl_price") and current_price >= live_daily["hcl_price"]:
         return {"zone": "DC2_HCL", "risk": "LOW", "eligible_for_entry": True,

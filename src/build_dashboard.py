@@ -1011,13 +1011,19 @@ function showCandidateChart(ticker){
   const c=(CYCLE_DATA.candidates||[]).find(x=>x.ticker===ticker);
   showChart(ticker, c?c.chart_overlay:null);
 }
-function showOpenTradeChart(ticker){
-  const t=(CYCLE_DATA.open_trades||[]).find(x=>x.ticker===ticker);
+function showCycleTradeChart(ticker){
+  const t=(CYCLE_DATA.open_trades||[]).find(x=>x.ticker===ticker)
+       || (CYCLE_DATA.closed_trades||[]).find(x=>x.ticker===ticker);
   showChart(ticker, t?t.chart_overlay:null);
+}
+function showSimpleTradeChart(ticker,entry,stop,target){
+  showChart(ticker, {entry_price:entry, stop_price:stop, target_price:target});
 }
 function cycleTradeStatusBadge(status){
   if(status==='OPENED_THIS_RUN') return '<span style="background:#44bb4422;color:#44bb44;font-size:10px;font-weight:bold;padding:3px 8px;border-radius:10px">✓ OPENED TONIGHT</span>';
   if(status==='ALREADY_OPEN') return '<span style="background:#4a90d922;color:#4a90d9;font-size:10px;font-weight:bold;padding:3px 8px;border-radius:10px">✓ POSITION OPEN</span>';
+  if(status==='SKIPPED_COOLDOWN') return '<span style="background:#ff990022;color:#ff9900;font-size:10px;font-weight:bold;padding:3px 8px;border-radius:10px">⏳ COOLDOWN</span>';
+  if(status==='SKIPPED_ALREADY_HELD_REAL') return '<span style="background:#ff990022;color:#ff9900;font-size:10px;font-weight:bold;padding:3px 8px;border-radius:10px">⚠ ALREADY HELD (REAL)</span>';
   return '<span style="background:#88888822;color:#888;font-size:10px;font-weight:bold;padding:3px 8px;border-radius:10px">NOT ENTERED</span>';
 }
 function renderCycleCandidates(list){
@@ -1065,7 +1071,6 @@ function normalizePortfolioPaperTrades(){
       pnlPct: t.pnl_pct!=null?t.pnl_pct:null,
       reason: t.close_reason||'',
       open: !!t._openFlag,
-      chartTicker: strat==='cycle_trading' ? t.ticker : null,
     };
   });
 }
@@ -1076,11 +1081,18 @@ function normalizeAgentTrades(d){
     stop:t.stop, target:t.target,
     opened:(t.entry_time||'').slice(0,10), closed:(t.exit_time||'').slice(0,10),
     exit:t.exit_price, pnlDollar:t.pnl_dollar, pnlPct:t.pnl_pct,
-    reason:t.exit_reason||'', open: t.status!=='CLOSED', chartTicker:null,
+    reason:t.exit_reason||'', open: t.status!=='CLOSED',
   }));
 }
 function fmtMoney(v){ return v==null ? '—' : '$'+Number(v).toFixed(2); }
 function fmtPct(v){ return v==null ? '—' : (v>=0?'+':'')+v.toFixed(2)+'%'; }
+function chartButton(r){
+  const btn='<button class="btn-primary" style="padding:2px 8px;font-size:10px;margin-left:4px" onclick="%ONCLICK%">📈</button>';
+  const onclick = r.source==='Cycle Trading'
+    ? "showCycleTradeChart('"+r.ticker+"')"
+    : "showSimpleTradeChart('"+r.ticker+"',"+(r.entry??'null')+","+(r.stop??'null')+","+(r.target??'null')+")";
+  return ' '+btn.replace('%ONCLICK%', onclick);
+}
 async function renderPaperTab(){
   let rows = normalizePortfolioPaperTrades();
   try{
@@ -1118,8 +1130,7 @@ async function renderPaperTab(){
 
   const openBody=document.getElementById('paperOpenBody');
   if(openBody) openBody.innerHTML = openRows.length ? openRows.map(r=>
-    '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b>'
-    +(r.chartTicker?' <button class="btn-primary" style="padding:2px 8px;font-size:10px;margin-left:4px" onclick="showOpenTradeChart(\''+r.chartTicker+'\')">📈</button>':'')
+    '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b>'+chartButton(r)
     +'</td><td>'+fmtMoney(r.entry)+'</td><td>'+fmtMoney(r.positionCost)+'</td>'
     +'<td style="color:#cc0000">'+fmtMoney(r.stop)+'</td><td style="color:#44bb44">'+fmtMoney(r.target)+'</td>'
     +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td></tr>'
@@ -1127,7 +1138,7 @@ async function renderPaperTab(){
 
   const closedBody=document.getElementById('paperClosedBody');
   if(closedBody) closedBody.innerHTML = closedRows.length ? closedRows.map(r=>
-    '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b></td><td>'+fmtMoney(r.entry)+'</td><td>'+fmtMoney(r.exit)+'</td>'
+    '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b>'+chartButton(r)+'</td><td>'+fmtMoney(r.entry)+'</td><td>'+fmtMoney(r.exit)+'</td>'
     +'<td>'+fmtMoney(r.positionCost)+'</td>'
     +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td><td style="font-size:11px;color:#888">'+(r.closed||'—')+'</td>'
     +'<td style="font-size:11px">'+(r.reason||'')+'</td>'

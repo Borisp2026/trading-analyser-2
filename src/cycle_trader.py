@@ -24,6 +24,12 @@ RISK_CAPITAL_BASE = 10000.0       # notional capital this strategy is sized and 
 MIN_STOP_DISTANCE_PCT = 1.5       # floor so a very tight/noisy stop can't size an oversized position
 CYCLE_MAX_DRAWDOWN_PCT = 20.0     # halt new entries once the strategy's own P&L drawdown exceeds this
 MAX_POSITIONS_PER_SECTOR = 2      # concentration cap
+MIN_CANDIDATE_SCORE = 40          # cycle_score floor for eligibility -- below this the score itself
+                                   # already reads CYCLE_CAUTION/CYCLE_AVOID (see cycle_analysis.py's
+                                   # thresholds), so entering anyway contradicts the score we just computed
+COOLDOWN_DAYS = 3                 # days to skip re-entering a ticker after one of the reasons below
+COOLDOWN_REASONS = {"FAILED_CYCLE"}  # closing this way means the setup whipsawed us -- avoid
+                                      # repeatedly re-buying the same chopping low the next night
 
 
 def compute_stop_price(entry_zone: dict, live_daily: dict, live_intermediate: dict):
@@ -92,10 +98,34 @@ def compute_cycle_drawdown(all_by_ticker: dict) -> dict:
     }
 
 
+def _tickers_in_cooldown() -> dict:
+    """ticker -> days remaining, for tickers whose most recent Cycle Trading close was
+    one of COOLDOWN_REASONS within COOLDOWN_DAYS. A blunt circuit-breaker against
+    repeatedly re-entering the same ticker right after it just whipsawed us."""
+    portfolio = load_portfolio()
+    today = datetime.now().date()
+    cooldowns = {}
+    for t in portfolio.get("paper_trades", []):
+        if t.get("meta", {}).get("strategy") != STRATEGY_TAG: continue
+        if t.get("status") != "closed": continue
+        if t.get("close_reason") not in COOLDOWN_REASONS: continue
+        try:
+            sell_date = datetime.strptime(t["sell_date"], "%Y-%m-%d").date()
+        except Exception:
+            continue
+        days_since = (today - sell_date).days
+        if days_since < COOLDOWN_DAYS:
+            remaining = COOLDOWN_DAYS - days_since
+            ticker = t["ticker"]
+            cooldowns[ticker] = max(cooldowns.get(ticker, 0), remaining)
+    return cooldowns
+
+
 def screen_candidates(all_results: list, real_holdings: set = None) -> dict:
     """Walks the already-computed result['cycle'] for every watchlist ticker (no extra
     yfinance calls). Produces ranked candidates plus failed-cycle and high-risk alerts."""
     real_holdings = real_holdings or set()
+    cooldowns = _tickers_in_cooldown()
     candidates, failed_alerts, high_risk_alerts = [], [], []
     for r in all_results:
         if r.get("error"):
@@ -128,8 +158,10 @@ def screen_candidates(all_results: list, real_holdings: set = None) -> dict:
                 "detail": (ez.get("reasons") or [""])[0],
             })
 
+        cycle_score = cyc.get("cycle_score", 50)
         eligible = (ez.get("eligible_for_entry") and not cfn.get("failing")
-                    and not cyc.get("daily_trendline", {}).get("broken"))
+                    and not cyc.get("daily_trendline", {}).get("broken")
+                    and cycle_score >= MIN_CANDIDATE_SCORE)
         if eligible and price:
             stop_price = compute_stop_price(ez, live_daily, cyc.get("live_intermediate_cycle", {}))
             target_price = (cyc.get("predicted_move") or {}).get("target_price")
@@ -137,13 +169,14 @@ def screen_candidates(all_results: list, real_holdings: set = None) -> dict:
             overlay.update({"entry_price": price, "stop_price": stop_price, "target_price": target_price})
             candidates.append({
                 "ticker": ticker, "name": name, "price": price, "sector": sector,
-                "cycle_score": cyc.get("cycle_score", 50), "cycle_signal": cyc.get("cycle_signal"),
+                "cycle_score": cycle_score, "cycle_signal": cyc.get("cycle_signal"),
                 "entry_zone": ez.get("zone"), "risk": ez.get("risk"),
                 "dc_num_in_ic": live_daily.get("cycle_num"),
                 "predicted_move": cyc.get("predicted_move", {}),
                 "stop_price": stop_price,
                 "position_size": compute_position_size(price, stop_price),
                 "already_held_real": ticker.upper() in real_holdings,
+                "cooldown_days_remaining": cooldowns.get(ticker.upper(), 0),
                 "reasons": (ez.get("reasons", []) + cyc.get("reasons", []))[:5],
                 "chart_overlay": overlay,
             })
@@ -246,6 +279,8 @@ def open_new_trades(candidates: list) -> list:
             continue
         if c.get("already_held_real"):
             continue
+        if c.get("cooldown_days_remaining"):
+            continue
         if not c.get("price"):
             continue
         sector = c.get("sector", "Unknown")
@@ -318,6 +353,16 @@ def run_cycle_trading(all_results: list) -> dict:
                          "target_price": t.get("target_price")})
         t["chart_overlay"] = overlay
 
+    for t in closed_trades:
+        # Reuses tonight's cycle structure for the band/markers (we don't keep a
+        # historical overlay per trade) -- still useful to see the entry/stop/target
+        # lines that were actually used against the ticker's price action since.
+        r = all_by_ticker.get(t["ticker"])
+        overlay = dict((r.get("cycle", {}).get("chart_overlay") or {}) if r else {})
+        overlay.update({"entry_price": t.get("buy_price"), "stop_price": t.get("stop_price"),
+                         "target_price": t.get("target_price")})
+        t["chart_overlay"] = overlay
+
     opened_tickers = {o["ticker"] for o in opened}
     open_ticker_set = {t["ticker"] for t in open_trades}
     for c in screened["candidates"]:
@@ -327,6 +372,8 @@ def run_cycle_trading(all_results: list) -> dict:
             c["paper_trade_status"] = "ALREADY_OPEN"
         elif c.get("already_held_real"):
             c["paper_trade_status"] = "SKIPPED_ALREADY_HELD_REAL"
+        elif c.get("cooldown_days_remaining"):
+            c["paper_trade_status"] = "SKIPPED_COOLDOWN"
         else:
             c["paper_trade_status"] = "NOT_OPENED"
 
