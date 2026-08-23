@@ -1203,6 +1203,7 @@ function renderSuggestionCards(){
 }
 async function renderSuggestionsTab(){
   renderSuggestionCards();
+  if(_liveIdeas.length) renderLiveIdeas();
   const openBody=document.getElementById('ideasOpenBody');
   const ovEl=document.getElementById('ideasOverviewGrid');
   if(!getToken()){
@@ -1234,11 +1235,10 @@ async function renderSuggestionsTab(){
     if(openBody) openBody.innerHTML='<tr><td colspan="8" style="color:#cc0000;text-align:center;padding:20px">Error loading: '+e.message+'</td></tr>';
   }
 }
-async function buyIdea(ticker){
-  const s=(SUGGESTIONS_DATA||[]).find(x=>x.ticker===ticker);
-  if(!s || !s.price){alert('No data for '+ticker);return;}
+async function executeIdeaBuy(idea){
+  if(!idea || !idea.price){alert('No data for '+(idea&&idea.ticker));return;}
   if(!getToken()){alert('Set your GitHub token first (Token tab).');return;}
-  const amtStr=prompt('Dollar amount to invest in '+ticker+' @ $'+s.price+'?\n(Trade Ideas budget: $'+IDEAS_BUDGET.toLocaleString()+' total)','1000');
+  const amtStr=prompt('Dollar amount to invest in '+idea.ticker+' @ $'+idea.price+'?\n(Trade Ideas budget: $'+IDEAS_BUDGET.toLocaleString()+' total)','1000');
   if(!amtStr) return;
   const amt=parseFloat(amtStr);
   if(!amt||amt<=0) return;
@@ -1247,17 +1247,31 @@ async function buyIdea(ticker){
     const openCost=(data.paper_trades||[]).filter(t=>t.status==='open'&&(t.meta||{}).strategy===IDEAS_STRATEGY)
       .reduce((sum,t)=>sum+t.shares*t.buy_price,0);
     if(openCost+amt>IDEAS_BUDGET){alert('That would exceed the $'+IDEAS_BUDGET.toLocaleString()+' Trade Ideas budget ($'+openCost.toFixed(2)+' already deployed).');return;}
-    const shares=Math.round((amt/s.price)*10000)/10000;
+    const shares=Math.round((amt/idea.price)*10000)/10000;
     if(shares<=0){alert('Amount too small.');return;}
-    const trade={ticker:s.ticker, shares, buy_price:s.price, buy_date:new Date().toISOString().slice(0,10),
-      signal:s.recommendation, reason:(s.reasons||[]).slice(0,2).join('; ')||'Trade Ideas suggestion',
-      status:'open', type:'paper', stop_price:s.stop_loss, target_price:s.take_profit,
-      meta:{strategy:IDEAS_STRATEGY, entry_type:s.entry_type, confidence:s.confidence, blended_score:s.blended_score}};
+    const trade={ticker:idea.ticker, shares, buy_price:idea.price, buy_date:new Date().toISOString().slice(0,10),
+      signal:idea.recommendation||'DAY_BUY', reason:idea.reason||'Trade Ideas suggestion',
+      status:'open', type:'paper', stop_price:idea.stop, target_price:idea.target,
+      meta:{strategy:IDEAS_STRATEGY, entry_type:idea.entry_type, confidence:idea.confidence, blended_score:idea.blended_score, source:idea.source||'nightly'}};
     (data.paper_trades=data.paper_trades||[]).push(trade);
     await writePortfolio(data,sha);
-    alert(ticker+' bought: '+shares+' shares @ $'+s.price+' ($'+amt.toFixed(2)+')');
+    alert(idea.ticker+' bought: '+shares+' shares @ $'+idea.price+' ($'+amt.toFixed(2)+')');
     renderSuggestionsTab();
   }catch(e){alert('Error: '+e.message);}
+}
+async function buyIdea(ticker){
+  const s=(SUGGESTIONS_DATA||[]).find(x=>x.ticker===ticker);
+  if(!s){alert('No data for '+ticker);return;}
+  executeIdeaBuy({ticker:s.ticker, price:s.price, stop:s.stop_loss, target:s.take_profit,
+    recommendation:s.recommendation, reason:(s.reasons||[]).slice(0,2).join('; '),
+    entry_type:s.entry_type, confidence:s.confidence, blended_score:s.blended_score, source:'nightly'});
+}
+async function buyLiveIdea(ticker){
+  const s=(_liveIdeas||[]).find(x=>x.ticker===ticker);
+  if(!s){alert('No live scan data for '+ticker);return;}
+  executeIdeaBuy({ticker:s.ticker, price:s.price, stop:s.vwap||null, target:s.sellZone,
+    recommendation:'LIVE_DAY_BUY', reason:'Live intraday scan: '+(s.vs>=0?'+':'')+s.vs.toFixed(2)+'% vs VWAP, RSI '+s.rsi.toFixed(1),
+    entry_type:'Live intraday Day Buy signal', confidence:'MEDIUM', blended_score:null, source:'live_scan'});
 }
 async function sellIdea(ticker){
   const exit=parseFloat(prompt('Exit price for '+ticker+'?'));
@@ -1274,6 +1288,84 @@ async function sellIdea(ticker){
     alert('Closed '+ticker+': P&L $'+pnl.toFixed(2));
     renderSuggestionsTab();
   }catch(e){alert('Error: '+e.message);}
+}
+
+// ── Live intraday scan for Trade Ideas — same VWAP/RSI "Day Buy" definition
+// already used by the Day Trading tab's live scanner, run on demand instead of
+// only every 30 min, and scoped to the Trade Ideas tab's own results grid so it
+// doesn't touch that tab's code. ─────────────────────────────────────────────
+let _liveIdeas=[];
+async function scanMarketForIdeas(){
+  const statusEl=document.getElementById('ideasScanStatus');
+  const tickers=Array.from(document.querySelectorAll('#cardsGrid .stock-card[data-ticker]')).map(c=>c.getAttribute('data-ticker')).filter(Boolean);
+  if(!tickers.length){ if(statusEl) statusEl.textContent='No watchlist tickers found.'; return; }
+  _liveIdeas=[];
+  for(let i=0;i<tickers.length;i++){
+    const t=tickers[i];
+    if(statusEl) statusEl.textContent='Scanning '+(i+1)+' of '+tickers.length+'... ('+t+')';
+    try{
+      const url='https://query1.finance.yahoo.com/v8/finance/chart/'+encodeURIComponent(t)+'?interval=15m&range=1d&includePrePost=false';
+      const j=await(await fetch('https://corsproxy.io/?'+encodeURIComponent(url))).json();
+      const res=j.result&&j.result[0];
+      if(!res) throw new Error('no data');
+      const q=res.indicators.quote[0], ts=res.timestamp||[];
+      const bars=[];
+      for(let k=0;k<ts.length;k++){ if(q.close[k]==null) continue; bars.push([ts[k], q.open[k]||q.close[k], q.high[k]||q.close[k], q.low[k]||q.close[k], q.close[k], q.volume[k]||0]); }
+      if(!bars.length) throw new Error('no bars');
+      const price=bars[bars.length-1][4];
+      let tpv=0,vol=0; bars.forEach(b=>{const tp=(b[2]+b[3]+b[4])/3; tpv+=tp*b[5]; vol+=b[5];});
+      const vwap=vol>0?tpv/vol:0;
+      const vs=vwap>0?(price-vwap)/vwap*100:0;
+      const closes=bars.map(b=>b[4]);
+      let rsi=50;
+      if(closes.length>=15){
+        let g=0,l=0;
+        for(let k=closes.length-14;k<closes.length;k++){ const d=closes[k]-closes[k-1]; d>0?g+=d:l-=d; }
+        const ag=g/14, al=l/14; rsi=al===0?100:100-100/(1+ag/al);
+      }
+      const mo=bars.length>=6?price-bars[bars.length-6][4]:0;
+      let atr=0;
+      if(bars.length>=2){
+        const tr=[];
+        for(let k=1;k<bars.length;k++){ tr.push(Math.max(bars[k][2]-bars[k][3], Math.abs(bars[k][2]-bars[k-1][4]), Math.abs(bars[k][3]-bars[k-1][4]))); }
+        const sl=tr.slice(-14); atr=sl.reduce((a,b)=>a+b,0)/sl.length;
+      }
+      // Same "Day Buy" definition as the Day Trading tab's live scanner: above VWAP,
+      // RSI in the healthy 45-75 band (not overbought/oversold), momentum positive.
+      const isDayBuy = vs>0 && rsi>=45 && rsi<=75 && mo>0;
+      if(!isDayBuy) continue;
+      const buyZone = vwap>0 && vwap<price ? vwap : price*0.99;
+      const sellZone = atr>0 ? price+atr*2 : price*1.04;
+      _liveIdeas.push({ticker:t, price:Math.round(price*10000)/10000, vwap:Math.round(vwap*10000)/10000,
+        vs, rsi, mo, buyZone:Math.round(buyZone*10000)/10000, sellZone:Math.round(sellZone*10000)/10000});
+    }catch(e){ /* skip ticker on any fetch/parse failure -- one bad ticker shouldn't stop the scan */ }
+    await new Promise(r=>setTimeout(r,200));
+  }
+  if(statusEl) statusEl.textContent='Scanned '+tickers.length+' tickers, '+_liveIdeas.length+' Day Buy signal(s) — '
+    +new Date().toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'});
+  renderLiveIdeas();
+}
+function renderLiveIdeas(){
+  const el=document.getElementById('ideasLiveGrid');
+  if(!el) return;
+  if(!_liveIdeas.length){ el.innerHTML='<p style="color:#888;padding:20px">No live Day Buy signals right now.</p>'; return; }
+  el.innerHTML=_liveIdeas.map(s=>
+    '<div style="background:#1a1a2e;border-radius:12px;padding:20px;border:1px solid #2a2a4a">'
+    +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">'
+    +'<span style="font-size:20px;font-weight:bold;color:#fff">'+s.ticker+'</span>'
+    +'<span style="color:#00aa00;font-size:12px;font-weight:bold">LIVE DAY BUY</span></div>'
+    +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
+    +'<div><div style="color:#666">Price</div><div style="color:#ccc">'+fmtMoney(s.price)+'</div></div>'
+    +'<div><div style="color:#666">Buy Zone</div><div style="color:#4a90d9">'+fmtMoney(s.buyZone)+'</div></div>'
+    +'<div><div style="color:#666">Sell Zone</div><div style="color:#44bb44">'+fmtMoney(s.sellZone)+'</div></div>'
+    +'<div><div style="color:#666">RSI</div><div style="color:#ccc">'+s.rsi.toFixed(1)+'</div></div></div>'
+    +'<div style="font-size:11px;color:#aaa;margin-bottom:10px">'
+    +'<b>Entry:</b> at/near buy zone, '+(s.vs>=0?'+':'')+s.vs.toFixed(2)+'% vs VWAP, momentum '+(s.mo>=0?'up':'down')+'<br>'
+    +'<b>Exit guide:</b> take profit near sell zone (~2x ATR above price); cut loss if price closes back below VWAP</div>'
+    +'<button class="btn-primary" style="padding:6px 14px;font-size:12px" onclick="buyLiveIdea(\''+s.ticker+'\')">Buy</button>'
+    +' <button class="btn-primary" style="padding:6px 14px;font-size:12px;margin-left:6px" onclick="showSimpleTradeChart(\''+s.ticker+'\','+s.buyZone+','+s.vwap+','+s.sellZone+')">📈 Chart</button>'
+    +'</div>'
+  ).join('');
 }
 
 function renderEarnings(results,tickers){
@@ -1898,6 +1990,20 @@ window.addEventListener('resize',()=>{
 <h3 style="color:#ccc;margin:25px 0 12px">Suggested Entries Tonight</h3>
 <div id="ideasCandidatesGrid" style="display:grid;gap:12px">
   <p style="color:#888;padding:20px">No BUY-rated candidates tonight.</p>
+</div>
+
+<h3 style="color:#ccc;margin:25px 0 12px">Live Intraday Scan</h3>
+<p style="color:#888;font-size:13px;margin-bottom:12px">
+  Scans your watchlist right now using the same VWAP/RSI "Day Buy" definition as the Day
+  Trading tab's live scanner — a fresh on-demand check rather than waiting for its 30-min
+  cycle. Works during ASX/NASDAQ market hours only.
+</p>
+<div style="margin-bottom:15px">
+  <button class="btn-primary" onclick="scanMarketForIdeas()">🔍 Scan Market Now</button>
+  <span id="ideasScanStatus" style="color:#888;font-size:12px;margin-left:10px"></span>
+</div>
+<div id="ideasLiveGrid" style="display:grid;gap:12px">
+  <p style="color:#888;padding:20px">Click "Scan Market Now" to check for fresh Day Buy signals.</p>
 </div>
 </div>
 </div>
