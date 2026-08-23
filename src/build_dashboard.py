@@ -165,6 +165,27 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
     chart_data_map={r["ticker"]: r.get("chart_data",{}) for r in results if r.get("chart_data")}
     chart_data_json=json.dumps(chart_data_map)
 
+    # Trade Ideas — suggested entries for manual (not automated) paper trading.
+    # Reuses buy_sell_reasoning.py's already-computed entry/stop/target per ticker;
+    # no new analysis, just surfaces BUY-rated tickers for the user to act on or not.
+    suggestions=[]
+    for r in results:
+        rec=r.get("reasoning",{})
+        if not rec.get("recommendation","").startswith(("STRONG", "BUY")):
+            continue
+        suggestions.append({
+            "ticker": r["ticker"], "name": r.get("name", r["ticker"]),
+            "price": rec.get("price"), "recommendation": rec.get("recommendation"),
+            "rec_color": rec.get("rec_color"), "blended_score": rec.get("blended_score"),
+            "confidence": rec.get("confidence"), "timing": rec.get("timing"),
+            "reasons": rec.get("reasons", [])[:6],
+            "entry_price": rec.get("entry_price"), "entry_type": rec.get("entry_type"),
+            "stop_loss": rec.get("stop_loss"), "stop_note": rec.get("stop_note"),
+            "take_profit": rec.get("take_profit"), "risk_reward": rec.get("risk_reward"),
+        })
+    suggestions.sort(key=lambda s: s.get("blended_score") or 0, reverse=True)
+    suggestions_json=json.dumps(suggestions)
+
     # ASX scan results (if available)
     BASE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     asx_scan_file=os.path.join(BASE,"data","asx_scan_results.json")
@@ -318,6 +339,7 @@ function showTab(id) {
     if(id==='quantitative') renderQuantTab(window._activeQuantSection||'earnings');
     if(id==='cycle') renderCycleTab();
     if(id==='paper') renderPaperTab();
+    if(id==='suggestions') renderSuggestionsTab();
 }
 
 // ── Market Analysis filters ───────────────────────────────────────────────────
@@ -902,6 +924,7 @@ function renderMacroGate(){
 const QUANT_DATA = __QUANT_DATA__;
 const CYCLE_DATA = __CYCLE_DATA__;
 const PAPER_DATA = __PAPER_DATA__;
+const SUGGESTIONS_DATA = __SUGGESTIONS_DATA__;
 // ── Quantitative Analysis tab ─────────────────────────────────────────────────
 function renderQuantTab(section){
   if(section) window._activeQuantSection = section;
@@ -1059,7 +1082,7 @@ function normalizePortfolioPaperTrades(){
     const qty=t.shares!=null?t.shares:t.qty;
     const entry=t.buy_price!=null?t.buy_price:t.entry_price;
     return {
-      source: strat==='cycle_trading' ? 'Cycle Trading' : (strat||'Manual'),
+      source: strat==='cycle_trading' ? 'Cycle Trading' : strat==='suggested_trades' ? 'Trade Ideas' : (strat||'Manual'),
       ticker: t.ticker, entry, qty,
       positionCost: (qty!=null && entry!=null) ? qty*entry : null,
       stop: t.stop_price!=null?t.stop_price:t.stop_loss,
@@ -1109,7 +1132,7 @@ async function renderPaperTab(){
 
   const ovEl=document.getElementById('paperOverviewGrid');
   if(ovEl) ovEl.innerHTML=
-      '<div class="stat-card"><div class="stat-label">Combined Capital</div><div class="stat-value">$20,000</div></div>'
+      '<div class="stat-card"><div class="stat-label">Combined Capital</div><div class="stat-value">$30,000</div></div>'
     + '<div class="stat-card"><div class="stat-label">Deployed (Open)</div><div class="stat-value">'+fmtMoney(deployed)+'</div></div>'
     + '<div class="stat-card"><div class="stat-label">Open Positions</div><div class="stat-value">'+openRows.length+'</div></div>'
     + '<div class="stat-card"><div class="stat-label">Closed Trades</div><div class="stat-value">'+closedRows.length+'</div></div>'
@@ -1145,6 +1168,112 @@ async function renderPaperTab(){
     +'<td style="color:'+((r.pnlDollar||0)>=0?'#44bb44':'#cc0000')+';font-weight:bold">'+fmtMoney(r.pnlDollar)+'</td>'
     +'<td style="color:'+((r.pnlPct||0)>=0?'#44bb44':'#cc0000')+'">'+fmtPct(r.pnlPct)+'</td></tr>'
   ).join('') : '<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">No closed trades yet</td></tr>';
+}
+
+// ── Trade Ideas tab — suggested entries the user decides on manually. ───────
+// Buy/Sell write straight to portfolio.json via the GitHub token (same path as
+// Add Paper Trade); nothing here executes on its own.
+const IDEAS_STRATEGY='suggested_trades';
+const IDEAS_BUDGET=10000;
+function renderSuggestionCards(){
+  const el=document.getElementById('ideasCandidatesGrid');
+  if(!el) return;
+  const list=SUGGESTIONS_DATA||[];
+  if(!list.length){ el.innerHTML='<p style="color:#888;padding:20px">No BUY-rated candidates tonight.</p>'; return; }
+  el.innerHTML=list.map((s,i)=>{
+    const col=s.rec_color||(s.blended_score>=63?'#00aa00':s.blended_score>=58?'#44bb44':'#888');
+    return '<div style="background:#1a1a2e;border-radius:12px;padding:20px;border:1px solid '+(i===0?col:'#2a2a4a')+'">'
+      +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">'
+      +'<div><span style="font-size:20px;font-weight:bold;color:#fff">'+s.ticker+'</span>'
+      +'<span style="color:'+col+';font-size:12px;margin-left:8px;font-weight:bold">'+(s.recommendation||'')+'</span>'
+      +'<span style="color:#888;font-size:11px;margin-left:8px">confidence: '+(s.confidence||'—')+'</span></div>'
+      +'<span style="font-size:26px;font-weight:bold;color:'+col+'">'+(s.blended_score!=null?s.blended_score:'—')+'</span></div>'
+      +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
+      +'<div><div style="color:#666">Price</div><div style="color:#ccc">'+fmtMoney(s.price)+'</div></div>'
+      +'<div><div style="color:#666">Suggested Entry</div><div style="color:#4a90d9">'+fmtMoney(s.entry_price)+'</div></div>'
+      +'<div><div style="color:#666">Stop</div><div style="color:#cc0000">'+fmtMoney(s.stop_loss)+'</div></div>'
+      +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+fmtMoney(s.take_profit)+(s.risk_reward!=null?' (R:R '+s.risk_reward+')':'')+'</div></div></div>'
+      +'<div style="font-size:11px;color:#aaa;margin-bottom:6px"><b>Entry:</b> '+(s.entry_type||'—')+'</div>'
+      +'<div style="font-size:11px;color:#aaa;margin-bottom:6px"><b>Exit guide:</b> '+(s.stop_note||'')+(s.timing?' | '+s.timing:'')+'</div>'
+      +'<div style="font-size:11px;color:#888;margin-bottom:10px">'+(s.reasons||[]).join(' | ')+'</div>'
+      +'<button class="btn-primary" style="padding:6px 14px;font-size:12px" onclick="buyIdea(\''+s.ticker+'\')">Buy</button>'
+      +' <button class="btn-primary" style="padding:6px 14px;font-size:12px;margin-left:6px" onclick="showSimpleTradeChart(\''+s.ticker+'\','+(s.entry_price??'null')+','+(s.stop_loss??'null')+','+(s.take_profit??'null')+')">📈 Chart</button>'
+      +'</div>';
+  }).join('');
+}
+async function renderSuggestionsTab(){
+  renderSuggestionCards();
+  const openBody=document.getElementById('ideasOpenBody');
+  const ovEl=document.getElementById('ideasOverviewGrid');
+  if(!getToken()){
+    if(openBody) openBody.innerHTML='<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">Set your GitHub token on the Token tab to view live positions and use Buy/Sell.</td></tr>';
+    if(ovEl) ovEl.innerHTML='<div class="stat-card"><div class="stat-label">Budget</div><div class="stat-value">$'+IDEAS_BUDGET.toLocaleString()+'</div></div>';
+    return;
+  }
+  try{
+    const {data}=await readPortfolio();
+    const trades=(data.paper_trades||[]).filter(t=>(t.meta||{}).strategy===IDEAS_STRATEGY);
+    const open=trades.filter(t=>t.status==='open');
+    const closed=trades.filter(t=>t.status==='closed');
+    const deployed=open.reduce((s,t)=>s+t.shares*t.buy_price,0);
+    const realizedPnl=closed.reduce((s,t)=>s+(t.pnl||0),0);
+    if(ovEl) ovEl.innerHTML=
+        '<div class="stat-card"><div class="stat-label">Budget</div><div class="stat-value">$'+IDEAS_BUDGET.toLocaleString()+'</div></div>'
+      + '<div class="stat-card"><div class="stat-label">Deployed</div><div class="stat-value">'+fmtMoney(deployed)+'</div></div>'
+      + '<div class="stat-card"><div class="stat-label">Remaining</div><div class="stat-value">'+fmtMoney(IDEAS_BUDGET-deployed)+'</div></div>'
+      + '<div class="stat-card"><div class="stat-label">Open Positions</div><div class="stat-value">'+open.length+'</div></div>'
+      + '<div class="stat-card"><div class="stat-label">Realized P&amp;L</div><div class="stat-value" style="color:'+(realizedPnl>=0?'#44bb44':'#cc0000')+'">'+fmtMoney(realizedPnl)+'</div></div>';
+    if(openBody) openBody.innerHTML = open.length ? open.map(t=>
+      '<tr><td><b>'+t.ticker+'</b></td><td>'+fmtMoney(t.buy_price)+'</td><td>'+t.shares+'</td>'
+      +'<td>'+fmtMoney(t.shares*t.buy_price)+'</td>'
+      +'<td style="color:#cc0000">'+fmtMoney(t.stop_price)+'</td><td style="color:#44bb44">'+fmtMoney(t.target_price)+'</td>'
+      +'<td style="font-size:11px;color:#888">'+(t.buy_date||'—')+'</td>'
+      +'<td><button class="btn-primary" style="padding:4px 10px;font-size:11px" onclick="sellIdea(\''+t.ticker+'\')">Sell</button></td></tr>'
+    ).join('') : '<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">No open Trade Ideas positions</td></tr>';
+  }catch(e){
+    if(openBody) openBody.innerHTML='<tr><td colspan="8" style="color:#cc0000;text-align:center;padding:20px">Error loading: '+e.message+'</td></tr>';
+  }
+}
+async function buyIdea(ticker){
+  const s=(SUGGESTIONS_DATA||[]).find(x=>x.ticker===ticker);
+  if(!s || !s.price){alert('No data for '+ticker);return;}
+  if(!getToken()){alert('Set your GitHub token first (Token tab).');return;}
+  const amtStr=prompt('Dollar amount to invest in '+ticker+' @ $'+s.price+'?\n(Trade Ideas budget: $'+IDEAS_BUDGET.toLocaleString()+' total)','1000');
+  if(!amtStr) return;
+  const amt=parseFloat(amtStr);
+  if(!amt||amt<=0) return;
+  try{
+    const {data,sha}=await readPortfolio();
+    const openCost=(data.paper_trades||[]).filter(t=>t.status==='open'&&(t.meta||{}).strategy===IDEAS_STRATEGY)
+      .reduce((sum,t)=>sum+t.shares*t.buy_price,0);
+    if(openCost+amt>IDEAS_BUDGET){alert('That would exceed the $'+IDEAS_BUDGET.toLocaleString()+' Trade Ideas budget ($'+openCost.toFixed(2)+' already deployed).');return;}
+    const shares=Math.round((amt/s.price)*10000)/10000;
+    if(shares<=0){alert('Amount too small.');return;}
+    const trade={ticker:s.ticker, shares, buy_price:s.price, buy_date:new Date().toISOString().slice(0,10),
+      signal:s.recommendation, reason:(s.reasons||[]).slice(0,2).join('; ')||'Trade Ideas suggestion',
+      status:'open', type:'paper', stop_price:s.stop_loss, target_price:s.take_profit,
+      meta:{strategy:IDEAS_STRATEGY, entry_type:s.entry_type, confidence:s.confidence, blended_score:s.blended_score}};
+    (data.paper_trades=data.paper_trades||[]).push(trade);
+    await writePortfolio(data,sha);
+    alert(ticker+' bought: '+shares+' shares @ $'+s.price+' ($'+amt.toFixed(2)+')');
+    renderSuggestionsTab();
+  }catch(e){alert('Error: '+e.message);}
+}
+async function sellIdea(ticker){
+  const exit=parseFloat(prompt('Exit price for '+ticker+'?'));
+  if(!exit) return;
+  try{
+    const {data,sha}=await readPortfolio();
+    const t=(data.paper_trades||[]).find(x=>x.ticker===ticker && x.status==='open' && (x.meta||{}).strategy===IDEAS_STRATEGY);
+    if(!t){alert('No open Trade Ideas position for '+ticker);return;}
+    const pnl=Math.round((exit-t.buy_price)*t.shares*100)/100;
+    t.status='closed'; t.sell_price=exit; t.sell_date=new Date().toISOString().slice(0,10);
+    t.pnl=pnl; t.pnl_pct=Math.round((exit-t.buy_price)/t.buy_price*10000)/100;
+    t.close_reason='MANUAL';
+    await writePortfolio(data,sha);
+    alert('Closed '+ticker+': P&L $'+pnl.toFixed(2));
+    renderSuggestionsTab();
+  }catch(e){alert('Error: '+e.message);}
 }
 
 function renderEarnings(results,tickers){
@@ -1395,6 +1524,7 @@ window.addEventListener('resize',()=>{
   <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
   <button class="tab-btn" onclick="showTab('agent')">Agent Trader</button>
   <button class="tab-btn" onclick="showTab('cycle')">Cycle Trading</button>
+  <button class="tab-btn" onclick="showTab('suggestions')">Trade Ideas</button>
   <button class="tab-btn" onclick="showTab('token')">Token</button>
 </nav>
 
@@ -1467,8 +1597,8 @@ window.addEventListener('resize',()=>{
 <h2>Paper Trading — All Sources</h2>
 <p style="color:#888;font-size:13px;margin-bottom:15px">
   Every simulated trade across all strategies in one place, tagged by where it came from.
-  Cycle Trading and Agent Trader each run their own $10,000 book (a $20,000 combined total);
-  manual entries added via Add Holding draw from the Cycle Trading cash pool.
+  Cycle Trading, Agent Trader and Trade Ideas each run their own $10,000 book (a $30,000
+  combined total); manual entries added via Add Holding draw from the Cycle Trading cash pool.
 </p>
 <div class="stats-grid" id="paperOverviewGrid"></div>
 
@@ -1746,6 +1876,33 @@ window.addEventListener('resize',()=>{
 </div>
 
 
+<!-- TAB: Trade Ideas -->
+<div id="tab-suggestions" class="tab-content">
+<div class="section">
+<h2>Trade Ideas — Suggested Entries (Manual)</h2>
+<p style="color:#888;font-size:13px;margin-bottom:20px">
+  BUY-rated tickers from tonight's signal engine, for you to act on or ignore — nothing here
+  executes automatically. A separate $10,000 test budget, tracked independently of Cycle
+  Trading and Agent Trader. Buy/Sell write directly to <code>portfolio.json</code> via your
+  GitHub token (set one on the <a href="#" onclick="showTab('token');return false" style="color:#4a90d9">Token</a> tab first).
+</p>
+<div class="stats-grid" id="ideasOverviewGrid"></div>
+
+<h3 style="color:#ccc;margin:25px 0 12px">Open Positions</h3>
+<div class="asx-table-wrap"><table class="asx-table"><thead><tr>
+  <th>Ticker</th><th>Entry</th><th>Shares</th><th>Cost</th><th>Stop</th><th>Target</th><th>Opened</th><th></th>
+</tr></thead><tbody id="ideasOpenBody">
+<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">Set your GitHub token to view live positions.</td></tr>
+</tbody></table></div>
+
+<h3 style="color:#ccc;margin:25px 0 12px">Suggested Entries Tonight</h3>
+<div id="ideasCandidatesGrid" style="display:grid;gap:12px">
+  <p style="color:#888;padding:20px">No BUY-rated candidates tonight.</p>
+</div>
+</div>
+</div>
+
+
 <!-- TAB 9: GitHub Token -->
 <div id="tab-token" class="tab-content">
 <div class="section">
@@ -1789,6 +1946,7 @@ window.addEventListener('resize',()=>{
     HTML = HTML.replace('__QUANT_DATA__', json.dumps(quant or {}))
     HTML = HTML.replace('__CYCLE_DATA__', json.dumps(cycle or {}))
     HTML = HTML.replace('__PAPER_DATA__', json.dumps(portfolio.get('paper', {})))
+    HTML = HTML.replace('__SUGGESTIONS_DATA__', suggestions_json)
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(HTML)
     print(f"Dashboard written: {output_path}")
