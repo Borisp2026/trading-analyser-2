@@ -317,6 +317,7 @@ function showTab(id) {
     if(id==='portfolio') refreshPortfolioPrices();
     if(id==='quantitative') renderQuantTab(window._activeQuantSection||'earnings');
     if(id==='cycle') renderCycleTab();
+    if(id==='paper') renderPaperTab();
 }
 
 // ── Market Analysis filters ───────────────────────────────────────────────────
@@ -805,9 +806,7 @@ async function loadAgentTrades() {
         const d = await r.json();
         renderAgentDashboard(d);
     } catch(e) {
-        document.getElementById('agentTradeBody').innerHTML =
-            '<tr><td colspan="11" style="color:#cc0000;text-align:center;padding:20px">Error: ' + e.message + '</td></tr>';
-        document.getElementById('agentProgress').textContent = 'Error loading data';
+        document.getElementById('agentProgress').textContent = 'Error loading data: ' + e.message;
     }
 }
 
@@ -833,26 +832,6 @@ function renderAgentDashboard(d) {
     const gr = s.capital_growth || 0;
     document.getElementById('agentGrowth').innerHTML = '<span style="color:'+(gr>=0?'#44bb44':'#cc0000')+'">'+(gr>=0?'+':'')+gr.toFixed(1)+'%</span>';
     document.getElementById('agentOpen').textContent = Object.keys(d.open_positions||{}).length;
-
-    const tbody = document.getElementById('agentTradeBody');
-    if (!trades.length) {
-        tbody.innerHTML = '<tr><td colspan="11" style="color:#888;text-align:center;padding:20px">No trades yet — agent scans at next ASX open (10am AEST weekdays)</td></tr>';
-    } else {
-        tbody.innerHTML = [...trades].reverse().map(t => {
-            const oc = t.outcome==='WIN'?'#44bb44':t.outcome==='LOSS'?'#cc0000':'#ff9900';
-            const pc = (t.pnl_pct||0)>=0?'#44bb44':'#cc0000';
-            return '<tr><td>'+t.id+'</td><td><b>'+t.ticker+'</b></td>'
-                +'<td>$'+(t.entry_price||0).toFixed(3)+'</td>'
-                +'<td style="font-size:11px;color:#888">'+(t.entry_time||'').substring(0,16).replace('T',' ')+'</td>'
-                +'<td style="color:#44bb44">$'+(t.target||0).toFixed(3)+'</td>'
-                +'<td style="color:#cc0000">$'+(t.stop||0).toFixed(3)+'</td>'
-                +'<td>'+(t.exit_price?'$'+t.exit_price.toFixed(3):'—')+'</td>'
-                +'<td style="font-size:11px">'+(t.exit_reason||'OPEN')+'</td>'
-                +'<td style="color:'+pc+';font-weight:bold">'+(t.pnl_pct!=null?(t.pnl_pct>=0?'+':'')+t.pnl_pct.toFixed(1)+'%':'—')+'</td>'
-                +'<td style="color:'+oc+';font-weight:bold">'+(t.outcome||'OPEN')+'</td>'
-                +'<td style="font-size:11px;color:#666">'+(t.conditions_met||0)+'/5 ✓</td></tr>';
-        }).join('');
-    }
 
     const scanLog = (d.scan_log||[]).slice(-30).reverse();
     const sbody = document.getElementById('agentScanBody');
@@ -922,6 +901,7 @@ function renderMacroGate(){
 
 const QUANT_DATA = __QUANT_DATA__;
 const CYCLE_DATA = __CYCLE_DATA__;
+const PAPER_DATA = __PAPER_DATA__;
 // ── Quantitative Analysis tab ─────────────────────────────────────────────────
 function renderQuantTab(section){
   if(section) window._activeQuantSection = section;
@@ -986,15 +966,13 @@ function renderCycleTab(){
   renderCycleAlerts(d.failed_cycle_alerts||[], 'cycleFailedAlerts', 'FAILED CYCLE', '#cc0000');
   renderCycleAlerts(d.high_risk_alerts||[], 'cycleHighRiskAlerts', 'HIGH RISK ZONE', '#ff9900');
   renderCycleCandidates(d.candidates||[]);
-  renderCycleOpenTrades(d.open_trades||[]);
-  renderCycleClosedTrades(d.closed_trades||[]);
 }
 async function renderCombinedRisk(cycleData){
   const el=document.getElementById('combinedRiskPanel');
   if(!el) return;
   const cd=cycleData.drawdown||{};
   const cycleCapital=10000, cycleAtRisk=cycleCapital*(cd.drawdown_pct||0)/100;
-  let agentCapital=5000, agentStart=5000, agentDrawdownPct=0;
+  let agentCapital=10000, agentStart=10000, agentDrawdownPct=0;
   try{
     const r=await fetch(AGENT_RAW_URL+'?t='+Date.now());
     if(r.ok){
@@ -1065,27 +1043,97 @@ function renderCycleCandidates(list){
       +'</div>';
   }).join('');
 }
-function renderCycleOpenTrades(list){
-  const b=document.getElementById('cycleOpenTradesBody');
-  if(!b) return;
-  b.innerHTML = list.length ? list.map(t=>{
-    const cp=t._current_price;
-    const pnl = (cp && t.buy_price) ? (((cp-t.buy_price)/t.buy_price)*100).toFixed(1)+'%' : '—';
-    const ez = (t.meta||{}).entry_zone||'—';
-    return '<tr><td><b>'+t.ticker+'</b></td><td>$'+t.buy_price+'</td><td>'+t.buy_date+'</td>'
-      +'<td style="color:red">'+(t.stop_price?('$'+t.stop_price):'—')+'</td>'
-      +'<td style="color:green">'+(t.target_price?('$'+t.target_price):'—')+'</td>'
-      +'<td>'+ez+'</td><td>'+(cp?('$'+cp):'—')+'</td><td>'+pnl+'</td>'
-      +'<td><button class="btn-primary" style="padding:4px 10px;font-size:11px" onclick="showOpenTradeChart(\''+t.ticker+'\')">📈</button></td></tr>';
-  }).join('') : '<tr><td colspan="9" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
+// ── Paper Trading tab — merges Cycle Trading (+ manual) portfolio.json trades
+// with Agent Trader's separate ledger into one view, tagged by source. ──────
+function normalizePortfolioPaperTrades(){
+  const open=(PAPER_DATA.open_trades||[]).map(t=>({...t,_openFlag:true}));
+  const closed=(PAPER_DATA.closed_trades_detail||[]).map(t=>({...t,_openFlag:false}));
+  return [...open,...closed].map(t=>{
+    const strat=(t.meta||{}).strategy;
+    const qty=t.shares!=null?t.shares:t.qty;
+    const entry=t.buy_price!=null?t.buy_price:t.entry_price;
+    return {
+      source: strat==='cycle_trading' ? 'Cycle Trading' : (strat||'Manual'),
+      ticker: t.ticker, entry, qty,
+      positionCost: (qty!=null && entry!=null) ? qty*entry : null,
+      stop: t.stop_price!=null?t.stop_price:t.stop_loss,
+      target: t.target_price!=null?t.target_price:t.take_profit,
+      opened: t.buy_date || (t.opened||'').slice(0,10),
+      closed: t.sell_date || (t.closed||'').slice(0,10),
+      exit: t.sell_price!=null?t.sell_price:t.exit_price,
+      pnlDollar: t.pnl!=null?t.pnl:null,
+      pnlPct: t.pnl_pct!=null?t.pnl_pct:null,
+      reason: t.close_reason||'',
+      open: !!t._openFlag,
+      chartTicker: strat==='cycle_trading' ? t.ticker : null,
+    };
+  });
 }
-function renderCycleClosedTrades(list){
-  const b=document.getElementById('cycleClosedTradesBody');
-  if(!b) return;
-  b.innerHTML = list.length ? list.map(t=>
-    '<tr><td><b>'+t.ticker+'</b></td><td>$'+t.buy_price+'</td><td>$'+(t.sell_price!=null?t.sell_price:'—')+'</td>'
-    +'<td>'+(t.close_reason||'')+'</td><td style="color:'+((t.pnl_pct||0)>=0?'green':'red')+'">'+(t.pnl_pct||0)+'%</td></tr>'
-  ).join('') : '<tr><td colspan="5" style="color:#888;text-align:center;padding:20px">No closed trades yet</td></tr>';
+function normalizeAgentTrades(d){
+  return (d.trades||[]).map(t=>({
+    source:'Agent Trader', ticker:t.ticker, entry:t.entry_price, qty:null,
+    positionCost: t.position_size!=null?t.position_size:null,
+    stop:t.stop, target:t.target,
+    opened:(t.entry_time||'').slice(0,10), closed:(t.exit_time||'').slice(0,10),
+    exit:t.exit_price, pnlDollar:t.pnl_dollar, pnlPct:t.pnl_pct,
+    reason:t.exit_reason||'', open: t.status!=='CLOSED', chartTicker:null,
+  }));
+}
+function fmtMoney(v){ return v==null ? '—' : '$'+Number(v).toFixed(2); }
+function fmtPct(v){ return v==null ? '—' : (v>=0?'+':'')+v.toFixed(2)+'%'; }
+async function renderPaperTab(){
+  let rows = normalizePortfolioPaperTrades();
+  try{
+    const r=await fetch(AGENT_RAW_URL+'?t='+Date.now());
+    if(r.ok) rows = rows.concat(normalizeAgentTrades(await r.json()));
+  }catch(e){/* Agent Trader data unavailable, show other sources only */}
+
+  const openRows=rows.filter(r=>r.open);
+  const closedRows=rows.filter(r=>!r.open);
+  const wins=closedRows.filter(r=>(r.pnlDollar||0)>0).length;
+  const winRate=closedRows.length?(wins/closedRows.length*100):0;
+  const realizedPnl=closedRows.reduce((s,r)=>s+(r.pnlDollar||0),0);
+  const deployed=openRows.reduce((s,r)=>s+(r.positionCost||0),0);
+
+  const ovEl=document.getElementById('paperOverviewGrid');
+  if(ovEl) ovEl.innerHTML=
+      '<div class="stat-card"><div class="stat-label">Combined Capital</div><div class="stat-value">$20,000</div></div>'
+    + '<div class="stat-card"><div class="stat-label">Deployed (Open)</div><div class="stat-value">'+fmtMoney(deployed)+'</div></div>'
+    + '<div class="stat-card"><div class="stat-label">Open Positions</div><div class="stat-value">'+openRows.length+'</div></div>'
+    + '<div class="stat-card"><div class="stat-label">Closed Trades</div><div class="stat-value">'+closedRows.length+'</div></div>'
+    + '<div class="stat-card"><div class="stat-label">Win Rate</div><div class="stat-value" style="color:'+(winRate>=50?'#44bb44':'#cc0000')+'">'+winRate.toFixed(1)+'%</div></div>'
+    + '<div class="stat-card"><div class="stat-label">Realized P&amp;L</div><div class="stat-value" style="color:'+(realizedPnl>=0?'#44bb44':'#cc0000')+'">'+fmtMoney(realizedPnl)+'</div></div>';
+
+  const sources=[...new Set(rows.map(r=>r.source))];
+  const srcEl=document.getElementById('paperSourceGrid');
+  if(srcEl) srcEl.innerHTML=sources.map(src=>{
+    const sr=rows.filter(r=>r.source===src);
+    const sOpen=sr.filter(r=>r.open).length;
+    const sClosed=sr.filter(r=>!r.open);
+    const sPnl=sClosed.reduce((s,r)=>s+(r.pnlDollar||0),0);
+    return '<div class="stat-card"><div class="stat-label">'+src+'</div>'
+      +'<div class="stat-value" style="font-size:15px">'+sOpen+' open / '+sClosed.length+' closed</div>'
+      +'<div style="font-size:12px;margin-top:4px;color:'+(sPnl>=0?'#44bb44':'#cc0000')+'">'+fmtMoney(sPnl)+' realized</div></div>';
+  }).join('');
+
+  const openBody=document.getElementById('paperOpenBody');
+  if(openBody) openBody.innerHTML = openRows.length ? openRows.map(r=>
+    '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b>'
+    +(r.chartTicker?' <button class="btn-primary" style="padding:2px 8px;font-size:10px;margin-left:4px" onclick="showOpenTradeChart(\''+r.chartTicker+'\')">📈</button>':'')
+    +'</td><td>'+fmtMoney(r.entry)+'</td><td>'+fmtMoney(r.positionCost)+'</td>'
+    +'<td style="color:#cc0000">'+fmtMoney(r.stop)+'</td><td style="color:#44bb44">'+fmtMoney(r.target)+'</td>'
+    +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td></tr>'
+  ).join('') : '<tr><td colspan="7" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
+
+  const closedBody=document.getElementById('paperClosedBody');
+  if(closedBody) closedBody.innerHTML = closedRows.length ? closedRows.map(r=>
+    '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b></td><td>'+fmtMoney(r.entry)+'</td><td>'+fmtMoney(r.exit)+'</td>'
+    +'<td>'+fmtMoney(r.positionCost)+'</td>'
+    +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td><td style="font-size:11px;color:#888">'+(r.closed||'—')+'</td>'
+    +'<td style="font-size:11px">'+(r.reason||'')+'</td>'
+    +'<td style="color:'+((r.pnlDollar||0)>=0?'#44bb44':'#cc0000')+';font-weight:bold">'+fmtMoney(r.pnlDollar)+'</td>'
+    +'<td style="color:'+((r.pnlPct||0)>=0?'#44bb44':'#cc0000')+'">'+fmtPct(r.pnlPct)+'</td></tr>'
+  ).join('') : '<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">No closed trades yet</td></tr>';
 }
 
 function renderEarnings(results,tickers){
@@ -1327,7 +1375,7 @@ window.addEventListener('resize',()=>{
   <button class="tab-btn" onclick="showTab('market_status')">Market Status</button>
   <button class="tab-btn" onclick="showTab('portfolio')">Portfolio</button>
   <button class="tab-btn" onclick="showTab('addholder')">Add Holding</button>
-  <button class="tab-btn" onclick="showTab('paper')">Paper Trades</button>
+  <button class="tab-btn" onclick="showTab('paper')">Paper Trading</button>
   <button class="tab-btn" onclick="showTab('asx')">ASX Scanner</button>
   <button class="tab-btn" onclick="showTab('watchlist')">Watchlist</button>
   <button class="tab-btn" onclick="showTab('history')">Signal History</button>
@@ -1402,16 +1450,33 @@ window.addEventListener('resize',()=>{
 </div>
 </div>
 
-<!-- TAB 4: Paper Trades -->
+<!-- TAB 4: Paper Trading -->
 <div id="tab-paper" class="tab-content">
 <div class="section">
-<h2>Paper Trades</h2>
-<p style="color:#888;font-size:13px;margin-bottom:15px">Simulated trades to test strategies before using real money.</p>
-<table class="holdings-table"><thead><tr>
-  <th>Ticker</th><th>Direction</th><th>Entry</th><th>Qty</th><th>Stop</th><th>Target</th><th>Opened</th><th>Status</th><th></th>
-</tr></thead><tbody id="paperBody">
-<tr><td colspan="9" style="color:#888;text-align:center;padding:20px">Use Add Holding tab to add paper trades.</td></tr>
-</tbody></table>
+<h2>Paper Trading — All Sources</h2>
+<p style="color:#888;font-size:13px;margin-bottom:15px">
+  Every simulated trade across all strategies in one place, tagged by where it came from.
+  Cycle Trading and Agent Trader each run their own $10,000 book (a $20,000 combined total);
+  manual entries added via Add Holding draw from the Cycle Trading cash pool.
+</p>
+<div class="stats-grid" id="paperOverviewGrid"></div>
+
+<h3 style="color:#ccc;margin:25px 0 12px">By Source</h3>
+<div class="stats-grid" id="paperSourceGrid"></div>
+
+<h3 style="color:#ccc;margin:25px 0 12px">Open Positions</h3>
+<div class="asx-table-wrap"><table class="asx-table"><thead><tr>
+  <th>Source</th><th>Ticker</th><th>Entry</th><th>Position ($)</th><th>Stop</th><th>Target</th><th>Opened</th>
+</tr></thead><tbody id="paperOpenBody">
+<tr><td colspan="7" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
+</tbody></table></div>
+
+<h3 style="color:#ccc;margin:25px 0 12px">Closed Trades</h3>
+<div class="asx-table-wrap"><table class="asx-table"><thead><tr>
+  <th>Source</th><th>Ticker</th><th>Entry</th><th>Exit</th><th>Position ($)</th><th>Opened</th><th>Closed</th><th>Reason</th><th>P&amp;L $</th><th>P&amp;L %</th>
+</tr></thead><tbody id="paperClosedBody">
+<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
+</tbody></table></div>
 </div>
 </div>
 
@@ -1622,17 +1687,11 @@ window.addEventListener('resize',()=>{
   <span style="color:#666;font-size:12px;align-self:center">Auto-updates every 5 min during ASX hours (10am–4pm AEST)</span>
 </div>
 
-<!-- Trade log -->
-<h3 style="color:#ccc;margin-bottom:12px">Trade Log</h3>
-<div class="asx-table-wrap">
-<table class="asx-table"><thead><tr>
-  <th>#</th><th>Ticker</th><th>Entry</th><th>Entry Time</th>
-  <th>Target</th><th>Stop</th><th>Exit</th><th>Exit Reason</th>
-  <th>P&amp;L %</th><th>Outcome</th><th>Conditions</th>
-</tr></thead><tbody id="agentTradeBody">
-<tr><td colspan="11" style="color:#888;text-align:center;padding:20px">Loading trade history...</td></tr>
-</tbody></table>
-</div>
+<p style="color:#888;font-size:13px;margin-bottom:20px">
+  Full trade log (with entry/exit/target/stop/conditions) now lives on the
+  <a href="#" onclick="showTab('paper');return false" style="color:#4a90d9">Paper Trading</a>
+  tab, merged with Cycle Trading's trades and tagged by source.
+</p>
 
 <!-- Scan log -->
 <h3 style="color:#ccc;margin:25px 0 12px">Recent Scan Log <span style="font-size:12px;color:#666">(last 30 scans)</span></h3>
@@ -1666,20 +1725,12 @@ window.addEventListener('resize',()=>{
 <div id="cycleFailedAlerts"></div>
 <div id="cycleHighRiskAlerts"></div>
 
-<h3 style="color:#ccc;margin:25px 0 12px">Open Cycle Trading Positions</h3>
-<div class="asx-table-wrap"><table class="asx-table"><thead><tr>
-  <th>Ticker</th><th>Entry</th><th>Entry Date</th><th>Stop</th><th>Target</th>
-  <th>Entry Zone</th><th>Current Price</th><th>P&amp;L %</th><th>Chart</th>
-</tr></thead><tbody id="cycleOpenTradesBody">
-<tr><td colspan="9" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
-</tbody></table></div>
-
-<h3 style="color:#ccc;margin:25px 0 12px">Recently Closed Cycle Trades</h3>
-<div class="asx-table-wrap"><table class="asx-table"><thead><tr>
-  <th>Ticker</th><th>Entry</th><th>Exit</th><th>Exit Reason</th><th>P&amp;L %</th>
-</tr></thead><tbody id="cycleClosedTradesBody">
-<tr><td colspan="5" style="color:#888;text-align:center;padding:20px">No closed trades yet</td></tr>
-</tbody></table></div>
+<p style="color:#888;font-size:13px;margin:25px 0">
+  Open and closed Cycle Trading positions now live on the
+  <a href="#" onclick="showTab('paper');return false" style="color:#4a90d9">Paper Trading</a>
+  tab, merged with Agent Trader's trades and tagged by source. Charts for open positions and
+  candidates are still available above.
+</p>
 </div>
 </div>
 
@@ -1726,6 +1777,7 @@ window.addEventListener('resize',()=>{
     HTML = HTML.replace('__MACRO_DATA__', json.dumps(macro or {}))
     HTML = HTML.replace('__QUANT_DATA__', json.dumps(quant or {}))
     HTML = HTML.replace('__CYCLE_DATA__', json.dumps(cycle or {}))
+    HTML = HTML.replace('__PAPER_DATA__', json.dumps(portfolio.get('paper', {})))
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(HTML)
     print(f"Dashboard written: {output_path}")

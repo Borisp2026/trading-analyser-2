@@ -21,7 +21,7 @@ INTRADAY_SIGNALS_FILE = os.path.join(BASE, "data", "intraday_signals.json")
 AEST          = pytz.timezone('Australia/Sydney')
 
 TARGET_TRADES = 30
-START_CAPITAL = 5000.0
+START_CAPITAL = 10000.0  # matches Cycle Trading's $10k pool so both sources share a $20k combined book
 MAX_POSITIONS = 2
 POS_SIZE      = 2500.0  # fixed $2500 per trade
 MAX_DRAWDOWN_PCT = 20.0  # halt new entries once capital falls this far below START_CAPITAL
