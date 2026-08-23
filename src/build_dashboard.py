@@ -1242,6 +1242,12 @@ async function executeIdeaBuy(idea){
   if(!amtStr) return;
   const amt=parseFloat(amtStr);
   if(!amt||amt<=0) return;
+  const sellStr=prompt('Sell price to lock in as the target for '+idea.ticker+'? (suggested: '+(idea.target!=null?'$'+idea.target:'none')+')\nLeave blank to use the suggested target, or 0 for no target.', idea.target!=null?String(idea.target):'');
+  let targetPrice = idea.target!=null?idea.target:null;
+  if(sellStr!==null && sellStr.trim()!==''){
+    const sellVal=parseFloat(sellStr);
+    targetPrice = (!isNaN(sellVal) && sellVal>0) ? sellVal : null;
+  }
   try{
     const {data,sha}=await readPortfolio();
     const openCost=(data.paper_trades||[]).filter(t=>t.status==='open'&&(t.meta||{}).strategy===IDEAS_STRATEGY)
@@ -1251,11 +1257,11 @@ async function executeIdeaBuy(idea){
     if(shares<=0){alert('Amount too small.');return;}
     const trade={ticker:idea.ticker, shares, buy_price:idea.price, buy_date:new Date().toISOString().slice(0,10),
       signal:idea.recommendation||'DAY_BUY', reason:idea.reason||'Trade Ideas suggestion',
-      status:'open', type:'paper', stop_price:idea.stop, target_price:idea.target,
+      status:'open', type:'paper', stop_price:idea.stop, target_price:targetPrice,
       meta:{strategy:IDEAS_STRATEGY, entry_type:idea.entry_type, confidence:idea.confidence, blended_score:idea.blended_score, source:idea.source||'nightly'}};
     (data.paper_trades=data.paper_trades||[]).push(trade);
     await writePortfolio(data,sha);
-    alert(idea.ticker+' bought: '+shares+' shares @ $'+idea.price+' ($'+amt.toFixed(2)+')');
+    alert(idea.ticker+' bought: '+shares+' shares @ $'+idea.price+' ($'+amt.toFixed(2)+')'+(targetPrice!=null?' | sell target locked at $'+targetPrice:''));
     renderSuggestionsTab();
   }catch(e){alert('Error: '+e.message);}
 }
@@ -1295,10 +1301,23 @@ async function sellIdea(ticker){
 // only every 30 min, and scoped to the Trade Ideas tab's own results grid so it
 // doesn't touch that tab's code. ─────────────────────────────────────────────
 let _liveIdeas=[];
+const IDEAS_SCAN_LIMIT=150;  // caps scan time/CORS-proxy load -- see getIdeaScanTickers
+function getIdeaScanTickers(){
+  const watchlistTickers=Array.from(document.querySelectorAll('#cardsGrid .stock-card[data-ticker]')).map(c=>c.getAttribute('data-ticker')).filter(Boolean);
+  const deepScanResults=(ASX_SCAN&&ASX_SCAN.results)||[];
+  // Top-scored names from the weekly ASX Deep Scan (already computed server-side,
+  // no extra cost to read) -- adds real breadth beyond the 26-ticker watchlist
+  // without live-scanning the full 1,800+ universe through a public CORS proxy.
+  const topDeepScan=[...deepScanResults]
+    .sort((a,b)=>((b.reasoning||{}).blended_score||0)-((a.reasoning||{}).blended_score||0))
+    .slice(0,IDEAS_SCAN_LIMIT)
+    .map(r=>r.ticker);
+  return [...new Set([...watchlistTickers,...topDeepScan])];
+}
 async function scanMarketForIdeas(){
   const statusEl=document.getElementById('ideasScanStatus');
-  const tickers=Array.from(document.querySelectorAll('#cardsGrid .stock-card[data-ticker]')).map(c=>c.getAttribute('data-ticker')).filter(Boolean);
-  if(!tickers.length){ if(statusEl) statusEl.textContent='No watchlist tickers found.'; return; }
+  const tickers=getIdeaScanTickers();
+  if(!tickers.length){ if(statusEl) statusEl.textContent='No tickers to scan.'; return; }
   _liveIdeas=[];
   for(let i=0;i<tickers.length;i++){
     const t=tickers[i];
@@ -1994,9 +2013,11 @@ window.addEventListener('resize',()=>{
 
 <h3 style="color:#ccc;margin:25px 0 12px">Live Intraday Scan</h3>
 <p style="color:#888;font-size:13px;margin-bottom:12px">
-  Scans your watchlist right now using the same VWAP/RSI "Day Buy" definition as the Day
-  Trading tab's live scanner — a fresh on-demand check rather than waiting for its 30-min
-  cycle. Works during ASX/NASDAQ market hours only.
+  Scans your 26-ticker watchlist plus the top ~150 scored names from the weekly ASX Deep
+  Scan (broader coverage without live-checking the full 1,800+ ASX universe), using the
+  same VWAP/RSI "Day Buy" definition as the Day Trading tab's live scanner — a fresh
+  on-demand check rather than waiting for its 30-min cycle. Takes roughly 1-2 minutes.
+  Works during ASX/NASDAQ market hours only.
 </p>
 <div style="margin-bottom:15px">
   <button class="btn-primary" onclick="scanMarketForIdeas()">🔍 Scan Market Now</button>
