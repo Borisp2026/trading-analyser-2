@@ -87,7 +87,7 @@
           {
             "cycle_num": null,
             "dcl0_date": "2024-09-06",
-            "dcl0_price": 394.5671,
+            "dcl0_price": 394.567,
             "hch_date": "2024-09-17",
             "hch_price": 434.9787,
             "hcl_date": null,
@@ -112,7 +112,7 @@
             "dch_date": "2024-10-30",
             "dch_price": 431.6808,
             "dcl1_date": "2024-11-04",
-            "dcl1_price": 399.2629,
+            "dcl1_price": 399.2628,
             "translation": "RIGHT",
             "failed": true,
             "length": 19,
@@ -121,13 +121,13 @@
           {
             "cycle_num": 1,
             "dcl0_date": "2024-11-04",
-            "dcl0_price": 399.2629,
+            "dcl0_price": 399.2628,
             "hch_date": "2024-11-13",
             "hch_price": 422.6533,
             "hcl_date": "2024-11-20",
             "hcl_price": 404.1949,
             "dch_date": "2024-12-12",
-            "dch_price": 449.9649,
+            "dch_price": 449.965,
             "dcl1_date": "2025-01-14",
             "dcl1_price": 405.1421,
             "translation": "RIGHT",
@@ -208,11 +208,11 @@
             "dcl0_date": "2025-05-23",
             "dcl0_price": 444.5159,
             "hch_date": "2025-06-23",
-            "hch_price": 482.9757,
+            "hch_price": 482.9758,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2025-06-23",
-            "dch_price": 482.9757,
+            "dch_price": 482.9758,
             "dcl1_date": "2025-06-23",
             "dcl1_price": 467.8849,
             "translation": "RIGHT",
@@ -227,11 +227,11 @@
             "hch_date": "2025-06-30",
             "hch_price": 495.8584,
             "hcl_date": "2025-07-02",
-            "hcl_price": 483.9165,
+            "hcl_price": 483.9164,
             "dch_date": "2025-07-18",
             "dch_price": 509.6025,
             "dcl1_date": "2025-07-23",
-            "dcl1_price": 495.799,
+            "dcl1_price": 495.7989,
             "translation": "RIGHT",
             "failed": false,
             "length": 21,
@@ -240,9 +240,9 @@
           {
             "cycle_num": 4,
             "dcl0_date": "2025-07-23",
-            "dcl0_price": 495.799,
+            "dcl0_price": 495.7989,
             "hch_date": "2025-08-13",
-            "hch_price": 527.4858,
+            "hch_price": 527.4857,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2025-07-31",
@@ -282,7 +282,7 @@
             "dch_date": "2025-10-28",
             "dch_price": 549.2013,
             "dcl1_date": "2026-02-24",
-            "dcl1_price": 380.1694,
+            "dcl1_price": 380.1693,
             "translation": "LEFT",
             "failed": true,
             "length": 90,
@@ -291,7 +291,7 @@
           {
             "cycle_num": 7,
             "dcl0_date": "2026-02-24",
-            "dcl0_price": 380.1694,
+            "dcl0_price": 380.1693,
             "hch_date": "2026-03-06",
             "hch_price": 411.3829,
             "hcl_date": null,
@@ -378,13 +378,13 @@
         "intermediate_cycles": [
           {
             "icl0_date": "2024-11-04",
-            "icl0_price": 399.2629,
+            "icl0_price": 399.2628,
             "ic_hch_date": "2024-12-12",
-            "ic_hch_price": 449.9649,
+            "ic_hch_price": 449.965,
             "ic_hcl_date": null,
             "ic_hcl_price": null,
             "ich_date": "2024-12-12",
-            "ich_price": 449.9649,
+            "ich_price": 449.965,
             "icl1_date": "2025-04-07",
             "icl1_price": 340.7894,
             "translation": "LEFT",
@@ -1639,16 +1639,33 @@
             "hcl_price": 2.0361,
             "dch_date": "2024-10-16",
             "dch_price": 2.2028,
-            "dcl1_date": "2024-11-26",
-            "dcl1_price": 2.0185,
-            "translation": "LEFT",
+            "dcl1_date": "2024-11-01",
+            "dcl1_price": 2.0273,
+            "translation": "RIGHT",
             "failed": false,
-            "length": 53,
+            "length": 36,
             "intermediate_cycle_start": null
           },
           {
             "cycle_num": null,
-            "dcl0_date": "2024-11-26",
+            "dcl0_date": "2024-11-01",
+            "dcl0_price": 2.0273,
+            "hch_date": "2024-11-07",
+            "hch_price": 2.1502,
+            "hcl_date": "2024-11-11",
+            "hcl_price": 2.0536,
+            "dch_date": "2024-11-19",
+            "dch_price": 2.1721,
+            "dcl1_date": "2024-11-29",
+            "dcl1_price": 2.0185,
+            "translation": "RIGHT",
+            "failed": true,
+            "length": 20,
+            "intermediate_cycle_start": null
+          },
+          {
+            "cycle_num": null,
+            "dcl0_date": "2024-11-29",
             "dcl0_price": 2.0185,
             "hch_date": "2024-12-05",
             "hch_price": 2.1151,
@@ -1660,14 +1677,14 @@
             "dcl1_price": 2.0975,
             "translation": "RIGHT",
             "failed": false,
-            "length": 31,
+            "length": 28,
             "intermediate_cycle_start": null
           },
           {
             "cycle_num": null,
             "dcl0_date": "2025-01-13",
             "dcl0_price": 2.0975,
-            "hch_date": "2025-01-16",
+            "hch_date": "2025-01-22",
             "hch_price": 2.2204,
             "hcl_date": "2025-01-28",
             "hcl_price": 2.1414,
@@ -2645,7 +2662,7 @@
         "reasons": [
           "RIGHT-translated cycle (Daily Cycle #3 of IC)",
           "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure",
-          "1st Daily Cycle of IC, price recovering off DCL"
+          "1st Daily Cycle of IC, price recovering >2.0% off DCL"
         ],
         "entry_note": "Monitor for confirmation signal",
         "exit_note": "Hold with stop below most recent HCL",
@@ -3099,7 +3116,7 @@
           "risk": "LOW",
           "eligible_for_entry": true,
           "reasons": [
-            "1st Daily Cycle of IC, price recovering off DCL"
+            "1st Daily Cycle of IC, price recovering >2.0% off DCL"
           ]
         },
         "predicted_move": {
@@ -3182,7 +3199,7 @@
           "Price above 50-day SMA \u2014 medium-term uptrend intact",
           "RIGHT-translated cycle (Daily Cycle #3 of IC)",
           "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure",
-          "1st Daily Cycle of IC, price recovering off DCL"
+          "1st Daily Cycle of IC, price recovering >2.0% off DCL"
         ],
         "price": 214.72,
         "entry_price": 208.2784,
@@ -3764,34 +3781,17 @@
             "cycle_num": null,
             "dcl0_date": "2024-09-05",
             "dcl0_price": 6.3052,
-            "hch_date": "2024-10-01",
-            "hch_price": 6.8745,
+            "hch_date": "2024-10-09",
+            "hch_price": 6.8744,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2024-10-01",
             "dch_price": 6.8745,
-            "dcl1_date": "2024-10-08",
-            "dcl1_price": 6.4629,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 23,
-            "intermediate_cycle_start": null
-          },
-          {
-            "cycle_num": null,
-            "dcl0_date": "2024-10-08",
-            "dcl0_price": 6.4629,
-            "hch_date": "2024-10-17",
-            "hch_price": 6.7606,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2024-10-09",
-            "dch_price": 6.8744,
             "dcl1_date": "2024-11-13",
             "dcl1_price": 5.7973,
             "translation": "LEFT",
             "failed": true,
-            "length": 26,
+            "length": 49,
             "intermediate_cycle_start": null
           },
           {
@@ -3849,10 +3849,10 @@
             "cycle_num": 4,
             "dcl0_date": "2025-04-07",
             "dcl0_price": 6.9145,
-            "hch_date": "2025-04-23",
-            "hch_price": 7.615,
-            "hcl_date": "2025-05-01",
-            "hcl_price": 7.3784,
+            "hch_date": "2025-05-12",
+            "hch_price": 7.8879,
+            "hcl_date": null,
+            "hcl_price": null,
             "dch_date": "2025-05-12",
             "dch_price": 7.8879,
             "dcl1_date": "2025-05-14",
@@ -4313,7 +4313,7 @@
           "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
           "\u26a0\ufe0f Trendline BREAK \u2014 closed below HCL support",
           "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure",
-          "1st Daily Cycle of IC, price recovering off DCL"
+          "1st Daily Cycle of IC, price recovering >2.0% off DCL"
         ],
         "entry_note": "Wait for next DCL before entering new positions",
         "exit_note": "Reduce or exit existing longs",
@@ -4322,10 +4322,10 @@
             "cycle_num": null,
             "dcl0_date": "2024-09-04",
             "dcl0_price": 1.5285,
-            "hch_date": "2024-10-07",
-            "hch_price": 2.1734,
-            "hcl_date": null,
-            "hcl_price": null,
+            "hch_date": "2024-09-16",
+            "hch_price": 1.8395,
+            "hcl_date": "2024-09-17",
+            "hcl_price": 1.7329,
             "dch_date": "2024-10-07",
             "dch_price": 2.1734,
             "dcl1_date": "2024-10-09",
@@ -4339,10 +4339,10 @@
             "cycle_num": null,
             "dcl0_date": "2024-10-09",
             "dcl0_price": 1.9923,
-            "hch_date": "2024-10-16",
-            "hch_price": 2.4632,
-            "hcl_date": "2024-10-17",
-            "hcl_price": 2.2458,
+            "hch_date": "2024-10-28",
+            "hch_price": 2.6805,
+            "hcl_date": null,
+            "hcl_price": null,
             "dch_date": "2024-10-28",
             "dch_price": 2.6805,
             "dcl1_date": "2024-10-29",
@@ -4475,7 +4475,7 @@
             "cycle_num": 2,
             "dcl0_date": "2025-05-30",
             "dcl0_price": 2.5855,
-            "hch_date": "2025-06-03",
+            "hch_date": "2025-06-04",
             "hch_price": 2.9456,
             "hcl_date": "2025-06-11",
             "hcl_price": 2.7768,
@@ -4498,16 +4498,16 @@
             "hcl_price": null,
             "dch_date": "2025-06-26",
             "dch_price": 3.7377,
-            "dcl1_date": "2025-07-28",
+            "dcl1_date": "2025-07-23",
             "dcl1_price": 3.1804,
             "translation": "LEFT",
             "failed": false,
-            "length": 26,
+            "length": 23,
             "intermediate_cycle_start": "2025-04-07"
           },
           {
             "cycle_num": 1,
-            "dcl0_date": "2025-07-28",
+            "dcl0_date": "2025-07-23",
             "dcl0_price": 3.1804,
             "hch_date": "2025-08-25",
             "hch_price": 4.4198,
@@ -4519,8 +4519,8 @@
             "dcl1_price": 3.7953,
             "translation": "RIGHT",
             "failed": false,
-            "length": 23,
-            "intermediate_cycle_start": "2025-07-28"
+            "length": 26,
+            "intermediate_cycle_start": "2025-07-23"
           },
           {
             "cycle_num": 2,
@@ -4537,7 +4537,7 @@
             "translation": "RIGHT",
             "failed": false,
             "length": 32,
-            "intermediate_cycle_start": "2025-07-28"
+            "intermediate_cycle_start": "2025-07-23"
           },
           {
             "cycle_num": 3,
@@ -4554,7 +4554,7 @@
             "translation": "RIGHT",
             "failed": true,
             "length": 28,
-            "intermediate_cycle_start": "2025-07-28"
+            "intermediate_cycle_start": "2025-07-23"
           },
           {
             "cycle_num": 4,
@@ -4571,14 +4571,14 @@
             "translation": "LEFT",
             "failed": true,
             "length": 33,
-            "intermediate_cycle_start": "2025-07-28"
+            "intermediate_cycle_start": "2025-07-23"
           },
           {
             "cycle_num": 5,
             "dcl0_date": "2026-01-09",
             "dcl0_price": 3.9721,
-            "hch_date": "2026-01-16",
-            "hch_price": 4.6244,
+            "hch_date": "2026-01-27",
+            "hch_price": 4.3226,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2026-01-16",
@@ -4588,7 +4588,7 @@
             "translation": "LEFT",
             "failed": true,
             "length": 31,
-            "intermediate_cycle_start": "2025-07-28"
+            "intermediate_cycle_start": "2025-07-23"
           },
           {
             "cycle_num": 1,
@@ -4693,11 +4693,11 @@
             "ic_hcl_price": null,
             "ich_date": "2025-06-26",
             "ich_price": 3.7377,
-            "icl1_date": "2025-07-28",
+            "icl1_date": "2025-07-23",
             "icl1_price": 3.1804,
             "translation": "RIGHT",
             "failed": false,
-            "length": 76,
+            "length": 73,
             "daily_cycle_count": 3,
             "member_daily_cycles": [
               "2025-04-07",
@@ -4706,7 +4706,7 @@
             ]
           },
           {
-            "icl0_date": "2025-07-28",
+            "icl0_date": "2025-07-23",
             "icl0_price": 3.1804,
             "ic_hch_date": "2025-09-09",
             "ic_hch_price": 4.6889,
@@ -4718,10 +4718,10 @@
             "icl1_price": 3.1154,
             "translation": "RIGHT",
             "failed": true,
-            "length": 147,
+            "length": 150,
             "daily_cycle_count": 5,
             "member_daily_cycles": [
-              "2025-07-28",
+              "2025-07-23",
               "2025-08-28",
               "2025-10-13",
               "2025-11-20",
@@ -4824,7 +4824,7 @@
           "risk": "LOW",
           "eligible_for_entry": true,
           "reasons": [
-            "1st Daily Cycle of IC, price recovering off DCL"
+            "1st Daily Cycle of IC, price recovering >2.0% off DCL"
           ]
         },
         "predicted_move": {
@@ -4913,7 +4913,7 @@
           "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
           "\u26a0\ufe0f Trendline BREAK \u2014 closed below HCL support",
           "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure",
-          "1st Daily Cycle of IC, price recovering off DCL"
+          "1st Daily Cycle of IC, price recovering >2.0% off DCL"
         ],
         "price": 9.3,
         "entry_price": 9.021,
@@ -5023,9 +5023,9 @@
             "hcl_date": "2024-10-07",
             "hcl_price": 219.4939,
             "dch_date": "2024-10-15",
-            "dch_price": 235.5199,
+            "dch_price": 235.5198,
             "dcl1_date": "2024-11-04",
-            "dcl1_price": 217.8873,
+            "dcl1_price": 217.8874,
             "translation": "RIGHT",
             "failed": false,
             "length": 35,
@@ -5034,7 +5034,7 @@
           {
             "cycle_num": 1,
             "dcl0_date": "2024-11-04",
-            "dcl0_price": 217.8873,
+            "dcl0_price": 217.8874,
             "hch_date": "2024-12-26",
             "hch_price": 258.226,
             "hcl_date": null,
@@ -5053,7 +5053,7 @@
             "dcl0_date": "2025-01-21",
             "dcl0_price": 217.7994,
             "hch_date": "2025-01-31",
-            "hch_price": 245.409,
+            "hch_price": 245.4091,
             "hcl_date": "2025-02-03",
             "hcl_price": 224.0739,
             "dch_date": "2025-02-25",
@@ -5138,13 +5138,13 @@
             "dcl0_date": "2025-10-10",
             "dcl0_price": 243.102,
             "hch_date": "2025-10-31",
-            "hch_price": 276.2994,
+            "hch_price": 276.2993,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2025-10-31",
-            "dch_price": 276.2994,
+            "dch_price": 276.2993,
             "dcl1_date": "2025-11-18",
-            "dcl1_price": 264.5998,
+            "dcl1_price": 264.5997,
             "translation": "RIGHT",
             "failed": false,
             "length": 27,
@@ -5153,7 +5153,7 @@
           {
             "cycle_num": 6,
             "dcl0_date": "2025-11-18",
-            "dcl0_price": 264.5998,
+            "dcl0_price": 264.5997,
             "hch_date": "2025-12-15",
             "hch_price": 279.3895,
             "hcl_date": null,
@@ -5223,7 +5223,7 @@
         "intermediate_cycles": [
           {
             "icl0_date": "2024-11-04",
-            "icl0_price": 217.8873,
+            "icl0_price": 217.8874,
             "ic_hch_date": "2024-12-26",
             "ic_hch_price": 258.226,
             "ic_hcl_date": null,
@@ -5566,7 +5566,7 @@
         "reasons": [
           "LEFT-translated cycle (Daily Cycle #6 of IC)",
           "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
-          "1st Daily Cycle of IC, price recovering off DCL"
+          "1st Daily Cycle of IC, price recovering >2.0% off DCL"
         ],
         "entry_note": "Wait for next DCL before entering new positions",
         "exit_note": "Reduce or exit existing longs",
@@ -5626,11 +5626,11 @@
             "cycle_num": null,
             "dcl0_date": "2025-02-03",
             "dcl0_price": 4.1973,
-            "hch_date": "2025-02-17",
+            "hch_date": "2025-02-18",
             "hch_price": 4.7183,
             "hcl_date": null,
             "hcl_price": null,
-            "dch_date": "2025-02-17",
+            "dch_date": "2025-02-18",
             "dch_price": 4.7183,
             "dcl1_date": "2025-03-11",
             "dcl1_price": 3.939,
@@ -6111,7 +6111,7 @@
           "risk": "LOW",
           "eligible_for_entry": true,
           "reasons": [
-            "1st Daily Cycle of IC, price recovering off DCL"
+            "1st Daily Cycle of IC, price recovering >2.0% off DCL"
           ]
         },
         "predicted_move": {
@@ -6195,7 +6195,7 @@
           "Stock is 25.71% below 52-week high \u2014 discounted",
           "LEFT-translated cycle (Daily Cycle #6 of IC)",
           "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
-          "1st Daily Cycle of IC, price recovering off DCL"
+          "1st Daily Cycle of IC, price recovering >2.0% off DCL"
         ],
         "price": 7.01,
         "entry_price": 6.7997,
@@ -6803,7 +6803,7 @@
         "reasons": [
           "LEFT-translated cycle (Daily Cycle #6 of IC)",
           "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
-          "1st Daily Cycle of IC, price recovering off DCL"
+          "1st Daily Cycle of IC, price recovering >2.0% off DCL"
         ],
         "entry_note": "Wait for next DCL before entering new positions",
         "exit_note": "Reduce or exit existing longs",
@@ -7389,7 +7389,7 @@
           "risk": "LOW",
           "eligible_for_entry": true,
           "reasons": [
-            "1st Daily Cycle of IC, price recovering off DCL"
+            "1st Daily Cycle of IC, price recovering >2.0% off DCL"
           ]
         },
         "predicted_move": {
@@ -7473,7 +7473,7 @@
           "Stock is 25.55% below 52-week high \u2014 discounted",
           "LEFT-translated cycle (Daily Cycle #6 of IC)",
           "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
-          "1st Daily Cycle of IC, price recovering off DCL"
+          "1st Daily Cycle of IC, price recovering >2.0% off DCL"
         ],
         "price": 5.07,
         "entry_price": null,
@@ -8236,7 +8236,7 @@
     },
     {
       "ticker": "MSB.AX",
-      "name": "MESOBLAST FPO [MSB]",
+      "name": "Mesoblast Limited",
       "sector": "Healthcare",
       "market_cap": 3060827648,
       "tech": {
@@ -13036,7 +13036,7 @@
           "LEFT-translated cycle (Daily Cycle #5 of IC)",
           "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
           "\u23f0 85.0% through cycle \u2014 late-cycle, higher risk zone",
-          "1st Daily Cycle of IC, price recovering off DCL"
+          "1st Daily Cycle of IC, price recovering >2.0% off DCL"
         ],
         "entry_note": "Wait for next DCL before entering new positions",
         "exit_note": "Reduce or exit existing longs",
@@ -13603,7 +13603,7 @@
           "risk": "LOW",
           "eligible_for_entry": true,
           "reasons": [
-            "1st Daily Cycle of IC, price recovering off DCL"
+            "1st Daily Cycle of IC, price recovering >2.0% off DCL"
           ]
         },
         "predicted_move": {
@@ -13679,7 +13679,7 @@
           "LEFT-translated cycle (Daily Cycle #5 of IC)",
           "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
           "\u23f0 85.0% through cycle \u2014 late-cycle, higher risk zone",
-          "1st Daily Cycle of IC, price recovering off DCL"
+          "1st Daily Cycle of IC, price recovering >2.0% off DCL"
         ],
         "price": 362.86,
         "entry_price": null,
@@ -13734,9 +13734,9 @@
     },
     {
       "ticker": "AMP.AX",
-      "name": "AMP FPO [AMP]",
+      "name": "AMP Limited",
       "sector": "Financial Services",
-      "market_cap": null,
+      "market_cap": 5814373376,
       "tech": {
         "price": 2.39,
         "price_1d_pct": -0.0,
@@ -13819,70 +13819,70 @@
         "all_cycles": [
           {
             "cycle_num": null,
-            "dcl0_date": "2024-09-05",
+            "dcl0_date": "2024-09-06",
             "dcl0_price": 1.2026,
             "hch_date": "2024-09-13",
             "hch_price": 1.2742,
             "hcl_date": "2024-09-17",
             "hcl_price": 1.2456,
-            "dch_date": "2024-09-20",
+            "dch_date": "2024-09-19",
             "dch_price": 1.2885,
-            "dcl1_date": "2024-10-04",
-            "dcl1_price": 1.2503,
+            "dcl1_date": "2024-09-23",
+            "dcl1_price": 1.2312,
             "translation": "RIGHT",
             "failed": false,
-            "length": 21,
+            "length": 11,
             "intermediate_cycle_start": null
           },
           {
             "cycle_num": null,
-            "dcl0_date": "2024-10-04",
-            "dcl0_price": 1.2503,
-            "hch_date": "2024-10-09",
+            "dcl0_date": "2024-09-23",
+            "dcl0_price": 1.2312,
+            "hch_date": "2024-09-26",
             "hch_price": 1.2885,
-            "hcl_date": "2024-10-11",
-            "hcl_price": 1.2456,
-            "dch_date": "2024-10-17",
-            "dch_price": 1.5224,
-            "dcl1_date": "2024-10-25",
-            "dcl1_price": 1.3338,
+            "hcl_date": "2024-10-04",
+            "hcl_price": 1.2503,
+            "dch_date": "2024-10-09",
+            "dch_price": 1.2885,
+            "dcl1_date": "2024-10-11",
+            "dcl1_price": 1.2456,
             "translation": "RIGHT",
             "failed": false,
-            "length": 15,
+            "length": 14,
             "intermediate_cycle_start": null
           },
           {
             "cycle_num": 1,
-            "dcl0_date": "2024-10-25",
-            "dcl0_price": 1.3338,
-            "hch_date": "2024-11-12",
-            "hch_price": 1.4961,
+            "dcl0_date": "2024-10-11",
+            "dcl0_price": 1.2456,
+            "hch_date": "2024-10-17",
+            "hch_price": 1.5224,
             "hcl_date": null,
             "hcl_price": null,
-            "dch_date": "2024-11-12",
-            "dch_price": 1.4961,
-            "dcl1_date": "2024-11-14",
-            "dcl1_price": 1.4221,
-            "translation": "RIGHT",
+            "dch_date": "2024-10-17",
+            "dch_price": 1.5224,
+            "dcl1_date": "2024-11-21",
+            "dcl1_price": 1.4317,
+            "translation": "LEFT",
             "failed": false,
-            "length": 14,
+            "length": 29,
             "intermediate_cycle_start": "2024-10-11"
           },
           {
             "cycle_num": 2,
-            "dcl0_date": "2024-11-14",
-            "dcl0_price": 1.4221,
-            "hch_date": "2024-11-19",
-            "hch_price": 1.4842,
-            "hcl_date": "2024-11-21",
-            "hcl_price": 1.4317,
+            "dcl0_date": "2024-11-21",
+            "dcl0_price": 1.4317,
+            "hch_date": "2024-12-05",
+            "hch_price": 1.5939,
+            "hcl_date": null,
+            "hcl_price": null,
             "dch_date": "2024-12-05",
             "dch_price": 1.5939,
             "dcl1_date": "2024-12-20",
             "dcl1_price": 1.4746,
-            "translation": "RIGHT",
+            "translation": "LEFT",
             "failed": false,
-            "length": 26,
+            "length": 21,
             "intermediate_cycle_start": "2024-10-11"
           },
           {
@@ -13906,11 +13906,11 @@
             "cycle_num": 4,
             "dcl0_date": "2025-01-13",
             "dcl0_price": 1.4794,
-            "hch_date": "2025-02-03",
+            "hch_date": "2025-01-24",
             "hch_price": 1.7085,
             "hcl_date": null,
             "hcl_price": null,
-            "dch_date": "2025-02-03",
+            "dch_date": "2025-01-24",
             "dch_price": 1.7085,
             "dcl1_date": "2025-02-05",
             "dcl1_price": 1.6154,
@@ -13927,7 +13927,7 @@
             "hch_price": 1.6989,
             "hcl_date": null,
             "hcl_price": null,
-            "dch_date": "2025-02-06",
+            "dch_date": "2025-02-13",
             "dch_price": 1.6989,
             "dcl1_date": "2025-02-24",
             "dcl1_price": 1.2933,
@@ -14076,11 +14076,11 @@
             "cycle_num": 3,
             "dcl0_date": "2025-10-30",
             "dcl0_price": 1.6823,
-            "hch_date": "2025-11-03",
+            "hch_date": "2025-10-31",
             "hch_price": 1.7455,
             "hcl_date": null,
             "hcl_price": null,
-            "dch_date": "2025-11-03",
+            "dch_date": "2025-10-31",
             "dch_price": 1.7455,
             "dcl1_date": "2025-11-19",
             "dcl1_price": 1.551,
@@ -14093,10 +14093,10 @@
             "cycle_num": 1,
             "dcl0_date": "2025-11-19",
             "dcl0_price": 1.551,
-            "hch_date": "2025-12-05",
-            "hch_price": 1.7504,
-            "hcl_date": "2025-12-08",
-            "hcl_price": 1.6872,
+            "hch_date": "2025-12-12",
+            "hch_price": 1.8087,
+            "hcl_date": "2025-12-15",
+            "hcl_price": 1.7455,
             "dch_date": "2025-12-19",
             "dch_price": 1.8233,
             "dcl1_date": "2026-01-09",
@@ -14252,7 +14252,7 @@
             "ic_hch_price": 1.5224,
             "ic_hcl_date": "2025-01-02",
             "ic_hcl_price": 1.4508,
-            "ich_date": "2025-02-03",
+            "ich_date": "2025-01-24",
             "ich_price": 1.7085,
             "icl1_date": "2025-04-07",
             "icl1_price": 0.9999,
@@ -14261,8 +14261,8 @@
             "length": 122,
             "daily_cycle_count": 7,
             "member_daily_cycles": [
-              "2024-10-25",
-              "2024-11-14",
+              "2024-10-11",
+              "2024-11-21",
               "2024-12-20",
               "2025-01-13",
               "2025-02-05",

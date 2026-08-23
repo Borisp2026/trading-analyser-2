@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T09:22:13",
+  "generated_at": "2026-08-23T09:42:27",
   "watchlist_count": 26,
   "candidates": [
     {
@@ -22,6 +22,7 @@
       "stop_price": 9.2218,
       "position_size": 211.4,
       "already_held_real": false,
+      "cooldown_days_remaining": 0,
       "reasons": [
         "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
         "RIGHT-translated cycle (Daily Cycle #2 of IC)",
@@ -120,11 +121,12 @@
       "stop_price": 186.2098,
       "position_size": 753.13,
       "already_held_real": false,
+      "cooldown_days_remaining": 0,
       "reasons": [
-        "1st Daily Cycle of IC, price recovering off DCL",
+        "1st Daily Cycle of IC, price recovering >2.0% off DCL",
         "RIGHT-translated cycle (Daily Cycle #3 of IC)",
         "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure",
-        "1st Daily Cycle of IC, price recovering off DCL"
+        "1st Daily Cycle of IC, price recovering >2.0% off DCL"
       ],
       "chart_overlay": {
         "daily_support_line": [
@@ -206,6 +208,7 @@
       "stop_price": 4.4198,
       "position_size": 213.32,
       "already_held_real": true,
+      "cooldown_days_remaining": 0,
       "reasons": [
         "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
         "LEFT-translated cycle (Daily Cycle #1 of IC)",
@@ -292,6 +295,7 @@
       "stop_price": 8.0417,
       "position_size": 424.48,
       "already_held_real": false,
+      "cooldown_days_remaining": 0,
       "reasons": [
         "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
         "LEFT-translated cycle (Daily Cycle #4 of IC)",
@@ -350,356 +354,6 @@
       },
       "rank": 4,
       "paper_trade_status": "ALREADY_OPEN"
-    },
-    {
-      "ticker": "ILU.AX",
-      "name": "Iluka Resources Limited",
-      "price": 7.01,
-      "sector": "Basic Materials",
-      "cycle_score": 20,
-      "cycle_signal": "CYCLE_AVOID",
-      "entry_zone": "DC1_RECOVERY",
-      "risk": "LOW",
-      "dc_num_in_ic": 1,
-      "predicted_move": {
-        "target_price": 6.1215,
-        "target_basis": "Prior Daily Cycle amplitude 6.5% projected from new DCL0",
-        "prior_cycle_amplitude_pct": 6.46,
-        "bars_to_dc3_estimate": 32,
-        "est_date_dc3": "2026-10-06"
-      },
-      "stop_price": 5.635,
-      "position_size": 509.82,
-      "already_held_real": false,
-      "reasons": [
-        "1st Daily Cycle of IC, price recovering off DCL",
-        "LEFT-translated cycle (Daily Cycle #6 of IC)",
-        "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
-        "1st Daily Cycle of IC, price recovering off DCL"
-      ],
-      "chart_overlay": {
-        "daily_support_line": [
-          {
-            "date": "2026-07-30",
-            "price": 5.75
-          }
-        ],
-        "daily_resistance_line": [
-          {
-            "date": "2026-08-11",
-            "price": 7.49
-          },
-          {
-            "date": "2026-08-11",
-            "price": 7.49
-          }
-        ],
-        "intermediate_support_line": [
-          {
-            "date": "2026-07-30",
-            "price": 5.75
-          }
-        ],
-        "intermediate_resistance_line": [
-          {
-            "date": "2026-08-11",
-            "price": 7.49
-          }
-        ],
-        "daily_markers": {
-          "dcl0": {
-            "date": "2026-07-30",
-            "price": 5.75
-          },
-          "hch": {
-            "date": "2026-08-11",
-            "price": 7.49
-          },
-          "dch": {
-            "date": "2026-08-11",
-            "price": 7.49
-          }
-        },
-        "intermediate_markers": {
-          "dcl0": {
-            "date": "2026-07-30",
-            "price": 5.75
-          },
-          "dch": {
-            "date": "2026-08-11",
-            "price": 7.49
-          }
-        },
-        "entry_price": 7.01,
-        "stop_price": 5.635,
-        "target_price": 6.1215
-      },
-      "rank": 5,
-      "paper_trade_status": "OPENED_THIS_RUN"
-    },
-    {
-      "ticker": "PLS.AX",
-      "name": "PLS Group Limited",
-      "price": 5.07,
-      "sector": "Basic Materials",
-      "cycle_score": 20,
-      "cycle_signal": "CYCLE_AVOID",
-      "entry_zone": "DC1_RECOVERY",
-      "risk": "LOW",
-      "dc_num_in_ic": 1,
-      "predicted_move": {
-        "target_price": 4.4001,
-        "target_basis": "Prior Daily Cycle amplitude 10.8% projected from new DCL0",
-        "prior_cycle_amplitude_pct": 10.83,
-        "bars_to_dc3_estimate": 35,
-        "est_date_dc3": "2026-10-09"
-      },
-      "stop_price": 3.8906,
-      "position_size": 429.88,
-      "already_held_real": false,
-      "reasons": [
-        "1st Daily Cycle of IC, price recovering off DCL",
-        "LEFT-translated cycle (Daily Cycle #6 of IC)",
-        "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
-        "1st Daily Cycle of IC, price recovering off DCL"
-      ],
-      "chart_overlay": {
-        "daily_support_line": [
-          {
-            "date": "2026-07-29",
-            "price": 3.97
-          }
-        ],
-        "daily_resistance_line": [
-          {
-            "date": "2026-08-17",
-            "price": 5.15
-          },
-          {
-            "date": "2026-08-17",
-            "price": 5.15
-          }
-        ],
-        "intermediate_support_line": [
-          {
-            "date": "2026-07-29",
-            "price": 3.97
-          }
-        ],
-        "intermediate_resistance_line": [
-          {
-            "date": "2026-08-17",
-            "price": 5.15
-          }
-        ],
-        "daily_markers": {
-          "dcl0": {
-            "date": "2026-07-29",
-            "price": 3.97
-          },
-          "hch": {
-            "date": "2026-08-17",
-            "price": 5.15
-          },
-          "dch": {
-            "date": "2026-08-17",
-            "price": 5.15
-          }
-        },
-        "intermediate_markers": {
-          "dcl0": {
-            "date": "2026-07-29",
-            "price": 3.97
-          },
-          "dch": {
-            "date": "2026-08-17",
-            "price": 5.15
-          }
-        },
-        "entry_price": 5.07,
-        "stop_price": 3.8906,
-        "target_price": 4.4001
-      },
-      "rank": 6,
-      "paper_trade_status": "NOT_OPENED"
-    },
-    {
-      "ticker": "MSB.AX",
-      "name": "MESOBLAST FPO [MSB]",
-      "price": 2.36,
-      "sector": "Healthcare",
-      "cycle_score": 10,
-      "cycle_signal": "CYCLE_AVOID",
-      "entry_zone": "DC1_HCL",
-      "risk": "LOW",
-      "dc_num_in_ic": 1,
-      "predicted_move": {
-        "target_price": 2.2627,
-        "target_basis": "Prior Daily Cycle amplitude 20.4% projected from new DCL0",
-        "prior_cycle_amplitude_pct": 20.36,
-        "bars_to_dc3_estimate": 68,
-        "est_date_dc3": "2026-11-25"
-      },
-      "stop_price": 1.9551,
-      "position_size": 582.86,
-      "already_held_real": true,
-      "reasons": [
-        "At/above 1st Daily Cycle HCL, trendline drawable",
-        "LEFT-translated cycle (Daily Cycle #2 of IC)",
-        "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
-        "\u23f0 74.1% through cycle \u2014 late-cycle, higher risk zone",
-        "At/above 1st Daily Cycle HCL, trendline drawable"
-      ],
-      "chart_overlay": {
-        "daily_support_line": [
-          {
-            "date": "2026-06-26",
-            "price": 1.88
-          },
-          {
-            "date": "2026-07-30",
-            "price": 1.995
-          },
-          {
-            "date": "2026-08-21",
-            "price": 2.0717
-          }
-        ],
-        "daily_resistance_line": [
-          {
-            "date": "2026-07-16",
-            "price": 2.78
-          },
-          {
-            "date": "2026-07-16",
-            "price": 2.78
-          }
-        ],
-        "intermediate_support_line": [
-          {
-            "date": "2026-06-26",
-            "price": 1.88
-          }
-        ],
-        "intermediate_resistance_line": [
-          {
-            "date": "2026-07-16",
-            "price": 2.78
-          }
-        ],
-        "daily_markers": {
-          "dcl0": {
-            "date": "2026-06-26",
-            "price": 1.88
-          },
-          "hch": {
-            "date": "2026-07-16",
-            "price": 2.78
-          },
-          "hcl": {
-            "date": "2026-07-30",
-            "price": 1.995
-          },
-          "dch": {
-            "date": "2026-07-16",
-            "price": 2.78
-          }
-        },
-        "intermediate_markers": {
-          "dcl0": {
-            "date": "2026-06-26",
-            "price": 1.88
-          },
-          "dch": {
-            "date": "2026-07-16",
-            "price": 2.78
-          }
-        },
-        "entry_price": 2.36,
-        "stop_price": 1.9551,
-        "target_price": 2.2627
-      },
-      "rank": 7,
-      "paper_trade_status": "SKIPPED_ALREADY_HELD_REAL"
-    },
-    {
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "price": 362.86,
-      "sector": "Consumer Cyclical",
-      "cycle_score": 10,
-      "cycle_signal": "CYCLE_AVOID",
-      "entry_zone": "DC1_RECOVERY",
-      "risk": "LOW",
-      "dc_num_in_ic": 1,
-      "predicted_move": {
-        "target_price": 349.2238,
-        "target_basis": "Prior Daily Cycle amplitude 17.4% projected from new DCL0",
-        "prior_cycle_amplitude_pct": 17.43,
-        "bars_to_dc3_estimate": 23,
-        "est_date_dc3": "2026-09-23"
-      },
-      "stop_price": 291.4324,
-      "position_size": 508.01,
-      "already_held_real": false,
-      "reasons": [
-        "1st Daily Cycle of IC, price recovering off DCL",
-        "LEFT-translated cycle (Daily Cycle #5 of IC)",
-        "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
-        "\u23f0 85.0% through cycle \u2014 late-cycle, higher risk zone",
-        "1st Daily Cycle of IC, price recovering off DCL"
-      ],
-      "chart_overlay": {
-        "daily_support_line": [
-          {
-            "date": "2026-07-29",
-            "price": 297.38
-          }
-        ],
-        "daily_resistance_line": [
-          {
-            "date": "2026-08-21",
-            "price": 366.5
-          }
-        ],
-        "intermediate_support_line": [
-          {
-            "date": "2026-07-29",
-            "price": 297.38
-          }
-        ],
-        "intermediate_resistance_line": [
-          {
-            "date": "2026-08-21",
-            "price": 366.5
-          }
-        ],
-        "daily_markers": {
-          "dcl0": {
-            "date": "2026-07-29",
-            "price": 297.38
-          },
-          "dch": {
-            "date": "2026-08-21",
-            "price": 366.5
-          }
-        },
-        "intermediate_markers": {
-          "dcl0": {
-            "date": "2026-07-29",
-            "price": 297.38
-          },
-          "dch": {
-            "date": "2026-08-21",
-            "price": 366.5
-          }
-        },
-        "entry_price": 362.86,
-        "stop_price": 291.4324,
-        "target_price": 349.2238
-      },
-      "rank": 8,
-      "paper_trade_status": "NOT_OPENED"
     }
   ],
   "failed_cycle_alerts": [
@@ -737,7 +391,7 @@
     },
     {
       "ticker": "MSB.AX",
-      "name": "MESOBLAST FPO [MSB]",
+      "name": "Mesoblast Limited",
       "price": 2.36,
       "type": "completed_cycle_failed",
       "dcl0_price": 1.88,
@@ -890,7 +544,7 @@
     },
     {
       "ticker": "AMP.AX",
-      "name": "AMP FPO [AMP]",
+      "name": "AMP Limited",
       "price": 2.39,
       "dc_num_in_ic": 4,
       "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
@@ -1214,15 +868,189 @@
         "stop_price": 8.0417,
         "target_price": 10.9763
       }
+    }
+  ],
+  "closed_trades": [
+    {
+      "ticker": "NVDA",
+      "shares": 8.925,
+      "buy_price": 224.09,
+      "buy_date": "2026-08-13",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 160.7972,
+      "target_price": 214.6272,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "entered_dc_num": 4,
+        "entered_score": 72
+      },
+      "sell_price": 219.74,
+      "sell_date": "2026-08-19",
+      "pnl": -38.82,
+      "pnl_pct": -1.94,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4",
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-07-29",
+            "price": 190.01
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-17",
+            "price": 227.92
+          },
+          {
+            "date": "2026-08-17",
+            "price": 227.92
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-07-29",
+            "price": 190.01
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-08-17",
+            "price": 227.92
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-07-29",
+            "price": 190.01
+          },
+          "hch": {
+            "date": "2026-08-17",
+            "price": 227.92
+          },
+          "dch": {
+            "date": "2026-08-17",
+            "price": 227.92
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-07-29",
+            "price": 190.01
+          },
+          "dch": {
+            "date": "2026-08-17",
+            "price": 227.92
+          }
+        },
+        "entry_price": 224.09,
+        "stop_price": 160.7972,
+        "target_price": 214.6272
+      }
+    },
+    {
+      "ticker": "CMM.AX",
+      "shares": 121.2121,
+      "buy_price": 16.5,
+      "buy_date": "2026-08-17",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 9.2218,
+      "target_price": 15.5274,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "entered_dc_num": 3,
+        "entered_score": 80
+      },
+      "sell_price": 16.05,
+      "sell_date": "2026-08-18",
+      "pnl": -54.55,
+      "pnl_pct": -2.73,
+      "close_reason": "TRENDLINE_BREAK",
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-07-20",
+            "price": 11.48
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-21",
+            "price": 17.87
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-03-23",
+            "price": 9.41
+          },
+          {
+            "date": "2026-06-11",
+            "price": 10.75
+          },
+          {
+            "date": "2026-08-21",
+            "price": 11.9925
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-05-27",
+            "price": 14.62
+          },
+          {
+            "date": "2026-08-21",
+            "price": 17.87
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-07-20",
+            "price": 11.48
+          },
+          "dch": {
+            "date": "2026-08-21",
+            "price": 17.87
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-03-23",
+            "price": 9.41
+          },
+          "hch": {
+            "date": "2026-05-27",
+            "price": 14.62
+          },
+          "hcl": {
+            "date": "2026-06-11",
+            "price": 10.75
+          },
+          "dch": {
+            "date": "2026-08-21",
+            "price": 17.87
+          }
+        },
+        "entry_price": 16.5,
+        "stop_price": 9.2218,
+        "target_price": 15.5274
+      }
     },
     {
       "ticker": "ILU.AX",
-      "shares": 72.7275,
-      "buy_price": 7.01,
-      "buy_date": "2026-08-23",
+      "shares": 64.7242,
+      "buy_price": 7.18,
+      "buy_date": "2026-08-17",
       "signal": "CYCLE_BUY",
       "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 5.635,
       "target_price": 6.1215,
@@ -1233,7 +1061,570 @@
         "entered_dc_num": 1,
         "entered_score": 20
       },
-      "_current_price": 7.01,
+      "sell_price": 7.09,
+      "sell_date": "2026-08-18",
+      "pnl": -5.83,
+      "pnl_pct": -1.25,
+      "close_reason": "FAILED_CYCLE",
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 5.75
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          },
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 5.75
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 5.75
+          },
+          "hch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          },
+          "dch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 5.75
+          },
+          "dch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        },
+        "entry_price": 7.18,
+        "stop_price": 5.635,
+        "target_price": 6.1215
+      }
+    },
+    {
+      "ticker": "AMP.AX",
+      "shares": 108.2128,
+      "buy_price": 2.35,
+      "buy_date": "2026-08-18",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 1.4259,
+      "target_price": 3.0754,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Financial Services",
+        "entered_dc_num": 3,
+        "entered_score": 80
+      },
+      "sell_price": 2.39,
+      "sell_date": "2026-08-21",
+      "pnl": 4.33,
+      "pnl_pct": 1.7,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4",
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-08-18",
+            "price": 2.2216
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-21",
+            "price": 2.41
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-06-04",
+            "price": 1.4367
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-08-07",
+            "price": 2.4191
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-08-18",
+            "price": 2.2216
+          },
+          "dch": {
+            "date": "2026-08-21",
+            "price": 2.41
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-06-04",
+            "price": 1.4367
+          },
+          "dch": {
+            "date": "2026-08-07",
+            "price": 2.4191
+          }
+        },
+        "entry_price": 2.35,
+        "stop_price": 1.4259,
+        "target_price": 3.0754
+      }
+    },
+    {
+      "ticker": "ILU.AX",
+      "shares": 68.7292,
+      "buy_price": 7.09,
+      "buy_date": "2026-08-18",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 5.635,
+      "target_price": 6.1215,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      },
+      "sell_price": 6.93,
+      "sell_date": "2026-08-19",
+      "pnl": -11.0,
+      "pnl_pct": -2.26,
+      "close_reason": "FAILED_CYCLE",
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 5.75
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          },
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 5.75
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 5.75
+          },
+          "hch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          },
+          "dch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 5.75
+          },
+          "dch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        },
+        "entry_price": 7.09,
+        "stop_price": 5.635,
+        "target_price": 6.1215
+      }
+    },
+    {
+      "ticker": "ILU.AX",
+      "shares": 77.2208,
+      "buy_price": 6.93,
+      "buy_date": "2026-08-19",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #5 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 5.635,
+      "target_price": 6.1215,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      },
+      "sell_price": 7.05,
+      "sell_date": "2026-08-20",
+      "pnl": 9.27,
+      "pnl_pct": 1.73,
+      "close_reason": "FAILED_CYCLE",
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 5.75
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          },
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 5.75
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 5.75
+          },
+          "hch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          },
+          "dch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 5.75
+          },
+          "dch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        },
+        "entry_price": 6.93,
+        "stop_price": 5.635,
+        "target_price": 6.1215
+      }
+    },
+    {
+      "ticker": "PLS.AX",
+      "shares": 115.021,
+      "buy_price": 4.76,
+      "buy_date": "2026-08-19",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 3.8906,
+      "target_price": 4.4001,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      },
+      "sell_price": 4.83,
+      "sell_date": "2026-08-20",
+      "pnl": 8.05,
+      "pnl_pct": 1.47,
+      "close_reason": "FAILED_CYCLE",
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-07-29",
+            "price": 3.97
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-17",
+            "price": 5.15
+          },
+          {
+            "date": "2026-08-17",
+            "price": 5.15
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-07-29",
+            "price": 3.97
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-08-17",
+            "price": 5.15
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-07-29",
+            "price": 3.97
+          },
+          "hch": {
+            "date": "2026-08-17",
+            "price": 5.15
+          },
+          "dch": {
+            "date": "2026-08-17",
+            "price": 5.15
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-07-29",
+            "price": 3.97
+          },
+          "dch": {
+            "date": "2026-08-17",
+            "price": 5.15
+          }
+        },
+        "entry_price": 4.76,
+        "stop_price": 3.8906,
+        "target_price": 4.4001
+      }
+    },
+    {
+      "ticker": "ILU.AX",
+      "shares": 70.6709,
+      "buy_price": 7.05,
+      "buy_date": "2026-08-20",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #5 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 5.635,
+      "target_price": 6.1215,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      },
+      "sell_price": 7.01,
+      "sell_date": "2026-08-21",
+      "pnl": -2.83,
+      "pnl_pct": -0.57,
+      "close_reason": "FAILED_CYCLE",
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 5.75
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          },
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 5.75
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 5.75
+          },
+          "hch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          },
+          "dch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 5.75
+          },
+          "dch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        },
+        "entry_price": 7.05,
+        "stop_price": 5.635,
+        "target_price": 6.1215
+      }
+    },
+    {
+      "ticker": "ILU.AX",
+      "shares": 72.7275,
+      "buy_price": 7.01,
+      "buy_date": "2026-08-21",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 5.635,
+      "target_price": 6.1215,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      },
+      "sell_price": 7.01,
+      "sell_date": "2026-08-23",
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "close_reason": "FAILED_CYCLE",
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 5.75
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          },
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 5.75
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 5.75
+          },
+          "hch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          },
+          "dch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 5.75
+          },
+          "dch": {
+            "date": "2026-08-11",
+            "price": 7.49
+          }
+        },
+        "entry_price": 7.01,
+        "stop_price": 5.635,
+        "target_price": 6.1215
+      }
+    },
+    {
+      "ticker": "ILU.AX",
+      "shares": 72.7275,
+      "buy_price": 7.01,
+      "buy_date": "2026-08-23",
+      "signal": "CYCLE_BUY",
+      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 5.635,
+      "target_price": 6.1215,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_RECOVERY",
+        "sector": "Basic Materials",
+        "entered_dc_num": 1,
+        "entered_score": 20
+      },
+      "sell_price": 7.01,
+      "sell_date": "2026-08-23",
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "close_reason": "FAILED_CYCLE",
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -1293,245 +1684,6 @@
       }
     }
   ],
-  "closed_trades": [
-    {
-      "ticker": "MSFT",
-      "shares": 4.0528,
-      "buy_price": 493.49,
-      "buy_date": "2026-08-12",
-      "signal": "CYCLE_BUY",
-      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #1 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 342.216,
-      "target_price": 438.7645,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
-        "entered_dc_num": 2,
-        "entered_score": 80
-      },
-      "sell_price": 484.31,
-      "sell_date": "2026-08-20",
-      "pnl": -37.2,
-      "pnl_pct": -1.86,
-      "close_reason": "FAILED_CYCLE"
-    },
-    {
-      "ticker": "NVDA",
-      "shares": 8.925,
-      "buy_price": 224.09,
-      "buy_date": "2026-08-13",
-      "signal": "CYCLE_BUY",
-      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 160.7972,
-      "target_price": 214.6272,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
-        "entered_dc_num": 4,
-        "entered_score": 72
-      },
-      "sell_price": 219.74,
-      "sell_date": "2026-08-19",
-      "pnl": -38.82,
-      "pnl_pct": -1.94,
-      "close_reason": "HIGH_RISK_ZONE_DC3_4"
-    },
-    {
-      "ticker": "CMM.AX",
-      "shares": 121.2121,
-      "buy_price": 16.5,
-      "buy_date": "2026-08-17",
-      "signal": "CYCLE_BUY",
-      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 9.2218,
-      "target_price": 15.5274,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
-        "entered_dc_num": 3,
-        "entered_score": 80
-      },
-      "sell_price": 16.05,
-      "sell_date": "2026-08-18",
-      "pnl": -54.55,
-      "pnl_pct": -2.73,
-      "close_reason": "TRENDLINE_BREAK"
-    },
-    {
-      "ticker": "ILU.AX",
-      "shares": 64.7242,
-      "buy_price": 7.18,
-      "buy_date": "2026-08-17",
-      "signal": "CYCLE_BUY",
-      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 5.635,
-      "target_price": 6.1215,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "DC1_RECOVERY",
-        "sector": "Basic Materials",
-        "entered_dc_num": 1,
-        "entered_score": 20
-      },
-      "sell_price": 7.09,
-      "sell_date": "2026-08-18",
-      "pnl": -5.83,
-      "pnl_pct": -1.25,
-      "close_reason": "FAILED_CYCLE"
-    },
-    {
-      "ticker": "AMP.AX",
-      "shares": 108.2128,
-      "buy_price": 2.35,
-      "buy_date": "2026-08-18",
-      "signal": "CYCLE_BUY",
-      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 1.4259,
-      "target_price": 3.0754,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
-        "sector": "Financial Services",
-        "entered_dc_num": 3,
-        "entered_score": 80
-      },
-      "sell_price": 2.39,
-      "sell_date": "2026-08-21",
-      "pnl": 4.33,
-      "pnl_pct": 1.7,
-      "close_reason": "HIGH_RISK_ZONE_DC3_4"
-    },
-    {
-      "ticker": "ILU.AX",
-      "shares": 68.7292,
-      "buy_price": 7.09,
-      "buy_date": "2026-08-18",
-      "signal": "CYCLE_BUY",
-      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 5.635,
-      "target_price": 6.1215,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "DC1_RECOVERY",
-        "sector": "Basic Materials",
-        "entered_dc_num": 1,
-        "entered_score": 20
-      },
-      "sell_price": 6.93,
-      "sell_date": "2026-08-19",
-      "pnl": -11.0,
-      "pnl_pct": -2.26,
-      "close_reason": "FAILED_CYCLE"
-    },
-    {
-      "ticker": "ILU.AX",
-      "shares": 77.2208,
-      "buy_price": 6.93,
-      "buy_date": "2026-08-19",
-      "signal": "CYCLE_BUY",
-      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #5 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 5.635,
-      "target_price": 6.1215,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "DC1_RECOVERY",
-        "sector": "Basic Materials",
-        "entered_dc_num": 1,
-        "entered_score": 20
-      },
-      "sell_price": 7.05,
-      "sell_date": "2026-08-20",
-      "pnl": 9.27,
-      "pnl_pct": 1.73,
-      "close_reason": "FAILED_CYCLE"
-    },
-    {
-      "ticker": "PLS.AX",
-      "shares": 115.021,
-      "buy_price": 4.76,
-      "buy_date": "2026-08-19",
-      "signal": "CYCLE_BUY",
-      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 3.8906,
-      "target_price": 4.4001,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "DC1_RECOVERY",
-        "sector": "Basic Materials",
-        "entered_dc_num": 1,
-        "entered_score": 20
-      },
-      "sell_price": 4.83,
-      "sell_date": "2026-08-20",
-      "pnl": 8.05,
-      "pnl_pct": 1.47,
-      "close_reason": "FAILED_CYCLE"
-    },
-    {
-      "ticker": "ILU.AX",
-      "shares": 70.6709,
-      "buy_price": 7.05,
-      "buy_date": "2026-08-20",
-      "signal": "CYCLE_BUY",
-      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #5 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 5.635,
-      "target_price": 6.1215,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "DC1_RECOVERY",
-        "sector": "Basic Materials",
-        "entered_dc_num": 1,
-        "entered_score": 20
-      },
-      "sell_price": 7.01,
-      "sell_date": "2026-08-21",
-      "pnl": -2.83,
-      "pnl_pct": -0.57,
-      "close_reason": "FAILED_CYCLE"
-    },
-    {
-      "ticker": "ILU.AX",
-      "shares": 72.7275,
-      "buy_price": 7.01,
-      "buy_date": "2026-08-21",
-      "signal": "CYCLE_BUY",
-      "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 5.635,
-      "target_price": 6.1215,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "DC1_RECOVERY",
-        "sector": "Basic Materials",
-        "entered_dc_num": 1,
-        "entered_score": 20
-      },
-      "sell_price": 7.01,
-      "sell_date": "2026-08-23",
-      "pnl": 0.0,
-      "pnl_pct": 0.0,
-      "close_reason": "FAILED_CYCLE"
-    }
-  ],
   "drawdown": {
     "realized_pnl": -196.39,
     "unrealized_pnl": 208.53,
@@ -1547,16 +1699,6 @@
         "exit_price": 7.01
       }
     ],
-    "opened": [
-      {
-        "ticker": "ILU.AX",
-        "entry_price": 7.01,
-        "shares": 72.7275,
-        "position_cost": 509.82,
-        "sector": "Basic Materials",
-        "stop_price": 5.635,
-        "target_price": 6.1215
-      }
-    ]
+    "opened": []
   }
 }

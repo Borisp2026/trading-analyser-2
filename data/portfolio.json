@@ -494,7 +494,7 @@
       "buy_date": "2026-08-23",
       "signal": "CYCLE_BUY",
       "reason": "1st Daily Cycle of IC, price recovering off DCL; LEFT-translated cycle (Daily Cycle #6 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 5.635,
       "target_price": 6.1215,
@@ -504,10 +504,15 @@
         "sector": "Basic Materials",
         "entered_dc_num": 1,
         "entered_score": 20
-      }
+      },
+      "sell_price": 7.01,
+      "sell_date": "2026-08-23",
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "close_reason": "FAILED_CYCLE"
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 5965.144571999998,
+  "paper_cash": 6474.964346999998,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
