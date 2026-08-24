@@ -536,7 +536,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP â momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP Ã¢ÂÂ momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -555,7 +555,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP — momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP â momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -566,6 +566,25 @@
         "confidence": "HIGH",
         "blended_score": 72.8,
         "source": "nightly"
+      }
+    },
+    {
+      "ticker": "GMD.AX",
+      "shares": 116.6861,
+      "buy_price": 8.57,
+      "buy_date": "2026-08-24",
+      "signal": "CYCLE_CYCLE_HOLD",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #1 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 4.4198,
+      "target_price": 7.563,
+      "meta": {
+        "strategy": "suggested_trades",
+        "entry_type": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "confidence": null,
+        "blended_score": 55,
+        "source": "cycle_trading_idea"
       }
     }
   ],
