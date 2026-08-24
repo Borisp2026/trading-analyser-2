@@ -330,7 +330,7 @@
       },
       "sell_price": 6.93,
       "sell_date": "2026-08-19",
-      "pnl": -11.0,
+      "pnl": -11,
       "pnl_pct": -2.26,
       "close_reason": "FAILED_CYCLE"
     },
@@ -483,8 +483,8 @@
       },
       "sell_price": 7.01,
       "sell_date": "2026-08-23",
-      "pnl": 0.0,
-      "pnl_pct": 0.0,
+      "pnl": 0,
+      "pnl_pct": 0,
       "close_reason": "FAILED_CYCLE"
     },
     {
@@ -507,8 +507,8 @@
       },
       "sell_price": 7.01,
       "sell_date": "2026-08-23",
-      "pnl": 0.0,
-      "pnl_pct": 0.0,
+      "pnl": 0,
+      "pnl_pct": 0,
       "close_reason": "FAILED_CYCLE"
     },
     {
@@ -528,6 +528,25 @@
         "sector": "Industrials",
         "entered_dc_num": 2,
         "entered_score": 80
+      }
+    },
+    {
+      "ticker": "TEA.AX",
+      "shares": 106.1571,
+      "buy_price": 9.42,
+      "buy_date": "2026-08-24",
+      "signal": "STRONG BUY",
+      "reason": "RSI 58.13 neutral; RSI trending UP — momentum building",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 8.3061,
+      "target_price": 10,
+      "meta": {
+        "strategy": "suggested_trades",
+        "entry_type": "Limit order ~1% below current price",
+        "confidence": "HIGH",
+        "blended_score": 72.8,
+        "source": "nightly"
       }
     }
   ],
