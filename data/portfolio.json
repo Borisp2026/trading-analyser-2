@@ -510,9 +510,28 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "TEA.AX",
+      "shares": 61.3875,
+      "buy_price": 9.42,
+      "buy_date": "2026-08-24",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #1 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 7.791,
+      "target_price": 11.0613,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Industrials",
+        "entered_dc_num": 2,
+        "entered_score": 80
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 6474.964346999998,
+  "paper_cash": 5896.694096999998,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
