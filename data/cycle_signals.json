@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T15:00:11",
+  "generated_at": "2026-08-24T15:17:13",
   "watchlist_count": 26,
   "candidates": [
     {
@@ -187,7 +187,7 @@
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 209.69,
+      "price": 209.26,
       "sector": "Technology",
       "cycle_score": 57,
       "cycle_signal": "CYCLE_HOLD",
@@ -202,7 +202,7 @@
         "est_date_dc3": "2026-10-21"
       },
       "stop_price": 186.2098,
-      "position_size": 893.05,
+      "position_size": 907.84,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -264,7 +264,7 @@
             "price": 227.92
           }
         },
-        "entry_price": 209.69,
+        "entry_price": 209.26,
         "stop_price": 186.2098,
         "target_price": 214.6272
       },
@@ -483,14 +483,14 @@
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 488.2401,
+      "price": 487.97,
       "type": "completed_cycle_failed",
       "dcl0_price": 348.5439,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
       "ticker": "MSB.AX",
-      "name": "MESOBLAST FPO [MSB]",
+      "name": "Mesoblast Limited",
       "price": 2.35,
       "type": "completed_cycle_failed",
       "dcl0_price": 1.88,
@@ -547,7 +547,7 @@
     {
       "ticker": "TSLA",
       "name": "Tesla, Inc.",
-      "price": 358.19,
+      "price": 358.01,
       "type": "completed_cycle_failed",
       "dcl0_price": 297.38,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
@@ -578,7 +578,7 @@
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 456.46,
+      "price": 456.49,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
@@ -598,7 +598,7 @@
     },
     {
       "ticker": "AMP.AX",
-      "name": "AMP FPO [AMP]",
+      "name": "AMP Limited",
       "price": 2.35,
       "dc_num_in_ic": 4,
       "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
@@ -813,7 +813,7 @@
         "entered_dc_num": 1,
         "entered_score": 57
       },
-      "_current_price": 209.69,
+      "_current_price": 209.26,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -1831,8 +1831,8 @@
   ],
   "drawdown": {
     "realized_pnl": -196.39,
-    "unrealized_pnl": 263.11,
-    "total_pnl": 66.72,
+    "unrealized_pnl": 261.74,
+    "total_pnl": 65.35,
     "drawdown_pct": 0.0,
     "halted": false
   },
