@@ -1145,6 +1145,8 @@ function normalizeAgentTrades(d){
 }
 function fmtMoney(v){ return v==null ? '—' : '$'+Number(v).toFixed(2); }
 function fmtPct(v){ return v==null ? '—' : (v>=0?'+':'')+v.toFixed(2)+'%'; }
+function profitLevel(v,pct){ return v==null ? '—' : '$'+(Number(v)*(1+pct/100)).toFixed(3); }
+function profitLevels(v){ return v==null ? '—' : profitLevel(v,5)+' / '+profitLevel(v,10); }
 function chartButton(r){
   const btn='<button class="btn-primary" style="padding:2px 8px;font-size:10px;margin-left:4px" onclick="%ONCLICK%">📈</button>';
   const onclick = r.source==='Cycle Trading'
@@ -1255,11 +1257,12 @@ function renderSuggestionCards(){
       +'<span style="color:'+col+';font-size:12px;margin-left:8px;font-weight:bold">'+(s.recommendation||'')+'</span>'
       +'<span style="color:#888;font-size:11px;margin-left:8px">confidence: '+(s.confidence||'—')+'</span></div>'
       +'<span style="font-size:26px;font-weight:bold;color:'+col+'">'+(s.blended_score!=null?s.blended_score:'—')+'</span></div>'
-      +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
+      +'<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
       +'<div><div style="color:#666">Price</div><div style="color:#ccc">'+fmtMoney(s.price)+'</div></div>'
       +'<div><div style="color:#666">Suggested Entry</div><div style="color:#4a90d9">'+fmtMoney(s.entry_price)+'</div></div>'
       +'<div><div style="color:#666">Stop</div><div style="color:#cc0000">'+fmtMoney(s.stop_loss)+'</div></div>'
-      +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+fmtMoney(s.take_profit)+(s.risk_reward!=null?' (R:R '+s.risk_reward+')':'')+'</div></div></div>'
+      +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+fmtMoney(s.take_profit)+(s.risk_reward!=null?' (R:R '+s.risk_reward+')':'')+'</div></div>'
+      +'<div><div style="color:#666">+5% / +10%</div><div style="color:#888;font-size:10px">'+profitLevels(s.price)+'</div></div></div>'
       +'<div style="font-size:11px;color:#aaa;margin-bottom:6px"><b>Entry:</b> '+(s.entry_type||'—')+'</div>'
       +'<div style="font-size:11px;color:#aaa;margin-bottom:6px"><b>Exit guide:</b> '+(s.stop_note||'')+(s.timing?' | '+s.timing:'')+'</div>'
       +'<div style="font-size:11px;color:#888;margin-bottom:10px">'+(s.reasons||[]).join(' | ')+'</div>'
@@ -1270,11 +1273,12 @@ function renderSuggestionCards(){
 }
 async function renderSuggestionsTab(){
   renderSuggestionCards();
+  renderCycleIdeas();
   if(_liveIdeas.length) renderLiveIdeas();
   const openBody=document.getElementById('ideasOpenBody');
   const ovEl=document.getElementById('ideasOverviewGrid');
   if(!getToken()){
-    if(openBody) openBody.innerHTML='<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">Set your GitHub token on the Token tab to view live positions and use Buy/Sell.</td></tr>';
+    if(openBody) openBody.innerHTML='<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Set your GitHub token on the Token tab to view live positions and use Buy/Sell.</td></tr>';
     if(ovEl) ovEl.innerHTML='<div class="stat-card"><div class="stat-label">Budget</div><div class="stat-value">$'+IDEAS_BUDGET.toLocaleString()+'</div></div>';
     return;
   }
@@ -1295,25 +1299,41 @@ async function renderSuggestionsTab(){
       '<tr><td><b>'+t.ticker+'</b></td><td>'+fmtMoney(t.buy_price)+'</td><td>'+t.shares+'</td>'
       +'<td>'+fmtMoney(t.shares*t.buy_price)+'</td>'
       +'<td style="color:#cc0000">'+fmtMoney(t.stop_price)+'</td><td style="color:#44bb44">'+fmtMoney(t.target_price)+'</td>'
+      +'<td style="font-size:11px;color:#888">'+profitLevel(t.buy_price,5)+'</td>'
+      +'<td style="font-size:11px;color:#888">'+profitLevel(t.buy_price,10)+'</td>'
       +'<td style="font-size:11px;color:#888">'+(t.buy_date||'—')+'</td>'
       +'<td><button class="btn-primary" style="padding:4px 10px;font-size:11px" onclick="sellIdea(\''+t.ticker+'\')">Sell</button></td></tr>'
-    ).join('') : '<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">No open Trade Ideas positions</td></tr>';
+    ).join('') : '<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">No open Trade Ideas positions</td></tr>';
   }catch(e){
-    if(openBody) openBody.innerHTML='<tr><td colspan="8" style="color:#cc0000;text-align:center;padding:20px">Error loading: '+e.message+'</td></tr>';
+    if(openBody) openBody.innerHTML='<tr><td colspan="10" style="color:#cc0000;text-align:center;padding:20px">Error loading: '+e.message+'</td></tr>';
   }
 }
-async function executeIdeaBuy(idea){
+async function executeIdeaBuy(idea, opts){
+  opts = opts || {};
   if(!idea || !idea.price){alert('No data for '+(idea&&idea.ticker));return;}
   if(!getToken()){alert('Set your GitHub token first (Token tab).');showTab('token');return;}
-  const amtStr=prompt('Dollar amount to invest in '+idea.ticker+' @ $'+idea.price+'?\n(Trade Ideas budget: $'+IDEAS_BUDGET.toLocaleString()+' total)','1000');
-  if(!amtStr) return;
-  const amt=parseFloat(amtStr);
+  let amt = opts.amount;
+  if(amt==null){
+    const amtStr=prompt('Dollar amount to invest in '+idea.ticker+' @ $'+idea.price+'?\n(Trade Ideas budget: $'+IDEAS_BUDGET.toLocaleString()+' total)','1000');
+    if(!amtStr) return;
+    amt=parseFloat(amtStr);
+  }
   if(!amt||amt<=0) return;
-  const sellStr=prompt('Sell price to lock in as the target for '+idea.ticker+'? (suggested: '+(idea.target!=null?'$'+idea.target:'none')+')\nLeave blank to use the suggested target, or 0 for no target.', idea.target!=null?String(idea.target):'');
   let targetPrice = idea.target!=null?idea.target:null;
-  if(sellStr!==null && sellStr.trim()!==''){
-    const sellVal=parseFloat(sellStr);
-    targetPrice = (!isNaN(sellVal) && sellVal>0) ? sellVal : null;
+  if(!opts.skipPricePrompts){
+    const sellStr=prompt('Sell price to lock in as the target for '+idea.ticker+'? (suggested: '+(idea.target!=null?'$'+idea.target:'none')+')\nLeave blank to use the suggested target, or 0 for no target.', idea.target!=null?String(idea.target):'');
+    if(sellStr!==null && sellStr.trim()!==''){
+      const sellVal=parseFloat(sellStr);
+      targetPrice = (!isNaN(sellVal) && sellVal>0) ? sellVal : null;
+    }
+  }
+  let stopPrice = idea.stop!=null?idea.stop:null;
+  if(!opts.skipPricePrompts){
+    const stopStr=prompt('Stop price to confirm for '+idea.ticker+'? (suggested: '+(idea.stop!=null?'$'+idea.stop:'none')+')\nLeave blank to use the suggested stop, or 0 for no stop.', idea.stop!=null?String(idea.stop):'');
+    if(stopStr!==null && stopStr.trim()!==''){
+      const stopVal=parseFloat(stopStr);
+      stopPrice = (!isNaN(stopVal) && stopVal>0) ? stopVal : null;
+    }
   }
   try{
     const {data,sha}=await readPortfolio();
@@ -1324,11 +1344,12 @@ async function executeIdeaBuy(idea){
     if(shares<=0){alert('Amount too small.');return;}
     const trade={ticker:idea.ticker, shares, buy_price:idea.price, buy_date:new Date().toISOString().slice(0,10),
       signal:idea.recommendation||'DAY_BUY', reason:idea.reason||'Trade Ideas suggestion',
-      status:'open', type:'paper', stop_price:idea.stop, target_price:targetPrice,
+      status:'open', type:'paper', stop_price:stopPrice, target_price:targetPrice,
       meta:{strategy:IDEAS_STRATEGY, entry_type:idea.entry_type, confidence:idea.confidence, blended_score:idea.blended_score, source:idea.source||'nightly'}};
     (data.paper_trades=data.paper_trades||[]).push(trade);
     await writePortfolio(data,sha);
-    alert(idea.ticker+' bought: '+shares+' shares @ $'+idea.price+' ($'+amt.toFixed(2)+')'+(targetPrice!=null?' | sell target locked at $'+targetPrice:''));
+    alert(idea.ticker+' bought: '+shares+' shares @ $'+idea.price+' ($'+amt.toFixed(2)+')'
+      +(stopPrice!=null?' | stop $'+stopPrice:'')+(targetPrice!=null?' | target $'+targetPrice:''));
     renderSuggestionsTab();
   }catch(e){alert('Error: '+e.message);}
 }
@@ -1347,6 +1368,64 @@ async function buyLiveIdea(ticker){
     entry_type:'Live intraday Day Buy signal', confidence:'MEDIUM', blended_score:null, source:'live_scan'});
 }
 async function sellIdea(ticker){ return sellPaperTrade(ticker, 'Trade Ideas'); }
+
+// ── Manual entry: any ticker, your own price/stop/target, no suggestion needed ──
+async function addManualTrade(){
+  const ticker=(document.getElementById('mt_ticker').value||'').trim().toUpperCase();
+  const price=parseFloat(document.getElementById('mt_price').value);
+  const amt=parseFloat(document.getElementById('mt_amount').value);
+  const stopVal=parseFloat(document.getElementById('mt_stop').value);
+  const targetVal=parseFloat(document.getElementById('mt_target').value);
+  if(!ticker){alert('Enter a ticker.');return;}
+  if(!price||price<=0){alert('Enter a valid buy price.');return;}
+  if(!amt||amt<=0){alert('Enter a valid dollar amount.');return;}
+  await executeIdeaBuy({
+    ticker, price,
+    stop: (!isNaN(stopVal)&&stopVal>0)?stopVal:null,
+    target: (!isNaN(targetVal)&&targetVal>0)?targetVal:null,
+    recommendation:'MANUAL_ENTRY', reason:'Manually entered', entry_type:'Manual entry',
+    confidence:null, blended_score:null, source:'manual_entry',
+  }, {amount:amt, skipPricePrompts:true});
+  document.getElementById('mt_ticker').value='';
+  document.getElementById('mt_price').value='';
+  document.getElementById('mt_amount').value='';
+  document.getElementById('mt_stop').value='';
+  document.getElementById('mt_target').value='';
+}
+
+// ── Cycle Trading candidates, surfaced here too as another idea source ──────
+function renderCycleIdeas(){
+  const el=document.getElementById('ideasCycleGrid');
+  if(!el) return;
+  const list=(CYCLE_DATA&&CYCLE_DATA.candidates)||[];
+  if(!list.length){ el.innerHTML='<p style="color:#888;padding:20px">No Cycle Trading candidates tonight.</p>'; return; }
+  el.innerHTML=list.map((c,i)=>{
+    const col=c.cycle_score>=70?'#44bb44':c.cycle_score>=50?'#ff9900':c.cycle_score>=40?'#ff6600':'#cc0000';
+    const pm=c.predicted_move||{};
+    return '<div style="background:#1a1a2e;border-radius:12px;padding:20px;border:1px solid '+(i===0?col:'#2a2a4a')+'">'
+      +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">'
+      +'<div><span style="font-size:20px;font-weight:bold;color:#fff">'+c.ticker+'</span>'
+      +'<span style="color:#888;font-size:12px;margin-left:8px">'+(c.entry_zone||'—')+' ('+(c.risk||'—')+' risk)</span></div>'
+      +'<span style="font-size:26px;font-weight:bold;color:'+col+'">'+c.cycle_score+'</span></div>'
+      +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
+      +'<div><div style="color:#666">Price</div><div style="color:#ccc">'+fmtMoney(c.price)+'</div></div>'
+      +'<div><div style="color:#666">Stop</div><div style="color:#cc0000">'+fmtMoney(c.stop_price)+'</div></div>'
+      +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+fmtMoney(pm.target_price)+'</div></div>'
+      +'<div><div style="color:#666">+5% / +10%</div><div style="color:#888;font-size:11px">'+profitLevels(c.price)+'</div></div></div>'
+      +'<div style="font-size:11px;color:#aaa;margin-bottom:10px">'+(c.reasons||[]).slice(0,3).join(' | ')+'</div>'
+      +'<button class="btn-primary" style="padding:6px 14px;font-size:12px" onclick="buyCycleIdea(\''+c.ticker+'\')">Buy</button>'
+      +' <button class="btn-primary" style="padding:6px 14px;font-size:12px;margin-left:6px" onclick="showCandidateChart(\''+c.ticker+'\')">📈 Chart</button>'
+      +'</div>';
+  }).join('');
+}
+async function buyCycleIdea(ticker){
+  const c=((CYCLE_DATA&&CYCLE_DATA.candidates)||[]).find(x=>x.ticker===ticker);
+  if(!c){alert('No Cycle Trading data for '+ticker);return;}
+  const pm=c.predicted_move||{};
+  executeIdeaBuy({ticker:c.ticker, price:c.price, stop:c.stop_price, target:pm.target_price,
+    recommendation:'CYCLE_'+(c.cycle_signal||'BUY'), reason:(c.reasons||[]).slice(0,2).join('; '),
+    entry_type:c.entry_zone, confidence:null, blended_score:c.cycle_score, source:'cycle_trading_idea'});
+}
 
 // ── Live intraday scan for Trade Ideas — same VWAP/RSI "Day Buy" definition
 // already used by the Day Trading tab's live scanner, run on demand instead of
@@ -1425,11 +1504,12 @@ function renderLiveIdeas(){
     +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">'
     +'<span style="font-size:20px;font-weight:bold;color:#fff">'+s.ticker+'</span>'
     +'<span style="color:#00aa00;font-size:12px;font-weight:bold">LIVE DAY BUY</span></div>'
-    +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
+    +'<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
     +'<div><div style="color:#666">Price</div><div style="color:#ccc">'+fmtMoney(s.price)+'</div></div>'
     +'<div><div style="color:#666">Buy Zone</div><div style="color:#4a90d9">'+fmtMoney(s.buyZone)+'</div></div>'
     +'<div><div style="color:#666">Sell Zone</div><div style="color:#44bb44">'+fmtMoney(s.sellZone)+'</div></div>'
-    +'<div><div style="color:#666">RSI</div><div style="color:#ccc">'+s.rsi.toFixed(1)+'</div></div></div>'
+    +'<div><div style="color:#666">RSI</div><div style="color:#ccc">'+s.rsi.toFixed(1)+'</div></div>'
+    +'<div><div style="color:#666">+5% / +10%</div><div style="color:#888;font-size:10px">'+profitLevels(s.price)+'</div></div></div>'
     +'<div style="font-size:11px;color:#aaa;margin-bottom:10px">'
     +'<b>Entry:</b> at/near buy zone, '+(s.vs>=0?'+':'')+s.vs.toFixed(2)+'% vs VWAP, momentum '+(s.mo>=0?'up':'down')+'<br>'
     +'<b>Exit guide:</b> take profit near sell zone (~2x ATR above price); cut loss if price closes back below VWAP</div>'
@@ -2051,16 +2131,40 @@ window.addEventListener('resize',()=>{
 </p>
 <div class="stats-grid" id="ideasOverviewGrid"></div>
 
+<h3 style="color:#ccc;margin:25px 0 12px">Add Your Own Trade</h3>
+<p style="color:#888;font-size:13px;margin-bottom:12px">
+  Not from a suggestion — enter any ticker yourself with your own buy price, stop, and sale
+  (target) price. Counts toward the same $10,000 Trade Ideas budget.
+</p>
+<div class="form-grid">
+  <div class="form-group"><label>Ticker</label><input id="mt_ticker" type="text" placeholder="EOS.AX"></div>
+  <div class="form-group"><label>Buy Price ($)</label><input id="mt_price" type="number" step="0.001" placeholder="8.500"></div>
+  <div class="form-group"><label>Dollar Amount</label><input id="mt_amount" type="number" step="1" placeholder="1000"></div>
+  <div class="form-group"><label>Stop Price ($)</label><input id="mt_stop" type="number" step="0.001" placeholder="optional"></div>
+  <div class="form-group"><label>Sale / Target Price ($)</label><input id="mt_target" type="number" step="0.001" placeholder="optional"></div>
+</div>
+<button class="btn-primary" style="margin-top:10px" onclick="addManualTrade()">Buy</button>
+
 <h3 style="color:#ccc;margin:25px 0 12px">Open Positions</h3>
 <div class="asx-table-wrap"><table class="asx-table"><thead><tr>
-  <th>Ticker</th><th>Entry</th><th>Shares</th><th>Cost</th><th>Stop</th><th>Target</th><th>Opened</th><th></th>
+  <th>Ticker</th><th>Entry</th><th>Shares</th><th>Cost</th><th>Stop</th><th>Target</th><th>+5%</th><th>+10%</th><th>Opened</th><th></th>
 </tr></thead><tbody id="ideasOpenBody">
-<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">Set your GitHub token to view live positions.</td></tr>
+<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Set your GitHub token to view live positions.</td></tr>
 </tbody></table></div>
 
 <h3 style="color:#ccc;margin:25px 0 12px">Suggested Entries Tonight</h3>
 <div id="ideasCandidatesGrid" style="display:grid;gap:12px">
   <p style="color:#888;padding:20px">No BUY-rated candidates tonight.</p>
+</div>
+
+<h3 style="color:#ccc;margin:25px 0 12px">From Cycle Trading</h3>
+<p style="color:#888;font-size:13px;margin-bottom:12px">
+  Tonight's Cycle Trading candidates (DJRTrading Daily/Intermediate Cycle screen), for
+  reference here too. Buying one here opens a Trade Ideas position — separate from Cycle
+  Trading's own automated $10,000 book.
+</p>
+<div id="ideasCycleGrid" style="display:grid;gap:12px">
+  <p style="color:#888;padding:20px">No Cycle Trading candidates tonight.</p>
 </div>
 
 <h3 style="color:#ccc;margin:25px 0 12px">Live Intraday Scan</h3>
