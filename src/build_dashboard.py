@@ -340,6 +340,7 @@ function showTab(id) {
     if(id==='cycle') renderCycleTab();
     if(id==='paper') renderPaperTab();
     if(id==='suggestions') renderSuggestionsTab();
+    if(id==='token') updateTokenStatus();
 }
 
 // ── Market Analysis filters ───────────────────────────────────────────────────
@@ -408,7 +409,31 @@ async function triggerNightlyRun(){
 
 function saveToken(){
     const t=document.getElementById('ghToken').value.trim();
-    if(t){localStorage.setItem('gh_token',t);alert('Token saved.');}
+    if(!t){alert('Paste a token into the box first.');return;}
+    localStorage.setItem('gh_token',t);
+    document.getElementById('ghToken').value='';
+    updateTokenStatus();
+    alert('Token saved. Click "Test Token" to confirm it has repo access.');
+}
+function updateTokenStatus(){
+    const el=document.getElementById('tokenStatus');
+    if(!el) return;
+    const t=getToken();
+    el.textContent = t
+        ? '✓ Token saved in this browser (ends …'+t.slice(-4)+'). Click "Test Token" to verify it still works.'
+        : '⚠ No token saved yet — Buy/Sell and Add Holding will not work until you save one.';
+    el.style.color = t ? '#44bb44' : '#ff9900';
+}
+async function testToken(){
+    const el=document.getElementById('tokenStatus');
+    if(!getToken()){alert('No token saved yet — paste one above and click Save Token first.');return;}
+    if(el){el.textContent='Testing token...';el.style.color='#888';}
+    try{
+        await ghGet(PORTFOLIO_PATH);
+        if(el){el.textContent='✓ Token works — confirmed read access to the repo.';el.style.color='#44bb44';}
+    }catch(e){
+        if(el){el.textContent='✗ Token test failed: '+e.message+' — check it has the "repo" scope and hasn\'t expired.';el.style.color='#cc0000';}
+    }
 }
 
 async function ghGet(path){
@@ -429,7 +454,7 @@ async function ghPut(path,content,sha){
 
 async function fetchLivePrice(ticker){
     try{
-        const url='https://corsproxy.io/?'+encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/chart/'+ticker);
+        const url='https://corsproxy.io/?url='+encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/chart/'+ticker);
         const r=await fetch(url);
         const j=await r.json();
         return j.chart.result[0].meta.regularMarketPrice;
@@ -444,7 +469,7 @@ async function refreshPortfolioPrices(){
     let ind=document.getElementById('port-live-ind');
     if(!ind){ind=document.createElement('span');ind.id='port-live-ind';ind.style.cssText='font-size:12px;color:#888;margin-left:12px;';h2.appendChild(ind);}
     ind.textContent='fetching live prices...';
-    let totalValue=0,totalCost=0;
+    let totalValue=0,totalCost=0,successCount=0;
     const fetches=rows.map(async row=>{
         const cells=[...row.querySelectorAll('td')];
         if(cells.length<6) return;
@@ -452,7 +477,16 @@ async function refreshPortfolioPrices(){
         const shares=parseFloat(cells[1].textContent.replace(/,/g,''))||0;
         const buyPrice=parseFloat(cells[2].textContent.replace(/[$,]/g,''))||0;
         if(!ticker||!shares) return;
-        const price=await fetchLivePrice(ticker);
+        let price=await fetchLivePrice(ticker);
+        if(price===null){
+            // Live fetch failed (e.g. the CORS proxy is down/rate-limited) -- fall back
+            // to whatever's already shown (the nightly-baked value, or a prior successful
+            // refresh) instead of dropping this holding out of the totals below, which
+            // would otherwise wrongly zero out Portfolio Value/P&L when every fetch fails.
+            price=parseFloat(cells[3].textContent.replace(/[$,]/g,''))||null;
+        }else{
+            successCount++;
+        }
         if(price===null) return;
         const value=price*shares;
         const cost=buyPrice*shares;
@@ -467,14 +501,16 @@ async function refreshPortfolioPrices(){
     });
     await Promise.all(fetches);
     const cards=[...document.querySelectorAll('#tab-portfolio .stats-grid .stat-value')];
-    if(cards.length>=3){
+    if(cards.length>=3 && totalCost>0){
         cards[0].textContent='$'+totalValue.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});
         const totalPL=totalValue-totalCost;
         const pct=totalCost>0?((totalPL/totalCost)*100):0;
         cards[2].style.color=totalPL>=0?'green':'red';
         cards[2].textContent=(totalPL>=0?'+':'')+' $'+Math.abs(totalPL).toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2})+' ('+(totalPL>=0?'+':'')+pct.toFixed(1)+'%)';
     }
-    ind.textContent='live as of '+new Date().toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'});
+    ind.textContent = successCount>0
+        ? 'live as of '+new Date().toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'})+(successCount<rows.length?' ('+successCount+'/'+rows.length+' updated)':'')
+        : 'live price fetch unavailable — showing last known values';
 }
 setInterval(()=>{if(document.getElementById('tab-portfolio')?.classList.contains('active')) refreshPortfolioPrices();},15*60*1000);
 async function readPortfolio(){
@@ -1116,6 +1152,37 @@ function chartButton(r){
     : "showSimpleTradeChart('"+r.ticker+"',"+(r.entry??'null')+","+(r.stop??'null')+","+(r.target??'null')+")";
   return ' '+btn.replace('%ONCLICK%', onclick);
 }
+// Agent Trader is excluded here -- it's a live 5-min automated bot with its own
+// separate ledger file (agent_trades.json); manually closing a position from the
+// dashboard would race against its own cron-driven exit logic and capital tracking.
+function sellButton(r){
+  if(r.source==='Agent Trader') return '';
+  return '<button class="btn-primary" style="padding:4px 10px;font-size:11px;background:#5a1a1a;border-color:#8a2a2a" onclick="sellPaperTrade(\''+r.ticker+'\',\''+r.source+'\')">Sell</button>';
+}
+async function sellPaperTrade(ticker, source){
+  if(!getToken()){alert('Set your GitHub token first (Token tab).');showTab('token');return;}
+  const strategy = source==='Cycle Trading' ? 'cycle_trading' : source==='Trade Ideas' ? 'suggested_trades' : null;
+  try{
+    const {data,sha}=await readPortfolio();
+    const t=(data.paper_trades||[]).find(x=>x.ticker===ticker && x.status==='open'
+      && (strategy ? (x.meta||{}).strategy===strategy : !(x.meta||{}).strategy));
+    if(!t){alert('No open '+source+' position found for '+ticker+'.');return;}
+    const suggested=t.target_price!=null?t.target_price:null;
+    const exitStr=prompt('Exit price for '+ticker+' ('+source+')?\n'+(suggested!=null?'Suggested target: $'+suggested:'No suggested target set for this position.'),
+      suggested!=null?String(suggested):'');
+    if(!exitStr) return;
+    const exit=parseFloat(exitStr);
+    if(!exit||exit<=0) return;
+    const pnl=Math.round((exit-t.buy_price)*t.shares*100)/100;
+    t.status='closed'; t.sell_price=exit; t.sell_date=new Date().toISOString().slice(0,10);
+    t.pnl=pnl; t.pnl_pct=Math.round((exit-t.buy_price)/t.buy_price*10000)/100;
+    t.close_reason='MANUAL';
+    await writePortfolio(data,sha);
+    alert('Closed '+ticker+': P&L $'+pnl.toFixed(2));
+    if(document.getElementById('tab-paper')?.classList.contains('active')) renderPaperTab();
+    if(document.getElementById('tab-suggestions')?.classList.contains('active')) renderSuggestionsTab();
+  }catch(e){alert('Error: '+e.message);}
+}
 async function renderPaperTab(){
   let rows = normalizePortfolioPaperTrades();
   try{
@@ -1156,8 +1223,8 @@ async function renderPaperTab(){
     '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b>'+chartButton(r)
     +'</td><td>'+fmtMoney(r.entry)+'</td><td>'+fmtMoney(r.positionCost)+'</td>'
     +'<td style="color:#cc0000">'+fmtMoney(r.stop)+'</td><td style="color:#44bb44">'+fmtMoney(r.target)+'</td>'
-    +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td></tr>'
-  ).join('') : '<tr><td colspan="7" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
+    +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td><td>'+sellButton(r)+'</td></tr>'
+  ).join('') : '<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
 
   const closedBody=document.getElementById('paperClosedBody');
   if(closedBody) closedBody.innerHTML = closedRows.length ? closedRows.map(r=>
@@ -1237,7 +1304,7 @@ async function renderSuggestionsTab(){
 }
 async function executeIdeaBuy(idea){
   if(!idea || !idea.price){alert('No data for '+(idea&&idea.ticker));return;}
-  if(!getToken()){alert('Set your GitHub token first (Token tab).');return;}
+  if(!getToken()){alert('Set your GitHub token first (Token tab).');showTab('token');return;}
   const amtStr=prompt('Dollar amount to invest in '+idea.ticker+' @ $'+idea.price+'?\n(Trade Ideas budget: $'+IDEAS_BUDGET.toLocaleString()+' total)','1000');
   if(!amtStr) return;
   const amt=parseFloat(amtStr);
@@ -1279,22 +1346,7 @@ async function buyLiveIdea(ticker){
     recommendation:'LIVE_DAY_BUY', reason:'Live intraday scan: '+(s.vs>=0?'+':'')+s.vs.toFixed(2)+'% vs VWAP, RSI '+s.rsi.toFixed(1),
     entry_type:'Live intraday Day Buy signal', confidence:'MEDIUM', blended_score:null, source:'live_scan'});
 }
-async function sellIdea(ticker){
-  const exit=parseFloat(prompt('Exit price for '+ticker+'?'));
-  if(!exit) return;
-  try{
-    const {data,sha}=await readPortfolio();
-    const t=(data.paper_trades||[]).find(x=>x.ticker===ticker && x.status==='open' && (x.meta||{}).strategy===IDEAS_STRATEGY);
-    if(!t){alert('No open Trade Ideas position for '+ticker);return;}
-    const pnl=Math.round((exit-t.buy_price)*t.shares*100)/100;
-    t.status='closed'; t.sell_price=exit; t.sell_date=new Date().toISOString().slice(0,10);
-    t.pnl=pnl; t.pnl_pct=Math.round((exit-t.buy_price)/t.buy_price*10000)/100;
-    t.close_reason='MANUAL';
-    await writePortfolio(data,sha);
-    alert('Closed '+ticker+': P&L $'+pnl.toFixed(2));
-    renderSuggestionsTab();
-  }catch(e){alert('Error: '+e.message);}
-}
+async function sellIdea(ticker){ return sellPaperTrade(ticker, 'Trade Ideas'); }
 
 // ── Live intraday scan for Trade Ideas — same VWAP/RSI "Day Buy" definition
 // already used by the Day Trading tab's live scanner, run on demand instead of
@@ -1324,8 +1376,8 @@ async function scanMarketForIdeas(){
     if(statusEl) statusEl.textContent='Scanning '+(i+1)+' of '+tickers.length+'... ('+t+')';
     try{
       const url='https://query1.finance.yahoo.com/v8/finance/chart/'+encodeURIComponent(t)+'?interval=15m&range=1d&includePrePost=false';
-      const j=await(await fetch('https://corsproxy.io/?'+encodeURIComponent(url))).json();
-      const res=j.result&&j.result[0];
+      const j=await(await fetch('https://corsproxy.io/?url='+encodeURIComponent(url))).json();
+      const res=j.chart&&j.chart.result&&j.chart.result[0];
       if(!res) throw new Error('no data');
       const q=res.indicators.quote[0], ts=res.timestamp||[];
       const bars=[];
@@ -1591,7 +1643,7 @@ window.addEventListener('resize',()=>{
 
     # _INTRADAY_LIVE_APPENDED — do not remove
     JS += _b64_sp.b64decode(
-        b'CjxzY3JpcHQ+Ci8qIExpdmUgaW50cmFkYXkgcGF0Y2hfZml4NzogYnV5L3NlbGwgem9uZXMgKyBBVFIgKi8KKGZ1bmN0aW9uKCl7Cid1c2Ugc3RyaWN0JzsKdmFyIFBST1hZPSdodHRwczovL2NvcnNwcm94eS5pby8/JzsKZnVuY3Rpb24gY2FsY1ZXQVAoYmFycyl7dmFyIHRwdj0wLHZvbD0wO2JhcnMuZm9yRWFjaChmdW5jdGlvbihiKXt2YXIgdHA9KGJbMl0rYlszXStiWzRdKS8zO3Rwdis9dHAqYls1XTt2b2wrPWJbNV07fSk7cmV0dXJuIHZvbD4wP3Rwdi92b2w6MDt9CmZ1bmN0aW9uIGNhbGNSU0koYXJyLHApe3A9cHx8MTQ7aWYoYXJyLmxlbmd0aDxwKzEpcmV0dXJuIDUwO3ZhciBnPTAsbD0wO2Zvcih2YXIgaT1hcnIubGVuZ3RoLXA7aTxhcnIubGVuZ3RoO2krKyl7dmFyIGQ9YXJyW2ldLWFycltpLTFdO2Q+MD9nKz1kOmwtPWQ7fXZhciBhZz1nL3AsYWw9bC9wO3JldHVybiBhbD09PTA/MTAwOjEwMC0xMDAvKDErYWcvYWwpO30KZnVuY3Rpb24gY2FsY0FUUihiYXJzLHApe3A9cHx8MTQ7aWYoYmFycy5sZW5ndGg8MilyZXR1cm4gMDt2YXIgdHI9W107Zm9yKHZhciBpPTE7aTxiYXJzLmxlbmd0aDtpKyspe3RyLnB1c2goTWF0aC5tYXgoYmFyc1tpXVsyXS1iYXJzW2ldWzNdLE1hdGguYWJzKGJhcnNbaV1bMl0tYmFyc1tpLTFdWzRdKSxNYXRoLmFicyhiYXJzW2ldWzNdLWJhcnNbaS0xXVs0XSkpKTt9dmFyIHNsPXRyLnNsaWNlKC1wKTtyZXR1cm4gc2wucmVkdWNlKGZ1bmN0aW9uKGEsYil7cmV0dXJuIGErYjt9LDApL3NsLmxlbmd0aDt9CmZ1bmN0aW9uIGdldFNpZ25hbCh2cyxyc2ksbW8pewogIGlmKHZzPjAmJnJzaT49NDUmJnJzaTw9NzUmJm1vPjApcmV0dXJue3M6J2RiJyxsYWJlbDonRGF5IEJ1eScsY29sb3I6JyMwMGFhMDAnfTsKICBpZih2czwtMS41JiZyc2k8MzUpcmV0dXJue3M6J3NzJyxsYWJlbDonU3RyIFNlbGwnLGNvbG9yOicjY2MwMDAwJ307CiAgaWYodnM+LTAuNSYmcnNpPj0zOCYmcnNpPD04MilyZXR1cm57czondycsbGFiZWw6J1dhdGNoJyxjb2xvcjonI2ZmYWEwMCd9OwogIGlmKHZzPC0xfHxyc2k8MzApcmV0dXJue3M6J2F2JyxsYWJlbDonQXZvaWQnLGNvbG9yOicjY2M0NDQ0J307CiAgcmV0dXJue3M6J24nLGxhYmVsOidOZXV0cmFsJyxjb2xvcjonIzg4ODg4OCd9Owp9CmFzeW5jIGZ1bmN0aW9uIGZldGNoVGlja2VyKHRpY2tlcil7CiAgdmFyIGlzQVg9dGlja2VyLmVuZHNXaXRoKCcuQVgnKSxkcD1pc0FYPzM6MjsKICB2YXIgdXJsPSdodHRwczovL3F1ZXJ5MS5maW5hbmNlLnlhaG9vLmNvbS92OC9maW5hbmNlL2NoYXJ0LycrZW5jb2RlVVJJQ29tcG9uZW50KHRpY2tlcikrJz9pbnRlcnZhbD0xNW0mcmFuZ2U9MWQmaW5jbHVkZVByZVBvc3Q9ZmFsc2UnOwogIHZhciBqPWF3YWl0KGF3YWl0IGZldGNoKFBST1hZK2VuY29kZVVSSUNvbXBvbmVudCh1cmwpKSkuanNvbigpOwogIHZhciByZXM9ai5yZXN1bHQmJmoucmVzdWx0WzBdO2lmKCFyZXMpdGhyb3cgbmV3IEVycm9yKCdubyBkYXRhJyk7CiAgdmFyIHE9cmVzLmluZGljYXRvcnMucXVvdGVbMF0sbWV0YT1yZXMubWV0YXx8e30sdHM9cmVzLnRpbWVzdGFtcHx8W107CiAgdmFyIHByZXY9bWV0YS5jaGFydFByZXZpb3VzQ2xvc2V8fG1ldGEucHJldmlvdXNDbG9zZXx8cS5jbG9zZVswXTsKICB2YXIgYmFycz1bXTsKICBmb3IodmFyIGk9MDtpPHRzLmxlbmd0aDtpKyspe2lmKHEuY2xvc2VbaV09PW51bGwpY29udGludWU7YmFycy5wdXNoKFt0c1tpXSxxLm9wZW5baV18fHEuY2xvc2VbaV0scS5oaWdoW2ldfHxxLmNsb3NlW2ldLHEubG93W2ldfHxxLmNsb3NlW2ldLHEuY2xvc2VbaV0scS52b2x1bWVbaV18fDBdKTt9CiAgaWYoIWJhcnMubGVuZ3RoKXRocm93IG5ldyBFcnJvcignbm8gYmFycycpOwogIHZhciBwcmljZT1iYXJzW2JhcnMubGVuZ3RoLTFdWzRdOwogIHZhciBncD1wcmV2PygoYmFyc1swXVsxXS1wcmV2KS9wcmV2KjEwMCk6MDsKICB2YXIgZ3Q9Z3A+MC4zPydHYXAgVXAnOmdwPC0wLjM/J0dhcCBEb3duJzonRmxhdCc7CiAgdmFyIHZ3PWNhbGNWV0FQKGJhcnMpLHZzPXZ3PjA/KHByaWNlLXZ3KS92dyoxMDA6MDsKICB2YXIgcnNpPWNhbGNSU0koYmFycy5tYXAoZnVuY3Rpb24oYil7cmV0dXJuIGJbNF07fSksMTQpOwogIHZhciBtbz1iYXJzLmxlbmd0aD49Nj9wcmljZS1iYXJzW2JhcnMubGVuZ3RoLTZdWzRdOjA7CiAgdmFyIGF0cj1jYWxjQVRSKGJhcnMsMTQpOwogIHZhciBzaWc9Z2V0U2lnbmFsKHZzLHJzaSxtbyk7CiAgdmFyIGJ6PSctLScsc3o9Jy0tJzsKICBpZihzaWcucz09PSdkYicpe2J6PSckJysodnc+MCYmdnc8cHJpY2U/dnc6cHJpY2UqMC45OSkudG9GaXhlZChkcCk7c3o9JyQnKyhhdHI+MD9wcmljZSthdHIqMjpwcmljZSoxLjA0KS50b0ZpeGVkKGRwKTt9CiAgZWxzZSBpZihzaWcucz09PSd3Jyl7Yno9JyQnKyh2dz4wP3Z3OnByaWNlKS50b0ZpeGVkKGRwKTt9CiAgcmV0dXJue3RrOnRpY2tlcixwcjpwcmljZSxncDpncCxndDpndCx2dzp2dyx2czp2cyxyczpyc2ksbW86bW8sc2lnOnNpZyxiejpieixzejpzen07Cn0KZnVuY3Rpb24gbWFrZVJvdyhyKXsKICB2YXIgZHA9ci50ay5lbmRzV2l0aCgnLkFYJyk/MzoyLGdjPXIuZ3A+PTA/JyM0NGJiNDQnOicjY2M0NDQ0Jyx2Yz1yLnZzPj0wPycjNDRiYjQ0JzonI2NjNDQ0NCc7CiAgcmV0dXJuICc8dHIgZGF0YS1zaWduYWw9Iicrci5zaWcucysnIiBkYXRhLXRrPSInK3IudGsrJyI+JwogICAgKyc8dGQ+JytyLnRrKyc8L3RkPjx0ZD4kJytyLnByLnRvRml4ZWQoZHApKyc8L3RkPicKICAgICsnPHRkIHN0eWxlPSJjb2xvcjonK2djKyciPicrKHIuZ3A+PTA/JysnOicnKStyLmdwLnRvRml4ZWQoMikrJyU8L3RkPicKICAgICsnPHRkPicrci5ndCsnPC90ZD48dGQ+JCcrci52dy50b0ZpeGVkKGRwKSsnPC90ZD4nCiAgICArJzx0ZCBzdHlsZT0iY29sb3I6Jyt2YysnIj4nKyhyLnZzPj0wPycrJzonJykrci52cy50b0ZpeGVkKDIpKyclPC90ZD4nCiAgICArJzx0ZD4nK3IucnMudG9GaXhlZCgxKSsnPC90ZD48dGQ+Jysoci5tbz49MD8nVXAnOidEb3duJykrJzwvdGQ+JwogICAgKyc8dGQgc3R5bGU9ImNvbG9yOicrci5zaWcuY29sb3IrJztmb250LXdlaWdodDpib2xkIj4nK3Iuc2lnLmxhYmVsKyc8L3RkPicKICAgICsnPHRkPicrci5ieisnPC90ZD48dGQ+JytyLnN6Kyc8L3RkPicKICAgICsnPHRkPjxidXR0b24gY2xhc3M9Il9jYnRuIiBkYXRhLXQ9Iicrci50aysnIiBzdHlsZT0iYmFja2dyb3VuZDojMWEzYTZhO2NvbG9yOiNjOGQ4ZjA7Ym9yZGVyOjFweCBzb2xpZCAjMmE0YThhO3BhZGRpbmc6M3B4IDhweDtib3JkZXItcmFkaXVzOjNweDtjdXJzb3I6cG9pbnRlcjtmb250LXNpemU6MTFweCI+Q2hhcnQ8L2J1dHRvbj48L3RkPicKICAgICsnPC90cj4nOwp9CnZhciBfYnVzeT1mYWxzZSxfcmVzdWx0cz1bXTsKd2luZG93LnJlbmRlckludHJhZGF5VGFibGU9YXN5bmMgZnVuY3Rpb24oKXsKICBpZihfYnVzeSlyZXR1cm47X2J1c3k9dHJ1ZTsKICB2YXIgdGJvZHk9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ludHJhZGF5Qm9keScpLGNudD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW50cmFkYXlDb3VudCcpOwogIGlmKHRib2R5KXRib2R5LmlubmVySFRNTD0nPHRyPjx0ZCBjb2xzcGFuPSIxMiIgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyO3BhZGRpbmc6MjBweDtjb2xvcjojODg4Ij5Mb2FkaW5nIGxpdmUgZGF0YS4uLjwvdGQ+PC90cj4nOwogIHZhciB0a3M9QXJyYXkuZnJvbShkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcjY2FyZHNHcmlkIC5zdG9jay1jYXJkW2RhdGEtdGlja2VyXScpKS5tYXAoZnVuY3Rpb24oYyl7cmV0dXJuIGMuZ2V0QXR0cmlidXRlKCdkYXRhLXRpY2tlcicpO30pLmZpbHRlcihCb29sZWFuKTsKICBpZighdGtzLmxlbmd0aCl7aWYodGJvZHkpdGJvZHkuaW5uZXJIVE1MPSc8dHI+PHRkIGNvbHNwYW49IjEyIiBzdHlsZT0iY29sb3I6Izg4ODtwYWRkaW5nOjEycHgiPk5vIHRpY2tlcnMgZm91bmQuPC90ZD48L3RyPic7X2J1c3k9ZmFsc2U7cmV0dXJuO30KICBfcmVzdWx0cz1bXTsKICBmb3IodmFyIGk9MDtpPHRrcy5sZW5ndGg7aSsrKXsKICAgIHRyeXtfcmVzdWx0cy5wdXNoKGF3YWl0IGZldGNoVGlja2VyKHRrc1tpXSkpO31jYXRjaChlKXtjb25zb2xlLndhcm4oJ3NraXAnLHRrc1tpXSxlLm1lc3NhZ2UpO30KICAgIGlmKGNudCljbnQudGV4dENvbnRlbnQ9KGkrMSkrJyBvZiAnK3Rrcy5sZW5ndGgrJyB0aWNrZXJzJzsKICAgIGF3YWl0IG5ldyBQcm9taXNlKGZ1bmN0aW9uKHIpe3NldFRpbWVvdXQociwyMDApO30pOwogIH0KICBhcHBseUZpbHRlcnMoKTtfYnVzeT1mYWxzZTsKICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcuX2NidG4nKS5mb3JFYWNoKGZ1bmN0aW9uKGIpe2IuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLGZ1bmN0aW9uKCl7aWYodHlwZW9mIHNob3dDaGFydD09PSdmdW5jdGlvbicpc2hvd0NoYXJ0KHRoaXMuZ2V0QXR0cmlidXRlKCdkYXRhLXQnKSk7fSk7fSk7Cn07CmZ1bmN0aW9uIGFwcGx5RmlsdGVycygpewogIHZhciBzdj0oKGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdpbnRyYWRheVNpZ0ZpbHRlcicpfHx7fSkudmFsdWV8fCcnKSxzaD0oKGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdpbnRyYWRheVNlYXJjaCcpfHx7fSkudmFsdWV8fCcnKS50b0xvd2VyQ2FzZSgpOwogIHZhciBmPV9yZXN1bHRzLmZpbHRlcihmdW5jdGlvbihyKXtyZXR1cm4oIXN2fHxzdi50b1VwcGVyQ2FzZSgpPT09J0FMTCd8fHIuc2lnLnM9PT1zdikmJighc2h8fHIudGsudG9Mb3dlckNhc2UoKS5pbmRleE9mKHNoKSE9PS0xKTt9KTsKICB2YXIgdGJvZHk9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ludHJhZGF5Qm9keScpLGNudD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW50cmFkYXlDb3VudCcpOwogIGlmKCFmLmxlbmd0aCl7aWYodGJvZHkpdGJvZHkuaW5uZXJIVE1MPSc8dHI+PHRkIGNvbHNwYW49IjEyIiBzdHlsZT0iY29sb3I6Izg4ODtwYWRkaW5nOjEycHgiPk5vIG1hdGNoZXM8L3RkPjwvdHI+JztpZihjbnQpY250LnRleHRDb250ZW50PScwIG9mICcrX3Jlc3VsdHMubGVuZ3RoKycgdGlja2Vycyc7cmV0dXJuO30KICBpZih0Ym9keSl0Ym9keS5pbm5lckhUTUw9Zi5tYXAobWFrZVJvdykuam9pbignJyk7CiAgaWYoY250KWNudC50ZXh0Q29udGVudD1mLmxlbmd0aCsnIG9mICcrX3Jlc3VsdHMubGVuZ3RoKycgdGlja2Vycyc7Cn0Kc2V0VGltZW91dChmdW5jdGlvbigpewogIHZhciBzZj1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW50cmFkYXlTaWdGaWx0ZXInKSxzdD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW50cmFkYXlTZWFyY2gnKTsKICBpZihzZilzZi5hZGRFdmVudExpc3RlbmVyKCdjaGFuZ2UnLGFwcGx5RmlsdGVycyk7aWYoc3Qpc3QuYWRkRXZlbnRMaXN0ZW5lcignaW5wdXQnLGFwcGx5RmlsdGVycyk7Cn0sMTAwMCk7Cn0pKCk7Cjwvc2NyaXB0Pgo='
+        b'CjxzY3JpcHQ+Ci8qIExpdmUgaW50cmFkYXkgcGF0Y2hfZml4NzogYnV5L3NlbGwgem9uZXMgKyBBVFIgKi8KKGZ1bmN0aW9uKCl7Cid1c2Ugc3RyaWN0JzsKdmFyIFBST1hZPSdodHRwczovL2NvcnNwcm94eS5pby8/dXJsPSc7CmZ1bmN0aW9uIGNhbGNWV0FQKGJhcnMpe3ZhciB0cHY9MCx2b2w9MDtiYXJzLmZvckVhY2goZnVuY3Rpb24oYil7dmFyIHRwPShiWzJdK2JbM10rYls0XSkvMzt0cHYrPXRwKmJbNV07dm9sKz1iWzVdO30pO3JldHVybiB2b2w+MD90cHYvdm9sOjA7fQpmdW5jdGlvbiBjYWxjUlNJKGFycixwKXtwPXB8fDE0O2lmKGFyci5sZW5ndGg8cCsxKXJldHVybiA1MDt2YXIgZz0wLGw9MDtmb3IodmFyIGk9YXJyLmxlbmd0aC1wO2k8YXJyLmxlbmd0aDtpKyspe3ZhciBkPWFycltpXS1hcnJbaS0xXTtkPjA/Zys9ZDpsLT1kO312YXIgYWc9Zy9wLGFsPWwvcDtyZXR1cm4gYWw9PT0wPzEwMDoxMDAtMTAwLygxK2FnL2FsKTt9CmZ1bmN0aW9uIGNhbGNBVFIoYmFycyxwKXtwPXB8fDE0O2lmKGJhcnMubGVuZ3RoPDIpcmV0dXJuIDA7dmFyIHRyPVtdO2Zvcih2YXIgaT0xO2k8YmFycy5sZW5ndGg7aSsrKXt0ci5wdXNoKE1hdGgubWF4KGJhcnNbaV1bMl0tYmFyc1tpXVszXSxNYXRoLmFicyhiYXJzW2ldWzJdLWJhcnNbaS0xXVs0XSksTWF0aC5hYnMoYmFyc1tpXVszXS1iYXJzW2ktMV1bNF0pKSk7fXZhciBzbD10ci5zbGljZSgtcCk7cmV0dXJuIHNsLnJlZHVjZShmdW5jdGlvbihhLGIpe3JldHVybiBhK2I7fSwwKS9zbC5sZW5ndGg7fQpmdW5jdGlvbiBnZXRTaWduYWwodnMscnNpLG1vKXsKICBpZih2cz4wJiZyc2k+PTQ1JiZyc2k8PTc1JiZtbz4wKXJldHVybntzOidkYicsbGFiZWw6J0RheSBCdXknLGNvbG9yOicjMDBhYTAwJ307CiAgaWYodnM8LTEuNSYmcnNpPDM1KXJldHVybntzOidzcycsbGFiZWw6J1N0ciBTZWxsJyxjb2xvcjonI2NjMDAwMCd9OwogIGlmKHZzPi0wLjUmJnJzaT49MzgmJnJzaTw9ODIpcmV0dXJue3M6J3cnLGxhYmVsOidXYXRjaCcsY29sb3I6JyNmZmFhMDAnfTsKICBpZih2czwtMXx8cnNpPDMwKXJldHVybntzOidhdicsbGFiZWw6J0F2b2lkJyxjb2xvcjonI2NjNDQ0NCd9OwogIHJldHVybntzOiduJyxsYWJlbDonTmV1dHJhbCcsY29sb3I6JyM4ODg4ODgnfTsKfQphc3luYyBmdW5jdGlvbiBmZXRjaFRpY2tlcih0aWNrZXIpewogIHZhciBpc0FYPXRpY2tlci5lbmRzV2l0aCgnLkFYJyksZHA9aXNBWD8zOjI7CiAgdmFyIHVybD0naHR0cHM6Ly9xdWVyeTEuZmluYW5jZS55YWhvby5jb20vdjgvZmluYW5jZS9jaGFydC8nK2VuY29kZVVSSUNvbXBvbmVudCh0aWNrZXIpKyc/aW50ZXJ2YWw9MTVtJnJhbmdlPTFkJmluY2x1ZGVQcmVQb3N0PWZhbHNlJzsKICB2YXIgaj1hd2FpdChhd2FpdCBmZXRjaChQUk9YWStlbmNvZGVVUklDb21wb25lbnQodXJsKSkpLmpzb24oKTsKICB2YXIgcmVzPWouY2hhcnQmJmouY2hhcnQucmVzdWx0JiZqLmNoYXJ0LnJlc3VsdFswXTtpZighcmVzKXRocm93IG5ldyBFcnJvcignbm8gZGF0YScpOwogIHZhciBxPXJlcy5pbmRpY2F0b3JzLnF1b3RlWzBdLG1ldGE9cmVzLm1ldGF8fHt9LHRzPXJlcy50aW1lc3RhbXB8fFtdOwogIHZhciBwcmV2PW1ldGEuY2hhcnRQcmV2aW91c0Nsb3NlfHxtZXRhLnByZXZpb3VzQ2xvc2V8fHEuY2xvc2VbMF07CiAgdmFyIGJhcnM9W107CiAgZm9yKHZhciBpPTA7aTx0cy5sZW5ndGg7aSsrKXtpZihxLmNsb3NlW2ldPT1udWxsKWNvbnRpbnVlO2JhcnMucHVzaChbdHNbaV0scS5vcGVuW2ldfHxxLmNsb3NlW2ldLHEuaGlnaFtpXXx8cS5jbG9zZVtpXSxxLmxvd1tpXXx8cS5jbG9zZVtpXSxxLmNsb3NlW2ldLHEudm9sdW1lW2ldfHwwXSk7fQogIGlmKCFiYXJzLmxlbmd0aCl0aHJvdyBuZXcgRXJyb3IoJ25vIGJhcnMnKTsKICB2YXIgcHJpY2U9YmFyc1tiYXJzLmxlbmd0aC0xXVs0XTsKICB2YXIgZ3A9cHJldj8oKGJhcnNbMF1bMV0tcHJldikvcHJldioxMDApOjA7CiAgdmFyIGd0PWdwPjAuMz8nR2FwIFVwJzpncDwtMC4zPydHYXAgRG93bic6J0ZsYXQnOwogIHZhciB2dz1jYWxjVldBUChiYXJzKSx2cz12dz4wPyhwcmljZS12dykvdncqMTAwOjA7CiAgdmFyIHJzaT1jYWxjUlNJKGJhcnMubWFwKGZ1bmN0aW9uKGIpe3JldHVybiBiWzRdO30pLDE0KTsKICB2YXIgbW89YmFycy5sZW5ndGg+PTY/cHJpY2UtYmFyc1tiYXJzLmxlbmd0aC02XVs0XTowOwogIHZhciBhdHI9Y2FsY0FUUihiYXJzLDE0KTsKICB2YXIgc2lnPWdldFNpZ25hbCh2cyxyc2ksbW8pOwogIHZhciBiej0nLS0nLHN6PSctLSc7CiAgaWYoc2lnLnM9PT0nZGInKXtiej0nJCcrKHZ3PjAmJnZ3PHByaWNlP3Z3OnByaWNlKjAuOTkpLnRvRml4ZWQoZHApO3N6PSckJysoYXRyPjA/cHJpY2UrYXRyKjI6cHJpY2UqMS4wNCkudG9GaXhlZChkcCk7fQogIGVsc2UgaWYoc2lnLnM9PT0ndycpe2J6PSckJysodnc+MD92dzpwcmljZSkudG9GaXhlZChkcCk7fQogIHJldHVybnt0azp0aWNrZXIscHI6cHJpY2UsZ3A6Z3AsZ3Q6Z3Qsdnc6dncsdnM6dnMscnM6cnNpLG1vOm1vLHNpZzpzaWcsYno6Ynosc3o6c3p9Owp9CmZ1bmN0aW9uIG1ha2VSb3cocil7CiAgdmFyIGRwPXIudGsuZW5kc1dpdGgoJy5BWCcpPzM6MixnYz1yLmdwPj0wPycjNDRiYjQ0JzonI2NjNDQ0NCcsdmM9ci52cz49MD8nIzQ0YmI0NCc6JyNjYzQ0NDQnOwogIHJldHVybiAnPHRyIGRhdGEtc2lnbmFsPSInK3Iuc2lnLnMrJyIgZGF0YS10az0iJytyLnRrKyciPicKICAgICsnPHRkPicrci50aysnPC90ZD48dGQ+JCcrci5wci50b0ZpeGVkKGRwKSsnPC90ZD4nCiAgICArJzx0ZCBzdHlsZT0iY29sb3I6JytnYysnIj4nKyhyLmdwPj0wPycrJzonJykrci5ncC50b0ZpeGVkKDIpKyclPC90ZD4nCiAgICArJzx0ZD4nK3IuZ3QrJzwvdGQ+PHRkPiQnK3IudncudG9GaXhlZChkcCkrJzwvdGQ+JwogICAgKyc8dGQgc3R5bGU9ImNvbG9yOicrdmMrJyI+Jysoci52cz49MD8nKyc6JycpK3IudnMudG9GaXhlZCgyKSsnJTwvdGQ+JwogICAgKyc8dGQ+JytyLnJzLnRvRml4ZWQoMSkrJzwvdGQ+PHRkPicrKHIubW8+PTA/J1VwJzonRG93bicpKyc8L3RkPicKICAgICsnPHRkIHN0eWxlPSJjb2xvcjonK3Iuc2lnLmNvbG9yKyc7Zm9udC13ZWlnaHQ6Ym9sZCI+JytyLnNpZy5sYWJlbCsnPC90ZD4nCiAgICArJzx0ZD4nK3IuYnorJzwvdGQ+PHRkPicrci5zeisnPC90ZD4nCiAgICArJzx0ZD48YnV0dG9uIGNsYXNzPSJfY2J0biIgZGF0YS10PSInK3IudGsrJyIgc3R5bGU9ImJhY2tncm91bmQ6IzFhM2E2YTtjb2xvcjojYzhkOGYwO2JvcmRlcjoxcHggc29saWQgIzJhNGE4YTtwYWRkaW5nOjNweCA4cHg7Ym9yZGVyLXJhZGl1czozcHg7Y3Vyc29yOnBvaW50ZXI7Zm9udC1zaXplOjExcHgiPkNoYXJ0PC9idXR0b24+PC90ZD4nCiAgICArJzwvdHI+JzsKfQp2YXIgX2J1c3k9ZmFsc2UsX3Jlc3VsdHM9W107CndpbmRvdy5yZW5kZXJJbnRyYWRheVRhYmxlPWFzeW5jIGZ1bmN0aW9uKCl7CiAgaWYoX2J1c3kpcmV0dXJuO19idXN5PXRydWU7CiAgdmFyIHRib2R5PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdpbnRyYWRheUJvZHknKSxjbnQ9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ludHJhZGF5Q291bnQnKTsKICBpZih0Ym9keSl0Ym9keS5pbm5lckhUTUw9Jzx0cj48dGQgY29sc3Bhbj0iMTIiIHN0eWxlPSJ0ZXh0LWFsaWduOmNlbnRlcjtwYWRkaW5nOjIwcHg7Y29sb3I6Izg4OCI+TG9hZGluZyBsaXZlIGRhdGEuLi48L3RkPjwvdHI+JzsKICB2YXIgdGtzPUFycmF5LmZyb20oZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnI2NhcmRzR3JpZCAuc3RvY2stY2FyZFtkYXRhLXRpY2tlcl0nKSkubWFwKGZ1bmN0aW9uKGMpe3JldHVybiBjLmdldEF0dHJpYnV0ZSgnZGF0YS10aWNrZXInKTt9KS5maWx0ZXIoQm9vbGVhbik7CiAgaWYoIXRrcy5sZW5ndGgpe2lmKHRib2R5KXRib2R5LmlubmVySFRNTD0nPHRyPjx0ZCBjb2xzcGFuPSIxMiIgc3R5bGU9ImNvbG9yOiM4ODg7cGFkZGluZzoxMnB4Ij5ObyB0aWNrZXJzIGZvdW5kLjwvdGQ+PC90cj4nO19idXN5PWZhbHNlO3JldHVybjt9CiAgX3Jlc3VsdHM9W107CiAgZm9yKHZhciBpPTA7aTx0a3MubGVuZ3RoO2krKyl7CiAgICB0cnl7X3Jlc3VsdHMucHVzaChhd2FpdCBmZXRjaFRpY2tlcih0a3NbaV0pKTt9Y2F0Y2goZSl7Y29uc29sZS53YXJuKCdza2lwJyx0a3NbaV0sZS5tZXNzYWdlKTt9CiAgICBpZihjbnQpY250LnRleHRDb250ZW50PShpKzEpKycgb2YgJyt0a3MubGVuZ3RoKycgdGlja2Vycyc7CiAgICBhd2FpdCBuZXcgUHJvbWlzZShmdW5jdGlvbihyKXtzZXRUaW1lb3V0KHIsMjAwKTt9KTsKICB9CiAgYXBwbHlGaWx0ZXJzKCk7X2J1c3k9ZmFsc2U7CiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnLl9jYnRuJykuZm9yRWFjaChmdW5jdGlvbihiKXtiLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJyxmdW5jdGlvbigpe2lmKHR5cGVvZiBzaG93Q2hhcnQ9PT0nZnVuY3Rpb24nKXNob3dDaGFydCh0aGlzLmdldEF0dHJpYnV0ZSgnZGF0YS10JykpO30pO30pOwp9OwpmdW5jdGlvbiBhcHBseUZpbHRlcnMoKXsKICB2YXIgc3Y9KChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW50cmFkYXlTaWdGaWx0ZXInKXx8e30pLnZhbHVlfHwnJyksc2g9KChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW50cmFkYXlTZWFyY2gnKXx8e30pLnZhbHVlfHwnJykudG9Mb3dlckNhc2UoKTsKICB2YXIgZj1fcmVzdWx0cy5maWx0ZXIoZnVuY3Rpb24ocil7cmV0dXJuKCFzdnx8c3YudG9VcHBlckNhc2UoKT09PSdBTEwnfHxyLnNpZy5zPT09c3YpJiYoIXNofHxyLnRrLnRvTG93ZXJDYXNlKCkuaW5kZXhPZihzaCkhPT0tMSk7fSk7CiAgdmFyIHRib2R5PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdpbnRyYWRheUJvZHknKSxjbnQ9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ludHJhZGF5Q291bnQnKTsKICBpZighZi5sZW5ndGgpe2lmKHRib2R5KXRib2R5LmlubmVySFRNTD0nPHRyPjx0ZCBjb2xzcGFuPSIxMiIgc3R5bGU9ImNvbG9yOiM4ODg7cGFkZGluZzoxMnB4Ij5ObyBtYXRjaGVzPC90ZD48L3RyPic7aWYoY250KWNudC50ZXh0Q29udGVudD0nMCBvZiAnK19yZXN1bHRzLmxlbmd0aCsnIHRpY2tlcnMnO3JldHVybjt9CiAgaWYodGJvZHkpdGJvZHkuaW5uZXJIVE1MPWYubWFwKG1ha2VSb3cpLmpvaW4oJycpOwogIGlmKGNudCljbnQudGV4dENvbnRlbnQ9Zi5sZW5ndGgrJyBvZiAnK19yZXN1bHRzLmxlbmd0aCsnIHRpY2tlcnMnOwp9CnNldFRpbWVvdXQoZnVuY3Rpb24oKXsKICB2YXIgc2Y9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ludHJhZGF5U2lnRmlsdGVyJyksc3Q9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ludHJhZGF5U2VhcmNoJyk7CiAgaWYoc2Ypc2YuYWRkRXZlbnRMaXN0ZW5lcignY2hhbmdlJyxhcHBseUZpbHRlcnMpO2lmKHN0KXN0LmFkZEV2ZW50TGlzdGVuZXIoJ2lucHV0JyxhcHBseUZpbHRlcnMpOwp9LDEwMDApOwp9KSgpOwo8L3NjcmlwdD4K'
     ).decode('utf-8')
 
     # _COUNTDOWN_APPENDED — do not remove
@@ -1718,9 +1770,9 @@ window.addEventListener('resize',()=>{
 
 <h3 style="color:#ccc;margin:25px 0 12px">Open Positions</h3>
 <div class="asx-table-wrap"><table class="asx-table"><thead><tr>
-  <th>Source</th><th>Ticker</th><th>Entry</th><th>Position ($)</th><th>Stop</th><th>Target</th><th>Opened</th>
+  <th>Source</th><th>Ticker</th><th>Entry</th><th>Position ($)</th><th>Stop</th><th>Target</th><th>Opened</th><th></th>
 </tr></thead><tbody id="paperOpenBody">
-<tr><td colspan="7" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
+<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
 </tbody></table></div>
 
 <h3 style="color:#ccc;margin:25px 0 12px">Closed Trades</h3>
@@ -2044,10 +2096,12 @@ window.addEventListener('resize',()=>{
     <li>Copy the token and paste it below</li>
   </ol>
   <div style="display:flex;gap:10px;margin-top:15px">
-    <input id="ghToken" type="password" placeholder="ghp_xxxxxxxxxxxx" style="flex:1">
+    <input id="ghToken" type="password" placeholder="ghp_xxxxxxxxxxxx" style="flex:1" onkeydown="if(event.key==='Enter')saveToken()">
     <button class="btn-primary" onclick="saveToken()">Save Token</button>
+    <button class="btn-secondary" onclick="testToken()">Test Token</button>
   </div>
-  <p style="color:#555;font-size:11px;margin-top:8px">Token is stored in your browser only (localStorage). Never shared or uploaded.</p>
+  <p id="tokenStatus" style="color:#888;font-size:12px;margin-top:10px">Checking saved token...</p>
+  <p style="color:#555;font-size:11px;margin-top:8px">Token is stored in your browser only (localStorage). Never shared or uploaded. Pressing Enter in the box also saves it.</p>
 </div>
 </div>
 </div>
