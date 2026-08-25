@@ -1150,14 +1150,26 @@ function fmtMoney(v){ return v==null ? '—' : '$'+Number(v).toFixed(2); }
 function fmtPct(v){ return v==null ? '—' : (v>=0?'+':'')+v.toFixed(2)+'%'; }
 function profitLevel(v,pct){ return v==null ? '—' : '$'+(Number(v)*(1+pct/100)).toFixed(3); }
 function profitLevels(v){ return v==null ? '—' : profitLevel(v,5)+' / '+profitLevel(v,10); }
-// Last nightly close from the already-loaded watchlist chart data -- avoids an extra
-// live fetch per row for tables that list many open positions at once. Not real-time,
-// but consistent with what every other "current price" figure on this dashboard uses
-// outside of the dedicated live-refresh features (Portfolio tab, live scans).
+// Last nightly close from the already-loaded watchlist chart data -- used as a fast
+// fallback when a live fetch isn't available/fails, and for tickers outside the
+// watchlist that have no live-fetchable current price at all.
 function getCurrentPrice(ticker){
   const cd=CHART_DATA[ticker];
   if(cd && cd.candles && cd.candles.length) return cd.candles[cd.candles.length-1].close;
   return null;
+}
+// True live price for open-position tables ("Current" should mean right now, not
+// last night's close) -- falls back to the nightly close if the live fetch fails.
+async function getLiveCurrentPrice(ticker){
+  const live=await fetchLivePrice(ticker);
+  return live!=null ? live : getCurrentPrice(ticker);
+}
+// Fetches live prices for a set of tickers in parallel and returns {ticker: price}.
+async function getLiveCurrentPrices(tickers){
+  const uniq=[...new Set(tickers)];
+  const out={};
+  await Promise.all(uniq.map(async t=>{ out[t]=await getLiveCurrentPrice(t); }));
+  return out;
 }
 function chartButton(r){
   const btn='<button class="btn-primary" style="padding:2px 8px;font-size:10px;margin-left:4px" onclick="%ONCLICK%">📈</button>';
@@ -1233,14 +1245,20 @@ async function renderPaperTab(){
   }).join('');
 
   const openBody=document.getElementById('paperOpenBody');
-  if(openBody) openBody.innerHTML = openRows.length ? openRows.map(r=>{
-    const cur=getCurrentPrice(r.ticker);
+  const renderOpenRows=(prices)=> openRows.length ? openRows.map(r=>{
+    const cur = prices ? prices[r.ticker] : getCurrentPrice(r.ticker);
     const curColor = (cur==null||r.entry==null) ? '#888' : (cur>=r.entry?'#44bb44':'#cc0000');
     return '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b>'+chartButton(r)
     +'</td><td>'+fmtMoney(r.entry)+'</td><td style="color:'+curColor+'">'+fmtMoney(cur)+'</td><td>'+fmtMoney(r.positionCost)+'</td>'
     +'<td style="color:#cc0000">'+fmtMoney(r.stop)+'</td><td style="color:#44bb44">'+fmtMoney(r.target)+'</td>'
     +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td><td>'+sellButton(r)+'</td></tr>';
   }).join('') : '<tr><td colspan="9" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
+  if(openBody) openBody.innerHTML=renderOpenRows(null);  // fast render with last-close fallback first
+  if(openRows.length){
+    getLiveCurrentPrices(openRows.map(r=>r.ticker)).then(prices=>{
+      if(document.getElementById('paperOpenBody')) document.getElementById('paperOpenBody').innerHTML=renderOpenRows(prices);
+    });
+  }
 
   const closedBody=document.getElementById('paperClosedBody');
   if(closedBody) closedBody.innerHTML = closedRows.length ? closedRows.map(r=>
@@ -1309,8 +1327,8 @@ async function renderSuggestionsTab(){
       + '<div class="stat-card"><div class="stat-label">Remaining</div><div class="stat-value">'+fmtMoney(IDEAS_BUDGET-deployed)+'</div></div>'
       + '<div class="stat-card"><div class="stat-label">Open Positions</div><div class="stat-value">'+open.length+'</div></div>'
       + '<div class="stat-card"><div class="stat-label">Realized P&amp;L</div><div class="stat-value" style="color:'+(realizedPnl>=0?'#44bb44':'#cc0000')+'">'+fmtMoney(realizedPnl)+'</div></div>';
-    if(openBody) openBody.innerHTML = open.length ? open.map(t=>{
-      const cur=getCurrentPrice(t.ticker);
+    const renderIdeasOpenRows=(prices)=> open.length ? open.map(t=>{
+      const cur = prices ? prices[t.ticker] : getCurrentPrice(t.ticker);
       const curColor = (cur==null) ? '#888' : (cur>=t.buy_price?'#44bb44':'#cc0000');
       return '<tr><td><b>'+t.ticker+'</b></td><td>'+fmtMoney(t.buy_price)+'</td><td style="color:'+curColor+'">'+fmtMoney(cur)+'</td><td>'+t.shares+'</td>'
       +'<td>'+fmtMoney(t.shares*t.buy_price)+'</td>'
@@ -1320,6 +1338,13 @@ async function renderSuggestionsTab(){
       +'<td style="font-size:11px;color:#888">'+(t.buy_date||'—')+'</td>'
       +'<td><button class="btn-primary" style="padding:4px 10px;font-size:11px" onclick="sellIdea(\''+t.ticker+'\')">Sell</button></td></tr>';
     }).join('') : '<tr><td colspan="11" style="color:#888;text-align:center;padding:20px">No open Trade Ideas positions</td></tr>';
+    if(openBody) openBody.innerHTML=renderIdeasOpenRows(null);
+    if(open.length){
+      getLiveCurrentPrices(open.map(t=>t.ticker)).then(prices=>{
+        const ob=document.getElementById('ideasOpenBody');
+        if(ob) ob.innerHTML=renderIdeasOpenRows(prices);
+      });
+    }
   }catch(e){
     if(openBody) openBody.innerHTML='<tr><td colspan="11" style="color:#cc0000;text-align:center;padding:20px">Error loading: '+e.message+'</td></tr>';
   }
