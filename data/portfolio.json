@@ -551,7 +551,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP \u00c3\u0083\u00c2\u00a2\u00c3\u0082\u00c2\u0080\u00c3\u0082\u00c2\u0094 momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP ÃÂ¢ÃÂÃÂ momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -570,7 +570,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP \u00c3\u00a2\u00c2\u0080\u00c2\u0094 momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP Ã¢ÂÂ momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -608,7 +608,7 @@
       "buy_price": 16.16,
       "buy_date": "2026-08-24",
       "signal": "BUY",
-      "reason": "RSI 51.85 neutral; RSI trending UP \u2014 momentum building",
+      "reason": "RSI 51.85 neutral; RSI trending UP — momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 15.5,
@@ -681,6 +681,25 @@
         "sector": "Utilities",
         "entered_dc_num": 5,
         "entered_score": 47
+      }
+    },
+    {
+      "ticker": "APA.AX",
+      "shares": 94.7867,
+      "buy_price": 10.55,
+      "buy_date": "2026-08-25",
+      "signal": "CYCLE_CYCLE_CAUTION",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #4 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 10,
+      "target_price": 11,
+      "meta": {
+        "strategy": "suggested_trades",
+        "entry_type": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "confidence": null,
+        "blended_score": 47,
+        "source": "cycle_trading_idea"
       }
     }
   ],
