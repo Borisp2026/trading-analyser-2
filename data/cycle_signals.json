@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T15:12:01",
+  "generated_at": "2026-08-25T15:21:59",
   "watchlist_count": 27,
   "candidates": [
     {
@@ -182,12 +182,12 @@
         "target_price": 15.5274
       },
       "rank": 2,
-      "paper_trade_status": "OPENED_THIS_RUN"
+      "paper_trade_status": "ALREADY_OPEN"
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 210.6,
+      "price": 210.71,
       "sector": "Technology",
       "cycle_score": 57,
       "cycle_signal": "CYCLE_HOLD",
@@ -202,7 +202,7 @@
         "est_date_dc3": "2026-10-21"
       },
       "stop_price": 186.2098,
-      "position_size": 863.46,
+      "position_size": 860.03,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -264,7 +264,7 @@
             "price": 227.92
           }
         },
-        "entry_price": 210.6,
+        "entry_price": 210.71,
         "stop_price": 186.2098,
         "target_price": 214.6272
       },
@@ -436,7 +436,7 @@
         "target_price": 10.9763
       },
       "rank": 5,
-      "paper_trade_status": "OPENED_THIS_RUN"
+      "paper_trade_status": "ALREADY_OPEN"
     }
   ],
   "failed_cycle_alerts": [
@@ -483,7 +483,7 @@
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 490.28,
+      "price": 489.93,
       "type": "completed_cycle_failed",
       "dcl0_price": 348.5439,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
@@ -491,7 +491,7 @@
     {
       "ticker": "TSLA",
       "name": "Tesla, Inc.",
-      "price": 351.465,
+      "price": 352.83,
       "type": "completed_cycle_failed",
       "dcl0_price": 297.38,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
@@ -586,7 +586,7 @@
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 478.84,
+      "price": 480.09,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
@@ -728,7 +728,7 @@
         "entered_dc_num": 1,
         "entered_score": 57
       },
-      "_current_price": 210.6,
+      "_current_price": 210.71,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -1788,32 +1788,13 @@
   ],
   "drawdown": {
     "realized_pnl": -215.28,
-    "unrealized_pnl": 263.13,
-    "total_pnl": 47.85,
+    "unrealized_pnl": 263.48,
+    "total_pnl": 48.2,
     "drawdown_pct": 0.0,
     "halted": false
   },
   "actions_this_run": {
     "closed": [],
-    "opened": [
-      {
-        "ticker": "CMM.AX",
-        "entry_price": 17.73,
-        "shares": 11.7535,
-        "position_cost": 208.39,
-        "sector": "Basic Materials",
-        "stop_price": 9.2218,
-        "target_price": 15.5274
-      },
-      {
-        "ticker": "APA.AX",
-        "entry_price": 10.55,
-        "shares": 39.8673,
-        "position_cost": 420.6,
-        "sector": "Utilities",
-        "stop_price": 8.0417,
-        "target_price": 10.9763
-      }
-    ]
+    "opened": []
   }
 }

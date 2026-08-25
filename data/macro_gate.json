@@ -26,10 +26,10 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 1.81,
-      "value_label": "Z-score +1.81",
-      "score": 4.9,
-      "detail": "HYG/TLT ratio z-score +1.81 vs 1-year avg (negative = tight = bullish)",
+      "value": 1.78,
+      "value_label": "Z-score +1.78",
+      "score": 5.5,
+      "detail": "HYG/TLT ratio z-score +1.78 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
@@ -42,14 +42,14 @@
     },
     {
       "name": "SPX Trend",
-      "value": 7.9,
+      "value": 7.95,
       "value_label": "SPX +7.9% vs 200MA",
       "score": 100,
-      "detail": "S&P 500 $7,666 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,669 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "UPTREND"
     }
   ],
-  "composite": 77.0,
+  "composite": 77.1,
   "us_signals": [
     {
       "name": "VIX Level",
@@ -77,10 +77,10 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 1.81,
-      "value_label": "Z-score +1.81",
-      "score": 4.9,
-      "detail": "HYG/TLT ratio z-score +1.81 vs 1-year avg (negative = tight = bullish)",
+      "value": 1.78,
+      "value_label": "Z-score +1.78",
+      "score": 5.5,
+      "detail": "HYG/TLT ratio z-score +1.78 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
@@ -93,14 +93,14 @@
     },
     {
       "name": "SPX Trend",
-      "value": 7.9,
+      "value": 7.95,
       "value_label": "SPX +7.9% vs 200MA",
       "score": 100,
-      "detail": "S&P 500 $7,666 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,669 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "UPTREND"
     }
   ],
-  "us_composite": 77.0,
+  "us_composite": 77.1,
   "asx_signals": [
     {
       "name": "ASX Trend",
@@ -131,5 +131,5 @@
   "zone": "DEPLOY",
   "zone_desc": "Conditions favourable \u2014 deploy capital aggressively",
   "zone_color": "#44bb44",
-  "scanned_at": "2026-08-25T15:12:08.381366"
+  "scanned_at": "2026-08-25T15:22:09.011803"
 }
