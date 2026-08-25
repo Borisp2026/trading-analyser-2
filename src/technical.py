@@ -110,7 +110,13 @@ def analyse_technicals(df: pd.DataFrame) -> dict:
     # Bollinger Bands
     bb_upper, bb_mid, bb_lower, pct_b = calc_bollinger(close)
     pct_b_val = round(pct_b.iloc[-1], 3) if not pd.isna(pct_b.iloc[-1]) else 0.5
-    price = round(close.iloc[-1], 4)
+    # Yahoo/yfinance occasionally appends a same-day row for non-US exchanges (seen on
+    # .AX tickers) whose Close is still NaN pending finalization. Blindly trusting
+    # close.iloc[-1] then makes `price` NaN, which filter_by_price() silently drops
+    # downstream (NaN <= x is always False in Python) with no error logged anywhere --
+    # use the last actually-valid close instead.
+    close_valid = close.dropna()
+    price = round(close_valid.iloc[-1], 4) if len(close_valid) else round(close.iloc[-1], 4)
 
     # ATR (for stop-loss suggestions)
     atr = calc_atr(high, low, close)

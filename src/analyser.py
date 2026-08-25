@@ -96,7 +96,11 @@ def run_nightly():
         else:
             results.append(result)
             r = result["reasoning"]
-            print(f"  OK   {ticker:8} | {r.get('recommendation','?'):12} | Score: {r.get('blended_score','?'):5} | ${result['tech'].get('price',0):.3f}")
+            price = result["tech"].get("price", 0)
+            print(f"  OK   {ticker:8} | {r.get('recommendation','?'):12} | Score: {r.get('blended_score','?'):5} | ${price:.3f}")
+            if price != price:  # NaN check without importing math -- NaN is the only value that isn't equal to itself
+                print(f"    WARNING: {ticker} has a NaN price -- filter_by_price() will silently drop it below "
+                      f"(NaN <= x is always False), so it won't appear in tonight's results even though the scan itself succeeded.")
     asx_filtered = filter_by_price([r for r in results if r["ticker"].endswith(".AX")], max_price_asx)
     nasdaq_filtered = filter_by_price([r for r in results if not r["ticker"].endswith(".AX")], max_price_nasdaq)
     all_results = sorted(asx_filtered + nasdaq_filtered, key=lambda r: r["reasoning"].get("blended_score", 0), reverse=True)
