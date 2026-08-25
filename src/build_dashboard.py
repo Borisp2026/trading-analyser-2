@@ -1164,11 +1164,17 @@ async function getLiveCurrentPrice(ticker){
   const live=await fetchLivePrice(ticker);
   return live!=null ? live : getCurrentPrice(ticker);
 }
-// Fetches live prices for a set of tickers in parallel and returns {ticker: price}.
+// Fetches live prices for a set of tickers and returns {ticker: price}. Sequential
+// with a small delay, not Promise.all -- firing many corsproxy.io requests at once
+// (confirmed via testing) makes some of them silently fail and fall back to last
+// close even though the exact same ticker succeeds fine when fetched on its own.
 async function getLiveCurrentPrices(tickers){
   const uniq=[...new Set(tickers)];
   const out={};
-  await Promise.all(uniq.map(async t=>{ out[t]=await getLiveCurrentPrice(t); }));
+  for(const t of uniq){
+    out[t]=await getLiveCurrentPrice(t);
+    await new Promise(r=>setTimeout(r,150));
+  }
   return out;
 }
 function chartButton(r){
