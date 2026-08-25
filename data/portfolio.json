@@ -551,7 +551,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP ÃÂ¢ÃÂÃÂ momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -570,7 +570,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP Ã¢ÂÂ momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP ÃÂ¢ÃÂÃÂ momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -608,7 +608,7 @@
       "buy_price": 16.16,
       "buy_date": "2026-08-24",
       "signal": "BUY",
-      "reason": "RSI 51.85 neutral; RSI trending UP — momentum building",
+      "reason": "RSI 51.85 neutral; RSI trending UP â momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 15.5,
@@ -700,6 +700,25 @@
         "confidence": null,
         "blended_score": 47,
         "source": "cycle_trading_idea"
+      }
+    },
+    {
+      "ticker": "SS1",
+      "shares": 2553.1915,
+      "buy_price": 1.175,
+      "buy_date": "2026-08-25",
+      "signal": "MANUAL_ENTRY",
+      "reason": "Manually entered",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 1.05,
+      "target_price": 1.3,
+      "meta": {
+        "strategy": "suggested_trades",
+        "entry_type": "Manual entry",
+        "confidence": null,
+        "blended_score": null,
+        "source": "manual_entry"
       }
     }
   ],
