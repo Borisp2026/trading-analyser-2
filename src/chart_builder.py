@@ -168,6 +168,15 @@ def build_chart_data(df: pd.DataFrame, ticker: str) -> dict:
 
     try:
         df90 = df.tail(120).copy()
+        # Same Yahoo/yfinance quirk as technical.py's price calc: a same-day row can
+        # arrive with NaN OHLC before it's finalized (seen on .AX tickers). Unlike
+        # technical.py this builds a whole candle series, not a single value, so drop
+        # any such incomplete row rather than letting a NaN close ride into the chart
+        # (Python's json.dump serializes NaN as a literal, which becomes a silent NaN
+        # in the browser -- e.g. it broke the dashboard's "current price" column).
+        df90 = df90[df90["Close"].notna()]
+        if df90.empty:
+            return {}
         close = df90["Close"]
         sma20 = close.rolling(20).mean()
         sma50 = close.rolling(50).mean()

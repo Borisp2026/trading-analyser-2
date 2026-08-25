@@ -36,6 +36,13 @@ def fetch_stock(ticker):
     try:
         yf_ticker = yf.Ticker(ticker)
         df = yf_ticker.history(period="2y", auto_adjust=True)
+        # Yahoo/yfinance can append a same-day row before it's finalized, with NaN
+        # OHLC (seen repeatedly on .AX tickers). Drop it here, once, at the source --
+        # every downstream consumer of this dataframe (technical.py, cycle_analysis.py,
+        # chart_builder.py) otherwise inherits a silent NaN from blindly trusting the
+        # last row, which is what caused every .AX ticker's price to come out NaN and
+        # get silently filtered out of a whole night's results with no error logged.
+        df = df[df["Close"].notna()]
         if df.empty or len(df) < 30:
             return {"ticker": ticker, "error": "No data"}
         try:
