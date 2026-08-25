@@ -644,9 +644,47 @@
       "pnl": -6.42,
       "pnl_pct": -0.79,
       "close_reason": "HIGH_RISK_ZONE_DC3_4"
+    },
+    {
+      "ticker": "CMM.AX",
+      "shares": 11.7535,
+      "buy_price": 17.73,
+      "buy_date": "2026-08-25",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 9.2218,
+      "target_price": 15.5274,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Basic Materials",
+        "entered_dc_num": 3,
+        "entered_score": 80
+      }
+    },
+    {
+      "ticker": "APA.AX",
+      "shares": 39.8673,
+      "buy_price": 10.55,
+      "buy_date": "2026-08-25",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #4 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 8.0417,
+      "target_price": 10.9763,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Utilities",
+        "entered_dc_num": 5,
+        "entered_score": 47
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 7090.761457999997,
+  "paper_cash": 6461.7718879999975,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
