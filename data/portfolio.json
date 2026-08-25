@@ -518,7 +518,7 @@
       "buy_date": "2026-08-24",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #1 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 7.791,
       "target_price": 11.0613,
@@ -528,7 +528,12 @@
         "sector": "Industrials",
         "entered_dc_num": 2,
         "entered_score": 80
-      }
+      },
+      "sell_price": 9.17,
+      "sell_date": "2026-08-25",
+      "pnl": -15.35,
+      "pnl_pct": -2.65,
+      "close_reason": "FAILED_CYCLE"
     },
     {
       "ticker": "TEA.AX",
@@ -536,7 +541,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP ÃÂ¢ÃÂÃÂ momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP \u00c3\u0083\u00c2\u00a2\u00c3\u0082\u00c2\u0080\u00c3\u0082\u00c2\u0094 momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -555,7 +560,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP Ã¢ÂÂ momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP \u00c3\u00a2\u00c2\u0080\u00c2\u0094 momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -593,7 +598,7 @@
       "buy_price": 16.16,
       "buy_date": "2026-08-24",
       "signal": "BUY",
-      "reason": "RSI 51.85 neutral; RSI trending UP — momentum building",
+      "reason": "RSI 51.85 neutral; RSI trending UP \u2014 momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 15.5,
@@ -605,9 +610,28 @@
         "blended_score": 62.8,
         "source": "nightly"
       }
+    },
+    {
+      "ticker": "IOZ.AX",
+      "shares": 22.1376,
+      "buy_price": 36.85,
+      "buy_date": "2026-08-25",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 32.3328,
+      "target_price": 36.8014,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Unknown",
+        "entered_dc_num": 4,
+        "entered_score": 72
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 5896.694096999998,
+  "paper_cash": 5643.846911999998,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
