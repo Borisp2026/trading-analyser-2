@@ -872,10 +872,13 @@ function renderAgentDashboard(d) {
     const s = d.stats || {};
     const trades = d.trades || [];
     const closed = trades.filter(t=>t.status==='CLOSED').length;
-    const pct = Math.min(100, (closed/30)*100);
+    const target = d.target_trades || 100;
+    const pct = Math.min(100, (closed/target)*100);
 
-    document.getElementById('agentProgress').textContent = closed + ' / 30 trades';
+    document.getElementById('agentProgress').textContent = closed + ' / ' + target + ' trades';
     document.getElementById('agentProgressBar').style.width = pct + '%';
+    const targetLabelEl = document.getElementById('agentTargetLabel');
+    if(targetLabelEl) targetLabelEl.textContent = target + ' trades';
     const statusEl = document.getElementById('agentStatus');
     statusEl.textContent = d.status==='COMPLETED' ? '✓ COMPLETE — Ready for paper trading'
                          : d.status==='RUNNING'   ? '● Running' : (d.status||'—');
@@ -1147,6 +1150,15 @@ function fmtMoney(v){ return v==null ? '—' : '$'+Number(v).toFixed(2); }
 function fmtPct(v){ return v==null ? '—' : (v>=0?'+':'')+v.toFixed(2)+'%'; }
 function profitLevel(v,pct){ return v==null ? '—' : '$'+(Number(v)*(1+pct/100)).toFixed(3); }
 function profitLevels(v){ return v==null ? '—' : profitLevel(v,5)+' / '+profitLevel(v,10); }
+// Last nightly close from the already-loaded watchlist chart data -- avoids an extra
+// live fetch per row for tables that list many open positions at once. Not real-time,
+// but consistent with what every other "current price" figure on this dashboard uses
+// outside of the dedicated live-refresh features (Portfolio tab, live scans).
+function getCurrentPrice(ticker){
+  const cd=CHART_DATA[ticker];
+  if(cd && cd.candles && cd.candles.length) return cd.candles[cd.candles.length-1].close;
+  return null;
+}
 function chartButton(r){
   const btn='<button class="btn-primary" style="padding:2px 8px;font-size:10px;margin-left:4px" onclick="%ONCLICK%">📈</button>';
   const onclick = r.source==='Cycle Trading'
@@ -1221,12 +1233,14 @@ async function renderPaperTab(){
   }).join('');
 
   const openBody=document.getElementById('paperOpenBody');
-  if(openBody) openBody.innerHTML = openRows.length ? openRows.map(r=>
-    '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b>'+chartButton(r)
-    +'</td><td>'+fmtMoney(r.entry)+'</td><td>'+fmtMoney(r.positionCost)+'</td>'
+  if(openBody) openBody.innerHTML = openRows.length ? openRows.map(r=>{
+    const cur=getCurrentPrice(r.ticker);
+    const curColor = (cur==null||r.entry==null) ? '#888' : (cur>=r.entry?'#44bb44':'#cc0000');
+    return '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b>'+chartButton(r)
+    +'</td><td>'+fmtMoney(r.entry)+'</td><td style="color:'+curColor+'">'+fmtMoney(cur)+'</td><td>'+fmtMoney(r.positionCost)+'</td>'
     +'<td style="color:#cc0000">'+fmtMoney(r.stop)+'</td><td style="color:#44bb44">'+fmtMoney(r.target)+'</td>'
-    +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td><td>'+sellButton(r)+'</td></tr>'
-  ).join('') : '<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
+    +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td><td>'+sellButton(r)+'</td></tr>';
+  }).join('') : '<tr><td colspan="9" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
 
   const closedBody=document.getElementById('paperClosedBody');
   if(closedBody) closedBody.innerHTML = closedRows.length ? closedRows.map(r=>
@@ -1278,7 +1292,7 @@ async function renderSuggestionsTab(){
   const openBody=document.getElementById('ideasOpenBody');
   const ovEl=document.getElementById('ideasOverviewGrid');
   if(!getToken()){
-    if(openBody) openBody.innerHTML='<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Set your GitHub token on the Token tab to view live positions and use Buy/Sell.</td></tr>';
+    if(openBody) openBody.innerHTML='<tr><td colspan="11" style="color:#888;text-align:center;padding:20px">Set your GitHub token on the Token tab to view live positions and use Buy/Sell.</td></tr>';
     if(ovEl) ovEl.innerHTML='<div class="stat-card"><div class="stat-label">Budget</div><div class="stat-value">$'+IDEAS_BUDGET.toLocaleString()+'</div></div>';
     return;
   }
@@ -1295,17 +1309,19 @@ async function renderSuggestionsTab(){
       + '<div class="stat-card"><div class="stat-label">Remaining</div><div class="stat-value">'+fmtMoney(IDEAS_BUDGET-deployed)+'</div></div>'
       + '<div class="stat-card"><div class="stat-label">Open Positions</div><div class="stat-value">'+open.length+'</div></div>'
       + '<div class="stat-card"><div class="stat-label">Realized P&amp;L</div><div class="stat-value" style="color:'+(realizedPnl>=0?'#44bb44':'#cc0000')+'">'+fmtMoney(realizedPnl)+'</div></div>';
-    if(openBody) openBody.innerHTML = open.length ? open.map(t=>
-      '<tr><td><b>'+t.ticker+'</b></td><td>'+fmtMoney(t.buy_price)+'</td><td>'+t.shares+'</td>'
+    if(openBody) openBody.innerHTML = open.length ? open.map(t=>{
+      const cur=getCurrentPrice(t.ticker);
+      const curColor = (cur==null) ? '#888' : (cur>=t.buy_price?'#44bb44':'#cc0000');
+      return '<tr><td><b>'+t.ticker+'</b></td><td>'+fmtMoney(t.buy_price)+'</td><td style="color:'+curColor+'">'+fmtMoney(cur)+'</td><td>'+t.shares+'</td>'
       +'<td>'+fmtMoney(t.shares*t.buy_price)+'</td>'
       +'<td style="color:#cc0000">'+fmtMoney(t.stop_price)+'</td><td style="color:#44bb44">'+fmtMoney(t.target_price)+'</td>'
       +'<td style="font-size:11px;color:#888">'+profitLevel(t.buy_price,5)+'</td>'
       +'<td style="font-size:11px;color:#888">'+profitLevel(t.buy_price,10)+'</td>'
       +'<td style="font-size:11px;color:#888">'+(t.buy_date||'—')+'</td>'
-      +'<td><button class="btn-primary" style="padding:4px 10px;font-size:11px" onclick="sellIdea(\''+t.ticker+'\')">Sell</button></td></tr>'
-    ).join('') : '<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">No open Trade Ideas positions</td></tr>';
+      +'<td><button class="btn-primary" style="padding:4px 10px;font-size:11px" onclick="sellIdea(\''+t.ticker+'\')">Sell</button></td></tr>';
+    }).join('') : '<tr><td colspan="11" style="color:#888;text-align:center;padding:20px">No open Trade Ideas positions</td></tr>';
   }catch(e){
-    if(openBody) openBody.innerHTML='<tr><td colspan="10" style="color:#cc0000;text-align:center;padding:20px">Error loading: '+e.message+'</td></tr>';
+    if(openBody) openBody.innerHTML='<tr><td colspan="11" style="color:#cc0000;text-align:center;padding:20px">Error loading: '+e.message+'</td></tr>';
   }
 }
 async function executeIdeaBuy(idea, opts){
@@ -1370,6 +1386,28 @@ async function buyLiveIdea(ticker){
 async function sellIdea(ticker){ return sellPaperTrade(ticker, 'Trade Ideas'); }
 
 // ── Manual entry: any ticker, your own price/stop/target, no suggestion needed ──
+async function lookUpManualTicker(){
+  const ticker=(document.getElementById('mt_ticker').value||'').trim().toUpperCase();
+  const resEl=document.getElementById('mt_lookup_result');
+  if(!ticker){alert('Enter a ticker first.');return;}
+  if(resEl){resEl.style.color='#888';resEl.textContent='Looking up '+ticker+'...';}
+  let cur=await fetchLivePrice(ticker);
+  if(cur==null) cur=getCurrentPrice(ticker);
+  if(cur==null){
+    if(resEl){resEl.style.color='#cc0000';resEl.textContent='Could not find a price for '+ticker+'. Check the ticker code (e.g. EOS.AX for ASX, NVDA for NASDAQ) and enter prices manually.';}
+    return;
+  }
+  const entrySuggest=Math.round(cur*0.99*10000)/10000;
+  const stopSuggest=Math.round(cur*0.95*10000)/10000;
+  const targetSuggest=Math.round(cur*1.05*10000)/10000;
+  document.getElementById('mt_price').value=entrySuggest;
+  document.getElementById('mt_stop').value=stopSuggest;
+  document.getElementById('mt_target').value=targetSuggest;
+  if(resEl){
+    resEl.style.color='#4a90d9';
+    resEl.innerHTML='Current price: <b>'+fmtMoney(cur)+'</b> — filled in: entry '+fmtMoney(entrySuggest)+' (-1%), stop '+fmtMoney(stopSuggest)+' (-5%), sale guide '+fmtMoney(targetSuggest)+' (+5%). Adjust any of these before buying.';
+  }
+}
 async function addManualTrade(){
   const ticker=(document.getElementById('mt_ticker').value||'').trim().toUpperCase();
   const price=parseFloat(document.getElementById('mt_price').value);
@@ -1850,9 +1888,9 @@ window.addEventListener('resize',()=>{
 
 <h3 style="color:#ccc;margin:25px 0 12px">Open Positions</h3>
 <div class="asx-table-wrap"><table class="asx-table"><thead><tr>
-  <th>Source</th><th>Ticker</th><th>Entry</th><th>Position ($)</th><th>Stop</th><th>Target</th><th>Opened</th><th></th>
+  <th>Source</th><th>Ticker</th><th>Bought</th><th>Current</th><th>Position ($)</th><th>Stop</th><th>Target</th><th>Opened</th><th></th>
 </tr></thead><tbody id="paperOpenBody">
-<tr><td colspan="8" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
+<tr><td colspan="9" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
 </tbody></table></div>
 
 <h3 style="color:#ccc;margin:25px 0 12px">Closed Trades</h3>
@@ -2038,10 +2076,10 @@ window.addEventListener('resize',()=>{
 <!-- TAB: Agent Trader -->
 <div id="tab-agent" class="tab-content">
 <div class="section">
-<h2>Agent Trader — 30-Trade Strategy Test</h2>
+<h2>Agent Trader — 100-Trade Strategy Test</h2>
 <p style="color:#888;font-size:13px;margin-bottom:20px">
   Autonomous agent running ORB + VWAP breakout strategy. Scans every 5 min during ASX market hours (10am–4pm AEST) via GitHub Actions.
-  Reviews entry/exit signals independently and records simulated trades. After 30 trades, strategy goes to paper trading.
+  Reviews entry/exit signals independently and records simulated trades. After 100 trades, strategy goes to paper trading.
 </p>
 
 <!-- Progress -->
@@ -2052,7 +2090,7 @@ window.addEventListener('resize',()=>{
   </div>
   <div class="progress-bar-wrap"><div class="progress-bar" id="agentProgressBar" style="width:0%"></div></div>
   <div style="display:flex;justify-content:space-between;font-size:11px;color:#666">
-    <span>0 trades</span><span id="agentStatus" style="color:#ff9900">Loading...</span><span>30 trades</span>
+    <span>0 trades</span><span id="agentStatus" style="color:#ff9900">Loading...</span><span id="agentTargetLabel">100 trades</span>
   </div>
 </div>
 
@@ -2134,7 +2172,8 @@ window.addEventListener('resize',()=>{
 <h3 style="color:#ccc;margin:25px 0 12px">Add Your Own Trade</h3>
 <p style="color:#888;font-size:13px;margin-bottom:12px">
   Not from a suggestion — enter any ticker yourself with your own buy price, stop, and sale
-  (target) price. Counts toward the same $10,000 Trade Ideas budget.
+  (target) price. Counts toward the same $10,000 Trade Ideas budget. Enter a ticker and click
+  Look Up to check its current price and get suggested entry/stop/target to start from.
 </p>
 <div class="form-grid">
   <div class="form-group"><label>Ticker</label><input id="mt_ticker" type="text" placeholder="EOS.AX"></div>
@@ -2143,13 +2182,17 @@ window.addEventListener('resize',()=>{
   <div class="form-group"><label>Stop Price ($)</label><input id="mt_stop" type="number" step="0.001" placeholder="optional"></div>
   <div class="form-group"><label>Sale / Target Price ($)</label><input id="mt_target" type="number" step="0.001" placeholder="optional"></div>
 </div>
-<button class="btn-primary" style="margin-top:10px" onclick="addManualTrade()">Buy</button>
+<div style="margin-top:10px">
+  <button class="btn-secondary" onclick="lookUpManualTicker()">🔍 Look Up</button>
+  <button class="btn-primary" style="margin-left:8px" onclick="addManualTrade()">Buy</button>
+</div>
+<p id="mt_lookup_result" style="color:#888;font-size:12px;margin-top:10px"></p>
 
 <h3 style="color:#ccc;margin:25px 0 12px">Open Positions</h3>
 <div class="asx-table-wrap"><table class="asx-table"><thead><tr>
-  <th>Ticker</th><th>Entry</th><th>Shares</th><th>Cost</th><th>Stop</th><th>Target</th><th>+5%</th><th>+10%</th><th>Opened</th><th></th>
+  <th>Ticker</th><th>Bought</th><th>Current</th><th>Shares</th><th>Cost</th><th>Stop</th><th>Target</th><th>+5%</th><th>+10%</th><th>Opened</th><th></th>
 </tr></thead><tbody id="ideasOpenBody">
-<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Set your GitHub token to view live positions.</td></tr>
+<tr><td colspan="11" style="color:#888;text-align:center;padding:20px">Set your GitHub token to view live positions.</td></tr>
 </tbody></table></div>
 
 <h3 style="color:#ccc;margin:25px 0 12px">Suggested Entries Tonight</h3>

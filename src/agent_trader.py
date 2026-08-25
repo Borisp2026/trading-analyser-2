@@ -20,7 +20,7 @@ MACRO_FILE    = os.path.join(BASE, "data", "macro_gate.json")
 INTRADAY_SIGNALS_FILE = os.path.join(BASE, "data", "intraday_signals.json")
 AEST          = pytz.timezone('Australia/Sydney')
 
-TARGET_TRADES = 30
+TARGET_TRADES = 100
 START_CAPITAL = 10000.0  # matches Cycle Trading's $10k pool so both sources share a $20k combined book
 MAX_POSITIONS = 2
 POS_SIZE      = 2500.0  # fixed $2500 per trade
