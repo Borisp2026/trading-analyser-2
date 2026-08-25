@@ -389,7 +389,7 @@
       "buy_date": "2026-08-20",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 9.2218,
       "target_price": 15.5274,
@@ -399,7 +399,12 @@
         "sector": "Basic Materials",
         "entered_dc_num": 3,
         "entered_score": 80
-      }
+      },
+      "sell_price": 17.73,
+      "sell_date": "2026-08-25",
+      "pnl": 1.67,
+      "pnl_pct": 0.8,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "NVDA",
@@ -451,7 +456,7 @@
       "buy_date": "2026-08-21",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #4 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 8.0417,
       "target_price": 10.9763,
@@ -461,7 +466,12 @@
         "sector": "Utilities",
         "entered_dc_num": 5,
         "entered_score": 47
-      }
+      },
+      "sell_price": 10.55,
+      "sell_date": "2026-08-25",
+      "pnl": 1.21,
+      "pnl_pct": 0.29,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "ILU.AX",
@@ -618,7 +628,7 @@
       "buy_date": "2026-08-25",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 32.3328,
       "target_price": 36.8014,
@@ -628,10 +638,15 @@
         "sector": "Unknown",
         "entered_dc_num": 4,
         "entered_score": 72
-      }
+      },
+      "sell_price": 36.56,
+      "sell_date": "2026-08-25",
+      "pnl": -6.42,
+      "pnl_pct": -0.79,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 5643.846911999998,
+  "paper_cash": 7090.761457999997,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
