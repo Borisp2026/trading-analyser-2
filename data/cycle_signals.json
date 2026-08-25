@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-25T14:44:29",
+  "generated_at": "2026-08-25T14:50:35",
   "watchlist_count": 5,
   "candidates": [
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 211.39,
+      "price": 211.53,
       "sector": "Technology",
       "cycle_score": 57,
       "cycle_signal": "CYCLE_HOLD",
@@ -20,7 +20,7 @@
         "est_date_dc3": "2026-10-21"
       },
       "stop_price": 186.2098,
-      "position_size": 839.51,
+      "position_size": 835.42,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -82,7 +82,7 @@
             "price": 227.92
           }
         },
-        "entry_price": 211.39,
+        "entry_price": 211.53,
         "stop_price": 186.2098,
         "target_price": 214.6272
       },
@@ -92,9 +92,17 @@
   ],
   "failed_cycle_alerts": [
     {
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "price": 488.015,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 348.5439,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+    },
+    {
       "ticker": "TSLA",
       "name": "Tesla, Inc.",
-      "price": 351.9,
+      "price": 350.315,
       "type": "completed_cycle_failed",
       "dcl0_price": 297.38,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
@@ -102,16 +110,9 @@
   ],
   "high_risk_alerts": [
     {
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "price": 487.45,
-      "dc_num_in_ic": 3,
-      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-    },
-    {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 473.915,
+      "price": 475.985,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     }
@@ -184,7 +185,7 @@
         "entered_dc_num": 1,
         "entered_score": 57
       },
-      "_current_price": 211.39,
+      "_current_price": 211.53,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -587,8 +588,8 @@
   ],
   "drawdown": {
     "realized_pnl": -211.74,
-    "unrealized_pnl": -19.68,
-    "total_pnl": -231.42,
+    "unrealized_pnl": -19.23,
+    "total_pnl": -230.97,
     "drawdown_pct": 2.31,
     "halted": false
   },
