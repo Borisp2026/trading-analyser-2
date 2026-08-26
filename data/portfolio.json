@@ -551,7 +551,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP \u00c3\u0083\u00c2\u0083\u00c3\u0082\u00c2\u00a2\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u0080\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u0094 momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -570,7 +570,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP ÃÂ¢ÃÂÃÂ momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP \u00c3\u0083\u00c2\u00a2\u00c3\u0082\u00c2\u0080\u00c3\u0082\u00c2\u0094 momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -608,7 +608,7 @@
       "buy_price": 16.16,
       "buy_date": "2026-08-24",
       "signal": "BUY",
-      "reason": "RSI 51.85 neutral; RSI trending UP â momentum building",
+      "reason": "RSI 51.85 neutral; RSI trending UP \u00e2\u0080\u0094 momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 15.5,
@@ -720,9 +720,28 @@
         "blended_score": null,
         "source": "manual_entry"
       }
+    },
+    {
+      "ticker": "IOZ.AX",
+      "shares": 22.8981,
+      "buy_price": 36.7,
+      "buy_date": "2026-08-26",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 32.3328,
+      "target_price": 36.8014,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Unknown",
+        "entered_dc_num": 4,
+        "entered_score": 72
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 6461.7718879999975,
+  "paper_cash": 5621.411617999997,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
