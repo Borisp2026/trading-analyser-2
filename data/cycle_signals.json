@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T14:47:36",
+  "generated_at": "2026-08-27T15:48:28",
   "watchlist_count": 27,
   "candidates": [
     {
@@ -187,7 +187,7 @@
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 503.495,
+      "price": 498.705,
       "sector": "Technology",
       "cycle_score": 80,
       "cycle_signal": "CYCLE_BUY",
@@ -202,7 +202,7 @@
         "est_date_dc3": "2026-11-10"
       },
       "stop_price": 341.573,
-      "position_size": 310.95,
+      "position_size": 317.38,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -256,7 +256,7 @@
             "price": 512.7647
           }
         },
-        "entry_price": 503.495,
+        "entry_price": 498.705,
         "stop_price": 341.573,
         "target_price": 700.6461
       },
@@ -492,7 +492,7 @@
     {
       "ticker": "TSLA",
       "name": "Tesla, Inc.",
-      "price": 350.56,
+      "price": 350.8063,
       "type": "completed_cycle_failed",
       "dcl0_price": 297.38,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
@@ -586,16 +586,16 @@
       "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 474.94,
+      "ticker": "PNV.AX",
+      "name": "PolyNovo Limited",
+      "price": 1.03,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
-      "ticker": "PNV.AX",
-      "name": "PolyNovo Limited",
-      "price": 1.03,
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "price": 472.83,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
@@ -722,7 +722,7 @@
         "entered_dc_num": 1,
         "entered_score": 57
       },
-      "_current_price": 224.62,
+      "_current_price": 225.068,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -733,7 +733,7 @@
         "daily_resistance_line": [
           {
             "date": "2026-08-27",
-            "price": 226.4
+            "price": 227.31
           }
         ],
         "intermediate_support_line": [
@@ -755,7 +755,7 @@
           },
           "dch": {
             "date": "2026-08-27",
-            "price": 226.4
+            "price": 227.31
           }
         },
         "intermediate_markers": {
@@ -953,7 +953,7 @@
         "entered_dc_num": 2,
         "entered_score": 80
       },
-      "_current_price": 503.495,
+      "_current_price": 498.705,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -1839,8 +1839,8 @@
   ],
   "drawdown": {
     "realized_pnl": -223.29,
-    "unrealized_pnl": 258.16,
-    "total_pnl": 34.87,
+    "unrealized_pnl": 256.49,
+    "total_pnl": 33.2,
     "drawdown_pct": 0.0,
     "halted": false
   },
