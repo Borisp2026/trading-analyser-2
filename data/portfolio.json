@@ -551,7 +551,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP \u00c3\u0083\u00c2\u0083\u00c3\u0082\u00c2\u00a2\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u0080\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u0094 momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -570,7 +570,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP \u00c3\u0083\u00c2\u00a2\u00c3\u0082\u00c2\u0080\u00c3\u0082\u00c2\u0094 momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP ÃÂ¢ÃÂÃÂ momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 8.3061,
@@ -608,7 +608,7 @@
       "buy_price": 16.16,
       "buy_date": "2026-08-24",
       "signal": "BUY",
-      "reason": "RSI 51.85 neutral; RSI trending UP \u00e2\u0080\u0094 momentum building",
+      "reason": "RSI 51.85 neutral; RSI trending UP â momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 15.5,
@@ -738,6 +738,25 @@
         "sector": "Unknown",
         "entered_dc_num": 4,
         "entered_score": 72
+      }
+    },
+    {
+      "ticker": "CMM.AX",
+      "shares": 56.243,
+      "buy_price": 17.78,
+      "buy_date": "2026-08-27",
+      "signal": "BUY",
+      "reason": "RSI 73.36 is OVERBOUGHT — caution, may pull back; RSI trending UP — momentum building",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 17,
+      "target_price": 19.8167,
+      "meta": {
+        "strategy": "suggested_trades",
+        "entry_type": "Limit order ~1% below current price",
+        "confidence": "MEDIUM",
+        "blended_score": 60.8,
+        "source": "nightly"
       }
     }
   ],
