@@ -2,11 +2,14 @@
 Earnings, 12-1 Momentum, RSI Strategy, MA Crossover,
 Walk Forward Validation, Monte Carlo, Sensitivity Analysis.
 """
-import json, os, time
+import json, os, sys, time
 from datetime import datetime
 import yfinance as yf
 import pandas as pd
 import numpy as np
+
+sys.path.insert(0, os.path.dirname(__file__))
+from technical import calc_macd, calc_stochastic
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QUANT_FILE = os.path.join(BASE, "data", "quant_results.json")
@@ -63,6 +66,28 @@ def get_momentum(ticker, df):
         return {"ticker": ticker, "error": str(e)}
 
 
+def _backtest_buy_signals(df, signals, hold_days=20):
+    """Shared 20-trading-day-forward-return backtest for a BUY/SELL signal list built
+    by any of the crossover-detection strategies below (RSI, MACD, Stochastic, EMA,
+    VWAP). df.index is tz-aware (yfinance returns Australia/Sydney-localized
+    timestamps); pd.Timestamp(str) built from a signal's date string is naive, so
+    comparing them directly raises "Cannot compare dtypes ... and datetime64[us]" --
+    localize first."""
+    close = df["Close"]
+    wins = total = 0
+    for s in signals:
+        if s["type"] != "BUY": continue
+        target_ts = pd.Timestamp(s["date"])
+        if df.index.tz is not None:
+            target_ts = target_ts.tz_localize(df.index.tz)
+        idx = df.index.get_indexer([target_ts], method="nearest")[0]
+        if idx + hold_days < len(df):
+            ret = (float(close.iloc[idx + hold_days]) - s["price"]) / s["price"] * 100
+            total += 1
+            if ret > 0: wins += 1
+    return wins, total
+
+
 # ── RSI Crossover Strategy ────────────────────────────────────────────────────
 def get_rsi_strategy(ticker, df):
     try:
@@ -76,22 +101,146 @@ def get_rsi_strategy(ticker, df):
             elif prev < 70 <= curr:
                 signals.append({"date": str(df.index[i].date()), "type": "SELL", "price": round(float(df["Close"].iloc[i]),3)})
             prev = curr
-        wins = total = 0
-        for j, s in enumerate(signals):
-            if s["type"] != "BUY": continue
-            # df.index is tz-aware (yfinance returns Australia/Sydney-localized timestamps);
-            # pd.Timestamp(str) built from s["date"] is naive, so comparing them directly
-            # raises "Cannot compare dtypes ... and datetime64[us]" -- localize first.
-            target_ts = pd.Timestamp(s["date"])
-            if df.index.tz is not None:
-                target_ts = target_ts.tz_localize(df.index.tz)
-            idx = df.index.get_indexer([target_ts], method="nearest")[0]
-            if idx + 20 < len(df):
-                ret = (float(df["Close"].iloc[idx+20]) - s["price"]) / s["price"] * 100
-                total += 1
-                if ret > 0: wins += 1
+        wins, total = _backtest_buy_signals(df, signals)
         curr_rsi = float(rsi.iloc[-1]) if not pd.isna(rsi.iloc[-1]) else 50.0
         return {"ticker": ticker, "current_rsi": round(curr_rsi,1),
+                "signals": signals[-5:], "total_signals": total,
+                "win_rate": round(wins/total*100,1) if total else None, "wins": wins}
+    except Exception as e:
+        return {"ticker": ticker, "error": str(e)}
+
+
+# ── MACD (Moving Average Convergence Divergence) ────────────────────────────────
+def get_macd_analysis(ticker, df):
+    try:
+        close = df["Close"]
+        macd_line, signal_line, histogram = calc_macd(close)
+        curr_macd, curr_signal, curr_hist = float(macd_line.iloc[-1]), float(signal_line.iloc[-1]), float(histogram.iloc[-1])
+        prev_macd, prev_signal = float(macd_line.iloc[-2]), float(signal_line.iloc[-2])
+        bullish_cross = prev_macd <= prev_signal and curr_macd > curr_signal
+        bearish_cross = prev_macd >= prev_signal and curr_macd < curr_signal
+        state = "BULLISH_CROSS" if bullish_cross else "BEARISH_CROSS" if bearish_cross else \
+                ("ABOVE_SIGNAL" if curr_macd > curr_signal else "BELOW_SIGNAL")
+
+        signals, prev_diff = [], None
+        for i in range(len(df)):
+            if pd.isna(macd_line.iloc[i]) or pd.isna(signal_line.iloc[i]):
+                continue
+            diff = float(macd_line.iloc[i] - signal_line.iloc[i])
+            if prev_diff is None: prev_diff = diff; continue
+            if prev_diff <= 0 < diff:
+                signals.append({"date": str(df.index[i].date()), "type": "BUY",  "price": round(float(df["Close"].iloc[i]),3)})
+            elif prev_diff >= 0 > diff:
+                signals.append({"date": str(df.index[i].date()), "type": "SELL", "price": round(float(df["Close"].iloc[i]),3)})
+            prev_diff = diff
+        wins, total = _backtest_buy_signals(df, signals)
+        return {"ticker": ticker, "macd": round(curr_macd,4), "signal": round(curr_signal,4),
+                "histogram": round(curr_hist,4), "state": state,
+                "signals": signals[-5:], "total_signals": total,
+                "win_rate": round(wins/total*100,1) if total else None, "wins": wins}
+    except Exception as e:
+        return {"ticker": ticker, "error": str(e)}
+
+
+# ── Stochastic Oscillator ────────────────────────────────────────────────────
+# Faster than RSI at flagging overbought/oversold since it tracks close relative
+# to the recent high-low range rather than a smoothed average of gains/losses --
+# useful for choppy markets where RSI is slower to react.
+def get_stochastic_analysis(ticker, df):
+    try:
+        high, low, close = df["High"], df["Low"], df["Close"]
+        k, d = calc_stochastic(high, low, close)
+        curr_k = float(k.iloc[-1]) if not pd.isna(k.iloc[-1]) else 50.0
+        curr_d = float(d.iloc[-1]) if not pd.isna(d.iloc[-1]) else 50.0
+        state = "OVERSOLD" if curr_k < 20 else "OVERBOUGHT" if curr_k > 80 else "NEUTRAL"
+
+        signals, prev_k, prev_d = [], None, None
+        for i in range(len(df)):
+            ck, cd_ = k.iloc[i], d.iloc[i]
+            if pd.isna(ck) or pd.isna(cd_):
+                continue
+            if prev_k is None: prev_k, prev_d = ck, cd_; continue
+            if prev_k <= prev_d and ck > cd_ and ck < 20:
+                signals.append({"date": str(df.index[i].date()), "type": "BUY",  "price": round(float(close.iloc[i]),3)})
+            elif prev_k >= prev_d and ck < cd_ and ck > 80:
+                signals.append({"date": str(df.index[i].date()), "type": "SELL", "price": round(float(close.iloc[i]),3)})
+            prev_k, prev_d = ck, cd_
+        wins, total = _backtest_buy_signals(df, signals)
+        return {"ticker": ticker, "k": round(curr_k,1), "d": round(curr_d,1), "state": state,
+                "signals": signals[-5:], "total_signals": total,
+                "win_rate": round(wins/total*100,1) if total else None, "wins": wins}
+    except Exception as e:
+        return {"ticker": ticker, "error": str(e)}
+
+
+# ── EMA (9/21/50) ─────────────────────────────────────────────────────────────
+# Short-term traders lean on these three periods together -- EMAs weight recent
+# price action more heavily than a simple MA, so they react faster to reversals.
+def get_ema_analysis(ticker, df):
+    try:
+        close = df["Close"]
+        ema9  = close.ewm(span=9,  adjust=False).mean()
+        ema21 = close.ewm(span=21, adjust=False).mean()
+        ema50 = close.ewm(span=50, adjust=False).mean()
+        price = float(close.iloc[-1])
+        e9, e21, e50 = float(ema9.iloc[-1]), float(ema21.iloc[-1]), float(ema50.iloc[-1])
+        if price > e9 > e21 > e50: trend = "STRONG_UPTREND"
+        elif price < e9 < e21 < e50: trend = "STRONG_DOWNTREND"
+        elif e9 > e21: trend = "SHORT_TERM_BULLISH"
+        else: trend = "SHORT_TERM_BEARISH"
+
+        # Classic fast 9/21 EMA cross as the tradeable signal
+        signals, prev_diff = [], None
+        for i in range(len(df)):
+            diff = float(ema9.iloc[i] - ema21.iloc[i])
+            if prev_diff is None: prev_diff = diff; continue
+            if prev_diff <= 0 < diff:
+                signals.append({"date": str(df.index[i].date()), "type": "BUY",  "price": round(float(close.iloc[i]),3)})
+            elif prev_diff >= 0 > diff:
+                signals.append({"date": str(df.index[i].date()), "type": "SELL", "price": round(float(close.iloc[i]),3)})
+            prev_diff = diff
+        wins, total = _backtest_buy_signals(df, signals)
+        return {"ticker": ticker, "price": round(price,3), "ema9": round(e9,3), "ema21": round(e21,3),
+                "ema50": round(e50,3), "trend": trend,
+                "signals": signals[-5:], "total_signals": total,
+                "win_rate": round(wins/total*100,1) if total else None, "wins": wins}
+    except Exception as e:
+        return {"ticker": ticker, "error": str(e)}
+
+
+# ── VWAP (rolling, daily-chart) ───────────────────────────────────────────────
+# True intraday session VWAP already exists elsewhere on the dashboard (Day
+# Trading tab, Agent Trader's ORB+VWAP entry) computed from 1-min bars -- this
+# tab works from 2 years of DAILY bars, where a single-session VWAP doesn't
+# apply. This is a 20-day rolling volume-weighted average price instead: the
+# same "price crossing above VWAP = bullish" read, just on a daily-chart
+# timeframe rather than intraday.
+def get_vwap_analysis(ticker, df, window=20):
+    try:
+        close, volume = df["Close"], df["Volume"]
+        typical_price = (df["High"] + df["Low"] + df["Close"]) / 3
+        pv = typical_price * volume
+        rolling_vwap = pv.rolling(window).sum() / volume.rolling(window).sum()
+        price = float(close.iloc[-1])
+        vwap_val = float(rolling_vwap.iloc[-1]) if not pd.isna(rolling_vwap.iloc[-1]) else None
+        vs_vwap_pct = round((price - vwap_val) / vwap_val * 100, 2) if vwap_val else None
+        state = "ABOVE_VWAP" if (vwap_val and price > vwap_val) else "BELOW_VWAP" if vwap_val else "N/A"
+
+        signals, prev_diff = [], None
+        for i in range(len(df)):
+            v = rolling_vwap.iloc[i]
+            if pd.isna(v): continue
+            diff = float(close.iloc[i] - v)
+            if prev_diff is None: prev_diff = diff; continue
+            if prev_diff <= 0 < diff:
+                signals.append({"date": str(df.index[i].date()), "type": "BUY",  "price": round(float(close.iloc[i]),3)})
+            elif prev_diff >= 0 > diff:
+                signals.append({"date": str(df.index[i].date()), "type": "SELL", "price": round(float(close.iloc[i]),3)})
+            prev_diff = diff
+        wins, total = _backtest_buy_signals(df, signals)
+        return {"ticker": ticker, "price": round(price,3),
+                "vwap": round(vwap_val,3) if vwap_val is not None else None,
+                "vs_vwap_pct": vs_vwap_pct, "state": state, "window_days": window,
                 "signals": signals[-5:], "total_signals": total,
                 "win_rate": round(wins/total*100,1) if total else None, "wins": wins}
     except Exception as e:
@@ -243,6 +392,10 @@ def run_quantitative(tickers):
                 "earnings":     get_earnings(yft, ticker),
                 "momentum":     get_momentum(ticker, df),
                 "rsi_strategy": get_rsi_strategy(ticker, df),
+                "macd":         get_macd_analysis(ticker, df),
+                "stochastic":   get_stochastic_analysis(ticker, df),
+                "ema":          get_ema_analysis(ticker, df),
+                "vwap":         get_vwap_analysis(ticker, df),
                 "ma_strategy":  get_ma_strategy(ticker, df),
                 "monte_carlo":  run_monte_carlo(ticker, df),
                 "walk_forward": run_walk_forward(ticker, df),

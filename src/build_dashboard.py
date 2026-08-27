@@ -978,6 +978,10 @@ function renderQuantTab(section){
     if(section==='earnings')     renderEarnings(results,tickers);
     else if(section==='momentum')    renderMomentum(results,tickers);
     else if(section==='rsi')         renderRSIStrategy(results,tickers);
+    else if(section==='macd')        renderMACD(results,tickers);
+    else if(section==='stochastic')  renderStochastic(results,tickers);
+    else if(section==='ema')         renderEMA(results,tickers);
+    else if(section==='vwap')        renderVWAP(results,tickers);
     else if(section==='ma')          renderMAStrategy(results,tickers);
     else if(section==='walkforward') renderWalkForward(results,tickers);
     else if(section==='montecarlo')  renderMonteCarlo(results,tickers);
@@ -1653,6 +1657,98 @@ function renderRSIStrategy(results,tickers){
     document.getElementById('quantContent').innerHTML=h;
 }
 
+function _sigBadges(signals){
+    return (signals||[]).slice(-3).map(s=>`<span style="font-size:10px;padding:1px 5px;border-radius:3px;${s.type==='BUY'?'background:#224422;color:#44bb44':'background:#440000;color:#cc0000'}">${s.type} ${(s.date||'').substring(5)}</span>`).join(' ')||'—';
+}
+function _winRateCell(r){
+    const wc=(r.win_rate||0)>=60?'#44bb44':(r.win_rate||0)>=50?'#ff9900':'#cc0000';
+    return `<td>${r.total_signals||0}</td><td style="color:${wc};font-weight:bold">${r.win_rate!=null?r.win_rate+'%':'N/A'}</td><td>${r.wins||0}</td>`;
+}
+
+function renderMACD(results,tickers){
+    let h='<h3 style="color:#ccc;margin-bottom:5px">MACD (Moving Average Convergence Divergence)</h3>';
+    h+='<p style="color:#888;font-size:12px;margin-bottom:15px">Buy when the MACD line crosses above its signal line. Win rate = % of signals where price was higher 20 days later.</p>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>MACD</th><th>Signal</th><th>Histogram</th><th>State</th><th>Buy Signals Tested</th><th>Win Rate</th><th>Wins</th><th>Recent Signals</th></tr></thead><tbody>';
+    tickers.forEach(t=>{
+        const r=(results[t]||{}).macd||{};
+        if(r.error){h+=`<tr><td><b>${t}</b></td><td colspan="8" style="color:#666">${r.error}</td></tr>`;return;}
+        const sc=r.state==='BULLISH_CROSS'?'#44bb44':r.state==='BEARISH_CROSS'?'#cc0000':r.state==='ABOVE_SIGNAL'?'#88cc44':'#ff9900';
+        h+=`<tr><td><b>${t}</b></td>
+            <td>${(r.macd!=null?r.macd:0).toFixed(4)}</td>
+            <td>${(r.signal!=null?r.signal:0).toFixed(4)}</td>
+            <td style="color:${(r.histogram||0)>=0?'#44bb44':'#cc0000'}">${(r.histogram!=null?r.histogram:0).toFixed(4)}</td>
+            <td style="color:${sc};font-weight:bold">${(r.state||'').replace(/_/g,' ')}</td>
+            ${_winRateCell(r)}
+            <td>${_sigBadges(r.signals)}</td></tr>`;
+    });
+    h+='</tbody></table></div>';
+    document.getElementById('quantContent').innerHTML=h;
+}
+
+function renderStochastic(results,tickers){
+    let h='<h3 style="color:#ccc;margin-bottom:5px">Stochastic Oscillator</h3>';
+    h+='<p style="color:#888;font-size:12px;margin-bottom:15px">Tracks close price relative to its recent high-low range -- faster than RSI, useful for spotting quick overbought/oversold turns in choppy markets. Buy when %K crosses above %D from below 20.</p>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>%K</th><th>%D</th><th>State</th><th>Buy Signals Tested</th><th>Win Rate</th><th>Wins</th><th>Recent Signals</th></tr></thead><tbody>';
+    tickers.forEach(t=>{
+        const r=(results[t]||{}).stochastic||{};
+        if(r.error){h+=`<tr><td><b>${t}</b></td><td colspan="7" style="color:#666">${r.error}</td></tr>`;return;}
+        const sc=r.state==='OVERSOLD'?'#44bb44':r.state==='OVERBOUGHT'?'#cc0000':'#ccc';
+        h+=`<tr><td><b>${t}</b></td>
+            <td>${(r.k!=null?r.k:50).toFixed(1)}</td>
+            <td>${(r.d!=null?r.d:50).toFixed(1)}</td>
+            <td style="color:${sc};font-weight:bold">${r.state||'—'}</td>
+            ${_winRateCell(r)}
+            <td>${_sigBadges(r.signals)}</td></tr>`;
+    });
+    h+='</tbody></table></div>';
+    document.getElementById('quantContent').innerHTML=h;
+}
+
+function renderEMA(results,tickers){
+    let h='<h3 style="color:#ccc;margin-bottom:5px">EMA (9 / 21 / 50)</h3>';
+    h+='<p style="color:#888;font-size:12px;margin-bottom:15px">Short-term traders lean on the 9/21/50-period EMAs -- they weight recent price action more heavily than a simple MA, so they react faster to reversals. Buy signal = fast 9-EMA crossing above the 21-EMA.</p>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>Price</th><th>EMA9</th><th>EMA21</th><th>EMA50</th><th>Trend</th><th>Buy Signals Tested</th><th>Win Rate</th><th>Wins</th><th>Recent Signals</th></tr></thead><tbody>';
+    tickers.forEach(t=>{
+        const r=(results[t]||{}).ema||{};
+        if(r.error){h+=`<tr><td><b>${t}</b></td><td colspan="9" style="color:#666">${r.error}</td></tr>`;return;}
+        const tc=r.trend==='STRONG_UPTREND'?'#44bb44':r.trend==='STRONG_DOWNTREND'?'#cc0000':r.trend==='SHORT_TERM_BULLISH'?'#88cc44':'#ff9900';
+        h+=`<tr><td><b>${t}</b></td>
+            <td>$${(r.price||0).toFixed(3)}</td>
+            <td style="color:${r.price>r.ema9?'#44bb44':'#cc0000'}">$${(r.ema9||0).toFixed(3)}</td>
+            <td style="color:${r.price>r.ema21?'#44bb44':'#cc0000'}">$${(r.ema21||0).toFixed(3)}</td>
+            <td style="color:${r.price>r.ema50?'#44bb44':'#cc0000'}">$${(r.ema50||0).toFixed(3)}</td>
+            <td style="color:${tc};font-weight:bold">${(r.trend||'').replace(/_/g,' ')}</td>
+            ${_winRateCell(r)}
+            <td>${_sigBadges(r.signals)}</td></tr>`;
+    });
+    h+='</tbody></table></div>';
+    document.getElementById('quantContent').innerHTML=h;
+}
+
+function renderVWAP(results,tickers){
+    let h='<h3 style="color:#ccc;margin-bottom:5px">VWAP (20-Day Rolling, Daily Chart)</h3>';
+    h+='<p style="color:#888;font-size:12px;margin-bottom:15px">'
+      +'The true intraday session VWAP (from 1-min bars) already drives entries on the '
+      +'<a href="#" onclick="showTab(\'intraday\');return false" style="color:#4a90d9">Day Trading</a> tab and Agent Trader. '
+      +'This tab works from 2 years of daily bars, where a single session doesn\'t apply -- so this is a 20-day '
+      +'rolling volume-weighted average price instead: same "price crossing above VWAP = bullish" read, on a daily-chart timeframe.</p>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>Price</th><th>20d VWAP</th><th>vs VWAP</th><th>State</th><th>Buy Signals Tested</th><th>Win Rate</th><th>Wins</th><th>Recent Signals</th></tr></thead><tbody>';
+    tickers.forEach(t=>{
+        const r=(results[t]||{}).vwap||{};
+        if(r.error){h+=`<tr><td><b>${t}</b></td><td colspan="8" style="color:#666">${r.error}</td></tr>`;return;}
+        const sc=r.state==='ABOVE_VWAP'?'#44bb44':r.state==='BELOW_VWAP'?'#cc0000':'#888';
+        h+=`<tr><td><b>${t}</b></td>
+            <td>$${(r.price||0).toFixed(3)}</td>
+            <td>${r.vwap!=null?'$'+r.vwap.toFixed(3):'—'}</td>
+            <td style="color:${(r.vs_vwap_pct||0)>=0?'#44bb44':'#cc0000'}">${r.vs_vwap_pct!=null?(r.vs_vwap_pct>=0?'+':'')+r.vs_vwap_pct+'%':'—'}</td>
+            <td style="color:${sc};font-weight:bold">${(r.state||'').replace(/_/g,' ')}</td>
+            ${_winRateCell(r)}
+            <td>${_sigBadges(r.signals)}</td></tr>`;
+    });
+    h+='</tbody></table></div>';
+    document.getElementById('quantContent').innerHTML=h;
+}
+
 function renderMAStrategy(results,tickers){
     let h='<h3 style="color:#ccc;margin-bottom:5px">Moving Average Crossover</h3>';
     h+='<p style="color:#888;font-size:12px;margin-bottom:15px">Golden cross = 50MA above 200MA (bullish). Avg 60-day return measured after each historical golden cross.</p>';
@@ -2050,6 +2146,10 @@ window.addEventListener('resize',()=>{
   <button id="qbtn-earnings"     class="quant-btn active"  onclick="renderQuantTab('earnings')">Earnings Reports</button>
   <button id="qbtn-momentum"     class="quant-btn"         onclick="renderQuantTab('momentum')">12-1 Momentum</button>
   <button id="qbtn-rsi"          class="quant-btn"         onclick="renderQuantTab('rsi')">RSI Strategy</button>
+  <button id="qbtn-macd"         class="quant-btn"         onclick="renderQuantTab('macd')">MACD</button>
+  <button id="qbtn-stochastic"   class="quant-btn"         onclick="renderQuantTab('stochastic')">Stochastic</button>
+  <button id="qbtn-ema"          class="quant-btn"         onclick="renderQuantTab('ema')">EMA</button>
+  <button id="qbtn-vwap"         class="quant-btn"         onclick="renderQuantTab('vwap')">VWAP</button>
   <button id="qbtn-ma"           class="quant-btn"         onclick="renderQuantTab('ma')">MA Crossover</button>
   <button id="qbtn-walkforward"  class="quant-btn"         onclick="renderQuantTab('walkforward')">Walk Forward</button>
   <button id="qbtn-montecarlo"   class="quant-btn"         onclick="renderQuantTab('montecarlo')">Monte Carlo</button>
