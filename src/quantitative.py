@@ -79,7 +79,13 @@ def get_rsi_strategy(ticker, df):
         wins = total = 0
         for j, s in enumerate(signals):
             if s["type"] != "BUY": continue
-            idx = df.index.get_indexer([pd.Timestamp(s["date"])], method="nearest")[0]
+            # df.index is tz-aware (yfinance returns Australia/Sydney-localized timestamps);
+            # pd.Timestamp(str) built from s["date"] is naive, so comparing them directly
+            # raises "Cannot compare dtypes ... and datetime64[us]" -- localize first.
+            target_ts = pd.Timestamp(s["date"])
+            if df.index.tz is not None:
+                target_ts = target_ts.tz_localize(df.index.tz)
+            idx = df.index.get_indexer([target_ts], method="nearest")[0]
             if idx + 20 < len(df):
                 ret = (float(df["Close"].iloc[idx+20]) - s["price"]) / s["price"] * 100
                 total += 1
