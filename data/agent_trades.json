@@ -937,13 +937,13 @@
       ],
       "position_size": 2500.0,
       "macro_score": 79.3,
-      "status": "OPEN",
-      "exit_price": null,
-      "exit_time": null,
-      "exit_reason": null,
-      "pnl_pct": null,
-      "pnl_dollar": null,
-      "outcome": "PENDING"
+      "status": "CLOSED",
+      "exit_price": 0.255,
+      "exit_time": "2026-08-28T07:51:59.891052",
+      "exit_reason": "EOD EXIT",
+      "pnl_pct": -0.0,
+      "pnl_dollar": -2.5,
+      "outcome": "LOSS"
     },
     {
       "id": 35,
@@ -965,32 +965,17 @@
       ],
       "position_size": 2500.0,
       "macro_score": 79.3,
-      "status": "OPEN",
-      "exit_price": null,
-      "exit_time": null,
-      "exit_reason": null,
-      "pnl_pct": null,
-      "pnl_dollar": null,
-      "outcome": "PENDING"
+      "status": "CLOSED",
+      "exit_price": 65.46,
+      "exit_time": "2026-08-28T07:52:00.054823",
+      "exit_reason": "EOD EXIT",
+      "pnl_pct": 2.31,
+      "pnl_dollar": 55.25,
+      "outcome": "WIN"
     }
   ],
-  "open_positions": {
-    "TOR.AX": {
-      "trade_id": 34,
-      "entry_price": 0.255,
-      "target": 0.268,
-      "stop": 0.251,
-      "position_size": 2500.0
-    },
-    "MIN.AX": {
-      "trade_id": 35,
-      "entry_price": 63.98,
-      "target": 67.307,
-      "stop": 63.02,
-      "position_size": 2500.0
-    }
-  },
-  "capital": 5389.57,
+  "open_positions": {},
+  "capital": 10442.32,
   "starting_capital": 10000.0,
   "scan_log": [
     {
@@ -13167,17 +13152,17 @@
   "started_at": "2026-07-05T11:02:50.033576",
   "stats": {
     "total_trades": 35,
-    "closed_trades": 33,
-    "open_trades": 2,
-    "wins": 15,
-    "losses": 18,
-    "win_rate": 45.5,
-    "avg_pnl_pct": 0.68,
-    "total_pnl_pct": 22.56,
-    "current_capital": 5389.57,
-    "capital_growth": -46.1
+    "closed_trades": 35,
+    "open_trades": 0,
+    "wins": 16,
+    "losses": 19,
+    "win_rate": 45.7,
+    "avg_pnl_pct": 0.71,
+    "total_pnl_pct": 24.87,
+    "current_capital": 10442.32,
+    "capital_growth": 4.42
   },
-  "last_scan": "2026-08-27T16:49:28.189696",
+  "last_scan": "2026-08-28T07:52:00.055081",
   "ticker_days": {
     "EOS.AX": [
       "2026-07-08",
@@ -14612,7 +14597,7 @@
       "add_pending": false
     },
     {
-      "ticker": "MSFT",
+      "ticker": "NVDA",
       "days_in_list": 11,
       "last_5_days": [
         "2026-08-24",
@@ -14642,7 +14627,7 @@
       "add_pending": false
     },
     {
-      "ticker": "NVDA",
+      "ticker": "AMD",
       "days_in_list": 11,
       "last_5_days": [
         "2026-08-24",
@@ -14657,7 +14642,7 @@
       "add_pending": false
     },
     {
-      "ticker": "AMD",
+      "ticker": "MSFT",
       "days_in_list": 11,
       "last_5_days": [
         "2026-08-24",
