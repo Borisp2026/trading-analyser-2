@@ -15,6 +15,7 @@ from portfolio import load_portfolio, add_paper_trade, close_paper_trade
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CYCLE_SIGNALS_FILE = os.path.join(BASE, "data", "cycle_signals.json")
 REPORTS_DIR = os.path.join(BASE, "reports")
+MACRO_FILE = os.path.join(BASE, "data", "macro_gate.json")
 
 STRATEGY_TAG = "cycle_trading"
 MAX_OPEN_POSITIONS = 5
@@ -28,6 +29,16 @@ MIN_CANDIDATE_SCORE = 40          # cycle_score floor for eligibility -- below t
                                    # already reads CYCLE_CAUTION/CYCLE_AVOID (see cycle_analysis.py's
                                    # thresholds), so entering anyway contradicts the score we just computed
 COOLDOWN_DAYS = 3                 # days to skip re-entering a ticker after one of the reasons below
+RISK_OFF_ZONE = "RISK OFF"        # macro_gate.py's own zone_desc for this zone literally says "avoid
+                                   # new longs" -- enforced here instead of only being a readout
+
+
+def macro_zone() -> str:
+    try:
+        with open(MACRO_FILE) as f:
+            return json.load(f).get("zone", "SELECTIVE")
+    except Exception:
+        return "SELECTIVE"
 COOLDOWN_REASONS = {"FAILED_CYCLE"}  # closing this way means the setup whipsawed us -- avoid
                                       # repeatedly re-buying the same chopping low the next night
 
@@ -229,18 +240,20 @@ def check_and_close_open_trades(all_results_by_ticker: dict) -> list:
     return closed
 
 
-def check_intraday_hard_stops() -> list:
-    """Lightweight stop-loss check for open Cycle Trading positions, meant to run
-    every 5 min by piggybacking on agent_scan.yml's existing cadence (called from
-    agent_trader.py) so a stop breach is caught same-day rather than waiting for
-    the next nightly cycle re-analysis. Only checks the hard stop_price -- the
-    phase-based conditions still need the full nightly re-analysis and are handled
-    separately in check_and_close_open_trades."""
+def check_intraday_hard_stops(strategy: str = STRATEGY_TAG) -> list:
+    """Lightweight stop-loss check for open positions of the given strategy, meant
+    to run every 5 min by piggybacking on agent_scan.yml's existing cadence (called
+    from agent_trader.py) so a stop breach is caught same-day rather than waiting
+    for the next nightly re-analysis. Only checks the hard stop_price -- phase-based
+    conditions (Cycle Trading's failed-cycle/trendline logic) still need the full
+    nightly re-analysis and are handled separately in check_and_close_open_trades.
+    Generalized (was Cycle Trading-only) so Trade Ideas positions -- which had no
+    automated stop checking at all before -- get the same same-day protection."""
     portfolio = load_portfolio()
-    open_cycle_trades = [t for t in portfolio.get("paper_trades", [])
-                          if t.get("status") == "open" and t.get("meta", {}).get("strategy") == STRATEGY_TAG]
+    open_trades = [t for t in portfolio.get("paper_trades", [])
+                   if t.get("status") == "open" and t.get("meta", {}).get("strategy") == strategy]
     closed = []
-    for t in open_cycle_trades:
+    for t in open_trades:
         stop_price = t.get("stop_price")
         if not stop_price:
             continue
@@ -252,7 +265,7 @@ def check_intraday_hard_stops() -> list:
         except Exception:
             continue
         if current_price <= stop_price:
-            if close_paper_trade(t["ticker"], current_price, reason="HARD_STOP_INTRADAY", strategy=STRATEGY_TAG):
+            if close_paper_trade(t["ticker"], current_price, reason="HARD_STOP_INTRADAY", strategy=strategy):
                 closed.append({"ticker": t["ticker"], "exit_price": current_price, "stop_price": stop_price})
     return closed
 
@@ -332,9 +345,16 @@ def run_cycle_trading(all_results: list) -> dict:
     drawdown = compute_cycle_drawdown(all_by_ticker)
     screened = screen_candidates(all_results, real_holdings=get_real_holding_tickers())
 
+    mz = macro_zone()
+    macro_halt = mz == RISK_OFF_ZONE
+    if macro_halt:
+        print(f"  Cycle Trading MACRO HALT: zone is {mz} — no new entries this run")
+
     if drawdown["halted"]:
         print(f"  Cycle Trading DRAWDOWN HALT: {drawdown['drawdown_pct']}% below baseline "
               f"(limit {CYCLE_MAX_DRAWDOWN_PCT}%) — no new entries this run")
+        opened = []
+    elif macro_halt:
         opened = []
     else:
         opened = open_new_trades(screened["candidates"])
@@ -386,6 +406,7 @@ def run_cycle_trading(all_results: list) -> dict:
         "open_trades": open_trades,
         "closed_trades": closed_trades,
         "drawdown": drawdown,
+        "macro_zone": mz, "macro_halted": macro_halt,
         "actions_this_run": {"closed": closed, "opened": opened},
     }
     with open(CYCLE_SIGNALS_FILE, "w") as f:

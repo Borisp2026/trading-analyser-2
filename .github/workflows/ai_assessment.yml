@@ -1,0 +1,50 @@
+name: AI Position Assessment
+
+on:
+  schedule:
+    # Hourly during combined ASX+NASDAQ hours, weekdays -- same window as intraday.yml
+    # (2:00-21:00 UTC covers ASX 10am-4pm AWST and NASDAQ 9:30am-4pm EST)
+    - cron: '0 2-21 * * 1-5'
+  workflow_dispatch:
+
+concurrency:
+  group: ai-assessment
+  cancel-in-progress: false
+
+jobs:
+  ai-assessment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5  # this is a single short Claude call, not a full scan -- should never take long
+    permissions:
+      contents: write
+    env:
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run AI assessment
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python src/ai_assessment.py
+
+      - name: Commit results
+        run: |
+          git config user.name "AI Assessment Bot"
+          git config user.email "ai-assessment@trading-analyser"
+          git pull --rebase origin main || true
+          git add data/ai_assessment.json
+          git diff --staged --quiet || git commit -m "AI assessment $(date -u +'%H:%M UTC')"
+          git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)

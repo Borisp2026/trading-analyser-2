@@ -8,6 +8,7 @@ Sends email alert when a strong intraday signal fires.
 import json
 import os
 import sys
+import glob
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -257,6 +258,120 @@ def detect_intraday_signals(ticker: str) -> list:
     return signals
 
 
+# ── Trade Ideas / Cycle Trading entry-price cross alerts ────────────────────
+# Closes the "semi-automated alert" gap vs TradingView/Thinkorswim's alert-driven
+# workflow: instead of only surfacing suggestions on a dashboard tab someone has
+# to remember to check, email once when a not-yet-bought suggestion actually
+# reaches its suggested entry price intraday. Nothing gets bought automatically --
+# this only shortens the gap between "the entry happened" and "I noticed".
+ENTRY_CROSS_LOG = os.path.join(BASE, "data", "entry_cross_alerts.json")
+
+
+def _load_entry_cross_log() -> dict:
+    today = datetime.now().strftime("%Y-%m-%d")
+    if os.path.exists(ENTRY_CROSS_LOG):
+        try:
+            with open(ENTRY_CROSS_LOG) as f:
+                log = json.load(f)
+            if log.get("date") == today:
+                return log
+        except Exception:
+            pass
+    return {"date": today, "alerted": []}
+
+
+def _entry_cross_candidates() -> list:
+    candidates = []
+    try:
+        files = sorted(glob.glob(os.path.join(BASE, "reports", "*.json")))
+        if files:
+            rep = json.load(open(files[-1]))
+            for r in rep.get("results", []):
+                reasoning = r.get("reasoning", {})
+                rec = reasoning.get("recommendation", "")
+                entry = reasoning.get("entry_price")
+                if rec.startswith(("STRONG", "BUY")) and entry:
+                    candidates.append({"ticker": r["ticker"], "entry_price": entry, "source": "Trade Ideas (nightly)"})
+    except Exception as e:
+        print(f"  Entry-cross nightly read error: {e}")
+
+    try:
+        cycle_file = os.path.join(BASE, "data", "cycle_signals.json")
+        if os.path.exists(cycle_file):
+            with open(cycle_file) as f:
+                cd = json.load(f)
+            for c in cd.get("candidates", []):
+                if c.get("paper_trade_status") == "NOT_OPENED" and c.get("price"):
+                    candidates.append({"ticker": c["ticker"], "entry_price": c["price"], "source": "Cycle Trading"})
+    except Exception as e:
+        print(f"  Entry-cross cycle read error: {e}")
+
+    return candidates
+
+
+def check_entry_price_crosses() -> list:
+    log = _load_entry_cross_log()
+    crossed = []
+    for c in _entry_cross_candidates():
+        ticker, entry_price = c["ticker"], c["entry_price"]
+        key = f"{ticker}:{c['source']}"
+        if key in log["alerted"]:
+            continue
+        try:
+            df = yf.Ticker(ticker).history(period="1d", interval="5m", auto_adjust=True)
+            if df is None or len(df) == 0:
+                continue
+            current = float(df["Close"].iloc[-1])
+        except Exception:
+            continue
+        if current >= entry_price:
+            crossed.append({"ticker": ticker, "entry_price": entry_price, "current": round(current, 4), "source": c["source"]})
+            log["alerted"].append(key)
+
+    if crossed:
+        send_entry_cross_email(crossed)
+        with open(ENTRY_CROSS_LOG, "w") as f:
+            json.dump(log, f, indent=2)
+    return crossed
+
+
+def send_entry_cross_email(crossed: list):
+    if not crossed or not GMAIL_ADDRESS:
+        return
+    subject = f"📈 {len(crossed)} suggestion(s) crossed their entry price | {datetime.now().strftime('%H:%M %d %b')}"
+    rows = "".join(
+        f"<tr><td><b>{c['ticker']}</b></td><td>{c['source']}</td>"
+        f"<td>${c['entry_price']}</td><td>${c['current']}</td></tr>"
+        for c in crossed
+    )
+    html = f"""
+    <html><body style="font-family:Arial,sans-serif;padding:20px;">
+    <h2 style="color:#44bb44;">📈 Entry Price Crossed</h2>
+    <p>{len(crossed)} Trade Idea(s) / Cycle Trading candidate(s) reached their suggested entry
+    price today. Nothing was bought automatically — open the dashboard's Trade Ideas tab to decide.</p>
+    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;">
+    <tr style="background:#1a1a2e;color:white;"><th>Ticker</th><th>Source</th><th>Suggested Entry</th><th>Current</th></tr>
+    {rows}
+    </table>
+    <p style="color:#666;font-size:12px;margin-top:20px;">
+    Trading Analyser 2.0 | Paper trading only — this is not financial advice.
+    </p>
+    </body></html>
+    """
+    try:
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = subject
+        msg["From"] = GMAIL_ADDRESS
+        msg["To"] = REPORT_EMAIL
+        msg.attach(MIMEText(html, "html"))
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(GMAIL_ADDRESS, GMAIL_APP_PASSWORD)
+            server.send_message(msg)
+        print(f"Entry-cross alert email sent: {len(crossed)} ticker(s)")
+    except Exception as e:
+        print(f"Failed to send entry-cross email: {e}")
+
+
 def send_alert_email(alerts: list):
     """Send intraday alert email."""
     if not alerts or not GMAIL_ADDRESS:
@@ -350,6 +465,13 @@ def run_intraday_scan():
         send_alert_email(all_signals)
     else:
         print("No new signals this scan.")
+
+    try:
+        crossed = check_entry_price_crosses()
+        if crossed:
+            print(f"  Entry price crossed: {[c['ticker'] for c in crossed]}")
+    except Exception as e:
+        print(f"  Entry-cross check error: {e}")
 
     print(f"{'='*60}\n")
 

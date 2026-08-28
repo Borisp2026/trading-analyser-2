@@ -24,7 +24,12 @@ TARGET_TRADES = 100
 START_CAPITAL = 10000.0  # matches Cycle Trading's $10k pool so both sources share a $20k combined book
 MAX_POSITIONS = 2
 POS_SIZE      = 2500.0  # fixed $2500 per trade
-MAX_DRAWDOWN_PCT = 20.0  # halt new entries once capital falls this far below START_CAPITAL
+MAX_DRAWDOWN_PCT = 20.0  # halt new entries once capital falls this far below START_CAPITAL (all-time)
+SAME_DAY_LOSS_HALT_PCT = 3.0  # separate, tighter halt against today's capital only -- 2-3x the usual
+                               # 1% per-trade risk is standard practice; the all-time drawdown halt above
+                               # does nothing to stop one bad session from compounding
+RISK_OFF_ZONE = "RISK OFF"    # macro_gate.py's own zone_desc for this zone literally says "avoid new
+                               # longs" -- this makes that an enforced block instead of just a readout
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -51,6 +56,13 @@ def macro_score():
             return float(json.load(f).get("composite", 50))
     except Exception:
         return 50.0
+
+def macro_zone():
+    try:
+        with open(MACRO_FILE) as f:
+            return json.load(f).get("zone", "SELECTIVE")
+    except Exception:
+        return "SELECTIVE"
 
 def scan_tickers():
     """Watchlist tickers + top nightly report tickers, capped at 50."""
@@ -196,14 +208,17 @@ def run_agent_scan():
     print(f"Agent Scan — {now_str}")
     print(f"{'='*50}")
 
-    # Cycle Trading hard-stop check, piggybacking on this 5-min cadence so a stop
-    # breach is caught same-day instead of waiting for the next nightly cycle re-run.
-    try:
-        cycle_stops = check_intraday_hard_stops()
-        if cycle_stops:
-            print(f"  Cycle Trading hard stop hit: {cycle_stops}")
-    except Exception as e:
-        print(f"  Cycle Trading intraday stop check error: {e}")
+    # Hard-stop check for Cycle Trading and Trade Ideas positions, piggybacking on
+    # this 5-min cadence so a stop breach is caught same-day instead of waiting for
+    # the next nightly re-run -- Trade Ideas positions had no automated stop check
+    # at all before this.
+    for strategy_tag in ("cycle_trading", "suggested_trades"):
+        try:
+            stops_hit = check_intraday_hard_stops(strategy_tag)
+            if stops_hit:
+                print(f"  {strategy_tag} hard stop hit: {stops_hit}")
+        except Exception as e:
+            print(f"  {strategy_tag} intraday stop check error: {e}")
 
     d = load_data()
 
@@ -217,9 +232,17 @@ def run_agent_scan():
         return
 
     ms     = macro_score()
+    mz     = macro_zone()
     tickers = scan_tickers()
     capital = d.get("capital", START_CAPITAL)
-    print(f"Macro: {ms:.0f} | Capital: ${capital:.2f} | Open: {len(d['open_positions'])} | Trades: {len(d['trades'])}/{TARGET_TRADES}")
+    print(f"Macro: {ms:.0f} ({mz}) | Capital: ${capital:.2f} | Open: {len(d['open_positions'])} | Trades: {len(d['trades'])}/{TARGET_TRADES}")
+
+    # Same-day loss tracking -- resets whenever the AEST date rolls over
+    today_str = datetime.now(AEST).strftime('%Y-%m-%d')
+    if d.get("today_date") != today_str:
+        d["today_date"] = today_str
+        d["today_start_capital"] = capital
+    today_start_capital = d.get("today_start_capital", capital)
 
     # ── 1. Check exits ────────────────────────────────────────────────────────
     for ticker, pos in list(d["open_positions"].items()):
@@ -262,7 +285,18 @@ def run_agent_scan():
     if drawdown_halt:
         print(f"  DRAWDOWN HALT: capital ${capital:.2f} is {drawdown_pct:.1f}% below start (limit {MAX_DRAWDOWN_PCT}%) — no new entries this scan")
 
-    for ticker in (tickers if not drawdown_halt else []):
+    today_loss_pct = max(0.0, (today_start_capital - capital) / today_start_capital * 100) if today_start_capital else 0.0
+    same_day_halt = today_loss_pct >= SAME_DAY_LOSS_HALT_PCT
+    if same_day_halt:
+        print(f"  SAME-DAY LOSS HALT: down {today_loss_pct:.1f}% today (limit {SAME_DAY_LOSS_HALT_PCT}%) — no new entries for the rest of the session")
+
+    macro_halt = mz == RISK_OFF_ZONE
+    if macro_halt:
+        print(f"  MACRO HALT: zone is {mz} — no new entries until conditions improve")
+
+    no_new_entries = drawdown_halt or same_day_halt or macro_halt
+
+    for ticker in (tickers if not no_new_entries else []):
         if open_count >= MAX_POSITIONS: break
         if trades_done >= TARGET_TRADES: break
         if ticker in d["open_positions"]: continue
@@ -337,7 +371,7 @@ def run_agent_scan():
 
 
     # ── 3. Intraday scanner BUY signals ──────────────────────────────────────
-    for isig in (get_fresh_intraday_signals() if not drawdown_halt else []):
+    for isig in (get_fresh_intraday_signals() if not no_new_entries else []):
         if open_count >= MAX_POSITIONS or trades_done >= TARGET_TRADES:
             break
         iticker = isig["ticker"]

@@ -247,6 +247,46 @@ def get_vwap_analysis(ticker, df, window=20):
         return {"ticker": ticker, "error": str(e)}
 
 
+def rolling_window_consistency(ticker, df, analysis_fn, n_windows=4, window_days=90):
+    """Generic walk-forward-style consistency check, applied to MACD/Stochastic/
+    EMA/VWAP so they get the same curve-fitting guard RSI and MA Crossover already
+    have. Splits the tail of df into n_windows sequential, non-overlapping windows
+    and re-runs the full analysis_fn (get_macd_analysis etc.) on each window
+    independently, reading back its own win_rate -- shows whether a strategy's
+    edge holds up across different periods, not just in one combined in-sample
+    backtest. (RSI/MA's own walk-forward additionally re-optimizes a parameter per
+    window; these four don't have an equivalently obvious single parameter to
+    search, so this checks consistency of the existing fixed-parameter signal
+    instead -- still the core walk-forward idea: never judge a strategy only on
+    the same data it was read from.)"""
+    try:
+        windows = []
+        total_days = len(df)
+        for w in range(n_windows):
+            end = total_days - w * window_days
+            start = end - window_days
+            if start < 0:
+                break
+            window_df = df.iloc[start:end]
+            if len(window_df) < 30:
+                continue
+            result = analysis_fn(ticker, window_df)
+            if result.get("error"):
+                continue
+            windows.append({
+                "window": n_windows - w,
+                "period": f"{df.index[start].date()} to {df.index[end-1].date()}",
+                "total_signals": result.get("total_signals", 0),
+                "win_rate": result.get("win_rate"),
+            })
+        windows.reverse()
+        valid = [w["win_rate"] for w in windows if w["win_rate"] is not None]
+        avg = round(float(np.mean(valid)), 1) if valid else None
+        return {"ticker": ticker, "windows": windows, "avg_win_rate": avg}
+    except Exception as e:
+        return {"ticker": ticker, "error": str(e)}
+
+
 # ── Moving Average Strategy ───────────────────────────────────────────────────
 def get_ma_strategy(ticker, df):
     try:
@@ -399,6 +439,10 @@ def run_quantitative(tickers):
                 "ma_strategy":  get_ma_strategy(ticker, df),
                 "monte_carlo":  run_monte_carlo(ticker, df),
                 "walk_forward": run_walk_forward(ticker, df),
+                "macd_walk_forward":       rolling_window_consistency(ticker, df, get_macd_analysis),
+                "stochastic_walk_forward": rolling_window_consistency(ticker, df, get_stochastic_analysis),
+                "ema_walk_forward":        rolling_window_consistency(ticker, df, get_ema_analysis),
+                "vwap_walk_forward":       rolling_window_consistency(ticker, df, get_vwap_analysis),
                 "sensitivity":  run_sensitivity(ticker, df),
             }
             print("OK")

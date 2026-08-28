@@ -855,6 +855,7 @@ function renderChart(data,overlay){
 
 // ── Agent Trader tab ─────────────────────────────────────────────────────────
 const AGENT_RAW_URL = 'https://raw.githubusercontent.com/Borisp2026/trading-analyser-2/main/data/agent_trades.json';
+const AI_ASSESSMENT_RAW_URL = 'https://raw.githubusercontent.com/Borisp2026/trading-analyser-2/main/data/ai_assessment.json';
 
 async function loadAgentTrades() {
     document.getElementById('agentProgress').textContent = 'Loading...';
@@ -1152,7 +1153,16 @@ function normalizeAgentTrades(d){
 }
 function fmtMoney(v){ return v==null ? '—' : '$'+Number(v).toFixed(2); }
 function fmtPct(v){ return v==null ? '—' : (v>=0?'+':'')+v.toFixed(2)+'%'; }
-function profitLevel(v,pct){ return v==null ? '—' : '$'+(Number(v)*(1+pct/100)).toFixed(3); }
+function priceAtPct(v,pct){ return v==null ? null : Math.round(Number(v)*(1+pct/100)*10000)/10000; }
+function profitLevel(v,pct){ const p=priceAtPct(v,pct); return p==null ? '—' : '$'+p.toFixed(3); }
+// Trade Ideas' standard stop across every source (nightly, live scan, Cycle Trading
+// candidates) -- one flat -5% rule instead of each source's own varied stop logic.
+function tradeIdeasStop(price){ return priceAtPct(price,-5); }
+// % gain if a position were sold at its own suggested/target price, as opposed to
+// the generic +5%/+10% reference markers profitLevels() shows.
+function pctAtPrice(entry,targetPrice){
+  return (entry==null||targetPrice==null) ? null : Math.round((targetPrice-entry)/entry*10000)/100;
+}
 function profitLevels(v){ return v==null ? '—' : profitLevel(v,5)+' / '+profitLevel(v,10); }
 // Last nightly close from the already-loaded watchlist chart data -- used as a fast
 // fallback when a live fetch isn't available/fails, and for tickers outside the
@@ -1219,12 +1229,40 @@ async function sellPaperTrade(ticker, source){
     if(document.getElementById('tab-suggestions')?.classList.contains('active')) renderSuggestionsTab();
   }catch(e){alert('Error: '+e.message);}
 }
+// Renders the hourly Claude check-in on open positions -- advisory only, this
+// panel never places, closes, or modifies a trade on its own. Fetched live
+// (not baked into the nightly build) since it updates on its own hourly cycle.
+async function renderAiAssessment(){
+  const el=document.getElementById('aiAssessmentPanel');
+  if(!el) return;
+  try{
+    const r=await fetch(AI_ASSESSMENT_RAW_URL+'?t='+Date.now());
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const d=await r.json();
+    if(!d.enabled){
+      el.innerHTML='<p style="color:#888;margin:0">Not set up yet — needs an <code>ANTHROPIC_API_KEY</code> repo secret before this can run. See the AI Position Assessment workflow.</p>';
+      return;
+    }
+    const when=d.generated_at ? new Date(d.generated_at) : null;
+    const whenStr=when ? when.toLocaleString('en-AU',{weekday:'short',hour:'2-digit',minute:'2-digit'}) : '—';
+    if(d.error){
+      el.innerHTML='<div style="font-size:11px;color:#666;margin-bottom:10px">Last attempted: '+whenStr+' · '+(d.positions_checked||0)+' position(s)</div>'
+        +'<p style="color:#cc0000;margin:0">Assessment failed: '+d.error+'</p>';
+      return;
+    }
+    el.innerHTML='<div style="font-size:11px;color:#666;margin-bottom:10px">As of '+whenStr+' · '+(d.positions_checked||0)+' position(s) checked · '+(d.model||'')+'</div>'
+      +'<div style="color:#ccc;font-size:13px;line-height:1.6;white-space:pre-wrap">'+(d.assessment||'No assessment text returned.')+'</div>';
+  }catch(e){
+    el.innerHTML='<p style="color:#888;margin:0">AI assessment unavailable right now ('+e.message+').</p>';
+  }
+}
 async function renderPaperTab(){
   let rows = normalizePortfolioPaperTrades();
   try{
     const r=await fetch(AGENT_RAW_URL+'?t='+Date.now());
     if(r.ok) rows = rows.concat(normalizeAgentTrades(await r.json()));
   }catch(e){/* Agent Trader data unavailable, show other sources only */}
+  renderAiAssessment();
 
   const openRows=rows.filter(r=>r.open);
   const closedRows=rows.filter(r=>!r.open);
@@ -1258,11 +1296,13 @@ async function renderPaperTab(){
   const renderOpenRows=(prices)=> openRows.length ? openRows.map(r=>{
     const cur = prices ? prices[r.ticker] : getCurrentPrice(r.ticker);
     const curColor = (cur==null||r.entry==null) ? '#888' : (cur>=r.entry?'#44bb44':'#cc0000');
+    const pct = pctAtPrice(r.entry, r.target);
     return '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b>'+chartButton(r)
     +'</td><td>'+fmtMoney(r.entry)+'</td><td style="color:'+curColor+'">'+fmtMoney(cur)+'</td><td>'+fmtMoney(r.positionCost)+'</td>'
     +'<td style="color:#cc0000">'+fmtMoney(r.stop)+'</td><td style="color:#44bb44">'+fmtMoney(r.target)+'</td>'
+    +'<td style="font-size:11px;color:'+((pct||0)>=0?'#44bb44':'#cc0000')+'">'+(pct!=null?(pct>=0?'+':'')+pct+'%':'—')+'</td>'
     +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td><td>'+sellButton(r)+'</td></tr>';
-  }).join('') : '<tr><td colspan="9" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
+  }).join('') : '<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
   if(openBody) openBody.innerHTML=renderOpenRows(null);  // fast render with last-close fallback first
   if(openRows.length){
     getLiveCurrentPrices(openRows.map(r=>r.ticker)).then(prices=>{
@@ -1299,17 +1339,19 @@ function renderSuggestionCards(){
       +'<span style="color:'+col+';font-size:12px;margin-left:8px;font-weight:bold">'+(s.recommendation||'')+'</span>'
       +'<span style="color:#888;font-size:11px;margin-left:8px">confidence: '+(s.confidence||'—')+'</span></div>'
       +'<span style="font-size:26px;font-weight:bold;color:'+col+'">'+(s.blended_score!=null?s.blended_score:'—')+'</span></div>'
-      +'<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
-      +'<div><div style="color:#666">Price</div><div style="color:#ccc">'+fmtMoney(s.price)+'</div></div>'
+      +'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:6px">'
+      +'<div><div style="color:#666">Current</div><div style="color:#ccc">'+fmtMoney(getCurrentPrice(s.ticker)??s.price)+'</div></div>'
       +'<div><div style="color:#666">Suggested Entry</div><div style="color:#4a90d9">'+fmtMoney(s.entry_price)+'</div></div>'
-      +'<div><div style="color:#666">Stop</div><div style="color:#cc0000">'+fmtMoney(s.stop_loss)+'</div></div>'
-      +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+fmtMoney(s.take_profit)+(s.risk_reward!=null?' (R:R '+s.risk_reward+')':'')+'</div></div>'
+      +'<div><div style="color:#666">Stop (-5%)</div><div style="color:#cc0000">'+fmtMoney(tradeIdeasStop(s.price))+'</div></div></div>'
+      +'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
+      +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+fmtMoney(s.take_profit)+'</div></div>'
+      +'<div><div style="color:#666">% if sold at target</div><div style="color:'+((pctAtPrice(s.price,s.take_profit)||0)>=0?'#44bb44':'#cc0000')+'">'+(pctAtPrice(s.price,s.take_profit)!=null?(pctAtPrice(s.price,s.take_profit)>=0?'+':'')+pctAtPrice(s.price,s.take_profit)+'%':'—')+'</div></div>'
       +'<div><div style="color:#666">+5% / +10%</div><div style="color:#888;font-size:10px">'+profitLevels(s.price)+'</div></div></div>'
       +'<div style="font-size:11px;color:#aaa;margin-bottom:6px"><b>Entry:</b> '+(s.entry_type||'—')+'</div>'
-      +'<div style="font-size:11px;color:#aaa;margin-bottom:6px"><b>Exit guide:</b> '+(s.stop_note||'')+(s.timing?' | '+s.timing:'')+'</div>'
+      +'<div style="font-size:11px;color:#aaa;margin-bottom:6px"><b>Exit guide:</b> stop at -5% ('+fmtMoney(tradeIdeasStop(s.price))+'), target '+fmtMoney(s.take_profit)+(s.timing?' | '+s.timing:'')+'</div>'
       +'<div style="font-size:11px;color:#888;margin-bottom:10px">'+(s.reasons||[]).join(' | ')+'</div>'
       +'<button class="btn-primary" style="padding:6px 14px;font-size:12px" onclick="buyIdea(\''+s.ticker+'\')">Buy</button>'
-      +' <button class="btn-primary" style="padding:6px 14px;font-size:12px;margin-left:6px" onclick="showSimpleTradeChart(\''+s.ticker+'\','+(s.entry_price??'null')+','+(s.stop_loss??'null')+','+(s.take_profit??'null')+')">📈 Chart</button>'
+      +' <button class="btn-primary" style="padding:6px 14px;font-size:12px;margin-left:6px" onclick="showSimpleTradeChart(\''+s.ticker+'\','+(s.entry_price??'null')+','+(tradeIdeasStop(s.price)??'null')+','+(s.take_profit??'null')+')">📈 Chart</button>'
       +'</div>';
   }).join('');
 }
@@ -1320,7 +1362,7 @@ async function renderSuggestionsTab(){
   const openBody=document.getElementById('ideasOpenBody');
   const ovEl=document.getElementById('ideasOverviewGrid');
   if(!getToken()){
-    if(openBody) openBody.innerHTML='<tr><td colspan="11" style="color:#888;text-align:center;padding:20px">Set your GitHub token on the Token tab to view live positions and use Buy/Sell.</td></tr>';
+    if(openBody) openBody.innerHTML='<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Set your GitHub token on the Token tab to view live positions and use Buy/Sell.</td></tr>';
     if(ovEl) ovEl.innerHTML='<div class="stat-card"><div class="stat-label">Budget</div><div class="stat-value">$'+IDEAS_BUDGET.toLocaleString()+'</div></div>';
     return;
   }
@@ -1340,14 +1382,14 @@ async function renderSuggestionsTab(){
     const renderIdeasOpenRows=(prices)=> open.length ? open.map(t=>{
       const cur = prices ? prices[t.ticker] : getCurrentPrice(t.ticker);
       const curColor = (cur==null) ? '#888' : (cur>=t.buy_price?'#44bb44':'#cc0000');
+      const pct = pctAtPrice(t.buy_price, t.target_price);
       return '<tr><td><b>'+t.ticker+'</b></td><td>'+fmtMoney(t.buy_price)+'</td><td style="color:'+curColor+'">'+fmtMoney(cur)+'</td><td>'+t.shares+'</td>'
       +'<td>'+fmtMoney(t.shares*t.buy_price)+'</td>'
       +'<td style="color:#cc0000">'+fmtMoney(t.stop_price)+'</td><td style="color:#44bb44">'+fmtMoney(t.target_price)+'</td>'
-      +'<td style="font-size:11px;color:#888">'+profitLevel(t.buy_price,5)+'</td>'
-      +'<td style="font-size:11px;color:#888">'+profitLevel(t.buy_price,10)+'</td>'
+      +'<td style="font-size:11px;color:'+((pct||0)>=0?'#44bb44':'#cc0000')+'">'+(pct!=null?(pct>=0?'+':'')+pct+'%':'—')+'</td>'
       +'<td style="font-size:11px;color:#888">'+(t.buy_date||'—')+'</td>'
       +'<td><button class="btn-primary" style="padding:4px 10px;font-size:11px" onclick="sellIdea(\''+t.ticker+'\')">Sell</button></td></tr>';
-    }).join('') : '<tr><td colspan="11" style="color:#888;text-align:center;padding:20px">No open Trade Ideas positions</td></tr>';
+    }).join('') : '<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">No open Trade Ideas positions</td></tr>';
     if(openBody) openBody.innerHTML=renderIdeasOpenRows(null);
     if(open.length){
       getLiveCurrentPrices(open.map(t=>t.ticker)).then(prices=>{
@@ -1356,7 +1398,7 @@ async function renderSuggestionsTab(){
       });
     }
   }catch(e){
-    if(openBody) openBody.innerHTML='<tr><td colspan="11" style="color:#cc0000;text-align:center;padding:20px">Error loading: '+e.message+'</td></tr>';
+    if(openBody) openBody.innerHTML='<tr><td colspan="10" style="color:#cc0000;text-align:center;padding:20px">Error loading: '+e.message+'</td></tr>';
   }
 }
 async function executeIdeaBuy(idea, opts){
@@ -1407,14 +1449,18 @@ async function executeIdeaBuy(idea, opts){
 async function buyIdea(ticker){
   const s=(SUGGESTIONS_DATA||[]).find(x=>x.ticker===ticker);
   if(!s){alert('No data for '+ticker);return;}
-  executeIdeaBuy({ticker:s.ticker, price:s.price, stop:s.stop_loss, target:s.take_profit,
+  // Trade Ideas standardizes on a flat -5% stop across every source (nightly, live
+  // scan, Cycle Trading candidates) rather than each source's own varied stop logic
+  // (ATR-based here, HCL-based for Cycle Trading, etc.) -- one simple, consistent
+  // risk rule for this specifically discretionary/manual system.
+  executeIdeaBuy({ticker:s.ticker, price:s.price, stop:tradeIdeasStop(s.price), target:s.take_profit,
     recommendation:s.recommendation, reason:(s.reasons||[]).slice(0,2).join('; '),
     entry_type:s.entry_type, confidence:s.confidence, blended_score:s.blended_score, source:'nightly'});
 }
 async function buyLiveIdea(ticker){
   const s=(_liveIdeas||[]).find(x=>x.ticker===ticker);
   if(!s){alert('No live scan data for '+ticker);return;}
-  executeIdeaBuy({ticker:s.ticker, price:s.price, stop:s.vwap||null, target:s.sellZone,
+  executeIdeaBuy({ticker:s.ticker, price:s.price, stop:tradeIdeasStop(s.price), target:s.sellZone,
     recommendation:'LIVE_DAY_BUY', reason:'Live intraday scan: '+(s.vs>=0?'+':'')+s.vs.toFixed(2)+'% vs VWAP, RSI '+s.rsi.toFixed(1),
     entry_type:'Live intraday Day Buy signal', confidence:'MEDIUM', blended_score:null, source:'live_scan'});
 }
@@ -1432,9 +1478,9 @@ async function lookUpManualTicker(){
     if(resEl){resEl.style.color='#cc0000';resEl.textContent='Could not find a price for '+ticker+'. Check the ticker code (e.g. EOS.AX for ASX, NVDA for NASDAQ) and enter prices manually.';}
     return;
   }
-  const entrySuggest=Math.round(cur*0.99*10000)/10000;
-  const stopSuggest=Math.round(cur*0.95*10000)/10000;
-  const targetSuggest=Math.round(cur*1.05*10000)/10000;
+  const entrySuggest=priceAtPct(cur,-1);
+  const stopSuggest=tradeIdeasStop(cur);
+  const targetSuggest=priceAtPct(cur,5);
   document.getElementById('mt_price').value=entrySuggest;
   document.getElementById('mt_stop').value=stopSuggest;
   document.getElementById('mt_target').value=targetSuggest;
@@ -1480,10 +1526,12 @@ function renderCycleIdeas(){
       +'<div><span style="font-size:20px;font-weight:bold;color:#fff">'+c.ticker+'</span>'
       +'<span style="color:#888;font-size:12px;margin-left:8px">'+(c.entry_zone||'—')+' ('+(c.risk||'—')+' risk)</span></div>'
       +'<span style="font-size:26px;font-weight:bold;color:'+col+'">'+c.cycle_score+'</span></div>'
-      +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
-      +'<div><div style="color:#666">Price</div><div style="color:#ccc">'+fmtMoney(c.price)+'</div></div>'
-      +'<div><div style="color:#666">Stop</div><div style="color:#cc0000">'+fmtMoney(c.stop_price)+'</div></div>'
-      +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+fmtMoney(pm.target_price)+'</div></div>'
+      +'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:6px">'
+      +'<div><div style="color:#666">Current</div><div style="color:#ccc">'+fmtMoney(getCurrentPrice(c.ticker)??c.price)+'</div></div>'
+      +'<div><div style="color:#666">Stop (-5%)</div><div style="color:#cc0000">'+fmtMoney(tradeIdeasStop(c.price))+'</div></div>'
+      +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+fmtMoney(pm.target_price)+'</div></div></div>'
+      +'<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
+      +'<div><div style="color:#666">% if sold at target</div><div style="color:'+((pctAtPrice(c.price,pm.target_price)||0)>=0?'#44bb44':'#cc0000')+'">'+(pctAtPrice(c.price,pm.target_price)!=null?(pctAtPrice(c.price,pm.target_price)>=0?'+':'')+pctAtPrice(c.price,pm.target_price)+'%':'—')+'</div></div>'
       +'<div><div style="color:#666">+5% / +10%</div><div style="color:#888;font-size:11px">'+profitLevels(c.price)+'</div></div></div>'
       +'<div style="font-size:11px;color:#aaa;margin-bottom:10px">'+(c.reasons||[]).slice(0,3).join(' | ')+'</div>'
       +'<button class="btn-primary" style="padding:6px 14px;font-size:12px" onclick="buyCycleIdea(\''+c.ticker+'\')">Buy</button>'
@@ -1495,7 +1543,7 @@ async function buyCycleIdea(ticker){
   const c=((CYCLE_DATA&&CYCLE_DATA.candidates)||[]).find(x=>x.ticker===ticker);
   if(!c){alert('No Cycle Trading data for '+ticker);return;}
   const pm=c.predicted_move||{};
-  executeIdeaBuy({ticker:c.ticker, price:c.price, stop:c.stop_price, target:pm.target_price,
+  executeIdeaBuy({ticker:c.ticker, price:c.price, stop:tradeIdeasStop(c.price), target:pm.target_price,
     recommendation:'CYCLE_'+(c.cycle_signal||'BUY'), reason:(c.reasons||[]).slice(0,2).join('; '),
     entry_type:c.entry_zone, confidence:null, blended_score:c.cycle_score, source:'cycle_trading_idea'});
 }
@@ -1577,17 +1625,19 @@ function renderLiveIdeas(){
     +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">'
     +'<span style="font-size:20px;font-weight:bold;color:#fff">'+s.ticker+'</span>'
     +'<span style="color:#00aa00;font-size:12px;font-weight:bold">LIVE DAY BUY</span></div>'
-    +'<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
-    +'<div><div style="color:#666">Price</div><div style="color:#ccc">'+fmtMoney(s.price)+'</div></div>'
+    +'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:6px">'
+    +'<div><div style="color:#666">Current</div><div style="color:#ccc">'+fmtMoney(s.price)+'</div></div>'
     +'<div><div style="color:#666">Buy Zone</div><div style="color:#4a90d9">'+fmtMoney(s.buyZone)+'</div></div>'
+    +'<div><div style="color:#666">Stop (-5%)</div><div style="color:#cc0000">'+fmtMoney(tradeIdeasStop(s.price))+'</div></div></div>'
+    +'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
     +'<div><div style="color:#666">Sell Zone</div><div style="color:#44bb44">'+fmtMoney(s.sellZone)+'</div></div>'
-    +'<div><div style="color:#666">RSI</div><div style="color:#ccc">'+s.rsi.toFixed(1)+'</div></div>'
-    +'<div><div style="color:#666">+5% / +10%</div><div style="color:#888;font-size:10px">'+profitLevels(s.price)+'</div></div></div>'
+    +'<div><div style="color:#666">% if sold at target</div><div style="color:'+((pctAtPrice(s.price,s.sellZone)||0)>=0?'#44bb44':'#cc0000')+'">'+(pctAtPrice(s.price,s.sellZone)!=null?(pctAtPrice(s.price,s.sellZone)>=0?'+':'')+pctAtPrice(s.price,s.sellZone)+'%':'—')+'</div></div>'
+    +'<div><div style="color:#666">RSI</div><div style="color:#ccc">'+s.rsi.toFixed(1)+'</div></div></div>'
     +'<div style="font-size:11px;color:#aaa;margin-bottom:10px">'
     +'<b>Entry:</b> at/near buy zone, '+(s.vs>=0?'+':'')+s.vs.toFixed(2)+'% vs VWAP, momentum '+(s.mo>=0?'up':'down')+'<br>'
-    +'<b>Exit guide:</b> take profit near sell zone (~2x ATR above price); cut loss if price closes back below VWAP</div>'
+    +'<b>Exit guide:</b> stop at -5% ('+fmtMoney(tradeIdeasStop(s.price))+'), take profit near sell zone</div>'
     +'<button class="btn-primary" style="padding:6px 14px;font-size:12px" onclick="buyLiveIdea(\''+s.ticker+'\')">Buy</button>'
-    +' <button class="btn-primary" style="padding:6px 14px;font-size:12px;margin-left:6px" onclick="showSimpleTradeChart(\''+s.ticker+'\','+s.buyZone+','+s.vwap+','+s.sellZone+')">📈 Chart</button>'
+    +' <button class="btn-primary" style="padding:6px 14px;font-size:12px;margin-left:6px" onclick="showSimpleTradeChart(\''+s.ticker+'\','+s.buyZone+','+tradeIdeasStop(s.price)+','+s.sellZone+')">📈 Chart</button>'
     +'</div>'
   ).join('');
 }
@@ -1789,6 +1839,27 @@ function renderWalkForward(results,tickers){
             h+=`<td><small style="color:#555">${(w.period||'').substring(0,10)}</small><br><span style="color:${wc}">${w.win_rate!=null?w.win_rate+'%':'—'}</span></td>`;
         }
         h+='</tr>';
+    });
+    h+='</tbody></table></div>';
+
+    h+='<h3 style="color:#ccc;margin:30px 0 5px">5 Strategies — Out-of-Sample Win Rate Comparison</h3>';
+    h+='<p style="color:#888;font-size:12px;margin-bottom:15px">Same walk-forward idea applied to all five crossover-signal strategies side by side, so accuracy can be compared rather than taken on faith per-tab. RSI re-optimizes its oversold threshold per window; MACD/Stochastic/EMA/VWAP test their fixed signal’s consistency across the same 4 rolling windows. (MA Crossover isn’t included here — it measures average return after a golden cross, not a per-signal win rate, so it isn’t comparable on this scale.)</p>';
+    h+='<div class="asx-table-wrap"><table class="asx-table"><thead><tr><th>Ticker</th><th>RSI</th><th>MACD</th><th>Stochastic</th><th>EMA</th><th>VWAP</th></tr></thead><tbody>';
+    const wfCell=(wf)=>{
+        if(!wf || wf.error) return '<td style="color:#666">—</td>';
+        const aw=wf.avg_win_rate;
+        const c=aw==null?'#888':aw>=60?'#44bb44':aw>=50?'#ff9900':'#cc0000';
+        return `<td style="color:${c};font-weight:bold">${aw!=null?aw+'%':'N/A'}</td>`;
+    };
+    tickers.forEach(t=>{
+        const r=results[t]||{};
+        h+=`<tr><td><b>${t}</b></td>`
+          +wfCell(r.walk_forward)
+          +wfCell(r.macd_walk_forward)
+          +wfCell(r.stochastic_walk_forward)
+          +wfCell(r.ema_walk_forward)
+          +wfCell(r.vwap_walk_forward)
+          +'</tr>';
     });
     h+='</tbody></table></div>';
     document.getElementById('quantContent').innerHTML=h;
@@ -2013,11 +2084,16 @@ window.addEventListener('resize',()=>{
 <h3 style="color:#ccc;margin:25px 0 12px">By Source</h3>
 <div class="stats-grid" id="paperSourceGrid"></div>
 
+<h3 style="color:#ccc;margin:25px 0 12px">AI Assessment <span style="font-size:11px;color:#666;font-weight:normal">— advisory only, nothing here executes a trade</span></h3>
+<div id="aiAssessmentPanel" style="background:#1a1a2e;border-radius:12px;padding:20px;border:1px solid #2a2a4a;margin-bottom:25px">
+  <p style="color:#888;margin:0">Loading...</p>
+</div>
+
 <h3 style="color:#ccc;margin:25px 0 12px">Open Positions</h3>
 <div class="asx-table-wrap"><table class="asx-table"><thead><tr>
-  <th>Source</th><th>Ticker</th><th>Bought</th><th>Current</th><th>Position ($)</th><th>Stop</th><th>Target</th><th>Opened</th><th></th>
+  <th>Source</th><th>Ticker</th><th>Bought</th><th>Current</th><th>Position ($)</th><th>Stop</th><th>Target</th><th>% at Target</th><th>Opened</th><th></th>
 </tr></thead><tbody id="paperOpenBody">
-<tr><td colspan="9" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
+<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Loading...</td></tr>
 </tbody></table></div>
 
 <h3 style="color:#ccc;margin:25px 0 12px">Closed Trades</h3>
@@ -2321,9 +2397,9 @@ window.addEventListener('resize',()=>{
 
 <h3 style="color:#ccc;margin:25px 0 12px">Open Positions</h3>
 <div class="asx-table-wrap"><table class="asx-table"><thead><tr>
-  <th>Ticker</th><th>Bought</th><th>Current</th><th>Shares</th><th>Cost</th><th>Stop</th><th>Target</th><th>+5%</th><th>+10%</th><th>Opened</th><th></th>
+  <th>Ticker</th><th>Bought</th><th>Current</th><th>Shares</th><th>Cost</th><th>Stop</th><th>Target</th><th>% at Target</th><th>Opened</th><th></th>
 </tr></thead><tbody id="ideasOpenBody">
-<tr><td colspan="11" style="color:#888;text-align:center;padding:20px">Set your GitHub token to view live positions.</td></tr>
+<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Set your GitHub token to view live positions.</td></tr>
 </tbody></table></div>
 
 <h3 style="color:#ccc;margin:25px 0 12px">Suggested Entries Tonight</h3>

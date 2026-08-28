@@ -42,6 +42,6 @@ jobs:
         run: |
           git config user.name "Trading Analyser Bot"
           git config user.email "bot@trading-analyser"
-          git add data/alerts_log.json || true
+          git add data/alerts_log.json data/entry_cross_alerts.json || true
           git diff --staged --quiet || git commit -m "Alerts log $(date -u +%H:%M)"
           git push || true
