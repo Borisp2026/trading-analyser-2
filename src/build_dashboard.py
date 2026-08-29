@@ -1009,16 +1009,23 @@ function renderQuantTab(section){
 }
 
 function renderTop5Stocks(results,tickers){
-    const scored=tickers.map(function(t){
+    // Stocks only -- ETFs (VAS.AX, VTEK.AX, etc.) skew this table when they have
+    // too little history for a real ranking, and "Top 5 Stocks" shouldn't include
+    // them anyway.
+    const etfSet=new Set((WATCHLIST&&WATCHLIST.etf)||[]);
+    const scored=tickers.filter(function(t){return !etfSet.has(t)}).map(function(t){
         var r=results[t]||{};
-        var scores=[];
-        if(r.momentum&&r.momentum.percentile!=null) scores.push(r.momentum.percentile);
-        if(r.monte_carlo&&r.monte_carlo.prob_up!=null) scores.push(r.monte_carlo.prob_up);
-        if(r.ma_strategy&&r.ma_strategy.avg_golden_return_60d!=null) scores.push(Math.min(100,Math.max(0,r.ma_strategy.avg_golden_return_60d/3)));
-        var avg=scores.length?scores.reduce(function(a,b){return a+b},0)/scores.length:0;
+        var mom=r.momentum&&r.momentum.percentile!=null?r.momentum.percentile:null;
+        var mc=r.monte_carlo&&r.monte_carlo.prob_up!=null?r.monte_carlo.prob_up:null;
+        var maRet=r.ma_strategy&&r.ma_strategy.avg_golden_return_60d!=null?Math.min(100,Math.max(0,r.ma_strategy.avg_golden_return_60d/3)):null;
+        // Require all 3 signals -- averaging whatever happens to be present let a
+        // ticker missing 2 of 3 (e.g. not enough history for momentum/MA) rank #1
+        // off a single strong number instead of a real 3-signal consensus.
+        if(mom==null||mc==null||maRet==null) return null;
+        var avg=(mom+mc+maRet)/3;
         return {ticker:t,score:Math.round(avg),r:r};
-    }).sort(function(a,b){return b.score-a.score}).slice(0,5);
-    if(!scored.length){document.getElementById('quantContent').innerHTML='<p style="color:#888;padding:20px">No quantitative data yet.</p>';return;}
+    }).filter(Boolean).sort(function(a,b){return b.score-a.score}).slice(0,5);
+    if(!scored.length){document.getElementById('quantContent').innerHTML='<p style="color:#888;padding:20px">No stocks with complete momentum/Monte Carlo/MA data yet.</p>';return;}
     document.getElementById('quantContent').innerHTML=
         '<h3 style="color:#ccc;margin-bottom:16px">&#11088; Top 5 Stocks &mdash; Overall Score</h3>'
         +'<div style="display:grid;gap:12px">'
