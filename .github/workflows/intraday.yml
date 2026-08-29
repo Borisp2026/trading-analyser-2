@@ -51,6 +51,15 @@ jobs:
           git config user.name "Trading Analyser Bot"
           git config user.email "bot@trading-analyser"
           git pull --rebase origin main || true
-          git add data/alerts_log.json data/entry_cross_alerts.json data/live_prices.json data/live_ideas.json || true
+          # Separate `git add` calls, not one combined line: alerts_log.json and
+          # entry_cross_alerts.json only get created when an alert actually fires,
+          # so most runs don't have them on disk at all. `git add a b c d` aborts
+          # staging ALL of them the moment any single path doesn't exist -- which
+          # was silently blocking live_prices.json/live_ideas.json from ever being
+          # staged even though they always have real, fresh content every run.
+          git add data/alerts_log.json || true
+          git add data/entry_cross_alerts.json || true
+          git add data/live_prices.json || true
+          git add data/live_ideas.json || true
           git diff --staged --quiet || git commit -m "Alerts log $(date -u +%H:%M)"
           git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)
