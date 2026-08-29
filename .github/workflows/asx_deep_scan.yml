@@ -37,6 +37,7 @@ jobs:
         run: |
           git config user.name "Trading Analyser Bot"
           git config user.email "bot@trading-analyser"
+          git pull --rebase origin main || true
           git add -A
           git diff --staged --quiet || git commit -m "ASX deep scan $(date -u +%Y-%m-%d)"
-          git push
+          git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)
