@@ -38,10 +38,16 @@ jobs:
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
         run: python src/intraday_scanner.py
 
+      - name: Write live prices snapshot
+        run: python src/live_prices.py
+
+      - name: Write live Day-Buy ideas scan
+        run: python src/live_ideas.py
+
       - name: Save alerts log
         run: |
           git config user.name "Trading Analyser Bot"
           git config user.email "bot@trading-analyser"
-          git add data/alerts_log.json data/entry_cross_alerts.json || true
+          git add data/alerts_log.json data/entry_cross_alerts.json data/live_prices.json data/live_ideas.json || true
           git diff --staged --quiet || git commit -m "Alerts log $(date -u +%H:%M)"
           git push || true

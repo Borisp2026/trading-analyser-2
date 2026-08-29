@@ -94,10 +94,17 @@ def close_paper_trade(ticker: str, sell_price: float, reason: str = "", strategy
 
 
 def get_current_price(ticker: str) -> float:
+    """Used for real holdings that aren't on the nightly watchlist (e.g. ASIA.AX),
+    so they don't share fetch_stock()'s NaN-guard in analyser.py. Same underlying
+    Yahoo/yfinance quirk applies here too: a same-day row can arrive with NaN
+    Close before it's finalized, and blindly trusting .iloc[-1] then poisons
+    evaluate_portfolio()'s total_value sum for every holding, not just this one."""
     try:
-        data = yf.Ticker(ticker).history(period="2d")
+        data = yf.Ticker(ticker).history(period="5d")
         if not data.empty:
-            return float(data["Close"].iloc[-1])
+            valid = data["Close"].dropna()
+            if len(valid):
+                return float(valid.iloc[-1])
     except Exception:
         pass
     return 0.0

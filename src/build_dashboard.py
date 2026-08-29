@@ -452,13 +452,31 @@ async function ghPut(path,content,sha){
     return r.json();
 }
 
-async function fetchLivePrice(ticker){
+let _livePricesFile=null;
+async function loadLivePricesFile(){
+    // Server-side snapshot written every ~30 min by live_prices.py via yfinance
+    // (no browser involved, so no CORS issue at all). Read directly, same-origin.
+    if(_livePricesFile) return _livePricesFile;
     try{
-        const url='https://corsproxy.io/?url='+encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/chart/'+ticker);
-        const r=await fetch(url);
-        const j=await r.json();
-        return j.chart.result[0].meta.regularMarketPrice;
-    }catch(e){return null;}
+        const r=await fetch('data/live_prices.json?_='+Date.now());
+        _livePricesFile=await r.json();
+    }catch(e){ _livePricesFile={prices:{}}; }
+    return _livePricesFile;
+}
+async function fetchLivePrice(ticker){
+    // Yahoo Finance sends no CORS headers for third-party sites, so a direct
+    // browser fetch is never possible here. The public proxy this used to go
+    // through (corsproxy.io) now requires a paid API key and rejects every
+    // request; the remaining free-tier alternative (Corsfix) also isn't free
+    // for a live site beyond a trial. So this reads the same-origin snapshot
+    // written every ~30 min by live_prices.py via yfinance (server-to-server,
+    // no CORS involved at all) instead of live-fetching from the browser.
+    try{
+        const lp=await loadLivePricesFile();
+        const p=lp.prices && lp.prices[ticker.toUpperCase()];
+        if(p) return p;
+    }catch(e){}
+    return null;
 }
 async function refreshPortfolioPrices(){
     const tbody=document.querySelector('#tab-portfolio .holdings-table tbody');
@@ -1548,72 +1566,30 @@ async function buyCycleIdea(ticker){
     entry_type:c.entry_zone, confidence:null, blended_score:c.cycle_score, source:'cycle_trading_idea'});
 }
 
-// ── Live intraday scan for Trade Ideas — same VWAP/RSI "Day Buy" definition
-// already used by the Day Trading tab's live scanner, run on demand instead of
-// only every 30 min, and scoped to the Trade Ideas tab's own results grid so it
-// doesn't touch that tab's code. ─────────────────────────────────────────────
+// ── Live Day-Buy scan for Trade Ideas — same VWAP/RSI "Day Buy" definition
+// already used by the Day Trading tab's live scanner. Used to fetch 15-min
+// bars straight from Yahoo via a public CORS proxy on each click; that proxy
+// (corsproxy.io) now requires a paid API key and rejects every request, and
+// the only free alternative (Corsfix) isn't free for a live site either. So
+// this now reads data/live_ideas.json, computed server-side via yfinance
+// every ~30 min by live_ideas.py (see that file) -- no proxy involved at all,
+// "on demand" just means "re-read the latest snapshot" rather than a fresh
+// live fetch. ─────────────────────────────────────────────────────────────
 let _liveIdeas=[];
-const IDEAS_SCAN_LIMIT=150;  // caps scan time/CORS-proxy load -- see getIdeaScanTickers
-function getIdeaScanTickers(){
-  const watchlistTickers=Array.from(document.querySelectorAll('#cardsGrid .stock-card[data-ticker]')).map(c=>c.getAttribute('data-ticker')).filter(Boolean);
-  const deepScanResults=(ASX_SCAN&&ASX_SCAN.results)||[];
-  // Top-scored names from the weekly ASX Deep Scan (already computed server-side,
-  // no extra cost to read) -- adds real breadth beyond the 26-ticker watchlist
-  // without live-scanning the full 1,800+ universe through a public CORS proxy.
-  const topDeepScan=[...deepScanResults]
-    .sort((a,b)=>((b.reasoning||{}).blended_score||0)-((a.reasoning||{}).blended_score||0))
-    .slice(0,IDEAS_SCAN_LIMIT)
-    .map(r=>r.ticker);
-  return [...new Set([...watchlistTickers,...topDeepScan])];
-}
 async function scanMarketForIdeas(){
   const statusEl=document.getElementById('ideasScanStatus');
-  const tickers=getIdeaScanTickers();
-  if(!tickers.length){ if(statusEl) statusEl.textContent='No tickers to scan.'; return; }
-  _liveIdeas=[];
-  for(let i=0;i<tickers.length;i++){
-    const t=tickers[i];
-    if(statusEl) statusEl.textContent='Scanning '+(i+1)+' of '+tickers.length+'... ('+t+')';
-    try{
-      const url='https://query1.finance.yahoo.com/v8/finance/chart/'+encodeURIComponent(t)+'?interval=15m&range=1d&includePrePost=false';
-      const j=await(await fetch('https://corsproxy.io/?url='+encodeURIComponent(url))).json();
-      const res=j.chart&&j.chart.result&&j.chart.result[0];
-      if(!res) throw new Error('no data');
-      const q=res.indicators.quote[0], ts=res.timestamp||[];
-      const bars=[];
-      for(let k=0;k<ts.length;k++){ if(q.close[k]==null) continue; bars.push([ts[k], q.open[k]||q.close[k], q.high[k]||q.close[k], q.low[k]||q.close[k], q.close[k], q.volume[k]||0]); }
-      if(!bars.length) throw new Error('no bars');
-      const price=bars[bars.length-1][4];
-      let tpv=0,vol=0; bars.forEach(b=>{const tp=(b[2]+b[3]+b[4])/3; tpv+=tp*b[5]; vol+=b[5];});
-      const vwap=vol>0?tpv/vol:0;
-      const vs=vwap>0?(price-vwap)/vwap*100:0;
-      const closes=bars.map(b=>b[4]);
-      let rsi=50;
-      if(closes.length>=15){
-        let g=0,l=0;
-        for(let k=closes.length-14;k<closes.length;k++){ const d=closes[k]-closes[k-1]; d>0?g+=d:l-=d; }
-        const ag=g/14, al=l/14; rsi=al===0?100:100-100/(1+ag/al);
-      }
-      const mo=bars.length>=6?price-bars[bars.length-6][4]:0;
-      let atr=0;
-      if(bars.length>=2){
-        const tr=[];
-        for(let k=1;k<bars.length;k++){ tr.push(Math.max(bars[k][2]-bars[k][3], Math.abs(bars[k][2]-bars[k-1][4]), Math.abs(bars[k][3]-bars[k-1][4]))); }
-        const sl=tr.slice(-14); atr=sl.reduce((a,b)=>a+b,0)/sl.length;
-      }
-      // Same "Day Buy" definition as the Day Trading tab's live scanner: above VWAP,
-      // RSI in the healthy 45-75 band (not overbought/oversold), momentum positive.
-      const isDayBuy = vs>0 && rsi>=45 && rsi<=75 && mo>0;
-      if(!isDayBuy) continue;
-      const buyZone = vwap>0 && vwap<price ? vwap : price*0.99;
-      const sellZone = atr>0 ? price+atr*2 : price*1.04;
-      _liveIdeas.push({ticker:t, price:Math.round(price*10000)/10000, vwap:Math.round(vwap*10000)/10000,
-        vs, rsi, mo, buyZone:Math.round(buyZone*10000)/10000, sellZone:Math.round(sellZone*10000)/10000});
-    }catch(e){ /* skip ticker on any fetch/parse failure -- one bad ticker shouldn't stop the scan */ }
-    await new Promise(r=>setTimeout(r,200));
+  if(statusEl) statusEl.textContent='Loading latest scan...';
+  try{
+    const r=await fetch('data/live_ideas.json?_='+Date.now());
+    const data=await r.json();
+    _liveIdeas=data.ideas||[];
+    const asOf=data.generated_at?new Date(data.generated_at.replace(' ','T')).toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'}):'—';
+    if(statusEl) statusEl.textContent=(data.scanned_count||0)+' tickers scanned, '+_liveIdeas.length
+      +' Day Buy signal(s) — as of '+asOf+' (refreshes every ~30 min)';
+  }catch(e){
+    _liveIdeas=[];
+    if(statusEl) statusEl.textContent='Could not load the live scan snapshot.';
   }
-  if(statusEl) statusEl.textContent='Scanned '+tickers.length+' tickers, '+_liveIdeas.length+' Day Buy signal(s) — '
-    +new Date().toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'});
   renderLiveIdeas();
 }
 function renderLiveIdeas(){
@@ -2419,18 +2395,18 @@ window.addEventListener('resize',()=>{
 
 <h3 style="color:#ccc;margin:25px 0 12px">Live Intraday Scan</h3>
 <p style="color:#888;font-size:13px;margin-bottom:12px">
-  Scans your 26-ticker watchlist plus the top ~150 scored names from the weekly ASX Deep
-  Scan (broader coverage without live-checking the full 1,800+ ASX universe), using the
-  same VWAP/RSI "Day Buy" definition as the Day Trading tab's live scanner — a fresh
-  on-demand check rather than waiting for its 30-min cycle. Takes roughly 1-2 minutes.
-  Works during ASX/NASDAQ market hours only.
+  Covers your watchlist plus the top 40 scored names from the weekly ASX Deep Scan, using
+  the same VWAP/RSI "Day Buy" definition as the Day Trading tab's live scanner. Computed
+  server-side every ~30 min during ASX/NASDAQ market hours (no live browser fetch —
+  Yahoo Finance blocks that for third-party sites, and the free proxy this used to
+  route through is no longer usable). Click below to load the latest snapshot.
 </p>
 <div style="margin-bottom:15px">
-  <button class="btn-primary" onclick="scanMarketForIdeas()">🔍 Scan Market Now</button>
+  <button class="btn-primary" onclick="scanMarketForIdeas()">🔍 Load Latest Scan</button>
   <span id="ideasScanStatus" style="color:#888;font-size:12px;margin-left:10px"></span>
 </div>
 <div id="ideasLiveGrid" style="display:grid;gap:12px">
-  <p style="color:#888;padding:20px">Click "Scan Market Now" to check for fresh Day Buy signals.</p>
+  <p style="color:#888;padding:20px">Click "Load Latest Scan" to see the latest Day Buy signals.</p>
 </div>
 </div>
 </div>
