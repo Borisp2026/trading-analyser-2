@@ -67,6 +67,7 @@ def build_prompt(positions: list, macro: dict) -> str:
         )
     positions_text = "\n".join(lines) if lines else "No open positions right now."
     macro_text = f"Macro deployment gate: {macro.get('zone', 'unknown')} (composite {macro.get('composite', '?')}/100)"
+    tickers = [p["ticker"] for p in positions]
 
     return f"""You are reviewing open PAPER-TRADING positions (simulated, no real money) for a personal ASX/NASDAQ research tool. This is advisory only -- the trader reads this and decides manually; nothing you say executes a trade.
 
@@ -75,7 +76,10 @@ def build_prompt(positions: list, macro: dict) -> str:
 Open positions:
 {positions_text}
 
-For each position, give a one-line read: is the original thesis holding up, getting close to its stop, or worth watching more closely? Then one short portfolio-level note (concentration, correlated risk, or anything notable about the mix). Keep it concise and factual -- no hype, no disclaimers about this being simulated (the trader already knows), just a clear-eyed read of what's changed since entry."""
+Reply with ONLY a JSON object, no other text, in exactly this shape:
+{{"per_position": {{"TICKER": "one-line read: is the thesis holding up, getting close to its stop, or worth watching more closely?", ...}}, "portfolio_note": "one short note on concentration, correlated risk, or anything notable about the mix"}}
+
+The per_position object must have exactly one entry per ticker listed above ({', '.join(tickers) if tickers else 'none'}), keyed by that exact ticker string. Keep every line concise and factual -- no hype, no disclaimers about this being simulated (the trader already knows), just a clear-eyed read of what's changed since entry."""
 
 
 def call_claude(prompt: str) -> str:
@@ -124,8 +128,19 @@ def run_ai_assessment() -> dict:
     prompt = build_prompt(positions, macro)
 
     assessment_text, error = None, None
+    per_position, portfolio_note = {}, None
     try:
         assessment_text = call_claude(prompt)
+        # Claude is asked to reply with only JSON, but reads it defensively --
+        # a model reply outside the exact shape shouldn't break the whole
+        # feature, just fall back to showing assessment_text as plain prose
+        # (the format this used before per-position reads existed).
+        try:
+            parsed = json.loads(assessment_text)
+            per_position = parsed.get("per_position") or {}
+            portfolio_note = parsed.get("portfolio_note")
+        except (json.JSONDecodeError, AttributeError):
+            print("AI assessment: response wasn't valid JSON, showing as plain text")
     except Exception as e:
         error = str(e)
 
@@ -133,6 +148,11 @@ def run_ai_assessment() -> dict:
         "generated_at": now_iso, "enabled": True, "model": MODEL,
         "positions_checked": len(positions),
         "positions": positions,
+        # per_position: {ticker: one-line read}, used to annotate the Open Positions
+        # table row for that ticker directly. portfolio_note + assessment (raw) stay
+        # for the full-text panel -- assessment is kept even when JSON parsing
+        # succeeds so nothing that reads the old shape breaks.
+        "per_position": per_position, "portfolio_note": portfolio_note,
         "assessment": assessment_text, "error": error,
     }
     with open(AI_ASSESSMENT_FILE, "w") as f:

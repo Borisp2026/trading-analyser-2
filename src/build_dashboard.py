@@ -18,6 +18,7 @@ def build_stock_card(r):
     price=t.get("price",0); change_1d=t.get("price_1d_pct",0); rsi=t.get("rsi",50)
     change_color="green" if change_1d>=0 else "red"
     change_prefix="+" if change_1d>=0 else ""
+    change_arrow="▲ " if change_1d>=0 else "▼ "
     reasons_html="".join(f"<li>{x}</li>" for x in rec.get("reasons",[])[:6])
     entry=rec.get("entry_price",""); stop=rec.get("stop_loss",""); target=rec.get("take_profit","")
     confidence=rec.get("confidence","?"); timing=rec.get("timing","")
@@ -50,7 +51,7 @@ def build_stock_card(r):
         f'<div><span class="rec-badge">{recommendation}</span><span class="score-badge">{score:.0f}/100</span></div></div>'
         f'<div class="card-body">'
         f'<div class="price-row"><span class="price">${price:.3f}</span>'
-        f'<span style="color:{change_color}">{change_prefix}{change_1d:.1f}%</span>'
+        f'<span style="color:{change_color}">{change_arrow}{change_prefix}{change_1d:.1f}%</span>'
         f'<span class="rsi-badge">RSI {rsi:.0f}</span></div>'
         f'<div class="score-breakdown">Tech:{tech_score:.0f} | Cycle:{cycle_score:.0f} | Blended:{score:.0f}</div>'
         f'<div class="trade-grid">'
@@ -59,21 +60,25 @@ def build_stock_card(r):
         f'<div><label>Target</label><strong style="color:green">{target_str}</strong></div>'
         f"<div><label>Confidence</label><strong>{confidence}</strong></div></div>"
         f'<div class="timing">{timing}</div>'
-        f"{cycle_html}{corr_html}"
         f'{chart_btn}'
-        f'<details><summary>Full Analysis</summary><ul class="reasons">{reasons_html}</ul></details>'
+        # Cycle-phase and correlation detail moved behind "Full Analysis" -- decision-relevant
+        # fields (price, rating, entry/stop/target) stay on the card face; the rest is one
+        # click deeper instead of printed on every card regardless of whether it's needed.
+        f'<details><summary>Full Analysis</summary>{cycle_html}{corr_html}<ul class="reasons">{reasons_html}</ul></details>'
         f"</div></div>")
 
 def build_portfolio_html(portfolio, stock_advice=None):
     real=portfolio.get("real",{}); paper=portfolio.get("paper",{})
     holdings=real.get("holdings",[]); pnl=real.get("total_pnl",0)
     pnl_color="green" if pnl>=0 else "red"; pnl_prefix="+" if pnl>=0 else ""
+    pnl_arrow="▲ " if pnl>=0 else "▼ "
     rows=""
     for h in holdings:
         hp=h.get("pnl",0); hc="green" if hp>=0 else "red"; hpfx="+" if hp>=0 else ""
+        harrow="▲ " if hp>=0 else "▼ "
         rows+=(f'<tr><td><b>{h["ticker"]}</b></td><td>{h["shares"]}</td>'
             f'<td>${h["buy_price"]:.3f}</td><td>${h["current_price"]:.3f}</td>'
-            f'<td>${h["value"]:,.2f}</td><td style="color:{hc}">{hpfx}${hp:,.2f} ({h.get("pnl_pct",0):+.1f}%)</td>'
+            f'<td>${h["value"]:,.2f}</td><td style="color:{hc}">{harrow}{hpfx}${hp:,.2f} ({h.get("pnl_pct",0):+.1f}%)</td>'
             f'<td>{h.get("div_yield_pct",0):.1f}%</td>'
             f'<td><button onclick="removeHolding(\'{h["ticker"]}\')" class="btn-remove">Remove</button></td></tr>')
     table=(f'<table class="holdings-table"><thead><tr><th>Ticker</th><th>Shares</th><th>Buy</th>'
@@ -86,7 +91,7 @@ def build_portfolio_html(portfolio, stock_advice=None):
         f'<div class="stats-grid">'
         f'<div class="stat-card"><div class="stat-label">Portfolio Value</div><div class="stat-value">${tv:,.2f}</div></div>'
         f'<div class="stat-card"><div class="stat-label">Total Cost</div><div class="stat-value">${tc:,.2f}</div></div>'
-        f'<div class="stat-card"><div class="stat-label">P&L</div><div class="stat-value" style="color:{pnl_color}">{pnl_prefix}${pnl:,.2f} ({real.get("total_pnl_pct",0):+.1f}%)</div></div>'
+        f'<div class="stat-card"><div class="stat-label">P&L</div><div class="stat-value" style="color:{pnl_color}">{pnl_arrow}{pnl_prefix}${pnl:,.2f} ({real.get("total_pnl_pct",0):+.1f}%)</div></div>'
         f'<div class="stat-card"><div class="stat-label">Annual Dividends</div><div class="stat-value">${divs:,.2f}</div></div>'
         f'<div class="stat-card"><div class="stat-label">Paper Win Rate</div><div class="stat-value">{wr:.1f}%</div></div>'
         f'</div>{table}</section>')
@@ -159,6 +164,13 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
     avoids=len(results)-buys-holds
     real=portfolio.get("real",{}); holdings_json=json.dumps(real.get("holdings",[]))
     total=len(results)
+    # Surfaced on the Market Analysis landing tab too (not just Portfolio) -- the money
+    # figure people actually open the dashboard to check shouldn't be a tab away.
+    port_value=real.get("total_value",0); port_pnl=real.get("total_pnl",0)
+    port_pnl_pct=real.get("total_pnl_pct",0)
+    port_pnl_color="#44bb44" if port_pnl>=0 else "#cc0000"
+    port_pnl_arrow="▲ " if port_pnl>=0 else "▼ "
+    port_pnl_prefix="+" if port_pnl>=0 else ""
     overall_acc=(accuracy or {}).get("overall_accuracy",0)
 
     # Chart data — per ticker JSON blob
@@ -230,9 +242,24 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
 body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f1a;color:#e0e0e0}
 header{background:linear-gradient(135deg,#1a1a2e,#16213e);padding:20px 30px;display:flex;justify-content:space-between;align-items:center}
 header h1{color:white;font-size:24px}header p{color:#aaa;font-size:13px}
-.tab-nav{display:flex;background:#13132a;border-bottom:2px solid #2a2a4a;padding:0 20px;flex-wrap:wrap}
+.tab-nav{display:flex;align-items:flex-start;background:#13132a;border-bottom:2px solid #2a2a4a;padding:0 20px;flex-wrap:wrap}
 .tab-btn{padding:12px 18px;cursor:pointer;font-size:13px;color:#888;border:none;background:none;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all 0.2s}
 .tab-btn:hover{color:#ccc}.tab-btn.active{color:#4a90d9;border-bottom-color:#4a90d9;font-weight:bold}
+/* Grouped nav -- 5 sections instead of 15 flat tabs. Each group is a dropdown;
+   clicking a child still calls the same showTab(id) as before, so tab content,
+   ids, and every existing onclick="showTab('...')" reference keep working
+   unchanged -- only how you get to them changed. */
+.nav-group{position:relative}
+.nav-group-btn{padding:12px 18px;cursor:pointer;font-size:13px;color:#888;border:none;background:none;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all 0.2s;display:flex;align-items:center;gap:5px;font-family:inherit}
+.nav-group-btn:hover{color:#ccc}
+.nav-group-btn.active{color:#4a90d9;border-bottom-color:#4a90d9;font-weight:bold}
+.nav-group-btn .caret{font-size:9px;transition:transform 0.15s}
+.nav-group.open .nav-group-btn .caret{transform:rotate(180deg)}
+.nav-dropdown{display:none;flex-direction:column;position:absolute;top:100%;left:0;background:#1a1a2e;border:1px solid #2a2a4a;border-radius:0 0 8px 8px;min-width:180px;z-index:50;padding:6px;box-shadow:0 8px 20px rgba(0,0,0,0.4)}
+.nav-group.open .nav-dropdown{display:flex}
+.nav-dropdown .tab-btn{text-align:left;border-bottom:none;border-radius:6px;padding:9px 14px;margin-bottom:0}
+.nav-dropdown .tab-btn:hover{background:#22223f}
+.nav-dropdown .tab-btn.active{background:#152238}
 .tab-content{display:none}.tab-content.active{display:block}
 .section{padding:25px 30px}.section h2{color:#fff;margin-bottom:15px;font-size:18px}
 .filter-bar{display:flex;gap:10px;padding:15px 30px;background:#13132a;flex-wrap:wrap;align-items:center}
@@ -323,11 +350,27 @@ const SIGNAL_HISTORY = __SIGNAL_HISTORY__;
 const ACCURACY = __ACCURACY__;
 
 // ── Tab switching ─────────────────────────────────────────────────────────────
+// Nav dropdowns -- only one open at a time, closes on outside click or once a
+// tab inside it is picked (see showTab below).
+function toggleNavGroup(name){
+    const g=document.getElementById('navgroup-'+name);
+    const wasOpen=g.classList.contains('open');
+    document.querySelectorAll('.nav-group').forEach(x=>x.classList.remove('open'));
+    if(!wasOpen) g.classList.add('open');
+}
+document.addEventListener('click', function(e){
+    if(!e.target.closest('.nav-group')) document.querySelectorAll('.nav-group').forEach(x=>x.classList.remove('open'));
+});
+
 function showTab(id) {
     document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.nav-group-btn').forEach(b=>b.classList.remove('active'));
     document.getElementById('tab-'+id).classList.add('active');
-    document.querySelector(`[onclick="showTab('${id}')"]`).classList.add('active');
+    const btn=document.querySelector(`[onclick="showTab('${id}')"]`);
+    btn.classList.add('active');
+    const group=btn.closest('.nav-group');
+    if(group){ group.querySelector('.nav-group-btn').classList.add('active'); group.classList.remove('open'); }
     if(id==='agent') loadAgentTrades();
     if(id==='market_status') renderMacroGate();
     if(id==='asx') renderASXTable();
@@ -906,11 +949,11 @@ function renderAgentDashboard(d) {
     const wr = s.win_rate || 0;
     document.getElementById('agentWinRate').innerHTML = '<span style="color:'+(wr>=60?'#44bb44':wr>=50?'#ff9900':'#cc0000')+'">'+wr+'%</span>';
     const ag = s.avg_pnl_pct || 0;
-    document.getElementById('agentAvgGain').innerHTML = '<span style="color:'+(ag>=0?'#44bb44':'#cc0000')+'">'+(ag>=0?'+':'')+ag.toFixed(1)+'%</span>';
+    document.getElementById('agentAvgGain').innerHTML = '<span style="color:'+(ag>=0?'#44bb44':'#cc0000')+'">'+(ag>=0?'▲ +':'▼ ')+ag.toFixed(1)+'%</span>';
     document.getElementById('agentWL').innerHTML = '<span class="trade-win">'+(s.wins||0)+'W</span> / <span class="trade-loss">'+(s.losses||0)+'L</span>';
     document.getElementById('agentCapital').textContent = '$'+(s.current_capital||1000).toFixed(2);
     const gr = s.capital_growth || 0;
-    document.getElementById('agentGrowth').innerHTML = '<span style="color:'+(gr>=0?'#44bb44':'#cc0000')+'">'+(gr>=0?'+':'')+gr.toFixed(1)+'%</span>';
+    document.getElementById('agentGrowth').innerHTML = '<span style="color:'+(gr>=0?'#44bb44':'#cc0000')+'">'+(gr>=0?'▲ +':'▼ ')+gr.toFixed(1)+'%</span>';
     document.getElementById('agentOpen').textContent = Object.keys(d.open_positions||{}).length;
 
     const scanLog = (d.scan_log||[]).slice(-30).reverse();
@@ -1177,7 +1220,7 @@ function normalizeAgentTrades(d){
   }));
 }
 function fmtMoney(v){ return v==null ? '—' : '$'+Number(v).toFixed(2); }
-function fmtPct(v){ return v==null ? '—' : (v>=0?'+':'')+v.toFixed(2)+'%'; }
+function fmtPct(v){ return v==null ? '—' : (v>=0?'▲ +':'▼ ')+v.toFixed(2)+'%'; }
 function priceAtPct(v,pct){ return v==null ? null : Math.round(Number(v)*(1+pct/100)*10000)/10000; }
 function profitLevel(v,pct){ const p=priceAtPct(v,pct); return p==null ? '—' : '$'+p.toFixed(3); }
 // Trade Ideas' standard stop across every source (nightly, live scan, Cycle Trading
@@ -1187,6 +1230,13 @@ function tradeIdeasStop(price){ return priceAtPct(price,-5); }
 // the generic +5%/+10% reference markers profitLevels() shows.
 function pctAtPrice(entry,targetPrice){
   return (entry==null||targetPrice==null) ? null : Math.round((targetPrice-entry)/entry*10000)/100;
+}
+// "% if sold at target" cards, formatted once here (colour + colour-blind-safe
+// arrow) instead of the same three-times-repeated ternary at each call site.
+function pctAtPriceStr(entry,targetPrice){
+  const pct=pctAtPrice(entry,targetPrice);
+  if(pct==null) return {color:'#888', text:'—'};
+  return {color: pct>=0?'#44bb44':'#cc0000', text: (pct>=0?'▲ +':'▼ ')+pct+'%'};
 }
 function profitLevels(v){ return v==null ? '—' : profitLevel(v,5)+' / '+profitLevel(v,10); }
 // Last nightly close from the already-loaded watchlist chart data -- used as a fast
@@ -1254,31 +1304,59 @@ async function sellPaperTrade(ticker, source){
     if(document.getElementById('tab-suggestions')?.classList.contains('active')) renderSuggestionsTab();
   }catch(e){alert('Error: '+e.message);}
 }
-// Renders the hourly Claude check-in on open positions -- advisory only, this
-// panel never places, closes, or modifies a trade on its own. Fetched live
+// Fetches the hourly Claude check-in on open positions -- advisory only, this
+// never places, closes, or modifies a trade on its own. Populates _aiPerPosition
+// (ticker -> one-line read) so ANY open-positions table -- Paper Trading's or
+// Trade Ideas' own -- can show it inline on the row it's about, plus renders the
+// full panel when that element exists (Paper Trading tab only). Fetched live
 // (not baked into the nightly build) since it updates on its own hourly cycle.
+// Cached per page-load once successfully fetched, so visiting both tabs doesn't
+// re-fetch every time.
+let _aiPerPosition={};
+let _aiFetched=false;
+let _aiLastRender=null;
 async function renderAiAssessment(){
   const el=document.getElementById('aiAssessmentPanel');
-  if(!el) return;
+  if(_aiFetched){
+    // Already have the data this page-load -- just (re)render the panel if present.
+    if(el && _aiLastRender) el.innerHTML=_aiLastRender;
+    return;
+  }
   try{
     const r=await fetch(AI_ASSESSMENT_RAW_URL+'?t='+Date.now());
     if(!r.ok) throw new Error('HTTP '+r.status);
     const d=await r.json();
+    _aiFetched=true;
     if(!d.enabled){
-      el.innerHTML='<p style="color:#888;margin:0">Not set up yet — needs an <code>ANTHROPIC_API_KEY</code> repo secret before this can run. See the AI Position Assessment workflow.</p>';
+      _aiLastRender='<p style="color:#888;margin:0">Not set up yet — needs an <code>ANTHROPIC_API_KEY</code> repo secret before this can run. See the AI Position Assessment workflow.</p>';
+      if(el) el.innerHTML=_aiLastRender;
       return;
     }
     const when=d.generated_at ? new Date(d.generated_at) : null;
     const whenStr=when ? when.toLocaleString('en-AU',{weekday:'short',hour:'2-digit',minute:'2-digit'}) : '—';
     if(d.error){
-      el.innerHTML='<div style="font-size:11px;color:#666;margin-bottom:10px">Last attempted: '+whenStr+' · '+(d.positions_checked||0)+' position(s)</div>'
+      _aiLastRender='<div style="font-size:11px;color:#666;margin-bottom:10px">Last attempted: '+whenStr+' · '+(d.positions_checked||0)+' position(s)</div>'
         +'<p style="color:#cc0000;margin:0">Assessment failed: '+d.error+'</p>';
+      if(el) el.innerHTML=_aiLastRender;
       return;
     }
-    el.innerHTML='<div style="font-size:11px;color:#666;margin-bottom:10px">As of '+whenStr+' · '+(d.positions_checked||0)+' position(s) checked · '+(d.model||'')+'</div>'
-      +'<div style="color:#ccc;font-size:13px;line-height:1.6;white-space:pre-wrap">'+(d.assessment||'No assessment text returned.')+'</div>';
+    _aiPerPosition = (d.per_position && Object.keys(d.per_position).length) ? d.per_position : {};
+    const header='<div style="font-size:11px;color:#666;margin-bottom:10px">As of '+whenStr+' · '+(d.positions_checked||0)+' position(s) checked · '+(d.model||'')+'</div>';
+    if(Object.keys(_aiPerPosition).length){
+      // Per-position reads now show inline on each Open Positions row (Paper
+      // Trading and Trade Ideas both) -- this panel becomes the portfolio-level
+      // note plus a pointer, not a wall of per-ticker text duplicated everywhere.
+      _aiLastRender=header
+        +'<div style="color:#ccc;font-size:13px;line-height:1.6">'+(d.portfolio_note||'No portfolio-level note returned.')+'</div>'
+        +'<p style="color:#666;font-size:11px;margin-top:10px">Per-position reads shown inline on each row in Open Positions.</p>';
+    }else{
+      _aiLastRender=header
+        +'<div style="color:#ccc;font-size:13px;line-height:1.6;white-space:pre-wrap">'+(d.assessment||'No assessment text returned.')+'</div>';
+    }
+    if(el) el.innerHTML=_aiLastRender;
   }catch(e){
-    el.innerHTML='<p style="color:#888;margin:0">AI assessment unavailable right now ('+e.message+').</p>';
+    _aiLastRender='<p style="color:#888;margin:0">AI assessment unavailable right now ('+e.message+').</p>';
+    if(el) el.innerHTML=_aiLastRender;
   }
 }
 async function renderPaperTab(){
@@ -1287,7 +1365,7 @@ async function renderPaperTab(){
     const r=await fetch(AGENT_RAW_URL+'?t='+Date.now());
     if(r.ok) rows = rows.concat(normalizeAgentTrades(await r.json()));
   }catch(e){/* Agent Trader data unavailable, show other sources only */}
-  renderAiAssessment();
+  await renderAiAssessment();  // awaited so _aiPerPosition is populated before rows render below
 
   const openRows=rows.filter(r=>r.open);
   const closedRows=rows.filter(r=>!r.open);
@@ -1303,7 +1381,7 @@ async function renderPaperTab(){
     + '<div class="stat-card"><div class="stat-label">Open Positions</div><div class="stat-value">'+openRows.length+'</div></div>'
     + '<div class="stat-card"><div class="stat-label">Closed Trades</div><div class="stat-value">'+closedRows.length+'</div></div>'
     + '<div class="stat-card"><div class="stat-label">Win Rate</div><div class="stat-value" style="color:'+(winRate>=50?'#44bb44':'#cc0000')+'">'+winRate.toFixed(1)+'%</div></div>'
-    + '<div class="stat-card"><div class="stat-label">Realized P&amp;L</div><div class="stat-value" style="color:'+(realizedPnl>=0?'#44bb44':'#cc0000')+'">'+fmtMoney(realizedPnl)+'</div></div>';
+    + '<div class="stat-card"><div class="stat-label">Realized P&amp;L</div><div class="stat-value" style="color:'+(realizedPnl>=0?'#44bb44':'#cc0000')+'">'+(realizedPnl>=0?'▲ ':'▼ ')+fmtMoney(realizedPnl)+'</div></div>';
 
   const sources=[...new Set(rows.map(r=>r.source))];
   const srcEl=document.getElementById('paperSourceGrid');
@@ -1314,7 +1392,7 @@ async function renderPaperTab(){
     const sPnl=sClosed.reduce((s,r)=>s+(r.pnlDollar||0),0);
     return '<div class="stat-card"><div class="stat-label">'+src+'</div>'
       +'<div class="stat-value" style="font-size:15px">'+sOpen+' open / '+sClosed.length+' closed</div>'
-      +'<div style="font-size:12px;margin-top:4px;color:'+(sPnl>=0?'#44bb44':'#cc0000')+'">'+fmtMoney(sPnl)+' realized</div></div>';
+      +'<div style="font-size:12px;margin-top:4px;color:'+(sPnl>=0?'#44bb44':'#cc0000')+'">'+(sPnl>=0?'▲ ':'▼ ')+fmtMoney(sPnl)+' realized</div></div>';
   }).join('');
 
   const openBody=document.getElementById('paperOpenBody');
@@ -1322,10 +1400,15 @@ async function renderPaperTab(){
     const cur = prices ? prices[r.ticker] : getCurrentPrice(r.ticker);
     const curColor = (cur==null||r.entry==null) ? '#888' : (cur>=r.entry?'#44bb44':'#cc0000');
     const pct = pctAtPrice(r.entry, r.target);
-    return '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b>'+chartButton(r)
+    const pctArrow=(pct||0)>=0?'▲ ':'▼ ';
+    // AI Assessment's per-ticker read, right on the row it's about instead of a
+    // separate panel the reader has to cross-reference by ticker themselves.
+    const aiRead=_aiPerPosition[r.ticker];
+    const aiLine=aiRead ? '<div style="font-size:10px;color:#7fa8d9;margin-top:2px;max-width:220px">🤖 '+aiRead+'</div>' : '';
+    return '<tr><td>'+r.source+'</td><td><b>'+r.ticker+'</b>'+chartButton(r)+aiLine
     +'</td><td>'+fmtMoney(r.entry)+'</td><td style="color:'+curColor+'">'+fmtMoney(cur)+'</td><td>'+fmtMoney(r.positionCost)+'</td>'
     +'<td style="color:#cc0000">'+fmtMoney(r.stop)+'</td><td style="color:#44bb44">'+fmtMoney(r.target)+'</td>'
-    +'<td style="font-size:11px;color:'+((pct||0)>=0?'#44bb44':'#cc0000')+'">'+(pct!=null?(pct>=0?'+':'')+pct+'%':'—')+'</td>'
+    +'<td style="font-size:11px;color:'+((pct||0)>=0?'#44bb44':'#cc0000')+'">'+(pct!=null?pctArrow+(pct>=0?'+':'')+pct+'%':'—')+'</td>'
     +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td><td>'+sellButton(r)+'</td></tr>';
   }).join('') : '<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">No open positions</td></tr>';
   if(openBody) openBody.innerHTML=renderOpenRows(null);  // fast render with last-close fallback first
@@ -1341,7 +1424,7 @@ async function renderPaperTab(){
     +'<td>'+fmtMoney(r.positionCost)+'</td>'
     +'<td style="font-size:11px;color:#888">'+(r.opened||'—')+'</td><td style="font-size:11px;color:#888">'+(r.closed||'—')+'</td>'
     +'<td style="font-size:11px">'+(r.reason||'')+'</td>'
-    +'<td style="color:'+((r.pnlDollar||0)>=0?'#44bb44':'#cc0000')+';font-weight:bold">'+fmtMoney(r.pnlDollar)+'</td>'
+    +'<td style="color:'+((r.pnlDollar||0)>=0?'#44bb44':'#cc0000')+';font-weight:bold">'+((r.pnlDollar||0)>=0?'▲ ':'▼ ')+fmtMoney(r.pnlDollar)+'</td>'
     +'<td style="color:'+((r.pnlPct||0)>=0?'#44bb44':'#cc0000')+'">'+fmtPct(r.pnlPct)+'</td></tr>'
   ).join('') : '<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">No closed trades yet</td></tr>';
 }
@@ -1370,7 +1453,7 @@ function renderSuggestionCards(){
       +'<div><div style="color:#666">Stop (-5%)</div><div style="color:#cc0000">'+fmtMoney(tradeIdeasStop(s.price))+'</div></div></div>'
       +'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
       +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+fmtMoney(s.take_profit)+'</div></div>'
-      +'<div><div style="color:#666">% if sold at target</div><div style="color:'+((pctAtPrice(s.price,s.take_profit)||0)>=0?'#44bb44':'#cc0000')+'">'+(pctAtPrice(s.price,s.take_profit)!=null?(pctAtPrice(s.price,s.take_profit)>=0?'+':'')+pctAtPrice(s.price,s.take_profit)+'%':'—')+'</div></div>'
+      +'<div><div style="color:#666">% if sold at target</div><div style="color:'+pctAtPriceStr(s.price,s.take_profit).color+'">'+pctAtPriceStr(s.price,s.take_profit).text+'</div></div>'
       +'<div><div style="color:#666">+5% / +10%</div><div style="color:#888;font-size:10px">'+profitLevels(s.price)+'</div></div></div>'
       +'<div style="font-size:11px;color:#aaa;margin-bottom:6px"><b>Entry:</b> '+(s.entry_type||'—')+'</div>'
       +'<div style="font-size:11px;color:#aaa;margin-bottom:6px"><b>Exit guide:</b> stop at -5% ('+fmtMoney(tradeIdeasStop(s.price))+'), target '+fmtMoney(s.take_profit)+(s.timing?' | '+s.timing:'')+'</div>'
@@ -1384,6 +1467,7 @@ async function renderSuggestionsTab(){
   renderSuggestionCards();
   renderCycleIdeas();
   if(_liveIdeas.length) renderLiveIdeas();
+  await renderAiAssessment();  // cached after first call this page-load; populates _aiPerPosition for the row below
   const openBody=document.getElementById('ideasOpenBody');
   const ovEl=document.getElementById('ideasOverviewGrid');
   if(!getToken()){
@@ -1403,15 +1487,18 @@ async function renderSuggestionsTab(){
       + '<div class="stat-card"><div class="stat-label">Deployed</div><div class="stat-value">'+fmtMoney(deployed)+'</div></div>'
       + '<div class="stat-card"><div class="stat-label">Remaining</div><div class="stat-value">'+fmtMoney(IDEAS_BUDGET-deployed)+'</div></div>'
       + '<div class="stat-card"><div class="stat-label">Open Positions</div><div class="stat-value">'+open.length+'</div></div>'
-      + '<div class="stat-card"><div class="stat-label">Realized P&amp;L</div><div class="stat-value" style="color:'+(realizedPnl>=0?'#44bb44':'#cc0000')+'">'+fmtMoney(realizedPnl)+'</div></div>';
+      + '<div class="stat-card"><div class="stat-label">Realized P&amp;L</div><div class="stat-value" style="color:'+(realizedPnl>=0?'#44bb44':'#cc0000')+'">'+(realizedPnl>=0?'▲ ':'▼ ')+fmtMoney(realizedPnl)+'</div></div>';
     const renderIdeasOpenRows=(prices)=> open.length ? open.map(t=>{
       const cur = prices ? prices[t.ticker] : getCurrentPrice(t.ticker);
       const curColor = (cur==null) ? '#888' : (cur>=t.buy_price?'#44bb44':'#cc0000');
       const pct = pctAtPrice(t.buy_price, t.target_price);
-      return '<tr><td><b>'+t.ticker+'</b></td><td>'+fmtMoney(t.buy_price)+'</td><td style="color:'+curColor+'">'+fmtMoney(cur)+'</td><td>'+t.shares+'</td>'
+      const pctArrow=(pct||0)>=0?'▲ ':'▼ ';
+      const aiRead=_aiPerPosition[t.ticker];
+      const aiLine=aiRead ? '<div style="font-size:10px;color:#7fa8d9;margin-top:2px;max-width:220px">🤖 '+aiRead+'</div>' : '';
+      return '<tr><td><b>'+t.ticker+'</b>'+aiLine+'</td><td>'+fmtMoney(t.buy_price)+'</td><td style="color:'+curColor+'">'+fmtMoney(cur)+'</td><td>'+t.shares+'</td>'
       +'<td>'+fmtMoney(t.shares*t.buy_price)+'</td>'
       +'<td style="color:#cc0000">'+fmtMoney(t.stop_price)+'</td><td style="color:#44bb44">'+fmtMoney(t.target_price)+'</td>'
-      +'<td style="font-size:11px;color:'+((pct||0)>=0?'#44bb44':'#cc0000')+'">'+(pct!=null?(pct>=0?'+':'')+pct+'%':'—')+'</td>'
+      +'<td style="font-size:11px;color:'+((pct||0)>=0?'#44bb44':'#cc0000')+'">'+(pct!=null?pctArrow+(pct>=0?'+':'')+pct+'%':'—')+'</td>'
       +'<td style="font-size:11px;color:#888">'+(t.buy_date||'—')+'</td>'
       +'<td><button class="btn-primary" style="padding:4px 10px;font-size:11px" onclick="sellIdea(\''+t.ticker+'\')">Sell</button></td></tr>';
     }).join('') : '<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">No open Trade Ideas positions</td></tr>';
@@ -1426,33 +1513,46 @@ async function renderSuggestionsTab(){
     if(openBody) openBody.innerHTML='<tr><td colspan="10" style="color:#cc0000;text-align:center;padding:20px">Error loading: '+e.message+'</td></tr>';
   }
 }
+// Every buy path (Trade Ideas, Cycle Trading, Live Scan, Add Your Own Trade) funnels
+// through here, which just opens the shared confirm modal -- nothing writes to the
+// portfolio until confirmBuyFromModal() runs off a deliberate "Confirm Buy" click,
+// with ticker/price/shares/stop/target all visible at once instead of a chain of
+// separate prompt() dialogs.
+let _pendingBuy=null;
 async function executeIdeaBuy(idea, opts){
   opts = opts || {};
   if(!idea || !idea.price){alert('No data for '+(idea&&idea.ticker));return;}
   if(!getToken()){alert('Set your GitHub token first (Token tab).');showTab('token');return;}
-  let amt = opts.amount;
-  if(amt==null){
-    const amtStr=prompt('Dollar amount to invest in '+idea.ticker+' @ $'+idea.price+'?\n(Trade Ideas budget: $'+IDEAS_BUDGET.toLocaleString()+' total)','1000');
-    if(!amtStr) return;
-    amt=parseFloat(amtStr);
-  }
-  if(!amt||amt<=0) return;
-  let targetPrice = idea.target!=null?idea.target:null;
-  if(!opts.skipPricePrompts){
-    const sellStr=prompt('Sell price to lock in as the target for '+idea.ticker+'? (suggested: '+(idea.target!=null?'$'+idea.target:'none')+')\nLeave blank to use the suggested target, or 0 for no target.', idea.target!=null?String(idea.target):'');
-    if(sellStr!==null && sellStr.trim()!==''){
-      const sellVal=parseFloat(sellStr);
-      targetPrice = (!isNaN(sellVal) && sellVal>0) ? sellVal : null;
-    }
-  }
-  let stopPrice = idea.stop!=null?idea.stop:null;
-  if(!opts.skipPricePrompts){
-    const stopStr=prompt('Stop price to confirm for '+idea.ticker+'? (suggested: '+(idea.stop!=null?'$'+idea.stop:'none')+')\nLeave blank to use the suggested stop, or 0 for no stop.', idea.stop!=null?String(idea.stop):'');
-    if(stopStr!==null && stopStr.trim()!==''){
-      const stopVal=parseFloat(stopStr);
-      stopPrice = (!isNaN(stopVal) && stopVal>0) ? stopVal : null;
-    }
-  }
+  _pendingBuy = {idea, opts};
+  document.getElementById('bc_ticker').textContent = idea.ticker;
+  document.getElementById('bc_ticker2').textContent = idea.ticker;
+  document.getElementById('bc_price').textContent = fmtMoney(idea.price);
+  document.getElementById('bc_amount').value = opts.amount!=null ? opts.amount : 1000;
+  document.getElementById('bc_stop').value = idea.stop!=null ? idea.stop : '';
+  document.getElementById('bc_target').value = idea.target!=null ? idea.target : '';
+  updateBuyConfirmShares();
+  document.getElementById('buyConfirmModal').style.display='flex';
+}
+function closeBuyConfirmModal(){
+  document.getElementById('buyConfirmModal').style.display='none';
+  _pendingBuy=null;
+}
+function updateBuyConfirmShares(){
+  if(!_pendingBuy) return;
+  const amt=parseFloat(document.getElementById('bc_amount').value)||0;
+  const price=_pendingBuy.idea.price;
+  const shares = (price>0 && amt>0) ? Math.round((amt/price)*10000)/10000 : 0;
+  document.getElementById('bc_shares').textContent = shares>0 ? shares+' share'+(shares===1?'':'s') : '—';
+}
+async function confirmBuyFromModal(){
+  if(!_pendingBuy) return;
+  const {idea,opts}=_pendingBuy;
+  const amt=parseFloat(document.getElementById('bc_amount').value);
+  if(!amt||amt<=0){alert('Enter a valid dollar amount.');return;}
+  const stopVal=parseFloat(document.getElementById('bc_stop').value);
+  const targetVal=parseFloat(document.getElementById('bc_target').value);
+  const stopPrice=(!isNaN(stopVal)&&stopVal>0)?stopVal:null;
+  const targetPrice=(!isNaN(targetVal)&&targetVal>0)?targetVal:null;
   try{
     const {data,sha}=await readPortfolio();
     const openCost=(data.paper_trades||[]).filter(t=>t.status==='open'&&(t.meta||{}).strategy===IDEAS_STRATEGY)
@@ -1466,6 +1566,8 @@ async function executeIdeaBuy(idea, opts){
       meta:{strategy:IDEAS_STRATEGY, entry_type:idea.entry_type, confidence:idea.confidence, blended_score:idea.blended_score, source:idea.source||'nightly'}};
     (data.paper_trades=data.paper_trades||[]).push(trade);
     await writePortfolio(data,sha);
+    closeBuyConfirmModal();
+    if(opts && typeof opts.onConfirmed==='function') opts.onConfirmed();
     alert(idea.ticker+' bought: '+shares+' shares @ $'+idea.price+' ($'+amt.toFixed(2)+')'
       +(stopPrice!=null?' | stop $'+stopPrice:'')+(targetPrice!=null?' | target $'+targetPrice:''));
     renderSuggestionsTab();
@@ -1529,12 +1631,13 @@ async function addManualTrade(){
     target: (!isNaN(targetVal)&&targetVal>0)?targetVal:null,
     recommendation:'MANUAL_ENTRY', reason:'Manually entered', entry_type:'Manual entry',
     confidence:null, blended_score:null, source:'manual_entry',
-  }, {amount:amt, skipPricePrompts:true});
-  document.getElementById('mt_ticker').value='';
-  document.getElementById('mt_price').value='';
-  document.getElementById('mt_amount').value='';
-  document.getElementById('mt_stop').value='';
-  document.getElementById('mt_target').value='';
+  }, {amount:amt, onConfirmed: function(){
+    document.getElementById('mt_ticker').value='';
+    document.getElementById('mt_price').value='';
+    document.getElementById('mt_amount').value='';
+    document.getElementById('mt_stop').value='';
+    document.getElementById('mt_target').value='';
+  }});
 }
 
 // ── Cycle Trading candidates, surfaced here too as another idea source ──────
@@ -1556,7 +1659,7 @@ function renderCycleIdeas(){
       +'<div><div style="color:#666">Stop (-5%)</div><div style="color:#cc0000">'+fmtMoney(tradeIdeasStop(c.price))+'</div></div>'
       +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+fmtMoney(pm.target_price)+'</div></div></div>'
       +'<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
-      +'<div><div style="color:#666">% if sold at target</div><div style="color:'+((pctAtPrice(c.price,pm.target_price)||0)>=0?'#44bb44':'#cc0000')+'">'+(pctAtPrice(c.price,pm.target_price)!=null?(pctAtPrice(c.price,pm.target_price)>=0?'+':'')+pctAtPrice(c.price,pm.target_price)+'%':'—')+'</div></div>'
+      +'<div><div style="color:#666">% if sold at target</div><div style="color:'+pctAtPriceStr(c.price,pm.target_price).color+'">'+pctAtPriceStr(c.price,pm.target_price).text+'</div></div>'
       +'<div><div style="color:#666">+5% / +10%</div><div style="color:#888;font-size:11px">'+profitLevels(c.price)+'</div></div></div>'
       +'<div style="font-size:11px;color:#aaa;margin-bottom:10px">'+(c.reasons||[]).slice(0,3).join(' | ')+'</div>'
       +'<button class="btn-primary" style="padding:6px 14px;font-size:12px" onclick="buyCycleIdea(\''+c.ticker+'\')">Buy</button>'
@@ -1614,7 +1717,7 @@ function renderLiveIdeas(){
     +'<div><div style="color:#666">Stop (-5%)</div><div style="color:#cc0000">'+fmtMoney(tradeIdeasStop(s.price))+'</div></div></div>'
     +'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-size:12px;text-align:center;margin-bottom:10px">'
     +'<div><div style="color:#666">Sell Zone</div><div style="color:#44bb44">'+fmtMoney(s.sellZone)+'</div></div>'
-    +'<div><div style="color:#666">% if sold at target</div><div style="color:'+((pctAtPrice(s.price,s.sellZone)||0)>=0?'#44bb44':'#cc0000')+'">'+(pctAtPrice(s.price,s.sellZone)!=null?(pctAtPrice(s.price,s.sellZone)>=0?'+':'')+pctAtPrice(s.price,s.sellZone)+'%':'—')+'</div></div>'
+    +'<div><div style="color:#666">% if sold at target</div><div style="color:'+pctAtPriceStr(s.price,s.sellZone).color+'">'+pctAtPriceStr(s.price,s.sellZone).text+'</div></div>'
     +'<div><div style="color:#666">RSI</div><div style="color:#ccc">'+s.rsi.toFixed(1)+'</div></div></div>'
     +'<div style="font-size:11px;color:#aaa;margin-bottom:10px">'
     +'<b>Entry:</b> at/near buy zone, '+(s.vs>=0?'+':'')+s.vs.toFixed(2)+'% vs VWAP, momentum '+(s.mo>=0?'up':'down')+'<br>'
@@ -1973,27 +2076,48 @@ window.addEventListener('resize',()=>{
 </header>
 
 <nav class="tab-nav">
-  <button class="tab-btn active" onclick="showTab('market')">Market Analysis</button>
-  <button class="tab-btn" onclick="showTab('market_status')">Market Status</button>
-  <button class="tab-btn" onclick="showTab('portfolio')">Portfolio</button>
-  <button class="tab-btn" onclick="showTab('addholder')">Add Holding</button>
-  <button class="tab-btn" onclick="showTab('paper')">Paper Trading</button>
-  <button class="tab-btn" onclick="showTab('asx')">ASX Scanner</button>
-  <button class="tab-btn" onclick="showTab('watchlist')">Watchlist</button>
-  <button class="tab-btn" onclick="showTab('history')">Signal History</button>
-  <button class="tab-btn" onclick="showTab('backtest')">Backtest</button>
-  <button class="tab-btn" onclick="showTab('quantitative')">Quantitative</button>
-  <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
-  <button class="tab-btn" onclick="showTab('agent')">Agent Trader</button>
-  <button class="tab-btn" onclick="showTab('cycle')">Cycle Trading</button>
-  <button class="tab-btn" onclick="showTab('suggestions')">Trade Ideas</button>
-  <button class="tab-btn" onclick="showTab('token')">Token</button>
+  <div class="nav-group" id="navgroup-overview">
+    <button class="nav-group-btn active" onclick="toggleNavGroup('overview')">Overview <span class="caret">&#9662;</span></button>
+    <div class="nav-dropdown">
+      <button class="tab-btn active" onclick="showTab('market')">Market Analysis</button>
+      <button class="tab-btn" onclick="showTab('market_status')">Market Status</button>
+    </div>
+  </div>
+  <div class="nav-group" id="navgroup-portfolio">
+    <button class="nav-group-btn" onclick="toggleNavGroup('portfolio')">Portfolio <span class="caret">&#9662;</span></button>
+    <div class="nav-dropdown">
+      <button class="tab-btn" onclick="showTab('portfolio')">Portfolio</button>
+      <button class="tab-btn" onclick="showTab('addholder')">Add Holding</button>
+      <button class="tab-btn" onclick="showTab('paper')">Paper Trading</button>
+    </div>
+  </div>
+  <div class="nav-group" id="navgroup-strategies">
+    <button class="nav-group-btn" onclick="toggleNavGroup('strategies')">Strategies <span class="caret">&#9662;</span></button>
+    <div class="nav-dropdown">
+      <button class="tab-btn" onclick="showTab('agent')">Agent Trader</button>
+      <button class="tab-btn" onclick="showTab('cycle')">Cycle Trading</button>
+      <button class="tab-btn" onclick="showTab('suggestions')">Trade Ideas</button>
+      <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
+    </div>
+  </div>
+  <div class="nav-group" id="navgroup-research">
+    <button class="nav-group-btn" onclick="toggleNavGroup('research')">Research <span class="caret">&#9662;</span></button>
+    <div class="nav-dropdown">
+      <button class="tab-btn" onclick="showTab('asx')">ASX Scanner</button>
+      <button class="tab-btn" onclick="showTab('watchlist')">Watchlist</button>
+      <button class="tab-btn" onclick="showTab('history')">Signal History</button>
+      <button class="tab-btn" onclick="showTab('backtest')">Backtest</button>
+      <button class="tab-btn" onclick="showTab('quantitative')">Quantitative</button>
+    </div>
+  </div>
+  <button class="tab-btn" onclick="showTab('token')" style="margin-left:auto">Settings</button>
 </nav>
 
 <!-- TAB 1: Market Analysis -->
 <div id="tab-market" class="tab-content active">
 <div class="section">
   <div class="stats-grid">
+    <div class="stat-card" style="cursor:pointer" onclick="showTab('portfolio');document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelector('[onclick=\'showTab(\'portfolio\')\'  ]')?.classList.add('active')"><div class="stat-label">Portfolio Value</div><div class="stat-value">${port_value:,.2f}<span style="font-size:13px;margin-left:6px;color:{port_pnl_color}">{port_pnl_arrow}{port_pnl_prefix}{port_pnl_pct:.1f}%</span></div></div>
     <div class="stat-card"><div class="stat-label">Stocks Scanned</div><div class="stat-value">{total}</div></div>
     <div class="stat-card"><div class="stat-label">Buy Signals</div><div class="stat-value" style="color:#44bb44">{buys}</div></div>
     <div class="stat-card"><div class="stat-label">Hold</div><div class="stat-value" style="color:#ff9900">{holds}</div></div>
@@ -2453,6 +2577,29 @@ window.addEventListener('resize',()=>{
     <div id="chartContainer"></div>
     <div style="color:#888;font-size:11px;margin-top:4px">RSI</div>
     <div id="rsiContainer"></div>
+  </div>
+</div>
+
+<!-- Buy Confirmation Modal -- one shared confirm step for every buy path (Trade Ideas,
+     Cycle Trading, Live Scan, Add Your Own Trade) instead of each one committing straight
+     off a chain of prompt() dialogs. Nothing executes until "Confirm Buy" is clicked. -->
+<div id="buyConfirmModal" onclick="if(event.target===this)closeBuyConfirmModal()" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:1002;align-items:center;justify-content:center">
+  <div style="background:#0f0f1a;border:1px solid #2a2a4a;border-radius:12px;width:92%;max-width:420px;padding:24px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+      <h3 style="color:white;margin:0">Confirm Buy — <span id="bc_ticker" style="color:#4a90d9"></span></h3>
+      <button class="close-modal" onclick="closeBuyConfirmModal()">×</button>
+    </div>
+    <p style="color:#888;font-size:12px;margin-bottom:18px">Current price: <b id="bc_price" style="color:#ccc"></b></p>
+    <div class="form-grid">
+      <div class="form-group"><label>Dollar Amount</label><input id="bc_amount" type="number" step="1" oninput="updateBuyConfirmShares()"></div>
+      <div class="form-group"><label>Stop Price ($)</label><input id="bc_stop" type="number" step="0.001" placeholder="optional"></div>
+      <div class="form-group"><label>Sale / Target Price ($)</label><input id="bc_target" type="number" step="0.001" placeholder="optional"></div>
+    </div>
+    <p style="color:#aaa;font-size:13px;margin:14px 0 20px">This buys <b id="bc_shares" style="color:#4a90d9">—</b> of <span id="bc_ticker2"></span>.</p>
+    <div style="display:flex;gap:10px;justify-content:flex-end">
+      <button class="btn-secondary" onclick="closeBuyConfirmModal()">Cancel</button>
+      <button class="btn-primary" onclick="confirmBuyFromModal()">Confirm Buy</button>
+    </div>
   </div>
 </div>
 
