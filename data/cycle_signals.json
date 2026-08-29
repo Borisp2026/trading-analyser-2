@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T13:04:18",
+  "generated_at": "2026-08-29T15:46:33",
   "watchlist_count": 27,
   "candidates": [
     {
@@ -185,85 +185,6 @@
       "paper_trade_status": "ALREADY_OPEN"
     },
     {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "price": 227.98,
-      "sector": "Technology",
-      "cycle_score": 80,
-      "cycle_signal": "CYCLE_BUY",
-      "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
-      "risk": "LOW",
-      "dc_num_in_ic": 2,
-      "predicted_move": {
-        "target_price": 248.5997,
-        "target_basis": "Prior Daily Cycle amplitude 20.0% projected from new DCL0",
-        "prior_cycle_amplitude_pct": 19.95,
-        "bars_to_dc3_estimate": 27,
-        "est_date_dc3": "2026-10-05"
-      },
-      "stop_price": 186.2098,
-      "position_size": 545.8,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
-        "RIGHT-translated cycle (Daily Cycle #1 of IC)",
-        "\u2705 90% confirmation signal \u2014 above HCH resistance and 10D SMA",
-        "90% confirmation: close above HCH resistance + 10D SMA, no trendline break"
-      ],
-      "chart_overlay": {
-        "daily_support_line": [
-          {
-            "date": "2026-08-24",
-            "price": 207.25
-          }
-        ],
-        "daily_resistance_line": [
-          {
-            "date": "2026-08-27",
-            "price": 230.47
-          }
-        ],
-        "intermediate_support_line": [
-          {
-            "date": "2026-07-29",
-            "price": 190.01
-          }
-        ],
-        "intermediate_resistance_line": [
-          {
-            "date": "2026-08-27",
-            "price": 230.47
-          }
-        ],
-        "daily_markers": {
-          "dcl0": {
-            "date": "2026-08-24",
-            "price": 207.25
-          },
-          "dch": {
-            "date": "2026-08-27",
-            "price": 230.47
-          }
-        },
-        "intermediate_markers": {
-          "dcl0": {
-            "date": "2026-07-29",
-            "price": 190.01
-          },
-          "dch": {
-            "date": "2026-08-27",
-            "price": 230.47
-          }
-        },
-        "entry_price": 227.98,
-        "stop_price": 186.2098,
-        "target_price": 248.5997
-      },
-      "rank": 3,
-      "paper_trade_status": "ALREADY_OPEN"
-    },
-    {
       "ticker": "GMD.AX",
       "name": "Genesis Minerals Limited",
       "price": 8.57,
@@ -339,8 +260,87 @@
         "stop_price": 4.4198,
         "target_price": 10.0146
       },
-      "rank": 4,
+      "rank": 3,
       "paper_trade_status": "ALREADY_OPEN"
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "price": 513.53,
+      "sector": "Technology",
+      "cycle_score": 80,
+      "cycle_signal": "CYCLE_BUY",
+      "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+      "risk": "LOW",
+      "dc_num_in_ic": 3,
+      "predicted_move": {
+        "target_price": 648.3098,
+        "target_basis": "Prior Daily Cycle amplitude 36.1% projected from new DCL0",
+        "prior_cycle_amplitude_pct": 36.13,
+        "bars_to_dc3_estimate": 0,
+        "est_date_dc3": "2026-08-28"
+      },
+      "stop_price": 341.573,
+      "position_size": 298.64,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
+        "RIGHT-translated cycle (Daily Cycle #2 of IC)",
+        "\u2705 90% confirmation signal \u2014 above HCH resistance and 10D SMA",
+        "90% confirmation: close above HCH resistance + 10D SMA, no trendline break"
+      ],
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-08-18",
+            "price": 476.2534
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-28",
+            "price": 517.78
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-06-25",
+            "price": 348.5439
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-08-28",
+            "price": 517.78
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-08-18",
+            "price": 476.2534
+          },
+          "dch": {
+            "date": "2026-08-28",
+            "price": 517.78
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-06-25",
+            "price": 348.5439
+          },
+          "dch": {
+            "date": "2026-08-28",
+            "price": 517.78
+          }
+        },
+        "entry_price": 513.53,
+        "stop_price": 341.573,
+        "target_price": 648.3098
+      },
+      "rank": 4,
+      "paper_trade_status": "NOT_OPENED"
     },
     {
       "ticker": "APA.AX",
@@ -457,14 +457,6 @@
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "price": 354.81,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 297.38,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
       "ticker": "GLN.AX",
       "name": "Galan Lithium Limited",
       "price": 0.36,
@@ -502,6 +494,14 @@
       "price": 3.05,
       "type": "completed_cycle_failed",
       "dcl0_price": 2.79,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "price": 348.75,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 297.38,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
@@ -545,25 +545,11 @@
       "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 476.67,
-      "dc_num_in_ic": 3,
-      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-    },
-    {
       "ticker": "AFG.AX",
       "name": "Australian Finance Group Limited",
       "price": 1.575,
       "dc_num_in_ic": 4,
       "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-    },
-    {
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "price": 505.06,
-      "dc_num_in_ic": 3,
-      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "NXT.AX",
@@ -592,6 +578,13 @@
       "price": 10.05,
       "dc_num_in_ic": 5,
       "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "price": 465.58,
+      "dc_num_in_ic": 3,
+      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "PNV.AX",
@@ -695,7 +688,7 @@
         "entered_dc_num": 1,
         "entered_score": 57
       },
-      "_current_price": 227.98,
+      "_current_price": 217.55,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -1667,8 +1660,8 @@
         ],
         "daily_resistance_line": [
           {
-            "date": "2026-08-27",
-            "price": 506.48
+            "date": "2026-08-28",
+            "price": 517.78
           }
         ],
         "intermediate_support_line": [
@@ -1679,8 +1672,8 @@
         ],
         "intermediate_resistance_line": [
           {
-            "date": "2026-08-10",
-            "price": 512.7647
+            "date": "2026-08-28",
+            "price": 517.78
           }
         ],
         "daily_markers": {
@@ -1689,8 +1682,8 @@
             "price": 476.2534
           },
           "dch": {
-            "date": "2026-08-27",
-            "price": 506.48
+            "date": "2026-08-28",
+            "price": 517.78
           }
         },
         "intermediate_markers": {
@@ -1699,8 +1692,8 @@
             "price": 348.5439
           },
           "dch": {
-            "date": "2026-08-10",
-            "price": 512.7647
+            "date": "2026-08-28",
+            "price": 517.78
           }
         },
         "entry_price": 496.275,
@@ -1808,8 +1801,8 @@
   ],
   "drawdown": {
     "realized_pnl": -219.21,
-    "unrealized_pnl": 321.47,
-    "total_pnl": 102.26,
+    "unrealized_pnl": 288.2,
+    "total_pnl": 68.99,
     "drawdown_pct": 0.0,
     "halted": false
   },
