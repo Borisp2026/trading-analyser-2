@@ -551,7 +551,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP \u00c3\u0083\u00c2\u0083\u00c3\u0082\u00c2\u0083\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u0083\u00c3\u0083\u00c2\u0083\u00c3\u0082\u00c2\u0082\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u00a2\u00c3\u0083\u00c2\u0083\u00c3\u0082\u00c2\u0083\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u0082\u00c3\u0083\u00c2\u0083\u00c3\u0082\u00c2\u0082\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u0080\u00c3\u0083\u00c2\u0083\u00c3\u0082\u00c2\u0083\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u0082\u00c3\u0083\u00c2\u0083\u00c3\u0082\u00c2\u0082\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u0094 momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ momentum building",
       "status": "closed",
       "type": "paper",
       "stop_price": 8.3061,
@@ -575,7 +575,7 @@
       "buy_price": 9.42,
       "buy_date": "2026-08-24",
       "signal": "STRONG BUY",
-      "reason": "RSI 58.13 neutral; RSI trending UP \u00c3\u0083\u00c2\u0083\u00c3\u0082\u00c2\u0083\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u00a2\u00c3\u0083\u00c2\u0083\u00c3\u0082\u00c2\u0082\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u0080\u00c3\u0083\u00c2\u0083\u00c3\u0082\u00c2\u0082\u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u0094 momentum building",
+      "reason": "RSI 58.13 neutral; RSI trending UP ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ momentum building",
       "status": "closed",
       "type": "paper",
       "stop_price": 8.3061,
@@ -618,7 +618,7 @@
       "buy_price": 16.16,
       "buy_date": "2026-08-24",
       "signal": "BUY",
-      "reason": "RSI 51.85 neutral; RSI trending UP \u00c3\u0083\u00c2\u00a2\u00c3\u0082\u00c2\u0080\u00c3\u0082\u00c2\u0094 momentum building",
+      "reason": "RSI 51.85 neutral; RSI trending UP ÃÂ¢ÃÂÃÂ momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 15.5,
@@ -761,7 +761,7 @@
       "buy_price": 17.78,
       "buy_date": "2026-08-27",
       "signal": "BUY",
-      "reason": "RSI 73.36 is OVERBOUGHT \u00c3\u00a2\u00c2\u0080\u00c2\u0094 caution, may pull back; RSI trending UP \u00c3\u00a2\u00c2\u0080\u00c2\u0094 momentum building",
+      "reason": "RSI 73.36 is OVERBOUGHT Ã¢ÂÂ caution, may pull back; RSI trending UP Ã¢ÂÂ momentum building",
       "status": "open",
       "type": "paper",
       "stop_price": 17,
@@ -839,6 +839,25 @@
         "sector": "Industrials",
         "entered_dc_num": 2,
         "entered_score": 80
+      }
+    },
+    {
+      "ticker": "GMD.AX",
+      "shares": 294.6376,
+      "buy_price": 8.485,
+      "buy_date": "2026-08-29",
+      "signal": "MANUAL_ENTRY",
+      "reason": "Manually entered",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 8.3,
+      "target_price": 8.9985,
+      "meta": {
+        "strategy": "suggested_trades",
+        "entry_type": "Manual entry",
+        "confidence": null,
+        "blended_score": null,
+        "source": "manual_entry"
       }
     }
   ],
