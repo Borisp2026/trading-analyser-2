@@ -16,6 +16,8 @@ jobs:
   intraday-scan:
     runs-on: ubuntu-latest
     timeout-minutes: 10  # fires every 30 min -- a hung run must die well before the next tick
+    permissions:
+      contents: write  # needed to push alerts/live-price data to repo
     env:
       PYTHONUNBUFFERED: "1"
 
@@ -48,6 +50,7 @@ jobs:
         run: |
           git config user.name "Trading Analyser Bot"
           git config user.email "bot@trading-analyser"
+          git pull --rebase origin main || true
           git add data/alerts_log.json data/entry_cross_alerts.json data/live_prices.json data/live_ideas.json || true
           git diff --staged --quiet || git commit -m "Alerts log $(date -u +%H:%M)"
-          git push || true
+          git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)
