@@ -624,7 +624,7 @@
       "buy_date": "2026-08-24",
       "signal": "BUY",
       "reason": "RSI 51.85 neutral; RSI trending UP \u00c3\u0083\u00c2\u00a2\u00c3\u0082\u00c2\u0080\u00c3\u0082\u00c2\u0094 momentum building",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 15.5,
       "target_price": 18.5696,
@@ -634,7 +634,12 @@
         "confidence": "MEDIUM",
         "blended_score": 62.8,
         "source": "nightly"
-      }
+      },
+      "sell_price": 15.359999656677246,
+      "sell_date": "2026-08-31",
+      "pnl": -49.5,
+      "pnl_pct": -4.95,
+      "close_reason": "HARD_STOP_INTRADAY"
     },
     {
       "ticker": "IOZ.AX",
@@ -858,7 +863,7 @@
       "buy_date": "2026-08-29",
       "signal": "MANUAL_ENTRY",
       "reason": "Manually entered",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 8.3,
       "target_price": 8.9985,
@@ -868,10 +873,15 @@
         "confidence": null,
         "blended_score": null,
         "source": "manual_entry"
-      }
+      },
+      "sell_price": 8.220000267028809,
+      "sell_date": "2026-08-31",
+      "pnl": -78.08,
+      "pnl_pct": -3.12,
+      "close_reason": "HARD_STOP_INTRADAY"
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 7872.978603486552,
+  "paper_cash": 11245.394964918056,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
