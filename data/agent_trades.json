@@ -1026,10 +1026,81 @@
       "pnl_pct": 4.2,
       "pnl_dollar": 102.5,
       "outcome": "WIN"
+    },
+    {
+      "id": 38,
+      "ticker": "EOS.AX",
+      "entry_price": 9.67,
+      "entry_time": "2026-09-01T02:35:46.012335",
+      "target": 10.173,
+      "stop": 9.525,
+      "vwap": 9.815,
+      "rsi": 71.4,
+      "orb_high": 10.16,
+      "conditions_met": 4,
+      "reasons": [
+        "\u2713 RSI 45\u201375",
+        "\u2713 Not overextended",
+        "\u2713 MACD bullish",
+        "\u2713 SuperTrend bullish"
+      ],
+      "position_size": 2500.0,
+      "macro_score": 75.8,
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "exit_reason": null,
+      "pnl_pct": null,
+      "pnl_dollar": null,
+      "outcome": "PENDING"
+    },
+    {
+      "id": 39,
+      "ticker": "IPX.AX",
+      "entry_price": 3.07,
+      "entry_time": "2026-09-01T02:35:47.335399",
+      "target": 3.23,
+      "stop": 3.024,
+      "vwap": 3.034,
+      "rsi": 60.0,
+      "orb_high": 3.04,
+      "conditions_met": 6,
+      "reasons": [
+        "\u2713 ORB breakout",
+        "\u2713 Above VWAP",
+        "\u2713 RSI 45\u201375",
+        "\u2713 Not overextended",
+        "\u2713 SuperTrend bullish",
+        "\u2713 PDH breakout"
+      ],
+      "position_size": 2500.0,
+      "macro_score": 75.8,
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "exit_reason": null,
+      "pnl_pct": null,
+      "pnl_dollar": null,
+      "outcome": "PENDING"
     }
   ],
-  "open_positions": {},
-  "capital": 10529.07,
+  "open_positions": {
+    "EOS.AX": {
+      "trade_id": 38,
+      "entry_price": 9.67,
+      "target": 10.173,
+      "stop": 9.525,
+      "position_size": 2500.0
+    },
+    "IPX.AX": {
+      "trade_id": 39,
+      "entry_price": 3.07,
+      "target": 3.23,
+      "stop": 3.024,
+      "position_size": 2500.0
+    }
+  },
+  "capital": 5524.07,
   "starting_capital": 10000.0,
   "scan_log": [
     {
@@ -13487,24 +13558,102 @@
         "BB squeeze/breakout": false,
         "PDH breakout": false
       }
+    },
+    {
+      "time": "12:35",
+      "date": "2026-09-01",
+      "ticker": "EOS.AX",
+      "signal": "BUY",
+      "price": 9.67,
+      "notes": "\u2713 RSI 45\u201375",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": true,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "12:35",
+      "date": "2026-09-01",
+      "ticker": "TOR.AX",
+      "signal": "SKIP",
+      "price": 0,
+      "notes": "Insufficient bars",
+      "trend_ok": null,
+      "momentum_ok": null,
+      "volume_ok": null,
+      "conditions": null
+    },
+    {
+      "time": "12:35",
+      "date": "2026-09-01",
+      "ticker": "MIN.AX",
+      "signal": "SKIP",
+      "price": 64.07,
+      "notes": "\u2713 Not overextended",
+      "trend_ok": false,
+      "momentum_ok": false,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": false,
+        "Above VWAP": false,
+        "RSI 45\u201375": false,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": false,
+        "BB squeeze/breakout": false,
+        "PDH breakout": false
+      }
+    },
+    {
+      "time": "12:35",
+      "date": "2026-09-01",
+      "ticker": "IPX.AX",
+      "signal": "BUY",
+      "price": 3.07,
+      "notes": "\u2713 ORB breakout",
+      "trend_ok": true,
+      "momentum_ok": true,
+      "volume_ok": false,
+      "conditions": {
+        "ORB breakout": true,
+        "Above VWAP": true,
+        "RSI 45\u201375": true,
+        "Volume spike": false,
+        "Not overextended": true,
+        "MACD bullish": false,
+        "SuperTrend bullish": true,
+        "BB squeeze/breakout": false,
+        "PDH breakout": true
+      }
     }
   ],
   "status": "RUNNING",
   "target_trades": 100,
   "started_at": "2026-07-05T11:02:50.033576",
   "stats": {
-    "total_trades": 37,
+    "total_trades": 39,
     "closed_trades": 37,
-    "open_trades": 0,
+    "open_trades": 2,
     "wins": 17,
     "losses": 20,
     "win_rate": 45.9,
     "avg_pnl_pct": 0.78,
     "total_pnl_pct": 28.74,
-    "current_capital": 10529.07,
-    "capital_growth": 5.29
+    "current_capital": 5524.07,
+    "capital_growth": -44.76
   },
-  "last_scan": "2026-08-31T08:42:06.440688",
+  "last_scan": "2026-09-01T02:35:47.635705",
   "ticker_days": {
     "EOS.AX": [
       "2026-07-08",
@@ -13546,7 +13695,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "TOR.AX": [
       "2026-07-08",
@@ -13588,7 +13738,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "MIN.AX": [
       "2026-07-08",
@@ -13630,7 +13781,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "IPX.AX": [
       "2026-07-08",
@@ -13672,7 +13824,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "GLN.AX": [
       "2026-07-08",
@@ -13714,7 +13867,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "AFG.AX": [
       "2026-07-08",
@@ -13756,7 +13910,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "GMD.AX": [
       "2026-07-08",
@@ -13798,7 +13953,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "CU6.AX": [
       "2026-07-08",
@@ -13840,7 +13996,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "MSB.AX": [
       "2026-07-08",
@@ -13882,7 +14039,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "TLX.AX": [
       "2026-07-08",
@@ -13924,7 +14082,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "NXT.AX": [
       "2026-07-08",
@@ -13966,7 +14125,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "APA.AX": [
       "2026-07-08",
@@ -14008,7 +14168,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "GWA.AX": [
       "2026-07-08",
@@ -14050,7 +14211,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "MMI.AX": [
       "2026-07-08",
@@ -14092,7 +14254,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "NWH.AX": [
       "2026-07-08",
@@ -14134,7 +14297,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "VAS.AX": [
       "2026-07-08",
@@ -14176,7 +14340,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "IOZ.AX": [
       "2026-07-08",
@@ -14218,7 +14383,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "NDQ.AX": [
       "2026-07-08",
@@ -14260,7 +14426,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "IVV.AX": [
       "2026-07-08",
@@ -14302,7 +14469,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "VTEK.AX": [
       "2026-07-08",
@@ -14344,7 +14512,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "VGS.AX": [
       "2026-07-08",
@@ -14386,7 +14555,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "PNV.AX": [
       "2026-07-09",
@@ -14427,7 +14597,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "AMP.AX": [
       "2026-07-13",
@@ -14466,7 +14637,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "ILU.AX": [
       "2026-07-20",
@@ -14500,7 +14672,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "NVDA": [
       "2026-08-13",
@@ -14515,7 +14688,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "AAPL": [
       "2026-08-13",
@@ -14530,7 +14704,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "MSFT": [
       "2026-08-13",
@@ -14545,7 +14720,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "AMD": [
       "2026-08-13",
@@ -14560,7 +14736,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "TSLA": [
       "2026-08-13",
@@ -14575,7 +14752,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "TEA.AX": [
       "2026-08-14",
@@ -14590,7 +14768,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "CMM.AX": [
       "2026-08-17",
@@ -14604,7 +14783,8 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "PLS.AX": [
       "2026-08-17",
@@ -14618,41 +14798,43 @@
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ],
     "SS1.AX": [
       "2026-08-26",
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
-      "2026-08-31"
+      "2026-08-31",
+      "2026-09-01"
     ]
   },
   "eod_assessment": [
     {
       "ticker": "EOS.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 1,
-      "buys_today": 0,
+      "buys_today": 1,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "TOR.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 1,
       "buys_today": 0,
@@ -14661,13 +14843,13 @@
     },
     {
       "ticker": "MIN.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 1,
       "buys_today": 0,
@@ -14676,178 +14858,178 @@
     },
     {
       "ticker": "IPX.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 1,
-      "buys_today": 0,
+      "buys_today": 1,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "GLN.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
-      "scans_today": 1,
+      "scans_today": 0,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "AFG.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
-      "scans_today": 1,
-      "buys_today": 1,
+      "scans_today": 0,
+      "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "GMD.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
-      "scans_today": 1,
+      "scans_today": 0,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "CU6.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
-      "scans_today": 1,
+      "scans_today": 0,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "MSB.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
-      "scans_today": 1,
+      "scans_today": 0,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "TLX.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
-      "scans_today": 1,
+      "scans_today": 0,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "NXT.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
-      "scans_today": 1,
+      "scans_today": 0,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "APA.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
-      "scans_today": 1,
+      "scans_today": 0,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "GWA.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
-      "scans_today": 1,
+      "scans_today": 0,
       "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "MMI.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
-      "scans_today": 1,
-      "buys_today": 1,
+      "scans_today": 0,
+      "buys_today": 0,
       "in_watchlist": true,
       "add_pending": false
     },
     {
       "ticker": "NWH.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -14856,13 +15038,13 @@
     },
     {
       "ticker": "VAS.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -14871,13 +15053,13 @@
     },
     {
       "ticker": "IOZ.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -14886,13 +15068,13 @@
     },
     {
       "ticker": "NDQ.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -14901,13 +15083,13 @@
     },
     {
       "ticker": "IVV.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -14916,13 +15098,13 @@
     },
     {
       "ticker": "VTEK.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -14931,13 +15113,13 @@
     },
     {
       "ticker": "VGS.AX",
-      "days_in_list": 40,
+      "days_in_list": 41,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -14946,13 +15128,13 @@
     },
     {
       "ticker": "PNV.AX",
-      "days_in_list": 39,
+      "days_in_list": 40,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -14961,13 +15143,13 @@
     },
     {
       "ticker": "AMP.AX",
-      "days_in_list": 37,
+      "days_in_list": 38,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -14976,13 +15158,13 @@
     },
     {
       "ticker": "ILU.AX",
-      "days_in_list": 32,
+      "days_in_list": 33,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -14991,13 +15173,13 @@
     },
     {
       "ticker": "TEA.AX",
-      "days_in_list": 13,
+      "days_in_list": 14,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -15006,58 +15188,13 @@
     },
     {
       "ticker": "NVDA",
-      "days_in_list": 13,
+      "days_in_list": 14,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
-      ],
-      "scans_today": 0,
-      "buys_today": 0,
-      "in_watchlist": true,
-      "add_pending": false
-    },
-    {
-      "ticker": "AAPL",
-      "days_in_list": 13,
-      "last_5_days": [
-        "2026-08-26",
-        "2026-08-27",
-        "2026-08-28",
-        "2026-08-29",
-        "2026-08-31"
-      ],
-      "scans_today": 0,
-      "buys_today": 0,
-      "in_watchlist": true,
-      "add_pending": false
-    },
-    {
-      "ticker": "MSFT",
-      "days_in_list": 13,
-      "last_5_days": [
-        "2026-08-26",
-        "2026-08-27",
-        "2026-08-28",
-        "2026-08-29",
-        "2026-08-31"
-      ],
-      "scans_today": 0,
-      "buys_today": 0,
-      "in_watchlist": true,
-      "add_pending": false
-    },
-    {
-      "ticker": "AMD",
-      "days_in_list": 13,
-      "last_5_days": [
-        "2026-08-26",
-        "2026-08-27",
-        "2026-08-28",
-        "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -15066,13 +15203,58 @@
     },
     {
       "ticker": "TSLA",
-      "days_in_list": 13,
+      "days_in_list": 14,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
+      ],
+      "scans_today": 0,
+      "buys_today": 0,
+      "in_watchlist": true,
+      "add_pending": false
+    },
+    {
+      "ticker": "AAPL",
+      "days_in_list": 14,
+      "last_5_days": [
+        "2026-08-27",
+        "2026-08-28",
+        "2026-08-29",
+        "2026-08-31",
+        "2026-09-01"
+      ],
+      "scans_today": 0,
+      "buys_today": 0,
+      "in_watchlist": true,
+      "add_pending": false
+    },
+    {
+      "ticker": "AMD",
+      "days_in_list": 14,
+      "last_5_days": [
+        "2026-08-27",
+        "2026-08-28",
+        "2026-08-29",
+        "2026-08-31",
+        "2026-09-01"
+      ],
+      "scans_today": 0,
+      "buys_today": 0,
+      "in_watchlist": true,
+      "add_pending": false
+    },
+    {
+      "ticker": "MSFT",
+      "days_in_list": 14,
+      "last_5_days": [
+        "2026-08-27",
+        "2026-08-28",
+        "2026-08-29",
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -15081,13 +15263,13 @@
     },
     {
       "ticker": "CMM.AX",
-      "days_in_list": 12,
+      "days_in_list": 13,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -15096,13 +15278,13 @@
     },
     {
       "ticker": "PLS.AX",
-      "days_in_list": 12,
+      "days_in_list": 13,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -15111,13 +15293,13 @@
     },
     {
       "ticker": "SS1.AX",
-      "days_in_list": 5,
+      "days_in_list": 6,
       "last_5_days": [
-        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-01"
       ],
       "scans_today": 0,
       "buys_today": 0,
@@ -15126,29 +15308,29 @@
     }
   ],
   "condition_stats": {
-    "total_scans": 659,
-    "buys": 35,
+    "total_scans": 663,
+    "buys": 37,
     "early_skip_reasons": {
-      "Insufficient bars": 289,
+      "Insufficient bars": 290,
       "Macro gate 49 < 50": 156
     },
     "tier_fail_counts": {
-      "trend_ok": 37,
-      "momentum_ok": 68,
-      "volume_ok": 179
+      "trend_ok": 38,
+      "momentum_ok": 69,
+      "volume_ok": 180
     },
     "condition_true_counts": {
       "Above VWAP": 79,
       "RSI 45\u201375": 75,
-      "Not overextended": 179,
+      "Not overextended": 180,
       "SuperTrend bullish": 122,
       "MACD bullish": 79,
       "ORB breakout": 44,
       "BB squeeze/breakout": 37,
       "PDH breakout": 44
     },
-    "condition_total": 179
+    "condition_total": 180
   },
-  "today_date": "2026-08-31",
-  "today_start_capital": 10442.32
+  "today_date": "2026-09-01",
+  "today_start_capital": 10529.07
 }
