@@ -937,9 +937,28 @@
         "entered_dc_num": 4,
         "entered_score": 47
       }
+    },
+    {
+      "ticker": "TSLA",
+      "shares": 1.2164,
+      "buy_price": 373.64,
+      "buy_date": "2026-09-03",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #1 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 291.4324,
+      "target_price": 422.1442,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Consumer Cyclical",
+        "entered_dc_num": 2,
+        "entered_score": 80
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 15122.691742918054,
+  "paper_cash": 14668.196046918054,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
