@@ -1,7 +1,17 @@
 {
-  "generated_at": "2026-09-03 12:13",
+  "generated_at": "2026-09-03 16:38",
   "scanned_count": 73,
   "ideas": [
+    {
+      "ticker": "AAPL",
+      "price": 330.0,
+      "vwap": 328.5439,
+      "vs": 0.4432,
+      "rsi": 50.0,
+      "mo": 0.17,
+      "buyZone": 328.5439,
+      "sellZone": 333.0133
+    },
     {
       "ticker": "AEE.AX",
       "price": 0.115,
@@ -11,6 +21,16 @@
       "mo": 0.003,
       "buyZone": 0.1134,
       "sellZone": 0.122
+    },
+    {
+      "ticker": "AMD",
+      "price": 457.9,
+      "vwap": 451.0088,
+      "vs": 1.5279,
+      "rsi": 50.0,
+      "mo": 1.055,
+      "buyZone": 451.0088,
+      "sellZone": 463.321
     },
     {
       "ticker": "APA.AX",
@@ -113,16 +133,6 @@
       "sellZone": 71.3986
     },
     {
-      "ticker": "MSFT",
-      "price": 496.81,
-      "vwap": 496.7581,
-      "vs": 0.0104,
-      "rsi": 65.0,
-      "mo": 1.62,
-      "buyZone": 496.7581,
-      "sellZone": 499.2269
-    },
-    {
       "ticker": "NST.AX",
       "price": 23.17,
       "vwap": 23.101,
@@ -184,13 +194,13 @@
     },
     {
       "ticker": "TSLA",
-      "price": 356.99,
-      "vwap": 353.6718,
-      "vs": 0.9382,
-      "rsi": 64.2,
-      "mo": 4.48,
-      "buyZone": 353.6718,
-      "sellZone": 359.9954
+      "price": 381.42,
+      "vwap": 376.8457,
+      "vs": 1.2138,
+      "rsi": 50.0,
+      "mo": 0.0152,
+      "buyZone": 376.8457,
+      "sellZone": 387.6216
     },
     {
       "ticker": "VAS.AX",
