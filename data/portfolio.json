@@ -701,7 +701,7 @@
       "buy_date": "2026-08-25",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #4 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 8.0417,
       "target_price": 10.9763,
@@ -711,7 +711,12 @@
         "sector": "Utilities",
         "entered_dc_num": 5,
         "entered_score": 47
-      }
+      },
+      "sell_price": 10.81,
+      "sell_date": "2026-09-07",
+      "pnl": 10.37,
+      "pnl_pct": 2.46,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "APA.AX",
@@ -959,6 +964,6 @@
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 14668.196046918054,
+  "paper_cash": 15099.161559918053,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
