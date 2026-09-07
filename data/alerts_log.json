@@ -61,5 +61,47 @@
     "message": "Gap down -6.38% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-09-04",
     "time": "16:33:21"
+  },
+  {
+    "ticker": "AAPL",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 6.08x avg + price -2.5% \u2014 selling pressure",
+    "date": "2026-09-07",
+    "time": "13:38:25"
+  },
+  {
+    "ticker": "MSFT",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 6.65x avg + price -2.05% \u2014 selling pressure",
+    "date": "2026-09-07",
+    "time": "13:38:25"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "VOLUME_BREAKOUT_UP",
+    "message": "Volume spike 7.71x avg + price +4.67%",
+    "date": "2026-09-07",
+    "time": "13:38:26"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.67% from previous close",
+    "date": "2026-09-07",
+    "time": "13:38:26"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 3.63x avg + price -5.96% \u2014 selling pressure",
+    "date": "2026-09-07",
+    "time": "13:38:26"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.96% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-07",
+    "time": "13:38:26"
   }
 ]
