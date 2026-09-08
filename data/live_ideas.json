@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08 16:48",
+  "generated_at": "2026-09-08 19:49",
   "scanned_count": 71,
   "ideas": [
     {
@@ -73,6 +73,16 @@
       "sellZone": 2.3293
     },
     {
+      "ticker": "MSFT",
+      "price": 493.5806,
+      "vwap": 492.4118,
+      "vs": 0.2374,
+      "rsi": 68.6,
+      "mo": 1.7553,
+      "buyZone": 492.4118,
+      "sellZone": 495.4161
+    },
+    {
       "ticker": "MVP.AX",
       "price": 0.5,
       "vwap": 0.4843,
@@ -124,13 +134,13 @@
     },
     {
       "ticker": "TSLA",
-      "price": 368.76,
-      "vwap": 363.1235,
-      "vs": 1.5522,
-      "rsi": 50.0,
-      "mo": 2.695,
-      "buyZone": 363.1235,
-      "sellZone": 373.7999
+      "price": 368.385,
+      "vwap": 364.2765,
+      "vs": 1.1279,
+      "rsi": 51.0,
+      "mo": 1.9181,
+      "buyZone": 364.2765,
+      "sellZone": 371.2394
     }
   ]
 }
