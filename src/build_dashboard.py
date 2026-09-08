@@ -153,7 +153,7 @@ def _build_signal_history_html(signal_history, accuracy):
     html+='</tbody></table>'
     return html
 
-def build_dashboard(results, portfolio, output_path, signal_history=None, accuracy=None, intraday=None, quant=None, macro=None, cycle=None):
+def build_dashboard(results, portfolio, output_path, signal_history=None, accuracy=None, intraday=None, quant=None, macro=None, cycle=None, zen=None):
     today=datetime.now().strftime("%d %B %Y, %H:%M")
     cards_html="\n".join(build_stock_card(r) for r in results)
     stock_advice={r["ticker"]:{"rec":r["reasoning"].get("recommendation",""),"score":r["reasoning"].get("blended_score",0)} for r in results}
@@ -381,6 +381,7 @@ function showTab(id) {
     if(id==='portfolio') refreshPortfolioPrices();
     if(id==='quantitative') renderQuantTab(window._activeQuantSection||'earnings');
     if(id==='cycle') renderCycleTab();
+    if(id==='zen') renderZenTab();
     if(id==='paper') renderPaperTab();
     if(id==='suggestions') renderSuggestionsTab();
     if(id==='token') updateTokenStatus();
@@ -1024,6 +1025,7 @@ function renderMacroGate(){
 
 const QUANT_DATA = __QUANT_DATA__;
 const CYCLE_DATA = __CYCLE_DATA__;
+const ZEN_DATA = __ZEN_DATA__;
 const PAPER_DATA = __PAPER_DATA__;
 const SUGGESTIONS_DATA = __SUGGESTIONS_DATA__;
 // ── Quantitative Analysis tab ─────────────────────────────────────────────────
@@ -1184,6 +1186,71 @@ function renderCycleCandidates(list){
       +'</div>';
   }).join('');
 }
+
+// ── Zen Trading tab — Heiken-Ashi trend + breakout entries, minimum
+// reward:risk filter, trailing-stop exit on trend reversal. Same orchestration
+// (risk-sized positions, drawdown/macro halts, sector cap, cooldown) as Cycle
+// Trading, reused patterns rather than reinvented -- see cycleTradeStatusBadge
+// above, shared as-is since its status values aren't cycle-specific. ────────
+function renderZenTab(){
+  const d = ZEN_DATA || {};
+  renderZenRisk(d);
+  renderZenAlerts(d.avoid_alerts||[]);
+  renderZenCandidates(d.candidates||[]);
+}
+function renderZenRisk(zenData){
+  const el=document.getElementById('zenRiskPanel');
+  if(!el) return;
+  const dd=zenData.drawdown||{};
+  const ddColor=p=>p>=15?'#cc0000':p>=8?'#ff9900':'#44bb44';
+  el.innerHTML='<div class="stats-grid">'
+    +'<div class="stat-card"><div class="stat-label">Zen Trading Drawdown</div>'
+    +'<div class="stat-value" style="color:'+ddColor(dd.drawdown_pct||0)+'">'+(dd.drawdown_pct||0).toFixed(1)+'%'+(dd.halted?' (HALTED)':'')+'</div></div>'
+    +'<div class="stat-card"><div class="stat-label">Realized P&amp;L</div>'
+    +'<div class="stat-value" style="color:'+((dd.realized_pnl||0)>=0?'#44bb44':'#cc0000')+'">'+((dd.realized_pnl||0)>=0?'▲ ':'▼ ')+fmtMoney(dd.realized_pnl)+'</div></div>'
+    +'<div class="stat-card"><div class="stat-label">Open Positions</div>'
+    +'<div class="stat-value">'+((zenData.open_trades||[]).length)+' / 5</div></div>'
+    +'<div class="stat-card"><div class="stat-label">Macro Zone</div>'
+    +'<div class="stat-value" style="font-size:16px">'+(zenData.macro_zone||'—')+(zenData.macro_halted?' (HALTED)':'')+'</div></div>'
+    +'</div>';
+}
+function renderZenAlerts(list){
+  const el=document.getElementById('zenAvoidAlerts');
+  if(!el) return;
+  el.innerHTML = list.length ? list.map(a=>
+    '<div class="alert-card" style="border-left-color:#cc0000">'
+    +'<span class="alert-ticker">'+a.ticker+'</span>'
+    +'<span style="color:#cc0000;font-weight:bold;font-size:11px">BEARISH TREND</span>'
+    +'<div class="alert-detail">'+(a.detail||'')+'</div></div>'
+  ).join('') : '';
+}
+function showZenCandidateChart(ticker){
+  const c=(ZEN_DATA.candidates||[]).find(x=>x.ticker===ticker);
+  showChart(ticker, c?{entry_price:c.price, stop_price:c.stop_price, target_price:c.target_price}:null);
+}
+function renderZenCandidates(list){
+  const el=document.getElementById('zenCandidatesGrid');
+  if(!el) return;
+  if(!list.length){ el.innerHTML='<p style="color:#888;padding:20px">No qualifying candidates tonight.</p>'; return; }
+  el.innerHTML = list.map((c,i)=>{
+    const col=c.zen_score>=70?'#44bb44':c.zen_score>=50?'#ff9900':c.zen_score>=40?'#ff6600':'#cc0000';
+    const trend=c.trend||{};
+    return '<div style="background:#1a1a2e;border-radius:12px;padding:20px;border:1px solid '+(i===0?col:'#2a2a4a')+'">'
+      +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">'
+      +'<div><span style="font-size:20px;font-weight:bold;color:#fff">'+c.ticker+'</span>'
+      +'<span style="color:#888;font-size:12px;margin-left:8px">'+(trend.direction||'—')+' trend, '+(trend.consecutive_bars||'—')+' bars</span></div>'
+      +'<span style="font-size:26px;font-weight:bold;color:'+col+'">'+c.zen_score+'</span></div>'
+      +'<div style="margin-bottom:10px">'+cycleTradeStatusBadge(c.paper_trade_status)+'</div>'
+      +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center">'
+      +'<div><div style="color:#666">Price</div><div style="color:#ccc">$'+c.price+'</div></div>'
+      +'<div><div style="color:#666">Target</div><div style="color:#44bb44">'+(c.target_price?('$'+c.target_price):'—')+'</div></div>'
+      +'<div><div style="color:#666">Stop</div><div style="color:#cc0000">'+(c.stop_price?('$'+c.stop_price):'—')+'</div></div>'
+      +'<div><div style="color:#666">Reward:Risk</div><div style="color:#ccc">'+(c.reward_risk?(c.reward_risk+':1'):'—')+'</div></div></div>'
+      +'<div style="font-size:11px;color:#aaa;margin-top:8px">'+(c.reasons||[]).join(' | ')+'</div>'
+      +'<button class="btn-primary" style="margin-top:10px;padding:6px 14px;font-size:12px" onclick="showZenCandidateChart(\''+c.ticker+'\')">📈 Chart</button>'
+      +'</div>';
+  }).join('');
+}
 // ── Paper Trading tab — merges Cycle Trading (+ manual) portfolio.json trades
 // with Agent Trader's separate ledger into one view, tagged by source. ──────
 function normalizePortfolioPaperTrades(){
@@ -1194,7 +1261,7 @@ function normalizePortfolioPaperTrades(){
     const qty=t.shares!=null?t.shares:t.qty;
     const entry=t.buy_price!=null?t.buy_price:t.entry_price;
     return {
-      source: strat==='cycle_trading' ? 'Cycle Trading' : strat==='suggested_trades' ? 'Trade Ideas' : (strat||'Manual'),
+      source: strat==='cycle_trading' ? 'Cycle Trading' : strat==='zen_trading' ? 'Zen Trading' : strat==='suggested_trades' ? 'Trade Ideas' : (strat||'Manual'),
       ticker: t.ticker, entry, qty,
       positionCost: (qty!=null && entry!=null) ? qty*entry : null,
       stop: t.stop_price!=null?t.stop_price:t.stop_loss,
@@ -1282,7 +1349,7 @@ function sellButton(r){
 }
 async function sellPaperTrade(ticker, source){
   if(!getToken()){alert('Set your GitHub token first (Token tab).');showTab('token');return;}
-  const strategy = source==='Cycle Trading' ? 'cycle_trading' : source==='Trade Ideas' ? 'suggested_trades' : null;
+  const strategy = source==='Cycle Trading' ? 'cycle_trading' : source==='Zen Trading' ? 'zen_trading' : source==='Trade Ideas' ? 'suggested_trades' : null;
   try{
     const {data,sha}=await readPortfolio();
     const t=(data.paper_trades||[]).find(x=>x.ticker===ticker && x.status==='open'
@@ -2096,6 +2163,7 @@ window.addEventListener('resize',()=>{
     <div class="nav-dropdown">
       <button class="tab-btn" onclick="showTab('agent')">Agent Trader</button>
       <button class="tab-btn" onclick="showTab('cycle')">Cycle Trading</button>
+      <button class="tab-btn" onclick="showTab('zen')">Zen Trading</button>
       <button class="tab-btn" onclick="showTab('suggestions')">Trade Ideas</button>
       <button class="tab-btn" onclick="showTab('intraday')">Day Trading</button>
     </div>
@@ -2471,6 +2539,37 @@ window.addEventListener('resize',()=>{
 </div>
 
 
+<!-- TAB: Zen Trading -->
+<div id="tab-zen" class="tab-content">
+<div class="section">
+<h2>Zen Trading — Trend, Breakout &amp; Patience</h2>
+<p style="color:#888;font-size:13px;margin-bottom:20px">
+  Heiken-Ashi trend clarity + trend-following breakout entries, filtered by a minimum 2:1
+  reward:risk requirement ("maximum upside, minimum stress" — patience over frequency).
+  Exits on a hard stop or a trend reversal, whichever comes first. Manages up to 5 concurrent
+  risk-sized paper positions (capped at $2,000 each), same risk machinery as Cycle Trading.
+  A synthesis of the common "Zen Trading" toolkit across public sources (Heiken-Ashi trend
+  reads, trend-following breakouts, disciplined risk/reward) — there's no single canonical
+  published system this reproduces.
+</p>
+<div id="zenRiskPanel" style="margin-bottom:20px"></div>
+
+<h3 style="color:#ccc;margin:0 0 12px">Best Candidates</h3>
+<div id="zenCandidatesGrid" style="display:grid;gap:12px"></div>
+
+<h3 style="color:#ccc;margin:25px 0 12px">Alerts</h3>
+<div id="zenAvoidAlerts"></div>
+
+<p style="color:#888;font-size:13px;margin:25px 0">
+  Open and closed Zen Trading positions now live on the
+  <a href="#" onclick="showTab('paper');return false" style="color:#4a90d9">Paper Trading</a>
+  tab, merged with every other strategy's trades and tagged by source. Charts for open
+  positions and candidates are still available above.
+</p>
+</div>
+</div>
+
+
 <!-- TAB: Trade Ideas -->
 <div id="tab-suggestions" class="tab-content">
 <div class="section">
@@ -2610,6 +2709,7 @@ window.addEventListener('resize',()=>{
     HTML = HTML.replace('__MACRO_DATA__', json.dumps(macro or {}))
     HTML = HTML.replace('__QUANT_DATA__', json.dumps(quant or {}))
     HTML = HTML.replace('__CYCLE_DATA__', json.dumps(cycle or {}))
+    HTML = HTML.replace('__ZEN_DATA__', json.dumps(zen or {}))
     HTML = HTML.replace('__PAPER_DATA__', json.dumps(portfolio.get('paper', {})))
     HTML = HTML.replace('__SUGGESTIONS_DATA__', suggestions_json)
     with open(output_path, "w", encoding="utf-8") as f:

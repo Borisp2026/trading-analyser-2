@@ -21,6 +21,8 @@ from quantitative import run_quantitative
 from macro_gate import run_macro_gate
 from intraday import run_intraday
 from cycle_trader import run_cycle_trading
+from zen_analysis import analyse_zen
+from zen_trader import run_zen_trading
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WATCHLIST_FILE = os.path.join(BASE, "data", "watchlist.json")
@@ -53,6 +55,7 @@ def fetch_stock(ticker):
         tech = analyse_technicals(df)
         mas = tech.get("moving_averages", {}) if tech else {}
         cycle = analyse_cycles(df, mas)
+        zen = analyse_zen(df)
         reasoning = generate_reasoning(ticker, tech, cycle, info)
         try:
             corr = run_correlation(df)
@@ -66,7 +69,7 @@ def fetch_stock(ticker):
             "ticker": ticker, "name": name,
             "sector": info.get("sector", "Unknown"),
             "market_cap": info.get("marketCap"),
-            "tech": tech, "cycle": cycle, "reasoning": reasoning,
+            "tech": tech, "cycle": cycle, "zen": zen, "reasoning": reasoning,
             "correlation": corr, "chart_data": chart_data, "error": None,
         }
     except Exception as e:
@@ -116,6 +119,9 @@ def run_nightly():
     print("Running Cycle Trading screen...")
     cycle_signals = run_cycle_trading(all_results)
     portfolio_summary = evaluate_portfolio(all_results)  # refresh after cycle trades opened/closed
+    print("Running Zen Trading screen...")
+    zen_signals = run_zen_trading(all_results)
+    portfolio_summary = evaluate_portfolio(all_results)  # refresh after zen trades opened/closed
     print("Recording signal history...")
     history = record_signals(all_results)
     accuracy = get_accuracy_summary(history)
@@ -138,7 +144,7 @@ def run_nightly():
     print("\nBuilding dashboard...")
     build_dashboard(all_results, portfolio_summary, dashboard_file,
                     signal_history=history, accuracy=accuracy, intraday=intraday_results, quant=quant_results,
-                    macro=macro_results, cycle=cycle_signals)
+                    macro=macro_results, cycle=cycle_signals, zen=zen_signals)
     print("Building PDF report...")
     build_pdf_report(all_results, portfolio_summary, pdf_file, signal_history=history, accuracy=accuracy, cycle=cycle_signals)
     print("Sending email...")

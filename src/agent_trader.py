@@ -212,7 +212,7 @@ def run_agent_scan():
     # this 5-min cadence so a stop breach is caught same-day instead of waiting for
     # the next nightly re-run -- Trade Ideas positions had no automated stop check
     # at all before this.
-    for strategy_tag in ("cycle_trading", "suggested_trades"):
+    for strategy_tag in ("cycle_trading", "suggested_trades", "zen_trading"):
         try:
             stops_hit = check_intraday_hard_stops(strategy_tag)
             if stops_hit:
