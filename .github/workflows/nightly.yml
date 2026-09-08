@@ -6,6 +6,18 @@ on:
     - cron: '0 10 * * 1-5'
   workflow_dispatch:  # allow manual run from Actions tab
 
+# Two runs landing minutes apart (a manual dispatch racing the schedule, or two
+# manual triggers back to back) was confirmed to corrupt index.html: a rebase
+# merge on a ~12MB file with no line-level overlap between two versions can
+# silently resurrect long-deleted content instead of flagging a conflict --
+# found this exact failure mode happening for real (an old, fully-removed
+# corsproxy.io code path reappeared in a committed build). Every other
+# git-committing workflow in this repo already serializes its own runs the
+# same way; this one didn't.
+concurrency:
+  group: nightly-build
+  cancel-in-progress: false
+
 jobs:
   run-report:
     runs-on: ubuntu-latest
