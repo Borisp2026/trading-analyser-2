@@ -742,6 +742,90 @@ function updateScoreLabel(){
     renderASXTable();
 }
 
+// ── Day Trading tab (15-min bar VWAP/gap/momentum scan, computed nightly by
+// src/intraday.py). Called from showTab()/the filter controls but was never
+// defined -- the tab was stuck on its loading placeholder forever. ─────────
+function renderIntradayTable(){
+    const data=INTRADAY_DATA||[];
+    const sigFilter=(document.getElementById('intradaySigFilter')||{}).value||'ALL';
+    const q=((document.getElementById('intradaySearch')||{}).value||'').toLowerCase();
+    const filtered=data.filter(r=>{
+        const sigMatch=sigFilter==='ALL'||r.signal===sigFilter;
+        const qMatch=!q||(r.ticker||'').toLowerCase().includes(q);
+        return sigMatch&&qMatch;
+    });
+    const countEl=document.getElementById('intradayCount');
+    if(countEl) countEl.textContent=`${filtered.length} of ${data.length} stocks`;
+    const tbody=document.getElementById('intradayBody');
+    if(!tbody) return;
+    if(!data.length){
+        tbody.innerHTML='<tr><td colspan="12" style="color:#888;text-align:center;padding:20px">No intraday data yet -- runs automatically during market hours, or click "Run Nightly Now".</td></tr>';
+        return;
+    }
+    if(!filtered.length){
+        tbody.innerHTML='<tr><td colspan="12" style="color:#888;text-align:center;padding:20px">No stocks match this filter.</td></tr>';
+        return;
+    }
+    const sigColor=s=>s==='DAY BUY'?'#44bb44':s==='WATCH'?'#ff9900':s==='AVOID'?'#cc0000':'#888';
+    tbody.innerHTML=filtered.map(r=>{
+        const gapColor=r.gap_pct>=0?'#44bb44':'#cc0000';
+        const vsColor=r.vs_vwap==='ABOVE'?'#44bb44':'#cc0000';
+        const momColor=r.momentum_pct>=0?'#44bb44':'#cc0000';
+        // No ATR available from this scan (unlike the Live Intraday Scan on Trade
+        // Ideas) -- buy zone anchors to VWAP when it's below price, sell zone is
+        // a flat +4% reference, same fallback convention used elsewhere.
+        const buyZone=(r.vwap>0&&r.vwap<r.close)?r.vwap:r.close*0.99;
+        const sellZone=r.close*1.04;
+        return `<tr>
+            <td><b>${r.ticker}</b></td>
+            <td>$${(r.close||0).toFixed(3)}</td>
+            <td style="color:${gapColor}">${r.gap_pct>=0?'+':''}${r.gap_pct.toFixed(1)}%</td>
+            <td>${r.gap_type||'—'}</td>
+            <td>$${(r.vwap||0).toFixed(3)}</td>
+            <td style="color:${vsColor}">${r.vs_vwap||'—'}</td>
+            <td>${(r.rsi_15m!=null?r.rsi_15m:'—')}</td>
+            <td style="color:${momColor}">${r.momentum_pct>=0?'+':''}${r.momentum_pct.toFixed(1)}%</td>
+            <td><span style="padding:2px 8px;border-radius:4px;font-size:11px;background:${sigColor(r.signal)}22;color:${sigColor(r.signal)};font-weight:bold">${r.signal||'—'}</span></td>
+            <td>$${buyZone.toFixed(3)}</td>
+            <td>$${sellZone.toFixed(3)}</td>
+            <td><button class="btn-primary" style="padding:2px 8px;font-size:10px" onclick="showIntradayChart('${r.ticker}')">📈</button></td>
+        </tr>`;
+    }).join('');
+}
+let _intradayChart=null;
+function showIntradayChart(ticker){
+    const r=(INTRADAY_DATA||[]).find(x=>x.ticker===ticker);
+    if(!r||!r.candles||!r.candles.length){alert('No intraday chart data for '+ticker);return;}
+    document.getElementById('intradayChartTitle').textContent=ticker+' — Today (15-min bars)';
+    const modal=document.getElementById('intradayChartModal');
+    modal.style.display='flex';
+    setTimeout(()=>{
+        const container=document.getElementById('intradayChartBox2');
+        container.innerHTML='';
+        if(typeof LightweightCharts==='undefined'){
+            container.innerHTML='<p style="color:#888;padding:20px">Chart library not loaded.</p>';
+            return;
+        }
+        if(_intradayChart){_intradayChart.remove();_intradayChart=null;}
+        _intradayChart=LightweightCharts.createChart(container,{
+            width:container.clientWidth,height:350,
+            layout:{background:{color:'#0f0f1a'},textColor:'#888'},
+            grid:{vertLines:{color:'#1a1a2e'},horzLines:{color:'#1a1a2e'}},
+            timeScale:{timeVisible:true,secondsVisible:false},
+        });
+        const cs=_intradayChart.addCandlestickSeries({upColor:'#44bb44',downColor:'#cc0000',borderVisible:false,wickUpColor:'#44bb44',wickDownColor:'#cc0000'});
+        cs.setData(r.candles);
+        if(r.vwap_line&&r.vwap_line.length){
+            const vs=_intradayChart.addLineSeries({color:'#ff9900',lineWidth:1,title:'VWAP'});
+            vs.setData(r.vwap_line);
+        }
+    },50);
+}
+function closeIntradayModal(){
+    document.getElementById('intradayChartModal').style.display='none';
+    if(_intradayChart){_intradayChart.remove();_intradayChart=null;}
+}
+
 // ── Backtest tab ──────────────────────────────────────────────────────────────
 function populateBacktestSelect(){
     const sel=document.getElementById('btStockSelect');
@@ -1026,6 +1110,7 @@ function renderMacroGate(){
 const QUANT_DATA = __QUANT_DATA__;
 const CYCLE_DATA = __CYCLE_DATA__;
 const ZEN_DATA = __ZEN_DATA__;
+const INTRADAY_DATA = __INTRADAY_DATA__;
 const PAPER_DATA = __PAPER_DATA__;
 const SUGGESTIONS_DATA = __SUGGESTIONS_DATA__;
 // ── Quantitative Analysis tab ─────────────────────────────────────────────────
@@ -2438,7 +2523,7 @@ window.addEventListener('resize',()=>{
 <table class="asx-table"><thead><tr>
   <th>Ticker</th><th>Price</th><th>Gap %</th><th>Gap Type</th><th>VWAP</th><th>vs VWAP</th><th>RSI 15m</th><th>Momentum</th><th>Signal</th><th>Buy Zone</th><th>Sell Zone</th><th>Chart</th>
 </tr></thead><tbody id="intradayBody">
-<tr><td colspan="10" style="color:#888;text-align:center;padding:20px">Click Run Nightly Now during market hours to load intraday data.</td></tr>
+<tr><td colspan="12" style="color:#888;text-align:center;padding:20px">Click Run Nightly Now during market hours to load intraday data.</td></tr>
 </tbody></table>
 </div>
 </div>
@@ -2710,6 +2795,13 @@ window.addEventListener('resize',()=>{
     HTML = HTML.replace('__QUANT_DATA__', json.dumps(quant or {}))
     HTML = HTML.replace('__CYCLE_DATA__', json.dumps(cycle or {}))
     HTML = HTML.replace('__ZEN_DATA__', json.dumps(zen or {}))
+    # run_intraday() returns a plain list of per-ticker dicts (not wrapped in a
+    # {"results": [...]} envelope like the file it also writes to disk) -- this
+    # was being threaded all the way through build_dashboard()'s own `intraday`
+    # parameter and silently dropped, never embedded for the client at all, so
+    # the Day Trading tab's table (and its renderIntradayTable() JS function)
+    # never existed to read it either. Both fixed together here.
+    HTML = HTML.replace('__INTRADAY_DATA__', json.dumps(intraday or []))
     HTML = HTML.replace('__PAPER_DATA__', json.dumps(portfolio.get('paper', {})))
     HTML = HTML.replace('__SUGGESTIONS_DATA__', suggestions_json)
     with open(output_path, "w", encoding="utf-8") as f:
