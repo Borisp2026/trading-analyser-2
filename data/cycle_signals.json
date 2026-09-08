@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-08T15:06:24",
+  "generated_at": "2026-09-08T15:15:54",
   "watchlist_count": 27,
   "candidates": [
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 226.95,
+      "price": 227.21,
       "sector": "Technology",
       "cycle_score": 65,
       "cycle_signal": "CYCLE_BUY",
@@ -20,7 +20,7 @@
         "est_date_dc3": "2026-10-06"
       },
       "stop_price": 210.798,
-      "position_size": 1405.09,
+      "position_size": 1384.41,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -97,7 +97,7 @@
             "price": 234.76
           }
         },
-        "entry_price": 226.95,
+        "entry_price": 227.21,
         "stop_price": 210.798,
         "target_price": 248.5997
       },
@@ -333,14 +333,14 @@
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 492.94,
+      "price": 493.5,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 503.87,
+      "price": 507.025,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
@@ -392,7 +392,7 @@
         "entered_dc_num": 1,
         "entered_score": 57
       },
-      "_current_price": 226.95,
+      "_current_price": 227.21,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -485,7 +485,7 @@
         "entered_dc_num": 2,
         "entered_score": 80
       },
-      "_current_price": 365.45,
+      "_current_price": 365.03,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -631,103 +631,6 @@
     }
   ],
   "closed_trades": [
-    {
-      "ticker": "CMM.AX",
-      "shares": 11.7535,
-      "buy_price": 17.73,
-      "buy_date": "2026-08-25",
-      "signal": "CYCLE_BUY",
-      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 9.2218,
-      "target_price": 15.5274,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
-        "sector": "Basic Materials",
-        "entered_dc_num": 3,
-        "entered_score": 80
-      },
-      "sell_price": 16.72,
-      "sell_date": "2026-09-01",
-      "pnl": -11.87,
-      "pnl_pct": -5.7,
-      "close_reason": "TRENDLINE_BREAK",
-      "chart_overlay": {
-        "daily_support_line": [
-          {
-            "date": "2026-09-02",
-            "price": 15.52
-          }
-        ],
-        "daily_resistance_line": [
-          {
-            "date": "2026-09-04",
-            "price": 16.97
-          }
-        ],
-        "intermediate_support_line": [
-          {
-            "date": "2026-06-11",
-            "price": 10.75
-          },
-          {
-            "date": "2026-07-20",
-            "price": 11.48
-          },
-          {
-            "date": "2026-09-08",
-            "price": 12.4533
-          }
-        ],
-        "intermediate_resistance_line": [
-          {
-            "date": "2026-07-06",
-            "price": 14.54
-          },
-          {
-            "date": "2026-08-26",
-            "price": 18.26
-          },
-          {
-            "date": "2026-09-08",
-            "price": 19.1649
-          }
-        ],
-        "daily_markers": {
-          "dcl0": {
-            "date": "2026-09-02",
-            "price": 15.52
-          },
-          "dch": {
-            "date": "2026-09-04",
-            "price": 16.97
-          }
-        },
-        "intermediate_markers": {
-          "dcl0": {
-            "date": "2026-06-11",
-            "price": 10.75
-          },
-          "hch": {
-            "date": "2026-07-06",
-            "price": 14.54
-          },
-          "hcl": {
-            "date": "2026-07-20",
-            "price": 11.48
-          },
-          "dch": {
-            "date": "2026-08-26",
-            "price": 18.26
-          }
-        },
-        "entry_price": 17.73,
-        "stop_price": 9.2218,
-        "target_price": 15.5274
-      }
-    },
     {
       "ticker": "APA.AX",
       "shares": 39.8673,
@@ -1544,12 +1447,109 @@
         "stop_price": 2.2834,
         "target_price": 2.5796
       }
+    },
+    {
+      "ticker": "AMP.AX",
+      "shares": 638.5697,
+      "buy_price": 2.44,
+      "buy_date": "2026-09-08",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 2.2834,
+      "target_price": 2.5796,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Financial Services",
+        "entered_dc_num": 4,
+        "entered_score": 47
+      },
+      "sell_price": 2.44,
+      "sell_date": "2026-09-08",
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "close_reason": "TRENDLINE_BREAK",
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-08-18",
+            "price": 2.2216
+          },
+          {
+            "date": "2026-08-27",
+            "price": 2.33
+          },
+          {
+            "date": "2026-09-08",
+            "price": 2.4539
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-25",
+            "price": 2.44
+          },
+          {
+            "date": "2026-09-03",
+            "price": 2.5
+          },
+          {
+            "date": "2026-09-08",
+            "price": 2.5257
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-06-04",
+            "price": 1.4367
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-09-03",
+            "price": 2.5
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-08-18",
+            "price": 2.2216
+          },
+          "hch": {
+            "date": "2026-08-25",
+            "price": 2.44
+          },
+          "hcl": {
+            "date": "2026-08-27",
+            "price": 2.33
+          },
+          "dch": {
+            "date": "2026-09-03",
+            "price": 2.5
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-06-04",
+            "price": 1.4367
+          },
+          "dch": {
+            "date": "2026-09-03",
+            "price": 2.5
+          }
+        },
+        "entry_price": 2.44,
+        "stop_price": 2.2834,
+        "target_price": 2.5796
+      }
     }
   ],
   "drawdown": {
     "realized_pnl": -102.82,
-    "unrealized_pnl": 19.99,
-    "total_pnl": -82.83,
+    "unrealized_pnl": 20.31,
+    "total_pnl": -82.51,
     "drawdown_pct": 0.83,
     "halted": false
   },
