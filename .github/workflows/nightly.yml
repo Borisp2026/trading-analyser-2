@@ -57,4 +57,14 @@ jobs:
           git pull --rebase origin main || true
           git add reports/ index.html data/macro_gate.json data/signal_history.json data/agent_trades.json data/portfolio.json data/cycle_signals.json data/quant_results.json data/intraday_results.json data/zen_signals.json
           git diff --staged --quiet || git commit -m "Nightly report $(date -u +%Y-%m-%d)"
-          git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)
+          # index.html is a fully-generated, ~12MB, near-single-line build artifact --
+          # there's never a legitimate reason to 3-way-merge it. Confirmed this
+          # actually happened: a 2-month-old commit ("Restore index.html from last
+          # nightly") sits in main's history holding a stale index.html, and a plain
+          # `git pull --rebase` retry on conflict can silently resurrect fragments of
+          # it via git's line-level auto-merge instead of flagging a conflict -- found
+          # a fully-dead, already-removed client-side feature reappear in a committed
+          # build this way. On a push conflict, reset onto the latest origin and
+          # re-commit this run's actual on-disk output wholesale instead of asking git
+          # to reconcile two versions of the same generated file.
+          git push origin HEAD:main || (git fetch origin main && git reset --soft origin/main && git commit --allow-empty -m "Nightly report $(date -u +%Y-%m-%d)" && git push origin HEAD:main)
