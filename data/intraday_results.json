@@ -6588,19 +6588,19 @@
       "open": 317.12,
       "high": 320.7,
       "low": 315.7,
-      "close": 316.465,
-      "volume": 4593269,
+      "close": 317.475,
+      "volume": 4843031,
       "yesterday_close": 319.99,
       "gap_pct": -0.9,
       "gap_type": "GAP DOWN",
-      "vwap": 317.755,
+      "vwap": 317.768,
       "vs_vwap": "BELOW",
       "rsi_15m": 50.0,
-      "momentum_pct": -0.21,
+      "momentum_pct": 0.11,
       "signal": "AVOID",
       "score": 30,
       "reasons": [
-        "Price below VWAP $317.755",
+        "Price below VWAP $317.768",
         "Gap down -0.9% from prev close"
       ],
       "candles": [
@@ -6616,7 +6616,7 @@
           "open": 317.5,
           "high": 317.5,
           "low": 315.98,
-          "close": 316.465
+          "close": 317.475
         }
       ],
       "vwap_line": [
@@ -6626,7 +6626,7 @@
         },
         {
           "time": 1788875100,
-          "value": 317.755
+          "value": 317.768
         }
       ],
       "error": null
@@ -6637,19 +6637,19 @@
       "open": 493.01,
       "high": 495.19,
       "low": 491.2,
-      "close": 492.05,
-      "volume": 2229701,
+      "close": 493.703,
+      "volume": 2338639,
       "yesterday_close": 499.68,
       "gap_pct": -1.33,
       "gap_type": "GAP DOWN",
-      "vwap": 492.947,
-      "vs_vwap": "BELOW",
+      "vwap": 493.097,
+      "vs_vwap": "ABOVE",
       "rsi_15m": 50.0,
-      "momentum_pct": -0.19,
-      "signal": "AVOID",
-      "score": 30,
+      "momentum_pct": 0.14,
+      "signal": "NEUTRAL",
+      "score": 50,
       "reasons": [
-        "Price below VWAP $492.947",
+        "Price above VWAP $493.097",
         "Gap down -1.3% from prev close"
       ],
       "candles": [
@@ -6663,9 +6663,9 @@
         {
           "time": 1788875100,
           "open": 492.95,
-          "high": 493.05,
+          "high": 493.703,
           "low": 491.2,
-          "close": 492.05
+          "close": 493.703
         }
       ],
       "vwap_line": [
@@ -6675,7 +6675,7 @@
         },
         {
           "time": 1788875100,
-          "value": 492.947
+          "value": 493.097
         }
       ],
       "error": null
@@ -6686,21 +6686,21 @@
       "open": 233.21,
       "high": 233.71,
       "low": 229.06,
-      "close": 229.47,
-      "volume": 19733455,
+      "close": 229.935,
+      "volume": 20931732,
       "yesterday_close": 230.345,
       "gap_pct": 1.24,
       "gap_type": "GAP UP",
-      "vwap": 230.704,
+      "vwap": 230.684,
       "vs_vwap": "BELOW",
       "rsi_15m": 50.0,
-      "momentum_pct": -1.6,
+      "momentum_pct": -1.4,
       "signal": "NEUTRAL",
       "score": 40,
       "reasons": [
-        "Price below VWAP $230.704",
+        "Price below VWAP $230.684",
         "Gap up +1.2% from prev close",
-        "Weak momentum -1.6% today"
+        "Weak momentum -1.4% today"
       ],
       "candles": [
         {
@@ -6715,7 +6715,7 @@
           "open": 229.78,
           "high": 230.47,
           "low": 229.06,
-          "close": 229.47
+          "close": 229.935
         }
       ],
       "vwap_line": [
@@ -6725,7 +6725,7 @@
         },
         {
           "time": 1788875100,
-          "value": 230.704
+          "value": 230.684
         }
       ],
       "error": null
@@ -6736,20 +6736,21 @@
       "open": 488.88,
       "high": 496.77,
       "low": 486.571,
-      "close": 492.185,
-      "volume": 4636234,
+      "close": 494.415,
+      "volume": 4872729,
       "yesterday_close": 477.45,
       "gap_pct": 2.39,
       "gap_type": "GAP UP",
-      "vwap": 491.847,
+      "vwap": 492.009,
       "vs_vwap": "ABOVE",
       "rsi_15m": 50.0,
-      "momentum_pct": 0.68,
+      "momentum_pct": 1.13,
       "signal": "DAY BUY",
-      "score": 70,
+      "score": 80,
       "reasons": [
-        "Price above VWAP $491.847",
-        "Gap up +2.4% from prev close"
+        "Price above VWAP $492.009",
+        "Gap up +2.4% from prev close",
+        "Strong momentum +1.1% today"
       ],
       "candles": [
         {
@@ -6764,7 +6765,7 @@
           "open": 491.57,
           "high": 494.5,
           "low": 486.571,
-          "close": 492.185
+          "close": 494.415
         }
       ],
       "vwap_line": [
@@ -6774,7 +6775,7 @@
         },
         {
           "time": 1788875100,
-          "value": 491.847
+          "value": 492.009
         }
       ],
       "error": null
@@ -6785,19 +6786,19 @@
       "open": 357.27,
       "high": 362.42,
       "low": 355.99,
-      "close": 358.458,
-      "volume": 8580812,
+      "close": 359.457,
+      "volume": 9237093,
       "yesterday_close": 353.95,
       "gap_pct": 0.94,
       "gap_type": "GAP UP",
-      "vwap": 358.614,
-      "vs_vwap": "BELOW",
+      "vwap": 358.749,
+      "vs_vwap": "ABOVE",
       "rsi_15m": 50.0,
-      "momentum_pct": 0.33,
-      "signal": "NEUTRAL",
-      "score": 50,
+      "momentum_pct": 0.61,
+      "signal": "DAY BUY",
+      "score": 70,
       "reasons": [
-        "Price below VWAP $358.614",
+        "Price above VWAP $358.749",
         "Gap up +0.9% from prev close"
       ],
       "candles": [
@@ -6811,9 +6812,9 @@
         {
           "time": 1788875100,
           "open": 357.68,
-          "high": 359.0,
+          "high": 360.3,
           "low": 357.1,
-          "close": 358.458
+          "close": 359.457
         }
       ],
       "vwap_line": [
@@ -6823,7 +6824,7 @@
         },
         {
           "time": 1788875100,
-          "value": 358.614
+          "value": 358.749
         }
       ],
       "error": null
@@ -8631,7 +8632,7 @@
       "error": null
     }
   ],
-  "scanned_at": "2026-09-08T13:54:13.014545",
+  "scanned_at": "2026-09-08T13:57:48.724460",
   "total_scanned": 33,
   "results_count": 33
 }
