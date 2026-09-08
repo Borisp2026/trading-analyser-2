@@ -144,13 +144,18 @@ def evaluate_portfolio(results: list = None) -> dict:
         pnl = value - cost
         pnl_pct = round((pnl / cost) * 100, 2) if cost > 0 else 0
 
-        # Dividend info
+        # Dividend info. yfinance's `dividendYield` used to be a decimal fraction
+        # (0.0132 = 1.32%) but now comes back already as the percentage number
+        # itself (1.32 meaning 1.32%) -- confirmed empirically: every holding with
+        # a nonzero yield was showing 61%-456%, impossible for a real stock, and
+        # each was ~100x a plausible real yield (e.g. MIN.AX 132.0% -> really 1.32%).
+        # Multiplying by 100 again (the old behaviour) double-counted that.
         try:
             info = yf.Ticker(ticker).info
-            div_yield = info.get("dividendYield", 0) or 0
-            annual_div = round(current_price * div_yield * shares, 2)
+            div_yield_pct = info.get("dividendYield", 0) or 0
+            annual_div = round(current_price * (div_yield_pct / 100) * shares, 2)
         except Exception:
-            div_yield = 0
+            div_yield_pct = 0
             annual_div = 0
 
         real_summary.append({
@@ -162,7 +167,7 @@ def evaluate_portfolio(results: list = None) -> dict:
             "value": round(value, 2),
             "pnl": round(pnl, 2),
             "pnl_pct": pnl_pct,
-            "div_yield_pct": round(div_yield * 100, 2),
+            "div_yield_pct": round(div_yield_pct, 2),
             "annual_div_income": annual_div,
         })
 
