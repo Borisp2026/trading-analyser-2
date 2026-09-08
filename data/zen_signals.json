@@ -1,12 +1,40 @@
 {
-  "generated_at": null,
-  "watchlist_count": 0,
+  "generated_at": "2026-09-08T12:18:33",
+  "watchlist_count": 27,
   "candidates": [],
-  "avoid_alerts": [],
+  "avoid_alerts": [
+    {
+      "ticker": "PLS.AX",
+      "name": "PLS Group Limited",
+      "price": 4.93,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "NXT.AX",
+      "name": "NEXTDC Limited",
+      "price": 12.52,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
+    },
+    {
+      "ticker": "TOR.AX",
+      "name": "Torque Metals Limited",
+      "price": 0.22,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
+    }
+  ],
   "open_trades": [],
   "closed_trades": [],
-  "drawdown": {"realized_pnl": 0, "unrealized_pnl": 0, "total_pnl": 0, "drawdown_pct": 0, "halted": false},
-  "macro_zone": "SELECTIVE",
+  "drawdown": {
+    "realized_pnl": 0,
+    "unrealized_pnl": 0.0,
+    "total_pnl": 0.0,
+    "drawdown_pct": 0.0,
+    "halted": false
+  },
+  "macro_zone": "DEPLOY",
   "macro_halted": false,
-  "actions_this_run": {"closed": [], "opened": []}
+  "actions_this_run": {
+    "closed": [],
+    "opened": []
+  }
 }

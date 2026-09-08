@@ -2,18 +2,18 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 15.27,
-      "value_label": "VIX 15.3",
-      "score": 86.2,
-      "detail": "VIX 15.3 \u2014 lower than 86% of the past year",
+      "value": 15.67,
+      "value_label": "VIX 15.7",
+      "score": 80.3,
+      "detail": "VIX 15.7 \u2014 lower than 80% of the past year",
       "interpretation": "CALM"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.867,
-      "value_label": "Ratio 0.867",
-      "score": 94.3,
-      "detail": "VIX/VIX3M = 0.867 (CONTANGO) \u2014 below 1.0 = calm",
+      "value": 0.89,
+      "value_label": "Ratio 0.890",
+      "score": 86.7,
+      "detail": "VIX/VIX3M = 0.890 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -34,10 +34,10 @@
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -1.23,
-      "value_label": "VIX ROC -1.2%",
-      "score": 64.0,
-      "detail": "VIX 20-day rate of change -1.2% (rapidly rising = fear = low score)",
+      "value": 2.55,
+      "value_label": "VIX ROC +2.6%",
+      "score": 59.3,
+      "detail": "VIX 20-day rate of change +2.6% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
@@ -49,22 +49,22 @@
       "interpretation": "UPTREND"
     }
   ],
-  "composite": 72.4,
+  "composite": 69.3,
   "us_signals": [
     {
       "name": "VIX Level",
-      "value": 15.27,
-      "value_label": "VIX 15.3",
-      "score": 86.2,
-      "detail": "VIX 15.3 \u2014 lower than 86% of the past year",
+      "value": 15.67,
+      "value_label": "VIX 15.7",
+      "score": 80.3,
+      "detail": "VIX 15.7 \u2014 lower than 80% of the past year",
       "interpretation": "CALM"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.867,
-      "value_label": "Ratio 0.867",
-      "score": 94.3,
-      "detail": "VIX/VIX3M = 0.867 (CONTANGO) \u2014 below 1.0 = calm",
+      "value": 0.89,
+      "value_label": "Ratio 0.890",
+      "score": 86.7,
+      "detail": "VIX/VIX3M = 0.890 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -85,10 +85,10 @@
     },
     {
       "name": "Put/Call Sentiment",
-      "value": -1.23,
-      "value_label": "VIX ROC -1.2%",
-      "score": 64.0,
-      "detail": "VIX 20-day rate of change -1.2% (rapidly rising = fear = low score)",
+      "value": 2.55,
+      "value_label": "VIX ROC +2.6%",
+      "score": 59.3,
+      "detail": "VIX 20-day rate of change +2.6% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
@@ -100,36 +100,36 @@
       "interpretation": "UPTREND"
     }
   ],
-  "us_composite": 72.4,
+  "us_composite": 69.3,
   "asx_signals": [
     {
       "name": "ASX Trend",
-      "score": 100,
-      "value": 9006.0,
-      "value_label": "XJO 9,006",
-      "detail": "XJO vs MA50(\u2713) MA200(\u2713)",
-      "interpretation": "UPTREND"
+      "score": 70,
+      "value": 8921.0,
+      "value_label": "XJO 8,921",
+      "detail": "XJO vs MA50(\u2717) MA200(\u2713)",
+      "interpretation": "ABOVE 200MA"
     },
     {
       "name": "ASX Breadth",
-      "score": 51.1,
-      "value": 56.0,
-      "value_label": "56% above 50MA",
-      "detail": "5/9 ASX sectors above 50-day MA",
+      "score": 28.9,
+      "value": 44.0,
+      "value_label": "44% above 50MA",
+      "detail": "4/9 ASX sectors above 50-day MA",
       "interpretation": "MIXED"
     },
     {
       "name": "ASX Volatility",
-      "score": 86.2,
-      "value": 15.3,
-      "value_label": "XVI 15.3",
-      "detail": "Lower than 86% of past year",
+      "score": 80.3,
+      "value": 15.7,
+      "value_label": "XVI 15.7",
+      "detail": "Lower than 80% of past year",
       "interpretation": "NEUTRAL"
     }
   ],
-  "asx_composite": 79.1,
-  "zone": "DEPLOY",
-  "zone_desc": "Conditions favourable \u2014 deploy capital aggressively",
-  "zone_color": "#44bb44",
-  "scanned_at": "2026-09-07T15:21:42.483030"
+  "asx_composite": 59.7,
+  "zone": "SELECTIVE",
+  "zone_desc": "Mixed conditions \u2014 selective deployment, reduce size",
+  "zone_color": "#ff9900",
+  "scanned_at": "2026-09-08T12:18:51.455869"
 }
