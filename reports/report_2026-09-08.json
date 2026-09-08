@@ -4,7 +4,7 @@
       "ticker": "TLX.AX",
       "name": "Telix Pharmaceuticals Limited",
       "sector": "Healthcare",
-      "market_cap": 5606440960,
+      "market_cap": 5589821440,
       "tech": {
         "price": 16.5,
         "price_1d_pct": 1.54,
@@ -436,760 +436,47 @@
       "error": null
     },
     {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "sector": "Technology",
-      "market_cap": 5546565435392,
-      "tech": {
-        "price": 229.72,
-        "price_1d_pct": -0.28,
-        "price_5d_pct": 4.05,
-        "price_20d_pct": 5.59,
-        "high_52w": 236.2646,
-        "low_52w": 164.0788,
-        "pct_from_52w_high": -2.77,
-        "rsi": 59.77,
-        "rsi_prev": 60.39,
-        "macd": 4.1899,
-        "macd_signal": 3.2352,
-        "macd_hist": 0.9547,
-        "macd_bullish_cross": "False",
-        "macd_death_cross": "False",
-        "bb_upper": 233.6236,
-        "bb_mid": 220.6905,
-        "bb_lower": 207.7574,
-        "pct_b": 0.849,
-        "atr": 7.1856,
-        "stop_loss": 218.9416,
-        "take_profit": 251.2768,
-        "stoch_k": 81.68,
-        "stoch_d": 85.66,
-        "volume": 21035979,
-        "volume_signal": {
-          "ratio": 0.17,
-          "signal": "LOW_VOLUME",
-          "avg_volume": 124159288
-        },
-        "moving_averages": {
-          "sma_10": 221.94,
-          "sma_20": 220.6905,
-          "sma_50": 211.3102,
-          "sma_200": 196.7684,
-          "ema_9": 224.2547,
-          "ema_21": 220.0119
-        },
-        "above_50sma": "True",
-        "above_200sma": "True",
-        "golden_cross": "True",
-        "tech_score": 57,
-        "signal": "BUY",
-        "color": "lightgreen"
-      },
-      "cycle": {
-        "status": "ok",
-        "cycle_len": 30,
-        "cycle_score": 80,
-        "cycle_signal": "CYCLE_BUY",
-        "current_cycle": {
-          "cycle_num": 1,
-          "dcl0_date": "2026-07-29",
-          "dcl0_price": 190.01,
-          "hch_date": "2026-08-17",
-          "hch_price": 227.92,
-          "hcl_date": null,
-          "hcl_price": null,
-          "dch_date": "2026-08-17",
-          "dch_price": 227.92,
-          "dcl1_date": "2026-08-24",
-          "dcl1_price": 207.25,
-          "translation": "RIGHT",
-          "failed": false,
-          "length": 18,
-          "intermediate_cycle_start": "2026-07-29"
-        },
-        "bars_since_dcl": 10,
-        "pct_through_cycle": 33.3,
-        "high_risk_zone": false,
-        "trendline_break": false,
-        "confirmation_signal": "True",
-        "reasons": [
-          "RIGHT-translated cycle (Daily Cycle #1 of IC)",
-          "\u2705 90% confirmation signal \u2014 above HCH resistance and 10D SMA",
-          "90% confirmation: close above HCH resistance + 10D SMA, no trendline break"
-        ],
-        "entry_note": "Enter near DCL or on confirmation signal above HCH + 10D SMA",
-        "exit_note": "Exit/tighten stops if trendline breaks below HCL (~$None)",
-        "all_cycles": [
-          {
-            "cycle_num": null,
-            "dcl0_date": "2024-09-18",
-            "dcl0_price": 113.0434,
-            "hch_date": "2024-09-26",
-            "hch_price": 127.4708,
-            "hcl_date": "2024-10-02",
-            "hcl_price": 114.9604,
-            "dch_date": "2024-10-14",
-            "dch_price": 139.3822,
-            "dcl1_date": "2024-10-15",
-            "dcl1_price": 128.5392,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 19,
-            "intermediate_cycle_start": null
-          },
-          {
-            "cycle_num": null,
-            "dcl0_date": "2024-10-15",
-            "dcl0_price": 128.5392,
-            "hch_date": "2024-10-22",
-            "hch_price": 144.1947,
-            "hcl_date": "2024-10-31",
-            "hcl_price": 131.9039,
-            "dch_date": "2024-11-21",
-            "dch_price": 152.6515,
-            "dcl1_date": "2024-12-17",
-            "dcl1_price": 126.6708,
-            "translation": "RIGHT",
-            "failed": true,
-            "length": 44,
-            "intermediate_cycle_start": null
-          },
-          {
-            "cycle_num": null,
-            "dcl0_date": "2024-12-17",
-            "dcl0_price": 126.6708,
-            "hch_date": "2024-12-24",
-            "hch_price": 141.6884,
-            "hcl_date": "2024-12-31",
-            "hcl_price": 133.6304,
-            "dch_date": "2025-01-07",
-            "dch_price": 152.9016,
-            "dcl1_date": "2025-02-03",
-            "dcl1_price": 112.8415,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 30,
-            "intermediate_cycle_start": null
-          },
-          {
-            "cycle_num": null,
-            "dcl0_date": "2025-02-03",
-            "dcl0_price": 112.8415,
-            "hch_date": "2025-02-18",
-            "hch_price": 143.2261,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2025-02-18",
-            "dch_price": 143.2261,
-            "dcl1_date": "2025-03-11",
-            "dcl1_price": 104.6137,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 25,
-            "intermediate_cycle_start": null
-          },
-          {
-            "cycle_num": null,
-            "dcl0_date": "2025-03-11",
-            "dcl0_price": 104.6137,
-            "hch_date": "2025-03-24",
-            "hch_price": 122.049,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2025-03-17",
-            "dch_price": 122.718,
-            "dcl1_date": "2025-04-21",
-            "dcl1_price": 94.907,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 28,
-            "intermediate_cycle_start": null
-          },
-          {
-            "cycle_num": 1,
-            "dcl0_date": "2025-04-21",
-            "dcl0_price": 94.907,
-            "hch_date": "2025-04-25",
-            "hch_price": 111.7634,
-            "hcl_date": "2025-04-30",
-            "hcl_price": 103.9343,
-            "dch_date": "2025-05-21",
-            "dch_price": 137.2077,
-            "dcl1_date": "2025-05-23",
-            "dcl1_price": 128.9793,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 24,
-            "intermediate_cycle_start": "2025-04-07"
-          },
-          {
-            "cycle_num": 2,
-            "dcl0_date": "2025-05-23",
-            "dcl0_price": 128.9793,
-            "hch_date": "2025-05-29",
-            "hch_price": 143.2892,
-            "hcl_date": "2025-05-30",
-            "hcl_price": 132.734,
-            "dch_date": "2025-06-20",
-            "dch_price": 146.0055,
-            "dcl1_date": "2025-06-23",
-            "dcl1_price": 141.8411,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 19,
-            "intermediate_cycle_start": "2025-04-07"
-          },
-          {
-            "cycle_num": 3,
-            "dcl0_date": "2025-06-23",
-            "dcl0_price": 141.8411,
-            "hch_date": "2025-06-27",
-            "hch_price": 158.4989,
-            "hcl_date": "2025-07-01",
-            "hcl_price": 151.2885,
-            "dch_date": "2025-07-18",
-            "dch_price": 174.0182,
-            "dcl1_date": "2025-07-22",
-            "dcl1_price": 164.3611,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 20,
-            "intermediate_cycle_start": "2025-04-07"
-          },
-          {
-            "cycle_num": 4,
-            "dcl0_date": "2025-07-22",
-            "dcl0_price": 164.3611,
-            "hch_date": "2025-07-31",
-            "hch_price": 183.0562,
-            "hcl_date": "2025-08-01",
-            "hcl_price": 170.6627,
-            "dch_date": "2025-08-12",
-            "dch_price": 184.2346,
-            "dcl1_date": "2025-09-05",
-            "dcl1_price": 163.8518,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 32,
-            "intermediate_cycle_start": "2025-04-07"
-          },
-          {
-            "cycle_num": 1,
-            "dcl0_date": "2025-09-05",
-            "dcl0_price": 163.8518,
-            "hch_date": "2025-09-11",
-            "hch_price": 180.0504,
-            "hcl_date": "2025-09-17",
-            "hcl_price": 168.1955,
-            "dch_date": "2025-10-10",
-            "dch_price": 195.3708,
-            "dcl1_date": "2025-10-15",
-            "dcl1_price": 177.0642,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 28,
-            "intermediate_cycle_start": "2025-09-05"
-          },
-          {
-            "cycle_num": 2,
-            "dcl0_date": "2025-10-15",
-            "dcl0_price": 177.0642,
-            "hch_date": "2025-10-20",
-            "hch_price": 184.9641,
-            "hcl_date": "2025-10-22",
-            "hcl_price": 176.5348,
-            "dch_date": "2025-10-29",
-            "dch_price": 211.9197,
-            "dcl1_date": "2025-11-25",
-            "dcl1_price": 169.334,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 29,
-            "intermediate_cycle_start": "2025-09-05"
-          },
-          {
-            "cycle_num": 3,
-            "dcl0_date": "2025-11-25",
-            "dcl0_price": 169.334,
-            "hch_date": "2025-12-02",
-            "hch_price": 185.4235,
-            "hcl_date": "2025-12-03",
-            "hcl_price": 178.8819,
-            "dch_date": "2025-12-08",
-            "dch_price": 187.771,
-            "dcl1_date": "2025-12-17",
-            "dcl1_price": 170.1025,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 15,
-            "intermediate_cycle_start": "2025-09-05"
-          },
-          {
-            "cycle_num": 4,
-            "dcl0_date": "2025-12-17",
-            "dcl0_price": 170.1025,
-            "hch_date": "2025-12-26",
-            "hch_price": 192.4553,
-            "hcl_date": "2026-01-20",
-            "hcl_price": 177.3936,
-            "dch_date": "2026-01-30",
-            "dch_price": 194.2531,
-            "dcl1_date": "2026-02-05",
-            "dcl1_price": 170.8216,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 33,
-            "intermediate_cycle_start": "2025-09-05"
-          },
-          {
-            "cycle_num": 5,
-            "dcl0_date": "2026-02-05",
-            "dcl0_price": 170.8216,
-            "hch_date": "2026-02-09",
-            "hch_price": 193.4241,
-            "hcl_date": "2026-02-17",
-            "hcl_price": 178.9617,
-            "dch_date": "2026-02-25",
-            "dch_price": 197.3892,
-            "dcl1_date": "2026-03-30",
-            "dcl1_price": 164.0788,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 36,
-            "intermediate_cycle_start": "2025-09-05"
-          },
-          {
-            "cycle_num": 1,
-            "dcl0_date": "2026-03-30",
-            "dcl0_price": 164.0788,
-            "hch_date": "2026-04-27",
-            "hch_price": 216.5776,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2026-04-27",
-            "dch_price": 216.5776,
-            "dcl1_date": "2026-05-04",
-            "dcl1_price": 194.5133,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 24,
-            "intermediate_cycle_start": "2026-03-30"
-          },
-          {
-            "cycle_num": 2,
-            "dcl0_date": "2026-05-04",
-            "dcl0_price": 194.5133,
-            "hch_date": "2026-05-14",
-            "hch_price": 236.2646,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2026-05-14",
-            "dch_price": 236.2646,
-            "dcl1_date": "2026-06-29",
-            "dcl1_price": 189.8,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 38,
-            "intermediate_cycle_start": "2026-03-30"
-          },
-          {
-            "cycle_num": 3,
-            "dcl0_date": "2026-06-29",
-            "dcl0_price": 189.8,
-            "hch_date": "2026-07-22",
-            "hch_price": 214.39,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2026-07-22",
-            "dch_price": 214.39,
-            "dcl1_date": "2026-07-29",
-            "dcl1_price": 190.01,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 21,
-            "intermediate_cycle_start": "2026-03-30"
-          },
-          {
-            "cycle_num": 1,
-            "dcl0_date": "2026-07-29",
-            "dcl0_price": 190.01,
-            "hch_date": "2026-08-17",
-            "hch_price": 227.92,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2026-08-17",
-            "dch_price": 227.92,
-            "dcl1_date": "2026-08-24",
-            "dcl1_price": 207.25,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 18,
-            "intermediate_cycle_start": "2026-07-29"
-          }
-        ],
-        "cycle_len_intermediate": 120,
-        "intermediate_cycles": [
-          {
-            "icl0_date": "2025-04-07",
-            "icl0_price": 86.4988,
-            "ic_hch_date": "2025-08-12",
-            "ic_hch_price": 184.2346,
-            "ic_hcl_date": null,
-            "ic_hcl_price": null,
-            "ich_date": "2025-08-12",
-            "ich_price": 184.2346,
-            "icl1_date": "2025-09-05",
-            "icl1_price": 163.8518,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 104,
-            "daily_cycle_count": 4,
-            "member_daily_cycles": [
-              "2025-04-21",
-              "2025-05-23",
-              "2025-06-23",
-              "2025-07-22"
-            ]
-          },
-          {
-            "icl0_date": "2025-09-05",
-            "icl0_price": 163.8518,
-            "ic_hch_date": "2025-10-29",
-            "ic_hch_price": 211.9197,
-            "ic_hcl_date": null,
-            "ic_hcl_price": null,
-            "ich_date": "2025-10-29",
-            "ich_price": 211.9197,
-            "icl1_date": "2026-03-30",
-            "icl1_price": 164.0788,
-            "translation": "LEFT",
-            "failed": false,
-            "length": 141,
-            "daily_cycle_count": 5,
-            "member_daily_cycles": [
-              "2025-09-05",
-              "2025-10-15",
-              "2025-11-25",
-              "2025-12-17",
-              "2026-02-05"
-            ]
-          },
-          {
-            "icl0_date": "2026-03-30",
-            "icl0_price": 164.0788,
-            "ic_hch_date": "2026-05-14",
-            "ic_hch_price": 236.2646,
-            "ic_hcl_date": null,
-            "ic_hcl_price": null,
-            "ich_date": "2026-05-14",
-            "ich_price": 236.2646,
-            "icl1_date": "2026-07-29",
-            "icl1_price": 190.01,
-            "translation": "LEFT",
-            "failed": false,
-            "length": 83,
-            "daily_cycle_count": 3,
-            "member_daily_cycles": [
-              "2026-03-30",
-              "2026-05-04",
-              "2026-06-29"
-            ]
-          }
-        ],
-        "live_daily_cycle": {
-          "live": true,
-          "scale": "daily",
-          "dcl0_date": "2026-08-24",
-          "dcl0_price": 207.25,
-          "hch_date": "2026-08-27",
-          "hch_price": 230.47,
-          "hcl_date": "2026-09-01",
-          "hcl_price": 215.1,
-          "dch_date": "2026-09-04",
-          "dch_price": 234.76,
-          "translation": "PENDING",
-          "bars_elapsed": 10,
-          "projected_cycle_len": 30,
-          "projected_midpoint_date": "2026-09-08",
-          "cycle_num": 2
-        },
-        "live_intermediate_cycle": {
-          "live": true,
-          "scale": "intermediate",
-          "dcl0_date": "2026-07-29",
-          "dcl0_price": 190.01,
-          "hch_date": null,
-          "hch_price": null,
-          "hcl_date": null,
-          "hcl_price": null,
-          "dch_date": "2026-09-04",
-          "dch_price": 234.76,
-          "translation": "PENDING",
-          "bars_elapsed": 28,
-          "projected_cycle_len": 120,
-          "projected_midpoint_date": "2026-09-08"
-        },
-        "daily_trendline": {
-          "applicable": false,
-          "broken": false,
-          "trendline_price": null,
-          "slope_pct_per_bar": null
-        },
-        "intermediate_trendline": {
-          "applicable": false,
-          "broken": false,
-          "trendline_price": null,
-          "slope_pct_per_bar": null
-        },
-        "live_daily_trendline": {
-          "applicable": true,
-          "broken": false,
-          "trendline_price": 220.3333,
-          "slope_pct_per_bar": 0.631
-        },
-        "live_daily_resistance": {
-          "applicable": true,
-          "broken": true,
-          "trendline_price": 235.475,
-          "slope_pct_per_bar": 0.31
-        },
-        "live_intermediate_resistance": {
-          "applicable": false,
-          "broken": false,
-          "trendline_price": null,
-          "slope_pct_per_bar": null
-        },
-        "cycle_failing_now": {
-          "failing": false,
-          "lowest_since_dcl0": 209.23,
-          "pct_below_dcl0": 0.0
-        },
-        "entry_zone": {
-          "zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
-          "risk": "LOW",
-          "eligible_for_entry": true,
-          "reasons": [
-            "90% confirmation: close above HCH resistance + 10D SMA, no trendline break"
-          ]
-        },
-        "predicted_move": {
-          "target_price": 248.5997,
-          "target_basis": "Prior Daily Cycle amplitude 20.0% projected from new DCL0",
-          "prior_cycle_amplitude_pct": 19.95,
-          "bars_to_dc3_estimate": 20,
-          "est_date_dc3": "2026-10-06"
-        },
-        "chart_overlay": {
-          "daily_support_line": [
-            {
-              "date": "2026-08-24",
-              "price": 207.25
-            },
-            {
-              "date": "2026-09-01",
-              "price": 215.1
-            },
-            {
-              "date": "2026-09-08",
-              "price": 220.3333
-            }
-          ],
-          "daily_resistance_line": [
-            {
-              "date": "2026-08-27",
-              "price": 230.47
-            },
-            {
-              "date": "2026-09-04",
-              "price": 234.76
-            },
-            {
-              "date": "2026-09-08",
-              "price": 235.475
-            }
-          ],
-          "intermediate_support_line": [
-            {
-              "date": "2026-07-29",
-              "price": 190.01
-            }
-          ],
-          "intermediate_resistance_line": [
-            {
-              "date": "2026-09-04",
-              "price": 234.76
-            }
-          ],
-          "daily_markers": {
-            "dcl0": {
-              "date": "2026-08-24",
-              "price": 207.25
-            },
-            "hch": {
-              "date": "2026-08-27",
-              "price": 230.47
-            },
-            "hcl": {
-              "date": "2026-09-01",
-              "price": 215.1
-            },
-            "dch": {
-              "date": "2026-09-04",
-              "price": 234.76
-            }
-          },
-          "intermediate_markers": {
-            "dcl0": {
-              "date": "2026-07-29",
-              "price": 190.01
-            },
-            "dch": {
-              "date": "2026-09-04",
-              "price": 234.76
-            }
-          }
-        }
-      },
-      "zen": {
-        "status": "ok",
-        "zen_signal": "HOLD",
-        "zen_score": 69,
-        "eligible_for_entry": false,
-        "trend": {
-          "direction": "BULLISH",
-          "consecutive_bars": 4,
-          "last_bullish": true
-        },
-        "breakout": {
-          "bullish_breakout": false,
-          "bearish_breakout": false,
-          "resistance": 234.76,
-          "support": 207.25
-        },
-        "price": 229.72,
-        "stop_price": null,
-        "target_price": null,
-        "reward_risk": null,
-        "reasons": [
-          "Heiken-Ashi trend BULLISH for 4 bars"
-        ]
-      },
-      "reasoning": {
-        "ticker": "NVDA",
-        "recommendation": "STRONG BUY",
-        "rec_color": "#00aa00",
-        "blended_score": 66.2,
-        "tech_score": 57,
-        "cycle_score": 80,
-        "confidence": "MEDIUM",
-        "timing": "Consider entering NOW or on next minor pullback",
-        "reasons": [
-          "RSI 59.77 neutral",
-          "RSI trending DOWN \u2014 momentum weakening",
-          "MACD above signal line \u2014 mild bullish bias",
-          "Price within Bollinger Bands (%B=0.849) \u2014 normal range",
-          "Low volume \u2014 move may lack conviction",
-          "\u2705 GOLDEN CROSS (50D SMA > 200D SMA) \u2014 long-term uptrend",
-          "Price above 50-day SMA \u2014 medium-term uptrend intact",
-          "Stochastic K=81.68 \u2014 overbought",
-          "Near 52-week HIGH \u2014 breakout potential but extended",
-          "RIGHT-translated cycle (Daily Cycle #1 of IC)",
-          "\u2705 90% confirmation signal \u2014 above HCH resistance and 10D SMA",
-          "90% confirmation: close above HCH resistance + 10D SMA, no trendline break"
-        ],
-        "price": 229.72,
-        "entry_price": 227.4228,
-        "entry_type": "Limit order ~1% below current price",
-        "stop_loss": 218.9416,
-        "stop_note": "Stop 1.5x ATR below entry (ATR=$7.1856)",
-        "take_profit": 251.2768,
-        "dividend_note": "Dividend yield: 43.0% | Ex-dividend: 1788998400",
-        "risk_reward": 2.0
-      },
-      "correlation": {
-        "status": "ok",
-        "benchmarks": {
-          "S&P500": {
-            "correlation": 0.637,
-            "beta": 2.066
-          },
-          "NASDAQ": {
-            "correlation": 0.686,
-            "beta": 1.391
-          },
-          "Dow": {
-            "correlation": 0.353,
-            "beta": 1.176
-          }
-        },
-        "avg_correlation": 0.559,
-        "us_trend": "MIXED",
-        "us_benchmark_trends": {
-          "S&P500": {
-            "price": 7694.24,
-            "5d_pct": 0.11,
-            "20d_pct": -0.76,
-            "trend": "MIXED"
-          },
-          "NASDAQ": {
-            "price": 26429.05,
-            "5d_pct": 0.22,
-            "20d_pct": -0.66,
-            "trend": "MIXED"
-          },
-          "Dow": {
-            "price": 52914.77,
-            "5d_pct": -0.51,
-            "20d_pct": -1.97,
-            "trend": "BEARISH"
-          }
-        },
-        "outlook": "LOW CORRELATION \u2014 moves independently of US"
-      },
-      "error": null
-    },
-    {
       "ticker": "TSLA",
       "name": "Tesla, Inc.",
       "sector": "Consumer Cyclical",
-      "market_cap": 1418598416384,
+      "market_cap": 1443362242560,
       "tech": {
-        "price": 359.2287,
-        "price_1d_pct": 1.45,
-        "price_5d_pct": -2.37,
-        "price_20d_pct": 8.57,
+        "price": 365.45,
+        "price_1d_pct": 3.21,
+        "price_5d_pct": -0.68,
+        "price_20d_pct": 10.45,
         "high_52w": 498.83,
         "low_52w": 297.38,
-        "pct_from_52w_high": -27.99,
-        "rsi": 52.79,
+        "pct_from_52w_high": -26.74,
+        "rsi": 54.86,
         "rsi_prev": 50.93,
-        "macd": 3.7073,
-        "macd_signal": 1.3281,
-        "macd_hist": 2.3792,
+        "macd": 4.2036,
+        "macd_signal": 1.4274,
+        "macd_hist": 2.7762,
         "macd_bullish_cross": "False",
         "macd_death_cross": "False",
-        "bb_upper": 373.6439,
-        "bb_mid": 349.8569,
-        "bb_lower": 326.07,
-        "pct_b": 0.697,
-        "atr": 14.7733,
-        "stop_loss": 337.0688,
-        "take_profit": 403.5486,
-        "stoch_k": 48.67,
-        "stoch_d": 59.19,
-        "volume": 9303233,
+        "bb_upper": 374.6243,
+        "bb_mid": 350.168,
+        "bb_lower": 325.7117,
+        "pct_b": 0.812,
+        "atr": 15.0547,
+        "stop_loss": 342.868,
+        "take_profit": 410.6141,
+        "stoch_k": 61.54,
+        "stoch_d": 63.48,
+        "volume": 21366450,
         "volume_signal": {
-          "ratio": 0.25,
-          "signal": "LOW_VOLUME",
-          "avg_volume": 37162341
+          "ratio": 0.57,
+          "signal": "NORMAL",
+          "avg_volume": 37765502
         },
         "moving_averages": {
-          "sma_10": 357.0359,
-          "sma_20": 349.8569,
-          "sma_50": 357.5382,
-          "sma_200": 399.3483,
-          "ema_9": 357.722,
-          "ema_21": 352.3563
+          "sma_10": 357.658,
+          "sma_20": 350.168,
+          "sma_50": 357.6626,
+          "sma_200": 399.3794,
+          "ema_9": 358.9663,
+          "ema_21": 352.9219
         },
         "above_50sma": "True",
         "above_200sma": "False",
@@ -1867,7 +1154,7 @@
           "resistance": 384.04,
           "support": 323.64
         },
-        "price": 359.2287,
+        "price": 365.45,
         "stop_price": null,
         "target_price": null,
         "reward_risk": null,
@@ -1885,22 +1172,21 @@
         "confidence": "MEDIUM",
         "timing": "Consider entering NOW or on next minor pullback",
         "reasons": [
-          "RSI 52.79 neutral",
+          "RSI 54.86 neutral",
           "RSI trending UP \u2014 momentum building",
           "MACD above signal line \u2014 mild bullish bias",
-          "Price within Bollinger Bands (%B=0.697) \u2014 normal range",
-          "Low volume \u2014 move may lack conviction",
+          "Price within Bollinger Bands (%B=0.812) \u2014 normal range",
           "Price above 50-day SMA \u2014 medium-term uptrend intact",
-          "Stock is 27.99% below 52-week high \u2014 discounted",
+          "Stock is 26.74% below 52-week high \u2014 discounted",
           "RIGHT-translated cycle (Daily Cycle #1 of IC)",
           "No qualifying low-risk entry pattern present"
         ],
-        "price": 359.2287,
-        "entry_price": 355.6364,
+        "price": 365.45,
+        "entry_price": 361.7955,
         "entry_type": "Limit order ~1% below current price",
-        "stop_loss": 337.0688,
-        "stop_note": "Stop 1.5x ATR below entry (ATR=$14.7733)",
-        "take_profit": 403.5486,
+        "stop_loss": 342.868,
+        "stop_note": "Stop 1.5x ATR below entry (ATR=$15.0547)",
+        "take_profit": 410.6141,
         "dividend_note": null,
         "risk_reward": 2.0
       },
@@ -1908,37 +1194,747 @@
         "status": "ok",
         "benchmarks": {
           "S&P500": {
-            "correlation": 0.67,
-            "beta": 3.06
+            "correlation": 0.662,
+            "beta": 3.04
           },
           "NASDAQ": {
-            "correlation": 0.687,
-            "beta": 1.96
+            "correlation": 0.682,
+            "beta": 1.957
           },
           "Dow": {
-            "correlation": 0.442,
-            "beta": 2.073
+            "correlation": 0.427,
+            "beta": 2.008
           }
         },
-        "avg_correlation": 0.6,
+        "avg_correlation": 0.59,
         "us_trend": "MIXED",
         "us_benchmark_trends": {
           "S&P500": {
-            "price": 7694.24,
-            "5d_pct": 0.11,
-            "20d_pct": -0.76,
+            "price": 7692.5,
+            "5d_pct": 0.08,
+            "20d_pct": -0.78,
             "trend": "MIXED"
           },
           "NASDAQ": {
-            "price": 26429.05,
-            "5d_pct": 0.22,
-            "20d_pct": -0.66,
+            "price": 26445.28,
+            "5d_pct": 0.28,
+            "20d_pct": -0.6,
             "trend": "MIXED"
           },
           "Dow": {
-            "price": 52914.77,
-            "5d_pct": -0.51,
-            "20d_pct": -1.97,
+            "price": 52868.15,
+            "5d_pct": -0.6,
+            "20d_pct": -2.05,
+            "trend": "BEARISH"
+          }
+        },
+        "outlook": "LOW CORRELATION \u2014 moves independently of US"
+      },
+      "error": null
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "sector": "Technology",
+      "market_cap": 5480161214464,
+      "tech": {
+        "price": 226.95,
+        "price_1d_pct": -1.48,
+        "price_5d_pct": 2.79,
+        "price_20d_pct": 4.32,
+        "high_52w": 236.2646,
+        "low_52w": 164.0788,
+        "pct_from_52w_high": -3.94,
+        "rsi": 57.21,
+        "rsi_prev": 60.39,
+        "macd": 3.9689,
+        "macd_signal": 3.191,
+        "macd_hist": 0.7779,
+        "macd_bullish_cross": "False",
+        "macd_death_cross": "False",
+        "bb_upper": 233.1325,
+        "bb_mid": 220.552,
+        "bb_lower": 207.9715,
+        "pct_b": 0.754,
+        "atr": 7.3492,
+        "stop_loss": 215.9262,
+        "take_profit": 248.9976,
+        "stoch_k": 71.61,
+        "stoch_d": 82.31,
+        "volume": 42472031,
+        "volume_signal": {
+          "ratio": 0.34,
+          "signal": "LOW_VOLUME",
+          "avg_volume": 125231091
+        },
+        "moving_averages": {
+          "sma_10": 221.663,
+          "sma_20": 220.552,
+          "sma_50": 211.2548,
+          "sma_200": 196.7545,
+          "ema_9": 223.7007,
+          "ema_21": 219.7601
+        },
+        "above_50sma": "True",
+        "above_200sma": "True",
+        "golden_cross": "True",
+        "tech_score": 62,
+        "signal": "BUY",
+        "color": "lightgreen"
+      },
+      "cycle": {
+        "status": "ok",
+        "cycle_len": 30,
+        "cycle_score": 65,
+        "cycle_signal": "CYCLE_BUY",
+        "current_cycle": {
+          "cycle_num": 1,
+          "dcl0_date": "2026-07-29",
+          "dcl0_price": 190.01,
+          "hch_date": "2026-08-17",
+          "hch_price": 227.92,
+          "hcl_date": null,
+          "hcl_price": null,
+          "dch_date": "2026-08-17",
+          "dch_price": 227.92,
+          "dcl1_date": "2026-08-24",
+          "dcl1_price": 207.25,
+          "translation": "RIGHT",
+          "failed": false,
+          "length": 18,
+          "intermediate_cycle_start": "2026-07-29"
+        },
+        "bars_since_dcl": 10,
+        "pct_through_cycle": 33.3,
+        "high_risk_zone": false,
+        "trendline_break": false,
+        "confirmation_signal": false,
+        "reasons": [
+          "RIGHT-translated cycle (Daily Cycle #1 of IC)",
+          "At/above 2nd Daily Cycle HCL"
+        ],
+        "entry_note": "Enter near DCL or on confirmation signal above HCH + 10D SMA",
+        "exit_note": "Exit/tighten stops if trendline breaks below HCL (~$None)",
+        "all_cycles": [
+          {
+            "cycle_num": null,
+            "dcl0_date": "2024-09-18",
+            "dcl0_price": 113.0434,
+            "hch_date": "2024-09-26",
+            "hch_price": 127.4708,
+            "hcl_date": "2024-10-02",
+            "hcl_price": 114.9604,
+            "dch_date": "2024-10-14",
+            "dch_price": 139.3822,
+            "dcl1_date": "2024-10-15",
+            "dcl1_price": 128.5392,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 19,
+            "intermediate_cycle_start": null
+          },
+          {
+            "cycle_num": null,
+            "dcl0_date": "2024-10-15",
+            "dcl0_price": 128.5392,
+            "hch_date": "2024-10-22",
+            "hch_price": 144.1947,
+            "hcl_date": "2024-10-31",
+            "hcl_price": 131.9039,
+            "dch_date": "2024-11-21",
+            "dch_price": 152.6515,
+            "dcl1_date": "2024-12-17",
+            "dcl1_price": 126.6708,
+            "translation": "RIGHT",
+            "failed": true,
+            "length": 44,
+            "intermediate_cycle_start": null
+          },
+          {
+            "cycle_num": null,
+            "dcl0_date": "2024-12-17",
+            "dcl0_price": 126.6708,
+            "hch_date": "2024-12-24",
+            "hch_price": 141.6884,
+            "hcl_date": "2024-12-31",
+            "hcl_price": 133.6304,
+            "dch_date": "2025-01-07",
+            "dch_price": 152.9016,
+            "dcl1_date": "2025-02-03",
+            "dcl1_price": 112.8415,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 30,
+            "intermediate_cycle_start": null
+          },
+          {
+            "cycle_num": null,
+            "dcl0_date": "2025-02-03",
+            "dcl0_price": 112.8415,
+            "hch_date": "2025-02-18",
+            "hch_price": 143.2261,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2025-02-18",
+            "dch_price": 143.2261,
+            "dcl1_date": "2025-03-11",
+            "dcl1_price": 104.6137,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 25,
+            "intermediate_cycle_start": null
+          },
+          {
+            "cycle_num": null,
+            "dcl0_date": "2025-03-11",
+            "dcl0_price": 104.6137,
+            "hch_date": "2025-03-24",
+            "hch_price": 122.049,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2025-03-17",
+            "dch_price": 122.718,
+            "dcl1_date": "2025-04-21",
+            "dcl1_price": 94.907,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 28,
+            "intermediate_cycle_start": null
+          },
+          {
+            "cycle_num": 1,
+            "dcl0_date": "2025-04-21",
+            "dcl0_price": 94.907,
+            "hch_date": "2025-04-25",
+            "hch_price": 111.7634,
+            "hcl_date": "2025-04-30",
+            "hcl_price": 103.9343,
+            "dch_date": "2025-05-21",
+            "dch_price": 137.2077,
+            "dcl1_date": "2025-05-23",
+            "dcl1_price": 128.9792,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 24,
+            "intermediate_cycle_start": "2025-04-07"
+          },
+          {
+            "cycle_num": 2,
+            "dcl0_date": "2025-05-23",
+            "dcl0_price": 128.9792,
+            "hch_date": "2025-05-29",
+            "hch_price": 143.2892,
+            "hcl_date": "2025-05-30",
+            "hcl_price": 132.734,
+            "dch_date": "2025-06-20",
+            "dch_price": 146.0055,
+            "dcl1_date": "2025-06-23",
+            "dcl1_price": 141.8411,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 19,
+            "intermediate_cycle_start": "2025-04-07"
+          },
+          {
+            "cycle_num": 3,
+            "dcl0_date": "2025-06-23",
+            "dcl0_price": 141.8411,
+            "hch_date": "2025-06-27",
+            "hch_price": 158.4989,
+            "hcl_date": "2025-07-01",
+            "hcl_price": 151.2885,
+            "dch_date": "2025-07-18",
+            "dch_price": 174.0182,
+            "dcl1_date": "2025-07-22",
+            "dcl1_price": 164.3611,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 20,
+            "intermediate_cycle_start": "2025-04-07"
+          },
+          {
+            "cycle_num": 4,
+            "dcl0_date": "2025-07-22",
+            "dcl0_price": 164.3611,
+            "hch_date": "2025-07-31",
+            "hch_price": 183.0562,
+            "hcl_date": "2025-08-01",
+            "hcl_price": 170.6627,
+            "dch_date": "2025-08-12",
+            "dch_price": 184.2346,
+            "dcl1_date": "2025-09-05",
+            "dcl1_price": 163.8518,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 32,
+            "intermediate_cycle_start": "2025-04-07"
+          },
+          {
+            "cycle_num": 1,
+            "dcl0_date": "2025-09-05",
+            "dcl0_price": 163.8518,
+            "hch_date": "2025-09-11",
+            "hch_price": 180.0503,
+            "hcl_date": "2025-09-17",
+            "hcl_price": 168.1955,
+            "dch_date": "2025-10-10",
+            "dch_price": 195.3708,
+            "dcl1_date": "2025-10-15",
+            "dcl1_price": 177.0642,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 28,
+            "intermediate_cycle_start": "2025-09-05"
+          },
+          {
+            "cycle_num": 2,
+            "dcl0_date": "2025-10-15",
+            "dcl0_price": 177.0642,
+            "hch_date": "2025-10-20",
+            "hch_price": 184.9641,
+            "hcl_date": "2025-10-22",
+            "hcl_price": 176.5348,
+            "dch_date": "2025-10-29",
+            "dch_price": 211.9197,
+            "dcl1_date": "2025-11-25",
+            "dcl1_price": 169.334,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 29,
+            "intermediate_cycle_start": "2025-09-05"
+          },
+          {
+            "cycle_num": 3,
+            "dcl0_date": "2025-11-25",
+            "dcl0_price": 169.334,
+            "hch_date": "2025-12-02",
+            "hch_price": 185.4235,
+            "hcl_date": "2025-12-03",
+            "hcl_price": 178.8819,
+            "dch_date": "2025-12-08",
+            "dch_price": 187.771,
+            "dcl1_date": "2025-12-17",
+            "dcl1_price": 170.1025,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 15,
+            "intermediate_cycle_start": "2025-09-05"
+          },
+          {
+            "cycle_num": 4,
+            "dcl0_date": "2025-12-17",
+            "dcl0_price": 170.1025,
+            "hch_date": "2025-12-26",
+            "hch_price": 192.4553,
+            "hcl_date": "2026-01-20",
+            "hcl_price": 177.3936,
+            "dch_date": "2026-01-30",
+            "dch_price": 194.2531,
+            "dcl1_date": "2026-02-05",
+            "dcl1_price": 170.8217,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 33,
+            "intermediate_cycle_start": "2025-09-05"
+          },
+          {
+            "cycle_num": 5,
+            "dcl0_date": "2026-02-05",
+            "dcl0_price": 170.8217,
+            "hch_date": "2026-02-09",
+            "hch_price": 193.4241,
+            "hcl_date": "2026-02-17",
+            "hcl_price": 178.9617,
+            "dch_date": "2026-02-25",
+            "dch_price": 197.3892,
+            "dcl1_date": "2026-03-30",
+            "dcl1_price": 164.0788,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 36,
+            "intermediate_cycle_start": "2025-09-05"
+          },
+          {
+            "cycle_num": 1,
+            "dcl0_date": "2026-03-30",
+            "dcl0_price": 164.0788,
+            "hch_date": "2026-04-27",
+            "hch_price": 216.5776,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2026-04-27",
+            "dch_price": 216.5776,
+            "dcl1_date": "2026-05-04",
+            "dcl1_price": 194.5133,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 24,
+            "intermediate_cycle_start": "2026-03-30"
+          },
+          {
+            "cycle_num": 2,
+            "dcl0_date": "2026-05-04",
+            "dcl0_price": 194.5133,
+            "hch_date": "2026-05-14",
+            "hch_price": 236.2646,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2026-05-14",
+            "dch_price": 236.2646,
+            "dcl1_date": "2026-06-29",
+            "dcl1_price": 189.8,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 38,
+            "intermediate_cycle_start": "2026-03-30"
+          },
+          {
+            "cycle_num": 3,
+            "dcl0_date": "2026-06-29",
+            "dcl0_price": 189.8,
+            "hch_date": "2026-07-22",
+            "hch_price": 214.39,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2026-07-22",
+            "dch_price": 214.39,
+            "dcl1_date": "2026-07-29",
+            "dcl1_price": 190.01,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 21,
+            "intermediate_cycle_start": "2026-03-30"
+          },
+          {
+            "cycle_num": 1,
+            "dcl0_date": "2026-07-29",
+            "dcl0_price": 190.01,
+            "hch_date": "2026-08-17",
+            "hch_price": 227.92,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2026-08-17",
+            "dch_price": 227.92,
+            "dcl1_date": "2026-08-24",
+            "dcl1_price": 207.25,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 18,
+            "intermediate_cycle_start": "2026-07-29"
+          }
+        ],
+        "cycle_len_intermediate": 120,
+        "intermediate_cycles": [
+          {
+            "icl0_date": "2025-04-07",
+            "icl0_price": 86.4988,
+            "ic_hch_date": "2025-08-12",
+            "ic_hch_price": 184.2346,
+            "ic_hcl_date": null,
+            "ic_hcl_price": null,
+            "ich_date": "2025-08-12",
+            "ich_price": 184.2346,
+            "icl1_date": "2025-09-05",
+            "icl1_price": 163.8518,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 104,
+            "daily_cycle_count": 4,
+            "member_daily_cycles": [
+              "2025-04-21",
+              "2025-05-23",
+              "2025-06-23",
+              "2025-07-22"
+            ]
+          },
+          {
+            "icl0_date": "2025-09-05",
+            "icl0_price": 163.8518,
+            "ic_hch_date": "2025-10-29",
+            "ic_hch_price": 211.9197,
+            "ic_hcl_date": null,
+            "ic_hcl_price": null,
+            "ich_date": "2025-10-29",
+            "ich_price": 211.9197,
+            "icl1_date": "2026-03-30",
+            "icl1_price": 164.0788,
+            "translation": "LEFT",
+            "failed": false,
+            "length": 141,
+            "daily_cycle_count": 5,
+            "member_daily_cycles": [
+              "2025-09-05",
+              "2025-10-15",
+              "2025-11-25",
+              "2025-12-17",
+              "2026-02-05"
+            ]
+          },
+          {
+            "icl0_date": "2026-03-30",
+            "icl0_price": 164.0788,
+            "ic_hch_date": "2026-05-14",
+            "ic_hch_price": 236.2646,
+            "ic_hcl_date": null,
+            "ic_hcl_price": null,
+            "ich_date": "2026-05-14",
+            "ich_price": 236.2646,
+            "icl1_date": "2026-07-29",
+            "icl1_price": 190.01,
+            "translation": "LEFT",
+            "failed": false,
+            "length": 83,
+            "daily_cycle_count": 3,
+            "member_daily_cycles": [
+              "2026-03-30",
+              "2026-05-04",
+              "2026-06-29"
+            ]
+          }
+        ],
+        "live_daily_cycle": {
+          "live": true,
+          "scale": "daily",
+          "dcl0_date": "2026-08-24",
+          "dcl0_price": 207.25,
+          "hch_date": "2026-08-27",
+          "hch_price": 230.47,
+          "hcl_date": "2026-09-01",
+          "hcl_price": 215.1,
+          "dch_date": "2026-09-04",
+          "dch_price": 234.76,
+          "translation": "PENDING",
+          "bars_elapsed": 10,
+          "projected_cycle_len": 30,
+          "projected_midpoint_date": "2026-09-08",
+          "cycle_num": 2
+        },
+        "live_intermediate_cycle": {
+          "live": true,
+          "scale": "intermediate",
+          "dcl0_date": "2026-07-29",
+          "dcl0_price": 190.01,
+          "hch_date": null,
+          "hch_price": null,
+          "hcl_date": null,
+          "hcl_price": null,
+          "dch_date": "2026-09-04",
+          "dch_price": 234.76,
+          "translation": "PENDING",
+          "bars_elapsed": 28,
+          "projected_cycle_len": 120,
+          "projected_midpoint_date": "2026-09-08"
+        },
+        "daily_trendline": {
+          "applicable": false,
+          "broken": false,
+          "trendline_price": null,
+          "slope_pct_per_bar": null
+        },
+        "intermediate_trendline": {
+          "applicable": false,
+          "broken": false,
+          "trendline_price": null,
+          "slope_pct_per_bar": null
+        },
+        "live_daily_trendline": {
+          "applicable": true,
+          "broken": false,
+          "trendline_price": 220.3333,
+          "slope_pct_per_bar": 0.631
+        },
+        "live_daily_resistance": {
+          "applicable": true,
+          "broken": true,
+          "trendline_price": 235.475,
+          "slope_pct_per_bar": 0.31
+        },
+        "live_intermediate_resistance": {
+          "applicable": false,
+          "broken": false,
+          "trendline_price": null,
+          "slope_pct_per_bar": null
+        },
+        "cycle_failing_now": {
+          "failing": false,
+          "lowest_since_dcl0": 209.23,
+          "pct_below_dcl0": 0.0
+        },
+        "entry_zone": {
+          "zone": "DC2_HCL",
+          "risk": "LOW",
+          "eligible_for_entry": true,
+          "reasons": [
+            "At/above 2nd Daily Cycle HCL"
+          ]
+        },
+        "predicted_move": {
+          "target_price": 248.5997,
+          "target_basis": "Prior Daily Cycle amplitude 20.0% projected from new DCL0",
+          "prior_cycle_amplitude_pct": 19.95,
+          "bars_to_dc3_estimate": 20,
+          "est_date_dc3": "2026-10-06"
+        },
+        "chart_overlay": {
+          "daily_support_line": [
+            {
+              "date": "2026-08-24",
+              "price": 207.25
+            },
+            {
+              "date": "2026-09-01",
+              "price": 215.1
+            },
+            {
+              "date": "2026-09-08",
+              "price": 220.3333
+            }
+          ],
+          "daily_resistance_line": [
+            {
+              "date": "2026-08-27",
+              "price": 230.47
+            },
+            {
+              "date": "2026-09-04",
+              "price": 234.76
+            },
+            {
+              "date": "2026-09-08",
+              "price": 235.475
+            }
+          ],
+          "intermediate_support_line": [
+            {
+              "date": "2026-07-29",
+              "price": 190.01
+            }
+          ],
+          "intermediate_resistance_line": [
+            {
+              "date": "2026-09-04",
+              "price": 234.76
+            }
+          ],
+          "daily_markers": {
+            "dcl0": {
+              "date": "2026-08-24",
+              "price": 207.25
+            },
+            "hch": {
+              "date": "2026-08-27",
+              "price": 230.47
+            },
+            "hcl": {
+              "date": "2026-09-01",
+              "price": 215.1
+            },
+            "dch": {
+              "date": "2026-09-04",
+              "price": 234.76
+            }
+          },
+          "intermediate_markers": {
+            "dcl0": {
+              "date": "2026-07-29",
+              "price": 190.01
+            },
+            "dch": {
+              "date": "2026-09-04",
+              "price": 234.76
+            }
+          }
+        }
+      },
+      "zen": {
+        "status": "ok",
+        "zen_signal": "HOLD",
+        "zen_score": 69,
+        "eligible_for_entry": false,
+        "trend": {
+          "direction": "BULLISH",
+          "consecutive_bars": 4,
+          "last_bullish": true
+        },
+        "breakout": {
+          "bullish_breakout": false,
+          "bearish_breakout": false,
+          "resistance": 234.76,
+          "support": 207.25
+        },
+        "price": 226.95,
+        "stop_price": null,
+        "target_price": null,
+        "reward_risk": null,
+        "reasons": [
+          "Heiken-Ashi trend BULLISH for 4 bars"
+        ]
+      },
+      "reasoning": {
+        "ticker": "NVDA",
+        "recommendation": "STRONG BUY",
+        "rec_color": "#00aa00",
+        "blended_score": 63.2,
+        "tech_score": 62,
+        "cycle_score": 65,
+        "confidence": "MEDIUM",
+        "timing": "Consider entering NOW or on next minor pullback",
+        "reasons": [
+          "RSI 57.21 neutral",
+          "RSI trending DOWN \u2014 momentum weakening",
+          "MACD above signal line \u2014 mild bullish bias",
+          "Price within Bollinger Bands (%B=0.754) \u2014 normal range",
+          "Low volume \u2014 move may lack conviction",
+          "\u2705 GOLDEN CROSS (50D SMA > 200D SMA) \u2014 long-term uptrend",
+          "Price above 50-day SMA \u2014 medium-term uptrend intact",
+          "Near 52-week HIGH \u2014 breakout potential but extended",
+          "RIGHT-translated cycle (Daily Cycle #1 of IC)",
+          "At/above 2nd Daily Cycle HCL"
+        ],
+        "price": 226.95,
+        "entry_price": 224.6805,
+        "entry_type": "Limit order ~1% below current price",
+        "stop_loss": 215.9262,
+        "stop_note": "Stop 1.5x ATR below entry (ATR=$7.3492)",
+        "take_profit": 248.9976,
+        "dividend_note": "Dividend yield: 43.0% | Ex-dividend: 1788998400",
+        "risk_reward": 2.0
+      },
+      "correlation": {
+        "status": "ok",
+        "benchmarks": {
+          "S&P500": {
+            "correlation": 0.639,
+            "beta": 2.078
+          },
+          "NASDAQ": {
+            "correlation": 0.685,
+            "beta": 1.395
+          },
+          "Dow": {
+            "correlation": 0.362,
+            "beta": 1.207
+          }
+        },
+        "avg_correlation": 0.562,
+        "us_trend": "MIXED",
+        "us_benchmark_trends": {
+          "S&P500": {
+            "price": 7692.5,
+            "5d_pct": 0.08,
+            "20d_pct": -0.78,
+            "trend": "MIXED"
+          },
+          "NASDAQ": {
+            "price": 26445.28,
+            "5d_pct": 0.28,
+            "20d_pct": -0.6,
+            "trend": "MIXED"
+          },
+          "Dow": {
+            "price": 52868.15,
+            "5d_pct": -0.6,
+            "20d_pct": -2.05,
             "trend": "BEARISH"
           }
         },
@@ -1950,44 +1946,44 @@
       "ticker": "AAPL",
       "name": "Apple Inc.",
       "sector": "Technology",
-      "market_cap": 4632776540160,
+      "market_cap": 4615555776512,
       "tech": {
-        "price": 317.46,
-        "price_1d_pct": -0.78,
-        "price_5d_pct": 0.19,
-        "price_20d_pct": 2.98,
+        "price": 316.2647,
+        "price_1d_pct": -1.16,
+        "price_5d_pct": -0.18,
+        "price_20d_pct": 2.6,
         "high_52w": 344.2731,
         "low_52w": 225.1184,
-        "pct_from_52w_high": -7.79,
-        "rsi": 51.42,
+        "pct_from_52w_high": -8.14,
+        "rsi": 50.3,
         "rsi_prev": 53.95,
-        "macd": 2.3466,
-        "macd_signal": 1.343,
-        "macd_hist": 1.0035,
+        "macd": 2.2512,
+        "macd_signal": 1.324,
+        "macd_hist": 0.9273,
         "macd_bullish_cross": "False",
         "macd_death_cross": "False",
-        "bb_upper": 328.4495,
-        "bb_mid": 313.6,
-        "bb_lower": 298.7505,
-        "pct_b": 0.63,
-        "atr": 7.4458,
-        "stop_loss": 306.2913,
-        "take_profit": 339.7974,
-        "stoch_k": 43.91,
-        "stoch_d": 63.78,
-        "volume": 4880641,
+        "bb_upper": 328.3338,
+        "bb_mid": 313.5402,
+        "bb_lower": 298.7467,
+        "pct_b": 0.592,
+        "atr": 7.4765,
+        "stop_loss": 305.05,
+        "take_profit": 338.6942,
+        "stoch_k": 38.89,
+        "stoch_d": 62.11,
+        "volume": 10197168,
         "volume_signal": {
-          "ratio": 0.13,
+          "ratio": 0.27,
           "signal": "LOW_VOLUME",
-          "avg_volume": 37656492
+          "avg_volume": 37922318
         },
         "moving_averages": {
-          "sma_10": 319.021,
-          "sma_20": 313.6,
-          "sma_50": 315.6663,
-          "sma_200": 283.6928,
-          "ema_9": 319.475,
-          "ema_21": 316.792
+          "sma_10": 318.9015,
+          "sma_20": 313.5402,
+          "sma_50": 315.6424,
+          "sma_200": 283.6868,
+          "ema_9": 319.236,
+          "ema_21": 316.6833
         },
         "above_50sma": "True",
         "above_200sma": "True",
@@ -2059,7 +2055,7 @@
             "dch_date": "2024-12-26",
             "dch_price": 258.226,
             "dcl1_date": "2025-01-21",
-            "dcl1_price": 217.7995,
+            "dcl1_price": 217.7994,
             "translation": "RIGHT",
             "failed": true,
             "length": 51,
@@ -2068,7 +2064,7 @@
           {
             "cycle_num": 2,
             "dcl0_date": "2025-01-21",
-            "dcl0_price": 217.7995,
+            "dcl0_price": 217.7994,
             "hch_date": "2025-01-31",
             "hch_price": 245.4091,
             "hcl_date": "2025-02-03",
@@ -2155,13 +2151,13 @@
             "dcl0_date": "2025-10-10",
             "dcl0_price": 243.102,
             "hch_date": "2025-10-31",
-            "hch_price": 276.2994,
+            "hch_price": 276.2993,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2025-10-31",
-            "dch_price": 276.2994,
+            "dch_price": 276.2993,
             "dcl1_date": "2025-11-18",
-            "dcl1_price": 264.5998,
+            "dcl1_price": 264.5997,
             "translation": "RIGHT",
             "failed": false,
             "length": 27,
@@ -2170,7 +2166,7 @@
           {
             "cycle_num": 6,
             "dcl0_date": "2025-11-18",
-            "dcl0_price": 264.5998,
+            "dcl0_price": 264.5997,
             "hch_date": "2025-12-15",
             "hch_price": 279.3895,
             "hcl_date": null,
@@ -2469,7 +2465,7 @@
           "resistance": 330.81,
           "support": 300.57
         },
-        "price": 317.46,
+        "price": 316.2647,
         "stop_price": null,
         "target_price": null,
         "reward_risk": null,
@@ -2487,10 +2483,10 @@
         "confidence": "LOW",
         "timing": "Monitor \u2014 wait for clearer signal before entering",
         "reasons": [
-          "RSI 51.42 neutral",
+          "RSI 50.3 neutral",
           "RSI trending DOWN \u2014 momentum weakening",
           "MACD above signal line \u2014 mild bullish bias",
-          "Price within Bollinger Bands (%B=0.63) \u2014 normal range",
+          "Price within Bollinger Bands (%B=0.592) \u2014 normal range",
           "Low volume \u2014 move may lack conviction",
           "\u2705 GOLDEN CROSS (50D SMA > 200D SMA) \u2014 long-term uptrend",
           "Price above 50-day SMA \u2014 medium-term uptrend intact",
@@ -2498,12 +2494,12 @@
           "\u26a0\ufe0f Trendline BREAK \u2014 closed below HCL support",
           "No qualifying low-risk entry pattern present"
         ],
-        "price": 317.46,
-        "entry_price": 307.9362,
+        "price": 316.2647,
+        "entry_price": 306.7768,
         "entry_type": "Wait for 3% pullback before entering",
-        "stop_loss": 306.2913,
-        "stop_note": "Stop 1.5x ATR below entry (ATR=$7.4458)",
-        "take_profit": 339.7974,
+        "stop_loss": 305.05,
+        "stop_note": "Stop 1.5x ATR below entry (ATR=$7.4765)",
+        "take_profit": 338.6942,
         "dividend_note": "Dividend yield: 34.0% | Ex-dividend: 1786320000",
         "risk_reward": 2.0
       },
@@ -2511,37 +2507,37 @@
         "status": "ok",
         "benchmarks": {
           "S&P500": {
-            "correlation": 0.089,
-            "beta": 0.227
+            "correlation": 0.091,
+            "beta": 0.231
           },
           "NASDAQ": {
             "correlation": 0.058,
             "beta": 0.092
           },
           "Dow": {
-            "correlation": 0.153,
-            "beta": 0.4
+            "correlation": 0.157,
+            "beta": 0.411
           }
         },
-        "avg_correlation": 0.1,
+        "avg_correlation": 0.102,
         "us_trend": "MIXED",
         "us_benchmark_trends": {
           "S&P500": {
-            "price": 7694.24,
-            "5d_pct": 0.11,
-            "20d_pct": -0.76,
+            "price": 7692.5,
+            "5d_pct": 0.08,
+            "20d_pct": -0.78,
             "trend": "MIXED"
           },
           "NASDAQ": {
-            "price": 26429.05,
-            "5d_pct": 0.22,
-            "20d_pct": -0.66,
+            "price": 26445.28,
+            "5d_pct": 0.28,
+            "20d_pct": -0.6,
             "trend": "MIXED"
           },
           "Dow": {
-            "price": 52914.77,
-            "5d_pct": -0.51,
-            "20d_pct": -1.97,
+            "price": 52868.15,
+            "5d_pct": -0.6,
+            "20d_pct": -2.05,
             "trend": "BEARISH"
           }
         },
@@ -2555,27 +2551,27 @@
       "sector": "Basic Materials",
       "market_cap": 9466199040,
       "tech": {
-        "price": 8.06,
+        "price": 8.01,
         "price_1d_pct": -1.35,
         "price_5d_pct": -3.24,
         "price_20d_pct": 9.21,
-        "high_52w": 8.84,
-        "low_52w": 4.51,
+        "high_52w": 8.7852,
+        "low_52w": 4.482,
         "pct_from_52w_high": -8.82,
         "rsi": 56.82,
         "rsi_prev": 59.12,
-        "macd": 0.4118,
-        "macd_signal": 0.501,
-        "macd_hist": -0.0892,
+        "macd": 0.4092,
+        "macd_signal": 0.4978,
+        "macd_hist": -0.0886,
         "macd_bullish_cross": "False",
         "macd_death_cross": "False",
-        "bb_upper": 9.0202,
-        "bb_mid": 8.035,
-        "bb_lower": 7.0498,
+        "bb_upper": 8.9642,
+        "bb_mid": 7.9852,
+        "bb_lower": 7.0061,
         "pct_b": 0.513,
-        "atr": 0.3262,
-        "stop_loss": 7.5707,
-        "take_profit": 9.0386,
+        "atr": 0.3242,
+        "stop_loss": 7.5237,
+        "take_profit": 8.9826,
         "stoch_k": 28.44,
         "stoch_d": 52.09,
         "volume": 5402571,
@@ -2585,12 +2581,12 @@
           "avg_volume": 7841096
         },
         "moving_averages": {
-          "sma_10": 8.299,
-          "sma_20": 8.035,
-          "sma_50": 6.8224,
-          "sma_200": 6.6227,
-          "ema_9": 8.1914,
-          "ema_21": 7.886
+          "sma_10": 8.2475,
+          "sma_20": 7.9852,
+          "sma_50": 6.7801,
+          "sma_200": 6.5816,
+          "ema_9": 8.1405,
+          "ema_21": 7.837
         },
         "above_50sma": "True",
         "above_200sma": "True",
@@ -2607,15 +2603,15 @@
         "current_cycle": {
           "cycle_num": 2,
           "dcl0_date": "2026-07-20",
-          "dcl0_price": 5.38,
+          "dcl0_price": 5.3466,
           "hch_date": "2026-07-23",
-          "hch_price": 6.32,
+          "hch_price": 6.2808,
           "hcl_date": "2026-07-30",
-          "hcl_price": 5.52,
+          "hcl_price": 5.4858,
           "dch_date": "2026-08-11",
-          "dch_price": 7.61,
+          "dch_price": 7.5628,
           "dcl1_date": "2026-08-19",
-          "dcl1_price": 7.08,
+          "dcl1_price": 7.0361,
           "translation": "RIGHT",
           "failed": false,
           "length": 22,
@@ -2634,187 +2630,204 @@
         "exit_note": "Hold with stop below most recent HCL",
         "all_cycles": [
           {
-            "cycle_num": 1,
-            "dcl0_date": "2024-10-09",
-            "dcl0_price": 1.98,
+            "cycle_num": null,
+            "dcl0_date": "2024-10-07",
+            "dcl0_price": 1.9677,
             "hch_date": "2024-10-23",
-            "hch_price": 2.575,
-            "hcl_date": "2024-11-07",
-            "hcl_price": 2.09,
-            "dch_date": "2024-11-28",
-            "dch_price": 2.58,
-            "dcl1_date": "2024-12-04",
-            "dcl1_price": 2.4,
+            "hch_price": 2.559,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2024-10-23",
+            "dch_price": 2.559,
+            "dcl1_date": "2024-11-07",
+            "dcl1_price": 2.077,
             "translation": "RIGHT",
             "failed": false,
-            "length": 40,
-            "intermediate_cycle_start": "2024-10-09"
+            "length": 23,
+            "intermediate_cycle_start": null
           },
           {
-            "cycle_num": 2,
-            "dcl0_date": "2024-12-04",
-            "dcl0_price": 2.4,
+            "cycle_num": null,
+            "dcl0_date": "2024-11-07",
+            "dcl0_price": 2.077,
             "hch_date": "2024-12-12",
-            "hch_price": 2.85,
-            "hcl_date": "2025-01-02",
-            "hcl_price": 2.43,
-            "dch_date": "2025-02-06",
-            "dch_price": 3.33,
-            "dcl1_date": "2025-03-11",
-            "dcl1_price": 2.975,
+            "hch_price": 2.8323,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2024-12-12",
+            "dch_price": 2.8323,
+            "dcl1_date": "2025-01-02",
+            "dcl1_price": 2.4149,
             "translation": "RIGHT",
             "failed": false,
-            "length": 65,
-            "intermediate_cycle_start": "2024-10-09"
+            "length": 37,
+            "intermediate_cycle_start": null
           },
           {
-            "cycle_num": 3,
+            "cycle_num": null,
+            "dcl0_date": "2025-01-02",
+            "dcl0_price": 2.4149,
+            "hch_date": "2025-02-06",
+            "hch_price": 3.3093,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2025-02-06",
+            "dch_price": 3.3093,
+            "dcl1_date": "2025-03-11",
+            "dcl1_price": 2.9565,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 47,
+            "intermediate_cycle_start": null
+          },
+          {
+            "cycle_num": 1,
             "dcl0_date": "2025-03-11",
-            "dcl0_price": 2.975,
+            "dcl0_price": 2.9565,
             "hch_date": "2025-03-28",
-            "hch_price": 3.86,
+            "hch_price": 3.8361,
             "hcl_date": "2025-04-07",
-            "hcl_price": 3.22,
+            "hcl_price": 3.2,
             "dch_date": "2025-04-17",
-            "dch_price": 4.59,
+            "dch_price": 4.5615,
             "dcl1_date": "2025-05-13",
-            "dcl1_price": 3.61,
+            "dcl1_price": 3.5876,
             "translation": "RIGHT",
             "failed": false,
             "length": 42,
-            "intermediate_cycle_start": "2024-10-09"
-          },
-          {
-            "cycle_num": 4,
-            "dcl0_date": "2025-05-13",
-            "dcl0_price": 3.61,
-            "hch_date": "2025-06-16",
-            "hch_price": 5.13,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2025-06-03",
-            "dch_price": 5.24,
-            "dcl1_date": "2025-08-01",
-            "dcl1_price": 3.54,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 57,
-            "intermediate_cycle_start": "2024-10-09"
-          },
-          {
-            "cycle_num": 1,
-            "dcl0_date": "2025-08-01",
-            "dcl0_price": 3.54,
-            "hch_date": "2025-08-21",
-            "hch_price": 4.63,
-            "hcl_date": "2025-08-22",
-            "hcl_price": 4.02,
-            "dch_date": "2025-09-16",
-            "dch_price": 5.77,
-            "dcl1_date": "2025-09-19",
-            "dcl1_price": 5.05,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 35,
-            "intermediate_cycle_start": "2025-08-01"
+            "intermediate_cycle_start": "2025-03-11"
           },
           {
             "cycle_num": 2,
-            "dcl0_date": "2025-09-19",
-            "dcl0_price": 5.05,
-            "hch_date": "2025-10-17",
-            "hch_price": 7.17,
+            "dcl0_date": "2025-05-13",
+            "dcl0_price": 3.5876,
+            "hch_date": "2025-06-16",
+            "hch_price": 5.0982,
             "hcl_date": null,
             "hcl_price": null,
-            "dch_date": "2025-10-17",
-            "dch_price": 7.17,
-            "dcl1_date": "2025-11-05",
-            "dcl1_price": 5.38,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 33,
-            "intermediate_cycle_start": "2025-08-01"
+            "dch_date": "2025-06-03",
+            "dch_price": 5.2075,
+            "dcl1_date": "2025-08-01",
+            "dcl1_price": 3.518,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 57,
+            "intermediate_cycle_start": "2025-03-11"
           },
           {
             "cycle_num": 3,
-            "dcl0_date": "2025-11-05",
-            "dcl0_price": 5.38,
-            "hch_date": "2025-12-01",
-            "hch_price": 6.88,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2025-12-01",
-            "dch_price": 6.88,
-            "dcl1_date": "2025-12-09",
-            "dcl1_price": 6.07,
+            "dcl0_date": "2025-08-01",
+            "dcl0_price": 3.518,
+            "hch_date": "2025-08-21",
+            "hch_price": 4.6013,
+            "hcl_date": "2025-08-22",
+            "hcl_price": 3.9951,
+            "dch_date": "2025-09-16",
+            "dch_price": 5.7342,
+            "dcl1_date": "2025-09-19",
+            "dcl1_price": 5.0187,
             "translation": "RIGHT",
             "failed": false,
-            "length": 24,
-            "intermediate_cycle_start": "2025-08-01"
+            "length": 35,
+            "intermediate_cycle_start": "2025-03-11"
           },
           {
             "cycle_num": 4,
-            "dcl0_date": "2025-12-09",
-            "dcl0_price": 6.07,
-            "hch_date": "2025-12-29",
-            "hch_price": 7.63,
-            "hcl_date": "2026-01-16",
-            "hcl_price": 7.24,
-            "dch_date": "2026-01-29",
-            "dch_price": 8.42,
-            "dcl1_date": "2026-02-06",
-            "dcl1_price": 6.27,
+            "dcl0_date": "2025-09-19",
+            "dcl0_price": 5.0187,
+            "hch_date": "2025-10-17",
+            "hch_price": 7.1255,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2025-10-17",
+            "dch_price": 7.1255,
+            "dcl1_date": "2025-11-05",
+            "dcl1_price": 5.3466,
             "translation": "RIGHT",
             "failed": false,
-            "length": 39,
-            "intermediate_cycle_start": "2025-08-01"
+            "length": 33,
+            "intermediate_cycle_start": "2025-03-11"
           },
           {
             "cycle_num": 5,
-            "dcl0_date": "2026-02-06",
-            "dcl0_price": 6.27,
-            "hch_date": "2026-02-16",
-            "hch_price": 7.47,
-            "hcl_date": "2026-02-20",
-            "hcl_price": 6.83,
-            "dch_date": "2026-03-03",
-            "dch_price": 8.16,
-            "dcl1_date": "2026-03-23",
-            "dcl1_price": 5.23,
+            "dcl0_date": "2025-11-05",
+            "dcl0_price": 5.3466,
+            "hch_date": "2025-12-01",
+            "hch_price": 6.8373,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2025-12-01",
+            "dch_price": 6.8373,
+            "dcl1_date": "2025-12-09",
+            "dcl1_price": 6.0323,
             "translation": "RIGHT",
-            "failed": true,
-            "length": 31,
-            "intermediate_cycle_start": "2025-08-01"
+            "failed": false,
+            "length": 24,
+            "intermediate_cycle_start": "2025-03-11"
           },
           {
             "cycle_num": 6,
+            "dcl0_date": "2025-12-09",
+            "dcl0_price": 6.0323,
+            "hch_date": "2025-12-29",
+            "hch_price": 7.5827,
+            "hcl_date": "2026-01-16",
+            "hcl_price": 7.1951,
+            "dch_date": "2026-01-29",
+            "dch_price": 8.3678,
+            "dcl1_date": "2026-02-06",
+            "dcl1_price": 6.2311,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 39,
+            "intermediate_cycle_start": "2025-03-11"
+          },
+          {
+            "cycle_num": 7,
+            "dcl0_date": "2026-02-06",
+            "dcl0_price": 6.2311,
+            "hch_date": "2026-02-16",
+            "hch_price": 7.4237,
+            "hcl_date": "2026-02-20",
+            "hcl_price": 6.7876,
+            "dch_date": "2026-03-03",
+            "dch_price": 8.1094,
+            "dcl1_date": "2026-03-23",
+            "dcl1_price": 5.1976,
+            "translation": "RIGHT",
+            "failed": true,
+            "length": 31,
+            "intermediate_cycle_start": "2025-03-11"
+          },
+          {
+            "cycle_num": 8,
             "dcl0_date": "2026-03-23",
-            "dcl0_price": 5.23,
+            "dcl0_price": 5.1976,
             "hch_date": "2026-04-20",
-            "hch_price": 6.83,
+            "hch_price": 6.7876,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2026-04-20",
-            "dch_price": 6.83,
+            "dch_price": 6.7876,
             "dcl1_date": "2026-06-11",
-            "dcl1_price": 4.51,
+            "dcl1_price": 4.482,
             "translation": "LEFT",
             "failed": true,
             "length": 55,
-            "intermediate_cycle_start": "2025-08-01"
+            "intermediate_cycle_start": "2025-03-11"
           },
           {
             "cycle_num": 1,
             "dcl0_date": "2026-06-11",
-            "dcl0_price": 4.51,
+            "dcl0_price": 4.482,
             "hch_date": "2026-06-18",
-            "hch_price": 6.34,
+            "hch_price": 6.3007,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2026-06-18",
-            "dch_price": 6.34,
+            "dch_price": 6.3007,
             "dcl1_date": "2026-07-20",
-            "dcl1_price": 5.38,
+            "dcl1_price": 5.3466,
             "translation": "LEFT",
             "failed": false,
             "length": 27,
@@ -2823,15 +2836,15 @@
           {
             "cycle_num": 2,
             "dcl0_date": "2026-07-20",
-            "dcl0_price": 5.38,
+            "dcl0_price": 5.3466,
             "hch_date": "2026-07-23",
-            "hch_price": 6.32,
+            "hch_price": 6.2808,
             "hcl_date": "2026-07-30",
-            "hcl_price": 5.52,
+            "hcl_price": 5.4858,
             "dch_date": "2026-08-11",
-            "dch_price": 7.61,
+            "dch_price": 7.5628,
             "dcl1_date": "2026-08-19",
-            "dcl1_price": 7.08,
+            "dcl1_price": 7.0361,
             "translation": "RIGHT",
             "failed": false,
             "length": 22,
@@ -2841,43 +2854,23 @@
         "cycle_len_intermediate": 180,
         "intermediate_cycles": [
           {
-            "icl0_date": "2024-10-09",
-            "icl0_price": 1.98,
-            "ic_hch_date": "2024-10-23",
-            "ic_hch_price": 2.575,
-            "ic_hcl_date": "2025-03-11",
-            "ic_hcl_price": 2.975,
-            "ich_date": "2025-06-03",
-            "ich_price": 5.24,
-            "icl1_date": "2025-08-01",
-            "icl1_price": 3.54,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 204,
-            "daily_cycle_count": 4,
-            "member_daily_cycles": [
-              "2024-10-09",
-              "2024-12-04",
-              "2025-03-11",
-              "2025-05-13"
-            ]
-          },
-          {
-            "icl0_date": "2025-08-01",
-            "icl0_price": 3.54,
-            "ic_hch_date": "2025-10-17",
-            "ic_hch_price": 7.17,
-            "ic_hcl_date": "2025-11-05",
-            "ic_hcl_price": 5.38,
+            "icl0_date": "2025-03-11",
+            "icl0_price": 2.9565,
+            "ic_hch_date": "2025-04-17",
+            "ic_hch_price": 4.5615,
+            "ic_hcl_date": "2025-08-01",
+            "ic_hcl_price": 3.518,
             "ich_date": "2026-01-29",
-            "ich_price": 8.42,
+            "ich_price": 8.3678,
             "icl1_date": "2026-06-11",
-            "icl1_price": 4.51,
+            "icl1_price": 4.482,
             "translation": "RIGHT",
             "failed": false,
-            "length": 217,
-            "daily_cycle_count": 6,
+            "length": 316,
+            "daily_cycle_count": 8,
             "member_daily_cycles": [
+              "2025-03-11",
+              "2025-05-13",
               "2025-08-01",
               "2025-09-19",
               "2025-11-05",
@@ -2891,13 +2884,13 @@
           "live": true,
           "scale": "daily",
           "dcl0_date": "2026-08-19",
-          "dcl0_price": 7.08,
+          "dcl0_price": 7.0361,
           "hch_date": "2026-08-26",
-          "hch_price": 8.84,
+          "hch_price": 8.7852,
           "hcl_date": null,
           "hcl_price": null,
           "dch_date": "2026-08-26",
-          "dch_price": 8.84,
+          "dch_price": 8.7852,
           "translation": "PENDING",
           "bars_elapsed": 14,
           "projected_cycle_len": 45,
@@ -2908,13 +2901,13 @@
           "live": true,
           "scale": "intermediate",
           "dcl0_date": "2026-06-11",
-          "dcl0_price": 4.51,
+          "dcl0_price": 4.482,
           "hch_date": null,
           "hch_price": null,
           "hcl_date": null,
           "hcl_price": null,
           "dch_date": "2026-08-26",
-          "dch_price": 8.84,
+          "dch_price": 8.7852,
           "translation": "PENDING",
           "bars_elapsed": 63,
           "projected_cycle_len": 180,
@@ -2923,7 +2916,7 @@
         "daily_trendline": {
           "applicable": true,
           "broken": false,
-          "trendline_price": 6.01,
+          "trendline_price": 5.973,
           "slope_pct_per_bar": 0.325
         },
         "intermediate_trendline": {
@@ -2952,7 +2945,7 @@
         },
         "cycle_failing_now": {
           "failing": false,
-          "lowest_since_dcl0": 7.75,
+          "lowest_since_dcl0": 7.7019,
           "pct_below_dcl0": 0.0
         },
         "entry_zone": {
@@ -2964,8 +2957,8 @@
           ]
         },
         "predicted_move": {
-          "target_price": 10.0146,
-          "target_basis": "Prior Daily Cycle amplitude 41.4% projected from new DCL0",
+          "target_price": 9.9526,
+          "target_basis": "Prior Daily Cycle amplitude 41.5% projected from new DCL0",
           "prior_cycle_amplitude_pct": 41.45,
           "bars_to_dc3_estimate": 0,
           "est_date_dc3": "2026-09-08"
@@ -2974,53 +2967,53 @@
           "daily_support_line": [
             {
               "date": "2026-08-19",
-              "price": 7.08
+              "price": 7.0361
             }
           ],
           "daily_resistance_line": [
             {
               "date": "2026-08-26",
-              "price": 8.84
+              "price": 8.7852
             },
             {
               "date": "2026-08-26",
-              "price": 8.84
+              "price": 8.7852
             }
           ],
           "intermediate_support_line": [
             {
               "date": "2026-06-11",
-              "price": 4.51
+              "price": 4.482
             }
           ],
           "intermediate_resistance_line": [
             {
               "date": "2026-08-26",
-              "price": 8.84
+              "price": 8.7852
             }
           ],
           "daily_markers": {
             "dcl0": {
               "date": "2026-08-19",
-              "price": 7.08
+              "price": 7.0361
             },
             "hch": {
               "date": "2026-08-26",
-              "price": 8.84
+              "price": 8.7852
             },
             "dch": {
               "date": "2026-08-26",
-              "price": 8.84
+              "price": 8.7852
             }
           },
           "intermediate_markers": {
             "dcl0": {
               "date": "2026-06-11",
-              "price": 4.51
+              "price": 4.482
             },
             "dch": {
               "date": "2026-08-26",
-              "price": 8.84
+              "price": 8.7852
             }
           }
         }
@@ -3038,10 +3031,10 @@
         "breakout": {
           "bullish_breakout": false,
           "bearish_breakout": false,
-          "resistance": 8.84,
-          "support": 7.08
+          "resistance": 8.7852,
+          "support": 7.0361
         },
-        "price": 8.06,
+        "price": 8.01,
         "stop_price": null,
         "target_price": null,
         "reward_risk": null,
@@ -3068,12 +3061,12 @@
           "RIGHT-translated cycle (Daily Cycle #2 of IC)",
           "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
         ],
-        "price": 8.06,
-        "entry_price": 7.8182,
+        "price": 8.01,
+        "entry_price": 7.7697,
         "entry_type": "Wait for 3% pullback before entering",
-        "stop_loss": 5.4648,
-        "stop_note": "Stop just below cycle HCL trendline ($5.52)",
-        "take_profit": 9.0386,
+        "stop_loss": 5.4309,
+        "stop_note": "Stop just below cycle HCL trendline ($5.4858)",
+        "take_profit": 8.9826,
         "dividend_note": "Dividend yield: 62.0% | Ex-dividend: 1788912000",
         "risk_reward": 0.38
       },
@@ -3086,44 +3079,44 @@
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
       "sector": "Technology",
-      "market_cap": 3664246996992,
+      "market_cap": 3660348653568,
       "tech": {
-        "price": 493.465,
-        "price_1d_pct": -1.25,
-        "price_5d_pct": -2.73,
-        "price_20d_pct": -2.31,
+        "price": 492.94,
+        "price_1d_pct": -1.35,
+        "price_5d_pct": -2.83,
+        "price_20d_pct": -2.41,
         "high_52w": 549.2013,
         "low_52w": 348.5439,
-        "pct_from_52w_high": -10.15,
-        "rsi": 55.9,
+        "pct_from_52w_high": -10.24,
+        "rsi": 55.61,
         "rsi_prev": 59.6,
-        "macd": 13.9556,
-        "macd_signal": 17.0623,
-        "macd_hist": -3.1066,
+        "macd": 13.9138,
+        "macd_signal": 17.0539,
+        "macd_hist": -3.1401,
         "macd_bullish_cross": "False",
         "macd_death_cross": "False",
-        "bb_upper": 514.9896,
-        "bb_mid": 494.7571,
-        "bb_lower": 474.5245,
-        "pct_b": 0.468,
-        "atr": 11.5868,
-        "stop_loss": 476.0848,
-        "take_profit": 528.2254,
-        "stoch_k": 38.16,
-        "stoch_d": 58.73,
-        "volume": 2361051,
+        "bb_upper": 514.9718,
+        "bb_mid": 494.7308,
+        "bb_lower": 474.4898,
+        "pct_b": 0.456,
+        "atr": 11.659,
+        "stop_loss": 475.4515,
+        "take_profit": 527.917,
+        "stoch_k": 36.83,
+        "stoch_d": 58.28,
+        "volume": 4890936,
         "volume_signal": {
-          "ratio": 0.11,
+          "ratio": 0.23,
           "signal": "LOW_VOLUME",
-          "avg_volume": 21554142
+          "avg_volume": 21680636
         },
         "moving_averages": {
-          "sma_10": 501.5085,
-          "sma_20": 494.7571,
-          "sma_50": 445.986,
-          "sma_200": 429.3914,
-          "ema_9": 499.0802,
-          "ema_21": 489.1178
+          "sma_10": 501.456,
+          "sma_20": 494.7308,
+          "sma_50": 445.9755,
+          "sma_200": 429.3888,
+          "ema_9": 498.9752,
+          "ema_21": 489.07
         },
         "above_50sma": "True",
         "above_200sma": "True",
@@ -3169,7 +3162,7 @@
           {
             "cycle_num": null,
             "dcl0_date": "2024-10-08",
-            "dcl0_price": 401.8224,
+            "dcl0_price": 401.8225,
             "hch_date": "2024-10-14",
             "hch_price": 417.4456,
             "hcl_date": "2024-10-16",
@@ -3241,11 +3234,11 @@
             "hch_date": "2025-03-17",
             "hch_price": 388.1534,
             "hcl_date": "2025-03-18",
-            "hcl_price": 376.6781,
+            "hcl_price": 376.6782,
             "dch_date": "2025-03-25",
             "dch_price": 391.7611,
             "dcl1_date": "2025-04-07",
-            "dcl1_price": 340.7894,
+            "dcl1_price": 340.7895,
             "translation": "RIGHT",
             "failed": true,
             "length": 19,
@@ -3254,7 +3247,7 @@
           {
             "cycle_num": 1,
             "dcl0_date": "2025-04-07",
-            "dcl0_price": 340.7894,
+            "dcl0_price": 340.7895,
             "hch_date": "2025-04-14",
             "hch_price": 390.0709,
             "hcl_date": "2025-04-21",
@@ -3307,11 +3300,11 @@
             "dcl0_date": "2025-07-23",
             "dcl0_price": 495.799,
             "hch_date": "2025-08-13",
-            "hch_price": 527.4857,
+            "hch_price": 527.4858,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2025-07-31",
-            "dch_price": 550.013,
+            "dch_price": 550.0131,
             "dcl1_date": "2025-09-05",
             "dcl1_price": 488.352,
             "translation": "LEFT",
@@ -3341,7 +3334,7 @@
             "dcl0_date": "2025-10-14",
             "dcl0_price": 501.8708,
             "hch_date": "2025-11-13",
-            "hch_price": 509.3095,
+            "hch_price": 509.3096,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2025-10-28",
@@ -3468,7 +3461,7 @@
             "ich_date": "2024-12-12",
             "ich_price": 449.965,
             "icl1_date": "2025-04-07",
-            "icl1_price": 340.7894,
+            "icl1_price": 340.7895,
             "translation": "LEFT",
             "failed": true,
             "length": 104,
@@ -3482,13 +3475,13 @@
           },
           {
             "icl0_date": "2025-04-07",
-            "icl0_price": 340.7894,
+            "icl0_price": 340.7895,
             "ic_hch_date": "2025-10-28",
             "ic_hch_price": 549.2013,
             "ic_hcl_date": null,
             "ic_hcl_price": null,
             "ich_date": "2025-07-31",
-            "ich_price": 550.013,
+            "ich_price": 550.0131,
             "icl1_date": "2026-06-25",
             "icl1_price": 348.5439,
             "translation": "LEFT",
@@ -3663,7 +3656,7 @@
           "resistance": 517.78,
           "support": 476.2534
         },
-        "price": 493.465,
+        "price": 492.94,
         "stop_price": null,
         "target_price": null,
         "reward_risk": null,
@@ -3681,22 +3674,22 @@
         "confidence": "LOW",
         "timing": "Monitor \u2014 wait for clearer signal before entering",
         "reasons": [
-          "RSI 55.9 neutral",
+          "RSI 55.61 neutral",
           "RSI trending DOWN \u2014 momentum weakening",
           "MACD below signal line \u2014 mild bearish bias",
-          "Price within Bollinger Bands (%B=0.468) \u2014 normal range",
+          "Price within Bollinger Bands (%B=0.456) \u2014 normal range",
           "Low volume \u2014 move may lack conviction",
           "\u2705 GOLDEN CROSS (50D SMA > 200D SMA) \u2014 long-term uptrend",
           "Price above 50-day SMA \u2014 medium-term uptrend intact",
           "RIGHT-translated cycle (Daily Cycle #2 of IC)",
           "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
         ],
-        "price": 493.465,
-        "entry_price": 478.661,
+        "price": 492.94,
+        "entry_price": 478.1518,
         "entry_type": "Wait for 3% pullback before entering",
-        "stop_loss": 476.0848,
-        "stop_note": "Stop 1.5x ATR below entry (ATR=$11.5868)",
-        "take_profit": 528.2254,
+        "stop_loss": 475.4515,
+        "stop_note": "Stop 1.5x ATR below entry (ATR=$11.659)",
+        "take_profit": 527.917,
         "dividend_note": "Dividend yield: 73.0% | Ex-dividend: 1787184000",
         "risk_reward": 2.0
       },
@@ -3705,36 +3698,36 @@
         "benchmarks": {
           "S&P500": {
             "correlation": 0.397,
-            "beta": 1.382
+            "beta": 1.384
           },
           "NASDAQ": {
-            "correlation": 0.38,
+            "correlation": 0.379,
             "beta": 0.827
           },
           "Dow": {
-            "correlation": 0.334,
-            "beta": 1.194
+            "correlation": 0.335,
+            "beta": 1.195
           }
         },
         "avg_correlation": 0.37,
         "us_trend": "MIXED",
         "us_benchmark_trends": {
           "S&P500": {
-            "price": 7694.24,
-            "5d_pct": 0.11,
-            "20d_pct": -0.76,
+            "price": 7692.5,
+            "5d_pct": 0.08,
+            "20d_pct": -0.78,
             "trend": "MIXED"
           },
           "NASDAQ": {
-            "price": 26429.05,
-            "5d_pct": 0.22,
-            "20d_pct": -0.66,
+            "price": 26445.28,
+            "5d_pct": 0.28,
+            "20d_pct": -0.6,
             "trend": "MIXED"
           },
           "Dow": {
-            "price": 52914.77,
-            "5d_pct": -0.51,
-            "20d_pct": -1.97,
+            "price": 52868.15,
+            "5d_pct": -0.6,
+            "20d_pct": -2.05,
             "trend": "BEARISH"
           }
         },
@@ -4283,978 +4276,10 @@
       "error": null
     },
     {
-      "ticker": "IOZ.AX",
-      "name": "iShares Core S&P/ASX 200 ETF",
-      "sector": "Unknown",
-      "market_cap": null,
-      "tech": {
-        "price": 36.1,
-        "price_1d_pct": -0.99,
-        "price_5d_pct": -1.18,
-        "price_20d_pct": -2.64,
-        "high_52w": 37.24,
-        "low_52w": 32.9798,
-        "pct_from_52w_high": -3.06,
-        "rsi": 44.4,
-        "rsi_prev": 51.88,
-        "macd": 0.0504,
-        "macd_signal": 0.1261,
-        "macd_hist": -0.0757,
-        "macd_bullish_cross": "False",
-        "macd_death_cross": "False",
-        "bb_upper": 36.911,
-        "bb_mid": 36.495,
-        "bb_lower": 36.079,
-        "pct_b": 0.025,
-        "atr": 0.3095,
-        "stop_loss": 35.6358,
-        "take_profit": 37.0285,
-        "stoch_k": 9.26,
-        "stoch_d": 31.48,
-        "volume": 343442,
-        "volume_signal": {
-          "ratio": 0.75,
-          "signal": "NORMAL",
-          "avg_volume": 458061
-        },
-        "moving_averages": {
-          "sma_10": 36.439,
-          "sma_20": 36.495,
-          "sma_50": 36.0354,
-          "sma_200": 35.0936,
-          "ema_9": 36.3958,
-          "ema_21": 36.4084
-        },
-        "above_50sma": "True",
-        "above_200sma": "True",
-        "golden_cross": "True",
-        "tech_score": 67,
-        "signal": "BUY",
-        "color": "lightgreen"
-      },
-      "cycle": {
-        "status": "ok",
-        "cycle_len": 60,
-        "cycle_score": 22,
-        "cycle_signal": "CYCLE_AVOID",
-        "current_cycle": {
-          "cycle_num": 4,
-          "dcl0_date": "2026-07-02",
-          "dcl0_price": 34.71,
-          "hch_date": "2026-08-06",
-          "hch_price": 37.24,
-          "hcl_date": null,
-          "hcl_price": null,
-          "dch_date": "2026-08-06",
-          "dch_price": 37.24,
-          "dcl1_date": "2026-08-19",
-          "dcl1_price": 36.2,
-          "translation": "RIGHT",
-          "failed": false,
-          "length": 34,
-          "intermediate_cycle_start": "2025-11-21"
-        },
-        "bars_since_dcl": 14,
-        "pct_through_cycle": 23.3,
-        "high_risk_zone": false,
-        "trendline_break": false,
-        "confirmation_signal": false,
-        "reasons": [
-          "RIGHT-translated cycle (Daily Cycle #4 of IC)",
-          "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure",
-          "\u26a0\ufe0f FAILING NOW \u2014 live cycle already -0.55% below its own DCL0",
-          "Live cycle already trading below its own DCL0 \u2014 failing in real time"
-        ],
-        "entry_note": "Wait for next DCL before entering new positions",
-        "exit_note": "Reduce or exit existing longs",
-        "all_cycles": [
-          {
-            "cycle_num": null,
-            "dcl0_date": "2024-11-01",
-            "dcl0_price": 30.6385,
-            "hch_date": "2024-12-03",
-            "hch_price": 32.5009,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2024-12-03",
-            "dch_price": 32.5009,
-            "dcl1_date": "2024-12-20",
-            "dcl1_price": 30.7047,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 35,
-            "intermediate_cycle_start": null
-          },
-          {
-            "cycle_num": null,
-            "dcl0_date": "2024-12-20",
-            "dcl0_price": 30.7047,
-            "hch_date": "2025-01-08",
-            "hch_price": 31.9888,
-            "hcl_date": "2025-02-03",
-            "hcl_price": 31.8843,
-            "dch_date": "2025-02-14",
-            "dch_price": 32.9582,
-            "dcl1_date": "2025-04-07",
-            "dcl1_price": 27.6635,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 72,
-            "intermediate_cycle_start": null
-          },
-          {
-            "cycle_num": 1,
-            "dcl0_date": "2025-04-07",
-            "dcl0_price": 27.6635,
-            "hch_date": "2025-06-11",
-            "hch_price": 33.5127,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2025-06-11",
-            "dch_price": 33.5127,
-            "dcl1_date": "2025-06-23",
-            "dcl1_price": 32.6401,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 51,
-            "intermediate_cycle_start": "2025-04-07"
-          },
-          {
-            "cycle_num": 2,
-            "dcl0_date": "2025-06-23",
-            "dcl0_price": 32.6401,
-            "hch_date": "2025-07-18",
-            "hch_price": 34.0859,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2025-07-18",
-            "dch_price": 34.0859,
-            "dcl1_date": "2025-08-04",
-            "dcl1_price": 33.5059,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 30,
-            "intermediate_cycle_start": "2025-04-07"
-          },
-          {
-            "cycle_num": 3,
-            "dcl0_date": "2025-08-04",
-            "dcl0_price": 33.5059,
-            "hch_date": "2025-08-25",
-            "hch_price": 35.2749,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2025-08-25",
-            "dch_price": 35.2749,
-            "dcl1_date": "2025-09-25",
-            "dcl1_price": 34.2502,
-            "translation": "LEFT",
-            "failed": false,
-            "length": 38,
-            "intermediate_cycle_start": "2025-04-07"
-          },
-          {
-            "cycle_num": 4,
-            "dcl0_date": "2025-09-25",
-            "dcl0_price": 34.2502,
-            "hch_date": "2025-10-06",
-            "hch_price": 35.4103,
-            "hcl_date": "2025-10-14",
-            "hcl_price": 34.6668,
-            "dch_date": "2025-10-21",
-            "dch_price": 35.7633,
-            "dcl1_date": "2025-11-21",
-            "dcl1_price": 32.9927,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 40,
-            "intermediate_cycle_start": "2025-04-07"
-          },
-          {
-            "cycle_num": 1,
-            "dcl0_date": "2025-11-21",
-            "dcl0_price": 32.9927,
-            "hch_date": "2025-11-27",
-            "hch_price": 34.0598,
-            "hcl_date": "2025-12-17",
-            "hcl_price": 33.6438,
-            "dch_date": "2026-02-27",
-            "dch_price": 36.454,
-            "dcl1_date": "2026-03-23",
-            "dcl1_price": 32.9798,
-            "translation": "RIGHT",
-            "failed": true,
-            "length": 82,
-            "intermediate_cycle_start": "2025-11-21"
-          },
-          {
-            "cycle_num": 2,
-            "dcl0_date": "2026-03-23",
-            "dcl0_price": 32.9798,
-            "hch_date": "2026-04-14",
-            "hch_price": 35.9994,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2026-04-14",
-            "dch_price": 35.9994,
-            "dcl1_date": "2026-05-20",
-            "dcl1_price": 33.9536,
-            "translation": "LEFT",
-            "failed": false,
-            "length": 40,
-            "intermediate_cycle_start": "2025-11-21"
-          },
-          {
-            "cycle_num": 3,
-            "dcl0_date": "2026-05-20",
-            "dcl0_price": 33.9536,
-            "hch_date": "2026-06-18",
-            "hch_price": 35.9994,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2026-06-18",
-            "dch_price": 35.9994,
-            "dcl1_date": "2026-07-02",
-            "dcl1_price": 34.71,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 30,
-            "intermediate_cycle_start": "2025-11-21"
-          },
-          {
-            "cycle_num": 4,
-            "dcl0_date": "2026-07-02",
-            "dcl0_price": 34.71,
-            "hch_date": "2026-08-06",
-            "hch_price": 37.24,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2026-08-06",
-            "dch_price": 37.24,
-            "dcl1_date": "2026-08-19",
-            "dcl1_price": 36.2,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 34,
-            "intermediate_cycle_start": "2025-11-21"
-          }
-        ],
-        "cycle_len_intermediate": 240,
-        "intermediate_cycles": [
-          {
-            "icl0_date": "2025-04-07",
-            "icl0_price": 27.6635,
-            "ic_hch_date": "2025-10-21",
-            "ic_hch_price": 35.7633,
-            "ic_hcl_date": null,
-            "ic_hcl_price": null,
-            "ich_date": "2025-10-21",
-            "ich_price": 35.7633,
-            "icl1_date": "2025-11-21",
-            "icl1_price": 32.9927,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 159,
-            "daily_cycle_count": 4,
-            "member_daily_cycles": [
-              "2025-04-07",
-              "2025-06-23",
-              "2025-08-04",
-              "2025-09-25"
-            ]
-          }
-        ],
-        "live_daily_cycle": {
-          "live": true,
-          "scale": "daily",
-          "dcl0_date": "2026-08-19",
-          "dcl0_price": 36.2,
-          "hch_date": null,
-          "hch_price": null,
-          "hcl_date": null,
-          "hcl_price": null,
-          "dch_date": "2026-08-26",
-          "dch_price": 37.08,
-          "translation": "PENDING",
-          "bars_elapsed": 14,
-          "projected_cycle_len": 60,
-          "projected_midpoint_date": "2026-09-08",
-          "cycle_num": 5
-        },
-        "live_intermediate_cycle": {
-          "live": true,
-          "scale": "intermediate",
-          "dcl0_date": "2025-11-21",
-          "dcl0_price": 32.9927,
-          "hch_date": "2026-02-27",
-          "hch_price": 36.454,
-          "hcl_date": "2026-03-23",
-          "hcl_price": 32.9798,
-          "dch_date": "2026-08-06",
-          "dch_price": 37.24,
-          "translation": "RIGHT",
-          "bars_elapsed": 200,
-          "projected_cycle_len": 240,
-          "projected_midpoint_date": "2026-05-18"
-        },
-        "daily_trendline": {
-          "applicable": false,
-          "broken": false,
-          "trendline_price": null,
-          "slope_pct_per_bar": null
-        },
-        "intermediate_trendline": {
-          "applicable": true,
-          "broken": false,
-          "trendline_price": 32.9612,
-          "slope_pct_per_bar": -0.0
-        },
-        "live_daily_trendline": {
-          "applicable": false,
-          "broken": false,
-          "trendline_price": null,
-          "slope_pct_per_bar": null
-        },
-        "live_daily_resistance": {
-          "applicable": false,
-          "broken": false,
-          "trendline_price": null,
-          "slope_pct_per_bar": null
-        },
-        "live_intermediate_resistance": {
-          "applicable": true,
-          "broken": true,
-          "trendline_price": 37.4029,
-          "slope_pct_per_bar": 0.019
-        },
-        "cycle_failing_now": {
-          "failing": true,
-          "lowest_since_dcl0": 36.0,
-          "pct_below_dcl0": -0.55
-        },
-        "entry_zone": {
-          "zone": "FAILING_NOW",
-          "risk": "HIGH",
-          "eligible_for_entry": false,
-          "reasons": [
-            "Live cycle already trading below its own DCL0 \u2014 failing in real time"
-          ]
-        },
-        "predicted_move": {
-          "target_price": 38.8386,
-          "target_basis": "Prior Daily Cycle amplitude 7.3% projected from new DCL0",
-          "prior_cycle_amplitude_pct": 7.29,
-          "bars_to_dc3_estimate": 0,
-          "est_date_dc3": "2026-09-08"
-        },
-        "chart_overlay": {
-          "daily_support_line": [
-            {
-              "date": "2026-08-19",
-              "price": 36.2
-            }
-          ],
-          "daily_resistance_line": [
-            {
-              "date": "2026-08-26",
-              "price": 37.08
-            }
-          ],
-          "intermediate_support_line": [
-            {
-              "date": "2025-11-21",
-              "price": 32.9927
-            },
-            {
-              "date": "2026-03-23",
-              "price": 32.9798
-            },
-            {
-              "date": "2026-09-08",
-              "price": 32.9612
-            }
-          ],
-          "intermediate_resistance_line": [
-            {
-              "date": "2026-02-27",
-              "price": 36.454
-            },
-            {
-              "date": "2026-08-06",
-              "price": 37.24
-            },
-            {
-              "date": "2026-09-08",
-              "price": 37.4029
-            }
-          ],
-          "daily_markers": {
-            "dcl0": {
-              "date": "2026-08-19",
-              "price": 36.2
-            },
-            "dch": {
-              "date": "2026-08-26",
-              "price": 37.08
-            }
-          },
-          "intermediate_markers": {
-            "dcl0": {
-              "date": "2025-11-21",
-              "price": 32.9927
-            },
-            "hch": {
-              "date": "2026-02-27",
-              "price": 36.454
-            },
-            "hcl": {
-              "date": "2026-03-23",
-              "price": 32.9798
-            },
-            "dch": {
-              "date": "2026-08-06",
-              "price": 37.24
-            }
-          }
-        }
-      },
-      "zen": {
-        "status": "ok",
-        "zen_signal": "HOLD",
-        "zen_score": 51,
-        "eligible_for_entry": false,
-        "trend": {
-          "direction": "CHOPPY",
-          "consecutive_bars": 1,
-          "last_bullish": false
-        },
-        "breakout": {
-          "bullish_breakout": false,
-          "bearish_breakout": false,
-          "resistance": 37.21,
-          "support": 36.0
-        },
-        "price": 36.1,
-        "stop_price": null,
-        "target_price": null,
-        "reward_risk": null,
-        "reasons": [
-          "Heiken-Ashi trend CHOPPY for 1 bars"
-        ]
-      },
-      "reasoning": {
-        "ticker": "IOZ.AX",
-        "recommendation": "HOLD / WATCH",
-        "rec_color": "#ff9900",
-        "blended_score": 49.0,
-        "tech_score": 67,
-        "cycle_score": 22,
-        "confidence": "LOW",
-        "timing": "Monitor \u2014 wait for clearer signal before entering",
-        "reasons": [
-          "RSI 44.4 neutral",
-          "RSI trending DOWN \u2014 momentum weakening",
-          "MACD below signal line \u2014 mild bearish bias",
-          "Price near LOWER Bollinger Band (%B=0.025) \u2014 potential mean reversion opportunity",
-          "\u2705 GOLDEN CROSS (50D SMA > 200D SMA) \u2014 long-term uptrend",
-          "Price above 50-day SMA \u2014 medium-term uptrend intact",
-          "Stochastic K=9.26 \u2014 oversold, watch for %K/%D crossover as entry trigger",
-          "Near 52-week HIGH \u2014 breakout potential but extended",
-          "RIGHT-translated cycle (Daily Cycle #4 of IC)",
-          "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure",
-          "\u26a0\ufe0f FAILING NOW \u2014 live cycle already -0.55% below its own DCL0",
-          "Live cycle already trading below its own DCL0 \u2014 failing in real time"
-        ],
-        "price": 36.1,
-        "entry_price": 35.017,
-        "entry_type": "Wait for 3% pullback before entering",
-        "stop_loss": 35.6358,
-        "stop_note": "Stop 1.5x ATR below entry (ATR=$0.3095)",
-        "take_profit": 37.0285,
-        "dividend_note": "Dividend yield: 337.0%",
-        "risk_reward": 2.0
-      },
-      "correlation": {
-        "status": "no_data"
-      },
-      "error": null
-    },
-    {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "sector": "Technology",
-      "market_cap": 804548968448,
-      "tech": {
-        "price": 493.16,
-        "price_1d_pct": 3.26,
-        "price_5d_pct": 4.77,
-        "price_20d_pct": 5.03,
-        "high_52w": 584.73,
-        "low_52w": 149.22,
-        "pct_from_52w_high": -15.66,
-        "rsi": 54.03,
-        "rsi_prev": 49.67,
-        "macd": -5.7524,
-        "macd_signal": -7.8295,
-        "macd_hist": 2.0771,
-        "macd_bullish_cross": "False",
-        "macd_death_cross": "False",
-        "bb_upper": 507.3048,
-        "bb_mid": 476.378,
-        "bb_lower": 445.4512,
-        "pct_b": 0.771,
-        "atr": 22.2727,
-        "stop_loss": 459.751,
-        "take_profit": 559.9781,
-        "stoch_k": 93.58,
-        "stoch_d": 62.07,
-        "volume": 4913039,
-        "volume_signal": {
-          "ratio": 0.29,
-          "signal": "LOW_VOLUME",
-          "avg_volume": 16767066
-        },
-        "moving_averages": {
-          "sma_10": 471.664,
-          "sma_20": 476.378,
-          "sma_50": 498.7062,
-          "sma_200": 342.3123,
-          "ema_9": 473.2553,
-          "ema_21": 477.1072
-        },
-        "above_50sma": "False",
-        "above_200sma": "True",
-        "golden_cross": "True",
-        "tech_score": 58,
-        "signal": "BUY",
-        "color": "lightgreen"
-      },
-      "cycle": {
-        "status": "ok",
-        "cycle_len": 58,
-        "cycle_score": 35,
-        "cycle_signal": "CYCLE_CAUTION",
-        "current_cycle": {
-          "cycle_num": 2,
-          "dcl0_date": "2026-05-19",
-          "dcl0_price": 393.36,
-          "hch_date": "2026-06-03",
-          "hch_price": 546.44,
-          "hcl_date": "2026-06-09",
-          "hcl_price": 437.23,
-          "dch_date": "2026-06-30",
-          "dch_price": 584.73,
-          "dcl1_date": "2026-07-29",
-          "dcl1_price": 424.03,
-          "translation": "RIGHT",
-          "failed": false,
-          "length": 48,
-          "intermediate_cycle_start": "2026-03-03"
-        },
-        "bars_since_dcl": 28,
-        "pct_through_cycle": 48.3,
-        "high_risk_zone": false,
-        "trendline_break": true,
-        "confirmation_signal": false,
-        "reasons": [
-          "RIGHT-translated cycle (Daily Cycle #2 of IC)",
-          "\u26a0\ufe0f Trendline BREAK \u2014 closed below HCL support",
-          "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-        ],
-        "entry_note": "Wait for next DCL before entering new positions",
-        "exit_note": "Reduce or exit existing longs",
-        "all_cycles": [
-          {
-            "cycle_num": 1,
-            "dcl0_date": "2025-04-08",
-            "dcl0_price": 76.48,
-            "hch_date": "2025-05-14",
-            "hch_price": 122.52,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2025-05-14",
-            "dch_price": 122.52,
-            "dcl1_date": "2025-05-23",
-            "dcl1_price": 107.67,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 32,
-            "intermediate_cycle_start": "2025-04-08"
-          },
-          {
-            "cycle_num": 2,
-            "dcl0_date": "2025-05-23",
-            "dcl0_price": 107.67,
-            "hch_date": "2025-06-27",
-            "hch_price": 147.75,
-            "hcl_date": "2025-07-07",
-            "hcl_price": 133.5,
-            "dch_date": "2025-08-13",
-            "dch_price": 186.65,
-            "dcl1_date": "2025-09-08",
-            "dcl1_price": 149.22,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 72,
-            "intermediate_cycle_start": "2025-04-08"
-          },
-          {
-            "cycle_num": 3,
-            "dcl0_date": "2025-09-08",
-            "dcl0_price": 149.22,
-            "hch_date": "2025-10-29",
-            "hch_price": 267.08,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2025-10-29",
-            "dch_price": 267.08,
-            "dcl1_date": "2025-12-17",
-            "dcl1_price": 197.53,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 71,
-            "intermediate_cycle_start": "2025-04-08"
-          },
-          {
-            "cycle_num": 4,
-            "dcl0_date": "2025-12-17",
-            "dcl0_price": 197.53,
-            "hch_date": "2026-01-05",
-            "hch_price": 234.02,
-            "hcl_date": "2026-01-12",
-            "hcl_price": 199.8,
-            "dch_date": "2026-01-23",
-            "dch_price": 266.96,
-            "dcl1_date": "2026-03-03",
-            "dcl1_price": 188.22,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 50,
-            "intermediate_cycle_start": "2025-04-08"
-          },
-          {
-            "cycle_num": 1,
-            "dcl0_date": "2026-03-03",
-            "dcl0_price": 188.22,
-            "hch_date": "2026-03-11",
-            "hch_price": 209.21,
-            "hcl_date": "2026-03-13",
-            "hcl_price": 192.27,
-            "dch_date": "2026-05-11",
-            "dch_price": 469.22,
-            "dcl1_date": "2026-05-19",
-            "dcl1_price": 393.36,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 54,
-            "intermediate_cycle_start": "2026-03-03"
-          },
-          {
-            "cycle_num": 2,
-            "dcl0_date": "2026-05-19",
-            "dcl0_price": 393.36,
-            "hch_date": "2026-06-03",
-            "hch_price": 546.44,
-            "hcl_date": "2026-06-09",
-            "hcl_price": 437.23,
-            "dch_date": "2026-06-30",
-            "dch_price": 584.73,
-            "dcl1_date": "2026-07-29",
-            "dcl1_price": 424.03,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 48,
-            "intermediate_cycle_start": "2026-03-03"
-          }
-        ],
-        "cycle_len_intermediate": 232,
-        "intermediate_cycles": [
-          {
-            "icl0_date": "2025-04-08",
-            "icl0_price": 76.48,
-            "ic_hch_date": "2025-08-13",
-            "ic_hch_price": 186.65,
-            "ic_hcl_date": "2025-09-08",
-            "ic_hcl_price": 149.22,
-            "ich_date": "2025-10-29",
-            "ich_price": 267.08,
-            "icl1_date": "2026-03-03",
-            "icl1_price": 188.22,
-            "translation": "RIGHT",
-            "failed": false,
-            "length": 225,
-            "daily_cycle_count": 4,
-            "member_daily_cycles": [
-              "2025-04-08",
-              "2025-05-23",
-              "2025-09-08",
-              "2025-12-17"
-            ]
-          }
-        ],
-        "live_daily_cycle": {
-          "live": true,
-          "scale": "daily",
-          "dcl0_date": "2026-07-29",
-          "dcl0_price": 424.03,
-          "hch_date": "2026-08-17",
-          "hch_price": 517.35,
-          "hcl_date": "2026-08-24",
-          "hcl_price": 451.0,
-          "dch_date": "2026-08-04",
-          "dch_price": 530.13,
-          "translation": "PENDING",
-          "bars_elapsed": 28,
-          "projected_cycle_len": 58,
-          "projected_midpoint_date": "2026-09-08",
-          "cycle_num": 3
-        },
-        "live_intermediate_cycle": {
-          "live": true,
-          "scale": "intermediate",
-          "dcl0_date": "2026-03-03",
-          "dcl0_price": 188.22,
-          "hch_date": "2026-06-30",
-          "hch_price": 584.73,
-          "hcl_date": null,
-          "hcl_price": null,
-          "dch_date": "2026-06-30",
-          "dch_price": 584.73,
-          "translation": "PENDING",
-          "bars_elapsed": 130,
-          "projected_cycle_len": 232,
-          "projected_midpoint_date": "2026-08-18"
-        },
-        "daily_trendline": {
-          "applicable": true,
-          "broken": true,
-          "trendline_price": 631.5114,
-          "slope_pct_per_bar": 0.797
-        },
-        "intermediate_trendline": {
-          "applicable": false,
-          "broken": false,
-          "trendline_price": null,
-          "slope_pct_per_bar": null
-        },
-        "live_daily_trendline": {
-          "applicable": true,
-          "broken": false,
-          "trendline_price": 465.9833,
-          "slope_pct_per_bar": 0.353
-        },
-        "live_daily_resistance": {
-          "applicable": true,
-          "broken": true,
-          "trendline_price": 496.05,
-          "slope_pct_per_bar": 0.274
-        },
-        "live_intermediate_resistance": {
-          "applicable": false,
-          "broken": false,
-          "trendline_price": null,
-          "slope_pct_per_bar": null
-        },
-        "cycle_failing_now": {
-          "failing": false,
-          "lowest_since_dcl0": 440.5,
-          "pct_below_dcl0": 0.0
-        },
-        "entry_zone": {
-          "zone": "HIGH_RISK_DC3_4",
-          "risk": "HIGH",
-          "eligible_for_entry": false,
-          "reasons": [
-            "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-          ]
-        },
-        "predicted_move": {
-          "target_price": 630.321,
-          "target_basis": "Prior Daily Cycle amplitude 48.7% projected from new DCL0",
-          "prior_cycle_amplitude_pct": 48.65,
-          "bars_to_dc3_estimate": 0,
-          "est_date_dc3": "2026-09-08"
-        },
-        "chart_overlay": {
-          "daily_support_line": [
-            {
-              "date": "2026-07-29",
-              "price": 424.03
-            },
-            {
-              "date": "2026-08-24",
-              "price": 451.0
-            },
-            {
-              "date": "2026-09-08",
-              "price": 465.9833
-            }
-          ],
-          "daily_resistance_line": [
-            {
-              "date": "2026-08-17",
-              "price": 517.35
-            },
-            {
-              "date": "2026-08-04",
-              "price": 530.13
-            },
-            {
-              "date": "2026-09-08",
-              "price": 496.05
-            }
-          ],
-          "intermediate_support_line": [
-            {
-              "date": "2026-03-03",
-              "price": 188.22
-            }
-          ],
-          "intermediate_resistance_line": [
-            {
-              "date": "2026-06-30",
-              "price": 584.73
-            },
-            {
-              "date": "2026-06-30",
-              "price": 584.73
-            }
-          ],
-          "daily_markers": {
-            "dcl0": {
-              "date": "2026-07-29",
-              "price": 424.03
-            },
-            "hch": {
-              "date": "2026-08-17",
-              "price": 517.35
-            },
-            "hcl": {
-              "date": "2026-08-24",
-              "price": 451.0
-            },
-            "dch": {
-              "date": "2026-08-04",
-              "price": 530.13
-            }
-          },
-          "intermediate_markers": {
-            "dcl0": {
-              "date": "2026-03-03",
-              "price": 188.22
-            },
-            "hch": {
-              "date": "2026-06-30",
-              "price": 584.73
-            },
-            "dch": {
-              "date": "2026-06-30",
-              "price": 584.73
-            }
-          }
-        }
-      },
-      "zen": {
-        "status": "ok",
-        "zen_signal": "HOLD",
-        "zen_score": 52,
-        "eligible_for_entry": false,
-        "trend": {
-          "direction": "CHOPPY",
-          "consecutive_bars": 2,
-          "last_bullish": true
-        },
-        "breakout": {
-          "bullish_breakout": false,
-          "bearish_breakout": false,
-          "resistance": 517.35,
-          "support": 440.5
-        },
-        "price": 493.16,
-        "stop_price": null,
-        "target_price": null,
-        "reward_risk": null,
-        "reasons": [
-          "Heiken-Ashi trend CHOPPY for 2 bars"
-        ]
-      },
-      "reasoning": {
-        "ticker": "AMD",
-        "recommendation": "HOLD / WATCH",
-        "rec_color": "#ff9900",
-        "blended_score": 48.8,
-        "tech_score": 58,
-        "cycle_score": 35,
-        "confidence": "LOW",
-        "timing": "Monitor \u2014 wait for clearer signal before entering",
-        "reasons": [
-          "RSI 54.03 neutral",
-          "RSI trending UP \u2014 momentum building",
-          "MACD above signal line \u2014 mild bullish bias",
-          "Price within Bollinger Bands (%B=0.771) \u2014 normal range",
-          "Low volume \u2014 move may lack conviction",
-          "\u2705 GOLDEN CROSS (50D SMA > 200D SMA) \u2014 long-term uptrend",
-          "Stochastic K=93.58 \u2014 overbought",
-          "RIGHT-translated cycle (Daily Cycle #2 of IC)",
-          "\u26a0\ufe0f Trendline BREAK \u2014 closed below HCL support",
-          "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-        ],
-        "price": 493.16,
-        "entry_price": 478.3652,
-        "entry_type": "Wait for 3% pullback before entering",
-        "stop_loss": 432.8577,
-        "stop_note": "Stop just below cycle HCL trendline ($437.23)",
-        "take_profit": 559.9781,
-        "dividend_note": null,
-        "risk_reward": 1.11
-      },
-      "correlation": {
-        "status": "ok",
-        "benchmarks": {
-          "S&P500": {
-            "correlation": 0.616,
-            "beta": 3.55
-          },
-          "NASDAQ": {
-            "correlation": 0.69,
-            "beta": 2.484
-          },
-          "Dow": {
-            "correlation": 0.285,
-            "beta": 1.685
-          }
-        },
-        "avg_correlation": 0.53,
-        "us_trend": "MIXED",
-        "us_benchmark_trends": {
-          "S&P500": {
-            "price": 7694.24,
-            "5d_pct": 0.11,
-            "20d_pct": -0.76,
-            "trend": "MIXED"
-          },
-          "NASDAQ": {
-            "price": 26429.05,
-            "5d_pct": 0.22,
-            "20d_pct": -0.66,
-            "trend": "MIXED"
-          },
-          "Dow": {
-            "price": 52914.77,
-            "5d_pct": -0.51,
-            "20d_pct": -1.97,
-            "trend": "BEARISH"
-          }
-        },
-        "outlook": "LOW CORRELATION \u2014 moves independently of US"
-      },
-      "error": null
-    },
-    {
       "ticker": "AMP.AX",
       "name": "AMP Limited",
       "sector": "Financial Services",
-      "market_cap": null,
+      "market_cap": 5936012800,
       "tech": {
         "price": 2.44,
         "price_1d_pct": -0.0,
@@ -5342,13 +4367,13 @@
             "dcl0_price": 1.2312,
             "hch_date": "2024-09-26",
             "hch_price": 1.2885,
-            "hcl_date": "2024-10-04",
-            "hcl_price": 1.2503,
-            "dch_date": "2024-10-09",
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2024-09-26",
             "dch_price": 1.2885,
             "dcl1_date": "2024-10-11",
             "dcl1_price": 1.2456,
-            "translation": "RIGHT",
+            "translation": "LEFT",
             "failed": false,
             "length": 14,
             "intermediate_cycle_start": null
@@ -5363,28 +4388,28 @@
             "hcl_price": null,
             "dch_date": "2024-10-17",
             "dch_price": 1.5224,
-            "dcl1_date": "2024-11-21",
-            "dcl1_price": 1.4317,
+            "dcl1_date": "2024-11-14",
+            "dcl1_price": 1.4221,
             "translation": "LEFT",
             "failed": false,
-            "length": 29,
+            "length": 24,
             "intermediate_cycle_start": "2024-10-11"
           },
           {
             "cycle_num": 2,
-            "dcl0_date": "2024-11-21",
-            "dcl0_price": 1.4317,
-            "hch_date": "2024-12-05",
-            "hch_price": 1.5939,
-            "hcl_date": null,
-            "hcl_price": null,
+            "dcl0_date": "2024-11-14",
+            "dcl0_price": 1.4221,
+            "hch_date": "2024-11-18",
+            "hch_price": 1.4842,
+            "hcl_date": "2024-11-21",
+            "hcl_price": 1.4317,
             "dch_date": "2024-12-05",
             "dch_price": 1.5939,
             "dcl1_date": "2024-12-20",
             "dcl1_price": 1.4746,
-            "translation": "LEFT",
+            "translation": "RIGHT",
             "failed": false,
-            "length": 21,
+            "length": 26,
             "intermediate_cycle_start": "2024-10-11"
           },
           {
@@ -5431,15 +4456,32 @@
             "hcl_price": null,
             "dch_date": "2025-02-06",
             "dch_price": 1.6989,
-            "dcl1_date": "2025-03-13",
-            "dcl1_price": 1.1778,
+            "dcl1_date": "2025-02-24",
+            "dcl1_price": 1.2933,
             "translation": "LEFT",
             "failed": true,
-            "length": 26,
+            "length": 13,
             "intermediate_cycle_start": "2024-10-11"
           },
           {
             "cycle_num": 6,
+            "dcl0_date": "2025-02-24",
+            "dcl0_price": 1.2933,
+            "hch_date": "2025-02-24",
+            "hch_price": 1.3506,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2025-02-24",
+            "dch_price": 1.3506,
+            "dcl1_date": "2025-03-13",
+            "dcl1_price": 1.1778,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 13,
+            "intermediate_cycle_start": "2024-10-11"
+          },
+          {
+            "cycle_num": 7,
             "dcl0_date": "2025-03-13",
             "dcl0_price": 1.1778,
             "hch_date": "2025-03-26",
@@ -5744,13 +4786,14 @@
             "translation": "RIGHT",
             "failed": true,
             "length": 122,
-            "daily_cycle_count": 6,
+            "daily_cycle_count": 7,
             "member_daily_cycles": [
               "2024-10-11",
-              "2024-11-21",
+              "2024-11-14",
               "2024-12-20",
               "2025-01-13",
               "2025-02-05",
+              "2025-02-24",
               "2025-03-13"
             ]
           },
@@ -6055,6 +5098,477 @@
       "error": null
     },
     {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "sector": "Technology",
+      "market_cap": 822501834752,
+      "tech": {
+        "price": 503.87,
+        "price_1d_pct": 5.51,
+        "price_5d_pct": 7.04,
+        "price_20d_pct": 7.31,
+        "high_52w": 584.73,
+        "low_52w": 149.22,
+        "pct_from_52w_high": -13.83,
+        "rsi": 56.61,
+        "rsi_prev": 49.67,
+        "macd": -4.898,
+        "macd_signal": -7.6587,
+        "macd_hist": 2.7606,
+        "macd_bullish_cross": "False",
+        "macd_death_cross": "False",
+        "bb_upper": 509.3956,
+        "bb_mid": 476.9135,
+        "bb_lower": 444.4314,
+        "pct_b": 0.915,
+        "atr": 22.8177,
+        "stop_loss": 469.6434,
+        "take_profit": 572.3231,
+        "stoch_k": 99.17,
+        "stoch_d": 63.93,
+        "volume": 10168568,
+        "volume_signal": {
+          "ratio": 0.6,
+          "signal": "NORMAL",
+          "avg_volume": 17029843
+        },
+        "moving_averages": {
+          "sma_10": 472.735,
+          "sma_20": 476.9135,
+          "sma_50": 498.9204,
+          "sma_200": 342.3658,
+          "ema_9": 475.3973,
+          "ema_21": 478.0808
+        },
+        "above_50sma": "True",
+        "above_200sma": "True",
+        "golden_cross": "True",
+        "tech_score": 53,
+        "signal": "HOLD",
+        "color": "orange"
+      },
+      "cycle": {
+        "status": "ok",
+        "cycle_len": 58,
+        "cycle_score": 35,
+        "cycle_signal": "CYCLE_CAUTION",
+        "current_cycle": {
+          "cycle_num": 2,
+          "dcl0_date": "2026-05-19",
+          "dcl0_price": 393.36,
+          "hch_date": "2026-06-03",
+          "hch_price": 546.44,
+          "hcl_date": "2026-06-09",
+          "hcl_price": 437.23,
+          "dch_date": "2026-06-30",
+          "dch_price": 584.73,
+          "dcl1_date": "2026-07-29",
+          "dcl1_price": 424.03,
+          "translation": "RIGHT",
+          "failed": false,
+          "length": 48,
+          "intermediate_cycle_start": "2026-03-03"
+        },
+        "bars_since_dcl": 28,
+        "pct_through_cycle": 48.3,
+        "high_risk_zone": false,
+        "trendline_break": true,
+        "confirmation_signal": false,
+        "reasons": [
+          "RIGHT-translated cycle (Daily Cycle #2 of IC)",
+          "\u26a0\ufe0f Trendline BREAK \u2014 closed below HCL support",
+          "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+        ],
+        "entry_note": "Wait for next DCL before entering new positions",
+        "exit_note": "Reduce or exit existing longs",
+        "all_cycles": [
+          {
+            "cycle_num": 1,
+            "dcl0_date": "2025-04-08",
+            "dcl0_price": 76.48,
+            "hch_date": "2025-05-14",
+            "hch_price": 122.52,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2025-05-14",
+            "dch_price": 122.52,
+            "dcl1_date": "2025-05-23",
+            "dcl1_price": 107.67,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 32,
+            "intermediate_cycle_start": "2025-04-08"
+          },
+          {
+            "cycle_num": 2,
+            "dcl0_date": "2025-05-23",
+            "dcl0_price": 107.67,
+            "hch_date": "2025-06-27",
+            "hch_price": 147.75,
+            "hcl_date": "2025-07-07",
+            "hcl_price": 133.5,
+            "dch_date": "2025-08-13",
+            "dch_price": 186.65,
+            "dcl1_date": "2025-09-08",
+            "dcl1_price": 149.22,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 72,
+            "intermediate_cycle_start": "2025-04-08"
+          },
+          {
+            "cycle_num": 3,
+            "dcl0_date": "2025-09-08",
+            "dcl0_price": 149.22,
+            "hch_date": "2025-10-29",
+            "hch_price": 267.08,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2025-10-29",
+            "dch_price": 267.08,
+            "dcl1_date": "2025-12-17",
+            "dcl1_price": 197.53,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 71,
+            "intermediate_cycle_start": "2025-04-08"
+          },
+          {
+            "cycle_num": 4,
+            "dcl0_date": "2025-12-17",
+            "dcl0_price": 197.53,
+            "hch_date": "2026-01-05",
+            "hch_price": 234.02,
+            "hcl_date": "2026-01-12",
+            "hcl_price": 199.8,
+            "dch_date": "2026-01-23",
+            "dch_price": 266.96,
+            "dcl1_date": "2026-03-03",
+            "dcl1_price": 188.22,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 50,
+            "intermediate_cycle_start": "2025-04-08"
+          },
+          {
+            "cycle_num": 1,
+            "dcl0_date": "2026-03-03",
+            "dcl0_price": 188.22,
+            "hch_date": "2026-03-11",
+            "hch_price": 209.21,
+            "hcl_date": "2026-03-13",
+            "hcl_price": 192.27,
+            "dch_date": "2026-05-11",
+            "dch_price": 469.22,
+            "dcl1_date": "2026-05-19",
+            "dcl1_price": 393.36,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 54,
+            "intermediate_cycle_start": "2026-03-03"
+          },
+          {
+            "cycle_num": 2,
+            "dcl0_date": "2026-05-19",
+            "dcl0_price": 393.36,
+            "hch_date": "2026-06-03",
+            "hch_price": 546.44,
+            "hcl_date": "2026-06-09",
+            "hcl_price": 437.23,
+            "dch_date": "2026-06-30",
+            "dch_price": 584.73,
+            "dcl1_date": "2026-07-29",
+            "dcl1_price": 424.03,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 48,
+            "intermediate_cycle_start": "2026-03-03"
+          }
+        ],
+        "cycle_len_intermediate": 232,
+        "intermediate_cycles": [
+          {
+            "icl0_date": "2025-04-08",
+            "icl0_price": 76.48,
+            "ic_hch_date": "2025-08-13",
+            "ic_hch_price": 186.65,
+            "ic_hcl_date": "2025-09-08",
+            "ic_hcl_price": 149.22,
+            "ich_date": "2025-10-29",
+            "ich_price": 267.08,
+            "icl1_date": "2026-03-03",
+            "icl1_price": 188.22,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 225,
+            "daily_cycle_count": 4,
+            "member_daily_cycles": [
+              "2025-04-08",
+              "2025-05-23",
+              "2025-09-08",
+              "2025-12-17"
+            ]
+          }
+        ],
+        "live_daily_cycle": {
+          "live": true,
+          "scale": "daily",
+          "dcl0_date": "2026-07-29",
+          "dcl0_price": 424.03,
+          "hch_date": "2026-08-17",
+          "hch_price": 517.35,
+          "hcl_date": "2026-08-24",
+          "hcl_price": 451.0,
+          "dch_date": "2026-08-04",
+          "dch_price": 530.13,
+          "translation": "PENDING",
+          "bars_elapsed": 28,
+          "projected_cycle_len": 58,
+          "projected_midpoint_date": "2026-09-08",
+          "cycle_num": 3
+        },
+        "live_intermediate_cycle": {
+          "live": true,
+          "scale": "intermediate",
+          "dcl0_date": "2026-03-03",
+          "dcl0_price": 188.22,
+          "hch_date": "2026-06-30",
+          "hch_price": 584.73,
+          "hcl_date": null,
+          "hcl_price": null,
+          "dch_date": "2026-06-30",
+          "dch_price": 584.73,
+          "translation": "PENDING",
+          "bars_elapsed": 130,
+          "projected_cycle_len": 232,
+          "projected_midpoint_date": "2026-08-18"
+        },
+        "daily_trendline": {
+          "applicable": true,
+          "broken": true,
+          "trendline_price": 631.5114,
+          "slope_pct_per_bar": 0.797
+        },
+        "intermediate_trendline": {
+          "applicable": false,
+          "broken": false,
+          "trendline_price": null,
+          "slope_pct_per_bar": null
+        },
+        "live_daily_trendline": {
+          "applicable": true,
+          "broken": false,
+          "trendline_price": 465.9833,
+          "slope_pct_per_bar": 0.353
+        },
+        "live_daily_resistance": {
+          "applicable": true,
+          "broken": false,
+          "trendline_price": 496.05,
+          "slope_pct_per_bar": 0.274
+        },
+        "live_intermediate_resistance": {
+          "applicable": false,
+          "broken": false,
+          "trendline_price": null,
+          "slope_pct_per_bar": null
+        },
+        "cycle_failing_now": {
+          "failing": false,
+          "lowest_since_dcl0": 440.5,
+          "pct_below_dcl0": 0.0
+        },
+        "entry_zone": {
+          "zone": "HIGH_RISK_DC3_4",
+          "risk": "HIGH",
+          "eligible_for_entry": false,
+          "reasons": [
+            "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+          ]
+        },
+        "predicted_move": {
+          "target_price": 630.321,
+          "target_basis": "Prior Daily Cycle amplitude 48.7% projected from new DCL0",
+          "prior_cycle_amplitude_pct": 48.65,
+          "bars_to_dc3_estimate": 0,
+          "est_date_dc3": "2026-09-08"
+        },
+        "chart_overlay": {
+          "daily_support_line": [
+            {
+              "date": "2026-07-29",
+              "price": 424.03
+            },
+            {
+              "date": "2026-08-24",
+              "price": 451.0
+            },
+            {
+              "date": "2026-09-08",
+              "price": 465.9833
+            }
+          ],
+          "daily_resistance_line": [
+            {
+              "date": "2026-08-17",
+              "price": 517.35
+            },
+            {
+              "date": "2026-08-04",
+              "price": 530.13
+            },
+            {
+              "date": "2026-09-08",
+              "price": 496.05
+            }
+          ],
+          "intermediate_support_line": [
+            {
+              "date": "2026-03-03",
+              "price": 188.22
+            }
+          ],
+          "intermediate_resistance_line": [
+            {
+              "date": "2026-06-30",
+              "price": 584.73
+            },
+            {
+              "date": "2026-06-30",
+              "price": 584.73
+            }
+          ],
+          "daily_markers": {
+            "dcl0": {
+              "date": "2026-07-29",
+              "price": 424.03
+            },
+            "hch": {
+              "date": "2026-08-17",
+              "price": 517.35
+            },
+            "hcl": {
+              "date": "2026-08-24",
+              "price": 451.0
+            },
+            "dch": {
+              "date": "2026-08-04",
+              "price": 530.13
+            }
+          },
+          "intermediate_markers": {
+            "dcl0": {
+              "date": "2026-03-03",
+              "price": 188.22
+            },
+            "hch": {
+              "date": "2026-06-30",
+              "price": 584.73
+            },
+            "dch": {
+              "date": "2026-06-30",
+              "price": 584.73
+            }
+          }
+        }
+      },
+      "zen": {
+        "status": "ok",
+        "zen_signal": "HOLD",
+        "zen_score": 52,
+        "eligible_for_entry": false,
+        "trend": {
+          "direction": "CHOPPY",
+          "consecutive_bars": 2,
+          "last_bullish": true
+        },
+        "breakout": {
+          "bullish_breakout": false,
+          "bearish_breakout": false,
+          "resistance": 517.35,
+          "support": 440.5
+        },
+        "price": 503.87,
+        "stop_price": null,
+        "target_price": null,
+        "reward_risk": null,
+        "reasons": [
+          "Heiken-Ashi trend CHOPPY for 2 bars"
+        ]
+      },
+      "reasoning": {
+        "ticker": "AMD",
+        "recommendation": "HOLD / WATCH",
+        "rec_color": "#ff9900",
+        "blended_score": 45.8,
+        "tech_score": 53,
+        "cycle_score": 35,
+        "confidence": "LOW",
+        "timing": "Monitor \u2014 wait for clearer signal before entering",
+        "reasons": [
+          "RSI 56.61 neutral",
+          "RSI trending UP \u2014 momentum building",
+          "MACD above signal line \u2014 mild bullish bias",
+          "Price near UPPER Bollinger Band (%B=0.915) \u2014 extended, risk of reversal",
+          "\u2705 GOLDEN CROSS (50D SMA > 200D SMA) \u2014 long-term uptrend",
+          "Price above 50-day SMA \u2014 medium-term uptrend intact",
+          "Stochastic K=99.17 \u2014 overbought",
+          "RIGHT-translated cycle (Daily Cycle #2 of IC)",
+          "\u26a0\ufe0f Trendline BREAK \u2014 closed below HCL support",
+          "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+        ],
+        "price": 503.87,
+        "entry_price": 488.7539,
+        "entry_type": "Wait for 3% pullback before entering",
+        "stop_loss": 432.8577,
+        "stop_note": "Stop just below cycle HCL trendline ($437.23)",
+        "take_profit": 572.3231,
+        "dividend_note": null,
+        "risk_reward": 0.96
+      },
+      "correlation": {
+        "status": "ok",
+        "benchmarks": {
+          "S&P500": {
+            "correlation": 0.607,
+            "beta": 3.523
+          },
+          "NASDAQ": {
+            "correlation": 0.684,
+            "beta": 2.481
+          },
+          "Dow": {
+            "correlation": 0.27,
+            "beta": 1.605
+          }
+        },
+        "avg_correlation": 0.52,
+        "us_trend": "MIXED",
+        "us_benchmark_trends": {
+          "S&P500": {
+            "price": 7692.5,
+            "5d_pct": 0.08,
+            "20d_pct": -0.78,
+            "trend": "MIXED"
+          },
+          "NASDAQ": {
+            "price": 26445.28,
+            "5d_pct": 0.28,
+            "20d_pct": -0.6,
+            "trend": "MIXED"
+          },
+          "Dow": {
+            "price": 52868.15,
+            "5d_pct": -0.6,
+            "20d_pct": -2.05,
+            "trend": "BEARISH"
+          }
+        },
+        "outlook": "LOW CORRELATION \u2014 moves independently of US"
+      },
+      "error": null
+    },
+    {
       "ticker": "TEA.AX",
       "name": "Tasmea Limited",
       "sector": "Industrials",
@@ -6143,10 +5657,10 @@
             "cycle_num": null,
             "dcl0_date": "2024-10-09",
             "dcl0_price": 1.9923,
-            "hch_date": "2024-10-16",
-            "hch_price": 2.4632,
-            "hcl_date": "2024-10-17",
-            "hcl_price": 2.2458,
+            "hch_date": "2024-10-28",
+            "hch_price": 2.6805,
+            "hcl_date": null,
+            "hcl_price": null,
             "dch_date": "2024-10-28",
             "dch_price": 2.6805,
             "dcl1_date": "2024-10-29",
@@ -6215,7 +5729,7 @@
             "hch_price": 2.9612,
             "hcl_date": "2025-02-04",
             "hcl_price": 2.7529,
-            "dch_date": "2025-02-07",
+            "dch_date": "2025-02-11",
             "dch_price": 3.0518,
             "dcl1_date": "2025-02-17",
             "dcl1_price": 2.8616,
@@ -6266,52 +5780,52 @@
             "hch_price": 2.5175,
             "hcl_date": "2025-04-23",
             "hcl_price": 2.2005,
-            "dch_date": "2025-05-08",
-            "dch_price": 2.5301,
-            "dcl1_date": "2025-05-13",
-            "dcl1_price": 2.3916,
+            "dch_date": "2025-05-26",
+            "dch_price": 2.7887,
+            "dcl1_date": "2025-05-30",
+            "dcl1_price": 2.5855,
             "translation": "RIGHT",
             "failed": false,
-            "length": 23,
+            "length": 36,
             "intermediate_cycle_start": "2025-04-07"
           },
           {
             "cycle_num": 2,
-            "dcl0_date": "2025-05-13",
-            "dcl0_price": 2.3916,
-            "hch_date": "2025-05-26",
-            "hch_price": 2.7887,
-            "hcl_date": "2025-05-30",
-            "hcl_price": 2.5855,
-            "dch_date": "2025-06-04",
-            "dch_price": 2.9456,
-            "dcl1_date": "2025-06-11",
-            "dcl1_price": 2.7768,
+            "dcl0_date": "2025-05-30",
+            "dcl0_price": 2.5855,
+            "hch_date": "2025-06-04",
+            "hch_price": 2.9456,
+            "hcl_date": "2025-06-11",
+            "hcl_price": 2.7768,
+            "dch_date": "2025-06-19",
+            "dch_price": 3.1515,
+            "dcl1_date": "2025-06-20",
+            "dcl1_price": 2.9978,
             "translation": "RIGHT",
             "failed": false,
-            "length": 20,
+            "length": 14,
             "intermediate_cycle_start": "2025-04-07"
           },
           {
             "cycle_num": 3,
-            "dcl0_date": "2025-06-11",
-            "dcl0_price": 2.7768,
+            "dcl0_date": "2025-06-20",
+            "dcl0_price": 2.9978,
             "hch_date": "2025-06-26",
             "hch_price": 3.7377,
             "hcl_date": null,
             "hcl_price": null,
             "dch_date": "2025-06-26",
             "dch_price": 3.7377,
-            "dcl1_date": "2025-07-23",
+            "dcl1_date": "2025-07-28",
             "dcl1_price": 3.1804,
             "translation": "LEFT",
             "failed": false,
-            "length": 30,
+            "length": 26,
             "intermediate_cycle_start": "2025-04-07"
           },
           {
             "cycle_num": 1,
-            "dcl0_date": "2025-07-23",
+            "dcl0_date": "2025-07-28",
             "dcl0_price": 3.1804,
             "hch_date": "2025-08-25",
             "hch_price": 4.4198,
@@ -6323,8 +5837,8 @@
             "dcl1_price": 3.7953,
             "translation": "RIGHT",
             "failed": false,
-            "length": 26,
-            "intermediate_cycle_start": "2025-07-23"
+            "length": 23,
+            "intermediate_cycle_start": "2025-07-28"
           },
           {
             "cycle_num": 2,
@@ -6341,7 +5855,7 @@
             "translation": "RIGHT",
             "failed": false,
             "length": 32,
-            "intermediate_cycle_start": "2025-07-23"
+            "intermediate_cycle_start": "2025-07-28"
           },
           {
             "cycle_num": 3,
@@ -6358,7 +5872,7 @@
             "translation": "RIGHT",
             "failed": true,
             "length": 28,
-            "intermediate_cycle_start": "2025-07-23"
+            "intermediate_cycle_start": "2025-07-28"
           },
           {
             "cycle_num": 4,
@@ -6375,7 +5889,7 @@
             "translation": "LEFT",
             "failed": true,
             "length": 33,
-            "intermediate_cycle_start": "2025-07-23"
+            "intermediate_cycle_start": "2025-07-28"
           },
           {
             "cycle_num": 5,
@@ -6392,7 +5906,7 @@
             "translation": "LEFT",
             "failed": true,
             "length": 31,
-            "intermediate_cycle_start": "2025-07-23"
+            "intermediate_cycle_start": "2025-07-28"
           },
           {
             "cycle_num": 1,
@@ -6514,20 +6028,20 @@
             "ic_hcl_price": null,
             "ich_date": "2025-06-26",
             "ich_price": 3.7377,
-            "icl1_date": "2025-07-23",
+            "icl1_date": "2025-07-28",
             "icl1_price": 3.1804,
             "translation": "RIGHT",
             "failed": false,
-            "length": 73,
+            "length": 76,
             "daily_cycle_count": 3,
             "member_daily_cycles": [
               "2025-04-07",
-              "2025-05-13",
-              "2025-06-11"
+              "2025-05-30",
+              "2025-06-20"
             ]
           },
           {
-            "icl0_date": "2025-07-23",
+            "icl0_date": "2025-07-28",
             "icl0_price": 3.1804,
             "ic_hch_date": "2025-09-09",
             "ic_hch_price": 4.6889,
@@ -6539,10 +6053,10 @@
             "icl1_price": 3.1154,
             "translation": "RIGHT",
             "failed": true,
-            "length": 150,
+            "length": 147,
             "daily_cycle_count": 5,
             "member_daily_cycles": [
-              "2025-07-23",
+              "2025-07-28",
               "2025-08-28",
               "2025-10-13",
               "2025-11-20",
@@ -8336,13 +7850,13 @@
             "dcl0_price": 3.1022,
             "hch_date": "2025-04-30",
             "hch_price": 4.2384,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2025-04-30",
+            "hcl_date": "2025-05-06",
+            "hcl_price": 3.8926,
+            "dch_date": "2025-05-13",
             "dch_price": 4.2384,
             "dcl1_date": "2025-06-03",
             "dcl1_price": 3.5073,
-            "translation": "LEFT",
+            "translation": "RIGHT",
             "failed": false,
             "length": 36,
             "intermediate_cycle_start": "2025-04-09"
@@ -8357,16 +7871,16 @@
             "hcl_price": null,
             "dch_date": "2025-06-05",
             "dch_price": 3.8926,
-            "dcl1_date": "2025-06-23",
+            "dcl1_date": "2025-06-24",
             "dcl1_price": 3.369,
             "translation": "LEFT",
             "failed": true,
-            "length": 13,
+            "length": 14,
             "intermediate_cycle_start": "2025-04-09"
           },
           {
             "cycle_num": 3,
-            "dcl0_date": "2025-06-23",
+            "dcl0_date": "2025-06-24",
             "dcl0_price": 3.369,
             "hch_date": "2025-06-30",
             "hch_price": 3.9074,
@@ -8378,7 +7892,7 @@
             "dcl1_price": 4.8411,
             "translation": "RIGHT",
             "failed": false,
-            "length": 28,
+            "length": 27,
             "intermediate_cycle_start": "2025-04-09"
           },
           {
@@ -8659,11 +8173,11 @@
           {
             "icl0_date": "2025-04-09",
             "icl0_price": 3.1022,
-            "ic_hch_date": "2025-04-30",
+            "ic_hch_date": "2025-05-13",
             "ic_hch_price": 4.2384,
-            "ic_hcl_date": "2025-06-23",
+            "ic_hcl_date": "2025-06-24",
             "ic_hcl_price": 3.369,
-            "ich_date": "2025-08-26",
+            "ich_date": "2025-08-19",
             "ich_price": 6.5404,
             "icl1_date": "2025-09-11",
             "icl1_price": 5.3421,
@@ -8674,7 +8188,7 @@
             "member_daily_cycles": [
               "2025-04-09",
               "2025-06-03",
-              "2025-06-23",
+              "2025-06-24",
               "2025-07-31",
               "2025-08-20"
             ]
@@ -8945,11 +8459,11 @@
         "take_profit": 11.3655,
         "stoch_k": 83.16,
         "stoch_d": 86.24,
-        "volume": 1628770,
+        "volume": 1767496,
         "volume_signal": {
-          "ratio": 0.61,
+          "ratio": 0.66,
           "signal": "NORMAL",
-          "avg_volume": 2661545
+          "avg_volume": 2668481
         },
         "moving_averages": {
           "sma_10": 10.856,
@@ -9001,23 +8515,6 @@
         "entry_note": "Wait for next DCL before entering new positions",
         "exit_note": "Reduce or exit existing longs",
         "all_cycles": [
-          {
-            "cycle_num": null,
-            "dcl0_date": "2024-10-08",
-            "dcl0_price": 6.4629,
-            "hch_date": "2024-10-17",
-            "hch_price": 6.7606,
-            "hcl_date": null,
-            "hcl_price": null,
-            "dch_date": "2024-10-09",
-            "dch_price": 6.8744,
-            "dcl1_date": "2024-11-13",
-            "dcl1_price": 5.7973,
-            "translation": "LEFT",
-            "failed": true,
-            "length": 26,
-            "intermediate_cycle_start": null
-          },
           {
             "cycle_num": 1,
             "dcl0_date": "2024-11-13",
@@ -9073,10 +8570,10 @@
             "cycle_num": 4,
             "dcl0_date": "2025-04-07",
             "dcl0_price": 6.9145,
-            "hch_date": "2025-05-12",
-            "hch_price": 7.8879,
-            "hcl_date": null,
-            "hcl_price": null,
+            "hch_date": "2025-04-23",
+            "hch_price": 7.615,
+            "hcl_date": "2025-05-01",
+            "hcl_price": 7.3784,
             "dch_date": "2025-05-12",
             "dch_price": 7.8879,
             "dcl1_date": "2025-05-14",
@@ -9096,16 +8593,16 @@
             "hcl_price": null,
             "dch_date": "2025-06-20",
             "dch_price": 7.9789,
-            "dcl1_date": "2025-06-30",
+            "dcl1_date": "2025-06-27",
             "dcl1_price": 7.6773,
             "translation": "RIGHT",
             "failed": false,
-            "length": 32,
+            "length": 31,
             "intermediate_cycle_start": "2024-11-13"
           },
           {
             "cycle_num": 1,
-            "dcl0_date": "2025-06-30",
+            "dcl0_date": "2025-06-27",
             "dcl0_price": 7.6773,
             "hch_date": "2025-07-08",
             "hch_price": 7.9886,
@@ -9117,7 +8614,7 @@
             "dcl1_price": 7.932,
             "translation": "RIGHT",
             "failed": false,
-            "length": 36,
+            "length": 37,
             "intermediate_cycle_start": "2025-05-26"
           },
           {
@@ -9142,7 +8639,7 @@
             "dcl0_date": "2025-09-24",
             "dcl0_price": 8.2715,
             "hch_date": "2025-10-02",
-            "hch_price": 8.5734,
+            "hch_price": 8.5733,
             "hcl_date": "2025-10-22",
             "hcl_price": 8.3941,
             "dch_date": "2025-10-29",
@@ -9281,7 +8778,7 @@
             "length": 162,
             "daily_cycle_count": 4,
             "member_daily_cycles": [
-              "2025-06-30",
+              "2025-06-27",
               "2025-08-19",
               "2025-09-24",
               "2025-11-04"
@@ -9566,7 +9063,7 @@
         "all_cycles": [
           {
             "cycle_num": null,
-            "dcl0_date": "2024-10-03",
+            "dcl0_date": "2024-10-02",
             "dcl0_price": 2.0361,
             "hch_date": "2024-10-16",
             "hch_price": 2.2028,
@@ -9578,14 +9075,14 @@
             "dcl1_price": 2.0273,
             "translation": "LEFT",
             "failed": true,
-            "length": 21,
+            "length": 22,
             "intermediate_cycle_start": null
           },
           {
             "cycle_num": null,
             "dcl0_date": "2024-11-01",
             "dcl0_price": 2.0273,
-            "hch_date": "2024-11-05",
+            "hch_date": "2024-11-07",
             "hch_price": 2.1502,
             "hcl_date": "2024-11-11",
             "hcl_price": 2.0536,
@@ -9604,7 +9101,7 @@
             "dcl0_price": 2.0185,
             "hch_date": "2024-12-05",
             "hch_price": 2.1151,
-            "hcl_date": "2024-12-10",
+            "hcl_date": "2024-12-12",
             "hcl_price": 2.0273,
             "dch_date": "2025-01-06",
             "dch_price": 2.2818,
@@ -9619,7 +9116,7 @@
             "cycle_num": null,
             "dcl0_date": "2025-01-13",
             "dcl0_price": 2.0975,
-            "hch_date": "2025-01-22",
+            "hch_date": "2025-01-16",
             "hch_price": 2.2204,
             "hcl_date": "2025-01-28",
             "hcl_price": 2.1414,
@@ -9642,16 +9139,16 @@
             "hcl_price": null,
             "dch_date": "2025-05-01",
             "dch_price": 2.2891,
-            "dcl1_date": "2025-06-24",
+            "dcl1_date": "2025-06-20",
             "dcl1_price": 1.9995,
             "translation": "LEFT",
             "failed": false,
-            "length": 52,
+            "length": 50,
             "intermediate_cycle_start": "2025-04-07"
           },
           {
             "cycle_num": 2,
-            "dcl0_date": "2025-06-24",
+            "dcl0_date": "2025-06-20",
             "dcl0_price": 1.9995,
             "hch_date": "2025-06-25",
             "hch_price": 2.176,
@@ -9663,7 +9160,7 @@
             "dcl1_price": 2.1443,
             "translation": "RIGHT",
             "failed": false,
-            "length": 20,
+            "length": 22,
             "intermediate_cycle_start": "2025-04-07"
           },
           {
@@ -9810,7 +9307,7 @@
             "icl0_price": 1.9091,
             "ic_hch_date": "2025-05-01",
             "ic_hch_price": 2.2891,
-            "ic_hcl_date": "2025-06-24",
+            "ic_hcl_date": "2025-06-20",
             "ic_hcl_price": 1.9995,
             "ich_date": "2025-08-18",
             "ich_price": 2.5243,
@@ -9822,7 +9319,7 @@
             "daily_cycle_count": 4,
             "member_daily_cycles": [
               "2025-04-07",
-              "2025-06-24",
+              "2025-06-20",
               "2025-07-22",
               "2025-08-26"
             ]
@@ -10843,6 +10340,502 @@
         "stop_note": "Stop 1.5x ATR below entry (ATR=$0.2479)",
         "take_profit": 5.6737,
         "dividend_note": "Dividend yield: 101.0% | Ex-dividend: 1788307200",
+        "risk_reward": 2.0
+      },
+      "correlation": {
+        "status": "no_data"
+      },
+      "error": null
+    },
+    {
+      "ticker": "IOZ.AX",
+      "name": "iShares Core S&P/ASX 200 ETF",
+      "sector": "Unknown",
+      "market_cap": null,
+      "tech": {
+        "price": 36.46,
+        "price_1d_pct": 0.0,
+        "price_5d_pct": -0.08,
+        "price_20d_pct": -1.49,
+        "high_52w": 37.24,
+        "low_52w": 32.9798,
+        "pct_from_52w_high": -2.09,
+        "rsi": 51.88,
+        "rsi_prev": 51.88,
+        "macd": 0.087,
+        "macd_signal": 0.145,
+        "macd_hist": -0.058,
+        "macd_bullish_cross": "False",
+        "macd_death_cross": "False",
+        "bb_upper": 36.9936,
+        "bb_mid": 36.544,
+        "bb_lower": 36.0944,
+        "pct_b": 0.407,
+        "atr": 0.3026,
+        "stop_loss": 36.0061,
+        "take_profit": 37.3678,
+        "stoch_k": 42.59,
+        "stoch_d": 43.21,
+        "volume": 339276,
+        "volume_signal": {
+          "ratio": 0.72,
+          "signal": "NORMAL",
+          "avg_volume": 474234
+        },
+        "moving_averages": {
+          "sma_10": 36.514,
+          "sma_20": 36.544,
+          "sma_50": 36.0175,
+          "sma_200": 35.0788,
+          "ema_9": 36.4697,
+          "ema_21": 36.4393
+        },
+        "above_50sma": "True",
+        "above_200sma": "True",
+        "golden_cross": "True",
+        "tech_score": 52,
+        "signal": "HOLD",
+        "color": "orange"
+      },
+      "cycle": {
+        "status": "ok",
+        "cycle_len": 60,
+        "cycle_score": 22,
+        "cycle_signal": "CYCLE_AVOID",
+        "current_cycle": {
+          "cycle_num": 4,
+          "dcl0_date": "2026-07-02",
+          "dcl0_price": 34.71,
+          "hch_date": "2026-08-06",
+          "hch_price": 37.24,
+          "hcl_date": null,
+          "hcl_price": null,
+          "dch_date": "2026-08-06",
+          "dch_price": 37.24,
+          "dcl1_date": "2026-08-19",
+          "dcl1_price": 36.2,
+          "translation": "RIGHT",
+          "failed": false,
+          "length": 34,
+          "intermediate_cycle_start": "2025-11-21"
+        },
+        "bars_since_dcl": 13,
+        "pct_through_cycle": 21.7,
+        "high_risk_zone": false,
+        "trendline_break": false,
+        "confirmation_signal": false,
+        "reasons": [
+          "RIGHT-translated cycle (Daily Cycle #4 of IC)",
+          "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure",
+          "\u26a0\ufe0f FAILING NOW \u2014 live cycle already -0.55% below its own DCL0",
+          "Live cycle already trading below its own DCL0 \u2014 failing in real time"
+        ],
+        "entry_note": "Wait for next DCL before entering new positions",
+        "exit_note": "Reduce or exit existing longs",
+        "all_cycles": [
+          {
+            "cycle_num": null,
+            "dcl0_date": "2024-11-01",
+            "dcl0_price": 30.6385,
+            "hch_date": "2024-12-03",
+            "hch_price": 32.5009,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2024-12-03",
+            "dch_price": 32.5009,
+            "dcl1_date": "2024-12-20",
+            "dcl1_price": 30.7047,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 35,
+            "intermediate_cycle_start": null
+          },
+          {
+            "cycle_num": null,
+            "dcl0_date": "2024-12-20",
+            "dcl0_price": 30.7047,
+            "hch_date": "2025-01-08",
+            "hch_price": 31.9888,
+            "hcl_date": "2025-02-03",
+            "hcl_price": 31.8843,
+            "dch_date": "2025-02-14",
+            "dch_price": 32.9582,
+            "dcl1_date": "2025-04-07",
+            "dcl1_price": 27.6635,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 72,
+            "intermediate_cycle_start": null
+          },
+          {
+            "cycle_num": 1,
+            "dcl0_date": "2025-04-07",
+            "dcl0_price": 27.6635,
+            "hch_date": "2025-06-11",
+            "hch_price": 33.5127,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2025-06-11",
+            "dch_price": 33.5127,
+            "dcl1_date": "2025-06-23",
+            "dcl1_price": 32.6401,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 51,
+            "intermediate_cycle_start": "2025-04-07"
+          },
+          {
+            "cycle_num": 2,
+            "dcl0_date": "2025-06-23",
+            "dcl0_price": 32.6401,
+            "hch_date": "2025-07-18",
+            "hch_price": 34.0859,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2025-07-18",
+            "dch_price": 34.0859,
+            "dcl1_date": "2025-08-04",
+            "dcl1_price": 33.5059,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 30,
+            "intermediate_cycle_start": "2025-04-07"
+          },
+          {
+            "cycle_num": 3,
+            "dcl0_date": "2025-08-04",
+            "dcl0_price": 33.5059,
+            "hch_date": "2025-08-25",
+            "hch_price": 35.2749,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2025-08-25",
+            "dch_price": 35.2749,
+            "dcl1_date": "2025-09-25",
+            "dcl1_price": 34.2502,
+            "translation": "LEFT",
+            "failed": false,
+            "length": 38,
+            "intermediate_cycle_start": "2025-04-07"
+          },
+          {
+            "cycle_num": 4,
+            "dcl0_date": "2025-09-25",
+            "dcl0_price": 34.2502,
+            "hch_date": "2025-10-06",
+            "hch_price": 35.4103,
+            "hcl_date": "2025-10-14",
+            "hcl_price": 34.6668,
+            "dch_date": "2025-10-21",
+            "dch_price": 35.7633,
+            "dcl1_date": "2025-11-21",
+            "dcl1_price": 32.9927,
+            "translation": "LEFT",
+            "failed": true,
+            "length": 40,
+            "intermediate_cycle_start": "2025-04-07"
+          },
+          {
+            "cycle_num": 1,
+            "dcl0_date": "2025-11-21",
+            "dcl0_price": 32.9927,
+            "hch_date": "2025-11-27",
+            "hch_price": 34.0598,
+            "hcl_date": "2025-12-17",
+            "hcl_price": 33.6438,
+            "dch_date": "2026-02-27",
+            "dch_price": 36.454,
+            "dcl1_date": "2026-03-23",
+            "dcl1_price": 32.9798,
+            "translation": "RIGHT",
+            "failed": true,
+            "length": 82,
+            "intermediate_cycle_start": "2025-11-21"
+          },
+          {
+            "cycle_num": 2,
+            "dcl0_date": "2026-03-23",
+            "dcl0_price": 32.9798,
+            "hch_date": "2026-04-14",
+            "hch_price": 35.9994,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2026-04-14",
+            "dch_price": 35.9994,
+            "dcl1_date": "2026-05-20",
+            "dcl1_price": 33.9536,
+            "translation": "LEFT",
+            "failed": false,
+            "length": 40,
+            "intermediate_cycle_start": "2025-11-21"
+          },
+          {
+            "cycle_num": 3,
+            "dcl0_date": "2026-05-20",
+            "dcl0_price": 33.9536,
+            "hch_date": "2026-06-18",
+            "hch_price": 35.9994,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2026-06-18",
+            "dch_price": 35.9994,
+            "dcl1_date": "2026-07-02",
+            "dcl1_price": 34.71,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 30,
+            "intermediate_cycle_start": "2025-11-21"
+          },
+          {
+            "cycle_num": 4,
+            "dcl0_date": "2026-07-02",
+            "dcl0_price": 34.71,
+            "hch_date": "2026-08-06",
+            "hch_price": 37.24,
+            "hcl_date": null,
+            "hcl_price": null,
+            "dch_date": "2026-08-06",
+            "dch_price": 37.24,
+            "dcl1_date": "2026-08-19",
+            "dcl1_price": 36.2,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 34,
+            "intermediate_cycle_start": "2025-11-21"
+          }
+        ],
+        "cycle_len_intermediate": 240,
+        "intermediate_cycles": [
+          {
+            "icl0_date": "2025-04-07",
+            "icl0_price": 27.6635,
+            "ic_hch_date": "2025-10-21",
+            "ic_hch_price": 35.7633,
+            "ic_hcl_date": null,
+            "ic_hcl_price": null,
+            "ich_date": "2025-10-21",
+            "ich_price": 35.7633,
+            "icl1_date": "2025-11-21",
+            "icl1_price": 32.9927,
+            "translation": "RIGHT",
+            "failed": false,
+            "length": 159,
+            "daily_cycle_count": 4,
+            "member_daily_cycles": [
+              "2025-04-07",
+              "2025-06-23",
+              "2025-08-04",
+              "2025-09-25"
+            ]
+          }
+        ],
+        "live_daily_cycle": {
+          "live": true,
+          "scale": "daily",
+          "dcl0_date": "2026-08-19",
+          "dcl0_price": 36.2,
+          "hch_date": null,
+          "hch_price": null,
+          "hcl_date": null,
+          "hcl_price": null,
+          "dch_date": "2026-08-26",
+          "dch_price": 37.08,
+          "translation": "PENDING",
+          "bars_elapsed": 13,
+          "projected_cycle_len": 60,
+          "projected_midpoint_date": "2026-09-07",
+          "cycle_num": 5
+        },
+        "live_intermediate_cycle": {
+          "live": true,
+          "scale": "intermediate",
+          "dcl0_date": "2025-11-21",
+          "dcl0_price": 32.9927,
+          "hch_date": "2026-02-27",
+          "hch_price": 36.454,
+          "hcl_date": "2026-03-23",
+          "hcl_price": 32.9798,
+          "dch_date": "2026-08-06",
+          "dch_price": 37.24,
+          "translation": "RIGHT",
+          "bars_elapsed": 199,
+          "projected_cycle_len": 240,
+          "projected_midpoint_date": "2026-05-18"
+        },
+        "daily_trendline": {
+          "applicable": false,
+          "broken": false,
+          "trendline_price": null,
+          "slope_pct_per_bar": null
+        },
+        "intermediate_trendline": {
+          "applicable": true,
+          "broken": false,
+          "trendline_price": 32.9614,
+          "slope_pct_per_bar": -0.0
+        },
+        "live_daily_trendline": {
+          "applicable": false,
+          "broken": false,
+          "trendline_price": null,
+          "slope_pct_per_bar": null
+        },
+        "live_daily_resistance": {
+          "applicable": false,
+          "broken": false,
+          "trendline_price": null,
+          "slope_pct_per_bar": null
+        },
+        "live_intermediate_resistance": {
+          "applicable": true,
+          "broken": true,
+          "trendline_price": 37.3958,
+          "slope_pct_per_bar": 0.019
+        },
+        "cycle_failing_now": {
+          "failing": true,
+          "lowest_since_dcl0": 36.0,
+          "pct_below_dcl0": -0.55
+        },
+        "entry_zone": {
+          "zone": "FAILING_NOW",
+          "risk": "HIGH",
+          "eligible_for_entry": false,
+          "reasons": [
+            "Live cycle already trading below its own DCL0 \u2014 failing in real time"
+          ]
+        },
+        "predicted_move": {
+          "target_price": 38.8386,
+          "target_basis": "Prior Daily Cycle amplitude 7.3% projected from new DCL0",
+          "prior_cycle_amplitude_pct": 7.29,
+          "bars_to_dc3_estimate": 0,
+          "est_date_dc3": "2026-09-07"
+        },
+        "chart_overlay": {
+          "daily_support_line": [
+            {
+              "date": "2026-08-19",
+              "price": 36.2
+            }
+          ],
+          "daily_resistance_line": [
+            {
+              "date": "2026-08-26",
+              "price": 37.08
+            }
+          ],
+          "intermediate_support_line": [
+            {
+              "date": "2025-11-21",
+              "price": 32.9927
+            },
+            {
+              "date": "2026-03-23",
+              "price": 32.9798
+            },
+            {
+              "date": "2026-09-07",
+              "price": 32.9614
+            }
+          ],
+          "intermediate_resistance_line": [
+            {
+              "date": "2026-02-27",
+              "price": 36.454
+            },
+            {
+              "date": "2026-08-06",
+              "price": 37.24
+            },
+            {
+              "date": "2026-09-07",
+              "price": 37.3958
+            }
+          ],
+          "daily_markers": {
+            "dcl0": {
+              "date": "2026-08-19",
+              "price": 36.2
+            },
+            "dch": {
+              "date": "2026-08-26",
+              "price": 37.08
+            }
+          },
+          "intermediate_markers": {
+            "dcl0": {
+              "date": "2025-11-21",
+              "price": 32.9927
+            },
+            "hch": {
+              "date": "2026-02-27",
+              "price": 36.454
+            },
+            "hcl": {
+              "date": "2026-03-23",
+              "price": 32.9798
+            },
+            "dch": {
+              "date": "2026-08-06",
+              "price": 37.24
+            }
+          }
+        }
+      },
+      "zen": {
+        "status": "ok",
+        "zen_signal": "HOLD",
+        "zen_score": 53,
+        "eligible_for_entry": false,
+        "trend": {
+          "direction": "CHOPPY",
+          "consecutive_bars": 3,
+          "last_bullish": true
+        },
+        "breakout": {
+          "bullish_breakout": false,
+          "bearish_breakout": false,
+          "resistance": 37.21,
+          "support": 36.0
+        },
+        "price": 36.46,
+        "stop_price": null,
+        "target_price": null,
+        "reward_risk": null,
+        "reasons": [
+          "Heiken-Ashi trend CHOPPY for 3 bars"
+        ]
+      },
+      "reasoning": {
+        "ticker": "IOZ.AX",
+        "recommendation": "WEAK / REDUCE",
+        "rec_color": "#ff6600",
+        "blended_score": 40.0,
+        "tech_score": 52,
+        "cycle_score": 22,
+        "confidence": "MEDIUM",
+        "timing": "Reduce exposure or tighten stops on existing positions",
+        "reasons": [
+          "RSI 51.88 neutral",
+          "RSI trending DOWN \u2014 momentum weakening",
+          "MACD below signal line \u2014 mild bearish bias",
+          "Price within Bollinger Bands (%B=0.407) \u2014 normal range",
+          "\u2705 GOLDEN CROSS (50D SMA > 200D SMA) \u2014 long-term uptrend",
+          "Price above 50-day SMA \u2014 medium-term uptrend intact",
+          "Near 52-week HIGH \u2014 breakout potential but extended",
+          "RIGHT-translated cycle (Daily Cycle #4 of IC)",
+          "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure",
+          "\u26a0\ufe0f FAILING NOW \u2014 live cycle already -0.55% below its own DCL0",
+          "Live cycle already trading below its own DCL0 \u2014 failing in real time"
+        ],
+        "price": 36.46,
+        "entry_price": null,
+        "entry_type": "Do not enter \u2014 wait for conditions to improve",
+        "stop_loss": 36.0061,
+        "stop_note": "Stop 1.5x ATR below entry (ATR=$0.3026)",
+        "take_profit": 37.3678,
+        "dividend_note": "Dividend yield: 337.0%",
         "risk_reward": 2.0
       },
       "correlation": {
@@ -15936,11 +15929,11 @@
             "cycle_num": 2,
             "dcl0_date": "2025-01-20",
             "dcl0_price": 1.366,
-            "hch_date": "2025-02-13",
+            "hch_date": "2025-02-10",
             "hch_price": 1.6373,
             "hcl_date": null,
             "hcl_price": null,
-            "dch_date": "2025-02-13",
+            "dch_date": "2025-02-10",
             "dch_price": 1.6373,
             "dcl1_date": "2025-04-07",
             "dcl1_price": 1.3204,
@@ -16057,7 +16050,7 @@
           {
             "icl0_date": "2024-11-25",
             "icl0_price": 1.3388,
-            "ic_hch_date": "2025-02-13",
+            "ic_hch_date": "2025-02-10",
             "ic_hch_price": 1.6373,
             "ic_hcl_date": "2025-04-07",
             "ic_hcl_price": 1.3204,
