@@ -24,31 +24,65 @@ def _rsi(series, period=14):
 
 
 # ── Earnings ──────────────────────────────────────────────────────────────────
-def get_earnings(yft, ticker):
+def _cal_next_earnings(yft):
+    """Best-effort 'next earnings date' from Ticker.calendar (a dict on modern
+    yfinance, a DataFrame on older versions)."""
     try:
         cal = yft.calendar
-        next_date = "Unknown"
-        if cal is not None:
-            if isinstance(cal, dict):
-                nd = cal.get("Earnings Date")
-                next_date = str(nd[0]) if hasattr(nd, '__iter__') and not isinstance(nd, str) else str(nd) if nd else "Unknown"
-            elif hasattr(cal, "index") and "Earnings Date" in cal.index:
-                next_date = str(cal.loc["Earnings Date"].iloc[0])
-        hist = []
-        try:
-            qe = yft.quarterly_earnings
-            if qe is not None and len(qe) > 0:
-                for dt, row in list(qe.iterrows())[:4]:
-                    hist.append({
-                        "date": str(dt),
-                        "actual": float(row.get("Actual", 0) or 0),
-                        "estimate": float(row.get("Estimate", 0) or 0),
-                    })
-        except Exception:
-            pass
-        return {"ticker": ticker, "next_earnings": next_date, "history": hist}
+    except Exception:
+        return None
+    if not cal:
+        return None
+    try:
+        if isinstance(cal, dict):
+            nd = cal.get("Earnings Date")
+            if isinstance(nd, (list, tuple)) and nd:
+                nd = nd[0]
+            return str(nd)[:10] if nd else None
+        if hasattr(cal, "index") and "Earnings Date" in cal.index:
+            return str(cal.loc["Earnings Date"].iloc[0])[:10]
+    except Exception:
+        return None
+    return None
+
+
+def get_earnings(yft, ticker):
+    """Next earnings date + last 4 reported quarters (EPS actual vs estimate).
+
+    yfinance dropped Ticker.quarterly_earnings; get_earnings_dates() is the
+    current source and carries both past (Reported EPS filled) and upcoming
+    (Reported EPS NaN) rows. Small-cap ASX names often return nothing here --
+    that's a data gap, not an error."""
+    next_date = "Unknown"
+    hist = []
+    try:
+        ed = yft.get_earnings_dates(limit=16)
     except Exception as e:
-        return {"ticker": ticker, "next_earnings": "N/A", "history": [], "error": str(e)}
+        return {"ticker": ticker, "next_earnings": _cal_next_earnings(yft) or "N/A",
+                "history": [], "error": str(e)}
+
+    if ed is not None and len(ed):
+        def _col(row, *names):
+            for n in names:
+                if n in row and pd.notna(row[n]):
+                    return float(row[n])
+            return None
+        today = pd.Timestamp.now(tz=ed.index.tz) if ed.index.tz else pd.Timestamp.now()
+        past, future = [], []
+        for dt, row in ed.iterrows():
+            actual = _col(row, "Reported EPS")
+            estimate = _col(row, "EPS Estimate")
+            if actual is not None:
+                past.append({"date": str(dt)[:10], "actual": actual, "estimate": estimate})
+            elif dt >= today:
+                future.append(str(dt)[:10])
+        hist = sorted(past, key=lambda x: x["date"], reverse=True)[:4]
+        if future:
+            next_date = min(future)
+
+    if next_date in ("Unknown", "N/A"):
+        next_date = _cal_next_earnings(yft) or next_date
+    return {"ticker": ticker, "next_earnings": next_date, "history": hist}
 
 
 # ── 12-1 Month Momentum ───────────────────────────────────────────────────────

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T14:06:41",
+  "generated_at": "2026-09-09T14:08:10",
   "watchlist_count": 27,
   "candidates": [
     {
@@ -22,7 +22,7 @@
       "stop_price": 7.791,
       "position_size": 471.18,
       "already_held_real": false,
-      "cooldown_days_remaining": 0,
+      "cooldown_days_remaining": 2,
       "reasons": [
         "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
         "RIGHT-translated cycle (Daily Cycle #1 of IC)",
@@ -92,7 +92,7 @@
     {
       "ticker": "TSLA",
       "name": "Tesla, Inc.",
-      "price": 372.79,
+      "price": 372.22,
       "sector": "Consumer Cyclical",
       "cycle_score": 80,
       "cycle_signal": "CYCLE_BUY",
@@ -107,7 +107,7 @@
         "est_date_dc3": "2026-09-24"
       },
       "stop_price": 291.4324,
-      "position_size": 458.21,
+      "position_size": 460.74,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -169,7 +169,7 @@
             "price": 384.04
           }
         },
-        "entry_price": 372.79,
+        "entry_price": 372.22,
         "stop_price": 291.4324,
         "target_price": 422.1442
       },
@@ -179,7 +179,7 @@
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 224.085,
+      "price": 224.455,
       "sector": "Technology",
       "cycle_score": 65,
       "cycle_signal": "CYCLE_BUY",
@@ -194,7 +194,7 @@
         "est_date_dc3": "2026-10-06"
       },
       "stop_price": 210.798,
-      "position_size": 1686.5,
+      "position_size": 1643.52,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -271,7 +271,7 @@
             "price": 234.76
           }
         },
-        "entry_price": 224.085,
+        "entry_price": 224.455,
         "stop_price": 210.798,
         "target_price": 248.5997
       },
@@ -298,7 +298,7 @@
       "stop_price": 9.5648,
       "position_size": 827.25,
       "already_held_real": false,
-      "cooldown_days_remaining": 0,
+      "cooldown_days_remaining": 1,
       "reasons": [
         "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
         "LEFT-translated cycle (Daily Cycle #4 of IC)",
@@ -386,7 +386,7 @@
       "stop_price": 2.2834,
       "position_size": 1323.69,
       "already_held_real": false,
-      "cooldown_days_remaining": 0,
+      "cooldown_days_remaining": 3,
       "reasons": [
         "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
         "LEFT-translated cycle (Daily Cycle #3 of IC)",
@@ -595,7 +595,7 @@
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 491.41,
+      "price": 490.99,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
@@ -609,7 +609,7 @@
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 526.4906,
+      "price": 523.48,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
@@ -661,7 +661,7 @@
         "entered_dc_num": 1,
         "entered_score": 57
       },
-      "_current_price": 224.085,
+      "_current_price": 224.455,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -754,7 +754,7 @@
         "entered_dc_num": 2,
         "entered_score": 80
       },
-      "_current_price": 372.79,
+      "_current_price": 372.22,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -2019,8 +2019,8 @@
   ],
   "drawdown": {
     "realized_pnl": -18.33,
-    "unrealized_pnl": 17.0,
-    "total_pnl": -1.33,
+    "unrealized_pnl": 17.49,
+    "total_pnl": -0.84,
     "drawdown_pct": 0.01,
     "halted": false
   },
