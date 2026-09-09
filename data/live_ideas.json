@@ -1,7 +1,17 @@
 {
-  "generated_at": "2026-09-09 12:27",
+  "generated_at": "2026-09-09 14:49",
   "scanned_count": 71,
   "ideas": [
+    {
+      "ticker": "AMD",
+      "price": 521.395,
+      "vwap": 518.8682,
+      "vs": 0.487,
+      "rsi": 50.0,
+      "mo": 5.79,
+      "buyZone": 518.8682,
+      "sellZone": 530.6188
+    },
     {
       "ticker": "AMP.AX",
       "price": 2.47,
@@ -114,13 +124,13 @@
     },
     {
       "ticker": "MSFT",
-      "price": 494.02,
-      "vwap": 492.5722,
-      "vs": 0.2939,
-      "rsi": 71.2,
-      "mo": 2.1947,
-      "buyZone": 492.5722,
-      "sellZone": 495.9505
+      "price": 493.495,
+      "vwap": 492.2517,
+      "vs": 0.2526,
+      "rsi": 50.0,
+      "mo": 0.815,
+      "buyZone": 492.2517,
+      "sellZone": 497.531
     },
     {
       "ticker": "NWH.AX",
@@ -171,16 +181,6 @@
       "mo": 0.001,
       "buyZone": 0.0713,
       "sellZone": 0.073
-    },
-    {
-      "ticker": "TSLA",
-      "price": 368.04,
-      "vwap": 364.4607,
-      "vs": 0.9821,
-      "rsi": 48.9,
-      "mo": 1.5731,
-      "buyZone": 364.4607,
-      "sellZone": 370.9473
     }
   ]
 }
