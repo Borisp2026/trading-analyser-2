@@ -1137,6 +1137,30 @@
       "buy_date": "2026-09-09",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 2.2834,
+      "target_price": 2.5796,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Financial Services",
+        "entered_dc_num": 4,
+        "entered_score": 47
+      },
+      "sell_price": 2.435,
+      "sell_date": "2026-09-09",
+      "pnl": -3.19,
+      "pnl_pct": -0.2,
+      "close_reason": "TRENDLINE_BREAK"
+    },
+    {
+      "ticker": "AMP.AX",
+      "shares": 659.6304,
+      "buy_price": 2.435,
+      "buy_date": "2026-09-09",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #3 of IC)",
       "status": "open",
       "type": "paper",
       "stop_price": 2.2834,
@@ -1151,6 +1175,6 @@
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 14077.66786191805,
+  "paper_cash": 14026.385057418049,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
