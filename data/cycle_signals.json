@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T13:30:56",
+  "generated_at": "2026-09-09T13:59:56",
   "watchlist_count": 27,
   "candidates": [
     {
@@ -92,7 +92,7 @@
     {
       "ticker": "TSLA",
       "name": "Tesla, Inc.",
-      "price": 369.9599,
+      "price": 371.0905,
       "sector": "Consumer Cyclical",
       "cycle_score": 80,
       "cycle_signal": "CYCLE_BUY",
@@ -107,7 +107,7 @@
         "est_date_dc3": "2026-09-24"
       },
       "stop_price": 291.4324,
-      "position_size": 471.12,
+      "position_size": 465.85,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -169,7 +169,7 @@
             "price": 384.04
           }
         },
-        "entry_price": 369.9599,
+        "entry_price": 371.0905,
         "stop_price": 291.4324,
         "target_price": 422.1442
       },
@@ -179,7 +179,7 @@
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 225.095,
+      "price": 224.905,
       "sector": "Technology",
       "cycle_score": 65,
       "cycle_signal": "CYCLE_BUY",
@@ -194,7 +194,7 @@
         "est_date_dc3": "2026-10-06"
       },
       "stop_price": 210.798,
-      "position_size": 1574.42,
+      "position_size": 1594.28,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -271,7 +271,7 @@
             "price": 234.76
           }
         },
-        "entry_price": 225.095,
+        "entry_price": 224.905,
         "stop_price": 210.798,
         "target_price": 248.5997
       },
@@ -595,14 +595,7 @@
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 492.71,
-      "dc_num_in_ic": 3,
-      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-    },
-    {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 507.395,
+      "price": 491.76,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
@@ -612,6 +605,13 @@
       "price": 15.8,
       "dc_num_in_ic": 5,
       "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "price": 523.89,
+      "dc_num_in_ic": 3,
+      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "GWA.AX",
@@ -661,7 +661,7 @@
         "entered_dc_num": 1,
         "entered_score": 57
       },
-      "_current_price": 225.095,
+      "_current_price": 224.905,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -754,7 +754,7 @@
         "entered_dc_num": 2,
         "entered_score": 80
       },
-      "_current_price": 369.9599,
+      "_current_price": 371.0905,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -2019,9 +2019,9 @@
   ],
   "drawdown": {
     "realized_pnl": -18.33,
-    "unrealized_pnl": 16.78,
-    "total_pnl": -1.55,
-    "drawdown_pct": 0.02,
+    "unrealized_pnl": 17.55,
+    "total_pnl": -0.78,
+    "drawdown_pct": 0.01,
     "halted": false
   },
   "macro_zone": "SELECTIVE",

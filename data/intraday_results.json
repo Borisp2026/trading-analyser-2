@@ -6567,6 +6567,302 @@
       "error": null
     },
     {
+      "ticker": "AAPL",
+      "date": "2026-09-09",
+      "open": 315.93,
+      "high": 318.0,
+      "low": 315.07,
+      "close": 317.84,
+      "volume": 4523307,
+      "yesterday_close": 316.35,
+      "gap_pct": -0.13,
+      "gap_type": "FLAT",
+      "vwap": 316.228,
+      "vs_vwap": "ABOVE",
+      "rsi_15m": 50.0,
+      "momentum_pct": 0.6,
+      "signal": "WATCH",
+      "score": 60,
+      "reasons": [
+        "Price above VWAP $316.228"
+      ],
+      "candles": [
+        {
+          "time": 1788960600,
+          "open": 315.93,
+          "high": 316.21,
+          "low": 315.07,
+          "close": 315.85
+        },
+        {
+          "time": 1788961500,
+          "open": 315.85,
+          "high": 318.0,
+          "low": 315.5,
+          "close": 317.875
+        },
+        {
+          "time": 1788962400,
+          "open": 317.84,
+          "high": 317.84,
+          "low": 317.84,
+          "close": 317.84
+        }
+      ],
+      "vwap_line": [
+        {
+          "time": 1788960600,
+          "value": 315.71
+        },
+        {
+          "time": 1788961500,
+          "value": 316.228
+        },
+        {
+          "time": 1788962400,
+          "value": 316.228
+        }
+      ],
+      "error": null
+    },
+    {
+      "ticker": "MSFT",
+      "date": "2026-09-09",
+      "open": 493.07,
+      "high": 494.39,
+      "low": 491.14,
+      "close": 491.86,
+      "volume": 1590242,
+      "yesterday_close": 494.02,
+      "gap_pct": -0.19,
+      "gap_type": "FLAT",
+      "vwap": 492.64,
+      "vs_vwap": "BELOW",
+      "rsi_15m": 50.0,
+      "momentum_pct": -0.25,
+      "signal": "NEUTRAL",
+      "score": 40,
+      "reasons": [
+        "Price below VWAP $492.640"
+      ],
+      "candles": [
+        {
+          "time": 1788960600,
+          "open": 493.07,
+          "high": 494.26,
+          "low": 491.14,
+          "close": 492.68
+        },
+        {
+          "time": 1788961500,
+          "open": 492.59,
+          "high": 494.39,
+          "low": 491.5,
+          "close": 491.655
+        },
+        {
+          "time": 1788962400,
+          "open": 491.86,
+          "high": 491.86,
+          "low": 491.86,
+          "close": 491.86
+        }
+      ],
+      "vwap_line": [
+        {
+          "time": 1788960600,
+          "value": 492.693
+        },
+        {
+          "time": 1788961500,
+          "value": 492.64
+        },
+        {
+          "time": 1788962400,
+          "value": 492.64
+        }
+      ],
+      "error": null
+    },
+    {
+      "ticker": "NVDA",
+      "date": "2026-09-09",
+      "open": 225.27,
+      "high": 226.18,
+      "low": 224.4,
+      "close": 224.86,
+      "volume": 12976279,
+      "yesterday_close": 225.77,
+      "gap_pct": -0.22,
+      "gap_type": "FLAT",
+      "vwap": 225.064,
+      "vs_vwap": "BELOW",
+      "rsi_15m": 50.0,
+      "momentum_pct": -0.18,
+      "signal": "NEUTRAL",
+      "score": 40,
+      "reasons": [
+        "Price below VWAP $225.064"
+      ],
+      "candles": [
+        {
+          "time": 1788960600,
+          "open": 225.27,
+          "high": 226.18,
+          "low": 224.56,
+          "close": 224.77
+        },
+        {
+          "time": 1788961500,
+          "open": 224.775,
+          "high": 225.33,
+          "low": 224.4,
+          "close": 224.85
+        },
+        {
+          "time": 1788962400,
+          "open": 224.86,
+          "high": 224.86,
+          "low": 224.86,
+          "close": 224.86
+        }
+      ],
+      "vwap_line": [
+        {
+          "time": 1788960600,
+          "value": 225.17
+        },
+        {
+          "time": 1788961500,
+          "value": 225.064
+        },
+        {
+          "time": 1788962400,
+          "value": 225.064
+        }
+      ],
+      "error": null
+    },
+    {
+      "ticker": "AMD",
+      "date": "2026-09-09",
+      "open": 507.62,
+      "high": 524.8,
+      "low": 506.36,
+      "close": 524.495,
+      "volume": 5554971,
+      "yesterday_close": 505.53,
+      "gap_pct": 0.41,
+      "gap_type": "FLAT",
+      "vwap": 516.836,
+      "vs_vwap": "ABOVE",
+      "rsi_15m": 50.0,
+      "momentum_pct": 3.32,
+      "signal": "DAY BUY",
+      "score": 70,
+      "reasons": [
+        "Price above VWAP $516.836",
+        "Strong momentum +3.3% today"
+      ],
+      "candles": [
+        {
+          "time": 1788960600,
+          "open": 507.62,
+          "high": 517.75,
+          "low": 506.36,
+          "close": 515.605
+        },
+        {
+          "time": 1788961500,
+          "open": 515.44,
+          "high": 524.8,
+          "low": 515.0,
+          "close": 524.085
+        },
+        {
+          "time": 1788962400,
+          "open": 524.495,
+          "high": 524.495,
+          "low": 524.495,
+          "close": 524.495
+        }
+      ],
+      "vwap_line": [
+        {
+          "time": 1788960600,
+          "value": 513.238
+        },
+        {
+          "time": 1788961500,
+          "value": 516.836
+        },
+        {
+          "time": 1788962400,
+          "value": 516.836
+        }
+      ],
+      "error": null
+    },
+    {
+      "ticker": "TSLA",
+      "date": "2026-09-09",
+      "open": 368.355,
+      "high": 375.44,
+      "low": 367.83,
+      "close": 371.0,
+      "volume": 7135091,
+      "yesterday_close": 368.04,
+      "gap_pct": 0.09,
+      "gap_type": "FLAT",
+      "vwap": 372.255,
+      "vs_vwap": "BELOW",
+      "rsi_15m": 50.0,
+      "momentum_pct": 0.72,
+      "signal": "NEUTRAL",
+      "score": 40,
+      "reasons": [
+        "Price below VWAP $372.255"
+      ],
+      "candles": [
+        {
+          "time": 1788960600,
+          "open": 368.355,
+          "high": 375.44,
+          "low": 367.83,
+          "close": 373.62
+        },
+        {
+          "time": 1788961500,
+          "open": 373.635,
+          "high": 374.73,
+          "low": 370.68,
+          "close": 371.08
+        },
+        {
+          "time": 1788962400,
+          "open": 371.0,
+          "high": 371.0,
+          "low": 371.0,
+          "close": 371.0
+        }
+      ],
+      "vwap_line": [
+        {
+          "time": 1788960600,
+          "value": 372.297
+        },
+        {
+          "time": 1788961500,
+          "value": 372.255
+        },
+        {
+          "time": 1788962400,
+          "value": 372.255
+        }
+      ],
+      "error": null
+    },
+    {
       "ticker": "VAS.AX",
       "date": "2026-09-09",
       "open": 111.77,
@@ -8354,7 +8650,7 @@
       "error": null
     }
   ],
-  "scanned_at": "2026-09-09T13:31:18.122856",
+  "scanned_at": "2026-09-09T14:00:13.625037",
   "total_scanned": 33,
-  "results_count": 28
+  "results_count": 33
 }
