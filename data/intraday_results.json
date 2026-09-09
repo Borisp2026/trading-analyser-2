@@ -6,20 +6,20 @@
       "open": 9.52,
       "high": 10.01,
       "low": 9.52,
-      "close": 9.71,
-      "volume": 709623,
+      "close": 9.78,
+      "volume": 816867,
       "yesterday_close": 9.52,
       "gap_pct": 0.0,
       "gap_type": "FLAT",
-      "vwap": 9.813,
+      "vwap": 9.808,
       "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
-      "momentum_pct": 2.0,
+      "rsi_15m": 45.6,
+      "momentum_pct": 2.73,
       "signal": "NEUTRAL",
       "score": 50,
       "reasons": [
-        "Price below VWAP $9.813",
-        "Strong momentum +2.0% today"
+        "Price below VWAP $9.808",
+        "Strong momentum +2.7% today"
       ],
       "candles": [
         {
@@ -88,9 +88,44 @@
         {
           "time": 1788920100,
           "open": 9.72,
-          "high": 9.73,
-          "low": 9.705,
-          "close": 9.71
+          "high": 9.76,
+          "low": 9.7,
+          "close": 9.76
+        },
+        {
+          "time": 1788921000,
+          "open": 9.765,
+          "high": 9.82,
+          "low": 9.76,
+          "close": 9.79
+        },
+        {
+          "time": 1788921900,
+          "open": 9.79,
+          "high": 9.81,
+          "low": 9.78,
+          "close": 9.81
+        },
+        {
+          "time": 1788922800,
+          "open": 9.805,
+          "high": 9.81,
+          "low": 9.72,
+          "close": 9.76
+        },
+        {
+          "time": 1788923700,
+          "open": 9.76,
+          "high": 9.77,
+          "low": 9.73,
+          "close": 9.755
+        },
+        {
+          "time": 1788924600,
+          "open": 9.76,
+          "high": 9.78,
+          "low": 9.75,
+          "close": 9.78
         }
       ],
       "vwap_line": [
@@ -132,7 +167,27 @@
         },
         {
           "time": 1788920100,
-          "value": 9.813
+          "value": 9.812
+        },
+        {
+          "time": 1788921000,
+          "value": 9.811
+        },
+        {
+          "time": 1788921900,
+          "value": 9.811
+        },
+        {
+          "time": 1788922800,
+          "value": 9.809
+        },
+        {
+          "time": 1788923700,
+          "value": 9.808
+        },
+        {
+          "time": 1788924600,
+          "value": 9.808
         }
       ],
       "error": null
@@ -141,21 +196,21 @@
       "ticker": "TOR.AX",
       "date": "2026-09-09",
       "open": 0.225,
-      "high": 0.227,
+      "high": 0.232,
       "low": 0.22,
-      "close": 0.227,
-      "volume": 107026,
+      "close": 0.225,
+      "volume": 301897,
       "yesterday_close": 0.22,
       "gap_pct": 2.27,
       "gap_type": "GAP UP",
-      "vwap": 0.224,
-      "vs_vwap": "ABOVE",
+      "vwap": 0.226,
+      "vs_vwap": "BELOW",
       "rsi_15m": 50.0,
-      "momentum_pct": 0.89,
-      "signal": "DAY BUY",
-      "score": 70,
+      "momentum_pct": 0.0,
+      "signal": "NEUTRAL",
+      "score": 50,
       "reasons": [
-        "Price above VWAP $0.224",
+        "Price below VWAP $0.226",
         "Gap up +2.3% from prev close"
       ],
       "candles": [
@@ -200,6 +255,48 @@
           "high": 0.227,
           "low": 0.225,
           "close": 0.227
+        },
+        {
+          "time": 1788920100,
+          "open": 0.225,
+          "high": 0.225,
+          "low": 0.225,
+          "close": 0.225
+        },
+        {
+          "time": 1788921000,
+          "open": 0.225,
+          "high": 0.23,
+          "low": 0.225,
+          "close": 0.23
+        },
+        {
+          "time": 1788921900,
+          "open": 0.225,
+          "high": 0.227,
+          "low": 0.225,
+          "close": 0.227
+        },
+        {
+          "time": 1788922800,
+          "open": 0.227,
+          "high": 0.23,
+          "low": 0.227,
+          "close": 0.23
+        },
+        {
+          "time": 1788923700,
+          "open": 0.227,
+          "high": 0.232,
+          "low": 0.227,
+          "close": 0.227
+        },
+        {
+          "time": 1788924600,
+          "open": 0.227,
+          "high": 0.227,
+          "low": 0.225,
+          "close": 0.225
         }
       ],
       "vwap_line": [
@@ -226,6 +323,30 @@
         {
           "time": 1788919200,
           "value": 0.224
+        },
+        {
+          "time": 1788920100,
+          "value": 0.224
+        },
+        {
+          "time": 1788921000,
+          "value": 0.224
+        },
+        {
+          "time": 1788921900,
+          "value": 0.225
+        },
+        {
+          "time": 1788922800,
+          "value": 0.226
+        },
+        {
+          "time": 1788923700,
+          "value": 0.226
+        },
+        {
+          "time": 1788924600,
+          "value": 0.226
         }
       ],
       "error": null
@@ -236,21 +357,22 @@
       "open": 63.88,
       "high": 63.92,
       "low": 61.695,
-      "close": 62.08,
-      "volume": 180942,
+      "close": 61.855,
+      "volume": 256601,
       "yesterday_close": 62.6,
       "gap_pct": 2.04,
       "gap_type": "GAP UP",
-      "vwap": 62.584,
+      "vwap": 62.406,
       "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
-      "momentum_pct": -2.82,
+      "rsi_15m": 30.2,
+      "momentum_pct": -3.17,
       "signal": "NEUTRAL",
-      "score": 40,
+      "score": 50,
       "reasons": [
-        "Price below VWAP $62.584",
+        "Price below VWAP $62.406",
         "Gap up +2.0% from prev close",
-        "Weak momentum -2.8% today"
+        "RSI 30.2 oversold intraday",
+        "Weak momentum -3.2% today"
       ],
       "candles": [
         {
@@ -319,9 +441,44 @@
         {
           "time": 1788920100,
           "open": 62.02,
-          "high": 62.12,
-          "low": 62.02,
-          "close": 62.08
+          "high": 62.18,
+          "low": 61.88,
+          "close": 61.955
+        },
+        {
+          "time": 1788921000,
+          "open": 61.95,
+          "high": 62.1,
+          "low": 61.74,
+          "close": 62.065
+        },
+        {
+          "time": 1788921900,
+          "open": 62.06,
+          "high": 62.17,
+          "low": 61.78,
+          "close": 62.16
+        },
+        {
+          "time": 1788922800,
+          "open": 62.14,
+          "high": 62.23,
+          "low": 61.9,
+          "close": 61.97
+        },
+        {
+          "time": 1788923700,
+          "open": 61.985,
+          "high": 62.0,
+          "low": 61.81,
+          "close": 61.88
+        },
+        {
+          "time": 1788924600,
+          "open": 61.895,
+          "high": 62.0,
+          "low": 61.825,
+          "close": 61.855
         }
       ],
       "vwap_line": [
@@ -363,7 +520,27 @@
         },
         {
           "time": 1788920100,
-          "value": 62.584
+          "value": 62.537
+        },
+        {
+          "time": 1788921000,
+          "value": 62.5
+        },
+        {
+          "time": 1788921900,
+          "value": 62.478
+        },
+        {
+          "time": 1788922800,
+          "value": 62.448
+        },
+        {
+          "time": 1788923700,
+          "value": 62.421
+        },
+        {
+          "time": 1788924600,
+          "value": 62.406
         }
       ],
       "error": null
@@ -373,20 +550,20 @@
       "date": "2026-09-09",
       "open": 3.08,
       "high": 3.15,
-      "low": 3.06,
-      "close": 3.065,
-      "volume": 377308,
+      "low": 3.05,
+      "close": 3.085,
+      "volume": 588585,
       "yesterday_close": 3.03,
       "gap_pct": 1.65,
       "gap_type": "GAP UP",
-      "vwap": 3.099,
+      "vwap": 3.09,
       "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
-      "momentum_pct": -0.49,
+      "rsi_15m": 39.3,
+      "momentum_pct": 0.16,
       "signal": "NEUTRAL",
       "score": 50,
       "reasons": [
-        "Price below VWAP $3.099",
+        "Price below VWAP $3.090",
         "Gap up +1.6% from prev close"
       ],
       "candles": [
@@ -456,9 +633,44 @@
         {
           "time": 1788920100,
           "open": 3.065,
-          "high": 3.065,
+          "high": 3.08,
+          "low": 3.06,
+          "close": 3.075
+        },
+        {
+          "time": 1788921000,
+          "open": 3.075,
+          "high": 3.08,
+          "low": 3.05,
+          "close": 3.075
+        },
+        {
+          "time": 1788921900,
+          "open": 3.075,
+          "high": 3.09,
           "low": 3.065,
-          "close": 3.065
+          "close": 3.075
+        },
+        {
+          "time": 1788922800,
+          "open": 3.075,
+          "high": 3.08,
+          "low": 3.065,
+          "close": 3.07
+        },
+        {
+          "time": 1788923700,
+          "open": 3.07,
+          "high": 3.08,
+          "low": 3.06,
+          "close": 3.075
+        },
+        {
+          "time": 1788924600,
+          "open": 3.075,
+          "high": 3.09,
+          "low": 3.075,
+          "close": 3.085
         }
       ],
       "vwap_line": [
@@ -500,7 +712,27 @@
         },
         {
           "time": 1788920100,
-          "value": 3.099
+          "value": 3.098
+        },
+        {
+          "time": 1788921000,
+          "value": 3.091
+        },
+        {
+          "time": 1788921900,
+          "value": 3.091
+        },
+        {
+          "time": 1788922800,
+          "value": 3.09
+        },
+        {
+          "time": 1788923700,
+          "value": 3.09
+        },
+        {
+          "time": 1788924600,
+          "value": 3.09
         }
       ],
       "error": null
@@ -511,19 +743,20 @@
       "open": 0.38,
       "high": 0.39,
       "low": 0.37,
-      "close": 0.382,
-      "volume": 1791492,
+      "close": 0.385,
+      "volume": 2142137,
       "yesterday_close": 0.38,
       "gap_pct": 0.0,
       "gap_type": "FLAT",
-      "vwap": 0.381,
+      "vwap": 0.382,
       "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
-      "momentum_pct": 0.53,
-      "signal": "WATCH",
-      "score": 60,
+      "rsi_15m": 55.1,
+      "momentum_pct": 1.32,
+      "signal": "DAY BUY",
+      "score": 70,
       "reasons": [
-        "Price above VWAP $0.381"
+        "Price above VWAP $0.382",
+        "Strong momentum +1.3% today"
       ],
       "candles": [
         {
@@ -588,6 +821,48 @@
           "high": 0.39,
           "low": 0.382,
           "close": 0.382
+        },
+        {
+          "time": 1788920100,
+          "open": 0.385,
+          "high": 0.385,
+          "low": 0.385,
+          "close": 0.385
+        },
+        {
+          "time": 1788921000,
+          "open": 0.382,
+          "high": 0.385,
+          "low": 0.38,
+          "close": 0.385
+        },
+        {
+          "time": 1788921900,
+          "open": 0.385,
+          "high": 0.39,
+          "low": 0.382,
+          "close": 0.39
+        },
+        {
+          "time": 1788922800,
+          "open": 0.39,
+          "high": 0.39,
+          "low": 0.387,
+          "close": 0.387
+        },
+        {
+          "time": 1788923700,
+          "open": 0.385,
+          "high": 0.39,
+          "low": 0.382,
+          "close": 0.385
+        },
+        {
+          "time": 1788924600,
+          "open": 0.387,
+          "high": 0.39,
+          "low": 0.385,
+          "close": 0.385
         }
       ],
       "vwap_line": [
@@ -626,6 +901,30 @@
         {
           "time": 1788919200,
           "value": 0.381
+        },
+        {
+          "time": 1788920100,
+          "value": 0.381
+        },
+        {
+          "time": 1788921000,
+          "value": 0.381
+        },
+        {
+          "time": 1788921900,
+          "value": 0.382
+        },
+        {
+          "time": 1788922800,
+          "value": 0.382
+        },
+        {
+          "time": 1788923700,
+          "value": 0.382
+        },
+        {
+          "time": 1788924600,
+          "value": 0.382
         }
       ],
       "error": null
@@ -635,22 +934,23 @@
       "date": "2026-09-09",
       "open": 1.48,
       "high": 1.48,
-      "low": 1.41,
-      "close": 1.412,
-      "volume": 950525,
+      "low": 1.402,
+      "close": 1.405,
+      "volume": 1404784,
       "yesterday_close": 1.49,
       "gap_pct": -0.67,
       "gap_type": "GAP DOWN",
-      "vwap": 1.433,
+      "vwap": 1.425,
       "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
-      "momentum_pct": -4.59,
+      "rsi_15m": 8.3,
+      "momentum_pct": -5.07,
       "signal": "AVOID",
-      "score": 20,
+      "score": 30,
       "reasons": [
-        "Price below VWAP $1.433",
+        "Price below VWAP $1.425",
         "Gap down -0.7% from prev close",
-        "Weak momentum -4.6% today"
+        "RSI 8.3 oversold intraday",
+        "Weak momentum -5.1% today"
       ],
       "candles": [
         {
@@ -719,9 +1019,44 @@
         {
           "time": 1788920100,
           "open": 1.412,
+          "high": 1.417,
+          "low": 1.41,
+          "close": 1.41
+        },
+        {
+          "time": 1788921000,
+          "open": 1.41,
+          "high": 1.415,
+          "low": 1.41,
+          "close": 1.41
+        },
+        {
+          "time": 1788921900,
+          "open": 1.41,
+          "high": 1.415,
+          "low": 1.405,
+          "close": 1.41
+        },
+        {
+          "time": 1788922800,
+          "open": 1.41,
+          "high": 1.41,
+          "low": 1.402,
+          "close": 1.405
+        },
+        {
+          "time": 1788923700,
+          "open": 1.405,
           "high": 1.412,
-          "low": 1.412,
-          "close": 1.412
+          "low": 1.405,
+          "close": 1.405
+        },
+        {
+          "time": 1788924600,
+          "open": 1.405,
+          "high": 1.407,
+          "low": 1.405,
+          "close": 1.405
         }
       ],
       "vwap_line": [
@@ -763,7 +1098,27 @@
         },
         {
           "time": 1788920100,
-          "value": 1.433
+          "value": 1.43
+        },
+        {
+          "time": 1788921000,
+          "value": 1.429
+        },
+        {
+          "time": 1788921900,
+          "value": 1.428
+        },
+        {
+          "time": 1788922800,
+          "value": 1.426
+        },
+        {
+          "time": 1788923700,
+          "value": 1.426
+        },
+        {
+          "time": 1788924600,
+          "value": 1.425
         }
       ],
       "error": null
@@ -774,19 +1129,19 @@
       "open": 7.93,
       "high": 7.99,
       "low": 7.865,
-      "close": 7.935,
-      "volume": 1407923,
+      "close": 7.93,
+      "volume": 1788345,
       "yesterday_close": 8.06,
       "gap_pct": -1.61,
       "gap_type": "GAP DOWN",
-      "vwap": 7.92,
+      "vwap": 7.922,
       "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
-      "momentum_pct": 0.06,
+      "rsi_15m": 54.1,
+      "momentum_pct": 0.0,
       "signal": "NEUTRAL",
       "score": 50,
       "reasons": [
-        "Price above VWAP $7.920",
+        "Price above VWAP $7.922",
         "Gap down -1.6% from prev close"
       ],
       "candles": [
@@ -857,8 +1212,43 @@
           "time": 1788920100,
           "open": 7.93,
           "high": 7.94,
+          "low": 7.91,
+          "close": 7.925
+        },
+        {
+          "time": 1788921000,
+          "open": 7.925,
+          "high": 7.93,
+          "low": 7.88,
+          "close": 7.915
+        },
+        {
+          "time": 1788921900,
+          "open": 7.92,
+          "high": 7.95,
+          "low": 7.915,
+          "close": 7.945
+        },
+        {
+          "time": 1788922800,
+          "open": 7.95,
+          "high": 7.95,
           "low": 7.93,
+          "close": 7.94
+        },
+        {
+          "time": 1788923700,
+          "open": 7.935,
+          "high": 7.94,
+          "low": 7.91,
           "close": 7.935
+        },
+        {
+          "time": 1788924600,
+          "open": 7.935,
+          "high": 7.94,
+          "low": 7.925,
+          "close": 7.93
         }
       ],
       "vwap_line": [
@@ -900,7 +1290,27 @@
         },
         {
           "time": 1788920100,
+          "value": 7.921
+        },
+        {
+          "time": 1788921000,
           "value": 7.92
+        },
+        {
+          "time": 1788921900,
+          "value": 7.921
+        },
+        {
+          "time": 1788922800,
+          "value": 7.922
+        },
+        {
+          "time": 1788923700,
+          "value": 7.922
+        },
+        {
+          "time": 1788924600,
+          "value": 7.922
         }
       ],
       "error": null
@@ -911,19 +1321,20 @@
       "open": 2.38,
       "high": 2.42,
       "low": 2.36,
-      "close": 2.39,
-      "volume": 402447,
+      "close": 2.405,
+      "volume": 492500,
       "yesterday_close": 2.37,
       "gap_pct": 0.42,
       "gap_type": "FLAT",
-      "vwap": 2.388,
+      "vwap": 2.389,
       "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
-      "momentum_pct": 0.42,
-      "signal": "WATCH",
-      "score": 60,
+      "rsi_15m": 64.0,
+      "momentum_pct": 1.05,
+      "signal": "DAY BUY",
+      "score": 70,
       "reasons": [
-        "Price above VWAP $2.388"
+        "Price above VWAP $2.389",
+        "Strong momentum +1.1% today"
       ],
       "candles": [
         {
@@ -992,9 +1403,44 @@
         {
           "time": 1788920100,
           "open": 2.39,
-          "high": 2.39,
-          "low": 2.39,
+          "high": 2.4,
+          "low": 2.385,
           "close": 2.39
+        },
+        {
+          "time": 1788921000,
+          "open": 2.39,
+          "high": 2.395,
+          "low": 2.38,
+          "close": 2.395
+        },
+        {
+          "time": 1788921900,
+          "open": 2.395,
+          "high": 2.4,
+          "low": 2.39,
+          "close": 2.4
+        },
+        {
+          "time": 1788922800,
+          "open": 2.395,
+          "high": 2.395,
+          "low": 2.38,
+          "close": 2.385
+        },
+        {
+          "time": 1788923700,
+          "open": 2.385,
+          "high": 2.395,
+          "low": 2.38,
+          "close": 2.395
+        },
+        {
+          "time": 1788924600,
+          "open": 2.395,
+          "high": 2.41,
+          "low": 2.39,
+          "close": 2.405
         }
       ],
       "vwap_line": [
@@ -1037,6 +1483,26 @@
         {
           "time": 1788920100,
           "value": 2.388
+        },
+        {
+          "time": 1788921000,
+          "value": 2.388
+        },
+        {
+          "time": 1788921900,
+          "value": 2.388
+        },
+        {
+          "time": 1788922800,
+          "value": 2.388
+        },
+        {
+          "time": 1788923700,
+          "value": 2.388
+        },
+        {
+          "time": 1788924600,
+          "value": 2.389
         }
       ],
       "error": null
@@ -1047,20 +1513,21 @@
       "open": 2.29,
       "high": 2.29,
       "low": 2.22,
-      "close": 2.23,
-      "volume": 510999,
+      "close": 2.22,
+      "volume": 656077,
       "yesterday_close": 2.29,
       "gap_pct": 0.0,
       "gap_type": "FLAT",
-      "vwap": 2.243,
+      "vwap": 2.24,
       "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
-      "momentum_pct": -2.62,
-      "signal": "AVOID",
-      "score": 30,
+      "rsi_15m": 25.0,
+      "momentum_pct": -3.06,
+      "signal": "NEUTRAL",
+      "score": 40,
       "reasons": [
-        "Price below VWAP $2.243",
-        "Weak momentum -2.6% today"
+        "Price below VWAP $2.240",
+        "RSI 25.0 oversold intraday",
+        "Weak momentum -3.1% today"
       ],
       "candles": [
         {
@@ -1128,10 +1595,45 @@
         },
         {
           "time": 1788920100,
-          "open": 2.23,
-          "high": 2.23,
+          "open": 2.235,
+          "high": 2.24,
           "low": 2.23,
           "close": 2.23
+        },
+        {
+          "time": 1788921000,
+          "open": 2.23,
+          "high": 2.24,
+          "low": 2.23,
+          "close": 2.23
+        },
+        {
+          "time": 1788921900,
+          "open": 2.235,
+          "high": 2.24,
+          "low": 2.23,
+          "close": 2.235
+        },
+        {
+          "time": 1788922800,
+          "open": 2.235,
+          "high": 2.24,
+          "low": 2.23,
+          "close": 2.235
+        },
+        {
+          "time": 1788923700,
+          "open": 2.235,
+          "high": 2.235,
+          "low": 2.22,
+          "close": 2.225
+        },
+        {
+          "time": 1788924600,
+          "open": 2.225,
+          "high": 2.23,
+          "low": 2.22,
+          "close": 2.22
         }
       ],
       "vwap_line": [
@@ -1173,7 +1675,27 @@
         },
         {
           "time": 1788920100,
-          "value": 2.243
+          "value": 2.242
+        },
+        {
+          "time": 1788921000,
+          "value": 2.242
+        },
+        {
+          "time": 1788921900,
+          "value": 2.242
+        },
+        {
+          "time": 1788922800,
+          "value": 2.242
+        },
+        {
+          "time": 1788923700,
+          "value": 2.24
+        },
+        {
+          "time": 1788924600,
+          "value": 2.24
         }
       ],
       "error": null
@@ -1184,19 +1706,20 @@
       "open": 16.42,
       "high": 16.77,
       "low": 16.28,
-      "close": 16.565,
-      "volume": 480726,
+      "close": 16.61,
+      "volume": 577955,
       "yesterday_close": 16.5,
       "gap_pct": -0.48,
       "gap_type": "FLAT",
-      "vwap": 16.624,
+      "vwap": 16.621,
       "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
-      "momentum_pct": 0.88,
+      "rsi_15m": 54.1,
+      "momentum_pct": 1.16,
       "signal": "NEUTRAL",
-      "score": 40,
+      "score": 50,
       "reasons": [
-        "Price below VWAP $16.624"
+        "Price below VWAP $16.621",
+        "Strong momentum +1.2% today"
       ],
       "candles": [
         {
@@ -1265,9 +1788,44 @@
         {
           "time": 1788920100,
           "open": 16.58,
-          "high": 16.58,
-          "low": 16.565,
-          "close": 16.565
+          "high": 16.6,
+          "low": 16.555,
+          "close": 16.58
+        },
+        {
+          "time": 1788921000,
+          "open": 16.575,
+          "high": 16.635,
+          "low": 16.57,
+          "close": 16.625
+        },
+        {
+          "time": 1788921900,
+          "open": 16.625,
+          "high": 16.65,
+          "low": 16.6,
+          "close": 16.645
+        },
+        {
+          "time": 1788922800,
+          "open": 16.65,
+          "high": 16.65,
+          "low": 16.58,
+          "close": 16.605
+        },
+        {
+          "time": 1788923700,
+          "open": 16.605,
+          "high": 16.63,
+          "low": 16.575,
+          "close": 16.63
+        },
+        {
+          "time": 1788924600,
+          "open": 16.63,
+          "high": 16.645,
+          "low": 16.61,
+          "close": 16.61
         }
       ],
       "vwap_line": [
@@ -1309,7 +1867,27 @@
         },
         {
           "time": 1788920100,
-          "value": 16.624
+          "value": 16.622
+        },
+        {
+          "time": 1788921000,
+          "value": 16.622
+        },
+        {
+          "time": 1788921900,
+          "value": 16.622
+        },
+        {
+          "time": 1788922800,
+          "value": 16.622
+        },
+        {
+          "time": 1788923700,
+          "value": 16.621
+        },
+        {
+          "time": 1788924600,
+          "value": 16.621
         }
       ],
       "error": null
@@ -1318,22 +1896,23 @@
       "ticker": "NXT.AX",
       "date": "2026-09-09",
       "open": 12.515,
-      "high": 12.95,
+      "high": 13.02,
       "low": 12.49,
-      "close": 12.93,
-      "volume": 610796,
+      "close": 12.95,
+      "volume": 809588,
       "yesterday_close": 12.52,
       "gap_pct": -0.04,
       "gap_type": "FLAT",
-      "vwap": 12.737,
+      "vwap": 12.792,
       "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
-      "momentum_pct": 3.32,
+      "rsi_15m": 82.3,
+      "momentum_pct": 3.48,
       "signal": "DAY BUY",
-      "score": 70,
+      "score": 65,
       "reasons": [
-        "Price above VWAP $12.737",
-        "Strong momentum +3.3% today"
+        "Price above VWAP $12.792",
+        "RSI 82.3 overbought intraday",
+        "Strong momentum +3.5% today"
       ],
       "candles": [
         {
@@ -1402,9 +1981,44 @@
         {
           "time": 1788920100,
           "open": 12.93,
-          "high": 12.93,
+          "high": 12.98,
           "low": 12.93,
-          "close": 12.93
+          "close": 12.975
+        },
+        {
+          "time": 1788921000,
+          "open": 12.975,
+          "high": 13.02,
+          "low": 12.93,
+          "close": 12.945
+        },
+        {
+          "time": 1788921900,
+          "open": 12.945,
+          "high": 12.96,
+          "low": 12.925,
+          "close": 12.95
+        },
+        {
+          "time": 1788922800,
+          "open": 12.945,
+          "high": 12.98,
+          "low": 12.935,
+          "close": 12.975
+        },
+        {
+          "time": 1788923700,
+          "open": 12.975,
+          "high": 12.98,
+          "low": 12.94,
+          "close": 12.96
+        },
+        {
+          "time": 1788924600,
+          "open": 12.95,
+          "high": 12.955,
+          "low": 12.93,
+          "close": 12.95
         }
       ],
       "vwap_line": [
@@ -1446,7 +2060,27 @@
         },
         {
           "time": 1788920100,
-          "value": 12.737
+          "value": 12.748
+        },
+        {
+          "time": 1788921000,
+          "value": 12.775
+        },
+        {
+          "time": 1788921900,
+          "value": 12.78
+        },
+        {
+          "time": 1788922800,
+          "value": 12.785
+        },
+        {
+          "time": 1788923700,
+          "value": 12.79
+        },
+        {
+          "time": 1788924600,
+          "value": 12.792
         }
       ],
       "error": null
@@ -1457,19 +2091,19 @@
       "open": 10.87,
       "high": 10.92,
       "low": 10.85,
-      "close": 10.89,
-      "volume": 326993,
+      "close": 10.895,
+      "volume": 408921,
       "yesterday_close": 10.83,
       "gap_pct": 0.37,
       "gap_type": "FLAT",
-      "vwap": 10.881,
+      "vwap": 10.883,
       "vs_vwap": "ABOVE",
       "rsi_15m": 50.0,
-      "momentum_pct": 0.18,
+      "momentum_pct": 0.23,
       "signal": "WATCH",
       "score": 60,
       "reasons": [
-        "Price above VWAP $10.881"
+        "Price above VWAP $10.883"
       ],
       "candles": [
         {
@@ -1538,9 +2172,44 @@
         {
           "time": 1788920100,
           "open": 10.89,
-          "high": 10.895,
+          "high": 10.9,
+          "low": 10.88,
+          "close": 10.9
+        },
+        {
+          "time": 1788921000,
+          "open": 10.895,
+          "high": 10.9,
           "low": 10.88,
           "close": 10.89
+        },
+        {
+          "time": 1788921900,
+          "open": 10.885,
+          "high": 10.89,
+          "low": 10.88,
+          "close": 10.885
+        },
+        {
+          "time": 1788922800,
+          "open": 10.89,
+          "high": 10.9,
+          "low": 10.88,
+          "close": 10.9
+        },
+        {
+          "time": 1788923700,
+          "open": 10.9,
+          "high": 10.9,
+          "low": 10.89,
+          "close": 10.9
+        },
+        {
+          "time": 1788924600,
+          "open": 10.9,
+          "high": 10.9,
+          "low": 10.89,
+          "close": 10.895
         }
       ],
       "vwap_line": [
@@ -1582,7 +2251,27 @@
         },
         {
           "time": 1788920100,
-          "value": 10.881
+          "value": 10.882
+        },
+        {
+          "time": 1788921000,
+          "value": 10.882
+        },
+        {
+          "time": 1788921900,
+          "value": 10.882
+        },
+        {
+          "time": 1788922800,
+          "value": 10.883
+        },
+        {
+          "time": 1788923700,
+          "value": 10.883
+        },
+        {
+          "time": 1788924600,
+          "value": 10.883
         }
       ],
       "error": null
@@ -1594,18 +2283,19 @@
       "high": 2.02,
       "low": 1.995,
       "close": 2.0,
-      "volume": 126565,
+      "volume": 198907,
       "yesterday_close": 2.02,
       "gap_pct": 0.0,
       "gap_type": "FLAT",
       "vwap": 2.003,
       "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
+      "rsi_15m": 30.8,
       "momentum_pct": -0.99,
       "signal": "NEUTRAL",
-      "score": 40,
+      "score": 50,
       "reasons": [
-        "Price below VWAP $2.003"
+        "Price below VWAP $2.003",
+        "RSI 30.8 oversold intraday"
       ],
       "candles": [
         {
@@ -1674,8 +2364,43 @@
         {
           "time": 1788920100,
           "open": 2.0,
-          "high": 2.0,
+          "high": 2.005,
+          "low": 1.997,
+          "close": 2.0
+        },
+        {
+          "time": 1788921000,
+          "open": 2.0,
+          "high": 2.005,
+          "low": 1.995,
+          "close": 2.0
+        },
+        {
+          "time": 1788921900,
+          "open": 2.0,
+          "high": 2.01,
+          "low": 1.995,
+          "close": 2.005
+        },
+        {
+          "time": 1788922800,
+          "open": 2.005,
+          "high": 2.01,
           "low": 2.0,
+          "close": 2.0
+        },
+        {
+          "time": 1788923700,
+          "open": 2.0,
+          "high": 2.005,
+          "low": 1.997,
+          "close": 2.0
+        },
+        {
+          "time": 1788924600,
+          "open": 2.0,
+          "high": 2.0,
+          "low": 1.995,
           "close": 2.0
         }
       ],
@@ -1719,6 +2444,26 @@
         {
           "time": 1788920100,
           "value": 2.003
+        },
+        {
+          "time": 1788921000,
+          "value": 2.003
+        },
+        {
+          "time": 1788921900,
+          "value": 2.003
+        },
+        {
+          "time": 1788922800,
+          "value": 2.003
+        },
+        {
+          "time": 1788923700,
+          "value": 2.003
+        },
+        {
+          "time": 1788924600,
+          "value": 2.003
         }
       ],
       "error": null
@@ -1729,21 +2474,20 @@
       "open": 1.39,
       "high": 1.407,
       "low": 1.355,
-      "close": 1.375,
-      "volume": 36971,
+      "close": 1.377,
+      "volume": 50151,
       "yesterday_close": 1.375,
       "gap_pct": 1.09,
       "gap_type": "GAP UP",
-      "vwap": 1.383,
+      "vwap": 1.381,
       "vs_vwap": "BELOW",
       "rsi_15m": 50.0,
-      "momentum_pct": -1.08,
+      "momentum_pct": -0.94,
       "signal": "NEUTRAL",
-      "score": 40,
+      "score": 50,
       "reasons": [
-        "Price below VWAP $1.383",
-        "Gap up +1.1% from prev close",
-        "Weak momentum -1.1% today"
+        "Price below VWAP $1.381",
+        "Gap up +1.1% from prev close"
       ],
       "candles": [
         {
@@ -1804,10 +2548,31 @@
         },
         {
           "time": 1788919200,
-          "open": 1.375,
-          "high": 1.375,
+          "open": 1.377,
+          "high": 1.377,
           "low": 1.375,
           "close": 1.375
+        },
+        {
+          "time": 1788921900,
+          "open": 1.37,
+          "high": 1.37,
+          "low": 1.37,
+          "close": 1.37
+        },
+        {
+          "time": 1788923700,
+          "open": 1.375,
+          "high": 1.377,
+          "low": 1.375,
+          "close": 1.377
+        },
+        {
+          "time": 1788924600,
+          "open": 1.377,
+          "high": 1.377,
+          "low": 1.377,
+          "close": 1.377
         }
       ],
       "vwap_line": [
@@ -1845,7 +2610,19 @@
         },
         {
           "time": 1788919200,
-          "value": 1.383
+          "value": 1.382
+        },
+        {
+          "time": 1788921900,
+          "value": 1.382
+        },
+        {
+          "time": 1788923700,
+          "value": 1.381
+        },
+        {
+          "time": 1788924600,
+          "value": 1.381
         }
       ],
       "error": null
@@ -1856,19 +2633,20 @@
       "open": 7.89,
       "high": 7.95,
       "low": 7.72,
-      "close": 7.82,
-      "volume": 253517,
+      "close": 7.8,
+      "volume": 396567,
       "yesterday_close": 7.86,
       "gap_pct": 0.38,
       "gap_type": "FLAT",
-      "vwap": 7.777,
+      "vwap": 7.783,
       "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
-      "momentum_pct": -0.89,
-      "signal": "WATCH",
-      "score": 60,
+      "rsi_15m": 38.9,
+      "momentum_pct": -1.14,
+      "signal": "NEUTRAL",
+      "score": 50,
       "reasons": [
-        "Price above VWAP $7.777"
+        "Price above VWAP $7.783",
+        "Weak momentum -1.1% today"
       ],
       "candles": [
         {
@@ -1940,6 +2718,41 @@
           "high": 7.83,
           "low": 7.775,
           "close": 7.82
+        },
+        {
+          "time": 1788921000,
+          "open": 7.82,
+          "high": 7.83,
+          "low": 7.78,
+          "close": 7.79
+        },
+        {
+          "time": 1788921900,
+          "open": 7.8,
+          "high": 7.815,
+          "low": 7.78,
+          "close": 7.8
+        },
+        {
+          "time": 1788922800,
+          "open": 7.8,
+          "high": 7.8,
+          "low": 7.78,
+          "close": 7.78
+        },
+        {
+          "time": 1788923700,
+          "open": 7.78,
+          "high": 7.8,
+          "low": 7.76,
+          "close": 7.8
+        },
+        {
+          "time": 1788924600,
+          "open": 7.8,
+          "high": 7.8,
+          "low": 7.78,
+          "close": 7.8
         }
       ],
       "vwap_line": [
@@ -1981,7 +2794,27 @@
         },
         {
           "time": 1788920100,
-          "value": 7.777
+          "value": 7.778
+        },
+        {
+          "time": 1788921000,
+          "value": 7.781
+        },
+        {
+          "time": 1788921900,
+          "value": 7.783
+        },
+        {
+          "time": 1788922800,
+          "value": 7.783
+        },
+        {
+          "time": 1788923700,
+          "value": 7.783
+        },
+        {
+          "time": 1788924600,
+          "value": 7.783
         }
       ],
       "error": null
@@ -1992,21 +2825,20 @@
       "open": 1.045,
       "high": 1.062,
       "low": 1.04,
-      "close": 1.06,
-      "volume": 293191,
+      "close": 1.055,
+      "volume": 391665,
       "yesterday_close": 1.055,
       "gap_pct": -0.95,
       "gap_type": "GAP DOWN",
       "vwap": 1.055,
-      "vs_vwap": "ABOVE",
+      "vs_vwap": "BELOW",
       "rsi_15m": 50.0,
-      "momentum_pct": 1.44,
-      "signal": "WATCH",
-      "score": 60,
+      "momentum_pct": 0.96,
+      "signal": "AVOID",
+      "score": 30,
       "reasons": [
-        "Price above VWAP $1.055",
-        "Gap down -0.9% from prev close",
-        "Strong momentum +1.4% today"
+        "Price below VWAP $1.055",
+        "Gap down -0.9% from prev close"
       ],
       "candles": [
         {
@@ -2074,10 +2906,45 @@
         },
         {
           "time": 1788920100,
-          "open": 1.06,
+          "open": 1.057,
           "high": 1.06,
-          "low": 1.06,
-          "close": 1.06
+          "low": 1.055,
+          "close": 1.057
+        },
+        {
+          "time": 1788921000,
+          "open": 1.057,
+          "high": 1.06,
+          "low": 1.05,
+          "close": 1.055
+        },
+        {
+          "time": 1788921900,
+          "open": 1.052,
+          "high": 1.055,
+          "low": 1.052,
+          "close": 1.055
+        },
+        {
+          "time": 1788922800,
+          "open": 1.052,
+          "high": 1.055,
+          "low": 1.05,
+          "close": 1.052
+        },
+        {
+          "time": 1788923700,
+          "open": 1.052,
+          "high": 1.055,
+          "low": 1.05,
+          "close": 1.052
+        },
+        {
+          "time": 1788924600,
+          "open": 1.052,
+          "high": 1.055,
+          "low": 1.052,
+          "close": 1.055
         }
       ],
       "vwap_line": [
@@ -2120,6 +2987,26 @@
         {
           "time": 1788920100,
           "value": 1.055
+        },
+        {
+          "time": 1788921000,
+          "value": 1.055
+        },
+        {
+          "time": 1788921900,
+          "value": 1.055
+        },
+        {
+          "time": 1788922800,
+          "value": 1.055
+        },
+        {
+          "time": 1788923700,
+          "value": 1.055
+        },
+        {
+          "time": 1788924600,
+          "value": 1.055
         }
       ],
       "error": null
@@ -2130,19 +3017,19 @@
       "open": 2.44,
       "high": 2.46,
       "low": 2.425,
-      "close": 2.435,
-      "volume": 1140386,
+      "close": 2.45,
+      "volume": 2193319,
       "yesterday_close": 2.44,
       "gap_pct": 0.0,
       "gap_type": "FLAT",
-      "vwap": 2.437,
-      "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
-      "momentum_pct": -0.2,
-      "signal": "NEUTRAL",
-      "score": 40,
+      "vwap": 2.443,
+      "vs_vwap": "ABOVE",
+      "rsi_15m": 52.6,
+      "momentum_pct": 0.41,
+      "signal": "WATCH",
+      "score": 60,
       "reasons": [
-        "Price below VWAP $2.437"
+        "Price above VWAP $2.443"
       ],
       "candles": [
         {
@@ -2211,9 +3098,44 @@
         {
           "time": 1788920100,
           "open": 2.435,
-          "high": 2.435,
+          "high": 2.45,
           "low": 2.43,
-          "close": 2.435
+          "close": 2.445
+        },
+        {
+          "time": 1788921000,
+          "open": 2.445,
+          "high": 2.45,
+          "low": 2.44,
+          "close": 2.445
+        },
+        {
+          "time": 1788921900,
+          "open": 2.44,
+          "high": 2.46,
+          "low": 2.44,
+          "close": 2.46
+        },
+        {
+          "time": 1788922800,
+          "open": 2.45,
+          "high": 2.46,
+          "low": 2.45,
+          "close": 2.455
+        },
+        {
+          "time": 1788923700,
+          "open": 2.455,
+          "high": 2.46,
+          "low": 2.44,
+          "close": 2.445
+        },
+        {
+          "time": 1788924600,
+          "open": 2.445,
+          "high": 2.45,
+          "low": 2.445,
+          "close": 2.45
         }
       ],
       "vwap_line": [
@@ -2255,7 +3177,27 @@
         },
         {
           "time": 1788920100,
-          "value": 2.437
+          "value": 2.438
+        },
+        {
+          "time": 1788921000,
+          "value": 2.438
+        },
+        {
+          "time": 1788921900,
+          "value": 2.441
+        },
+        {
+          "time": 1788922800,
+          "value": 2.441
+        },
+        {
+          "time": 1788923700,
+          "value": 2.443
+        },
+        {
+          "time": 1788924600,
+          "value": 2.443
         }
       ],
       "error": null
@@ -2265,22 +3207,23 @@
       "date": "2026-09-09",
       "open": 6.87,
       "high": 6.92,
-      "low": 6.75,
-      "close": 6.785,
-      "volume": 160528,
+      "low": 6.72,
+      "close": 6.74,
+      "volume": 283242,
       "yesterday_close": 6.82,
       "gap_pct": 0.73,
       "gap_type": "GAP UP",
-      "vwap": 6.795,
+      "vwap": 6.774,
       "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
-      "momentum_pct": -1.24,
+      "rsi_15m": 31.6,
+      "momentum_pct": -1.89,
       "signal": "NEUTRAL",
-      "score": 40,
+      "score": 50,
       "reasons": [
-        "Price below VWAP $6.795",
+        "Price below VWAP $6.774",
         "Gap up +0.7% from prev close",
-        "Weak momentum -1.2% today"
+        "RSI 31.6 oversold intraday",
+        "Weak momentum -1.9% today"
       ],
       "candles": [
         {
@@ -2349,9 +3292,44 @@
         {
           "time": 1788920100,
           "open": 6.785,
-          "high": 6.785,
-          "low": 6.785,
-          "close": 6.785
+          "high": 6.8,
+          "low": 6.74,
+          "close": 6.75
+        },
+        {
+          "time": 1788921000,
+          "open": 6.755,
+          "high": 6.765,
+          "low": 6.73,
+          "close": 6.755
+        },
+        {
+          "time": 1788921900,
+          "open": 6.755,
+          "high": 6.765,
+          "low": 6.74,
+          "close": 6.755
+        },
+        {
+          "time": 1788922800,
+          "open": 6.75,
+          "high": 6.76,
+          "low": 6.73,
+          "close": 6.735
+        },
+        {
+          "time": 1788923700,
+          "open": 6.735,
+          "high": 6.74,
+          "low": 6.72,
+          "close": 6.73
+        },
+        {
+          "time": 1788924600,
+          "open": 6.73,
+          "high": 6.74,
+          "low": 6.725,
+          "close": 6.74
         }
       ],
       "vwap_line": [
@@ -2393,7 +3371,27 @@
         },
         {
           "time": 1788920100,
-          "value": 6.795
+          "value": 6.792
+        },
+        {
+          "time": 1788921000,
+          "value": 6.784
+        },
+        {
+          "time": 1788921900,
+          "value": 6.781
+        },
+        {
+          "time": 1788922800,
+          "value": 6.778
+        },
+        {
+          "time": 1788923700,
+          "value": 6.775
+        },
+        {
+          "time": 1788924600,
+          "value": 6.774
         }
       ],
       "error": null
@@ -2402,23 +3400,24 @@
       "ticker": "TEA.AX",
       "date": "2026-09-09",
       "open": 9.39,
-      "high": 9.98,
+      "high": 10.0,
       "low": 9.35,
-      "close": 9.97,
-      "volume": 228910,
+      "close": 9.915,
+      "volume": 298397,
       "yesterday_close": 9.3,
       "gap_pct": 0.97,
       "gap_type": "GAP UP",
-      "vwap": 9.75,
+      "vwap": 9.798,
       "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
-      "momentum_pct": 6.18,
+      "rsi_15m": 84.3,
+      "momentum_pct": 5.59,
       "signal": "DAY BUY",
-      "score": 80,
+      "score": 75,
       "reasons": [
-        "Price above VWAP $9.750",
+        "Price above VWAP $9.798",
         "Gap up +1.0% from prev close",
-        "Strong momentum +6.2% today"
+        "RSI 84.3 overbought intraday",
+        "Strong momentum +5.6% today"
       ],
       "candles": [
         {
@@ -2487,9 +3486,44 @@
         {
           "time": 1788920100,
           "open": 9.95,
-          "high": 9.97,
+          "high": 10.0,
+          "low": 9.94,
+          "close": 9.98
+        },
+        {
+          "time": 1788921000,
+          "open": 9.98,
+          "high": 10.0,
+          "low": 9.96,
+          "close": 9.985
+        },
+        {
+          "time": 1788921900,
+          "open": 9.99,
+          "high": 9.99,
           "low": 9.95,
-          "close": 9.97
+          "close": 9.95
+        },
+        {
+          "time": 1788922800,
+          "open": 9.955,
+          "high": 9.96,
+          "low": 9.92,
+          "close": 9.92
+        },
+        {
+          "time": 1788923700,
+          "open": 9.925,
+          "high": 9.94,
+          "low": 9.91,
+          "close": 9.92
+        },
+        {
+          "time": 1788924600,
+          "open": 9.925,
+          "high": 9.925,
+          "low": 9.91,
+          "close": 9.915
         }
       ],
       "vwap_line": [
@@ -2531,7 +3565,27 @@
         },
         {
           "time": 1788920100,
-          "value": 9.75
+          "value": 9.764
+        },
+        {
+          "time": 1788921000,
+          "value": 9.781
+        },
+        {
+          "time": 1788921900,
+          "value": 9.786
+        },
+        {
+          "time": 1788922800,
+          "value": 9.79
+        },
+        {
+          "time": 1788923700,
+          "value": 9.797
+        },
+        {
+          "time": 1788924600,
+          "value": 9.798
         }
       ],
       "error": null
@@ -2542,19 +3596,19 @@
       "open": 15.78,
       "high": 15.85,
       "low": 15.6,
-      "close": 15.77,
-      "volume": 389390,
+      "close": 15.655,
+      "volume": 518741,
       "yesterday_close": 15.94,
       "gap_pct": -1.0,
       "gap_type": "GAP DOWN",
-      "vwap": 15.732,
-      "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
-      "momentum_pct": -0.06,
-      "signal": "NEUTRAL",
-      "score": 50,
+      "vwap": 15.731,
+      "vs_vwap": "BELOW",
+      "rsi_15m": 36.3,
+      "momentum_pct": -0.79,
+      "signal": "AVOID",
+      "score": 30,
       "reasons": [
-        "Price above VWAP $15.732",
+        "Price below VWAP $15.731",
         "Gap down -1.0% from prev close"
       ],
       "candles": [
@@ -2625,8 +3679,43 @@
           "time": 1788920100,
           "open": 15.77,
           "high": 15.78,
-          "low": 15.77,
+          "low": 15.73,
+          "close": 15.745
+        },
+        {
+          "time": 1788921000,
+          "open": 15.74,
+          "high": 15.75,
+          "low": 15.67,
+          "close": 15.715
+        },
+        {
+          "time": 1788921900,
+          "open": 15.715,
+          "high": 15.775,
+          "low": 15.7,
           "close": 15.77
+        },
+        {
+          "time": 1788922800,
+          "open": 15.77,
+          "high": 15.77,
+          "low": 15.72,
+          "close": 15.72
+        },
+        {
+          "time": 1788923700,
+          "open": 15.725,
+          "high": 15.725,
+          "low": 15.63,
+          "close": 15.67
+        },
+        {
+          "time": 1788924600,
+          "open": 15.68,
+          "high": 15.68,
+          "low": 15.64,
+          "close": 15.655
         }
       ],
       "vwap_line": [
@@ -2668,7 +3757,27 @@
         },
         {
           "time": 1788920100,
+          "value": 15.734
+        },
+        {
+          "time": 1788921000,
+          "value": 15.733
+        },
+        {
+          "time": 1788921900,
+          "value": 15.734
+        },
+        {
+          "time": 1788922800,
+          "value": 15.734
+        },
+        {
+          "time": 1788923700,
           "value": 15.732
+        },
+        {
+          "time": 1788924600,
+          "value": 15.731
         }
       ],
       "error": null
@@ -2678,22 +3787,23 @@
       "date": "2026-09-09",
       "open": 5.07,
       "high": 5.11,
-      "low": 4.925,
-      "close": 4.94,
-      "volume": 8235145,
+      "low": 4.9,
+      "close": 4.935,
+      "volume": 10042729,
       "yesterday_close": 4.93,
       "gap_pct": 2.84,
       "gap_type": "GAP UP",
-      "vwap": 4.997,
+      "vwap": 4.985,
       "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
-      "momentum_pct": -2.56,
+      "rsi_15m": 33.3,
+      "momentum_pct": -2.66,
       "signal": "NEUTRAL",
-      "score": 40,
+      "score": 50,
       "reasons": [
-        "Price below VWAP $4.997",
+        "Price below VWAP $4.985",
         "Gap up +2.8% from prev close",
-        "Weak momentum -2.6% today"
+        "RSI 33.3 oversold intraday",
+        "Weak momentum -2.7% today"
       ],
       "candles": [
         {
@@ -2762,9 +3872,44 @@
         {
           "time": 1788920100,
           "open": 4.94,
-          "high": 4.94,
-          "low": 4.935,
+          "high": 4.955,
+          "low": 4.925,
           "close": 4.94
+        },
+        {
+          "time": 1788921000,
+          "open": 4.935,
+          "high": 4.94,
+          "low": 4.9,
+          "close": 4.92
+        },
+        {
+          "time": 1788921900,
+          "open": 4.915,
+          "high": 4.935,
+          "low": 4.915,
+          "close": 4.93
+        },
+        {
+          "time": 1788922800,
+          "open": 4.93,
+          "high": 4.96,
+          "low": 4.925,
+          "close": 4.94
+        },
+        {
+          "time": 1788923700,
+          "open": 4.94,
+          "high": 4.94,
+          "low": 4.92,
+          "close": 4.93
+        },
+        {
+          "time": 1788924600,
+          "open": 4.925,
+          "high": 4.94,
+          "low": 4.92,
+          "close": 4.935
         }
       ],
       "vwap_line": [
@@ -2806,7 +3951,27 @@
         },
         {
           "time": 1788920100,
-          "value": 4.997
+          "value": 4.993
+        },
+        {
+          "time": 1788921000,
+          "value": 4.99
+        },
+        {
+          "time": 1788921900,
+          "value": 4.988
+        },
+        {
+          "time": 1788922800,
+          "value": 4.987
+        },
+        {
+          "time": 1788923700,
+          "value": 4.986
+        },
+        {
+          "time": 1788924600,
+          "value": 4.985
         }
       ],
       "error": null
@@ -2817,20 +3982,21 @@
       "open": 1.12,
       "high": 1.125,
       "low": 1.1,
-      "close": 1.115,
-      "volume": 654185,
+      "close": 1.105,
+      "volume": 838601,
       "yesterday_close": 1.145,
       "gap_pct": -2.18,
       "gap_type": "GAP DOWN",
       "vwap": 1.115,
-      "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
-      "momentum_pct": -0.45,
-      "signal": "NEUTRAL",
-      "score": 50,
+      "vs_vwap": "BELOW",
+      "rsi_15m": 46.7,
+      "momentum_pct": -1.34,
+      "signal": "AVOID",
+      "score": 20,
       "reasons": [
-        "Price above VWAP $1.115",
-        "Gap down -2.2% from prev close"
+        "Price below VWAP $1.115",
+        "Gap down -2.2% from prev close",
+        "Weak momentum -1.3% today"
       ],
       "candles": [
         {
@@ -2898,10 +4064,45 @@
         },
         {
           "time": 1788920100,
+          "open": 1.11,
+          "high": 1.115,
+          "low": 1.11,
+          "close": 1.11
+        },
+        {
+          "time": 1788921000,
+          "open": 1.11,
+          "high": 1.112,
+          "low": 1.11,
+          "close": 1.11
+        },
+        {
+          "time": 1788921900,
+          "open": 1.11,
+          "high": 1.125,
+          "low": 1.11,
+          "close": 1.125
+        },
+        {
+          "time": 1788922800,
+          "open": 1.12,
+          "high": 1.125,
+          "low": 1.12,
+          "close": 1.122
+        },
+        {
+          "time": 1788923700,
+          "open": 1.12,
+          "high": 1.122,
+          "low": 1.11,
+          "close": 1.11
+        },
+        {
+          "time": 1788924600,
           "open": 1.115,
           "high": 1.115,
-          "low": 1.115,
-          "close": 1.115
+          "low": 1.105,
+          "close": 1.105
         }
       ],
       "vwap_line": [
@@ -2944,947 +4145,965 @@
         {
           "time": 1788920100,
           "value": 1.115
+        },
+        {
+          "time": 1788921000,
+          "value": 1.115
+        },
+        {
+          "time": 1788921900,
+          "value": 1.115
+        },
+        {
+          "time": 1788922800,
+          "value": 1.115
+        },
+        {
+          "time": 1788923700,
+          "value": 1.115
+        },
+        {
+          "time": 1788924600,
+          "value": 1.115
         }
       ],
       "error": null
     },
     {
       "ticker": "AAPL",
-      "date": "2026-09-08",
-      "open": 317.12,
-      "high": 320.7,
-      "low": 314.92,
-      "close": 316.35,
-      "volume": 25896658,
-      "yesterday_close": 319.99,
-      "gap_pct": -0.9,
-      "gap_type": "GAP DOWN",
-      "vwap": 316.367,
+      "date": "2026-09-04",
+      "open": 328.305,
+      "high": 328.93,
+      "low": 317.86,
+      "close": 319.99,
+      "volume": 31028354,
+      "yesterday_close": 328.21,
+      "gap_pct": 0.03,
+      "gap_type": "FLAT",
+      "vwap": 321.366,
       "vs_vwap": "BELOW",
-      "rsi_15m": 53.9,
-      "momentum_pct": -0.24,
+      "rsi_15m": 45.5,
+      "momentum_pct": -2.53,
       "signal": "AVOID",
       "score": 30,
       "reasons": [
-        "Price below VWAP $316.367",
-        "Gap down -0.9% from prev close"
+        "Price below VWAP $321.366",
+        "Weak momentum -2.5% today"
       ],
       "candles": [
         {
-          "time": 1788874200,
-          "open": 317.12,
-          "high": 320.7,
-          "low": 315.7,
-          "close": 317.518
+          "time": 1788528600,
+          "open": 328.305,
+          "high": 328.93,
+          "low": 324.28,
+          "close": 324.82
         },
         {
-          "time": 1788875100,
-          "open": 317.5,
-          "high": 317.65,
-          "low": 315.98,
-          "close": 316.9
+          "time": 1788529500,
+          "open": 324.89,
+          "high": 324.89,
+          "low": 323.06,
+          "close": 323.695
         },
         {
-          "time": 1788876000,
-          "open": 316.92,
-          "high": 317.26,
-          "low": 315.73,
-          "close": 315.885
+          "time": 1788530400,
+          "open": 323.62,
+          "high": 323.66,
+          "low": 321.21,
+          "close": 321.21
         },
         {
-          "time": 1788876900,
-          "open": 315.871,
-          "high": 316.0,
-          "low": 315.292,
-          "close": 315.67
+          "time": 1788531300,
+          "open": 321.216,
+          "high": 321.89,
+          "low": 320.44,
+          "close": 320.71
         },
         {
-          "time": 1788877800,
-          "open": 315.67,
-          "high": 316.27,
-          "low": 315.27,
-          "close": 316.09
+          "time": 1788532200,
+          "open": 320.71,
+          "high": 321.16,
+          "low": 319.88,
+          "close": 320.03
         },
         {
-          "time": 1788878700,
-          "open": 316.09,
-          "high": 316.38,
-          "low": 315.62,
-          "close": 315.975
+          "time": 1788533100,
+          "open": 320.04,
+          "high": 320.23,
+          "low": 318.3,
+          "close": 318.44
         },
         {
-          "time": 1788879600,
-          "open": 316.0,
-          "high": 316.57,
-          "low": 315.715,
-          "close": 316.2
+          "time": 1788534000,
+          "open": 318.44,
+          "high": 319.4,
+          "low": 317.86,
+          "close": 319.285
         },
         {
-          "time": 1788880500,
-          "open": 316.205,
-          "high": 316.78,
-          "low": 315.75,
-          "close": 316.249
+          "time": 1788534900,
+          "open": 319.285,
+          "high": 319.51,
+          "low": 318.57,
+          "close": 319.47
         },
         {
-          "time": 1788881400,
-          "open": 316.245,
-          "high": 316.81,
-          "low": 316.02,
-          "close": 316.415
+          "time": 1788535800,
+          "open": 319.47,
+          "high": 320.59,
+          "low": 319.11,
+          "close": 320.34
         },
         {
-          "time": 1788882300,
-          "open": 316.41,
-          "high": 316.6,
-          "low": 316.0,
-          "close": 316.08
+          "time": 1788536700,
+          "open": 320.33,
+          "high": 321.28,
+          "low": 320.16,
+          "close": 321.01
         },
         {
-          "time": 1788883200,
-          "open": 316.065,
-          "high": 316.268,
-          "low": 315.54,
-          "close": 315.595
+          "time": 1788537600,
+          "open": 321.025,
+          "high": 321.269,
+          "low": 320.66,
+          "close": 321.05
         },
         {
-          "time": 1788884100,
-          "open": 315.59,
-          "high": 316.14,
-          "low": 315.46,
-          "close": 316.085
+          "time": 1788538500,
+          "open": 321.04,
+          "high": 321.329,
+          "low": 320.42,
+          "close": 320.5
         },
         {
-          "time": 1788885000,
-          "open": 316.1,
-          "high": 316.18,
-          "low": 315.88,
-          "close": 316.09
+          "time": 1788539400,
+          "open": 320.517,
+          "high": 321.14,
+          "low": 320.41,
+          "close": 320.84
         },
         {
-          "time": 1788885900,
-          "open": 316.08,
-          "high": 316.18,
-          "low": 315.75,
-          "close": 315.99
+          "time": 1788540300,
+          "open": 320.85,
+          "high": 321.24,
+          "low": 320.77,
+          "close": 321.03
         },
         {
-          "time": 1788886800,
-          "open": 315.99,
-          "high": 316.56,
-          "low": 315.95,
-          "close": 316.185
+          "time": 1788541200,
+          "open": 321.045,
+          "high": 321.59,
+          "low": 320.93,
+          "close": 321.209
         },
         {
-          "time": 1788887700,
-          "open": 316.17,
-          "high": 316.28,
-          "low": 315.79,
-          "close": 316.27
+          "time": 1788542100,
+          "open": 321.201,
+          "high": 321.9,
+          "low": 321.19,
+          "close": 321.685
         },
         {
-          "time": 1788888600,
-          "open": 316.272,
-          "high": 316.33,
-          "low": 316.04,
-          "close": 316.26
+          "time": 1788543000,
+          "open": 321.68,
+          "high": 321.68,
+          "low": 320.74,
+          "close": 320.965
         },
         {
-          "time": 1788889500,
-          "open": 316.26,
-          "high": 316.3,
-          "low": 315.941,
-          "close": 316.03
+          "time": 1788543900,
+          "open": 320.96,
+          "high": 321.44,
+          "low": 320.88,
+          "close": 321.015
         },
         {
-          "time": 1788890400,
-          "open": 316.025,
-          "high": 316.52,
-          "low": 315.97,
-          "close": 316.325
+          "time": 1788544800,
+          "open": 321.02,
+          "high": 321.31,
+          "low": 320.93,
+          "close": 321.27
         },
         {
-          "time": 1788891300,
-          "open": 316.33,
-          "high": 316.74,
-          "low": 315.95,
-          "close": 316.39
+          "time": 1788545700,
+          "open": 321.27,
+          "high": 321.31,
+          "low": 320.87,
+          "close": 320.88
         },
         {
-          "time": 1788892200,
-          "open": 316.395,
-          "high": 316.53,
-          "low": 315.38,
-          "close": 315.47
+          "time": 1788546600,
+          "open": 320.88,
+          "high": 321.361,
+          "low": 320.86,
+          "close": 321.35
         },
         {
-          "time": 1788893100,
-          "open": 315.469,
-          "high": 315.98,
-          "low": 314.92,
-          "close": 315.53
+          "time": 1788547500,
+          "open": 321.355,
+          "high": 321.83,
+          "low": 321.33,
+          "close": 321.665
         },
         {
-          "time": 1788894000,
-          "open": 315.52,
-          "high": 316.53,
-          "low": 315.35,
-          "close": 316.09
+          "time": 1788548400,
+          "open": 321.66,
+          "high": 322.1,
+          "low": 321.38,
+          "close": 321.99
         },
         {
-          "time": 1788894900,
-          "open": 316.09,
-          "high": 316.09,
-          "low": 315.525,
-          "close": 315.8
+          "time": 1788549300,
+          "open": 322.0,
+          "high": 322.04,
+          "low": 321.645,
+          "close": 321.785
         },
         {
-          "time": 1788895800,
-          "open": 315.8,
-          "high": 316.36,
-          "low": 315.525,
-          "close": 316.18
+          "time": 1788550200,
+          "open": 321.77,
+          "high": 321.809,
+          "low": 320.64,
+          "close": 320.68
         },
         {
-          "time": 1788896700,
-          "open": 316.2,
-          "high": 316.69,
-          "low": 315.7,
-          "close": 316.35
+          "time": 1788551100,
+          "open": 320.66,
+          "high": 320.84,
+          "low": 319.651,
+          "close": 319.99
         }
       ],
       "vwap_line": [
         {
-          "time": 1788874200,
-          "value": 317.973
+          "time": 1788528600,
+          "value": 326.01
         },
         {
-          "time": 1788875100,
-          "value": 317.692
+          "time": 1788529500,
+          "value": 325.194
         },
         {
-          "time": 1788876000,
-          "value": 317.399
+          "time": 1788530400,
+          "value": 324.333
         },
         {
-          "time": 1788876900,
-          "value": 317.087
+          "time": 1788531300,
+          "value": 323.567
         },
         {
-          "time": 1788877800,
-          "value": 316.956
+          "time": 1788532200,
+          "value": 323.075
         },
         {
-          "time": 1788878700,
-          "value": 316.874
+          "time": 1788533100,
+          "value": 322.541
         },
         {
-          "time": 1788879600,
-          "value": 316.804
+          "time": 1788534000,
+          "value": 322.067
         },
         {
-          "time": 1788880500,
-          "value": 316.766
+          "time": 1788534900,
+          "value": 321.864
         },
         {
-          "time": 1788881400,
-          "value": 316.745
+          "time": 1788535800,
+          "value": 321.725
         },
         {
-          "time": 1788882300,
-          "value": 316.719
+          "time": 1788536700,
+          "value": 321.669
         },
         {
-          "time": 1788883200,
-          "value": 316.672
+          "time": 1788537600,
+          "value": 321.638
         },
         {
-          "time": 1788884100,
-          "value": 316.632
+          "time": 1788538500,
+          "value": 321.602
         },
         {
-          "time": 1788885000,
-          "value": 316.611
+          "time": 1788539400,
+          "value": 321.578
         },
         {
-          "time": 1788885900,
-          "value": 316.589
+          "time": 1788540300,
+          "value": 321.562
         },
         {
-          "time": 1788886800,
-          "value": 316.577
+          "time": 1788541200,
+          "value": 321.551
         },
         {
-          "time": 1788887700,
-          "value": 316.565
+          "time": 1788542100,
+          "value": 321.552
         },
         {
-          "time": 1788888600,
-          "value": 316.553
+          "time": 1788543000,
+          "value": 321.542
         },
         {
-          "time": 1788889500,
-          "value": 316.54
+          "time": 1788543900,
+          "value": 321.533
         },
         {
-          "time": 1788890400,
-          "value": 316.533
+          "time": 1788544800,
+          "value": 321.526
         },
         {
-          "time": 1788891300,
-          "value": 316.526
+          "time": 1788545700,
+          "value": 321.516
         },
         {
-          "time": 1788892200,
-          "value": 316.492
+          "time": 1788546600,
+          "value": 321.51
         },
         {
-          "time": 1788893100,
-          "value": 316.435
+          "time": 1788547500,
+          "value": 321.513
         },
         {
-          "time": 1788894000,
-          "value": 316.417
+          "time": 1788548400,
+          "value": 321.522
         },
         {
-          "time": 1788894900,
-          "value": 316.396
+          "time": 1788549300,
+          "value": 321.53
         },
         {
-          "time": 1788895800,
-          "value": 316.382
+          "time": 1788550200,
+          "value": 321.515
         },
         {
-          "time": 1788896700,
-          "value": 316.367
+          "time": 1788551100,
+          "value": 321.366
         }
       ],
       "error": null
     },
     {
       "ticker": "MSFT",
-      "date": "2026-09-08",
-      "open": 493.01,
-      "high": 495.19,
-      "low": 490.15,
-      "close": 494.02,
-      "volume": 11862422,
-      "yesterday_close": 499.68,
-      "gap_pct": -1.33,
-      "gap_type": "GAP DOWN",
-      "vwap": 492.572,
-      "vs_vwap": "ABOVE",
-      "rsi_15m": 71.2,
-      "momentum_pct": 0.2,
-      "signal": "NEUTRAL",
-      "score": 45,
+      "date": "2026-09-04",
+      "open": 510.0,
+      "high": 511.0,
+      "low": 499.36,
+      "close": 499.68,
+      "volume": 11928851,
+      "yesterday_close": 510.08,
+      "gap_pct": -0.02,
+      "gap_type": "FLAT",
+      "vwap": 501.839,
+      "vs_vwap": "BELOW",
+      "rsi_15m": 36.5,
+      "momentum_pct": -2.02,
+      "signal": "AVOID",
+      "score": 30,
       "reasons": [
-        "Price above VWAP $492.572",
-        "Gap down -1.3% from prev close",
-        "RSI 71.2 overbought intraday"
+        "Price below VWAP $501.839",
+        "Weak momentum -2.0% today"
       ],
       "candles": [
         {
-          "time": 1788874200,
-          "open": 493.01,
-          "high": 495.19,
-          "low": 491.3,
-          "close": 493.025
+          "time": 1788528600,
+          "open": 510.0,
+          "high": 511.0,
+          "low": 504.0,
+          "close": 504.75
         },
         {
-          "time": 1788875100,
-          "open": 492.95,
-          "high": 493.73,
-          "low": 491.2,
-          "close": 492.96
+          "time": 1788529500,
+          "open": 504.88,
+          "high": 504.97,
+          "low": 502.81,
+          "close": 504.67
         },
         {
-          "time": 1788876000,
-          "open": 492.89,
-          "high": 493.07,
-          "low": 491.18,
-          "close": 491.51
+          "time": 1788530400,
+          "open": 504.615,
+          "high": 504.79,
+          "low": 502.71,
+          "close": 503.1
         },
         {
-          "time": 1788876900,
-          "open": 491.545,
-          "high": 492.97,
-          "low": 490.19,
-          "close": 490.516
+          "time": 1788531300,
+          "open": 503.145,
+          "high": 503.502,
+          "low": 501.49,
+          "close": 501.685
         },
         {
-          "time": 1788877800,
-          "open": 490.46,
-          "high": 492.6,
-          "low": 490.25,
-          "close": 492.305
+          "time": 1788532200,
+          "open": 501.735,
+          "high": 502.795,
+          "low": 501.44,
+          "close": 501.88
         },
         {
-          "time": 1788878700,
-          "open": 492.35,
-          "high": 492.68,
-          "low": 491.52,
-          "close": 492.04
+          "time": 1788533100,
+          "open": 501.84,
+          "high": 502.595,
+          "low": 501.36,
+          "close": 501.757
         },
         {
-          "time": 1788879600,
-          "open": 492.08,
-          "high": 493.63,
-          "low": 491.99,
-          "close": 493.37
+          "time": 1788534000,
+          "open": 501.865,
+          "high": 501.9,
+          "low": 500.46,
+          "close": 500.61
         },
         {
-          "time": 1788880500,
-          "open": 493.32,
-          "high": 494.14,
-          "low": 492.4,
-          "close": 493.08
+          "time": 1788534900,
+          "open": 500.59,
+          "high": 501.15,
+          "low": 500.12,
+          "close": 500.945
         },
         {
-          "time": 1788881400,
-          "open": 493.11,
-          "high": 493.34,
-          "low": 492.53,
-          "close": 493.0
+          "time": 1788535800,
+          "open": 500.99,
+          "high": 500.99,
+          "low": 499.65,
+          "close": 500.77
         },
         {
-          "time": 1788882300,
-          "open": 493.06,
-          "high": 493.14,
-          "low": 492.55,
-          "close": 492.71
+          "time": 1788536700,
+          "open": 500.74,
+          "high": 501.2,
+          "low": 499.89,
+          "close": 501.01
         },
         {
-          "time": 1788883200,
-          "open": 492.71,
-          "high": 493.2,
-          "low": 492.25,
-          "close": 492.445
+          "time": 1788537600,
+          "open": 501.01,
+          "high": 501.4,
+          "low": 500.469,
+          "close": 501.243
         },
         {
-          "time": 1788884100,
-          "open": 492.5,
-          "high": 492.56,
-          "low": 491.13,
-          "close": 491.295
+          "time": 1788538500,
+          "open": 501.26,
+          "high": 501.49,
+          "low": 500.57,
+          "close": 501.12
         },
         {
-          "time": 1788885000,
-          "open": 491.29,
-          "high": 491.97,
-          "low": 491.2,
-          "close": 491.87
+          "time": 1788539400,
+          "open": 501.084,
+          "high": 501.73,
+          "low": 500.91,
+          "close": 501.2
         },
         {
-          "time": 1788885900,
-          "open": 491.91,
-          "high": 492.11,
-          "low": 491.2,
-          "close": 491.598
+          "time": 1788540300,
+          "open": 501.27,
+          "high": 501.27,
+          "low": 500.3,
+          "close": 500.34
         },
         {
-          "time": 1788886800,
-          "open": 491.575,
-          "high": 492.925,
-          "low": 491.57,
-          "close": 492.57
+          "time": 1788541200,
+          "open": 500.36,
+          "high": 501.0,
+          "low": 499.94,
+          "close": 500.96
         },
         {
-          "time": 1788887700,
-          "open": 492.565,
-          "high": 492.88,
-          "low": 491.8,
-          "close": 492.33
+          "time": 1788542100,
+          "open": 500.96,
+          "high": 501.16,
+          "low": 500.576,
+          "close": 500.905
         },
         {
-          "time": 1788888600,
-          "open": 492.3,
-          "high": 492.6,
-          "low": 492.17,
-          "close": 492.26
+          "time": 1788543000,
+          "open": 500.905,
+          "high": 500.91,
+          "low": 500.08,
+          "close": 500.19
         },
         {
-          "time": 1788889500,
-          "open": 492.26,
-          "high": 492.9,
-          "low": 492.24,
-          "close": 492.51
+          "time": 1788543900,
+          "open": 500.225,
+          "high": 501.19,
+          "low": 500.15,
+          "close": 500.62
         },
         {
-          "time": 1788890400,
-          "open": 492.55,
-          "high": 492.724,
-          "low": 492.21,
-          "close": 492.34
+          "time": 1788544800,
+          "open": 500.675,
+          "high": 500.9,
+          "low": 499.8,
+          "close": 500.28
         },
         {
-          "time": 1788891300,
-          "open": 492.37,
-          "high": 492.49,
-          "low": 491.62,
-          "close": 491.91
+          "time": 1788545700,
+          "open": 500.29,
+          "high": 500.461,
+          "low": 499.77,
+          "close": 499.9
         },
         {
-          "time": 1788892200,
-          "open": 491.95,
-          "high": 492.0,
-          "low": 491.34,
-          "close": 491.825
+          "time": 1788546600,
+          "open": 499.91,
+          "high": 500.59,
+          "low": 499.7,
+          "close": 500.49
         },
         {
-          "time": 1788893100,
-          "open": 491.85,
-          "high": 491.95,
-          "low": 490.15,
-          "close": 491.242
+          "time": 1788547500,
+          "open": 500.57,
+          "high": 500.855,
+          "low": 500.26,
+          "close": 500.72
         },
         {
-          "time": 1788894000,
-          "open": 491.21,
-          "high": 492.33,
-          "low": 491.18,
-          "close": 492.21
+          "time": 1788548400,
+          "open": 500.66,
+          "high": 500.91,
+          "low": 499.88,
+          "close": 500.425
         },
         {
-          "time": 1788894900,
-          "open": 492.19,
-          "high": 493.08,
-          "low": 492.0,
-          "close": 493.08
+          "time": 1788549300,
+          "open": 500.44,
+          "high": 500.44,
+          "low": 499.86,
+          "close": 500.02
         },
         {
-          "time": 1788895800,
-          "open": 493.055,
-          "high": 493.9,
-          "low": 492.84,
-          "close": 493.66
+          "time": 1788550200,
+          "open": 500.025,
+          "high": 500.05,
+          "low": 499.43,
+          "close": 499.83
         },
         {
-          "time": 1788896700,
-          "open": 493.65,
-          "high": 494.175,
-          "low": 493.0,
-          "close": 494.02
+          "time": 1788551100,
+          "open": 499.81,
+          "high": 500.68,
+          "low": 499.36,
+          "close": 499.68
         }
       ],
       "vwap_line": [
         {
-          "time": 1788874200,
-          "value": 493.172
+          "time": 1788528600,
+          "value": 506.583
         },
         {
-          "time": 1788875100,
-          "value": 493.01
+          "time": 1788529500,
+          "value": 505.769
         },
         {
-          "time": 1788876000,
-          "value": 492.823
+          "time": 1788530400,
+          "value": 505.219
         },
         {
-          "time": 1788876900,
-          "value": 492.503
+          "time": 1788531300,
+          "value": 504.666
         },
         {
-          "time": 1788877800,
-          "value": 492.4
+          "time": 1788532200,
+          "value": 504.341
         },
         {
-          "time": 1788878700,
-          "value": 492.373
+          "time": 1788533100,
+          "value": 504.134
         },
         {
-          "time": 1788879600,
-          "value": 492.417
+          "time": 1788534000,
+          "value": 503.889
         },
         {
-          "time": 1788880500,
-          "value": 492.477
+          "time": 1788534900,
+          "value": 503.689
         },
         {
-          "time": 1788881400,
-          "value": 492.501
+          "time": 1788535800,
+          "value": 503.393
         },
         {
-          "time": 1788882300,
-          "value": 492.515
+          "time": 1788536700,
+          "value": 503.269
         },
         {
-          "time": 1788883200,
-          "value": 492.52
+          "time": 1788537600,
+          "value": 503.183
         },
         {
-          "time": 1788884100,
-          "value": 492.486
+          "time": 1788538500,
+          "value": 503.102
         },
         {
-          "time": 1788885000,
-          "value": 492.455
+          "time": 1788539400,
+          "value": 503.018
         },
         {
-          "time": 1788885900,
-          "value": 492.423
+          "time": 1788540300,
+          "value": 502.926
         },
         {
-          "time": 1788886800,
-          "value": 492.421
+          "time": 1788541200,
+          "value": 502.849
         },
         {
-          "time": 1788887700,
-          "value": 492.418
+          "time": 1788542100,
+          "value": 502.791
         },
         {
-          "time": 1788888600,
-          "value": 492.416
+          "time": 1788543000,
+          "value": 502.726
         },
         {
-          "time": 1788889500,
-          "value": 492.42
+          "time": 1788543900,
+          "value": 502.672
         },
         {
-          "time": 1788890400,
-          "value": 492.42
+          "time": 1788544800,
+          "value": 502.604
         },
         {
-          "time": 1788891300,
-          "value": 492.408
+          "time": 1788545700,
+          "value": 502.529
         },
         {
-          "time": 1788892200,
-          "value": 492.391
+          "time": 1788546600,
+          "value": 502.457
         },
         {
-          "time": 1788893100,
-          "value": 492.337
+          "time": 1788547500,
+          "value": 502.405
         },
         {
-          "time": 1788894000,
-          "value": 492.324
+          "time": 1788548400,
+          "value": 502.346
         },
         {
-          "time": 1788894900,
-          "value": 492.337
+          "time": 1788549300,
+          "value": 502.276
         },
         {
-          "time": 1788895800,
-          "value": 492.398
+          "time": 1788550200,
+          "value": 502.171
         },
         {
-          "time": 1788896700,
-          "value": 492.572
+          "time": 1788551100,
+          "value": 501.839
         }
       ],
       "error": null
     },
     {
       "ticker": "NVDA",
-      "date": "2026-09-08",
-      "open": 233.21,
-      "high": 233.71,
-      "low": 224.85,
-      "close": 225.77,
-      "volume": 100374352,
-      "yesterday_close": 230.345,
-      "gap_pct": 1.24,
+      "date": "2026-09-04",
+      "open": 231.142,
+      "high": 234.76,
+      "low": 229.63,
+      "close": 230.345,
+      "volume": 116149303,
+      "yesterday_close": 228.4,
+      "gap_pct": 1.2,
       "gap_type": "GAP UP",
-      "vwap": 227.414,
+      "vwap": 232.059,
       "vs_vwap": "BELOW",
-      "rsi_15m": 52.0,
-      "momentum_pct": -3.19,
+      "rsi_15m": 38.3,
+      "momentum_pct": -0.34,
       "signal": "NEUTRAL",
-      "score": 40,
+      "score": 50,
       "reasons": [
-        "Price below VWAP $227.414",
-        "Gap up +1.2% from prev close",
-        "Weak momentum -3.2% today"
+        "Price below VWAP $232.059",
+        "Gap up +1.2% from prev close"
       ],
       "candles": [
         {
-          "time": 1788874200,
-          "open": 233.21,
-          "high": 233.71,
-          "low": 229.46,
-          "close": 229.765
+          "time": 1788528600,
+          "open": 231.142,
+          "high": 233.77,
+          "low": 229.82,
+          "close": 232.91
         },
         {
-          "time": 1788875100,
-          "open": 229.78,
+          "time": 1788529500,
+          "open": 232.913,
+          "high": 234.65,
+          "low": 232.63,
+          "close": 234.56
+        },
+        {
+          "time": 1788530400,
+          "open": 234.56,
+          "high": 234.56,
+          "low": 232.92,
+          "close": 234.195
+        },
+        {
+          "time": 1788531300,
+          "open": 234.19,
+          "high": 234.76,
+          "low": 233.36,
+          "close": 234.716
+        },
+        {
+          "time": 1788532200,
+          "open": 234.72,
+          "high": 234.74,
+          "low": 233.22,
+          "close": 233.45
+        },
+        {
+          "time": 1788533100,
+          "open": 233.44,
+          "high": 233.55,
+          "low": 232.12,
+          "close": 232.24
+        },
+        {
+          "time": 1788534000,
+          "open": 232.245,
+          "high": 232.81,
+          "low": 231.65,
+          "close": 232.465
+        },
+        {
+          "time": 1788534900,
+          "open": 232.465,
+          "high": 232.555,
+          "low": 231.76,
+          "close": 231.785
+        },
+        {
+          "time": 1788535800,
+          "open": 231.78,
+          "high": 232.059,
+          "low": 231.27,
+          "close": 231.865
+        },
+        {
+          "time": 1788536700,
+          "open": 231.865,
+          "high": 231.91,
+          "low": 230.73,
+          "close": 231.045
+        },
+        {
+          "time": 1788537600,
+          "open": 231.03,
+          "high": 231.335,
+          "low": 230.51,
+          "close": 231.173
+        },
+        {
+          "time": 1788538500,
+          "open": 231.165,
+          "high": 231.25,
+          "low": 230.713,
+          "close": 231.155
+        },
+        {
+          "time": 1788539400,
+          "open": 231.15,
+          "high": 231.63,
+          "low": 231.0,
+          "close": 231.59
+        },
+        {
+          "time": 1788540300,
+          "open": 231.58,
+          "high": 232.235,
+          "low": 231.278,
+          "close": 231.57
+        },
+        {
+          "time": 1788541200,
+          "open": 231.57,
+          "high": 231.65,
+          "low": 230.93,
+          "close": 230.955
+        },
+        {
+          "time": 1788542100,
+          "open": 230.96,
+          "high": 231.09,
+          "low": 230.603,
+          "close": 230.75
+        },
+        {
+          "time": 1788543000,
+          "open": 230.74,
+          "high": 230.78,
+          "low": 230.3,
+          "close": 230.375
+        },
+        {
+          "time": 1788543900,
+          "open": 230.38,
+          "high": 230.457,
+          "low": 230.07,
+          "close": 230.265
+        },
+        {
+          "time": 1788544800,
+          "open": 230.26,
+          "high": 230.37,
+          "low": 229.9,
+          "close": 230.23
+        },
+        {
+          "time": 1788545700,
+          "open": 230.23,
           "high": 230.47,
-          "low": 229.06,
-          "close": 229.571
+          "low": 230.16,
+          "close": 230.35
         },
         {
-          "time": 1788876000,
-          "open": 229.58,
-          "high": 229.71,
-          "low": 228.06,
-          "close": 228.491
+          "time": 1788546600,
+          "open": 230.35,
+          "high": 230.43,
+          "low": 230.09,
+          "close": 230.315
         },
         {
-          "time": 1788876900,
-          "open": 228.51,
-          "high": 228.7,
-          "low": 227.63,
-          "close": 227.942
+          "time": 1788547500,
+          "open": 230.31,
+          "high": 230.695,
+          "low": 230.3,
+          "close": 230.605
         },
         {
-          "time": 1788877800,
-          "open": 227.96,
-          "high": 227.96,
-          "low": 227.1,
-          "close": 227.44
+          "time": 1788548400,
+          "open": 230.6,
+          "high": 230.72,
+          "low": 229.85,
+          "close": 230.0
         },
         {
-          "time": 1788878700,
-          "open": 227.44,
-          "high": 227.45,
-          "low": 226.77,
-          "close": 227.055
+          "time": 1788549300,
+          "open": 230.01,
+          "high": 230.205,
+          "low": 229.85,
+          "close": 229.87
         },
         {
-          "time": 1788879600,
-          "open": 227.06,
-          "high": 227.8,
-          "low": 226.92,
-          "close": 227.38
+          "time": 1788550200,
+          "open": 229.87,
+          "high": 230.27,
+          "low": 229.63,
+          "close": 229.985
         },
         {
-          "time": 1788880500,
-          "open": 227.39,
-          "high": 227.57,
-          "low": 226.374,
-          "close": 226.87
-        },
-        {
-          "time": 1788881400,
-          "open": 226.872,
-          "high": 227.14,
-          "low": 226.34,
-          "close": 226.915
-        },
-        {
-          "time": 1788882300,
-          "open": 226.92,
-          "high": 226.96,
-          "low": 226.07,
-          "close": 226.26
-        },
-        {
-          "time": 1788883200,
-          "open": 226.27,
-          "high": 226.48,
-          "low": 225.87,
-          "close": 226.052
-        },
-        {
-          "time": 1788884100,
-          "open": 226.06,
-          "high": 226.09,
-          "low": 225.57,
-          "close": 225.66
-        },
-        {
-          "time": 1788885000,
-          "open": 225.67,
-          "high": 226.175,
-          "low": 225.55,
-          "close": 225.83
-        },
-        {
-          "time": 1788885900,
-          "open": 225.84,
-          "high": 226.2,
-          "low": 225.6,
-          "close": 225.75
-        },
-        {
-          "time": 1788886800,
-          "open": 225.75,
-          "high": 226.37,
-          "low": 225.73,
-          "close": 226.077
-        },
-        {
-          "time": 1788887700,
-          "open": 226.077,
-          "high": 226.22,
-          "low": 225.46,
-          "close": 225.65
-        },
-        {
-          "time": 1788888600,
-          "open": 225.67,
-          "high": 226.26,
-          "low": 225.65,
-          "close": 225.895
-        },
-        {
-          "time": 1788889500,
-          "open": 225.898,
-          "high": 226.14,
-          "low": 225.76,
-          "close": 225.765
-        },
-        {
-          "time": 1788890400,
-          "open": 225.766,
-          "high": 226.035,
-          "low": 225.71,
-          "close": 225.885
-        },
-        {
-          "time": 1788891300,
-          "open": 225.89,
-          "high": 226.15,
-          "low": 225.845,
-          "close": 226.08
-        },
-        {
-          "time": 1788892200,
-          "open": 226.08,
-          "high": 226.4,
-          "low": 225.816,
-          "close": 226.21
-        },
-        {
-          "time": 1788893100,
-          "open": 226.205,
-          "high": 226.23,
-          "low": 225.25,
-          "close": 225.675
-        },
-        {
-          "time": 1788894000,
-          "open": 225.68,
-          "high": 225.77,
-          "low": 225.42,
-          "close": 225.55
-        },
-        {
-          "time": 1788894900,
-          "open": 225.555,
-          "high": 225.635,
-          "low": 225.3,
-          "close": 225.55
-        },
-        {
-          "time": 1788895800,
-          "open": 225.55,
-          "high": 225.9,
-          "low": 225.31,
-          "close": 225.575
-        },
-        {
-          "time": 1788896700,
-          "open": 225.58,
-          "high": 225.9,
-          "low": 224.85,
-          "close": 225.77
+          "time": 1788551100,
+          "open": 229.985,
+          "high": 231.09,
+          "low": 229.96,
+          "close": 230.345
         }
       ],
       "vwap_line": [
         {
-          "time": 1788874200,
-          "value": 230.978
+          "time": 1788528600,
+          "value": 232.167
         },
         {
-          "time": 1788875100,
-          "value": 230.61
+          "time": 1788529500,
+          "value": 232.82
         },
         {
-          "time": 1788876000,
-          "value": 230.24
+          "time": 1788530400,
+          "value": 233.02
         },
         {
-          "time": 1788876900,
-          "value": 229.924
+          "time": 1788531300,
+          "value": 233.201
         },
         {
-          "time": 1788877800,
-          "value": 229.631
+          "time": 1788532200,
+          "value": 233.266
         },
         {
-          "time": 1788878700,
-          "value": 229.369
+          "time": 1788533100,
+          "value": 233.216
         },
         {
-          "time": 1788879600,
-          "value": 229.173
+          "time": 1788534000,
+          "value": 233.151
         },
         {
-          "time": 1788880500,
-          "value": 228.954
+          "time": 1788534900,
+          "value": 233.101
         },
         {
-          "time": 1788881400,
-          "value": 228.829
+          "time": 1788535800,
+          "value": 233.031
         },
         {
-          "time": 1788882300,
-          "value": 228.679
+          "time": 1788536700,
+          "value": 232.95
         },
         {
-          "time": 1788883200,
-          "value": 228.537
+          "time": 1788537600,
+          "value": 232.87
         },
         {
-          "time": 1788884100,
-          "value": 228.407
+          "time": 1788538500,
+          "value": 232.813
         },
         {
-          "time": 1788885000,
-          "value": 228.291
+          "time": 1788539400,
+          "value": 232.767
         },
         {
-          "time": 1788885900,
-          "value": 228.199
+          "time": 1788540300,
+          "value": 232.719
         },
         {
-          "time": 1788886800,
-          "value": 228.131
+          "time": 1788541200,
+          "value": 232.68
         },
         {
-          "time": 1788887700,
-          "value": 228.054
+          "time": 1788542100,
+          "value": 232.633
         },
         {
-          "time": 1788888600,
-          "value": 227.997
+          "time": 1788543000,
+          "value": 232.58
         },
         {
-          "time": 1788889500,
-          "value": 227.955
+          "time": 1788543900,
+          "value": 232.525
         },
         {
-          "time": 1788890400,
-          "value": 227.92
+          "time": 1788544800,
+          "value": 232.451
         },
         {
-          "time": 1788891300,
-          "value": 227.888
+          "time": 1788545700,
+          "value": 232.411
         },
         {
-          "time": 1788892200,
-          "value": 227.839
+          "time": 1788546600,
+          "value": 232.379
         },
         {
-          "time": 1788893100,
-          "value": 227.766
+          "time": 1788547500,
+          "value": 232.339
         },
         {
-          "time": 1788894000,
-          "value": 227.715
+          "time": 1788548400,
+          "value": 232.287
         },
         {
-          "time": 1788894900,
-          "value": 227.66
+          "time": 1788549300,
+          "value": 232.242
         },
         {
-          "time": 1788895800,
-          "value": 227.59
+          "time": 1788550200,
+          "value": 232.173
         },
         {
-          "time": 1788896700,
-          "value": 227.414
+          "time": 1788551100,
+          "value": 232.059
         }
       ],
       "error": null
@@ -4522,20 +5741,21 @@
       "date": "2026-09-09",
       "open": 111.77,
       "high": 112.05,
-      "low": 111.33,
-      "close": 111.35,
-      "volume": 73240,
+      "low": 111.25,
+      "close": 111.43,
+      "volume": 128421,
       "yesterday_close": 111.5,
       "gap_pct": 0.24,
       "gap_type": "FLAT",
-      "vwap": 111.561,
+      "vwap": 111.48,
       "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
-      "momentum_pct": -0.38,
+      "rsi_15m": 22.7,
+      "momentum_pct": -0.3,
       "signal": "NEUTRAL",
-      "score": 40,
+      "score": 50,
       "reasons": [
-        "Price below VWAP $111.561"
+        "Price below VWAP $111.480",
+        "RSI 22.7 oversold intraday"
       ],
       "candles": [
         {
@@ -4605,8 +5825,43 @@
           "time": 1788920100,
           "open": 111.41,
           "high": 111.43,
-          "low": 111.35,
-          "close": 111.35
+          "low": 111.28,
+          "close": 111.31
+        },
+        {
+          "time": 1788921000,
+          "open": 111.31,
+          "high": 111.43,
+          "low": 111.25,
+          "close": 111.4
+        },
+        {
+          "time": 1788921900,
+          "open": 111.4,
+          "high": 111.45,
+          "low": 111.31,
+          "close": 111.42
+        },
+        {
+          "time": 1788922800,
+          "open": 111.43,
+          "high": 111.48,
+          "low": 111.37,
+          "close": 111.45
+        },
+        {
+          "time": 1788923700,
+          "open": 111.45,
+          "high": 111.48,
+          "low": 111.39,
+          "close": 111.45
+        },
+        {
+          "time": 1788924600,
+          "open": 111.45,
+          "high": 111.47,
+          "low": 111.4,
+          "close": 111.43
         }
       ],
       "vwap_line": [
@@ -4648,7 +5903,27 @@
         },
         {
           "time": 1788920100,
-          "value": 111.561
+          "value": 111.5
+        },
+        {
+          "time": 1788921000,
+          "value": 111.489
+        },
+        {
+          "time": 1788921900,
+          "value": 111.486
+        },
+        {
+          "time": 1788922800,
+          "value": 111.484
+        },
+        {
+          "time": 1788923700,
+          "value": 111.482
+        },
+        {
+          "time": 1788924600,
+          "value": 111.48
         }
       ],
       "error": null
@@ -4658,20 +5933,21 @@
       "date": "2026-09-09",
       "open": 36.15,
       "high": 36.23,
-      "low": 36.01,
-      "close": 36.02,
-      "volume": 83584,
+      "low": 35.99,
+      "close": 36.04,
+      "volume": 172714,
       "yesterday_close": 36.1,
       "gap_pct": 0.14,
       "gap_type": "FLAT",
-      "vwap": 36.086,
+      "vwap": 36.048,
       "vs_vwap": "BELOW",
-      "rsi_15m": 50.0,
-      "momentum_pct": -0.36,
+      "rsi_15m": 25.7,
+      "momentum_pct": -0.3,
       "signal": "NEUTRAL",
-      "score": 40,
+      "score": 50,
       "reasons": [
-        "Price below VWAP $36.086"
+        "Price below VWAP $36.048",
+        "RSI 25.7 oversold intraday"
       ],
       "candles": [
         {
@@ -4741,8 +6017,43 @@
           "time": 1788920100,
           "open": 36.02,
           "high": 36.02,
+          "low": 36.0,
+          "close": 36.0
+        },
+        {
+          "time": 1788921000,
+          "open": 36.0,
+          "high": 36.04,
+          "low": 35.99,
+          "close": 36.04
+        },
+        {
+          "time": 1788921900,
+          "open": 36.03,
+          "high": 36.05,
           "low": 36.02,
-          "close": 36.02
+          "close": 36.05
+        },
+        {
+          "time": 1788922800,
+          "open": 36.05,
+          "high": 36.06,
+          "low": 36.05,
+          "close": 36.05
+        },
+        {
+          "time": 1788923700,
+          "open": 36.05,
+          "high": 36.06,
+          "low": 36.04,
+          "close": 36.06
+        },
+        {
+          "time": 1788924600,
+          "open": 36.06,
+          "high": 36.06,
+          "low": 36.04,
+          "close": 36.04
         }
       ],
       "vwap_line": [
@@ -4784,7 +6095,27 @@
         },
         {
           "time": 1788920100,
-          "value": 36.086
+          "value": 36.049
+        },
+        {
+          "time": 1788921000,
+          "value": 36.048
+        },
+        {
+          "time": 1788921900,
+          "value": 36.048
+        },
+        {
+          "time": 1788922800,
+          "value": 36.048
+        },
+        {
+          "time": 1788923700,
+          "value": 36.048
+        },
+        {
+          "time": 1788924600,
+          "value": 36.048
         }
       ],
       "error": null
@@ -4793,21 +6124,21 @@
       "ticker": "NDQ.AX",
       "date": "2026-09-09",
       "open": 59.36,
-      "high": 59.57,
+      "high": 59.59,
       "low": 59.34,
-      "close": 59.51,
-      "volume": 55567,
+      "close": 59.52,
+      "volume": 83941,
       "yesterday_close": 59.55,
       "gap_pct": -0.32,
       "gap_type": "FLAT",
-      "vwap": 59.443,
+      "vwap": 59.477,
       "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
-      "momentum_pct": 0.25,
+      "rsi_15m": 61.2,
+      "momentum_pct": 0.27,
       "signal": "WATCH",
       "score": 60,
       "reasons": [
-        "Price above VWAP $59.443"
+        "Price above VWAP $59.477"
       ],
       "candles": [
         {
@@ -4876,9 +6207,44 @@
         {
           "time": 1788920100,
           "open": 59.53,
-          "high": 59.53,
+          "high": 59.54,
+          "low": 59.48,
+          "close": 59.52
+        },
+        {
+          "time": 1788921000,
+          "open": 59.54,
+          "high": 59.59,
+          "low": 59.53,
+          "close": 59.58
+        },
+        {
+          "time": 1788921900,
+          "open": 59.57,
+          "high": 59.58,
+          "low": 59.53,
+          "close": 59.55
+        },
+        {
+          "time": 1788922800,
+          "open": 59.54,
+          "high": 59.54,
+          "low": 59.49,
+          "close": 59.5
+        },
+        {
+          "time": 1788923700,
+          "open": 59.51,
+          "high": 59.54,
+          "low": 59.5,
+          "close": 59.54
+        },
+        {
+          "time": 1788924600,
+          "open": 59.54,
+          "high": 59.55,
           "low": 59.51,
-          "close": 59.51
+          "close": 59.52
         }
       ],
       "vwap_line": [
@@ -4920,7 +6286,27 @@
         },
         {
           "time": 1788920100,
-          "value": 59.443
+          "value": 59.447
+        },
+        {
+          "time": 1788921000,
+          "value": 59.466
+        },
+        {
+          "time": 1788921900,
+          "value": 59.471
+        },
+        {
+          "time": 1788922800,
+          "value": 59.473
+        },
+        {
+          "time": 1788923700,
+          "value": 59.476
+        },
+        {
+          "time": 1788924600,
+          "value": 59.477
         }
       ],
       "error": null
@@ -4932,18 +6318,18 @@
       "high": 70.85,
       "low": 70.7,
       "close": 70.8,
-      "volume": 105249,
+      "volume": 172147,
       "yesterday_close": 71.0,
       "gap_pct": -0.41,
       "gap_type": "FLAT",
-      "vwap": 70.769,
+      "vwap": 70.786,
       "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
+      "rsi_15m": 55.2,
       "momentum_pct": 0.13,
       "signal": "WATCH",
       "score": 60,
       "reasons": [
-        "Price above VWAP $70.769"
+        "Price above VWAP $70.786"
       ],
       "candles": [
         {
@@ -5013,7 +6399,42 @@
           "time": 1788920100,
           "open": 70.82,
           "high": 70.83,
+          "low": 70.78,
+          "close": 70.83
+        },
+        {
+          "time": 1788921000,
+          "open": 70.82,
+          "high": 70.84,
+          "low": 70.81,
+          "close": 70.83
+        },
+        {
+          "time": 1788921900,
+          "open": 70.83,
+          "high": 70.84,
           "low": 70.8,
+          "close": 70.81
+        },
+        {
+          "time": 1788922800,
+          "open": 70.81,
+          "high": 70.81,
+          "low": 70.75,
+          "close": 70.79
+        },
+        {
+          "time": 1788923700,
+          "open": 70.79,
+          "high": 70.82,
+          "low": 70.79,
+          "close": 70.81
+        },
+        {
+          "time": 1788924600,
+          "open": 70.81,
+          "high": 70.82,
+          "low": 70.79,
           "close": 70.8
         }
       ],
@@ -5056,7 +6477,27 @@
         },
         {
           "time": 1788920100,
-          "value": 70.769
+          "value": 70.775
+        },
+        {
+          "time": 1788921000,
+          "value": 70.782
+        },
+        {
+          "time": 1788921900,
+          "value": 70.784
+        },
+        {
+          "time": 1788922800,
+          "value": 70.784
+        },
+        {
+          "time": 1788923700,
+          "value": 70.785
+        },
+        {
+          "time": 1788924600,
+          "value": 70.786
         }
       ],
       "error": null
@@ -5065,21 +6506,21 @@
       "ticker": "VTEK.AX",
       "date": "2026-09-09",
       "open": 63.79,
-      "high": 64.05,
+      "high": 64.08,
       "low": 63.6,
-      "close": 64.01,
-      "volume": 694,
+      "close": 63.97,
+      "volume": 1216,
       "yesterday_close": 64.01,
       "gap_pct": -0.34,
       "gap_type": "FLAT",
-      "vwap": 63.874,
+      "vwap": 63.925,
       "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
-      "momentum_pct": 0.34,
+      "rsi_15m": 57.7,
+      "momentum_pct": 0.28,
       "signal": "WATCH",
       "score": 60,
       "reasons": [
-        "Price above VWAP $63.874"
+        "Price above VWAP $63.925"
       ],
       "candles": [
         {
@@ -5149,8 +6590,43 @@
           "time": 1788920100,
           "open": 64.01,
           "high": 64.01,
-          "low": 64.01,
-          "close": 64.01
+          "low": 63.99,
+          "close": 63.99
+        },
+        {
+          "time": 1788921000,
+          "open": 63.99,
+          "high": 64.08,
+          "low": 63.83,
+          "close": 64.06
+        },
+        {
+          "time": 1788921900,
+          "open": 64.005,
+          "high": 64.06,
+          "low": 63.985,
+          "close": 63.985
+        },
+        {
+          "time": 1788922800,
+          "open": 63.985,
+          "high": 63.985,
+          "low": 63.895,
+          "close": 63.92
+        },
+        {
+          "time": 1788923700,
+          "open": 63.96,
+          "high": 63.97,
+          "low": 63.96,
+          "close": 63.97
+        },
+        {
+          "time": 1788924600,
+          "open": 63.97,
+          "high": 63.97,
+          "low": 63.97,
+          "close": 63.97
         }
       ],
       "vwap_line": [
@@ -5192,7 +6668,27 @@
         },
         {
           "time": 1788920100,
-          "value": 63.874
+          "value": 63.877
+        },
+        {
+          "time": 1788921000,
+          "value": 63.902
+        },
+        {
+          "time": 1788921900,
+          "value": 63.923
+        },
+        {
+          "time": 1788922800,
+          "value": 63.923
+        },
+        {
+          "time": 1788923700,
+          "value": 63.925
+        },
+        {
+          "time": 1788924600,
+          "value": 63.925
         }
       ],
       "error": null
@@ -5203,19 +6699,19 @@
       "open": 158.58,
       "high": 158.84,
       "low": 158.53,
-      "close": 158.71,
-      "volume": 79469,
+      "close": 158.74,
+      "volume": 115602,
       "yesterday_close": 159.22,
       "gap_pct": -0.4,
       "gap_type": "FLAT",
-      "vwap": 158.679,
+      "vwap": 158.691,
       "vs_vwap": "ABOVE",
-      "rsi_15m": 50.0,
-      "momentum_pct": 0.08,
+      "rsi_15m": 53.6,
+      "momentum_pct": 0.1,
       "signal": "WATCH",
       "score": 60,
       "reasons": [
-        "Price above VWAP $158.679"
+        "Price above VWAP $158.691"
       ],
       "candles": [
         {
@@ -5285,8 +6781,43 @@
           "time": 1788920100,
           "open": 158.75,
           "high": 158.75,
+          "low": 158.66,
+          "close": 158.74
+        },
+        {
+          "time": 1788921000,
+          "open": 158.75,
+          "high": 158.79,
+          "low": 158.72,
+          "close": 158.77
+        },
+        {
+          "time": 1788921900,
+          "open": 158.77,
+          "high": 158.78,
           "low": 158.71,
-          "close": 158.71
+          "close": 158.73
+        },
+        {
+          "time": 1788922800,
+          "open": 158.73,
+          "high": 158.73,
+          "low": 158.63,
+          "close": 158.69
+        },
+        {
+          "time": 1788923700,
+          "open": 158.69,
+          "high": 158.76,
+          "low": 158.68,
+          "close": 158.76
+        },
+        {
+          "time": 1788924600,
+          "open": 158.75,
+          "high": 158.78,
+          "low": 158.73,
+          "close": 158.74
         }
       ],
       "vwap_line": [
@@ -5328,13 +6859,33 @@
         },
         {
           "time": 1788920100,
-          "value": 158.679
+          "value": 158.687
+        },
+        {
+          "time": 1788921000,
+          "value": 158.689
+        },
+        {
+          "time": 1788921900,
+          "value": 158.69
+        },
+        {
+          "time": 1788922800,
+          "value": 158.69
+        },
+        {
+          "time": 1788923700,
+          "value": 158.69
+        },
+        {
+          "time": 1788924600,
+          "value": 158.691
         }
       ],
       "error": null
     }
   ],
-  "scanned_at": "2026-09-09T02:36:24.861314",
+  "scanned_at": "2026-09-09T04:00:02.172574",
   "total_scanned": 33,
   "results_count": 33
 }
