@@ -14,11 +14,13 @@ from indicators import calc_macd, calc_supertrend, calc_bollinger, calc_atr
 
 AEST = pytz.timezone('Australia/Sydney')
 NYSE = pytz.timezone('America/New_York')
-TARGET_PCT   = 0.052  # 5% net after ~0.2% round-trip fees
+TARGET_PCT   = 0.022  # 2% net after ~0.2% round-trip fees. Was 5% -- almost no
+                      # ASX name travels that far in one session, so ~80% of trades
+                      # rode to the forced EOD close instead of ever hitting target.
 FEES_PCT     = 0.001  # 0.1% per side (Moomoo ASX)
 ATR_MULT     = 1.5    # stop = 1.5 × ATR
-MAX_ATR_STOP = 0.035  # cap stop at 3.5%
-MIN_ATR_STOP = 0.015  # floor stop at 1.5%
+MAX_ATR_STOP = 0.02   # cap stop at 2% -- must track TARGET_PCT or R:R goes < 1:1
+MIN_ATR_STOP = 0.012  # floor stop at 1.2% (target/floor = 1.8:1)
 ORB_BARS     = 30
 MAX_POSITIONS= 2
 MIN_MACRO    = 50

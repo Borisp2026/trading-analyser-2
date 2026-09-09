@@ -383,8 +383,8 @@ def run_agent_scan():
             iprice   = float(idf["Close"].iloc[-1])
             pos_size = min(POS_SIZE, round(capital * 0.5, 2))
             trade_id = trades_done + 1
-            itarget  = round(iprice * 1.04, 3)
-            istop    = round(iprice * 0.985, 3)
+            itarget  = round(iprice * 1.02, 3)   # +2%, matches day_trader.TARGET_PCT
+            istop    = round(iprice * 0.985, 3)  # -1.5%
             trade = {
                 "id": trade_id, "ticker": iticker,
                 "entry_price": iprice, "entry_time": datetime.now().isoformat(),
