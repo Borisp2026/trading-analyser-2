@@ -2,10 +2,14 @@ name: Live Intraday Alerts
 
 on:
   schedule:
-    # Every 30 min, Mon-Fri, during ASX hours (10am-4pm AWST = 2:00-8:00 UTC)
-    # and NASDAQ hours (9:30am-4pm EST = 14:30-21:00 UTC)
-    # Combined window: 2:00 UTC to 21:00 UTC Mon-Fri
-    - cron: '0,30 2-21 * * 1-5'
+    # Every 30 min on weekdays, covering both sessions across daylight saving:
+    #   ASX    10:00-16:00 Sydney     = 00:00-06:00 UTC (AEST) / 23:00-05:00 UTC (AEDT)
+    #   NASDAQ 09:30-16:00 New York   = 13:30-20:00 UTC (EDT)  / 14:30-21:00 UTC (EST)
+    # intraday_scanner.py and live_prices.py self-guard with pytz (is_asx_open /
+    # is_nasdaq_open), so ticks just outside a session are ~30s no-ops.
+    # Previous window was '2-21' -- that's Perth AWST (UTC+8), not the ASX's own
+    # Sydney time, so it clipped the first 2h of every ASX session.
+    - cron: '0,30 0-6,13-23 * * 1-5'
   workflow_dispatch:
 
 concurrency:
