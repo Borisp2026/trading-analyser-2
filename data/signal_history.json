@@ -1,20 +1,6 @@
 {
   "IPX.AX": [
     {
-      "date": "2026-08-05",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 31.8,
-      "price": 3.41,
-      "entry_price": null,
-      "stop_loss": 3.0166,
-      "take_profit": 4.1969,
-      "confidence": "MEDIUM",
-      "actual_next_day_pct": -0.29,
-      "actual_direction": "DOWN",
-      "signal_correct": true,
-      "outcome": "CORRECT"
-    },
-    {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
       "blended_score": 36.2,
@@ -415,6 +401,20 @@
       "stop_loss": 2.707,
       "take_profit": 3.6759,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": 1.32,
+      "actual_direction": "UP",
+      "signal_correct": false,
+      "outcome": "WRONG"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 34.8,
+      "price": 3.07,
+      "entry_price": null,
+      "stop_loss": 2.7572,
+      "take_profit": 3.6955,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -422,20 +422,6 @@
     }
   ],
   "NXT.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 39.6,
-      "price": 14.21,
-      "entry_price": null,
-      "stop_loss": 13.3661,
-      "take_profit": 15.8978,
-      "confidence": "MEDIUM",
-      "actual_next_day_pct": 0.77,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
@@ -837,6 +823,20 @@
       "stop_loss": 11.7614,
       "take_profit": 14.0371,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": 2.24,
+      "actual_direction": "UP",
+      "signal_correct": false,
+      "outcome": "WRONG"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 36.6,
+      "price": 12.77,
+      "entry_price": null,
+      "stop_loss": 12.0302,
+      "take_profit": 14.2496,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -844,20 +844,6 @@
     }
   ],
   "TOR.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 42.8,
-      "price": 0.205,
-      "entry_price": null,
-      "stop_loss": 0.1781,
-      "take_profit": 0.2587,
-      "confidence": "LOW",
-      "actual_next_day_pct": 2.44,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
@@ -1259,6 +1245,20 @@
       "stop_loss": 0.1952,
       "take_profit": 0.2695,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": 2.27,
+      "actual_direction": "UP",
+      "signal_correct": false,
+      "outcome": "WRONG"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 38.8,
+      "price": 0.225,
+      "entry_price": null,
+      "stop_loss": 0.2015,
+      "take_profit": 0.2721,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -1266,20 +1266,6 @@
     }
   ],
   "GLN.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "HOLD / WATCH",
-      "blended_score": 45.8,
-      "price": 0.3,
-      "entry_price": 0.291,
-      "stop_loss": 0.2698,
-      "take_profit": 0.3603,
-      "confidence": "LOW",
-      "actual_next_day_pct": 1.67,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
@@ -1681,6 +1667,20 @@
       "stop_loss": 0.3422,
       "take_profit": 0.4556,
       "confidence": "LOW",
+      "actual_next_day_pct": 1.84,
+      "actual_direction": "UP",
+      "signal_correct": null,
+      "outcome": "NEUTRAL"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "HOLD / WATCH",
+      "blended_score": 57.8,
+      "price": 0.387,
+      "entry_price": 0.3754,
+      "stop_loss": 0.3496,
+      "take_profit": 0.4617,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -1688,20 +1688,6 @@
     }
   ],
   "MSB.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 36.6,
-      "price": 2.13,
-      "entry_price": null,
-      "stop_loss": 1.9206,
-      "take_profit": 2.4801,
-      "confidence": "MEDIUM",
-      "actual_next_day_pct": 4.69,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
@@ -2103,6 +2089,20 @@
       "stop_loss": 1.9206,
       "take_profit": 2.6566,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": -2.18,
+      "actual_direction": "DOWN",
+      "signal_correct": true,
+      "outcome": "CORRECT"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 38.2,
+      "price": 2.24,
+      "entry_price": null,
+      "stop_loss": 1.9206,
+      "take_profit": 2.5988,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -2110,20 +2110,6 @@
     }
   ],
   "AFG.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "HOLD / WATCH",
-      "blended_score": 50.8,
-      "price": 1.595,
-      "entry_price": 1.5472,
-      "stop_loss": 1.5168,
-      "take_profit": 1.7513,
-      "confidence": "LOW",
-      "actual_next_day_pct": 1.25,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "HOLD / WATCH",
@@ -2525,6 +2511,20 @@
       "stop_loss": 1.4111,
       "take_profit": 1.6478,
       "confidence": "HIGH",
+      "actual_next_day_pct": -4.9,
+      "actual_direction": "DOWN",
+      "signal_correct": true,
+      "outcome": "CORRECT"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 41.0,
+      "price": 1.42,
+      "entry_price": null,
+      "stop_loss": 1.3382,
+      "take_profit": 1.5835,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -2532,20 +2532,6 @@
     }
   ],
   "CU6.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "HOLD / WATCH",
-      "blended_score": 47.6,
-      "price": 2.7,
-      "entry_price": 2.619,
-      "stop_loss": 2.0097,
-      "take_profit": 3.2712,
-      "confidence": "LOW",
-      "actual_next_day_pct": -0.74,
-      "actual_direction": "DOWN",
-      "signal_correct": true,
-      "outcome": "CORRECT"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
@@ -2947,6 +2933,20 @@
       "stop_loss": 2.1246,
       "take_profit": 2.8608,
       "confidence": "LOW",
+      "actual_next_day_pct": 0.84,
+      "actual_direction": "UP",
+      "signal_correct": false,
+      "outcome": "WRONG"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 40.8,
+      "price": 2.39,
+      "entry_price": null,
+      "stop_loss": 2.1557,
+      "take_profit": 2.8586,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -2954,20 +2954,6 @@
     }
   ],
   "TLX.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 35.8,
-      "price": 14.72,
-      "entry_price": null,
-      "stop_loss": 13.841,
-      "take_profit": 16.478,
-      "confidence": "MEDIUM",
-      "actual_next_day_pct": 2.17,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
@@ -3369,6 +3355,20 @@
       "stop_loss": 15.4298,
       "take_profit": 18.6405,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": 0.67,
+      "actual_direction": "UP",
+      "signal_correct": true,
+      "outcome": "CORRECT"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "BUY",
+      "blended_score": 59.8,
+      "price": 16.625,
+      "entry_price": 16.4587,
+      "stop_loss": 15.5788,
+      "take_profit": 18.7175,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -3376,20 +3376,6 @@
     }
   ],
   "EOS.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 38.8,
-      "price": 7.65,
-      "entry_price": null,
-      "stop_loss": 6.7947,
-      "take_profit": 9.3606,
-      "confidence": "MEDIUM",
-      "actual_next_day_pct": 1.18,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
@@ -3791,6 +3777,20 @@
       "stop_loss": 8.4656,
       "take_profit": 11.6287,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": 2.31,
+      "actual_direction": "UP",
+      "signal_correct": false,
+      "outcome": "WRONG"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 36.6,
+      "price": 9.74,
+      "entry_price": null,
+      "stop_loss": 8.702,
+      "take_profit": 11.816,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -3798,20 +3798,6 @@
     }
   ],
   "GMD.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "HOLD / WATCH",
-      "blended_score": 48.8,
-      "price": 6.44,
-      "entry_price": 6.2468,
-      "stop_loss": 5.9365,
-      "take_profit": 7.4471,
-      "confidence": "LOW",
-      "actual_next_day_pct": 4.35,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
@@ -4213,6 +4199,20 @@
       "stop_loss": 5.4309,
       "take_profit": 8.9826,
       "confidence": "LOW",
+      "actual_next_day_pct": -0.94,
+      "actual_direction": "DOWN",
+      "signal_correct": null,
+      "outcome": "NEUTRAL"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "HOLD / WATCH",
+      "blended_score": 56.2,
+      "price": 7.935,
+      "entry_price": 7.697,
+      "stop_loss": 5.4309,
+      "take_profit": 8.8692,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -4220,20 +4220,6 @@
     }
   ],
   "IOZ.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "HOLD / WATCH",
-      "blended_score": 51.6,
-      "price": 36.94,
-      "entry_price": 35.8318,
-      "stop_loss": 34.4124,
-      "take_profit": 38.0365,
-      "confidence": "LOW",
-      "actual_next_day_pct": 0.46,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "HOLD / WATCH",
@@ -4635,6 +4621,20 @@
       "stop_loss": 36.0061,
       "take_profit": 37.3678,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": -0.14,
+      "actual_direction": "DOWN",
+      "signal_correct": true,
+      "outcome": "CORRECT"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "HOLD / WATCH",
+      "blended_score": 46.0,
+      "price": 36.05,
+      "entry_price": 34.9685,
+      "stop_loss": 35.5953,
+      "take_profit": 36.9593,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -4642,20 +4642,6 @@
     }
   ],
   "APA.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "HOLD / WATCH",
-      "blended_score": 50.0,
-      "price": 10.18,
-      "entry_price": 9.8746,
-      "stop_loss": 9.8983,
-      "take_profit": 10.7434,
-      "confidence": "LOW",
-      "actual_next_day_pct": -1.77,
-      "actual_direction": "DOWN",
-      "signal_correct": true,
-      "outcome": "CORRECT"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
@@ -5057,6 +5043,20 @@
       "stop_loss": 10.5622,
       "take_profit": 11.3655,
       "confidence": "LOW",
+      "actual_next_day_pct": 0.46,
+      "actual_direction": "UP",
+      "signal_correct": false,
+      "outcome": "WRONG"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "HOLD / WATCH",
+      "blended_score": 53.6,
+      "price": 10.88,
+      "entry_price": 10.5536,
+      "stop_loss": 10.6218,
+      "take_profit": 11.3963,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -5064,20 +5064,6 @@
     }
   ],
   "AAPL": [
-    {
-      "date": "2026-08-03",
-      "recommendation": "HOLD / WATCH",
-      "blended_score": 45.0,
-      "price": 308.91,
-      "entry_price": 299.6427,
-      "stop_loss": 294.102,
-      "take_profit": 338.526,
-      "confidence": "LOW",
-      "actual_next_day_pct": 1.96,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-05",
       "recommendation": "HOLD / WATCH",
@@ -5479,6 +5465,20 @@
       "stop_loss": 305.1132,
       "take_profit": 338.7575,
       "confidence": "LOW",
+      "actual_next_day_pct": -1.17,
+      "actual_direction": "DOWN",
+      "signal_correct": null,
+      "outcome": "NEUTRAL"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "HOLD / WATCH",
+      "blended_score": 55.2,
+      "price": 316.22,
+      "entry_price": 306.7334,
+      "stop_loss": 304.9657,
+      "take_profit": 338.7287,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -5486,20 +5486,6 @@
     }
   ],
   "AMD": [
-    {
-      "date": "2026-08-03",
-      "recommendation": "HOLD / WATCH",
-      "blended_score": 51.0,
-      "price": 476.15,
-      "entry_price": 461.8655,
-      "stop_loss": 432.8577,
-      "take_profit": 597.1433,
-      "confidence": "LOW",
-      "actual_next_day_pct": 7.0,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-05",
       "recommendation": "BUY",
@@ -5901,6 +5887,20 @@
       "stop_loss": 432.8577,
       "take_profit": 576.1702,
       "confidence": "LOW",
+      "actual_next_day_pct": 5.9,
+      "actual_direction": "UP",
+      "signal_correct": null,
+      "outcome": "NEUTRAL"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "HOLD / WATCH",
+      "blended_score": 45.8,
+      "price": 505.74,
+      "entry_price": 490.5678,
+      "stop_loss": 432.8577,
+      "take_profit": 575.8989,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -5908,20 +5908,6 @@
     }
   ],
   "TSLA": [
-    {
-      "date": "2026-08-03",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 40.6,
-      "price": 311.21,
-      "entry_price": null,
-      "stop_loss": 285.966,
-      "take_profit": 361.6979,
-      "confidence": "LOW",
-      "actual_next_day_pct": 1.64,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-05",
       "recommendation": "WEAK / REDUCE",
@@ -6323,6 +6309,20 @@
       "stop_loss": 342.448,
       "take_profit": 410.1941,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": 3.98,
+      "actual_direction": "UP",
+      "signal_correct": true,
+      "outcome": "CORRECT"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "STRONG BUY",
+      "blended_score": 69.8,
+      "price": 368.16,
+      "entry_price": 364.4784,
+      "stop_loss": 345.1878,
+      "take_profit": 414.1044,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -6330,20 +6330,6 @@
     }
   ],
   "MSFT": [
-    {
-      "date": "2026-08-03",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 40.6,
-      "price": 464.72,
-      "entry_price": null,
-      "stop_loss": 393.1783,
-      "take_profit": 512.7638,
-      "confidence": "LOW",
-      "actual_next_day_pct": 1.06,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-05",
       "recommendation": "WEAK / REDUCE",
@@ -6745,6 +6731,20 @@
       "stop_loss": 476.0115,
       "take_profit": 528.477,
       "confidence": "LOW",
+      "actual_next_day_pct": -1.15,
+      "actual_direction": "DOWN",
+      "signal_correct": null,
+      "outcome": "NEUTRAL"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "HOLD / WATCH",
+      "blended_score": 53.2,
+      "price": 493.95,
+      "entry_price": 479.1315,
+      "stop_loss": 476.4573,
+      "take_profit": 528.9354,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -6752,20 +6752,6 @@
     }
   ],
   "NVDA": [
-    {
-      "date": "2026-08-03",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 35.8,
-      "price": 200.75,
-      "entry_price": null,
-      "stop_loss": 189.5394,
-      "take_profit": 223.1711,
-      "confidence": "MEDIUM",
-      "actual_next_day_pct": 2.56,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-05",
       "recommendation": "BUY",
@@ -7167,6 +7153,20 @@
       "stop_loss": 216.1862,
       "take_profit": 249.2576,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": -2.01,
+      "actual_direction": "DOWN",
+      "signal_correct": false,
+      "outcome": "WRONG"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "STRONG BUY",
+      "blended_score": 63.2,
+      "price": 225.73,
+      "entry_price": 223.4727,
+      "stop_loss": 214.5005,
+      "take_profit": 248.1889,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -7174,20 +7174,6 @@
     }
   ],
   "GWA.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "HOLD / WATCH",
-      "blended_score": 54.8,
-      "price": 2.43,
-      "entry_price": 2.3571,
-      "stop_loss": 2.3469,
-      "take_profit": 2.5962,
-      "confidence": "LOW",
-      "actual_next_day_pct": 0.41,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "BUY",
@@ -7589,6 +7575,20 @@
       "stop_loss": 1.9212,
       "take_profit": 2.2177,
       "confidence": "LOW",
+      "actual_next_day_pct": -0.99,
+      "actual_direction": "DOWN",
+      "signal_correct": true,
+      "outcome": "CORRECT"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 38.8,
+      "price": 2.0,
+      "entry_price": null,
+      "stop_loss": 1.9055,
+      "take_profit": 2.189,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -7596,20 +7596,6 @@
     }
   ],
   "MMI.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 42.8,
-      "price": 1.465,
-      "entry_price": null,
-      "stop_loss": 1.3468,
-      "take_profit": 1.7014,
-      "confidence": "LOW",
-      "actual_next_day_pct": 3.75,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
@@ -8011,6 +7997,20 @@
       "stop_loss": 1.3415,
       "take_profit": 1.579,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": 0.36,
+      "actual_direction": "UP",
+      "signal_correct": false,
+      "outcome": "WRONG"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 31.8,
+      "price": 1.38,
+      "entry_price": null,
+      "stop_loss": 1.3415,
+      "take_profit": 1.5807,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -8018,20 +8018,6 @@
     }
   ],
   "AMP.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 43.4,
-      "price": 2.18,
-      "entry_price": null,
-      "stop_loss": 1.485,
-      "take_profit": 2.366,
-      "confidence": "LOW",
-      "actual_next_day_pct": 5.96,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "BUY",
@@ -8433,6 +8419,20 @@
       "stop_loss": 2.337,
       "take_profit": 2.6461,
       "confidence": "LOW",
+      "actual_next_day_pct": 0.0,
+      "actual_direction": "DOWN",
+      "signal_correct": null,
+      "outcome": "NEUTRAL"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "HOLD / WATCH",
+      "blended_score": 47.0,
+      "price": 2.44,
+      "entry_price": 2.3668,
+      "stop_loss": 2.3406,
+      "take_profit": 2.6389,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -8440,20 +8440,6 @@
     }
   ],
   "NWH.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "BUY",
-      "blended_score": 66.6,
-      "price": 7.23,
-      "entry_price": 7.1577,
-      "stop_loss": 5.8657,
-      "take_profit": 8.0139,
-      "confidence": "MEDIUM",
-      "actual_next_day_pct": -0.41,
-      "actual_direction": "DOWN",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "BUY",
@@ -8855,6 +8841,20 @@
       "stop_loss": 7.4331,
       "take_profit": 8.7138,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": -1.15,
+      "actual_direction": "DOWN",
+      "signal_correct": true,
+      "outcome": "CORRECT"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 31.2,
+      "price": 7.75,
+      "entry_price": null,
+      "stop_loss": 7.329,
+      "take_profit": 8.5921,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -8862,20 +8862,6 @@
     }
   ],
   "ILU.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 36.8,
-      "price": 6.71,
-      "entry_price": null,
-      "stop_loss": 6.2351,
-      "take_profit": 7.6598,
-      "confidence": "MEDIUM",
-      "actual_next_day_pct": 1.04,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "WEAK / REDUCE",
@@ -9277,6 +9263,20 @@
       "stop_loss": 6.412,
       "take_profit": 7.636,
       "confidence": "LOW",
+      "actual_next_day_pct": -0.29,
+      "actual_direction": "DOWN",
+      "signal_correct": true,
+      "outcome": "CORRECT"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 44.2,
+      "price": 6.8,
+      "entry_price": null,
+      "stop_loss": 6.403,
+      "take_profit": 7.5941,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -9284,20 +9284,6 @@
     }
   ],
   "PNV.AX": [
-    {
-      "date": "2026-08-05",
-      "recommendation": "WEAK / REDUCE",
-      "blended_score": 30.0,
-      "price": 0.865,
-      "entry_price": null,
-      "stop_loss": 0.7968,
-      "take_profit": 1.0015,
-      "confidence": "HIGH",
-      "actual_next_day_pct": 1.16,
-      "actual_direction": "UP",
-      "signal_correct": false,
-      "outcome": "WRONG"
-    },
     {
       "date": "2026-08-06",
       "recommendation": "AVOID / SELL",
@@ -9699,6 +9685,20 @@
       "stop_loss": 0.9999,
       "take_profit": 1.2272,
       "confidence": "MEDIUM",
+      "actual_next_day_pct": 0.47,
+      "actual_direction": "UP",
+      "signal_correct": false,
+      "outcome": "WRONG"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 39.0,
+      "price": 1.06,
+      "entry_price": null,
+      "stop_loss": 0.9999,
+      "take_profit": 1.2256,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -9995,6 +9995,20 @@
       "stop_loss": 8.3061,
       "take_profit": 10.863,
       "confidence": "LOW",
+      "actual_next_day_pct": 6.99,
+      "actual_direction": "UP",
+      "signal_correct": null,
+      "outcome": "NEUTRAL"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "STRONG BUY",
+      "blended_score": 68.0,
+      "price": 9.95,
+      "entry_price": 9.8505,
+      "stop_loss": 8.3061,
+      "take_profit": 11.5472,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -10276,6 +10290,20 @@
       "entry_price": 15.4618,
       "stop_loss": 15.2757,
       "take_profit": 17.9134,
+      "confidence": "LOW",
+      "actual_next_day_pct": -1.13,
+      "actual_direction": "DOWN",
+      "signal_correct": null,
+      "outcome": "NEUTRAL"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "HOLD / WATCH",
+      "blended_score": 45.0,
+      "price": 15.75,
+      "entry_price": 15.2775,
+      "stop_loss": 15.2757,
+      "take_profit": 17.6553,
       "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
@@ -10559,6 +10587,20 @@
       "stop_loss": 4.5581,
       "take_profit": 5.6737,
       "confidence": "LOW",
+      "actual_next_day_pct": 1.22,
+      "actual_direction": "UP",
+      "signal_correct": false,
+      "outcome": "WRONG"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 43.8,
+      "price": 4.995,
+      "entry_price": null,
+      "stop_loss": 4.6299,
+      "take_profit": 5.7252,
+      "confidence": "LOW",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,
@@ -10743,6 +10785,20 @@
       "stop_loss": 1.0428,
       "take_profit": 1.3493,
       "confidence": "HIGH",
+      "actual_next_day_pct": -2.18,
+      "actual_direction": "DOWN",
+      "signal_correct": true,
+      "outcome": "CORRECT"
+    },
+    {
+      "date": "2026-09-09",
+      "recommendation": "WEAK / REDUCE",
+      "blended_score": 31.2,
+      "price": 1.12,
+      "entry_price": null,
+      "stop_loss": 1.0203,
+      "take_profit": 1.3195,
+      "confidence": "MEDIUM",
       "actual_next_day_pct": null,
       "actual_direction": null,
       "signal_correct": null,

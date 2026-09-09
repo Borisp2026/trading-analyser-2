@@ -1,11 +1,177 @@
 {
-  "generated_at": "2026-09-08T15:15:54",
+  "generated_at": "2026-09-09T02:18:54",
   "watchlist_count": 27,
   "candidates": [
     {
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "price": 368.16,
+      "sector": "Consumer Cyclical",
+      "cycle_score": 80,
+      "cycle_signal": "CYCLE_BUY",
+      "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+      "risk": "LOW",
+      "dc_num_in_ic": 2,
+      "predicted_move": {
+        "target_price": 422.1442,
+        "target_basis": "Prior Daily Cycle amplitude 23.2% projected from new DCL0",
+        "prior_cycle_amplitude_pct": 23.24,
+        "bars_to_dc3_estimate": 12,
+        "est_date_dc3": "2026-09-24"
+      },
+      "stop_price": 291.4324,
+      "position_size": 479.83,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
+        "RIGHT-translated cycle (Daily Cycle #1 of IC)",
+        "\u2705 90% confirmation signal \u2014 above HCH resistance and 10D SMA",
+        "90% confirmation: close above HCH resistance + 10D SMA, no trendline break"
+      ],
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-08-26",
+            "price": 342.53
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-09-03",
+            "price": 384.04
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-07-29",
+            "price": 297.38
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-09-03",
+            "price": 384.04
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-08-26",
+            "price": 342.53
+          },
+          "dch": {
+            "date": "2026-09-03",
+            "price": 384.04
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-07-29",
+            "price": 297.38
+          },
+          "dch": {
+            "date": "2026-09-03",
+            "price": 384.04
+          }
+        },
+        "entry_price": 368.16,
+        "stop_price": 291.4324,
+        "target_price": 422.1442
+      },
+      "rank": 1,
+      "paper_trade_status": "ALREADY_OPEN"
+    },
+    {
+      "ticker": "TEA.AX",
+      "name": "Tasmea Limited",
+      "price": 9.95,
+      "sector": "Industrials",
+      "cycle_score": 80,
+      "cycle_signal": "CYCLE_BUY",
+      "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+      "risk": "LOW",
+      "dc_num_in_ic": 2,
+      "predicted_move": {
+        "target_price": 10.7053,
+        "target_basis": "Prior Daily Cycle amplitude 22.8% projected from new DCL0",
+        "prior_cycle_amplitude_pct": 22.77,
+        "bars_to_dc3_estimate": 17,
+        "est_date_dc3": "2026-10-02"
+      },
+      "stop_price": 7.791,
+      "position_size": 460.86,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
+        "RIGHT-translated cycle (Daily Cycle #1 of IC)",
+        "\u2705 90% confirmation signal \u2014 above HCH resistance and 10D SMA",
+        "90% confirmation: close above HCH resistance + 10D SMA, no trendline break"
+      ],
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-08-25",
+            "price": 8.72
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-28",
+            "price": 10.2
+          },
+          {
+            "date": "2026-08-28",
+            "price": 10.2
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 7.95
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-08-28",
+            "price": 10.2
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-08-25",
+            "price": 8.72
+          },
+          "hch": {
+            "date": "2026-08-28",
+            "price": 10.2
+          },
+          "dch": {
+            "date": "2026-08-28",
+            "price": 10.2
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 7.95
+          },
+          "dch": {
+            "date": "2026-08-28",
+            "price": 10.2
+          }
+        },
+        "entry_price": 9.95,
+        "stop_price": 7.791,
+        "target_price": 10.7053
+      },
+      "rank": 2,
+      "paper_trade_status": "OPENED_THIS_RUN"
+    },
+    {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 227.21,
+      "price": 225.73,
       "sector": "Technology",
       "cycle_score": 65,
       "cycle_signal": "CYCLE_BUY",
@@ -20,7 +186,7 @@
         "est_date_dc3": "2026-10-06"
       },
       "stop_price": 210.798,
-      "position_size": 1384.41,
+      "position_size": 1511.72,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -97,12 +263,100 @@
             "price": 234.76
           }
         },
-        "entry_price": 227.21,
+        "entry_price": 225.73,
         "stop_price": 210.798,
         "target_price": 248.5997
       },
-      "rank": 1,
+      "rank": 3,
       "paper_trade_status": "ALREADY_OPEN"
+    },
+    {
+      "ticker": "APA.AX",
+      "name": "APA Group",
+      "price": 10.88,
+      "sector": "Utilities",
+      "cycle_score": 47,
+      "cycle_signal": "CYCLE_CAUTION",
+      "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+      "risk": "LOW",
+      "dc_num_in_ic": 1,
+      "predicted_move": {
+        "target_price": 10.9763,
+        "target_basis": "Prior Daily Cycle amplitude 12.5% projected from new DCL0",
+        "prior_cycle_amplitude_pct": 12.46,
+        "bars_to_dc3_estimate": 66,
+        "est_date_dc3": "2026-12-10"
+      },
+      "stop_price": 9.5648,
+      "position_size": 827.25,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
+        "LEFT-translated cycle (Daily Cycle #4 of IC)",
+        "\u2705 90% confirmation signal \u2014 above HCH resistance and 10D SMA",
+        "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure",
+        "90% confirmation: close above HCH resistance + 10D SMA, no trendline break"
+      ],
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-08-10",
+            "price": 9.76
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-09-02",
+            "price": 10.99
+          },
+          {
+            "date": "2026-09-02",
+            "price": 10.99
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-08-10",
+            "price": 9.76
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-09-02",
+            "price": 10.99
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-08-10",
+            "price": 9.76
+          },
+          "hch": {
+            "date": "2026-09-02",
+            "price": 10.99
+          },
+          "dch": {
+            "date": "2026-09-02",
+            "price": 10.99
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-08-10",
+            "price": 9.76
+          },
+          "dch": {
+            "date": "2026-09-02",
+            "price": 10.99
+          }
+        },
+        "entry_price": 10.88,
+        "stop_price": 9.5648,
+        "target_price": 10.9763
+      },
+      "rank": 4,
+      "paper_trade_status": "OPENED_THIS_RUN"
     },
     {
       "ticker": "AMP.AX",
@@ -119,7 +373,7 @@
         "target_basis": "Prior Daily Cycle amplitude 16.1% projected from new DCL0",
         "prior_cycle_amplitude_pct": 16.11,
         "bars_to_dc3_estimate": 0,
-        "est_date_dc3": "2026-09-08"
+        "est_date_dc3": "2026-09-09"
       },
       "stop_price": 2.2834,
       "position_size": 1558.11,
@@ -143,8 +397,8 @@
             "price": 2.33
           },
           {
-            "date": "2026-09-08",
-            "price": 2.4539
+            "date": "2026-09-09",
+            "price": 2.4694
           }
         ],
         "daily_resistance_line": [
@@ -157,8 +411,8 @@
             "price": 2.5
           },
           {
-            "date": "2026-09-08",
-            "price": 2.5257
+            "date": "2026-09-09",
+            "price": 2.5343
           }
         ],
         "intermediate_support_line": [
@@ -205,47 +459,71 @@
         "stop_price": 2.2834,
         "target_price": 2.5796
       },
-      "rank": 2,
+      "rank": 5,
       "paper_trade_status": "OPENED_THIS_RUN"
     }
   ],
   "failed_cycle_alerts": [
     {
-      "ticker": "GWA.AX",
-      "name": "GWA Group Limited",
-      "price": 2.02,
-      "type": "live_cycle_failing",
-      "dcl0_price": 2.1739,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-8.69% below)"
-    },
-    {
-      "ticker": "PLS.AX",
-      "name": "PLS Group Limited",
-      "price": 4.93,
-      "type": "live_cycle_failing",
-      "dcl0_price": 5.0336,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-3.85% below)"
-    },
-    {
       "ticker": "IOZ.AX",
       "name": "iShares Core S&P/ASX 200 ETF",
-      "price": 36.46,
+      "price": 36.05,
       "type": "live_cycle_failing",
       "dcl0_price": 36.2,
       "detail": "Live cycle printed a lower low than its own DCL0 (-0.55% below)"
     },
     {
-      "ticker": "NWH.AX",
-      "name": "NRW Holdings Limited",
-      "price": 7.86,
+      "ticker": "PLS.AX",
+      "name": "PLS Group Limited",
+      "price": 4.995,
       "type": "live_cycle_failing",
-      "dcl0_price": 6.74,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-0.74% below)"
+      "dcl0_price": 5.0336,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-3.85% below)"
+    },
+    {
+      "ticker": "AFG.AX",
+      "name": "Australian Finance Group Limited",
+      "price": 1.42,
+      "type": "live_cycle_failing",
+      "dcl0_price": 1.4446,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-2.4% below)"
+    },
+    {
+      "ticker": "PNV.AX",
+      "name": "PolyNovo Limited",
+      "price": 1.06,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 0.81,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+    },
+    {
+      "ticker": "TOR.AX",
+      "name": "Torque Metals Limited",
+      "price": 0.225,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 0.165,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+    },
+    {
+      "ticker": "GWA.AX",
+      "name": "GWA Group Limited",
+      "price": 2.0,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 1.985,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+    },
+    {
+      "ticker": "MSB.AX",
+      "name": "Mesoblast Limited",
+      "price": 2.24,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 1.88,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
       "ticker": "EOS.AX",
       "name": "Electro Optic Systems Holdings Limited",
-      "price": 9.52,
+      "price": 9.74,
       "type": "completed_cycle_failed",
       "dcl0_price": 6.1,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
@@ -253,122 +531,105 @@
     {
       "ticker": "NXT.AX",
       "name": "NEXTDC Limited",
-      "price": 12.52,
+      "price": 12.77,
       "type": "completed_cycle_failed",
       "dcl0_price": 12.4,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
-      "ticker": "MSB.AX",
-      "name": "Mesoblast Limited",
-      "price": 2.29,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 1.88,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
-      "ticker": "TOR.AX",
-      "name": "Torque Metals Limited",
-      "price": 0.22,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 0.165,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
-      "ticker": "MMI.AX",
-      "name": "Metro Mining Limited",
-      "price": 1.375,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 1.225,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
-      "ticker": "PNV.AX",
-      "name": "PolyNovo Limited",
-      "price": 1.055,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 0.81,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
       "ticker": "IPX.AX",
       "name": "IperionX Limited",
-      "price": 3.03,
+      "price": 3.07,
       "type": "live_cycle_failing",
       "dcl0_price": 2.79,
       "detail": "Live cycle printed a lower low than its own DCL0 (-0.36% below)"
     },
     {
+      "ticker": "MMI.AX",
+      "name": "Metro Mining Limited",
+      "price": 1.38,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 1.225,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+    },
+    {
+      "ticker": "NWH.AX",
+      "name": "NRW Holdings Limited",
+      "price": 7.75,
+      "type": "live_cycle_failing",
+      "dcl0_price": 6.74,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-0.74% below)"
+    },
+    {
       "ticker": "SS1.AX",
       "name": "Sun Silver Limited",
-      "price": 1.145,
+      "price": 1.12,
       "type": "live_cycle_failing",
       "dcl0_price": 0.82,
       "detail": "Live cycle printed a lower low than its own DCL0 (-0.0% below)"
-    },
-    {
-      "ticker": "AFG.AX",
-      "name": "Australian Finance Group Limited",
-      "price": 1.49,
-      "type": "live_cycle_failing",
-      "dcl0_price": 1.4446,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-1.01% below)"
     }
   ],
   "high_risk_alerts": [
     {
       "ticker": "TLX.AX",
       "name": "Telix Pharmaceuticals Limited",
-      "price": 16.5,
+      "price": 16.625,
       "dc_num_in_ic": 12,
       "detail": "Daily Cycle 12 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "GMD.AX",
       "name": "Genesis Minerals Limited",
-      "price": 8.01,
+      "price": 7.935,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 493.5,
+      "price": 493.95,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 507.025,
+      "price": 505.74,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "CMM.AX",
       "name": "Capricorn Metals Ltd",
-      "price": 15.94,
+      "price": 15.75,
       "dc_num_in_ic": 5,
       "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
-      "ticker": "APA.AX",
-      "name": "APA Group",
-      "price": 10.83,
-      "dc_num_in_ic": 5,
-      "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+      "ticker": "CU6.AX",
+      "name": "Clarity Pharmaceuticals Ltd",
+      "price": 2.39,
+      "dc_num_in_ic": 3,
+      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+    },
+    {
+      "ticker": "GWA.AX",
+      "name": "GWA Group Limited",
+      "price": 2.0,
+      "dc_num_in_ic": 4,
+      "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "NXT.AX",
       "name": "NEXTDC Limited",
-      "price": 12.52,
+      "price": 12.77,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "MMI.AX",
       "name": "Metro Mining Limited",
-      "price": 1.375,
+      "price": 1.38,
       "dc_num_in_ic": 5,
       "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     }
@@ -392,7 +653,7 @@
         "entered_dc_num": 1,
         "entered_score": 57
       },
-      "_current_price": 227.21,
+      "_current_price": 225.73,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -485,7 +746,7 @@
         "entered_dc_num": 2,
         "entered_score": 80
       },
-      "_current_price": 365.03,
+      "_current_price": 368.16,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -537,10 +798,164 @@
       }
     },
     {
+      "ticker": "TEA.AX",
+      "shares": 46.3176,
+      "buy_price": 9.95,
+      "buy_date": "2026-09-09",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #1 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 7.791,
+      "target_price": 10.7053,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Industrials",
+        "entered_dc_num": 2,
+        "entered_score": 80
+      },
+      "_current_price": 9.95,
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-08-25",
+            "price": 8.72
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-28",
+            "price": 10.2
+          },
+          {
+            "date": "2026-08-28",
+            "price": 10.2
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-07-30",
+            "price": 7.95
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-08-28",
+            "price": 10.2
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-08-25",
+            "price": 8.72
+          },
+          "hch": {
+            "date": "2026-08-28",
+            "price": 10.2
+          },
+          "dch": {
+            "date": "2026-08-28",
+            "price": 10.2
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-07-30",
+            "price": 7.95
+          },
+          "dch": {
+            "date": "2026-08-28",
+            "price": 10.2
+          }
+        },
+        "entry_price": 9.95,
+        "stop_price": 7.791,
+        "target_price": 10.7053
+      }
+    },
+    {
+      "ticker": "APA.AX",
+      "shares": 76.034,
+      "buy_price": 10.88,
+      "buy_date": "2026-09-09",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #4 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 9.5648,
+      "target_price": 10.9763,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Utilities",
+        "entered_dc_num": 1,
+        "entered_score": 47
+      },
+      "_current_price": 10.88,
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-08-10",
+            "price": 9.76
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-09-02",
+            "price": 10.99
+          },
+          {
+            "date": "2026-09-02",
+            "price": 10.99
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-08-10",
+            "price": 9.76
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-09-02",
+            "price": 10.99
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-08-10",
+            "price": 9.76
+          },
+          "hch": {
+            "date": "2026-09-02",
+            "price": 10.99
+          },
+          "dch": {
+            "date": "2026-09-02",
+            "price": 10.99
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-08-10",
+            "price": 9.76
+          },
+          "dch": {
+            "date": "2026-09-02",
+            "price": 10.99
+          }
+        },
+        "entry_price": 10.88,
+        "stop_price": 9.5648,
+        "target_price": 10.9763
+      }
+    },
+    {
       "ticker": "AMP.AX",
       "shares": 638.5697,
       "buy_price": 2.44,
-      "buy_date": "2026-09-08",
+      "buy_date": "2026-09-09",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #3 of IC)",
       "status": "open",
@@ -566,8 +981,8 @@
             "price": 2.33
           },
           {
-            "date": "2026-09-08",
-            "price": 2.4539
+            "date": "2026-09-09",
+            "price": 2.4694
           }
         ],
         "daily_resistance_line": [
@@ -580,8 +995,8 @@
             "price": 2.5
           },
           {
-            "date": "2026-09-08",
-            "price": 2.5257
+            "date": "2026-09-09",
+            "price": 2.5343
           }
         ],
         "intermediate_support_line": [
@@ -632,79 +1047,6 @@
   ],
   "closed_trades": [
     {
-      "ticker": "APA.AX",
-      "shares": 39.8673,
-      "buy_price": 10.55,
-      "buy_date": "2026-08-25",
-      "signal": "CYCLE_BUY",
-      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #4 of IC)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 8.0417,
-      "target_price": 10.9763,
-      "meta": {
-        "strategy": "cycle_trading",
-        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
-        "sector": "Utilities",
-        "entered_dc_num": 5,
-        "entered_score": 47
-      },
-      "sell_price": 10.81,
-      "sell_date": "2026-09-07",
-      "pnl": 10.37,
-      "pnl_pct": 2.46,
-      "close_reason": "HIGH_RISK_ZONE_DC3_4",
-      "chart_overlay": {
-        "daily_support_line": [
-          {
-            "date": "2026-08-10",
-            "price": 9.76
-          }
-        ],
-        "daily_resistance_line": [
-          {
-            "date": "2026-09-02",
-            "price": 10.99
-          }
-        ],
-        "intermediate_support_line": [
-          {
-            "date": "2026-01-13",
-            "price": 8.2058
-          }
-        ],
-        "intermediate_resistance_line": [
-          {
-            "date": "2026-09-02",
-            "price": 10.99
-          }
-        ],
-        "daily_markers": {
-          "dcl0": {
-            "date": "2026-08-10",
-            "price": 9.76
-          },
-          "dch": {
-            "date": "2026-09-02",
-            "price": 10.99
-          }
-        },
-        "intermediate_markers": {
-          "dcl0": {
-            "date": "2026-01-13",
-            "price": 8.2058
-          },
-          "dch": {
-            "date": "2026-09-02",
-            "price": 10.99
-          }
-        },
-        "entry_price": 10.55,
-        "stop_price": 8.0417,
-        "target_price": 10.9763
-      }
-    },
-    {
       "ticker": "IOZ.AX",
       "shares": 22.8981,
       "buy_price": 36.7,
@@ -750,8 +1092,8 @@
             "price": 32.9798
           },
           {
-            "date": "2026-09-07",
-            "price": 32.9614
+            "date": "2026-09-09",
+            "price": 32.9611
           }
         ],
         "intermediate_resistance_line": [
@@ -764,8 +1106,8 @@
             "price": 37.24
           },
           {
-            "date": "2026-09-07",
-            "price": 37.3958
+            "date": "2026-09-09",
+            "price": 37.4099
           }
         ],
         "daily_markers": {
@@ -928,8 +1270,8 @@
             "price": 32.9798
           },
           {
-            "date": "2026-09-07",
-            "price": 32.9614
+            "date": "2026-09-09",
+            "price": 32.9611
           }
         ],
         "intermediate_resistance_line": [
@@ -942,8 +1284,8 @@
             "price": 37.24
           },
           {
-            "date": "2026-09-07",
-            "price": 37.3958
+            "date": "2026-09-09",
+            "price": 37.4099
           }
         ],
         "daily_markers": {
@@ -1094,8 +1436,8 @@
             "price": 2.33
           },
           {
-            "date": "2026-09-08",
-            "price": 2.4539
+            "date": "2026-09-09",
+            "price": 2.4694
           }
         ],
         "daily_resistance_line": [
@@ -1108,8 +1450,8 @@
             "price": 2.5
           },
           {
-            "date": "2026-09-08",
-            "price": 2.5257
+            "date": "2026-09-09",
+            "price": 2.5343
           }
         ],
         "intermediate_support_line": [
@@ -1191,8 +1533,8 @@
             "price": 2.33
           },
           {
-            "date": "2026-09-08",
-            "price": 2.4539
+            "date": "2026-09-09",
+            "price": 2.4694
           }
         ],
         "daily_resistance_line": [
@@ -1205,8 +1547,8 @@
             "price": 2.5
           },
           {
-            "date": "2026-09-08",
-            "price": 2.5257
+            "date": "2026-09-09",
+            "price": 2.5343
           }
         ],
         "intermediate_support_line": [
@@ -1288,8 +1630,8 @@
             "price": 2.33
           },
           {
-            "date": "2026-09-08",
-            "price": 2.4539
+            "date": "2026-09-09",
+            "price": 2.4694
           }
         ],
         "daily_resistance_line": [
@@ -1302,8 +1644,8 @@
             "price": 2.5
           },
           {
-            "date": "2026-09-08",
-            "price": 2.5257
+            "date": "2026-09-09",
+            "price": 2.5343
           }
         ],
         "intermediate_support_line": [
@@ -1385,8 +1727,8 @@
             "price": 2.33
           },
           {
-            "date": "2026-09-08",
-            "price": 2.4539
+            "date": "2026-09-09",
+            "price": 2.4694
           }
         ],
         "daily_resistance_line": [
@@ -1399,8 +1741,8 @@
             "price": 2.5
           },
           {
-            "date": "2026-09-08",
-            "price": 2.5257
+            "date": "2026-09-09",
+            "price": 2.5343
           }
         ],
         "intermediate_support_line": [
@@ -1482,8 +1824,8 @@
             "price": 2.33
           },
           {
-            "date": "2026-09-08",
-            "price": 2.4539
+            "date": "2026-09-09",
+            "price": 2.4694
           }
         ],
         "daily_resistance_line": [
@@ -1496,8 +1838,105 @@
             "price": 2.5
           },
           {
-            "date": "2026-09-08",
-            "price": 2.5257
+            "date": "2026-09-09",
+            "price": 2.5343
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-06-04",
+            "price": 1.4367
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-09-03",
+            "price": 2.5
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-08-18",
+            "price": 2.2216
+          },
+          "hch": {
+            "date": "2026-08-25",
+            "price": 2.44
+          },
+          "hcl": {
+            "date": "2026-08-27",
+            "price": 2.33
+          },
+          "dch": {
+            "date": "2026-09-03",
+            "price": 2.5
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-06-04",
+            "price": 1.4367
+          },
+          "dch": {
+            "date": "2026-09-03",
+            "price": 2.5
+          }
+        },
+        "entry_price": 2.44,
+        "stop_price": 2.2834,
+        "target_price": 2.5796
+      }
+    },
+    {
+      "ticker": "AMP.AX",
+      "shares": 638.5697,
+      "buy_price": 2.44,
+      "buy_date": "2026-09-08",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 2.2834,
+      "target_price": 2.5796,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Financial Services",
+        "entered_dc_num": 4,
+        "entered_score": 47
+      },
+      "sell_price": 2.44,
+      "sell_date": "2026-09-09",
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "close_reason": "TRENDLINE_BREAK",
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-08-18",
+            "price": 2.2216
+          },
+          {
+            "date": "2026-08-27",
+            "price": 2.33
+          },
+          {
+            "date": "2026-09-09",
+            "price": 2.4694
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-08-25",
+            "price": 2.44
+          },
+          {
+            "date": "2026-09-03",
+            "price": 2.5
+          },
+          {
+            "date": "2026-09-09",
+            "price": 2.5343
           }
         ],
         "intermediate_support_line": [
@@ -1548,8 +1987,8 @@
   ],
   "drawdown": {
     "realized_pnl": -102.82,
-    "unrealized_pnl": 20.31,
-    "total_pnl": -82.51,
+    "unrealized_pnl": 19.39,
+    "total_pnl": -83.43,
     "drawdown_pct": 0.83,
     "halted": false
   },
@@ -1564,6 +2003,24 @@
       }
     ],
     "opened": [
+      {
+        "ticker": "TEA.AX",
+        "entry_price": 9.95,
+        "shares": 46.3176,
+        "position_cost": 460.86,
+        "sector": "Industrials",
+        "stop_price": 7.791,
+        "target_price": 10.7053
+      },
+      {
+        "ticker": "APA.AX",
+        "entry_price": 10.88,
+        "shares": 76.034,
+        "position_cost": 827.25,
+        "sector": "Utilities",
+        "stop_price": 9.5648,
+        "target_price": 10.9763
+      },
       {
         "ticker": "AMP.AX",
         "entry_price": 2.44,
