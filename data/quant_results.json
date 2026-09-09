@@ -2687,9 +2687,9 @@
             "price": 1.474
           }
         ],
-        "total_signals": 11,
-        "win_rate": 63.6,
-        "wins": 7
+        "total_signals": 10,
+        "win_rate": 60.0,
+        "wins": 6
       },
       "ema": {
         "ticker": "AFG.AX",
@@ -6385,7 +6385,7 @@
         "p90": 2.366,
         "prob_up": 52.7,
         "mu_daily": 0.0115,
-        "sigma_daily": 1.7109
+        "sigma_daily": 1.7108
       },
       "walk_forward": {
         "ticker": "GWA.AX",
@@ -8846,8 +8846,8 @@
             "price": 7.369
           }
         ],
-        "total_signals": 30,
-        "win_rate": 53.3,
+        "total_signals": 31,
+        "win_rate": 51.6,
         "wins": 16
       },
       "ema": {
@@ -9768,7 +9768,7 @@
         "ret_12m": 28.79,
         "ret_1m": -2.41,
         "momentum": 31.2,
-        "percentile": 74.2,
+        "percentile": 71.0,
         "signal": "WATCH"
       },
       "rsi_strategy": {
@@ -11305,15 +11305,15 @@
       },
       "momentum": {
         "ticker": "AAPL",
-        "ret_12m": 33.42,
-        "ret_1m": 2.58,
-        "momentum": 30.84,
-        "percentile": 71.0,
+        "ret_12m": 35.15,
+        "ret_1m": 3.49,
+        "momentum": 31.66,
+        "percentile": 74.2,
         "signal": "WATCH"
       },
       "rsi_strategy": {
         "ticker": "AAPL",
-        "current_rsi": 55.9,
+        "current_rsi": 48.6,
         "signals": [
           {
             "date": "2026-06-26",
@@ -11347,9 +11347,9 @@
       },
       "macd": {
         "ticker": "AAPL",
-        "macd": 2.2477,
-        "signal": 1.3233,
-        "histogram": 0.9244,
+        "macd": 1.861,
+        "signal": 1.4308,
+        "histogram": 0.4302,
         "state": "ABOVE_SIGNAL",
         "signals": [
           {
@@ -11384,8 +11384,8 @@
       },
       "stochastic": {
         "ticker": "AAPL",
-        "k": 38.7,
-        "d": 62.0,
+        "k": 35.9,
+        "d": 43.8,
         "state": "NEUTRAL",
         "signals": [
           {
@@ -11420,10 +11420,10 @@
       },
       "ema": {
         "ticker": "AAPL",
-        "price": 316.22,
-        "ema9": 319.227,
-        "ema21": 316.679,
-        "ema50": 312.54,
+        "price": 315.565,
+        "ema9": 318.495,
+        "ema21": 316.578,
+        "ema50": 312.658,
         "trend": "SHORT_TERM_BULLISH",
         "signals": [
           {
@@ -11458,9 +11458,9 @@
       },
       "vwap": {
         "ticker": "AAPL",
-        "price": 316.22,
-        "vwap": 313.662,
-        "vs_vwap_pct": 0.82,
+        "price": 315.565,
+        "vwap": 314.056,
+        "vs_vwap_pct": 0.48,
         "state": "ABOVE_VWAP",
         "window_days": 20,
         "signals": [
@@ -11496,9 +11496,9 @@
       },
       "ma_strategy": {
         "ticker": "AAPL",
-        "price": 316.22,
-        "ma50": 315.641,
-        "ma200": 283.687,
+        "price": 315.565,
+        "ma50": 316.323,
+        "ma200": 283.925,
         "trend": "UPTREND",
         "cross_type": "NONE",
         "cross_date": null,
@@ -11509,24 +11509,24 @@
       },
       "monte_carlo": {
         "ticker": "AAPL",
-        "current_price": 316.22,
+        "current_price": 315.565,
         "horizon_days": 63,
         "n_sims": 300,
-        "p10": 281.039,
-        "p25": 304.63,
-        "p50": 334.598,
-        "p75": 362.692,
-        "p90": 397.844,
+        "p10": 280.402,
+        "p25": 303.916,
+        "p50": 333.782,
+        "p75": 361.78,
+        "p90": 396.81,
         "prob_up": 66.7,
-        "mu_daily": 0.0899,
-        "sigma_daily": 1.8201
+        "mu_daily": 0.0893,
+        "sigma_daily": 1.8183
       },
       "walk_forward": {
         "ticker": "AAPL",
         "windows": [
           {
             "window": 1,
-            "period": "2026-04-09 to 2026-05-07",
+            "period": "2026-04-10 to 2026-05-08",
             "optimal_rsi_thresh": 28,
             "test_wins": 0,
             "test_total": 0,
@@ -11534,7 +11534,7 @@
           },
           {
             "window": 2,
-            "period": "2026-05-08 to 2026-06-08",
+            "period": "2026-05-11 to 2026-06-09",
             "optimal_rsi_thresh": 28,
             "test_wins": 0,
             "test_total": 0,
@@ -11542,7 +11542,7 @@
           },
           {
             "window": 3,
-            "period": "2026-06-09 to 2026-07-09",
+            "period": "2026-06-10 to 2026-07-10",
             "optimal_rsi_thresh": 25,
             "test_wins": 0,
             "test_total": 0,
@@ -11550,7 +11550,7 @@
           },
           {
             "window": 4,
-            "period": "2026-07-10 to 2026-08-07",
+            "period": "2026-07-13 to 2026-08-10",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -11558,7 +11558,7 @@
           },
           {
             "window": 5,
-            "period": "2026-08-10 to 2026-09-08",
+            "period": "2026-08-11 to 2026-09-09",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -11572,55 +11572,55 @@
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
-            "total_signals": 4,
-            "win_rate": 75.0
+            "period": "2025-04-03 to 2025-08-12",
+            "total_signals": 3,
+            "win_rate": 66.7
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
-            "total_signals": 5,
-            "win_rate": 80.0
+            "period": "2025-08-13 to 2025-12-18",
+            "total_signals": 4,
+            "win_rate": 100.0
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
-            "total_signals": 5,
-            "win_rate": 40.0
+            "period": "2025-12-19 to 2026-04-30",
+            "total_signals": 4,
+            "win_rate": 50.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 2,
             "win_rate": 100.0
           }
         ],
-        "avg_win_rate": 73.8
+        "avg_win_rate": 79.2
       },
       "stochastic_walk_forward": {
         "ticker": "AAPL",
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 3,
             "win_rate": 100.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 0,
             "win_rate": null
           }
@@ -11632,55 +11632,55 @@
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 3,
             "win_rate": 33.3
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
-            "total_signals": 2,
-            "win_rate": 50.0
+            "period": "2025-08-13 to 2025-12-18",
+            "total_signals": 1,
+            "win_rate": 100.0
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
-            "total_signals": 4,
+            "period": "2025-12-19 to 2026-04-30",
+            "total_signals": 2,
             "win_rate": 0.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 2,
             "win_rate": 50.0
           }
         ],
-        "avg_win_rate": 33.3
+        "avg_win_rate": 45.8
       },
       "vwap_walk_forward": {
         "ticker": "AAPL",
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 4,
             "win_rate": 75.0
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 2,
             "win_rate": 100.0
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 4,
             "win_rate": 50.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 1,
             "win_rate": 100.0
           }
@@ -11695,118 +11695,118 @@
             "ma_short": 20,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 52.6
+            "rsi_val": 42.4
           },
           {
             "rsi_period": 7,
             "ma_short": 20,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 52.6
+            "rsi_val": 42.4
           },
           {
             "rsi_period": 7,
             "ma_short": 50,
             "ma_long": 100,
-            "score": 65,
-            "rsi_val": 52.6
+            "score": 55,
+            "rsi_val": 42.4
           },
           {
             "rsi_period": 7,
             "ma_short": 50,
             "ma_long": 200,
-            "score": 65,
-            "rsi_val": 52.6
+            "score": 55,
+            "rsi_val": 42.4
           },
           {
             "rsi_period": 10,
             "ma_short": 20,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 58.0
+            "rsi_val": 57.7
           },
           {
             "rsi_period": 10,
             "ma_short": 20,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 58.0
+            "rsi_val": 57.7
           },
           {
             "rsi_period": 10,
             "ma_short": 50,
             "ma_long": 100,
-            "score": 65,
-            "rsi_val": 58.0
+            "score": 55,
+            "rsi_val": 57.7
           },
           {
             "rsi_period": 10,
             "ma_short": 50,
             "ma_long": 200,
-            "score": 65,
-            "rsi_val": 58.0
+            "score": 55,
+            "rsi_val": 57.7
           },
           {
             "rsi_period": 14,
             "ma_short": 20,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 55.9
+            "rsi_val": 48.6
           },
           {
             "rsi_period": 14,
             "ma_short": 20,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 55.9
+            "rsi_val": 48.6
           },
           {
             "rsi_period": 14,
             "ma_short": 50,
             "ma_long": 100,
-            "score": 65,
-            "rsi_val": 55.9
+            "score": 55,
+            "rsi_val": 48.6
           },
           {
             "rsi_period": 14,
             "ma_short": 50,
             "ma_long": 200,
-            "score": 65,
-            "rsi_val": 55.9
+            "score": 55,
+            "rsi_val": 48.6
           },
           {
             "rsi_period": 21,
             "ma_short": 20,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 52.2
+            "rsi_val": 55.4
           },
           {
             "rsi_period": 21,
             "ma_short": 20,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 52.2
+            "rsi_val": 55.4
           },
           {
             "rsi_period": 21,
             "ma_short": 50,
             "ma_long": 100,
-            "score": 65,
-            "rsi_val": 52.2
+            "score": 55,
+            "rsi_val": 55.4
           },
           {
             "rsi_period": 21,
             "ma_short": 50,
             "ma_long": 200,
-            "score": 65,
-            "rsi_val": 52.2
+            "score": 55,
+            "rsi_val": 55.4
           }
         ],
-        "score_min": 65,
+        "score_min": 55,
         "score_max": 65,
-        "score_range": 0,
-        "score_mean": 65.0
+        "score_range": 10,
+        "score_mean": 60.0
       }
     },
     "MSFT": {
@@ -11818,15 +11818,15 @@
       },
       "momentum": {
         "ticker": "MSFT",
-        "ret_12m": -0.04,
-        "ret_1m": -2.21,
-        "momentum": 2.17,
+        "ret_12m": -0.36,
+        "ret_1m": -2.05,
+        "momentum": 1.69,
         "percentile": 29.0,
         "signal": "NEUTRAL"
       },
       "rsi_strategy": {
         "ticker": "MSFT",
-        "current_rsi": 57.9,
+        "current_rsi": 55.6,
         "signals": [
           {
             "date": "2026-05-29",
@@ -11860,9 +11860,9 @@
       },
       "macd": {
         "ticker": "MSFT",
-        "macd": 13.9943,
-        "signal": 17.07,
-        "histogram": -3.0757,
+        "macd": 12.5585,
+        "signal": 16.1677,
+        "histogram": -3.6092,
         "state": "BELOW_SIGNAL",
         "signals": [
           {
@@ -11897,8 +11897,8 @@
       },
       "stochastic": {
         "ticker": "MSFT",
-        "k": 39.4,
-        "d": 59.1,
+        "k": 35.8,
+        "d": 43.9,
         "state": "NEUTRAL",
         "signals": [
           {
@@ -11933,10 +11933,10 @@
       },
       "ema": {
         "ticker": "MSFT",
-        "price": 493.95,
-        "ema9": 499.177,
-        "ema21": 489.162,
-        "ema50": 461.347,
+        "price": 492.575,
+        "ema9": 497.857,
+        "ema21": 489.472,
+        "ema50": 462.571,
         "trend": "SHORT_TERM_BULLISH",
         "signals": [
           {
@@ -11971,9 +11971,9 @@
       },
       "vwap": {
         "ticker": "MSFT",
-        "price": 493.95,
-        "vwap": 495.086,
-        "vs_vwap_pct": -0.23,
+        "price": 492.575,
+        "vwap": 494.711,
+        "vs_vwap_pct": -0.43,
         "state": "BELOW_VWAP",
         "window_days": 20,
         "signals": [
@@ -12009,37 +12009,37 @@
       },
       "ma_strategy": {
         "ticker": "MSFT",
-        "price": 493.95,
-        "ma50": 445.996,
-        "ma200": 429.394,
+        "price": 492.575,
+        "ma50": 448.49,
+        "ma200": 429.441,
         "trend": "UPTREND",
         "cross_type": "GOLDEN",
         "cross_date": "2026-08-28",
         "cross_price": 513.53,
-        "days_since_cross": 6,
+        "days_since_cross": 7,
         "avg_golden_return_60d": null,
         "n_golden_crosses": 0
       },
       "monte_carlo": {
         "ticker": "MSFT",
-        "current_price": 493.95,
+        "current_price": 492.575,
         "horizon_days": 63,
         "n_sims": 300,
-        "p10": 430.372,
-        "p25": 466.565,
-        "p50": 512.549,
-        "p75": 555.661,
-        "p90": 609.613,
+        "p10": 429.068,
+        "p25": 465.114,
+        "p50": 510.909,
+        "p75": 553.841,
+        "p90": 607.565,
         "prob_up": 62.3,
-        "mu_daily": 0.0589,
-        "sigma_daily": 1.8227
+        "mu_daily": 0.0582,
+        "sigma_daily": 1.821
       },
       "walk_forward": {
         "ticker": "MSFT",
         "windows": [
           {
             "window": 1,
-            "period": "2026-04-09 to 2026-05-07",
+            "period": "2026-04-10 to 2026-05-08",
             "optimal_rsi_thresh": 32,
             "test_wins": 0,
             "test_total": 0,
@@ -12047,15 +12047,15 @@
           },
           {
             "window": 2,
-            "period": "2026-05-08 to 2026-06-08",
-            "optimal_rsi_thresh": 30,
+            "period": "2026-05-11 to 2026-06-09",
+            "optimal_rsi_thresh": 32,
             "test_wins": 0,
             "test_total": 0,
             "win_rate": null
           },
           {
             "window": 3,
-            "period": "2026-06-09 to 2026-07-09",
+            "period": "2026-06-10 to 2026-07-10",
             "optimal_rsi_thresh": 32,
             "test_wins": 0,
             "test_total": 0,
@@ -12063,7 +12063,7 @@
           },
           {
             "window": 4,
-            "period": "2026-07-10 to 2026-08-07",
+            "period": "2026-07-13 to 2026-08-10",
             "optimal_rsi_thresh": 32,
             "test_wins": 0,
             "test_total": 0,
@@ -12071,7 +12071,7 @@
           },
           {
             "window": 5,
-            "period": "2026-08-10 to 2026-09-08",
+            "period": "2026-08-11 to 2026-09-09",
             "optimal_rsi_thresh": 32,
             "test_wins": 0,
             "test_total": 0,
@@ -12085,55 +12085,55 @@
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 3,
             "win_rate": 100.0
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
-            "total_signals": 2,
-            "win_rate": 50.0
+            "period": "2025-08-13 to 2025-12-18",
+            "total_signals": 3,
+            "win_rate": 33.3
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 3,
             "win_rate": 0.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
-            "total_signals": 4,
-            "win_rate": 50.0
+            "period": "2026-05-01 to 2026-09-09",
+            "total_signals": 3,
+            "win_rate": 33.3
           }
         ],
-        "avg_win_rate": 50.0
+        "avg_win_rate": 41.7
       },
       "stochastic_walk_forward": {
         "ticker": "MSFT",
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 1,
             "win_rate": 0.0
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 7,
             "win_rate": 42.9
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 2,
             "win_rate": 100.0
           }
@@ -12145,55 +12145,55 @@
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 2,
             "win_rate": 100.0
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
-            "total_signals": 1,
+            "period": "2025-08-13 to 2025-12-18",
+            "total_signals": 2,
             "win_rate": 0.0
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 1,
             "win_rate": 0.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
-            "total_signals": 3,
-            "win_rate": 100.0
+            "period": "2026-05-01 to 2026-09-09",
+            "total_signals": 4,
+            "win_rate": 50.0
           }
         ],
-        "avg_win_rate": 50.0
+        "avg_win_rate": 37.5
       },
       "vwap_walk_forward": {
         "ticker": "MSFT",
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 3,
             "win_rate": 66.7
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 3,
             "win_rate": 0.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 2,
             "win_rate": 100.0
           }
@@ -12207,119 +12207,119 @@
             "rsi_period": 7,
             "ma_short": 20,
             "ma_long": 100,
-            "score": 63,
-            "rsi_val": 39.8
+            "score": 70,
+            "rsi_val": 28.0
           },
           {
             "rsi_period": 7,
             "ma_short": 20,
             "ma_long": 200,
-            "score": 63,
-            "rsi_val": 39.8
+            "score": 70,
+            "rsi_val": 28.0
           },
           {
             "rsi_period": 7,
             "ma_short": 50,
             "ma_long": 100,
-            "score": 73,
-            "rsi_val": 39.8
+            "score": 80,
+            "rsi_val": 28.0
           },
           {
             "rsi_period": 7,
             "ma_short": 50,
             "ma_long": 200,
-            "score": 73,
-            "rsi_val": 39.8
+            "score": 80,
+            "rsi_val": 28.0
           },
           {
             "rsi_period": 10,
             "ma_short": 20,
             "ma_long": 100,
             "score": 55,
-            "rsi_val": 54.6
+            "rsi_val": 50.6
           },
           {
             "rsi_period": 10,
             "ma_short": 20,
             "ma_long": 200,
             "score": 55,
-            "rsi_val": 54.6
+            "rsi_val": 50.6
           },
           {
             "rsi_period": 10,
             "ma_short": 50,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 54.6
+            "rsi_val": 50.6
           },
           {
             "rsi_period": 10,
             "ma_short": 50,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 54.6
+            "rsi_val": 50.6
           },
           {
             "rsi_period": 14,
             "ma_short": 20,
             "ma_long": 100,
             "score": 55,
-            "rsi_val": 57.9
+            "rsi_val": 55.6
           },
           {
             "rsi_period": 14,
             "ma_short": 20,
             "ma_long": 200,
             "score": 55,
-            "rsi_val": 57.9
+            "rsi_val": 55.6
           },
           {
             "rsi_period": 14,
             "ma_short": 50,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 57.9
+            "rsi_val": 55.6
           },
           {
             "rsi_period": 14,
             "ma_short": 50,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 57.9
+            "rsi_val": 55.6
           },
           {
             "rsi_period": 21,
             "ma_short": 20,
             "ma_long": 100,
             "score": 55,
-            "rsi_val": 48.0
+            "rsi_val": 44.8
           },
           {
             "rsi_period": 21,
             "ma_short": 20,
             "ma_long": 200,
             "score": 55,
-            "rsi_val": 48.0
+            "rsi_val": 44.8
           },
           {
             "rsi_period": 21,
             "ma_short": 50,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 48.0
+            "rsi_val": 44.8
           },
           {
             "rsi_period": 21,
             "ma_short": 50,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 48.0
+            "rsi_val": 44.8
           }
         ],
         "score_min": 55,
-        "score_max": 73,
-        "score_range": 18,
-        "score_mean": 62.0
+        "score_max": 80,
+        "score_range": 25,
+        "score_mean": 63.8
       }
     },
     "NVDA": {
@@ -12331,15 +12331,15 @@
       },
       "momentum": {
         "ticker": "NVDA",
-        "ret_12m": 34.29,
-        "ret_1m": 3.76,
-        "momentum": 30.53,
+        "ret_12m": 31.97,
+        "ret_1m": 3.48,
+        "momentum": 28.5,
         "percentile": 67.7,
         "signal": "WATCH"
       },
       "rsi_strategy": {
         "ticker": "NVDA",
-        "current_rsi": 54.2,
+        "current_rsi": 55.3,
         "signals": [
           {
             "date": "2026-02-25",
@@ -12373,9 +12373,9 @@
       },
       "macd": {
         "ticker": "NVDA",
-        "macd": 3.8716,
-        "signal": 3.1715,
-        "histogram": 0.7,
+        "macd": 3.8043,
+        "signal": 3.2981,
+        "histogram": 0.5062,
         "state": "ABOVE_SIGNAL",
         "signals": [
           {
@@ -12410,8 +12410,8 @@
       },
       "stochastic": {
         "ticker": "NVDA",
-        "k": 67.2,
-        "d": 80.8,
+        "k": 64.7,
+        "d": 72.0,
         "state": "NEUTRAL",
         "signals": [
           {
@@ -12446,10 +12446,10 @@
       },
       "ema": {
         "ticker": "NVDA",
-        "price": 225.73,
-        "ema9": 223.457,
-        "ema21": 219.649,
-        "ema50": 214.279,
+        "price": 225.06,
+        "ema9": 223.777,
+        "ema21": 220.141,
+        "ema50": 214.702,
         "trend": "STRONG_UPTREND",
         "signals": [
           {
@@ -12484,9 +12484,9 @@
       },
       "vwap": {
         "ticker": "NVDA",
-        "price": 225.73,
-        "vwap": 221.232,
-        "vs_vwap_pct": 2.03,
+        "price": 225.06,
+        "vwap": 221.344,
+        "vs_vwap_pct": 1.68,
         "state": "ABOVE_VWAP",
         "window_days": 20,
         "signals": [
@@ -12522,9 +12522,9 @@
       },
       "ma_strategy": {
         "ticker": "NVDA",
-        "price": 225.73,
-        "ma50": 211.23,
-        "ma200": 196.748,
+        "price": 225.06,
+        "ma50": 211.832,
+        "ma200": 196.942,
         "trend": "UPTREND",
         "cross_type": "NONE",
         "cross_date": null,
@@ -12535,24 +12535,24 @@
       },
       "monte_carlo": {
         "ticker": "NVDA",
-        "current_price": 225.73,
+        "current_price": 225.06,
         "horizon_days": 63,
         "n_sims": 300,
-        "p10": 192.827,
-        "p25": 218.634,
-        "p50": 252.503,
-        "p75": 285.722,
-        "p90": 328.897,
+        "p10": 192.193,
+        "p25": 217.888,
+        "p50": 251.607,
+        "p75": 284.675,
+        "p90": 327.648,
         "prob_up": 70.7,
-        "mu_daily": 0.1901,
-        "sigma_daily": 2.8084
+        "mu_daily": 0.1892,
+        "sigma_daily": 2.8057
       },
       "walk_forward": {
         "ticker": "NVDA",
         "windows": [
           {
             "window": 1,
-            "period": "2026-04-09 to 2026-05-07",
+            "period": "2026-04-10 to 2026-05-08",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -12560,7 +12560,7 @@
           },
           {
             "window": 2,
-            "period": "2026-05-08 to 2026-06-08",
+            "period": "2026-05-11 to 2026-06-09",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -12568,7 +12568,7 @@
           },
           {
             "window": 3,
-            "period": "2026-06-09 to 2026-07-09",
+            "period": "2026-06-10 to 2026-07-10",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -12576,7 +12576,7 @@
           },
           {
             "window": 4,
-            "period": "2026-07-10 to 2026-08-07",
+            "period": "2026-07-13 to 2026-08-10",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -12584,7 +12584,7 @@
           },
           {
             "window": 5,
-            "period": "2026-08-10 to 2026-09-08",
+            "period": "2026-08-11 to 2026-09-09",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -12598,55 +12598,55 @@
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
-            "total_signals": 3,
+            "period": "2025-04-03 to 2025-08-12",
+            "total_signals": 4,
             "win_rate": 100.0
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
-            "total_signals": 3,
-            "win_rate": 33.3
-          },
-          {
-            "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 4,
             "win_rate": 25.0
           },
           {
-            "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "window": 3,
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 3,
+            "win_rate": 66.7
+          },
+          {
+            "window": 4,
+            "period": "2026-05-01 to 2026-09-09",
+            "total_signals": 4,
             "win_rate": 100.0
           }
         ],
-        "avg_win_rate": 64.6
+        "avg_win_rate": 72.9
       },
       "stochastic_walk_forward": {
         "ticker": "NVDA",
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 1,
             "win_rate": 100.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 2,
             "win_rate": 50.0
           }
@@ -12658,60 +12658,60 @@
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 2,
             "win_rate": 100.0
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
-            "total_signals": 2,
+            "period": "2025-08-13 to 2025-12-18",
+            "total_signals": 3,
             "win_rate": 0.0
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
-            "total_signals": 2,
-            "win_rate": 50.0
+            "period": "2025-12-19 to 2026-04-30",
+            "total_signals": 3,
+            "win_rate": 66.7
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
-            "total_signals": 3,
+            "period": "2026-05-01 to 2026-09-09",
+            "total_signals": 4,
             "win_rate": 100.0
           }
         ],
-        "avg_win_rate": 62.5
+        "avg_win_rate": 66.7
       },
       "vwap_walk_forward": {
         "ticker": "NVDA",
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
-            "total_signals": 4,
-            "win_rate": 50.0
+            "period": "2025-08-13 to 2025-12-18",
+            "total_signals": 3,
+            "win_rate": 33.3
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 4,
             "win_rate": 25.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 3,
             "win_rate": 66.7
           }
         ],
-        "avg_win_rate": 47.2
+        "avg_win_rate": 41.7
       },
       "sensitivity": {
         "ticker": "NVDA",
@@ -12720,119 +12720,119 @@
             "rsi_period": 7,
             "ma_short": 20,
             "ma_long": 100,
-            "score": 65,
-            "rsi_val": 46.7
+            "score": 57,
+            "rsi_val": 65.1
           },
           {
             "rsi_period": 7,
             "ma_short": 20,
             "ma_long": 200,
-            "score": 65,
-            "rsi_val": 46.7
+            "score": 57,
+            "rsi_val": 65.1
           },
           {
             "rsi_period": 7,
             "ma_short": 50,
             "ma_long": 100,
-            "score": 65,
-            "rsi_val": 46.7
+            "score": 57,
+            "rsi_val": 65.1
           },
           {
             "rsi_period": 7,
             "ma_short": 50,
             "ma_long": 200,
-            "score": 65,
-            "rsi_val": 46.7
+            "score": 57,
+            "rsi_val": 65.1
           },
           {
             "rsi_period": 10,
             "ma_short": 20,
             "ma_long": 100,
             "score": 57,
-            "rsi_val": 64.2
+            "rsi_val": 60.5
           },
           {
             "rsi_period": 10,
             "ma_short": 20,
             "ma_long": 200,
             "score": 57,
-            "rsi_val": 64.2
+            "rsi_val": 60.5
           },
           {
             "rsi_period": 10,
             "ma_short": 50,
             "ma_long": 100,
             "score": 57,
-            "rsi_val": 64.2
+            "rsi_val": 60.5
           },
           {
             "rsi_period": 10,
             "ma_short": 50,
             "ma_long": 200,
             "score": 57,
-            "rsi_val": 64.2
+            "rsi_val": 60.5
           },
           {
             "rsi_period": 14,
             "ma_short": 20,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 54.2
+            "rsi_val": 55.3
           },
           {
             "rsi_period": 14,
             "ma_short": 20,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 54.2
+            "rsi_val": 55.3
           },
           {
             "rsi_period": 14,
             "ma_short": 50,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 54.2
+            "rsi_val": 55.3
           },
           {
             "rsi_period": 14,
             "ma_short": 50,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 54.2
+            "rsi_val": 55.3
           },
           {
             "rsi_period": 21,
             "ma_short": 20,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 51.0
+            "rsi_val": 54.4
           },
           {
             "rsi_period": 21,
             "ma_short": 20,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 51.0
+            "rsi_val": 54.4
           },
           {
             "rsi_period": 21,
             "ma_short": 50,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 51.0
+            "rsi_val": 54.4
           },
           {
             "rsi_period": 21,
             "ma_short": 50,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 51.0
+            "rsi_val": 54.4
           }
         ],
         "score_min": 57,
         "score_max": 65,
         "score_range": 8,
-        "score_mean": 63.0
+        "score_mean": 61.0
       }
     },
     "AMD": {
@@ -12844,15 +12844,15 @@
       },
       "momentum": {
         "ticker": "AMD",
-        "ret_12m": 234.02,
-        "ret_1m": 7.71,
-        "momentum": 226.32,
+        "ret_12m": 227.31,
+        "ret_1m": 7.52,
+        "momentum": 219.78,
         "percentile": 100.0,
         "signal": "BUY"
       },
       "rsi_strategy": {
         "ticker": "AMD",
-        "current_rsi": 57.1,
+        "current_rsi": 66.0,
         "signals": [
           {
             "date": "2026-05-22",
@@ -12886,9 +12886,9 @@
       },
       "macd": {
         "ticker": "AMD",
-        "macd": -4.7489,
-        "signal": -7.6288,
-        "histogram": 2.88,
+        "macd": -1.6424,
+        "signal": -6.4315,
+        "histogram": 4.7892,
         "state": "ABOVE_SIGNAL",
         "signals": [
           {
@@ -12923,8 +12923,8 @@
       },
       "stochastic": {
         "ticker": "AMD",
-        "k": 90.8,
-        "d": 61.1,
+        "k": 96.7,
+        "d": 86.6,
         "state": "OVERBOUGHT",
         "signals": [
           {
@@ -12959,17 +12959,12 @@
       },
       "ema": {
         "ticker": "AMD",
-        "price": 505.74,
-        "ema9": 475.771,
-        "ema21": 478.251,
-        "ema50": 480.684,
-        "trend": "SHORT_TERM_BEARISH",
+        "price": 510.01,
+        "ema9": 482.619,
+        "ema21": 481.138,
+        "ema50": 481.834,
+        "trend": "SHORT_TERM_BULLISH",
         "signals": [
-          {
-            "date": "2026-03-30",
-            "type": "SELL",
-            "price": 196.04
-          },
           {
             "date": "2026-04-01",
             "type": "BUY",
@@ -12989,6 +12984,11 @@
             "date": "2026-07-27",
             "type": "SELL",
             "price": 494.95
+          },
+          {
+            "date": "2026-09-09",
+            "type": "BUY",
+            "price": 510.01
           }
         ],
         "total_signals": 10,
@@ -12997,9 +12997,9 @@
       },
       "vwap": {
         "ticker": "AMD",
-        "price": 505.74,
-        "vwap": 478.814,
-        "vs_vwap_pct": 5.62,
+        "price": 510.01,
+        "vwap": 479.32,
+        "vs_vwap_pct": 6.4,
         "state": "ABOVE_VWAP",
         "window_days": 20,
         "signals": [
@@ -13035,9 +13035,9 @@
       },
       "ma_strategy": {
         "ticker": "AMD",
-        "price": 505.74,
-        "ma50": 498.958,
-        "ma200": 342.375,
+        "price": 510.01,
+        "ma50": 498.368,
+        "ma200": 343.807,
         "trend": "UPTREND",
         "cross_type": "NONE",
         "cross_date": null,
@@ -13048,24 +13048,24 @@
       },
       "monte_carlo": {
         "ticker": "AMD",
-        "current_price": 505.74,
+        "current_price": 510.01,
         "horizon_days": 63,
         "n_sims": 300,
-        "p10": 417.061,
-        "p25": 497.933,
-        "p50": 608.542,
-        "p75": 725.909,
-        "p90": 882.65,
+        "p10": 421.04,
+        "p25": 502.593,
+        "p50": 614.117,
+        "p75": 732.429,
+        "p90": 890.411,
         "prob_up": 74.3,
-        "mu_daily": 0.3362,
-        "sigma_daily": 3.957
+        "mu_daily": 0.3372,
+        "sigma_daily": 3.9531
       },
       "walk_forward": {
         "ticker": "AMD",
         "windows": [
           {
             "window": 1,
-            "period": "2026-04-09 to 2026-05-07",
+            "period": "2026-04-10 to 2026-05-08",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -13073,7 +13073,7 @@
           },
           {
             "window": 2,
-            "period": "2026-05-08 to 2026-06-08",
+            "period": "2026-05-11 to 2026-06-09",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -13081,7 +13081,7 @@
           },
           {
             "window": 3,
-            "period": "2026-06-09 to 2026-07-09",
+            "period": "2026-06-10 to 2026-07-10",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -13089,7 +13089,7 @@
           },
           {
             "window": 4,
-            "period": "2026-07-10 to 2026-08-07",
+            "period": "2026-07-13 to 2026-08-10",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -13097,7 +13097,7 @@
           },
           {
             "window": 5,
-            "period": "2026-08-10 to 2026-09-08",
+            "period": "2026-08-11 to 2026-09-09",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -13111,55 +13111,55 @@
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 5,
             "win_rate": 100.0
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
-            "total_signals": 2,
-            "win_rate": 50.0
+            "period": "2025-08-13 to 2025-12-18",
+            "total_signals": 1,
+            "win_rate": 100.0
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 3,
             "win_rate": 66.7
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
-            "total_signals": 4,
-            "win_rate": 50.0
+            "period": "2026-05-01 to 2026-09-09",
+            "total_signals": 3,
+            "win_rate": 33.3
           }
         ],
-        "avg_win_rate": 66.7
+        "avg_win_rate": 75.0
       },
       "stochastic_walk_forward": {
         "ticker": "AMD",
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 0,
             "win_rate": null
           }
@@ -13171,55 +13171,55 @@
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 1,
             "win_rate": 100.0
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
-            "total_signals": 2,
-            "win_rate": 50.0
-          },
-          {
-            "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
-            "total_signals": 2,
+            "period": "2025-08-13 to 2025-12-18",
+            "total_signals": 1,
             "win_rate": 100.0
           },
           {
+            "window": 3,
+            "period": "2025-12-19 to 2026-04-30",
+            "total_signals": 4,
+            "win_rate": 75.0
+          },
+          {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
-            "total_signals": 3,
-            "win_rate": 66.7
+            "period": "2026-05-01 to 2026-09-09",
+            "total_signals": 2,
+            "win_rate": 50.0
           }
         ],
-        "avg_win_rate": 79.2
+        "avg_win_rate": 81.2
       },
       "vwap_walk_forward": {
         "ticker": "AMD",
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 3,
             "win_rate": 33.3
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 3,
             "win_rate": 100.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 5,
             "win_rate": 40.0
           }
@@ -13233,119 +13233,119 @@
             "rsi_period": 7,
             "ma_short": 20,
             "ma_long": 100,
-            "score": 57,
-            "rsi_val": 68.1
+            "score": 50,
+            "rsi_val": 80.2
           },
           {
             "rsi_period": 7,
             "ma_short": 20,
             "ma_long": 200,
-            "score": 57,
-            "rsi_val": 68.1
+            "score": 50,
+            "rsi_val": 80.2
           },
           {
             "rsi_period": 7,
             "ma_short": 50,
             "ma_long": 100,
-            "score": 57,
-            "rsi_val": 68.1
+            "score": 50,
+            "rsi_val": 80.2
           },
           {
             "rsi_period": 7,
             "ma_short": 50,
             "ma_long": 200,
+            "score": 50,
+            "rsi_val": 80.2
+          },
+          {
+            "rsi_period": 10,
+            "ma_short": 20,
+            "ma_long": 100,
             "score": 57,
-            "rsi_val": 68.1
-          },
-          {
-            "rsi_period": 10,
-            "ma_short": 20,
-            "ma_long": 100,
-            "score": 50,
-            "rsi_val": 72.5
+            "rsi_val": 67.0
           },
           {
             "rsi_period": 10,
             "ma_short": 20,
             "ma_long": 200,
-            "score": 50,
-            "rsi_val": 72.5
+            "score": 57,
+            "rsi_val": 67.0
           },
           {
             "rsi_period": 10,
             "ma_short": 50,
             "ma_long": 100,
-            "score": 50,
-            "rsi_val": 72.5
+            "score": 57,
+            "rsi_val": 67.0
           },
           {
             "rsi_period": 10,
             "ma_short": 50,
             "ma_long": 200,
-            "score": 50,
-            "rsi_val": 72.5
+            "score": 57,
+            "rsi_val": 67.0
           },
           {
             "rsi_period": 14,
             "ma_short": 20,
             "ma_long": 100,
-            "score": 65,
-            "rsi_val": 57.1
+            "score": 57,
+            "rsi_val": 66.0
           },
           {
             "rsi_period": 14,
             "ma_short": 20,
             "ma_long": 200,
-            "score": 65,
-            "rsi_val": 57.1
+            "score": 57,
+            "rsi_val": 66.0
           },
           {
             "rsi_period": 14,
             "ma_short": 50,
             "ma_long": 100,
-            "score": 65,
-            "rsi_val": 57.1
+            "score": 57,
+            "rsi_val": 66.0
           },
           {
             "rsi_period": 14,
             "ma_short": 50,
             "ma_long": 200,
-            "score": 65,
-            "rsi_val": 57.1
+            "score": 57,
+            "rsi_val": 66.0
           },
           {
             "rsi_period": 21,
             "ma_short": 20,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 54.7
+            "rsi_val": 58.8
           },
           {
             "rsi_period": 21,
             "ma_short": 20,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 54.7
+            "rsi_val": 58.8
           },
           {
             "rsi_period": 21,
             "ma_short": 50,
             "ma_long": 100,
             "score": 65,
-            "rsi_val": 54.7
+            "rsi_val": 58.8
           },
           {
             "rsi_period": 21,
             "ma_short": 50,
             "ma_long": 200,
             "score": 65,
-            "rsi_val": 54.7
+            "rsi_val": 58.8
           }
         ],
         "score_min": 50,
         "score_max": 65,
         "score_range": 15,
-        "score_mean": 59.2
+        "score_mean": 57.2
       }
     },
     "TSLA": {
@@ -13357,15 +13357,15 @@
       },
       "momentum": {
         "ticker": "TSLA",
-        "ret_12m": 6.28,
-        "ret_1m": 11.27,
-        "momentum": -4.99,
+        "ret_12m": 7.44,
+        "ret_1m": 12.01,
+        "momentum": -4.57,
         "percentile": 22.6,
         "signal": "NEUTRAL"
       },
       "rsi_strategy": {
         "ticker": "TSLA",
-        "current_rsi": 59.8,
+        "current_rsi": 57.2,
         "signals": [
           {
             "date": "2026-03-04",
@@ -13399,9 +13399,9 @@
       },
       "macd": {
         "ticker": "TSLA",
-        "macd": 4.4198,
-        "signal": 1.4706,
-        "histogram": 2.9491,
+        "macd": 5.3338,
+        "signal": 2.2433,
+        "histogram": 3.0905,
         "state": "ABOVE_SIGNAL",
         "signals": [
           {
@@ -13436,8 +13436,8 @@
       },
       "stochastic": {
         "ticker": "TSLA",
-        "k": 67.1,
-        "d": 65.3,
+        "k": 75.0,
+        "d": 61.9,
         "state": "NEUTRAL",
         "signals": [
           {
@@ -13472,10 +13472,10 @@
       },
       "ema": {
         "ticker": "TSLA",
-        "price": 368.16,
-        "ema9": 359.508,
-        "ema21": 353.168,
-        "ema50": 358.463,
+        "price": 372.78,
+        "ema9": 362.163,
+        "ema21": 354.951,
+        "ema50": 359.024,
         "trend": "SHORT_TERM_BULLISH",
         "signals": [
           {
@@ -13510,9 +13510,9 @@
       },
       "vwap": {
         "ticker": "TSLA",
-        "price": 368.16,
-        "vwap": 352.409,
-        "vs_vwap_pct": 4.47,
+        "price": 372.78,
+        "vwap": 353.05,
+        "vs_vwap_pct": 5.59,
         "state": "ABOVE_VWAP",
         "window_days": 20,
         "signals": [
@@ -13548,37 +13548,37 @@
       },
       "ma_strategy": {
         "ticker": "TSLA",
-        "price": 368.16,
-        "ma50": 357.717,
-        "ma200": 399.393,
+        "price": 372.78,
+        "ma50": 356.936,
+        "ma200": 399.237,
         "trend": "DOWNTREND",
         "cross_type": "DEATH",
         "cross_date": "2026-04-09",
         "cross_price": 345.62,
-        "days_since_cross": 104,
+        "days_since_cross": 105,
         "avg_golden_return_60d": 23.94,
         "n_golden_crosses": 2
       },
       "monte_carlo": {
         "ticker": "TSLA",
-        "current_price": 368.16,
+        "current_price": 372.78,
         "horizon_days": 63,
         "n_sims": 300,
-        "p10": 279.841,
-        "p25": 331.663,
-        "p50": 402.235,
-        "p75": 476.146,
-        "p90": 574.547,
-        "prob_up": 63.7,
-        "mu_daily": 0.1773,
-        "sigma_daily": 3.7899
+        "p10": 283.852,
+        "p25": 336.361,
+        "p50": 407.864,
+        "p75": 482.726,
+        "p90": 582.389,
+        "prob_up": 64.0,
+        "mu_daily": 0.1794,
+        "sigma_daily": 3.7864
       },
       "walk_forward": {
         "ticker": "TSLA",
         "windows": [
           {
             "window": 1,
-            "period": "2026-04-09 to 2026-05-07",
+            "period": "2026-04-10 to 2026-05-08",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -13586,7 +13586,7 @@
           },
           {
             "window": 2,
-            "period": "2026-05-08 to 2026-06-08",
+            "period": "2026-05-11 to 2026-06-09",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -13594,7 +13594,7 @@
           },
           {
             "window": 3,
-            "period": "2026-06-09 to 2026-07-09",
+            "period": "2026-06-10 to 2026-07-10",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -13602,7 +13602,7 @@
           },
           {
             "window": 4,
-            "period": "2026-07-10 to 2026-08-07",
+            "period": "2026-07-13 to 2026-08-10",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -13610,7 +13610,7 @@
           },
           {
             "window": 5,
-            "period": "2026-08-10 to 2026-09-08",
+            "period": "2026-08-11 to 2026-09-09",
             "optimal_rsi_thresh": 30,
             "test_wins": 0,
             "test_total": 0,
@@ -13624,55 +13624,55 @@
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 2,
             "win_rate": 50.0
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 4,
             "win_rate": 50.0
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
-            "total_signals": 5,
+            "period": "2025-12-19 to 2026-04-30",
+            "total_signals": 4,
             "win_rate": 0.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
-            "total_signals": 4,
-            "win_rate": 50.0
+            "period": "2026-05-01 to 2026-09-09",
+            "total_signals": 5,
+            "win_rate": 60.0
           }
         ],
-        "avg_win_rate": 37.5
+        "avg_win_rate": 40.0
       },
       "stochastic_walk_forward": {
         "ticker": "TSLA",
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 1,
             "win_rate": 100.0
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 0,
             "win_rate": null
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 5,
             "win_rate": 60.0
           }
@@ -13684,55 +13684,55 @@
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
-            "total_signals": 3,
-            "win_rate": 33.3
+            "period": "2025-04-03 to 2025-08-12",
+            "total_signals": 4,
+            "win_rate": 25.0
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 2,
             "win_rate": 100.0
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 1,
             "win_rate": 0.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
-            "total_signals": 4,
-            "win_rate": 25.0
+            "period": "2026-05-01 to 2026-09-09",
+            "total_signals": 5,
+            "win_rate": 40.0
           }
         ],
-        "avg_win_rate": 39.6
+        "avg_win_rate": 41.2
       },
       "vwap_walk_forward": {
         "ticker": "TSLA",
         "windows": [
           {
             "window": 1,
-            "period": "2025-04-02 to 2025-08-11",
+            "period": "2025-04-03 to 2025-08-12",
             "total_signals": 2,
             "win_rate": 0.0
           },
           {
             "window": 2,
-            "period": "2025-08-12 to 2025-12-17",
+            "period": "2025-08-13 to 2025-12-18",
             "total_signals": 4,
             "win_rate": 25.0
           },
           {
             "window": 3,
-            "period": "2025-12-18 to 2026-04-29",
+            "period": "2025-12-19 to 2026-04-30",
             "total_signals": 4,
             "win_rate": 0.0
           },
           {
             "window": 4,
-            "period": "2026-04-30 to 2026-09-08",
+            "period": "2026-05-01 to 2026-09-09",
             "total_signals": 3,
             "win_rate": 0.0
           }
@@ -13746,119 +13746,119 @@
             "rsi_period": 7,
             "ma_short": 20,
             "ma_long": 100,
-            "score": 45,
-            "rsi_val": 57.1
+            "score": 37,
+            "rsi_val": 63.0
           },
           {
             "rsi_period": 7,
             "ma_short": 20,
             "ma_long": 200,
-            "score": 45,
-            "rsi_val": 57.1
+            "score": 37,
+            "rsi_val": 63.0
           },
           {
             "rsi_period": 7,
             "ma_short": 50,
             "ma_long": 100,
-            "score": 45,
-            "rsi_val": 57.1
+            "score": 37,
+            "rsi_val": 63.0
           },
           {
             "rsi_period": 7,
             "ma_short": 50,
             "ma_long": 200,
-            "score": 45,
-            "rsi_val": 57.1
+            "score": 37,
+            "rsi_val": 63.0
           },
           {
             "rsi_period": 10,
             "ma_short": 20,
             "ma_long": 100,
-            "score": 45,
-            "rsi_val": 58.9
+            "score": 37,
+            "rsi_val": 60.1
           },
           {
             "rsi_period": 10,
             "ma_short": 20,
             "ma_long": 200,
-            "score": 45,
-            "rsi_val": 58.9
+            "score": 37,
+            "rsi_val": 60.1
           },
           {
             "rsi_period": 10,
             "ma_short": 50,
             "ma_long": 100,
-            "score": 45,
-            "rsi_val": 58.9
+            "score": 37,
+            "rsi_val": 60.1
           },
           {
             "rsi_period": 10,
             "ma_short": 50,
             "ma_long": 200,
-            "score": 45,
-            "rsi_val": 58.9
+            "score": 37,
+            "rsi_val": 60.1
           },
           {
             "rsi_period": 14,
             "ma_short": 20,
             "ma_long": 100,
             "score": 45,
-            "rsi_val": 59.8
+            "rsi_val": 57.2
           },
           {
             "rsi_period": 14,
             "ma_short": 20,
             "ma_long": 200,
             "score": 45,
-            "rsi_val": 59.8
+            "rsi_val": 57.2
           },
           {
             "rsi_period": 14,
             "ma_short": 50,
             "ma_long": 100,
             "score": 45,
-            "rsi_val": 59.8
+            "rsi_val": 57.2
           },
           {
             "rsi_period": 14,
             "ma_short": 50,
             "ma_long": 200,
             "score": 45,
-            "rsi_val": 59.8
+            "rsi_val": 57.2
           },
           {
             "rsi_period": 21,
             "ma_short": 20,
             "ma_long": 100,
             "score": 37,
-            "rsi_val": 60.4
+            "rsi_val": 60.9
           },
           {
             "rsi_period": 21,
             "ma_short": 20,
             "ma_long": 200,
             "score": 37,
-            "rsi_val": 60.4
+            "rsi_val": 60.9
           },
           {
             "rsi_period": 21,
             "ma_short": 50,
             "ma_long": 100,
             "score": 37,
-            "rsi_val": 60.4
+            "rsi_val": 60.9
           },
           {
             "rsi_period": 21,
             "ma_short": 50,
             "ma_long": 200,
             "score": 37,
-            "rsi_val": 60.4
+            "rsi_val": 60.9
           }
         ],
         "score_min": 37,
         "score_max": 45,
         "score_range": 8,
-        "score_mean": 43.0
+        "score_mean": 39.0
       }
     },
     "VAS.AX": {
@@ -14378,9 +14378,8 @@
       "ticker": "IOZ.AX",
       "earnings": {
         "ticker": "IOZ.AX",
-        "next_earnings": "N/A",
-        "history": [],
-        "error": "Too Many Requests. Rate limited. Try after a while."
+        "next_earnings": "Unknown",
+        "history": []
       },
       "momentum": {
         "ticker": "IOZ.AX",
@@ -16763,7 +16762,7 @@
       }
     }
   },
-  "scanned_at": "2026-09-09T13:05:05.780988",
+  "scanned_at": "2026-09-09T13:31:44.461626",
   "tickers": [
     "EOS.AX",
     "TOR.AX",

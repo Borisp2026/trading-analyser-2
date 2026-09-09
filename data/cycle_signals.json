@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T13:04:28",
+  "generated_at": "2026-09-09T13:30:56",
   "watchlist_count": 27,
   "candidates": [
     {
@@ -92,7 +92,7 @@
     {
       "ticker": "TSLA",
       "name": "Tesla, Inc.",
-      "price": 368.16,
+      "price": 369.9599,
       "sector": "Consumer Cyclical",
       "cycle_score": 80,
       "cycle_signal": "CYCLE_BUY",
@@ -103,11 +103,11 @@
         "target_price": 422.1442,
         "target_basis": "Prior Daily Cycle amplitude 23.2% projected from new DCL0",
         "prior_cycle_amplitude_pct": 23.24,
-        "bars_to_dc3_estimate": 12,
+        "bars_to_dc3_estimate": 11,
         "est_date_dc3": "2026-09-24"
       },
       "stop_price": 291.4324,
-      "position_size": 479.83,
+      "position_size": 471.12,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -124,6 +124,10 @@
           }
         ],
         "daily_resistance_line": [
+          {
+            "date": "2026-09-03",
+            "price": 384.04
+          },
           {
             "date": "2026-09-03",
             "price": 384.04
@@ -146,6 +150,10 @@
             "date": "2026-08-26",
             "price": 342.53
           },
+          "hch": {
+            "date": "2026-09-03",
+            "price": 384.04
+          },
           "dch": {
             "date": "2026-09-03",
             "price": 384.04
@@ -161,7 +169,7 @@
             "price": 384.04
           }
         },
-        "entry_price": 368.16,
+        "entry_price": 369.9599,
         "stop_price": 291.4324,
         "target_price": 422.1442
       },
@@ -171,7 +179,7 @@
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 225.73,
+      "price": 225.095,
       "sector": "Technology",
       "cycle_score": 65,
       "cycle_signal": "CYCLE_BUY",
@@ -182,11 +190,11 @@
         "target_price": 248.5997,
         "target_basis": "Prior Daily Cycle amplitude 20.0% projected from new DCL0",
         "prior_cycle_amplitude_pct": 19.95,
-        "bars_to_dc3_estimate": 20,
+        "bars_to_dc3_estimate": 19,
         "est_date_dc3": "2026-10-06"
       },
       "stop_price": 210.798,
-      "position_size": 1511.72,
+      "position_size": 1574.42,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -205,8 +213,8 @@
             "price": 215.1
           },
           {
-            "date": "2026-09-08",
-            "price": 220.3333
+            "date": "2026-09-09",
+            "price": 221.6417
           }
         ],
         "daily_resistance_line": [
@@ -219,8 +227,8 @@
             "price": 234.76
           },
           {
-            "date": "2026-09-08",
-            "price": 235.475
+            "date": "2026-09-09",
+            "price": 236.19
           }
         ],
         "intermediate_support_line": [
@@ -263,7 +271,7 @@
             "price": 234.76
           }
         },
-        "entry_price": 225.73,
+        "entry_price": 225.095,
         "stop_price": 210.798,
         "target_price": 248.5997
       },
@@ -360,9 +368,9 @@
     },
     {
       "ticker": "AMP.AX",
-      "name": "AMP.AX",
+      "name": "AMP Limited",
       "price": 2.47,
-      "sector": "Unknown",
+      "sector": "Financial Services",
       "cycle_score": 47,
       "cycle_signal": "CYCLE_CAUTION",
       "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
@@ -460,7 +468,7 @@
         "target_price": 2.5796
       },
       "rank": 5,
-      "paper_trade_status": "OPENED_THIS_RUN"
+      "paper_trade_status": "ALREADY_OPEN"
     }
   ],
   "failed_cycle_alerts": [
@@ -579,7 +587,7 @@
     },
     {
       "ticker": "GMD.AX",
-      "name": "GMD.AX",
+      "name": "Genesis Minerals Limited",
       "price": 7.95,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
@@ -587,14 +595,14 @@
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 493.95,
+      "price": 492.71,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 505.74,
+      "price": 507.395,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
@@ -614,7 +622,7 @@
     },
     {
       "ticker": "CU6.AX",
-      "name": "CU6.AX",
+      "name": "Clarity Pharmaceuticals Ltd",
       "price": 2.36,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
@@ -653,7 +661,7 @@
         "entered_dc_num": 1,
         "entered_score": 57
       },
-      "_current_price": 225.73,
+      "_current_price": 225.095,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -665,8 +673,8 @@
             "price": 215.1
           },
           {
-            "date": "2026-09-08",
-            "price": 220.3333
+            "date": "2026-09-09",
+            "price": 221.6417
           }
         ],
         "daily_resistance_line": [
@@ -679,8 +687,8 @@
             "price": 234.76
           },
           {
-            "date": "2026-09-08",
-            "price": 235.475
+            "date": "2026-09-09",
+            "price": 236.19
           }
         ],
         "intermediate_support_line": [
@@ -746,7 +754,7 @@
         "entered_dc_num": 2,
         "entered_score": 80
       },
-      "_current_price": 368.16,
+      "_current_price": 369.9599,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -755,6 +763,10 @@
           }
         ],
         "daily_resistance_line": [
+          {
+            "date": "2026-09-03",
+            "price": 384.04
+          },
           {
             "date": "2026-09-03",
             "price": 384.04
@@ -776,6 +788,10 @@
           "dcl0": {
             "date": "2026-08-26",
             "price": 342.53
+          },
+          "hch": {
+            "date": "2026-09-03",
+            "price": 384.04
           },
           "dch": {
             "date": "2026-09-03",
@@ -2003,25 +2019,15 @@
   ],
   "drawdown": {
     "realized_pnl": -18.33,
-    "unrealized_pnl": 16.62,
-    "total_pnl": -1.71,
+    "unrealized_pnl": 16.78,
+    "total_pnl": -1.55,
     "drawdown_pct": 0.02,
     "halted": false
   },
-  "macro_zone": "DEPLOY",
+  "macro_zone": "SELECTIVE",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": [
-      {
-        "ticker": "AMP.AX",
-        "entry_price": 2.47,
-        "shares": 535.9069,
-        "position_cost": 1323.69,
-        "sector": "Unknown",
-        "stop_price": 2.2834,
-        "target_price": 2.5796
-      }
-    ]
+    "opened": []
   }
 }
