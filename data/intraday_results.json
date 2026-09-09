@@ -6569,29 +6569,29 @@
     {
       "ticker": "AAPL",
       "date": "2026-09-09",
-      "open": 315.93,
-      "high": 318.0,
-      "low": 315.07,
-      "close": 317.84,
-      "volume": 4523307,
+      "open": 315.411,
+      "high": 318.01,
+      "low": 315.055,
+      "close": 318.01,
+      "volume": 5249327,
       "yesterday_close": 316.35,
-      "gap_pct": -0.13,
+      "gap_pct": -0.3,
       "gap_type": "FLAT",
-      "vwap": 316.228,
+      "vwap": 316.427,
       "vs_vwap": "ABOVE",
       "rsi_15m": 50.0,
-      "momentum_pct": 0.6,
+      "momentum_pct": 0.82,
       "signal": "WATCH",
       "score": 60,
       "reasons": [
-        "Price above VWAP $316.228"
+        "Price above VWAP $316.427"
       ],
       "candles": [
         {
           "time": 1788960600,
-          "open": 315.93,
+          "open": 315.411,
           "high": 316.21,
-          "low": 315.07,
+          "low": 315.055,
           "close": 315.85
         },
         {
@@ -6603,24 +6603,24 @@
         },
         {
           "time": 1788962400,
-          "open": 317.84,
-          "high": 317.84,
-          "low": 317.84,
-          "close": 317.84
+          "open": 317.86,
+          "high": 318.01,
+          "low": 317.04,
+          "close": 318.01
         }
       ],
       "vwap_line": [
         {
           "time": 1788960600,
-          "value": 315.71
+          "value": 315.705
         },
         {
           "time": 1788961500,
-          "value": 316.228
+          "value": 316.225
         },
         {
           "time": 1788962400,
-          "value": 316.228
+          "value": 316.427
         }
       ],
       "error": null
@@ -6630,20 +6630,20 @@
       "date": "2026-09-09",
       "open": 493.07,
       "high": 494.39,
-      "low": 491.14,
-      "close": 491.86,
-      "volume": 1590242,
+      "low": 490.865,
+      "close": 491.42,
+      "volume": 1752907,
       "yesterday_close": 494.02,
       "gap_pct": -0.19,
       "gap_type": "FLAT",
-      "vwap": 492.64,
+      "vwap": 492.506,
       "vs_vwap": "BELOW",
       "rsi_15m": 50.0,
-      "momentum_pct": -0.25,
+      "momentum_pct": -0.33,
       "signal": "NEUTRAL",
       "score": 40,
       "reasons": [
-        "Price below VWAP $492.640"
+        "Price below VWAP $492.506"
       ],
       "candles": [
         {
@@ -6662,10 +6662,10 @@
         },
         {
           "time": 1788962400,
-          "open": 491.86,
-          "high": 491.86,
-          "low": 491.86,
-          "close": 491.86
+          "open": 491.655,
+          "high": 492.4,
+          "low": 490.865,
+          "close": 491.42
         }
       ],
       "vwap_line": [
@@ -6675,11 +6675,11 @@
         },
         {
           "time": 1788961500,
-          "value": 492.64
+          "value": 492.639
         },
         {
           "time": 1788962400,
-          "value": 492.64
+          "value": 492.506
         }
       ],
       "error": null
@@ -6689,20 +6689,20 @@
       "date": "2026-09-09",
       "open": 225.27,
       "high": 226.18,
-      "low": 224.4,
-      "close": 224.86,
-      "volume": 12976279,
+      "low": 223.863,
+      "close": 224.08,
+      "volume": 15155233,
       "yesterday_close": 225.77,
       "gap_pct": -0.22,
       "gap_type": "FLAT",
-      "vwap": 225.064,
+      "vwap": 224.952,
       "vs_vwap": "BELOW",
       "rsi_15m": 50.0,
-      "momentum_pct": -0.18,
+      "momentum_pct": -0.53,
       "signal": "NEUTRAL",
       "score": 40,
       "reasons": [
-        "Price below VWAP $225.064"
+        "Price below VWAP $224.952"
       ],
       "candles": [
         {
@@ -6721,10 +6721,10 @@
         },
         {
           "time": 1788962400,
-          "open": 224.86,
-          "high": 224.86,
-          "low": 224.86,
-          "close": 224.86
+          "open": 224.855,
+          "high": 224.9,
+          "low": 223.863,
+          "close": 224.08
         }
       ],
       "vwap_line": [
@@ -6738,7 +6738,7 @@
         },
         {
           "time": 1788962400,
-          "value": 225.064
+          "value": 224.952
         }
       ],
       "error": null
@@ -6747,22 +6747,22 @@
       "ticker": "AMD",
       "date": "2026-09-09",
       "open": 507.62,
-      "high": 524.8,
+      "high": 525.94,
       "low": 506.36,
-      "close": 524.495,
-      "volume": 5554971,
+      "close": 524.0,
+      "volume": 6402088,
       "yesterday_close": 505.53,
       "gap_pct": 0.41,
       "gap_type": "FLAT",
-      "vwap": 516.836,
+      "vwap": 517.792,
       "vs_vwap": "ABOVE",
       "rsi_15m": 50.0,
-      "momentum_pct": 3.32,
+      "momentum_pct": 3.23,
       "signal": "DAY BUY",
       "score": 70,
       "reasons": [
-        "Price above VWAP $516.836",
-        "Strong momentum +3.3% today"
+        "Price above VWAP $517.792",
+        "Strong momentum +3.2% today"
       ],
       "candles": [
         {
@@ -6781,10 +6781,10 @@
         },
         {
           "time": 1788962400,
-          "open": 524.495,
-          "high": 524.495,
-          "low": 524.495,
-          "close": 524.495
+          "open": 524.16,
+          "high": 525.94,
+          "low": 522.25,
+          "close": 524.0
         }
       ],
       "vwap_line": [
@@ -6798,7 +6798,7 @@
         },
         {
           "time": 1788962400,
-          "value": 516.836
+          "value": 517.792
         }
       ],
       "error": null
@@ -6809,19 +6809,20 @@
       "open": 368.355,
       "high": 375.44,
       "low": 367.83,
-      "close": 371.0,
-      "volume": 7135091,
+      "close": 372.305,
+      "volume": 7953730,
       "yesterday_close": 368.04,
       "gap_pct": 0.09,
       "gap_type": "FLAT",
-      "vwap": 372.255,
-      "vs_vwap": "BELOW",
+      "vwap": 372.18,
+      "vs_vwap": "ABOVE",
       "rsi_15m": 50.0,
-      "momentum_pct": 0.72,
-      "signal": "NEUTRAL",
-      "score": 40,
+      "momentum_pct": 1.07,
+      "signal": "DAY BUY",
+      "score": 70,
       "reasons": [
-        "Price below VWAP $372.255"
+        "Price above VWAP $372.180",
+        "Strong momentum +1.1% today"
       ],
       "candles": [
         {
@@ -6840,10 +6841,10 @@
         },
         {
           "time": 1788962400,
-          "open": 371.0,
-          "high": 371.0,
-          "low": 371.0,
-          "close": 371.0
+          "open": 371.03,
+          "high": 372.33,
+          "low": 369.95,
+          "close": 372.305
         }
       ],
       "vwap_line": [
@@ -6857,7 +6858,7 @@
         },
         {
           "time": 1788962400,
-          "value": 372.255
+          "value": 372.18
         }
       ],
       "error": null
@@ -8650,7 +8651,7 @@
       "error": null
     }
   ],
-  "scanned_at": "2026-09-09T14:00:13.625037",
+  "scanned_at": "2026-09-09T14:06:57.397574",
   "total_scanned": 33,
   "results_count": 33
 }

@@ -39,12 +39,8 @@ def macro_zone() -> str:
             return json.load(f).get("zone", "SELECTIVE")
     except Exception:
         return "SELECTIVE"
-# Closing for any of these means the setup is no longer valid, not that we hit a
-# planned target -- re-buying the same ticker the very next nightly run just churns
-# it (open+close at ~the same price, pnl ~0, night after night). Seen for real:
-# AMP.AX opened+closed on TRENDLINE_BREAK ~6 times across 2 days. The cooldown is a
-# blunt circuit-breaker against that.
-COOLDOWN_REASONS = {"FAILED_CYCLE", "TRENDLINE_BREAK", "HIGH_RISK_ZONE_DC3_4"}
+COOLDOWN_REASONS = {"FAILED_CYCLE"}  # closing this way means the setup whipsawed us -- avoid
+                                      # repeatedly re-buying the same chopping low the next night
 
 
 def compute_stop_price(entry_zone: dict, live_daily: dict, live_intermediate: dict):
