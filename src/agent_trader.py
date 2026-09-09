@@ -1,7 +1,7 @@
 """Agent Trader — Autonomous Day Trading Test Run
-Runs every 5 min via GitHub Actions during market hours.
-Tracks 30 simulated trades before paper/live go-live.
-Strategy: ORB + VWAP breakout, 5% target, 2% stop.
+Runs every 15 min via GitHub Actions (market_pulse.yml) during market hours.
+Tracks 100 simulated trades before paper/live go-live.
+Strategy: ORB + VWAP breakout (see day_trader.py for the live target/stop).
 """
 import json, os, sys, time
 from datetime import datetime, date, timedelta

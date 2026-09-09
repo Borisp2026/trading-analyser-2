@@ -246,7 +246,7 @@ def check_and_close_open_trades(all_results_by_ticker: dict) -> list:
 
 def check_intraday_hard_stops(strategy: str = STRATEGY_TAG) -> list:
     """Lightweight stop-loss check for open positions of the given strategy, meant
-    to run every 5 min by piggybacking on agent_scan.yml's existing cadence (called
+    to run every 15 min by piggybacking on market_pulse.yml's cadence (called
     from agent_trader.py) so a stop breach is caught same-day rather than waiting
     for the next nightly re-analysis. Only checks the hard stop_price -- phase-based
     conditions (Cycle Trading's failed-cycle/trendline logic) still need the full

@@ -1,0 +1,82 @@
+name: Market Pulse
+
+# Consolidation of the old agent_scan.yml + intraday.yml. GitHub throttles a repo
+# with several sub-hourly schedules and silently drops most invocations, so the
+# two frequent market-hours workflows are now one job on one 15-min cron. For a
+# reliable trigger, an external cron (cron-job.org etc.) can hit this workflow's
+# workflow_dispatch -- see docs/scheduling.md.
+on:
+  schedule:
+    # Every 15 min on weekdays, across both sessions and both DST states:
+    #   ASX    10:00-16:00 Sydney   = 00:00-06:00 UTC (AEST) / 23:00-05:00 UTC (AEDT)
+    #   NASDAQ 09:30-16:00 New York = 13:30-20:00 UTC (EDT)  / 14:30-21:00 UTC (EST)
+    # The scripts self-guard on market hours (pytz), so off-session ticks are cheap.
+    - cron: '*/15 0-6,13-23 * * 1-5'
+  workflow_dispatch:
+
+concurrency:
+  group: market-pulse
+  cancel-in-progress: false  # queue behind a still-running pulse rather than overlap
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12  # fires every 15 min -- must die well before the next tick
+    permissions:
+      contents: write
+    env:
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # intraday_scanner writes data/intraday_signals.json, which agent_trader
+      # reads for fresh (<40 min) BUY signals -- so it has to run first.
+      - name: Intraday scanner
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+        run: python src/intraday_scanner.py
+        continue-on-error: true
+
+      - name: Live prices snapshot
+        run: python src/live_prices.py
+        continue-on-error: true
+
+      - name: Live Day-Buy ideas scan
+        run: python src/live_ideas.py
+        continue-on-error: true
+
+      - name: Agent trader scan
+        run: python src/agent_trader.py
+        continue-on-error: true
+
+      - name: Commit results
+        run: |
+          git config user.name "Market Pulse Bot"
+          git config user.email "pulse@trading-analyser"
+          git pull --rebase origin main || true
+          # Separate `git add` calls: alerts_log.json / entry_cross_alerts.json only
+          # exist once an alert has fired, and `git add a b c` aborts the whole stage
+          # if any single path is missing.
+          for f in agent_trades portfolio watchlist intraday_signals alerts_log \
+                   entry_cross_alerts live_prices live_ideas; do
+            git add "data/$f.json" || true
+          done
+          git diff --staged --quiet || git commit -m "Market pulse $(date -u +'%H:%M UTC')"
+          git push origin HEAD:main || (git fetch origin main && git reset --soft origin/main \
+            && git commit --allow-empty -m "Market pulse $(date -u +'%H:%M UTC')" \
+            && git push origin HEAD:main)

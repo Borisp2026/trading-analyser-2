@@ -1,7 +1,7 @@
 """
 Live Prices snapshot for Trading Analyser 2.0
-Runs every 30 minutes via GitHub Actions (piggybacking on intraday.yml, during
-ASX + NASDAQ hours). Writes data/live_prices.json: a plain same-origin file the
+Runs every 15 minutes via GitHub Actions (market_pulse.yml, during ASX + NASDAQ
+hours). Writes data/live_prices.json: a plain same-origin file the
 dashboard's browser JS reads directly with a normal fetch().
 
 Why this exists: the dashboard's "current price" features (Portfolio refresh,

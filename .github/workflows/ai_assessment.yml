@@ -2,9 +2,11 @@ name: AI Position Assessment
 
 on:
   schedule:
-    # Hourly during combined ASX+NASDAQ hours, weekdays -- same window as intraday.yml
-    # (2:00-21:00 UTC covers ASX 10am-4pm AWST and NASDAQ 9:30am-4pm EST)
-    - cron: '0 2-21 * * 1-5'
+    # Hourly on weekdays across both sessions. Kept separate from market_pulse
+    # because this one spends ANTHROPIC_API_KEY per run -- don't fold it into a
+    # 15-min loop. Window matches market_pulse: ASX 00-06 UTC (Sydney time, not
+    # the Perth AWST the old '2-21' assumed) + NASDAQ 13-23 UTC, both DST states.
+    - cron: '0 0-6,13-23 * * 1-5'
   workflow_dispatch:
 
 concurrency:
