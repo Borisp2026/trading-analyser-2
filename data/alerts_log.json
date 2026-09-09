@@ -124,5 +124,40 @@
     "message": "MACD death cross on 5-min chart",
     "date": "2026-09-08",
     "time": "19:48:35"
+  },
+  {
+    "ticker": "AFG.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=30.3 turning up",
+    "date": "2026-09-09",
+    "time": "02:23:38"
+  },
+  {
+    "ticker": "AFG.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.9% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-09",
+    "time": "02:23:38"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-09",
+    "time": "02:23:41"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +6.77% from previous close",
+    "date": "2026-09-09",
+    "time": "02:23:44"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-09",
+    "time": "02:23:46"
   }
 ]
