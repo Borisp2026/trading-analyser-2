@@ -3,9 +3,12 @@ Signal History / Daily Advice Log — Trading Analyser 2.0
 Records each day's recommendation + next day's actual move.
 Keeps 30 days of history per stock.
 """
-import json, os
+import json, os, sys
 from datetime import datetime, date, timedelta
 import yfinance as yf
+
+sys.path.insert(0, os.path.dirname(__file__))
+from json_utils import dump as _json_dump  # NaN-safe JSON (see json_utils.py)
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HISTORY_FILE = os.path.join(BASE, "data", "signal_history.json")
@@ -21,7 +24,7 @@ def load_history() -> dict:
 
 def save_history(data: dict):
     with open(HISTORY_FILE, "w") as f:
-        json.dump(data, f, indent=2, default=str)
+        _json_dump(data, f, indent=2, default=str)
 
 
 def record_signals(results: list):

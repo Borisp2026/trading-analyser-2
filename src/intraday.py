@@ -1,10 +1,13 @@
 """Intraday Analysis — Trading Analyser 2.0
 15-min bars, VWAP, gap analysis, intraday signals.
 """
-import json, os, time
+import json, os, sys, time
 from datetime import datetime, date
 import yfinance as yf
 import pandas as pd
+
+sys.path.insert(0, os.path.dirname(__file__))
+from json_utils import dump as _json_dump  # NaN-safe JSON (see json_utils.py)
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INTRADAY_FILE = os.path.join(BASE, "data", "intraday_results.json")
@@ -127,6 +130,6 @@ def run_intraday(tickers):
     out = {"results": results, "scanned_at": datetime.now().isoformat(),
            "total_scanned": len(tickers), "results_count": len(results)}
     with open(INTRADAY_FILE, "w") as f:
-        json.dump(out, f, indent=2, default=str)
+        _json_dump(out, f, indent=2, default=str)
     print(f"Intraday done: {len(results)}/{len(tickers)}\n")
     return results

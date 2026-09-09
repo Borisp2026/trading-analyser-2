@@ -1,6 +1,10 @@
 """Dashboard Builder for Trading Analyser 2.0 — 8 tabs"""
-import json, os
+import json, os, sys
 from datetime import datetime
+
+sys.path.insert(0, os.path.dirname(__file__))
+import json_utils as _ju  # NaN-safe JSON: every value embedded in the page goes
+                          # through _ju.dumps so one NaN can't break a tab's JSON.parse
 
 def signal_style(rec):
     if "STRONG BUY" in rec: return "background:#00aa00;color:white;"
@@ -162,7 +166,7 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
     buys=sum(1 for r in results if "BUY" in r["reasoning"].get("recommendation",""))
     holds=sum(1 for r in results if "HOLD" in r["reasoning"].get("recommendation",""))
     avoids=len(results)-buys-holds
-    real=portfolio.get("real",{}); holdings_json=json.dumps(real.get("holdings",[]))
+    real=portfolio.get("real",{}); holdings_json=_ju.dumps(real.get("holdings",[]))
     total=len(results)
     # Surfaced on the Market Analysis landing tab too (not just Portfolio) -- the money
     # figure people actually open the dashboard to check shouldn't be a tab away.
@@ -175,7 +179,7 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
 
     # Chart data — per ticker JSON blob
     chart_data_map={r["ticker"]: r.get("chart_data",{}) for r in results if r.get("chart_data")}
-    chart_data_json=json.dumps(chart_data_map)
+    chart_data_json=_ju.dumps(chart_data_map)
 
     # Trade Ideas — suggested entries for manual (not automated) paper trading.
     # Reuses buy_sell_reasoning.py's already-computed entry/stop/target per ticker;
@@ -196,7 +200,7 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
             "take_profit": rec.get("take_profit"), "risk_reward": rec.get("risk_reward"),
         })
     suggestions.sort(key=lambda s: s.get("blended_score") or 0, reverse=True)
-    suggestions_json=json.dumps(suggestions)
+    suggestions_json=_ju.dumps(suggestions)
 
     # ASX scan results (if available)
     BASE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -206,14 +210,14 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
             asx_scan=json.load(f)
     else:
         asx_scan={"results":[],"scanned_at":"Not yet run","total_scanned":0}
-    asx_scan_json=json.dumps(asx_scan)
+    asx_scan_json=_ju.dumps(asx_scan)
 
     # Quantitative results
     quant_file=os.path.join(BASE,"data","quant_results.json")
-    quant_json=json.dumps({"results":{},"tickers":[]})
+    quant_json=_ju.dumps({"results":{},"tickers":[]})
     if os.path.exists(quant_file):
         with open(quant_file) as f:
-            quant_json=json.dumps(json.load(f))
+            quant_json=_ju.dumps(json.load(f))
 
     # Watchlist
     watchlist_file=os.path.join(BASE,"data","watchlist.json")
@@ -222,11 +226,11 @@ def build_dashboard(results, portfolio, output_path, signal_history=None, accura
             watchlist=json.load(f)
     else:
         watchlist={"asx":[],"nasdaq":[],"etf":[]}
-    watchlist_json=json.dumps(watchlist)
+    watchlist_json=_ju.dumps(watchlist)
 
     # Signal history per ticker for backtest
-    history_json=json.dumps(signal_history or {})
-    accuracy_json=json.dumps(accuracy or {})
+    history_json=_ju.dumps(signal_history or {})
+    accuracy_json=_ju.dumps(accuracy or {})
 
     # Parse macro for template vars
     try:
@@ -2202,7 +2206,7 @@ window.addEventListener('resize',()=>{
 
     JS=JS.replace("__ACCURACY__", accuracy_json)
 
-    macro_js_data = json.dumps(macro) if macro else "{}"
+    macro_js_data = _ju.dumps(macro) if macro else "{}"
     HTML=f"""<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -2786,18 +2790,18 @@ window.addEventListener('resize',()=>{
 </body>
 </html>"""
 
-    HTML = HTML.replace('__MACRO_DATA__', json.dumps(macro or {}))
-    HTML = HTML.replace('__QUANT_DATA__', json.dumps(quant or {}))
-    HTML = HTML.replace('__CYCLE_DATA__', json.dumps(cycle or {}))
-    HTML = HTML.replace('__ZEN_DATA__', json.dumps(zen or {}))
+    HTML = HTML.replace('__MACRO_DATA__', _ju.dumps(macro or {}))
+    HTML = HTML.replace('__QUANT_DATA__', _ju.dumps(quant or {}))
+    HTML = HTML.replace('__CYCLE_DATA__', _ju.dumps(cycle or {}))
+    HTML = HTML.replace('__ZEN_DATA__', _ju.dumps(zen or {}))
     # run_intraday() returns a plain list of per-ticker dicts (not wrapped in a
     # {"results": [...]} envelope like the file it also writes to disk) -- this
     # was being threaded all the way through build_dashboard()'s own `intraday`
     # parameter and silently dropped, never embedded for the client at all, so
     # the Day Trading tab's table (and its renderIntradayTable() JS function)
     # never existed to read it either. Both fixed together here.
-    HTML = HTML.replace('__INTRADAY_DATA__', json.dumps(intraday or []))
-    HTML = HTML.replace('__PAPER_DATA__', json.dumps(portfolio.get('paper', {})))
+    HTML = HTML.replace('__INTRADAY_DATA__', _ju.dumps(intraday or []))
+    HTML = HTML.replace('__PAPER_DATA__', _ju.dumps(portfolio.get('paper', {})))
     HTML = HTML.replace('__SUGGESTIONS_DATA__', suggestions_json)
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(HTML)

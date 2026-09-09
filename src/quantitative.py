@@ -10,6 +10,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.dirname(__file__))
 from technical import calc_macd, calc_stochastic
+from json_utils import dump as _json_dump  # NaN-safe JSON (see json_utils.py)
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QUANT_FILE = os.path.join(BASE, "data", "quant_results.json")
@@ -462,6 +463,6 @@ def run_quantitative(tickers):
 
     out = {"results": all_quant, "scanned_at": datetime.now().isoformat(), "tickers": tickers}
     with open(QUANT_FILE, "w") as f:
-        json.dump(out, f, indent=2, default=str)
+        _json_dump(out, f, indent=2, default=str)
     print(f"Quantitative done: {len(all_quant)} stocks\n")
     return all_quant

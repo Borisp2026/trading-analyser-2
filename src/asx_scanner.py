@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.join(BASE, "src"))
 from technical import analyse_technicals
 from cycle_analysis import analyse_cycles
 from buy_sell_reasoning import generate_reasoning
+from json_utils import dump as _json_dump  # NaN-safe JSON (see json_utils.py)
 
 UNIVERSE_FILE = os.path.join(BASE, "data", "asx_universe.json")
 WATCHLIST_FILE = os.path.join(BASE, "data", "watchlist.json")
@@ -72,7 +73,7 @@ def run_deep_scan(max_price=30.0):
     output = {"scanned_at": datetime.now().isoformat(), "total_scanned": len(tickers)-skipped,
               "max_price": max_price, "results_count": len(results), "results": results}
     with open(RESULTS_FILE, "w") as f:
-        json.dump(output, f, default=str, indent=2)
+        _json_dump(output, f, default=str, indent=2)
     print(f"\nDone: {len(results)} stocks scored, {skipped} skipped.")
     return results
 
