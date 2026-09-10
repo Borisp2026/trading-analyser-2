@@ -313,5 +313,19 @@
     "message": "RSI overbought: RSI=71.0 \u2014 consider taking profit",
     "date": "2026-09-10",
     "time": "05:19:40"
+  },
+  {
+    "ticker": "AAPL",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.23% from previous close",
+    "date": "2026-09-10",
+    "time": "19:21:42"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.14% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-10",
+    "time": "19:21:43"
   }
 ]
