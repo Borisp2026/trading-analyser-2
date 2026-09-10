@@ -264,5 +264,54 @@
     "message": "RSI oversold reversal: RSI=24.5 turning up",
     "date": "2026-09-10",
     "time": "00:43:24"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.15% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-10",
+    "time": "05:19:30"
+  },
+  {
+    "ticker": "AFG.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-10",
+    "time": "05:19:31"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.44% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-10",
+    "time": "05:19:33"
+  },
+  {
+    "ticker": "PNV.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 2.91x avg + price -4.76% \u2014 selling pressure",
+    "date": "2026-09-10",
+    "time": "05:19:36"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.54% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-10",
+    "time": "05:19:37"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.49% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-10",
+    "time": "05:19:38"
+  },
+  {
+    "ticker": "CAR.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=71.0 \u2014 consider taking profit",
+    "date": "2026-09-10",
+    "time": "05:19:40"
   }
 ]
