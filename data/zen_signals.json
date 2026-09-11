@@ -1,55 +1,61 @@
 {
-  "generated_at": "2026-09-10T13:55:58",
+  "generated_at": "2026-09-11T13:55:47",
   "watchlist_count": 32,
   "candidates": [],
   "avoid_alerts": [
     {
-      "ticker": "GMD.AX",
-      "name": "Genesis Minerals Limited",
-      "price": 7.91,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
       "ticker": "GLN.AX",
       "name": "Galan Lithium Limited",
-      "price": 0.385,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 0.365,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
-      "ticker": "QBE.AX",
-      "name": "QBE Insurance Group Limited",
-      "price": 22.05,
+      "ticker": "GMD.AX",
+      "name": "Genesis Minerals Limited",
+      "price": 7.65,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "IOZ.AX",
+      "name": "iShares Core S&P/ASX 200 ETF",
+      "price": 35.4,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "CAR.AX",
       "name": "CAR Group Limited",
-      "price": 24.93,
-      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
+      "price": 23.81,
+      "detail": "Heiken-Ashi trend BEARISH for 12 bars"
+    },
+    {
+      "ticker": "CMM.AX",
+      "name": "Capricorn Metals Ltd",
+      "price": 14.96,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "NXT.AX",
+      "name": "NEXTDC Limited",
+      "price": 12.06,
+      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
     },
     {
       "ticker": "MSB.AX",
       "name": "Mesoblast Limited",
-      "price": 2.17,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 2.15,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "TOR.AX",
       "name": "Torque Metals Limited",
       "price": 0.22,
-      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
     },
     {
-      "ticker": "CMM.AX",
-      "name": "Capricorn Metals Ltd",
-      "price": 15.68,
+      "ticker": "AFG.AX",
+      "name": "Australian Finance Group Limited",
+      "price": 1.43,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "NXT.AX",
-      "name": "NEXTDC Limited",
-      "price": 12.3,
-      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
     }
   ],
   "open_trades": [],
@@ -61,7 +67,7 @@
     "drawdown_pct": 0.0,
     "halted": false
   },
-  "macro_zone": "SELECTIVE",
+  "macro_zone": "CAUTION",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
