@@ -1273,9 +1273,27 @@
         "entered_dc_num": 2,
         "entered_score": 80
       }
+    },
+    {
+      "ticker": "STO.AX",
+      "shares": 229.0951,
+      "buy_price": 8.73,
+      "buy_date": "2026-09-14",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($8.68)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 8.4086,
+      "target_price": 9.564,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Energy",
+        "entered_score": 88,
+        "entered_reward_risk": 2.59
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 13090.088885418048,
+  "paper_cash": 11090.08866241805,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

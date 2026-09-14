@@ -1,19 +1,57 @@
 {
-  "generated_at": "2026-09-11T13:55:47",
+  "generated_at": "2026-09-14T16:01:57",
   "watchlist_count": 32,
-  "candidates": [],
+  "candidates": [
+    {
+      "ticker": "STO.AX",
+      "name": "Santos Limited",
+      "price": 8.73,
+      "sector": "Energy",
+      "zen_score": 88,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 6,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 8.68,
+        "support": 7.846
+      },
+      "stop_price": 8.4086,
+      "target_price": 9.564,
+      "reward_risk": 2.59,
+      "position_size": 2000.0,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 6 bars",
+        "Breakout above 20-bar high ($8.68)",
+        "Reward:risk 2.59:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 1,
+      "paper_trade_status": "OPENED_THIS_RUN"
+    }
+  ],
   "avoid_alerts": [
     {
       "ticker": "GLN.AX",
       "name": "Galan Lithium Limited",
-      "price": 0.365,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "price": 0.37,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "price": 212.0511,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "GMD.AX",
       "name": "Genesis Minerals Limited",
       "price": 7.65,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     },
     {
       "ticker": "IOZ.AX",
@@ -22,43 +60,69 @@
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
-      "ticker": "CAR.AX",
-      "name": "CAR Group Limited",
-      "price": 23.81,
-      "detail": "Heiken-Ashi trend BEARISH for 12 bars"
-    },
-    {
       "ticker": "CMM.AX",
       "name": "Capricorn Metals Ltd",
-      "price": 14.96,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "price": 15.27,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     },
     {
       "ticker": "NXT.AX",
       "name": "NEXTDC Limited",
-      "price": 12.06,
-      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
+      "price": 11.71,
+      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
     },
     {
       "ticker": "MSB.AX",
       "name": "Mesoblast Limited",
-      "price": 2.15,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "price": 2.12,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+    },
+    {
+      "ticker": "ILU.AX",
+      "name": "Iluka Resources Limited",
+      "price": 6.08,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "SS1.AX",
+      "name": "Sun Silver Limited",
+      "price": 0.99,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "CAR.AX",
+      "name": "CAR Group Limited",
+      "price": 23.7,
+      "detail": "Heiken-Ashi trend BEARISH for 13 bars"
     },
     {
       "ticker": "TOR.AX",
       "name": "Torque Metals Limited",
-      "price": 0.22,
-      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
-    },
-    {
-      "ticker": "AFG.AX",
-      "name": "Australian Finance Group Limited",
-      "price": 1.43,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 0.21,
+      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
     }
   ],
-  "open_trades": [],
+  "open_trades": [
+    {
+      "ticker": "STO.AX",
+      "shares": 229.0951,
+      "buy_price": 8.73,
+      "buy_date": "2026-09-14",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($8.68)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 8.4086,
+      "target_price": 9.564,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Energy",
+        "entered_score": 88,
+        "entered_reward_risk": 2.59
+      },
+      "_current_price": 8.73
+    }
+  ],
   "closed_trades": [],
   "drawdown": {
     "realized_pnl": 0,
@@ -67,10 +131,20 @@
     "drawdown_pct": 0.0,
     "halted": false
   },
-  "macro_zone": "CAUTION",
+  "macro_zone": "SELECTIVE",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": []
+    "opened": [
+      {
+        "ticker": "STO.AX",
+        "entry_price": 8.73,
+        "shares": 229.0951,
+        "position_cost": 2000.0,
+        "sector": "Energy",
+        "stop_price": 8.4086,
+        "target_price": 9.564
+      }
+    ]
   }
 }
