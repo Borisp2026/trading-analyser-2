@@ -1488,13 +1488,13 @@
       ],
       "position_size": 2500.0,
       "macro_score": 68.0,
-      "status": "OPEN",
-      "exit_price": null,
-      "exit_time": null,
-      "exit_reason": null,
-      "pnl_pct": null,
-      "pnl_dollar": null,
-      "outcome": "PENDING"
+      "status": "CLOSED",
+      "exit_price": 365.47,
+      "exit_time": "2026-09-14T08:01:20.395843",
+      "exit_reason": "EOD EXIT",
+      "pnl_pct": 0.06,
+      "pnl_dollar": -1.0,
+      "outcome": "WIN"
     },
     {
       "id": 55,
@@ -1515,32 +1515,17 @@
       ],
       "position_size": 2500.0,
       "macro_score": 68.0,
-      "status": "OPEN",
-      "exit_price": null,
-      "exit_time": null,
-      "exit_reason": null,
-      "pnl_pct": null,
-      "pnl_dollar": null,
-      "outcome": "PENDING"
+      "status": "CLOSED",
+      "exit_price": 218.2,
+      "exit_time": "2026-09-14T08:01:20.534369",
+      "exit_reason": "EOD EXIT",
+      "pnl_pct": -0.37,
+      "pnl_dollar": -11.75,
+      "outcome": "LOSS"
     }
   ],
-  "open_positions": {
-    "TSLA": {
-      "trade_id": 54,
-      "entry_price": 365.255,
-      "target": 373.291,
-      "stop": 360.872,
-      "position_size": 2500.0
-    },
-    "NVDA": {
-      "trade_id": 55,
-      "entry_price": 219.005,
-      "target": 223.823,
-      "stop": 216.377,
-      "position_size": 2500.0
-    }
-  },
-  "capital": 5318.07,
+  "open_positions": {},
+  "capital": 10305.32,
   "starting_capital": 10000.0,
   "scan_log": [
     {
@@ -15129,17 +15114,17 @@
   "started_at": "2026-07-05T11:02:50.033576",
   "stats": {
     "total_trades": 55,
-    "closed_trades": 53,
-    "open_trades": 2,
-    "wins": 23,
-    "losses": 30,
-    "win_rate": 43.4,
-    "avg_pnl_pct": 0.45,
-    "total_pnl_pct": 23.7,
-    "current_capital": 5318.07,
-    "capital_growth": -46.82
+    "closed_trades": 55,
+    "open_trades": 0,
+    "wins": 24,
+    "losses": 31,
+    "win_rate": 43.6,
+    "avg_pnl_pct": 0.43,
+    "total_pnl_pct": 23.39,
+    "current_capital": 10305.32,
+    "capital_growth": 3.05
   },
-  "last_scan": "2026-09-14T02:26:18.506342",
+  "last_scan": "2026-09-14T08:01:20.534671",
   "ticker_days": {
     "EOS.AX": [
       "2026-07-08",
