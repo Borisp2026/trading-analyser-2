@@ -523,5 +523,166 @@
     "message": "Gap down -3.5% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-09-14",
     "time": "18:16:28"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.55% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-15",
+    "time": "00:06:30"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 9.49x avg + price -4.4% \u2014 selling pressure",
+    "date": "2026-09-15",
+    "time": "00:06:31"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.4% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-15",
+    "time": "00:06:31"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 4.13x avg + price -3.41% \u2014 selling pressure",
+    "date": "2026-09-15",
+    "time": "00:06:31"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.41% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-15",
+    "time": "00:06:31"
+  },
+  {
+    "ticker": "AFG.AX",
+    "signal_type": "VOLUME_BREAKOUT_UP",
+    "message": "Volume spike 2.57x avg + price +2.1%",
+    "date": "2026-09-15",
+    "time": "00:06:31"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 3.54x avg + price -3.17% \u2014 selling pressure",
+    "date": "2026-09-15",
+    "time": "00:06:31"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.17% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-15",
+    "time": "00:06:31"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "VOLUME_BREAKOUT_UP",
+    "message": "Volume spike 6.32x avg + price +4.28%",
+    "date": "2026-09-15",
+    "time": "00:06:32"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.28% from previous close",
+    "date": "2026-09-15",
+    "time": "00:06:32"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 13.01x avg + price -2.9% \u2014 selling pressure",
+    "date": "2026-09-15",
+    "time": "00:06:32"
+  },
+  {
+    "ticker": "PNV.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-15",
+    "time": "00:06:33"
+  },
+  {
+    "ticker": "PNV.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 7.98x avg + price -3.03% \u2014 selling pressure",
+    "date": "2026-09-15",
+    "time": "00:06:33"
+  },
+  {
+    "ticker": "PNV.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.03% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-15",
+    "time": "00:06:33"
+  },
+  {
+    "ticker": "AMP.AX",
+    "signal_type": "INTRADAY_BREAKOUT",
+    "message": "Breaking above 20-bar intraday high ($2.470)",
+    "date": "2026-09-15",
+    "time": "00:06:33"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 11.65x avg + price -2.56% \u2014 selling pressure",
+    "date": "2026-09-15",
+    "time": "00:06:33"
+  },
+  {
+    "ticker": "CMM.AX",
+    "signal_type": "VOLUME_BREAKOUT_UP",
+    "message": "Volume spike 12.1x avg + price +2.07%",
+    "date": "2026-09-15",
+    "time": "00:06:33"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 10.22x avg + price -2.43% \u2014 selling pressure",
+    "date": "2026-09-15",
+    "time": "00:06:34"
+  },
+  {
+    "ticker": "SS1.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-15",
+    "time": "00:06:34"
+  },
+  {
+    "ticker": "SS1.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.35% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-15",
+    "time": "00:06:34"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "VOLUME_BREAKOUT_UP",
+    "message": "Volume spike 13.64x avg + price +2.49%",
+    "date": "2026-09-15",
+    "time": "00:06:34"
+  },
+  {
+    "ticker": "STO.AX",
+    "signal_type": "VOLUME_BREAKOUT_UP",
+    "message": "Volume spike 16.62x avg + price +1.63%",
+    "date": "2026-09-15",
+    "time": "00:06:34"
+  },
+  {
+    "ticker": "QBE.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-15",
+    "time": "00:06:35"
   }
 ]
