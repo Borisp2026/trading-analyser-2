@@ -1,108 +1,107 @@
 {
-  "generated_at": "2026-09-14T16:01:57",
+  "generated_at": "2026-09-15T14:31:54",
   "watchlist_count": 32,
-  "candidates": [
-    {
-      "ticker": "STO.AX",
-      "name": "Santos Limited",
-      "price": 8.73,
-      "sector": "Energy",
-      "zen_score": 88,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 6,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 8.68,
-        "support": 7.846
-      },
-      "stop_price": 8.4086,
-      "target_price": 9.564,
-      "reward_risk": 2.59,
-      "position_size": 2000.0,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 6 bars",
-        "Breakout above 20-bar high ($8.68)",
-        "Reward:risk 2.59:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 1,
-      "paper_trade_status": "OPENED_THIS_RUN"
-    }
-  ],
+  "candidates": [],
   "avoid_alerts": [
     {
-      "ticker": "GLN.AX",
-      "name": "Galan Lithium Limited",
-      "price": 0.37,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "ticker": "GMD.AX",
+      "name": "Genesis Minerals Limited",
+      "price": 7.38,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 212.0511,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "GMD.AX",
-      "name": "Genesis Minerals Limited",
-      "price": 7.65,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "price": 212.7536,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "IOZ.AX",
       "name": "iShares Core S&P/ASX 200 ETF",
-      "price": 35.4,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 35.43,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "CMM.AX",
       "name": "Capricorn Metals Ltd",
-      "price": 15.27,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "price": 14.7,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     },
     {
-      "ticker": "NXT.AX",
-      "name": "NEXTDC Limited",
-      "price": 11.71,
-      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
+      "ticker": "PLS.AX",
+      "name": "PLS Group Limited",
+      "price": 4.26,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "GLN.AX",
+      "name": "Galan Lithium Limited",
+      "price": 0.355,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
+    },
+    {
+      "ticker": "TOR.AX",
+      "name": "Torque Metals Limited",
+      "price": 0.2,
+      "detail": "Heiken-Ashi trend BEARISH for 12 bars"
     },
     {
       "ticker": "MSB.AX",
       "name": "Mesoblast Limited",
-      "price": 2.12,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "price": 2.06,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     },
     {
       "ticker": "ILU.AX",
       "name": "Iluka Resources Limited",
-      "price": 6.08,
+      "price": 6.0,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "EOS.AX",
+      "name": "Electro Optic Systems Holdings Limited",
+      "price": 9.23,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "IPX.AX",
+      "name": "IperionX Limited",
+      "price": 2.5,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "SS1.AX",
       "name": "Sun Silver Limited",
-      "price": 0.99,
+      "price": 0.94,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "NXT.AX",
+      "name": "NEXTDC Limited",
+      "price": 11.24,
+      "detail": "Heiken-Ashi trend BEARISH for 12 bars"
+    },
+    {
+      "ticker": "NWH.AX",
+      "name": "NRW Holdings Limited",
+      "price": 7.54,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
-      "ticker": "CAR.AX",
-      "name": "CAR Group Limited",
-      "price": 23.7,
-      "detail": "Heiken-Ashi trend BEARISH for 13 bars"
+      "ticker": "PNV.AX",
+      "name": "PolyNovo Limited",
+      "price": 0.96,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
-      "ticker": "TOR.AX",
-      "name": "Torque Metals Limited",
-      "price": 0.21,
-      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
+      "ticker": "CU6.AX",
+      "name": "Clarity Pharmaceuticals Ltd",
+      "price": 2.19,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     }
   ],
-  "open_trades": [
+  "open_trades": [],
+  "closed_trades": [
     {
       "ticker": "STO.AX",
       "shares": 229.0951,
@@ -110,7 +109,7 @@
       "buy_date": "2026-09-14",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($8.68)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 8.4086,
       "target_price": 9.564,
@@ -120,31 +119,30 @@
         "entered_score": 88,
         "entered_reward_risk": 2.59
       },
-      "_current_price": 8.73
+      "sell_price": 8.55,
+      "sell_date": "2026-09-15",
+      "pnl": -41.24,
+      "pnl_pct": -2.06,
+      "close_reason": "TREND_REVERSAL"
     }
   ],
-  "closed_trades": [],
   "drawdown": {
-    "realized_pnl": 0,
+    "realized_pnl": -41.24,
     "unrealized_pnl": 0.0,
-    "total_pnl": 0.0,
-    "drawdown_pct": 0.0,
+    "total_pnl": -41.24,
+    "drawdown_pct": 0.41,
     "halted": false
   },
   "macro_zone": "SELECTIVE",
   "macro_halted": false,
   "actions_this_run": {
-    "closed": [],
-    "opened": [
+    "closed": [
       {
         "ticker": "STO.AX",
-        "entry_price": 8.73,
-        "shares": 229.0951,
-        "position_cost": 2000.0,
-        "sector": "Energy",
-        "stop_price": 8.4086,
-        "target_price": 9.564
+        "reason": "TREND_REVERSAL",
+        "exit_price": 8.55
       }
-    ]
+    ],
+    "opened": []
   }
 }
