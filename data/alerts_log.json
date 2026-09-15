@@ -684,5 +684,89 @@
     "message": "MACD bullish crossover on 5-min chart",
     "date": "2026-09-15",
     "time": "00:06:35"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-15",
+    "time": "04:49:58"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.05% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-15",
+    "time": "04:49:59"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 2.07x avg + price -2.88% \u2014 selling pressure",
+    "date": "2026-09-15",
+    "time": "04:49:59"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.44% from previous close",
+    "date": "2026-09-15",
+    "time": "04:49:59"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.4% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-15",
+    "time": "04:50:00"
+  },
+  {
+    "ticker": "NWH.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 6.21x avg + price -1.83% \u2014 selling pressure",
+    "date": "2026-09-15",
+    "time": "04:50:00"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.9% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-15",
+    "time": "04:50:01"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.29% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-15",
+    "time": "04:50:02"
+  },
+  {
+    "ticker": "SS1.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-15",
+    "time": "04:50:02"
+  },
+  {
+    "ticker": "WDS.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-15",
+    "time": "04:50:02"
+  },
+  {
+    "ticker": "CAR.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=31.4 turning up",
+    "date": "2026-09-15",
+    "time": "04:50:03"
+  },
+  {
+    "ticker": "IVV.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-15",
+    "time": "04:50:04"
   }
 ]
