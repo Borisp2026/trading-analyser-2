@@ -1545,13 +1545,13 @@
       ],
       "position_size": 2500.0,
       "macro_score": 63.9,
-      "status": "OPEN",
-      "exit_price": null,
-      "exit_time": null,
-      "exit_reason": null,
-      "pnl_pct": null,
-      "pnl_dollar": null,
-      "outcome": "PENDING"
+      "status": "CLOSED",
+      "exit_price": 210.89,
+      "exit_time": "2026-09-15T09:42:41.077566",
+      "exit_reason": "EOD EXIT",
+      "pnl_pct": -0.72,
+      "pnl_dollar": -20.5,
+      "outcome": "LOSS"
     },
     {
       "id": 57,
@@ -1573,32 +1573,17 @@
       ],
       "position_size": 2500.0,
       "macro_score": 63.9,
-      "status": "OPEN",
-      "exit_price": null,
-      "exit_time": null,
-      "exit_reason": null,
-      "pnl_pct": null,
-      "pnl_dollar": null,
-      "outcome": "PENDING"
+      "status": "CLOSED",
+      "exit_price": 333.05,
+      "exit_time": "2026-09-15T09:42:41.199430",
+      "exit_reason": "EOD EXIT",
+      "pnl_pct": -0.32,
+      "pnl_dollar": -10.5,
+      "outcome": "LOSS"
     }
   ],
-  "open_positions": {
-    "NVDA": {
-      "trade_id": 56,
-      "entry_price": 212.41,
-      "target": 217.083,
-      "stop": 209.861,
-      "position_size": 2500.0
-    },
-    "AAPL": {
-      "trade_id": 57,
-      "entry_price": 334.11,
-      "target": 341.46,
-      "stop": 330.101,
-      "position_size": 2500.0
-    }
-  },
-  "capital": 5300.32,
+  "open_positions": {},
+  "capital": 10269.32,
   "starting_capital": 10000.0,
   "scan_log": [
     {
@@ -15275,17 +15260,17 @@
   "started_at": "2026-07-05T11:02:50.033576",
   "stats": {
     "total_trades": 57,
-    "closed_trades": 55,
-    "open_trades": 2,
+    "closed_trades": 57,
+    "open_trades": 0,
     "wins": 24,
-    "losses": 31,
-    "win_rate": 43.6,
-    "avg_pnl_pct": 0.43,
-    "total_pnl_pct": 23.39,
-    "current_capital": 5300.32,
-    "capital_growth": -47.0
+    "losses": 33,
+    "win_rate": 42.1,
+    "avg_pnl_pct": 0.39,
+    "total_pnl_pct": 22.35,
+    "current_capital": 10269.32,
+    "capital_growth": 2.69
   },
-  "last_scan": "2026-09-15T04:50:25.659160",
+  "last_scan": "2026-09-15T09:42:41.199732",
   "ticker_days": {
     "EOS.AX": [
       "2026-07-08",
