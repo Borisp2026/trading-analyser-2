@@ -768,5 +768,68 @@
     "message": "MACD death cross on 5-min chart",
     "date": "2026-09-15",
     "time": "04:50:04"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-16",
+    "time": "01:10:01"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.88% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-16",
+    "time": "01:10:02"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.35% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-16",
+    "time": "01:10:02"
+  },
+  {
+    "ticker": "MMI.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 4.42x avg + price -2.26% \u2014 selling pressure",
+    "date": "2026-09-16",
+    "time": "01:10:04"
+  },
+  {
+    "ticker": "PNV.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-16",
+    "time": "01:10:04"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=27.5 turning up",
+    "date": "2026-09-16",
+    "time": "01:10:06"
+  },
+  {
+    "ticker": "WDS.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=76.2 \u2014 consider taking profit",
+    "date": "2026-09-16",
+    "time": "01:10:06"
+  },
+  {
+    "ticker": "STO.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=76.5 \u2014 consider taking profit",
+    "date": "2026-09-16",
+    "time": "01:10:07"
+  },
+  {
+    "ticker": "IOZ.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-16",
+    "time": "01:10:08"
   }
 ]
