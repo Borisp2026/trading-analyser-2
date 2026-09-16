@@ -831,5 +831,19 @@
     "message": "MACD death cross on 5-min chart",
     "date": "2026-09-16",
     "time": "01:10:08"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.66% from previous close",
+    "date": "2026-09-16",
+    "time": "05:58:51"
+  },
+  {
+    "ticker": "CAR.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-16",
+    "time": "05:58:53"
   }
 ]
