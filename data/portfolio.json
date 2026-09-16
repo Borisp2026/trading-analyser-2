@@ -1296,9 +1296,28 @@
       "pnl": -41.24,
       "pnl_pct": -2.06,
       "close_reason": "TREND_REVERSAL"
+    },
+    {
+      "ticker": "NVDA",
+      "shares": 9.3015,
+      "buy_price": 215.02,
+      "buy_date": "2026-09-16",
+      "signal": "CYCLE_BUY",
+      "reason": "At/above 2nd Daily Cycle HCL; RIGHT-translated cycle (Daily Cycle #1 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 210.5624,
+      "target_price": 248.3219,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC2_HCL",
+        "sector": "Technology",
+        "entered_dc_num": 2,
+        "entered_score": 65
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 13048.85176741805,
+  "paper_cash": 11048.843237418048,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
