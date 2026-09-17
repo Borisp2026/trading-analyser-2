@@ -1,7 +1,17 @@
 {
-  "generated_at": "2026-09-17 17:22",
+  "generated_at": "2026-09-17 20:27",
   "scanned_count": 78,
   "ideas": [
+    {
+      "ticker": "AAPL",
+      "price": 337.08,
+      "vwap": 334.7998,
+      "vs": 0.6811,
+      "rsi": 61.3,
+      "mo": 0.78,
+      "buyZone": 334.7998,
+      "sellZone": 338.5628
+    },
     {
       "ticker": "APA.AX",
       "price": 10.78,
@@ -83,6 +93,16 @@
       "sellZone": 1.3269
     },
     {
+      "ticker": "MSFT",
+      "price": 498.48,
+      "vwap": 496.7315,
+      "vs": 0.352,
+      "rsi": 69.5,
+      "mo": 3.58,
+      "buyZone": 496.7315,
+      "sellZone": 500.5956
+    },
+    {
       "ticker": "MVP.AX",
       "price": 0.485,
       "vwap": 0.4827,
@@ -91,16 +111,6 @@
       "mo": 0.005,
       "buyZone": 0.4827,
       "sellZone": 0.4917
-    },
-    {
-      "ticker": "NVDA",
-      "price": 218.9332,
-      "vwap": 218.6683,
-      "vs": 0.1212,
-      "rsi": 48.2,
-      "mo": 0.2182,
-      "buyZone": 218.6683,
-      "sellZone": 219.9839
     },
     {
       "ticker": "NWH.AX",
