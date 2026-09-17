@@ -852,5 +852,75 @@
     "message": "Gap up +3.69% from previous close",
     "date": "2026-09-16",
     "time": "17:23:22"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-17",
+    "time": "01:22:11"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.32% from previous close",
+    "date": "2026-09-17",
+    "time": "01:22:12"
+  },
+  {
+    "ticker": "AFG.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=70.6 \u2014 consider taking profit",
+    "date": "2026-09-17",
+    "time": "01:22:13"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.44% from previous close",
+    "date": "2026-09-17",
+    "time": "01:22:14"
+  },
+  {
+    "ticker": "NWH.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-17",
+    "time": "01:22:15"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-17",
+    "time": "01:22:16"
+  },
+  {
+    "ticker": "SS1.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.09% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-17",
+    "time": "01:22:17"
+  },
+  {
+    "ticker": "NDQ.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=71.7 \u2014 consider taking profit",
+    "date": "2026-09-17",
+    "time": "01:22:19"
+  },
+  {
+    "ticker": "IVV.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=72.8 \u2014 consider taking profit",
+    "date": "2026-09-17",
+    "time": "01:22:20"
+  },
+  {
+    "ticker": "VGS.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=74.5 \u2014 consider taking profit",
+    "date": "2026-09-17",
+    "time": "01:22:20"
   }
 ]
