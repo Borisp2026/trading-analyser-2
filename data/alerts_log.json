@@ -929,5 +929,68 @@
     "message": "Gap up +6.97% from previous close",
     "date": "2026-09-17",
     "time": "17:22:34"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-18",
+    "time": "01:00:44"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +6.99% from previous close",
+    "date": "2026-09-18",
+    "time": "01:00:44"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.81% from previous close",
+    "date": "2026-09-18",
+    "time": "01:00:45"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.81% from previous close",
+    "date": "2026-09-18",
+    "time": "01:00:46"
+  },
+  {
+    "ticker": "APA.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=74.1 \u2014 consider taking profit",
+    "date": "2026-09-18",
+    "time": "01:00:47"
+  },
+  {
+    "ticker": "CMM.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.33% from previous close",
+    "date": "2026-09-18",
+    "time": "01:00:49"
+  },
+  {
+    "ticker": "SS1.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.19% from previous close",
+    "date": "2026-09-18",
+    "time": "01:00:50"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=71.7 \u2014 consider taking profit",
+    "date": "2026-09-18",
+    "time": "01:00:51"
+  },
+  {
+    "ticker": "IVV.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=68.1 \u2014 consider taking profit",
+    "date": "2026-09-18",
+    "time": "01:00:53"
   }
 ]
