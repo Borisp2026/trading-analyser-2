@@ -992,5 +992,96 @@
     "message": "RSI overbought: RSI=68.1 \u2014 consider taking profit",
     "date": "2026-09-18",
     "time": "01:00:53"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 2.85x avg + price -2.05% \u2014 selling pressure",
+    "date": "2026-09-18",
+    "time": "05:53:47"
+  },
+  {
+    "ticker": "AFG.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.51% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-18",
+    "time": "05:53:48"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "VOLUME_BREAKOUT_UP",
+    "message": "Volume spike 2.45x avg + price +4.71%",
+    "date": "2026-09-18",
+    "time": "05:53:48"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-18",
+    "time": "05:53:48"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "VOLUME_BREAKOUT_UP",
+    "message": "Volume spike 6.6x avg + price +4.29%",
+    "date": "2026-09-18",
+    "time": "05:53:48"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-18",
+    "time": "05:53:49"
+  },
+  {
+    "ticker": "NWH.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.07% from previous close",
+    "date": "2026-09-18",
+    "time": "05:53:50"
+  },
+  {
+    "ticker": "PNV.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-18",
+    "time": "05:53:50"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-18",
+    "time": "05:53:51"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +10.9% from previous close",
+    "date": "2026-09-18",
+    "time": "05:53:51"
+  },
+  {
+    "ticker": "SS1.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-18",
+    "time": "05:53:52"
+  },
+  {
+    "ticker": "CAR.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.42% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-18",
+    "time": "05:53:53"
+  },
+  {
+    "ticker": "IOZ.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-18",
+    "time": "05:53:54"
   }
 ]
