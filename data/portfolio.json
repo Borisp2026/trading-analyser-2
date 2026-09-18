@@ -965,7 +965,7 @@
       "buy_date": "2026-09-03",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #1 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 291.4324,
       "target_price": 422.1442,
@@ -975,7 +975,12 @@
         "sector": "Consumer Cyclical",
         "entered_dc_num": 2,
         "entered_score": 80
-      }
+      },
+      "sell_price": 367.98,
+      "sell_date": "2026-09-18",
+      "pnl": -6.88,
+      "pnl_pct": -1.51,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "AMP.AX",
@@ -1262,7 +1267,7 @@
       "buy_date": "2026-09-10",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #1 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 7.7322,
       "target_price": 8.5124,
@@ -1272,7 +1277,12 @@
         "sector": "Energy",
         "entered_dc_num": 2,
         "entered_score": 80
-      }
+      },
+      "sell_price": 8.51,
+      "sell_date": "2026-09-18",
+      "pnl": -2.51,
+      "pnl_pct": -0.23,
+      "close_reason": "TRENDLINE_BREAK"
     },
     {
       "ticker": "STO.AX",
@@ -1318,6 +1328,6 @@
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 11048.843237418048,
+  "paper_cash": 12563.137506418048,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
