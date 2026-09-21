@@ -1090,5 +1090,68 @@
     "message": "MACD death cross on 5-min chart",
     "date": "2026-09-18",
     "time": "16:49:17"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "INTRADAY_BREAKOUT",
+    "message": "Breaking above 20-bar intraday high ($10.600)",
+    "date": "2026-09-21",
+    "time": "02:24:17"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.09% from previous close",
+    "date": "2026-09-21",
+    "time": "02:24:17"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-21",
+    "time": "02:24:19"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.33% from previous close",
+    "date": "2026-09-21",
+    "time": "02:24:19"
+  },
+  {
+    "ticker": "AFG.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.41% from previous close",
+    "date": "2026-09-21",
+    "time": "02:24:19"
+  },
+  {
+    "ticker": "MSB.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-21",
+    "time": "02:24:20"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -6.33% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-21",
+    "time": "02:24:20"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-21",
+    "time": "02:24:23"
+  },
+  {
+    "ticker": "WDS.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-21",
+    "time": "02:24:25"
   }
 ]
