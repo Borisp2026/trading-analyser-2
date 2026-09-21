@@ -2,10 +2,10 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 15.24,
-      "value_label": "VIX 15.2",
-      "score": 87.8,
-      "detail": "VIX 15.2 \u2014 lower than 88% of the past year",
+      "value": 14.92,
+      "value_label": "VIX 14.9",
+      "score": 95.5,
+      "detail": "VIX 14.9 \u2014 lower than 91% of the past year",
       "interpretation": "CALM"
     },
     {
@@ -26,37 +26,37 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 1.77,
-      "value_label": "Z-score +1.77",
-      "score": 5.6,
-      "detail": "HYG/TLT ratio z-score +1.77 vs 1-year avg (negative = tight = bullish)",
+      "value": 1.67,
+      "value_label": "Z-score +1.67",
+      "score": 8.3,
+      "detail": "HYG/TLT ratio z-score +1.67 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 0.73,
-      "value_label": "VIX ROC +0.7%",
-      "score": 61.6,
-      "detail": "VIX 20-day rate of change +0.7% (rapidly rising = fear = low score)",
+      "value": -5.87,
+      "value_label": "VIX ROC -5.9%",
+      "score": 69.8,
+      "detail": "VIX 20-day rate of change -5.9% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
       "name": "SPX Trend",
-      "value": 6.2,
-      "value_label": "SPX +6.2% vs 200MA",
+      "value": 7.69,
+      "value_label": "SPX +7.7% vs 200MA",
       "score": 100,
-      "detail": "S&P 500 $7,628 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,740 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "UPTREND"
     }
   ],
-  "composite": 64.3,
+  "composite": 67.4,
   "us_signals": [
     {
       "name": "VIX Level",
-      "value": 15.24,
-      "value_label": "VIX 15.2",
-      "score": 87.8,
-      "detail": "VIX 15.2 \u2014 lower than 88% of the past year",
+      "value": 14.92,
+      "value_label": "VIX 14.9",
+      "score": 95.5,
+      "detail": "VIX 14.9 \u2014 lower than 91% of the past year",
       "interpretation": "CALM"
     },
     {
@@ -77,30 +77,30 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 1.77,
-      "value_label": "Z-score +1.77",
-      "score": 5.6,
-      "detail": "HYG/TLT ratio z-score +1.77 vs 1-year avg (negative = tight = bullish)",
+      "value": 1.67,
+      "value_label": "Z-score +1.67",
+      "score": 8.3,
+      "detail": "HYG/TLT ratio z-score +1.67 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 0.73,
-      "value_label": "VIX ROC +0.7%",
-      "score": 61.6,
-      "detail": "VIX 20-day rate of change +0.7% (rapidly rising = fear = low score)",
+      "value": -5.87,
+      "value_label": "VIX ROC -5.9%",
+      "score": 69.8,
+      "detail": "VIX 20-day rate of change -5.9% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
       "name": "SPX Trend",
-      "value": 6.2,
-      "value_label": "SPX +6.2% vs 200MA",
+      "value": 7.69,
+      "value_label": "SPX +7.7% vs 200MA",
       "score": 100,
-      "detail": "S&P 500 $7,628 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,740 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "UPTREND"
     }
   ],
-  "us_composite": 64.3,
+  "us_composite": 67.4,
   "asx_signals": [
     {
       "name": "ASX Trend",
@@ -120,16 +120,16 @@
     },
     {
       "name": "ASX Volatility",
-      "score": 87.8,
-      "value": 15.2,
-      "value_label": "XVI 15.2",
-      "detail": "Lower than 88% of past year",
-      "interpretation": "NEUTRAL"
+      "score": 90.5,
+      "value": 14.9,
+      "value_label": "XVI 14.9",
+      "detail": "Lower than 91% of past year",
+      "interpretation": "CALM"
     }
   ],
-  "asx_composite": 34.8,
+  "asx_composite": 35.7,
   "zone": "SELECTIVE",
   "zone_desc": "Mixed conditions \u2014 selective deployment, reduce size",
   "zone_color": "#ff9900",
-  "scanned_at": "2026-09-18T13:57:38.486102"
+  "scanned_at": "2026-09-21T16:03:46.008705"
 }
