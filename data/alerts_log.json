@@ -1167,5 +1167,47 @@
     "message": "Gap up +8.84% from previous close",
     "date": "2026-09-21",
     "time": "18:23:33"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=68.1 \u2014 consider taking profit",
+    "date": "2026-09-22",
+    "time": "00:48:29"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.02% from previous close",
+    "date": "2026-09-22",
+    "time": "00:48:29"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.14% from previous close",
+    "date": "2026-09-22",
+    "time": "00:48:30"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.74% from previous close",
+    "date": "2026-09-22",
+    "time": "00:48:30"
+  },
+  {
+    "ticker": "GWA.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-22",
+    "time": "00:48:30"
+  },
+  {
+    "ticker": "CAR.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=75.2 \u2014 consider taking profit",
+    "date": "2026-09-22",
+    "time": "00:48:33"
   }
 ]
