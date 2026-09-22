@@ -1333,7 +1333,7 @@
       "buy_date": "2026-09-21",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #1 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 7.7322,
       "target_price": 8.5124,
@@ -1343,7 +1343,12 @@
         "sector": "Energy",
         "entered_dc_num": 2,
         "entered_score": 80
-      }
+      },
+      "sell_price": 8.53,
+      "sell_date": "2026-09-22",
+      "pnl": -13.07,
+      "pnl_pct": -1.39,
+      "close_reason": "TRENDLINE_BREAK"
     },
     {
       "ticker": "AMD",
@@ -1365,6 +1370,6 @@
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 10422.088328418049,
+  "paper_cash": 11351.48386141805,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

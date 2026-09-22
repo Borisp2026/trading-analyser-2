@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-09-21T16:03:39",
+  "generated_at": "2026-09-22T14:14:07",
   "watchlist_count": 32,
   "candidates": [
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 610.6475,
+      "price": 618.2805,
       "sector": "Technology",
-      "zen_score": 86,
+      "zen_score": 93,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 5,
+        "consecutive_bars": 6,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 559.91,
+        "resistance": 616.69,
         "support": 440.5
       },
-      "stop_price": 559.7004,
-      "target_price": 730.0575,
-      "reward_risk": 2.34,
-      "position_size": 1198.59,
+      "stop_price": 567.6238,
+      "target_price": 794.4705,
+      "reward_risk": 3.48,
+      "position_size": 1220.53,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 5 bars",
-        "Breakout above 20-bar high ($559.91)",
-        "Reward:risk 2.34:1 (meets 2.0:1 minimum)"
+        "Heiken-Ashi trend BULLISH for 6 bars",
+        "Breakout above 20-bar high ($616.69)",
+        "Reward:risk 3.48:1 (meets 2.0:1 minimum)"
       ],
       "rank": 1,
-      "paper_trade_status": "OPENED_THIS_RUN"
+      "paper_trade_status": "ALREADY_OPEN"
     }
   ],
   "avoid_alerts": [
@@ -39,37 +39,25 @@
       "ticker": "PLS.AX",
       "name": "PLS Group Limited",
       "price": 4.13,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
     },
     {
       "ticker": "AFG.AX",
       "name": "Australian Finance Group Limited",
-      "price": 1.35,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
-    },
-    {
-      "ticker": "CAR.AX",
-      "name": "CAR Group Limited",
-      "price": 23.3,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "NXT.AX",
-      "name": "NEXTDC Limited",
-      "price": 10.98,
-      "detail": "Heiken-Ashi trend BEARISH for 16 bars"
+      "price": 1.33,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     },
     {
       "ticker": "TOR.AX",
       "name": "Torque Metals Limited",
       "price": 0.195,
-      "detail": "Heiken-Ashi trend BEARISH for 16 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 17 bars"
     },
     {
       "ticker": "MMI.AX",
       "name": "Metro Mining Limited",
-      "price": 1.285,
-      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
+      "price": 1.295,
+      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
     }
   ],
   "open_trades": [
@@ -90,7 +78,7 @@
         "entered_score": 86,
         "entered_reward_risk": 2.34
       },
-      "_current_price": 610.6475
+      "_current_price": 618.2805
     }
   ],
   "closed_trades": [
@@ -120,25 +108,15 @@
   ],
   "drawdown": {
     "realized_pnl": -41.24,
-    "unrealized_pnl": 0.0,
-    "total_pnl": -41.24,
-    "drawdown_pct": 0.41,
+    "unrealized_pnl": 14.98,
+    "total_pnl": -26.26,
+    "drawdown_pct": 0.26,
     "halted": false
   },
   "macro_zone": "SELECTIVE",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": [
-      {
-        "ticker": "AMD",
-        "entry_price": 610.6475,
-        "shares": 1.9628,
-        "position_cost": 1198.59,
-        "sector": "Technology",
-        "stop_price": 559.7004,
-        "target_price": 730.0575
-      }
-    ]
+    "opened": []
   }
 }
