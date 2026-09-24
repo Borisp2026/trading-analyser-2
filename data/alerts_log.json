@@ -1384,5 +1384,12 @@
     "message": "RSI overbought: RSI=70.4 \u2014 consider taking profit",
     "date": "2026-09-24",
     "time": "01:21:42"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-24",
+    "time": "17:39:00"
   }
 ]
