@@ -1,57 +1,131 @@
 {
-  "generated_at": "2026-09-23T14:30:23",
+  "generated_at": "2026-09-24T14:29:29",
   "watchlist_count": 32,
   "candidates": [
     {
-      "ticker": "NWH.AX",
-      "name": "NRW Holdings Limited",
-      "price": 8.12,
+      "ticker": "TEA.AX",
+      "name": "Tasmea Limited",
+      "price": 11.1,
       "sector": "Industrials",
-      "zen_score": 85,
+      "zen_score": 86,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 5,
+        "consecutive_bars": 6,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 8.11,
-        "support": 7.47
+        "resistance": 10.91,
+        "support": 8.7
       },
-      "stop_price": 7.7093,
-      "target_price": 8.9414,
+      "stop_price": 9.7786,
+      "target_price": 13.7428,
       "reward_risk": 2.0,
-      "position_size": 1977.11,
+      "position_size": 840.02,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 5 bars",
-        "Breakout above 20-bar high ($8.11)",
+        "Heiken-Ashi trend BULLISH for 6 bars",
+        "Breakout above 20-bar high ($10.91)",
         "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
       ],
       "rank": 1,
       "paper_trade_status": "OPENED_THIS_RUN"
+    },
+    {
+      "ticker": "AMP.AX",
+      "name": "AMP Limited",
+      "price": 2.66,
+      "sector": "Financial Services",
+      "zen_score": 86,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 4,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 2.63,
+        "support": 2.33
+      },
+      "stop_price": 2.5371,
+      "target_price": 2.96,
+      "reward_risk": 2.44,
+      "position_size": 2000.0,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 4 bars",
+        "Breakout above 20-bar high ($2.63)",
+        "Reward:risk 2.44:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 2,
+      "paper_trade_status": "OPENED_THIS_RUN"
+    },
+    {
+      "ticker": "NWH.AX",
+      "name": "NRW Holdings Limited",
+      "price": 8.2,
+      "sector": "Industrials",
+      "zen_score": 86,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 6,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 8.19,
+        "support": 7.47
+      },
+      "stop_price": 7.7564,
+      "target_price": 9.0872,
+      "reward_risk": 2.0,
+      "position_size": 1848.51,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 6 bars",
+        "Breakout above 20-bar high ($8.19)",
+        "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 3,
+      "paper_trade_status": "ALREADY_OPEN"
     }
   ],
   "avoid_alerts": [
     {
       "ticker": "WDS.AX",
       "name": "Woodside Energy Group Ltd",
-      "price": 31.13,
+      "price": 31.61,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "TLX.AX",
+      "name": "Telix Pharmaceuticals Limited",
+      "price": 15.74,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "GWA.AX",
+      "name": "GWA Group Limited",
+      "price": 1.96,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "AFG.AX",
+      "name": "Australian Finance Group Limited",
+      "price": 1.32,
+      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
     },
     {
       "ticker": "TOR.AX",
       "name": "Torque Metals Limited",
       "price": 0.195,
-      "detail": "Heiken-Ashi trend BEARISH for 18 bars"
-    },
-    {
-      "ticker": "AFG.AX",
-      "name": "Australian Finance Group Limited",
-      "price": 1.295,
-      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 19 bars"
     }
   ],
   "open_trades": [
@@ -72,7 +146,7 @@
         "entered_score": 86,
         "entered_reward_risk": 2.34
       },
-      "_current_price": 610.53
+      "_current_price": 616.745
     },
     {
       "ticker": "NWH.AX",
@@ -91,7 +165,45 @@
         "entered_score": 85,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 8.12
+      "_current_price": 8.2
+    },
+    {
+      "ticker": "TEA.AX",
+      "shares": 75.6775,
+      "buy_price": 11.1,
+      "buy_date": "2026-09-24",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($10.91)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 9.7786,
+      "target_price": 13.7428,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Industrials",
+        "entered_score": 86,
+        "entered_reward_risk": 2.0
+      },
+      "_current_price": 11.1
+    },
+    {
+      "ticker": "AMP.AX",
+      "shares": 751.8797,
+      "buy_price": 2.66,
+      "buy_date": "2026-09-24",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($2.63)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 2.5371,
+      "target_price": 2.96,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Financial Services",
+        "entered_score": 86,
+        "entered_reward_risk": 2.44
+      },
+      "_current_price": 2.66
     }
   ],
   "closed_trades": [
@@ -121,9 +233,9 @@
   ],
   "drawdown": {
     "realized_pnl": -41.24,
-    "unrealized_pnl": -0.23,
-    "total_pnl": -41.47,
-    "drawdown_pct": 0.41,
+    "unrealized_pnl": 31.45,
+    "total_pnl": -9.79,
+    "drawdown_pct": 0.1,
     "halted": false
   },
   "macro_zone": "DEPLOY",
@@ -132,13 +244,22 @@
     "closed": [],
     "opened": [
       {
-        "ticker": "NWH.AX",
-        "entry_price": 8.12,
-        "shares": 243.4865,
-        "position_cost": 1977.11,
+        "ticker": "TEA.AX",
+        "entry_price": 11.1,
+        "shares": 75.6775,
+        "position_cost": 840.02,
         "sector": "Industrials",
-        "stop_price": 7.7093,
-        "target_price": 8.9414
+        "stop_price": 9.7786,
+        "target_price": 13.7428
+      },
+      {
+        "ticker": "AMP.AX",
+        "entry_price": 2.66,
+        "shares": 751.8797,
+        "position_cost": 2000.0,
+        "sector": "Financial Services",
+        "stop_price": 2.5371,
+        "target_price": 2.96
       }
     ]
   }
