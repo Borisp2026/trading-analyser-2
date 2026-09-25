@@ -1,7 +1,17 @@
 {
-  "generated_at": "2026-09-25 17:38",
+  "generated_at": "2026-09-25 20:45",
   "scanned_count": 76,
   "ideas": [
+    {
+      "ticker": "AAPL",
+      "price": 341.04,
+      "vwap": 338.9016,
+      "vs": 0.631,
+      "rsi": 61.2,
+      "mo": 0.745,
+      "buyZone": 338.9016,
+      "sellZone": 342.2689
+    },
     {
       "ticker": "ANZ.AX",
       "price": 37.84,
@@ -91,6 +101,16 @@
       "mo": 0.14,
       "buyZone": 63.2148,
       "sellZone": 63.4714
+    },
+    {
+      "ticker": "NVDA",
+      "price": 225.08,
+      "vwap": 224.7615,
+      "vs": 0.1417,
+      "rsi": 50.5,
+      "mo": 0.79,
+      "buyZone": 224.7615,
+      "sellZone": 226.2876
     },
     {
       "ticker": "NXT.AX",
