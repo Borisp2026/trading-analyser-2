@@ -1,17 +1,7 @@
 {
-  "generated_at": "2026-09-25 06:51",
+  "generated_at": "2026-09-25 17:38",
   "scanned_count": 76,
   "ideas": [
-    {
-      "ticker": "AMD",
-      "price": 629.02,
-      "vwap": 619.458,
-      "vs": 1.5436,
-      "rsi": 65.5,
-      "mo": 5.67,
-      "buyZone": 619.458,
-      "sellZone": 637.4994
-    },
     {
       "ticker": "ANZ.AX",
       "price": 37.84,
@@ -31,6 +21,16 @@
       "mo": 0.008,
       "buyZone": 0.6248,
       "sellZone": 0.6401
+    },
+    {
+      "ticker": "BLX.AX",
+      "price": 1.79,
+      "vwap": 1.7796,
+      "vs": 0.5827,
+      "rsi": 50.0,
+      "mo": 0.01,
+      "buyZone": 1.7796,
+      "sellZone": 1.8383
     },
     {
       "ticker": "CMM.AX",
@@ -83,44 +83,14 @@
       "sellZone": 53.1221
     },
     {
-      "ticker": "MSFT",
-      "price": 497.585,
-      "vwap": 495.1132,
-      "vs": 0.4992,
-      "rsi": 68.3,
-      "mo": 0.435,
-      "buyZone": 495.1132,
-      "sellZone": 499.8352
-    },
-    {
       "ticker": "NDQ.AX",
-      "price": 63.34,
-      "vwap": 63.2146,
-      "vs": 0.1983,
-      "rsi": 68.0,
-      "mo": 0.11,
-      "buyZone": 63.2146,
-      "sellZone": 63.4471
-    },
-    {
-      "ticker": "NVDA",
-      "price": 224.54,
-      "vwap": 223.1086,
-      "vs": 0.6416,
-      "rsi": 62.4,
-      "mo": 0.58,
-      "buyZone": 223.1086,
-      "sellZone": 225.9657
-    },
-    {
-      "ticker": "NWH.AX",
-      "price": 8.05,
-      "vwap": 8.0352,
-      "vs": 0.184,
-      "rsi": 55.1,
-      "mo": 0.005,
-      "buyZone": 8.0352,
-      "sellZone": 8.1057
+      "price": 63.37,
+      "vwap": 63.2148,
+      "vs": 0.2456,
+      "rsi": 70.4,
+      "mo": 0.14,
+      "buyZone": 63.2148,
+      "sellZone": 63.4714
     },
     {
       "ticker": "NXT.AX",
@@ -143,6 +113,36 @@
       "sellZone": 2.9757
     },
     {
+      "ticker": "PPT.AX",
+      "price": 16.81,
+      "vwap": 16.8025,
+      "vs": 0.0447,
+      "rsi": 47.2,
+      "mo": 0.03,
+      "buyZone": 16.8025,
+      "sellZone": 16.8814
+    },
+    {
+      "ticker": "RXL.AX",
+      "price": 0.62,
+      "vwap": 0.6154,
+      "vs": 0.7474,
+      "rsi": 58.6,
+      "mo": 0.01,
+      "buyZone": 0.6154,
+      "sellZone": 0.6264
+    },
+    {
+      "ticker": "SK1.AX",
+      "price": 2.8,
+      "vwap": 2.7737,
+      "vs": 0.9466,
+      "rsi": 50.0,
+      "mo": 0.05,
+      "buyZone": 2.7737,
+      "sellZone": 2.8444
+    },
+    {
       "ticker": "SS1.AX",
       "price": 1.0,
       "vwap": 0.9978,
@@ -154,13 +154,13 @@
     },
     {
       "ticker": "VAS.AX",
-      "price": 108.6,
-      "vwap": 108.5851,
-      "vs": 0.0137,
-      "rsi": 49.4,
-      "mo": 0.01,
-      "buyZone": 108.5851,
-      "sellZone": 108.7786
+      "price": 108.67,
+      "vwap": 108.5856,
+      "vs": 0.0777,
+      "rsi": 56.0,
+      "mo": 0.14,
+      "buyZone": 108.5856,
+      "sellZone": 108.8429
     },
     {
       "ticker": "VGS.AX",
