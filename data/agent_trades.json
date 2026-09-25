@@ -2150,13 +2150,13 @@
       ],
       "position_size": 2500.0,
       "macro_score": 65.2,
-      "status": "OPEN",
-      "exit_price": null,
-      "exit_time": null,
-      "exit_reason": null,
-      "pnl_pct": null,
-      "pnl_dollar": null,
-      "outcome": "PENDING"
+      "status": "CLOSED",
+      "exit_price": 11.32,
+      "exit_time": "2026-09-25T06:51:43.741572",
+      "exit_reason": "EOD EXIT",
+      "pnl_pct": -0.44,
+      "pnl_dollar": -13.5,
+      "outcome": "LOSS"
     },
     {
       "id": 79,
@@ -2178,32 +2178,17 @@
       ],
       "position_size": 2500.0,
       "macro_score": 65.2,
-      "status": "OPEN",
-      "exit_price": null,
-      "exit_time": null,
-      "exit_reason": null,
-      "pnl_pct": null,
-      "pnl_dollar": null,
-      "outcome": "PENDING"
+      "status": "CLOSED",
+      "exit_price": 7.65,
+      "exit_time": "2026-09-25T06:51:43.825667",
+      "exit_reason": "EOD EXIT",
+      "pnl_pct": -0.46,
+      "pnl_dollar": -14.0,
+      "outcome": "LOSS"
     }
   ],
-  "open_positions": {
-    "EOS.AX": {
-      "trade_id": 78,
-      "entry_price": 11.37,
-      "target": 11.62,
-      "stop": 11.234,
-      "position_size": 2500.0
-    },
-    "GMD.AX": {
-      "trade_id": 79,
-      "entry_price": 7.685,
-      "target": 7.854,
-      "stop": 7.593,
-      "position_size": 2500.0
-    }
-  },
-  "capital": 5111.07,
+  "open_positions": {},
+  "capital": 10083.57,
   "starting_capital": 10000.0,
   "scan_log": [
     {
@@ -16818,17 +16803,17 @@
   "started_at": "2026-07-05T11:02:50.033576",
   "stats": {
     "total_trades": 79,
-    "closed_trades": 77,
-    "open_trades": 2,
+    "closed_trades": 79,
+    "open_trades": 0,
     "wins": 34,
-    "losses": 43,
-    "win_rate": 44.2,
-    "avg_pnl_pct": 0.26,
-    "total_pnl_pct": 20.22,
-    "current_capital": 5111.07,
-    "capital_growth": -48.89
+    "losses": 45,
+    "win_rate": 43.0,
+    "avg_pnl_pct": 0.24,
+    "total_pnl_pct": 19.32,
+    "current_capital": 10083.57,
+    "capital_growth": 0.84
   },
-  "last_scan": "2026-09-25T01:54:38.669395",
+  "last_scan": "2026-09-25T06:51:43.825998",
   "ticker_days": {
     "EOS.AX": [
       "2026-07-08",
