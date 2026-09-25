@@ -1385,7 +1385,7 @@
       "buy_date": "2026-09-23",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 16.5134,
       "target_price": 28.2731,
@@ -1395,7 +1395,12 @@
         "sector": "Basic Materials",
         "entered_dc_num": 4,
         "entered_score": 72
-      }
+      },
+      "sell_price": 22.11,
+      "sell_date": "2026-09-25",
+      "pnl": -10.98,
+      "pnl_pct": -3.03,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "NWH.AX",
@@ -1404,7 +1409,7 @@
       "buy_date": "2026-09-23",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 5 bars; Breakout above 20-bar high ($8.11)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 7.7093,
       "target_price": 8.9414,
@@ -1413,7 +1418,12 @@
         "sector": "Industrials",
         "entered_score": 85,
         "entered_reward_risk": 2.0
-      }
+      },
+      "sell_price": 8.07,
+      "sell_date": "2026-09-25",
+      "pnl": -12.17,
+      "pnl_pct": -0.62,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "TEA.AX",
@@ -1450,9 +1460,28 @@
         "entered_score": 86,
         "entered_reward_risk": 2.44
       }
+    },
+    {
+      "ticker": "STO.AX",
+      "shares": 120.8026,
+      "buy_price": 8.56,
+      "buy_date": "2026-09-25",
+      "signal": "CYCLE_BUY",
+      "reason": "At/above 2nd Daily Cycle HCL; RIGHT-translated cycle (Daily Cycle #1 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 7.7322,
+      "target_price": 8.5124,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC2_HCL",
+        "sector": "Energy",
+        "entered_dc_num": 2,
+        "entered_score": 55
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 8077.747892418051,
+  "paper_cash": 9360.31746141805,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
