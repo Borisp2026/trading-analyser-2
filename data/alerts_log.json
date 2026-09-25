@@ -1391,5 +1391,96 @@
     "message": "MACD death cross on 5-min chart",
     "date": "2026-09-24",
     "time": "17:39:00"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=72.9 \u2014 consider taking profit",
+    "date": "2026-09-25",
+    "time": "01:54:14"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +6.37% from previous close",
+    "date": "2026-09-25",
+    "time": "01:54:14"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 12.68x avg + price -2.56% \u2014 selling pressure",
+    "date": "2026-09-25",
+    "time": "01:54:14"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=29.9 turning up",
+    "date": "2026-09-25",
+    "time": "01:54:14"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-25",
+    "time": "01:54:14"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.14% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-25",
+    "time": "01:54:14"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -9.21% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-25",
+    "time": "01:54:15"
+  },
+  {
+    "ticker": "AFG.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-25",
+    "time": "01:54:15"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.24% from previous close",
+    "date": "2026-09-25",
+    "time": "01:54:16"
+  },
+  {
+    "ticker": "MMI.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.83% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-25",
+    "time": "01:54:16"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-09-25",
+    "time": "01:54:17"
+  },
+  {
+    "ticker": "CAR.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-25",
+    "time": "01:54:19"
+  },
+  {
+    "ticker": "CAR.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.71% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-25",
+    "time": "01:54:19"
   }
 ]
