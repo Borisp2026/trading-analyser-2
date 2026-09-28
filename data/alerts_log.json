@@ -1538,5 +1538,26 @@
     "message": "Gap up +8.28% from previous close",
     "date": "2026-09-28",
     "time": "02:37:31"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 2.02x avg + price -3.84% \u2014 selling pressure",
+    "date": "2026-09-28",
+    "time": "19:54:54"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.84% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-28",
+    "time": "19:54:54"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.07% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-28",
+    "time": "19:54:54"
   }
 ]
