@@ -1,39 +1,7 @@
 {
-  "generated_at": "2026-09-25T14:49:47",
+  "generated_at": "2026-09-28T17:51:23",
   "watchlist_count": 32,
-  "candidates": [
-    {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 632.625,
-      "sector": "Technology",
-      "zen_score": 97,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 9,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 630.8,
-        "support": 440.5
-      },
-      "stop_price": 580.7036,
-      "target_price": 822.925,
-      "reward_risk": 3.67,
-      "position_size": 1218.43,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 9 bars",
-        "Breakout above 20-bar high ($630.8)",
-        "Reward:risk 3.67:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 1,
-      "paper_trade_status": "ALREADY_OPEN"
-    }
-  ],
+  "candidates": [],
   "avoid_alerts": [
     {
       "ticker": "QBE.AX",
@@ -67,25 +35,6 @@
     }
   ],
   "open_trades": [
-    {
-      "ticker": "AMD",
-      "shares": 1.9628,
-      "buy_price": 610.6475,
-      "buy_date": "2026-09-21",
-      "signal": "ZEN_BUY",
-      "reason": "Heiken-Ashi trend BULLISH for 5 bars; Breakout above 20-bar high ($559.91)",
-      "status": "open",
-      "type": "paper",
-      "stop_price": 559.7004,
-      "target_price": 730.0575,
-      "meta": {
-        "strategy": "zen_trading",
-        "sector": "Technology",
-        "entered_score": 86,
-        "entered_reward_risk": 2.34
-      },
-      "_current_price": 632.625
-    },
     {
       "ticker": "TEA.AX",
       "shares": 75.6775,
@@ -150,6 +99,29 @@
       "close_reason": "TREND_REVERSAL"
     },
     {
+      "ticker": "AMD",
+      "shares": 1.9628,
+      "buy_price": 610.6475,
+      "buy_date": "2026-09-21",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 5 bars; Breakout above 20-bar high ($559.91)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 559.7004,
+      "target_price": 730.0575,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Technology",
+        "entered_score": 86,
+        "entered_reward_risk": 2.34
+      },
+      "sell_price": 605.11,
+      "sell_date": "2026-09-28",
+      "pnl": -10.87,
+      "pnl_pct": -0.91,
+      "close_reason": "TREND_REVERSAL"
+    },
+    {
       "ticker": "NWH.AX",
       "shares": 243.4865,
       "buy_price": 8.12,
@@ -174,10 +146,10 @@
     }
   ],
   "drawdown": {
-    "realized_pnl": -53.41,
-    "unrealized_pnl": -20.19,
-    "total_pnl": -73.6,
-    "drawdown_pct": 0.74,
+    "realized_pnl": -64.28,
+    "unrealized_pnl": -63.32,
+    "total_pnl": -127.6,
+    "drawdown_pct": 1.28,
     "halted": false
   },
   "macro_zone": "SELECTIVE",
@@ -185,9 +157,9 @@
   "actions_this_run": {
     "closed": [
       {
-        "ticker": "NWH.AX",
+        "ticker": "AMD",
         "reason": "TREND_REVERSAL",
-        "exit_price": 8.07
+        "exit_price": 605.11
       }
     ],
     "opened": []
