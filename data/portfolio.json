@@ -1324,7 +1324,7 @@
       "buy_date": "2026-09-16",
       "signal": "CYCLE_BUY",
       "reason": "At/above 2nd Daily Cycle HCL; RIGHT-translated cycle (Daily Cycle #1 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 210.5624,
       "target_price": 248.3219,
@@ -1334,7 +1334,12 @@
         "sector": "Technology",
         "entered_dc_num": 2,
         "entered_score": 65
-      }
+      },
+      "sell_price": 230.28,
+      "sell_date": "2026-09-29",
+      "pnl": 141.94,
+      "pnl_pct": 7.1,
+      "close_reason": "TRENDLINE_BREAK"
     },
     {
       "ticker": "STO.AX",
@@ -1437,7 +1442,7 @@
       "buy_date": "2026-09-24",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($10.91)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 9.7786,
       "target_price": 13.7428,
@@ -1446,7 +1451,12 @@
         "sector": "Industrials",
         "entered_score": 86,
         "entered_reward_risk": 2.0
-      }
+      },
+      "sell_price": 10.59,
+      "sell_date": "2026-09-29",
+      "pnl": -38.6,
+      "pnl_pct": -4.59,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "AMP.AX",
@@ -1455,7 +1465,7 @@
       "buy_date": "2026-09-24",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($2.63)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 2.5371,
       "target_price": 2.96,
@@ -1464,7 +1474,12 @@
         "sector": "Financial Services",
         "entered_score": 86,
         "entered_reward_risk": 2.44
-      }
+      },
+      "sell_price": 2.58,
+      "sell_date": "2026-09-29",
+      "pnl": -60.15,
+      "pnl_pct": -3.01,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "STO.AX",
@@ -1508,9 +1523,28 @@
         "entered_dc_num": 2,
         "entered_score": 55
       }
+    },
+    {
+      "ticker": "NST.AX",
+      "shares": 14.7565,
+      "buy_price": 23.29,
+      "buy_date": "2026-09-29",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 16.5134,
+      "target_price": 28.2731,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Basic Materials",
+        "entered_dc_num": 4,
+        "entered_score": 72
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 9658.97746541805,
+  "paper_cash": 14198.52235141805,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
