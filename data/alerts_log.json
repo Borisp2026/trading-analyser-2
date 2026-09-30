@@ -1783,5 +1783,54 @@
     "message": "MACD death cross on 5-min chart",
     "date": "2026-09-29",
     "time": "05:39:24"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.04% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-09-30",
+    "time": "01:24:01"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.33% from previous close",
+    "date": "2026-09-30",
+    "time": "01:24:01"
+  },
+  {
+    "ticker": "CMM.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=70.5 \u2014 consider taking profit",
+    "date": "2026-09-30",
+    "time": "01:24:03"
+  },
+  {
+    "ticker": "WDS.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-30",
+    "time": "01:24:04"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +6.29% from previous close",
+    "date": "2026-09-30",
+    "time": "01:24:04"
+  },
+  {
+    "ticker": "STO.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-30",
+    "time": "01:24:04"
+  },
+  {
+    "ticker": "CAR.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-09-30",
+    "time": "01:24:04"
   }
 ]
