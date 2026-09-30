@@ -1512,7 +1512,7 @@
       "buy_date": "2026-09-28",
       "signal": "CYCLE_BUY",
       "reason": "At/above 2nd Daily Cycle HCL; RIGHT-translated cycle (Daily Cycle #1 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 30.0706,
       "target_price": 37.1504,
@@ -1522,7 +1522,12 @@
         "sector": "Energy",
         "entered_dc_num": 2,
         "entered_score": 55
-      }
+      },
+      "sell_price": 31.88,
+      "sell_date": "2026-09-30",
+      "pnl": 9.7,
+      "pnl_pct": 0.5,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "NST.AX",
@@ -1542,9 +1547,28 @@
         "entered_dc_num": 4,
         "entered_score": 72
       }
+    },
+    {
+      "ticker": "MSFT",
+      "shares": 2.3697,
+      "buy_price": 518.48,
+      "buy_date": "2026-09-30",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 476.28,
+      "target_price": 529.7137,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Technology",
+        "entered_dc_num": 1,
+        "entered_score": 47
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 14198.52235141805,
+  "paper_cash": 14902.70093541805,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

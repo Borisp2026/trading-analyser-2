@@ -1,84 +1,72 @@
 {
-  "generated_at": "2026-09-29T16:11:27",
+  "generated_at": "2026-09-30T16:08:34",
   "watchlist_count": 32,
   "candidates": [],
   "avoid_alerts": [
     {
       "ticker": "GLN.AX",
       "name": "Galan Lithium Limited",
-      "price": 0.3,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "CMM.AX",
-      "name": "Capricorn Metals Ltd",
-      "price": 14.93,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "PLS.AX",
-      "name": "PLS Group Limited",
-      "price": 3.87,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "SS1.AX",
-      "name": "Sun Silver Limited",
-      "price": 0.975,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 0.305,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "APA.AX",
       "name": "APA Group",
-      "price": 10.68,
+      "price": 10.61,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+    },
+    {
+      "ticker": "SS1.AX",
+      "name": "Sun Silver Limited",
+      "price": 0.96,
       "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
-      "ticker": "CAR.AX",
-      "name": "CAR Group Limited",
-      "price": 21.88,
+      "ticker": "CMM.AX",
+      "name": "Capricorn Metals Ltd",
+      "price": 14.9,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "PLS.AX",
+      "name": "PLS Group Limited",
+      "price": 3.86,
       "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "TOR.AX",
       "name": "Torque Metals Limited",
       "price": 0.185,
-      "detail": "Heiken-Ashi trend BEARISH for 22 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 23 bars"
     },
     {
       "ticker": "PNV.AX",
       "name": "PolyNovo Limited",
-      "price": 0.93,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 0.925,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "NXT.AX",
+      "name": "NEXTDC Limited",
+      "price": 10.83,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "MMI.AX",
       "name": "Metro Mining Limited",
-      "price": 1.26,
+      "price": 1.265,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "price": 350.7,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "IPX.AX",
       "name": "IperionX Limited",
-      "price": 2.63,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "AFG.AX",
-      "name": "Australian Finance Group Limited",
-      "price": 1.28,
-      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
-    },
-    {
-      "ticker": "NXT.AX",
-      "name": "NEXTDC Limited",
-      "price": 10.81,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "CU6.AX",
-      "name": "Clarity Pharmaceuticals Ltd",
-      "price": 2.11,
+      "price": 2.51,
       "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     }
   ],
@@ -210,18 +198,7 @@
   "macro_zone": "SELECTIVE",
   "macro_halted": false,
   "actions_this_run": {
-    "closed": [
-      {
-        "ticker": "TEA.AX",
-        "reason": "TREND_REVERSAL",
-        "exit_price": 10.59
-      },
-      {
-        "ticker": "AMP.AX",
-        "reason": "TREND_REVERSAL",
-        "exit_price": 2.58
-      }
-    ],
+    "closed": [],
     "opened": []
   }
 }
