@@ -1,7 +1,27 @@
 {
-  "generated_at": "2026-10-01 07:22",
+  "generated_at": "2026-10-01 18:38",
   "scanned_count": 77,
   "ideas": [
+    {
+      "ticker": "AAPL",
+      "price": 329.6205,
+      "vwap": 329.2345,
+      "vs": 0.1172,
+      "rsi": 49.3,
+      "mo": 0.7305,
+      "buyZone": 329.2345,
+      "sellZone": 331.6865
+    },
+    {
+      "ticker": "AMD",
+      "price": 617.44,
+      "vwap": 611.2736,
+      "vs": 1.0088,
+      "rsi": 64.4,
+      "mo": 0.715,
+      "buyZone": 611.2736,
+      "sellZone": 625.316
+    },
     {
       "ticker": "APA.AX",
       "price": 10.59,
@@ -93,6 +113,16 @@
       "sellZone": 0.8244
     },
     {
+      "ticker": "NVDA",
+      "price": 231.85,
+      "vwap": 230.319,
+      "vs": 0.6647,
+      "rsi": 66.7,
+      "mo": 1.01,
+      "buyZone": 230.319,
+      "sellZone": 233.7716
+    },
+    {
       "ticker": "NXT.AX",
       "price": 10.6,
       "vwap": 10.5643,
@@ -161,16 +191,6 @@
       "mo": 0.005,
       "buyZone": 0.1876,
       "sellZone": 0.1991
-    },
-    {
-      "ticker": "TSLA",
-      "price": 354.89,
-      "vwap": 350.4377,
-      "vs": 1.2705,
-      "rsi": 70.1,
-      "mo": 2.85,
-      "buyZone": 350.4377,
-      "sellZone": 357.4106
     },
     {
       "ticker": "TWE.AX",
