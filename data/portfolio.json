@@ -1566,9 +1566,27 @@
         "entered_dc_num": 1,
         "entered_score": 47
       }
+    },
+    {
+      "ticker": "NVDA",
+      "shares": 8.4893,
+      "buy_price": 235.5899,
+      "buy_date": "2026-10-02",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($234.4976)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 225.2913,
+      "target_price": 261.1575,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Technology",
+        "entered_score": 88,
+        "entered_reward_risk": 2.48
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 14902.70093541805,
+  "paper_cash": 12902.70759734805,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

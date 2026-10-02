@@ -1,94 +1,134 @@
 {
-  "generated_at": "2026-10-01T16:45:21",
-  "watchlist_count": 33,
-  "candidates": [],
+  "generated_at": "2026-10-02T16:00:28",
+  "watchlist_count": 32,
+  "candidates": [
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "price": 235.5899,
+      "sector": "Technology",
+      "zen_score": 88,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 6,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 234.4976,
+        "support": 208.93
+      },
+      "stop_price": 225.2913,
+      "target_price": 261.1575,
+      "reward_risk": 2.48,
+      "position_size": 2000.0,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 6 bars",
+        "Breakout above 20-bar high ($234.4976)",
+        "Reward:risk 2.48:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 1,
+      "paper_trade_status": "OPENED_THIS_RUN"
+    }
+  ],
   "avoid_alerts": [
     {
-      "ticker": "GMD.AX",
-      "name": "Genesis Minerals Limited",
-      "price": 7.06,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "ticker": "CMM.AX",
+      "name": "Capricorn Metals Ltd",
+      "price": 14.4,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     },
     {
       "ticker": "GLN.AX",
       "name": "Galan Lithium Limited",
-      "price": 0.3,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
-    },
-    {
-      "ticker": "CMM.AX",
-      "name": "Capricorn Metals Ltd",
-      "price": 14.5,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
-    },
-    {
-      "ticker": "APA.AX",
-      "name": "APA Group",
-      "price": 10.59,
+      "price": 0.285,
       "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     },
     {
       "ticker": "SS1.AX",
       "name": "Sun Silver Limited",
-      "price": 0.96,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "price": 0.94,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     },
     {
       "ticker": "PLS.AX",
       "name": "PLS Group Limited",
-      "price": 3.65,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "price": 3.7,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
+    },
+    {
+      "ticker": "APA.AX",
+      "name": "APA Group",
+      "price": 10.67,
+      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
     },
     {
       "ticker": "MMI.AX",
       "name": "Metro Mining Limited",
       "price": 1.2,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
+    },
+    {
+      "ticker": "GMD.AX",
+      "name": "Genesis Minerals Limited",
+      "price": 7.11,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "PNV.AX",
       "name": "PolyNovo Limited",
-      "price": 0.9,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "price": 0.905,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     },
     {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 611.7006,
+      "ticker": "AMP.AX",
+      "name": "AMP Limited",
+      "price": 2.55,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "WDS.AX",
+      "name": "Woodside Energy Group Ltd",
+      "price": 31.24,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "IPX.AX",
       "name": "IperionX Limited",
-      "price": 2.31,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
-    },
-    {
-      "ticker": "MIN.AX",
-      "name": "Mineral Resources Limited",
-      "price": 49.9,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
-    },
-    {
-      "ticker": "AMP.AX",
-      "name": "AMP Limited",
-      "price": 2.52,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "price": 355.565,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "price": 2.4,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     },
     {
       "ticker": "NXT.AX",
       "name": "NEXTDC Limited",
-      "price": 10.6,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "price": 10.74,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     }
   ],
-  "open_trades": [],
+  "open_trades": [
+    {
+      "ticker": "NVDA",
+      "shares": 8.4893,
+      "buy_price": 235.5899,
+      "buy_date": "2026-10-02",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($234.4976)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 225.2913,
+      "target_price": 261.1575,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Technology",
+        "entered_score": 88,
+        "entered_reward_risk": 2.48
+      },
+      "_current_price": 235.5899
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "STO.AX",
@@ -213,10 +253,20 @@
     "drawdown_pct": 1.63,
     "halted": false
   },
-  "macro_zone": "SELECTIVE",
+  "macro_zone": "CAUTION",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": []
+    "opened": [
+      {
+        "ticker": "NVDA",
+        "entry_price": 235.5899,
+        "shares": 8.4893,
+        "position_cost": 2000.0,
+        "sector": "Technology",
+        "stop_price": 225.2913,
+        "target_price": 261.1575
+      }
+    ]
   }
 }
