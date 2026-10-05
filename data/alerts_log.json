@@ -1986,5 +1986,54 @@
     "message": "Gap up +4.97% from previous close",
     "date": "2026-10-02",
     "time": "18:07:40"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.74% from previous close",
+    "date": "2026-10-05",
+    "time": "03:04:37"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +7.5% from previous close",
+    "date": "2026-10-05",
+    "time": "03:04:37"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-05",
+    "time": "03:04:38"
+  },
+  {
+    "ticker": "MSB.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-05",
+    "time": "03:04:38"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=74.1 \u2014 consider taking profit",
+    "date": "2026-10-05",
+    "time": "03:04:38"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.91% from previous close",
+    "date": "2026-10-05",
+    "time": "03:04:40"
+  },
+  {
+    "ticker": "IVV.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-05",
+    "time": "03:04:42"
   }
 ]
