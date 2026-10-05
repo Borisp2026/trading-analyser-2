@@ -1584,9 +1584,27 @@
         "entered_score": 88,
         "entered_reward_risk": 2.48
       }
+    },
+    {
+      "ticker": "MSFT",
+      "shares": 3.794,
+      "buy_price": 527.15,
+      "buy_date": "2026-10-05",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 7 bars; Breakout above 20-bar high ($522.85)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 502.8157,
+      "target_price": 575.8187,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Technology",
+        "entered_score": 87,
+        "entered_reward_risk": 2.0
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 12902.70759734805,
+  "paper_cash": 10902.700497348049,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

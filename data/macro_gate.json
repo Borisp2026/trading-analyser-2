@@ -2,18 +2,18 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 15.54,
-      "value_label": "VIX 15.5",
-      "score": 81.9,
-      "detail": "VIX 15.5 \u2014 lower than 82% of the past year",
+      "value": 15.59,
+      "value_label": "VIX 15.6",
+      "score": 81.0,
+      "detail": "VIX 15.6 \u2014 lower than 81% of the past year",
       "interpretation": "CALM"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.854,
-      "value_label": "Ratio 0.854",
-      "score": 98.7,
-      "detail": "VIX/VIX3M = 0.854 (CONTANGO) \u2014 below 1.0 = calm",
+      "value": 0.864,
+      "value_label": "Ratio 0.864",
+      "score": 95.3,
+      "detail": "VIX/VIX3M = 0.864 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -26,45 +26,45 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 2.45,
-      "value_label": "Z-score +2.45",
+      "value": 2.62,
+      "value_label": "Z-score +2.62",
       "score": 0,
-      "detail": "HYG/TLT ratio z-score +2.45 vs 1-year avg (negative = tight = bullish)",
+      "detail": "HYG/TLT ratio z-score +2.62 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 6.95,
-      "value_label": "VIX ROC +7.0%",
-      "score": 53.8,
-      "detail": "VIX 20-day rate of change +7.0% (rapidly rising = fear = low score)",
+      "value": 1.9,
+      "value_label": "VIX ROC +1.9%",
+      "score": 60.1,
+      "detail": "VIX 20-day rate of change +1.9% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
       "name": "SPX Trend",
-      "value": 6.86,
-      "value_label": "SPX +6.9% vs 200MA",
+      "value": 7.61,
+      "value_label": "SPX +7.6% vs 200MA",
       "score": 100,
-      "detail": "S&P 500 $7,722 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,781 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "UPTREND"
     }
   ],
-  "composite": 57.8,
+  "composite": 58.2,
   "us_signals": [
     {
       "name": "VIX Level",
-      "value": 15.54,
-      "value_label": "VIX 15.5",
-      "score": 81.9,
-      "detail": "VIX 15.5 \u2014 lower than 82% of the past year",
+      "value": 15.59,
+      "value_label": "VIX 15.6",
+      "score": 81.0,
+      "detail": "VIX 15.6 \u2014 lower than 81% of the past year",
       "interpretation": "CALM"
     },
     {
       "name": "VIX Term Structure",
-      "value": 0.854,
-      "value_label": "Ratio 0.854",
-      "score": 98.7,
-      "detail": "VIX/VIX3M = 0.854 (CONTANGO) \u2014 below 1.0 = calm",
+      "value": 0.864,
+      "value_label": "Ratio 0.864",
+      "score": 95.3,
+      "detail": "VIX/VIX3M = 0.864 (CONTANGO) \u2014 below 1.0 = calm",
       "interpretation": "CALM"
     },
     {
@@ -77,36 +77,36 @@
     },
     {
       "name": "Credit Spreads",
-      "value": 2.45,
-      "value_label": "Z-score +2.45",
+      "value": 2.62,
+      "value_label": "Z-score +2.62",
       "score": 0,
-      "detail": "HYG/TLT ratio z-score +2.45 vs 1-year avg (negative = tight = bullish)",
+      "detail": "HYG/TLT ratio z-score +2.62 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 6.95,
-      "value_label": "VIX ROC +7.0%",
-      "score": 53.8,
-      "detail": "VIX 20-day rate of change +7.0% (rapidly rising = fear = low score)",
+      "value": 1.9,
+      "value_label": "VIX ROC +1.9%",
+      "score": 60.1,
+      "detail": "VIX 20-day rate of change +1.9% (rapidly rising = fear = low score)",
       "interpretation": "NEUTRAL"
     },
     {
       "name": "SPX Trend",
-      "value": 6.86,
-      "value_label": "SPX +6.9% vs 200MA",
+      "value": 7.61,
+      "value_label": "SPX +7.6% vs 200MA",
       "score": 100,
-      "detail": "S&P 500 $7,722 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,781 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "UPTREND"
     }
   ],
-  "us_composite": 57.8,
+  "us_composite": 58.2,
   "asx_signals": [
     {
       "name": "ASX Trend",
       "score": 10,
-      "value": 8614.0,
-      "value_label": "XJO 8,614",
+      "value": 8686.0,
+      "value_label": "XJO 8,686",
       "detail": "XJO vs MA50(\u2717) MA200(\u2717)",
       "interpretation": "DOWNTREND"
     },
@@ -120,16 +120,16 @@
     },
     {
       "name": "ASX Volatility",
-      "score": 81.9,
-      "value": 15.5,
-      "value_label": "XVI 15.5",
-      "detail": "Lower than 82% of past year",
+      "score": 81.0,
+      "value": 15.6,
+      "value_label": "XVI 15.6",
+      "detail": "Lower than 81% of past year",
       "interpretation": "NEUTRAL"
     }
   ],
-  "asx_composite": 30.6,
+  "asx_composite": 30.3,
   "zone": "SELECTIVE",
   "zone_desc": "Mixed conditions \u2014 selective deployment, reduce size",
   "zone_color": "#ff9900",
-  "scanned_at": "2026-10-02T16:00:34.915326"
+  "scanned_at": "2026-10-05T18:54:47.720983"
 }
