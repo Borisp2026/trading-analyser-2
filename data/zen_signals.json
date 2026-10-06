@@ -1,65 +1,65 @@
 {
-  "generated_at": "2026-10-05T18:54:39",
+  "generated_at": "2026-10-06T16:20:49",
   "watchlist_count": 32,
   "candidates": [
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 239.06,
+      "price": 241.1,
       "sector": "Technology",
-      "zen_score": 90,
+      "zen_score": 92,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 7,
+        "consecutive_bars": 8,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 237.88,
+        "resistance": 240.1,
         "support": 208.93
       },
-      "stop_price": 228.45,
-      "target_price": 268.01,
-      "reward_risk": 2.73,
+      "stop_price": 230.3643,
+      "target_price": 272.27,
+      "reward_risk": 2.9,
       "position_size": 2000.0,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 7 bars",
-        "Breakout above 20-bar high ($237.88)",
-        "Reward:risk 2.73:1 (meets 2.0:1 minimum)"
+        "Heiken-Ashi trend BULLISH for 8 bars",
+        "Breakout above 20-bar high ($240.1)",
+        "Reward:risk 2.9:1 (meets 2.0:1 minimum)"
       ],
       "rank": 1,
       "paper_trade_status": "ALREADY_OPEN"
     },
     {
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "price": 527.15,
-      "sector": "Technology",
-      "zen_score": 87,
+      "ticker": "TEA.AX",
+      "name": "Tasmea Limited",
+      "price": 11.31,
+      "sector": "Industrials",
+      "zen_score": 88,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 7,
+        "consecutive_bars": 6,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 522.85,
-        "support": 486.0
+        "resistance": 11.21,
+        "support": 8.6308
       },
-      "stop_price": 502.8157,
-      "target_price": 575.8187,
-      "reward_risk": 2.0,
-      "position_size": 2000.0,
+      "stop_price": 10.302,
+      "target_price": 13.8892,
+      "reward_risk": 2.56,
+      "position_size": 1122.02,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 7 bars",
-        "Breakout above 20-bar high ($522.85)",
-        "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
+        "Heiken-Ashi trend BULLISH for 6 bars",
+        "Breakout above 20-bar high ($11.21)",
+        "Reward:risk 2.56:1 (meets 2.0:1 minimum)"
       ],
       "rank": 2,
       "paper_trade_status": "OPENED_THIS_RUN"
@@ -67,58 +67,40 @@
   ],
   "avoid_alerts": [
     {
-      "ticker": "CMM.AX",
-      "name": "Capricorn Metals Ltd",
-      "price": 14.35,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
-    },
-    {
-      "ticker": "PLS.AX",
-      "name": "PLS Group Limited",
-      "price": 3.72,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
-    },
-    {
-      "ticker": "GLN.AX",
-      "name": "Galan Lithium Limited",
-      "price": 0.29,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
-    },
-    {
       "ticker": "GMD.AX",
       "name": "Genesis Minerals Limited",
       "price": 7.07,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
+    },
+    {
+      "ticker": "MMI.AX",
+      "name": "Metro Mining Limited",
+      "price": 1.19,
+      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
+    },
+    {
+      "ticker": "MSB.AX",
+      "name": "Mesoblast Limited",
+      "price": 1.965,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "IPX.AX",
+      "name": "IperionX Limited",
+      "price": 2.4,
+      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
+    },
+    {
+      "ticker": "WDS.AX",
+      "name": "Woodside Energy Group Ltd",
+      "price": 31.24,
       "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     },
     {
       "ticker": "NXT.AX",
       "name": "NEXTDC Limited",
-      "price": 10.64,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
-    },
-    {
-      "ticker": "MMI.AX",
-      "name": "Metro Mining Limited",
-      "price": 1.175,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
-    },
-    {
-      "ticker": "TLX.AX",
-      "name": "Telix Pharmaceuticals Limited",
-      "price": 15.55,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "WDS.AX",
-      "name": "Woodside Energy Group Ltd",
-      "price": 31.22,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
-    },
-    {
-      "ticker": "IPX.AX",
-      "name": "IperionX Limited",
-      "price": 2.39,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
+      "price": 10.41,
+      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
     }
   ],
   "open_trades": [
@@ -139,7 +121,7 @@
         "entered_score": 88,
         "entered_reward_risk": 2.48
       },
-      "_current_price": 239.06
+      "_current_price": 241.1
     },
     {
       "ticker": "MSFT",
@@ -158,7 +140,26 @@
         "entered_score": 87,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 527.15
+      "_current_price": 532.1
+    },
+    {
+      "ticker": "TEA.AX",
+      "shares": 99.206,
+      "buy_price": 11.31,
+      "buy_date": "2026-10-06",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($11.21)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 10.302,
+      "target_price": 13.8892,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Industrials",
+        "entered_score": 88,
+        "entered_reward_risk": 2.56
+      },
+      "_current_price": 11.31
     }
   ],
   "closed_trades": [
@@ -280,9 +281,9 @@
   ],
   "drawdown": {
     "realized_pnl": -163.03,
-    "unrealized_pnl": 29.46,
-    "total_pnl": -133.57,
-    "drawdown_pct": 1.34,
+    "unrealized_pnl": 65.56,
+    "total_pnl": -97.47,
+    "drawdown_pct": 0.97,
     "halted": false
   },
   "macro_zone": "SELECTIVE",
@@ -291,13 +292,13 @@
     "closed": [],
     "opened": [
       {
-        "ticker": "MSFT",
-        "entry_price": 527.15,
-        "shares": 3.794,
-        "position_cost": 2000.0,
-        "sector": "Technology",
-        "stop_price": 502.8157,
-        "target_price": 575.8187
+        "ticker": "TEA.AX",
+        "entry_price": 11.31,
+        "shares": 99.206,
+        "position_cost": 1122.02,
+        "sector": "Industrials",
+        "stop_price": 10.302,
+        "target_price": 13.8892
       }
     ]
   }

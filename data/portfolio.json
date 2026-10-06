@@ -1602,9 +1602,27 @@
         "entered_score": 87,
         "entered_reward_risk": 2.0
       }
+    },
+    {
+      "ticker": "TEA.AX",
+      "shares": 99.206,
+      "buy_price": 11.31,
+      "buy_date": "2026-10-06",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($11.21)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 10.302,
+      "target_price": 13.8892,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Industrials",
+        "entered_score": 88,
+        "entered_reward_risk": 2.56
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 10902.700497348049,
+  "paper_cash": 9780.680637348049,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
