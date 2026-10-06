@@ -2035,5 +2035,40 @@
     "message": "MACD death cross on 5-min chart",
     "date": "2026-10-05",
     "time": "03:04:42"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.77% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-06",
+    "time": "01:36:29"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.55% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-06",
+    "time": "01:36:29"
+  },
+  {
+    "ticker": "MSB.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-06",
+    "time": "01:36:31"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-06",
+    "time": "01:36:32"
+  },
+  {
+    "ticker": "SS1.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.59% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-06",
+    "time": "01:36:33"
   }
 ]
