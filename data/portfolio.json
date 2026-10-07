@@ -1574,7 +1574,7 @@
       "buy_date": "2026-10-02",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($234.4976)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 225.2913,
       "target_price": 261.1575,
@@ -1583,7 +1583,12 @@
         "sector": "Technology",
         "entered_score": 88,
         "entered_reward_risk": 2.48
-      }
+      },
+      "sell_price": 237.275,
+      "sell_date": "2026-10-07",
+      "pnl": 14.31,
+      "pnl_pct": 0.72,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "MSFT",
@@ -1620,9 +1625,46 @@
         "entered_score": 88,
         "entered_reward_risk": 2.56
       }
+    },
+    {
+      "ticker": "QBE.AX",
+      "shares": 31.3136,
+      "buy_price": 24.04,
+      "buy_date": "2026-10-07",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 20.8465,
+      "target_price": 24.9639,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Financial Services",
+        "entered_dc_num": 1,
+        "entered_score": 52
+      }
+    },
+    {
+      "ticker": "QBE.AX",
+      "shares": 83.1947,
+      "buy_price": 24.04,
+      "buy_date": "2026-10-07",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($23.86)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 23.1093,
+      "target_price": 26.1,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Financial Services",
+        "entered_score": 85,
+        "entered_reward_risk": 2.21
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 9780.680637348049,
+  "paper_cash": 9042.19976284805,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

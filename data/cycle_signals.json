@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-06T16:20:46",
+  "generated_at": "2026-10-07T17:03:35",
   "watchlist_count": 32,
   "candidates": [
     {
       "ticker": "NST.AX",
       "name": "Northern Star Resources Limited",
-      "price": 23.91,
+      "price": 24.37,
       "sector": "Basic Materials",
       "cycle_score": 72,
       "cycle_signal": "CYCLE_BUY",
@@ -17,10 +17,10 @@
         "target_basis": "Prior Daily Cycle amplitude 32.2% projected from new DCL0",
         "prior_cycle_amplitude_pct": 32.18,
         "bars_to_dc3_estimate": 0,
-        "est_date_dc3": "2026-10-06"
+        "est_date_dc3": "2026-10-07"
       },
       "stop_price": 16.5134,
-      "position_size": 323.26,
+      "position_size": 310.19,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
@@ -53,8 +53,8 @@
             "price": 17.3242
           },
           {
-            "date": "2026-10-06",
-            "price": 18.0392
+            "date": "2026-10-07",
+            "price": 18.0478
           }
         ],
         "intermediate_resistance_line": [
@@ -67,8 +67,8 @@
             "price": 25.59
           },
           {
-            "date": "2026-10-06",
-            "price": 25.7373
+            "date": "2026-10-07",
+            "price": 25.7741
           }
         ],
         "daily_markers": {
@@ -99,7 +99,7 @@
             "price": 25.59
           }
         },
-        "entry_price": 23.91,
+        "entry_price": 24.37,
         "stop_price": 16.5134,
         "target_price": 28.2731
       },
@@ -107,91 +107,99 @@
       "paper_trade_status": "ALREADY_OPEN"
     },
     {
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "price": 532.1,
-      "sector": "Technology",
-      "cycle_score": 47,
-      "cycle_signal": "CYCLE_CAUTION",
+      "ticker": "QBE.AX",
+      "name": "QBE Insurance Group Limited",
+      "price": 24.04,
+      "sector": "Financial Services",
+      "cycle_score": 52,
+      "cycle_signal": "CYCLE_HOLD",
       "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
       "risk": "LOW",
       "dc_num_in_ic": 1,
       "predicted_move": {
-        "target_price": 529.7137,
-        "target_basis": "Prior Daily Cycle amplitude 8.7% projected from new DCL0",
-        "prior_cycle_amplitude_pct": 8.72,
-        "bars_to_dc3_estimate": 26,
-        "est_date_dc3": "2026-11-11"
+        "target_price": 24.9639,
+        "target_basis": "Prior Daily Cycle amplitude 17.4% projected from new DCL0",
+        "prior_cycle_amplitude_pct": 17.36,
+        "bars_to_dc3_estimate": 84,
+        "est_date_dc3": "2027-02-02"
       },
-      "stop_price": 476.28,
-      "position_size": 953.24,
+      "stop_price": 20.8465,
+      "position_size": 752.78,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
         "90% confirmation: close above HCH resistance + 10D SMA, no trendline break",
-        "LEFT-translated cycle (Daily Cycle #3 of IC)",
+        "RIGHT-translated cycle (Daily Cycle #3 of IC)",
+        "\u26a0\ufe0f FAILED CYCLE \u2014 lower low than start, bearish",
         "\u2705 90% confirmation signal \u2014 above HCH resistance and 10D SMA",
-        "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure",
-        "90% confirmation: close above HCH resistance + 10D SMA, no trendline break"
+        "\ud83d\udd34 Intermediate Cycle 3-4: highest risk zone, reduce exposure"
       ],
       "chart_overlay": {
         "daily_support_line": [
           {
-            "date": "2026-09-16",
-            "price": 487.23
+            "date": "2026-08-20",
+            "price": 21.2719
           }
         ],
         "daily_resistance_line": [
           {
-            "date": "2026-10-06",
-            "price": 535.69
+            "date": "2026-09-17",
+            "price": 23.66
+          },
+          {
+            "date": "2026-10-07",
+            "price": 24.06
           }
         ],
         "intermediate_support_line": [
           {
-            "date": "2026-09-10",
-            "price": 486.0
+            "date": "2026-08-20",
+            "price": 21.2719
           }
         ],
         "intermediate_resistance_line": [
           {
-            "date": "2026-10-06",
-            "price": 535.69
+            "date": "2026-10-07",
+            "price": 24.06
           }
         ],
         "daily_markers": {
           "dcl0": {
-            "date": "2026-09-16",
-            "price": 487.23
+            "date": "2026-08-20",
+            "price": 21.2719
+          },
+          "hch": {
+            "date": "2026-09-17",
+            "price": 23.66
           },
           "dch": {
-            "date": "2026-10-06",
-            "price": 535.69
+            "date": "2026-10-07",
+            "price": 24.06
           }
         },
         "intermediate_markers": {
           "dcl0": {
-            "date": "2026-09-10",
-            "price": 486.0
+            "date": "2026-08-20",
+            "price": 21.2719
           },
           "dch": {
-            "date": "2026-10-06",
-            "price": 535.69
+            "date": "2026-10-07",
+            "price": 24.06
           }
         },
-        "entry_price": 532.1,
-        "stop_price": 476.28,
-        "target_price": 529.7137
+        "entry_price": 24.04,
+        "stop_price": 20.8465,
+        "target_price": 24.9639
       },
       "rank": 2,
-      "paper_trade_status": "ALREADY_OPEN"
+      "paper_trade_status": "OPENED_THIS_RUN"
     }
   ],
   "failed_cycle_alerts": [
     {
       "ticker": "QBE.AX",
       "name": "QBE Insurance Group Limited",
-      "price": 23.73,
+      "price": 24.04,
       "type": "completed_cycle_failed",
       "dcl0_price": 21.2719,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
@@ -199,23 +207,23 @@
     {
       "ticker": "IOZ.AX",
       "name": "iShares Core S&P/ASX 200 ETF",
-      "price": 35.41,
+      "price": 35.37,
       "type": "completed_cycle_failed",
       "dcl0_price": 34.89,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "price": 380.3939,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 345.88,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+      "ticker": "APA.AX",
+      "name": "APA Group",
+      "price": 10.58,
+      "type": "live_cycle_failing",
+      "dcl0_price": 10.67,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-1.69% below)"
     },
     {
       "ticker": "TEA.AX",
       "name": "Tasmea Limited",
-      "price": 11.31,
+      "price": 11.27,
       "type": "completed_cycle_failed",
       "dcl0_price": 8.6308,
       "detail": "Most recent completed cycle printed a lower low than its own DCL0"
@@ -223,218 +231,218 @@
     {
       "ticker": "GLN.AX",
       "name": "Galan Lithium Limited",
-      "price": 0.295,
+      "price": 0.285,
       "type": "live_cycle_failing",
       "dcl0_price": 0.35,
       "detail": "Live cycle printed a lower low than its own DCL0 (-18.57% below)"
     },
     {
-      "ticker": "GMD.AX",
-      "name": "Genesis Minerals Limited",
-      "price": 7.07,
-      "type": "live_cycle_failing",
-      "dcl0_price": 7.0361,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-1.08% below)"
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "price": 376.66,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 345.88,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
-      "ticker": "APA.AX",
-      "name": "APA Group",
-      "price": 10.61,
+      "ticker": "NXT.AX",
+      "name": "NEXTDC Limited",
+      "price": 10.23,
       "type": "live_cycle_failing",
-      "dcl0_price": 10.67,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-1.69% below)"
+      "dcl0_price": 10.98,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-7.38% below)"
     },
     {
       "ticker": "MMI.AX",
       "name": "Metro Mining Limited",
-      "price": 1.19,
+      "price": 1.175,
       "type": "live_cycle_failing",
       "dcl0_price": 1.27,
       "detail": "Live cycle printed a lower low than its own DCL0 (-7.48% below)"
     },
     {
-      "ticker": "MSB.AX",
-      "name": "Mesoblast Limited",
-      "price": 1.965,
-      "type": "live_cycle_failing",
-      "dcl0_price": 2.01,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-2.24% below)"
-    },
-    {
-      "ticker": "CAR.AX",
-      "name": "CAR Group Limited",
-      "price": 22.15,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 21.2,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
-      "ticker": "CU6.AX",
-      "name": "Clarity Pharmaceuticals Ltd",
-      "price": 2.02,
-      "type": "live_cycle_failing",
-      "dcl0_price": 2.01,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-0.5% below)"
-    },
-    {
-      "ticker": "GWA.AX",
-      "name": "GWA Group Limited",
-      "price": 1.98,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 1.94,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
-      "ticker": "IPX.AX",
-      "name": "IperionX Limited",
-      "price": 2.4,
-      "type": "completed_cycle_failed",
-      "dcl0_price": 2.29,
-      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
-    },
-    {
       "ticker": "PNV.AX",
       "name": "PolyNovo Limited",
-      "price": 0.91,
+      "price": 0.895,
       "type": "live_cycle_failing",
       "dcl0_price": 0.935,
       "detail": "Live cycle printed a lower low than its own DCL0 (-4.81% below)"
     },
     {
-      "ticker": "SS1.AX",
-      "name": "Sun Silver Limited",
-      "price": 0.93,
+      "ticker": "GMD.AX",
+      "name": "Genesis Minerals Limited",
+      "price": 7.13,
       "type": "live_cycle_failing",
-      "dcl0_price": 0.93,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-0.54% below)"
-    },
-    {
-      "ticker": "WDS.AX",
-      "name": "Woodside Energy Group Ltd",
-      "price": 31.24,
-      "type": "live_cycle_failing",
-      "dcl0_price": 30.91,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-0.58% below)"
-    },
-    {
-      "ticker": "AFG.AX",
-      "name": "Australian Finance Group Limited",
-      "price": 1.275,
-      "type": "live_cycle_failing",
-      "dcl0_price": 1.4446,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-14.16% below)"
+      "dcl0_price": 7.0361,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-1.08% below)"
     },
     {
       "ticker": "ILU.AX",
       "name": "Iluka Resources Limited",
-      "price": 5.82,
+      "price": 5.89,
       "type": "live_cycle_failing",
       "dcl0_price": 5.85,
       "detail": "Live cycle printed a lower low than its own DCL0 (-3.76% below)"
     },
     {
+      "ticker": "CAR.AX",
+      "name": "CAR Group Limited",
+      "price": 22.18,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 21.2,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
+    },
+    {
+      "ticker": "AFG.AX",
+      "name": "Australian Finance Group Limited",
+      "price": 1.295,
+      "type": "live_cycle_failing",
+      "dcl0_price": 1.4446,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-14.16% below)"
+    },
+    {
+      "ticker": "MSB.AX",
+      "name": "Mesoblast Limited",
+      "price": 1.995,
+      "type": "live_cycle_failing",
+      "dcl0_price": 2.01,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-2.24% below)"
+    },
+    {
+      "ticker": "SS1.AX",
+      "name": "Sun Silver Limited",
+      "price": 0.92,
+      "type": "live_cycle_failing",
+      "dcl0_price": 0.93,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-1.08% below)"
+    },
+    {
       "ticker": "STO.AX",
       "name": "Santos Limited",
-      "price": 8.56,
+      "price": 8.54,
       "type": "live_cycle_failing",
       "dcl0_price": 8.36,
       "detail": "Live cycle printed a lower low than its own DCL0 (-0.12% below)"
     },
     {
-      "ticker": "PLS.AX",
-      "name": "PLS Group Limited",
-      "price": 3.81,
+      "ticker": "CU6.AX",
+      "name": "Clarity Pharmaceuticals Ltd",
+      "price": 1.95,
       "type": "live_cycle_failing",
-      "dcl0_price": 3.62,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-0.0% below)"
+      "dcl0_price": 2.01,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-2.99% below)"
+    },
+    {
+      "ticker": "IPX.AX",
+      "name": "IperionX Limited",
+      "price": 2.35,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 2.29,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     },
     {
       "ticker": "TLX.AX",
       "name": "Telix Pharmaceuticals Limited",
-      "price": 15.41,
+      "price": 15.87,
       "type": "live_cycle_failing",
       "dcl0_price": 15.5,
       "detail": "Live cycle printed a lower low than its own DCL0 (-4.0% below)"
     },
     {
-      "ticker": "NXT.AX",
-      "name": "NEXTDC Limited",
-      "price": 10.41,
+      "ticker": "WDS.AX",
+      "name": "Woodside Energy Group Ltd",
+      "price": 31.5,
       "type": "live_cycle_failing",
-      "dcl0_price": 10.98,
-      "detail": "Live cycle printed a lower low than its own DCL0 (-5.65% below)"
+      "dcl0_price": 30.91,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-0.58% below)"
+    },
+    {
+      "ticker": "PLS.AX",
+      "name": "PLS Group Limited",
+      "price": 3.88,
+      "type": "live_cycle_failing",
+      "dcl0_price": 3.62,
+      "detail": "Live cycle printed a lower low than its own DCL0 (-0.0% below)"
+    },
+    {
+      "ticker": "GWA.AX",
+      "name": "GWA Group Limited",
+      "price": 2.02,
+      "type": "completed_cycle_failed",
+      "dcl0_price": 1.94,
+      "detail": "Most recent completed cycle printed a lower low than its own DCL0"
     }
   ],
   "high_risk_alerts": [
     {
       "ticker": "CMM.AX",
       "name": "Capricorn Metals Ltd",
-      "price": 14.39,
-      "dc_num_in_ic": 4,
-      "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-    },
-    {
-      "ticker": "IOZ.AX",
-      "name": "iShares Core S&P/ASX 200 ETF",
-      "price": 35.41,
-      "dc_num_in_ic": 6,
-      "detail": "Daily Cycle 6 of Intermediate Cycle \u2014 high-risk zone, no new longs"
-    },
-    {
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "price": 380.3939,
+      "price": 14.76,
       "dc_num_in_ic": 4,
       "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "NWH.AX",
       "name": "NRW Holdings Limited",
-      "price": 7.96,
+      "price": 7.99,
       "dc_num_in_ic": 5,
       "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
+      "ticker": "IOZ.AX",
+      "name": "iShares Core S&P/ASX 200 ETF",
+      "price": 35.37,
+      "dc_num_in_ic": 6,
+      "detail": "Daily Cycle 6 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "price": 376.66,
+      "dc_num_in_ic": 4,
+      "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+    },
+    {
       "ticker": "AMP.AX",
       "name": "AMP Limited",
-      "price": 2.56,
+      "price": 2.54,
       "dc_num_in_ic": 5,
       "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "CAR.AX",
       "name": "CAR Group Limited",
-      "price": 22.15,
+      "price": 22.18,
       "dc_num_in_ic": 5,
       "detail": "Daily Cycle 5 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 657.151,
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "price": 237.275,
       "dc_num_in_ic": 3,
       "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
-      "ticker": "GWA.AX",
-      "name": "GWA Group Limited",
-      "price": 1.98,
-      "dc_num_in_ic": 4,
-      "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "price": 644.97,
+      "dc_num_in_ic": 3,
+      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
       "ticker": "IPX.AX",
       "name": "IperionX Limited",
-      "price": 2.4,
+      "price": 2.35,
       "dc_num_in_ic": 4,
       "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     },
     {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "price": 241.1,
-      "dc_num_in_ic": 3,
-      "detail": "Daily Cycle 3 of Intermediate Cycle \u2014 high-risk zone, no new longs"
+      "ticker": "GWA.AX",
+      "name": "GWA Group Limited",
+      "price": 2.02,
+      "dc_num_in_ic": 4,
+      "detail": "Daily Cycle 4 of Intermediate Cycle \u2014 high-risk zone, no new longs"
     }
   ],
   "open_trades": [
@@ -456,7 +464,7 @@
         "entered_dc_num": 4,
         "entered_score": 72
       },
-      "_current_price": 23.91,
+      "_current_price": 24.37,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -480,8 +488,8 @@
             "price": 17.3242
           },
           {
-            "date": "2026-10-06",
-            "price": 18.0392
+            "date": "2026-10-07",
+            "price": 18.0478
           }
         ],
         "intermediate_resistance_line": [
@@ -494,8 +502,8 @@
             "price": 25.59
           },
           {
-            "date": "2026-10-06",
-            "price": 25.7373
+            "date": "2026-10-07",
+            "price": 25.7741
           }
         ],
         "daily_markers": {
@@ -549,7 +557,7 @@
         "entered_dc_num": 1,
         "entered_score": 47
       },
-      "_current_price": 532.1,
+      "_current_price": 528.1429,
       "chart_overlay": {
         "daily_support_line": [
           {
@@ -598,6 +606,83 @@
         "entry_price": 518.48,
         "stop_price": 476.28,
         "target_price": 529.7137
+      }
+    },
+    {
+      "ticker": "QBE.AX",
+      "shares": 31.3136,
+      "buy_price": 24.04,
+      "buy_date": "2026-10-07",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 20.8465,
+      "target_price": 24.9639,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Financial Services",
+        "entered_dc_num": 1,
+        "entered_score": 52
+      },
+      "_current_price": 24.04,
+      "chart_overlay": {
+        "daily_support_line": [
+          {
+            "date": "2026-08-20",
+            "price": 21.2719
+          }
+        ],
+        "daily_resistance_line": [
+          {
+            "date": "2026-09-17",
+            "price": 23.66
+          },
+          {
+            "date": "2026-10-07",
+            "price": 24.06
+          }
+        ],
+        "intermediate_support_line": [
+          {
+            "date": "2026-08-20",
+            "price": 21.2719
+          }
+        ],
+        "intermediate_resistance_line": [
+          {
+            "date": "2026-10-07",
+            "price": 24.06
+          }
+        ],
+        "daily_markers": {
+          "dcl0": {
+            "date": "2026-08-20",
+            "price": 21.2719
+          },
+          "hch": {
+            "date": "2026-09-17",
+            "price": 23.66
+          },
+          "dch": {
+            "date": "2026-10-07",
+            "price": 24.06
+          }
+        },
+        "intermediate_markers": {
+          "dcl0": {
+            "date": "2026-08-20",
+            "price": 21.2719
+          },
+          "dch": {
+            "date": "2026-10-07",
+            "price": 24.06
+          }
+        },
+        "entry_price": 24.04,
+        "stop_price": 20.8465,
+        "target_price": 24.9639
       }
     }
   ],
@@ -1025,6 +1110,10 @@
           {
             "date": "2026-10-06",
             "price": 243.37
+          },
+          {
+            "date": "2026-10-07",
+            "price": 243.7925
           }
         ],
         "daily_markers": {
@@ -1175,8 +1264,8 @@
             "price": 17.3242
           },
           {
-            "date": "2026-10-06",
-            "price": 18.0392
+            "date": "2026-10-07",
+            "price": 18.0478
           }
         ],
         "intermediate_resistance_line": [
@@ -1189,8 +1278,8 @@
             "price": 25.59
           },
           {
-            "date": "2026-10-06",
-            "price": 25.7373
+            "date": "2026-10-07",
+            "price": 25.7741
           }
         ],
         "daily_markers": {
@@ -1383,8 +1472,8 @@
   ],
   "drawdown": {
     "realized_pnl": 11.25,
-    "unrealized_pnl": 41.42,
-    "total_pnl": 52.67,
+    "unrealized_pnl": 38.84,
+    "total_pnl": 50.09,
     "drawdown_pct": 0.0,
     "halted": false
   },
@@ -1392,6 +1481,16 @@
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": []
+    "opened": [
+      {
+        "ticker": "QBE.AX",
+        "entry_price": 24.04,
+        "shares": 31.3136,
+        "position_cost": 752.78,
+        "sector": "Financial Services",
+        "stop_price": 20.8465,
+        "target_price": 24.9639
+      }
+    ]
   }
 }

@@ -1,128 +1,72 @@
 {
-  "generated_at": "2026-10-06T16:20:49",
+  "generated_at": "2026-10-07T17:03:38",
   "watchlist_count": 32,
   "candidates": [
     {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "price": 241.1,
-      "sector": "Technology",
-      "zen_score": 92,
+      "ticker": "QBE.AX",
+      "name": "QBE Insurance Group Limited",
+      "price": 24.04,
+      "sector": "Financial Services",
+      "zen_score": 85,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 8,
+        "consecutive_bars": 4,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 240.1,
-        "support": 208.93
+        "resistance": 23.86,
+        "support": 21.8
       },
-      "stop_price": 230.3643,
-      "target_price": 272.27,
-      "reward_risk": 2.9,
+      "stop_price": 23.1093,
+      "target_price": 26.1,
+      "reward_risk": 2.21,
       "position_size": 2000.0,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 8 bars",
-        "Breakout above 20-bar high ($240.1)",
-        "Reward:risk 2.9:1 (meets 2.0:1 minimum)"
+        "Heiken-Ashi trend BULLISH for 4 bars",
+        "Breakout above 20-bar high ($23.86)",
+        "Reward:risk 2.21:1 (meets 2.0:1 minimum)"
       ],
       "rank": 1,
-      "paper_trade_status": "ALREADY_OPEN"
-    },
-    {
-      "ticker": "TEA.AX",
-      "name": "Tasmea Limited",
-      "price": 11.31,
-      "sector": "Industrials",
-      "zen_score": 88,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 6,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 11.21,
-        "support": 8.6308
-      },
-      "stop_price": 10.302,
-      "target_price": 13.8892,
-      "reward_risk": 2.56,
-      "position_size": 1122.02,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 6 bars",
-        "Breakout above 20-bar high ($11.21)",
-        "Reward:risk 2.56:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 2,
       "paper_trade_status": "OPENED_THIS_RUN"
     }
   ],
   "avoid_alerts": [
     {
-      "ticker": "GMD.AX",
-      "name": "Genesis Minerals Limited",
-      "price": 7.07,
-      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
+      "ticker": "NXT.AX",
+      "name": "NEXTDC Limited",
+      "price": 10.23,
+      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
     },
     {
       "ticker": "MMI.AX",
       "name": "Metro Mining Limited",
-      "price": 1.19,
-      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
+      "price": 1.175,
+      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
     },
     {
       "ticker": "MSB.AX",
       "name": "Mesoblast Limited",
-      "price": 1.965,
+      "price": 1.995,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "CU6.AX",
+      "name": "Clarity Pharmaceuticals Ltd",
+      "price": 1.95,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "IPX.AX",
       "name": "IperionX Limited",
-      "price": 2.4,
-      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
-    },
-    {
-      "ticker": "WDS.AX",
-      "name": "Woodside Energy Group Ltd",
-      "price": 31.24,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
-    },
-    {
-      "ticker": "NXT.AX",
-      "name": "NEXTDC Limited",
-      "price": 10.41,
-      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
+      "price": 2.35,
+      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
     }
   ],
   "open_trades": [
-    {
-      "ticker": "NVDA",
-      "shares": 8.4893,
-      "buy_price": 235.5899,
-      "buy_date": "2026-10-02",
-      "signal": "ZEN_BUY",
-      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($234.4976)",
-      "status": "open",
-      "type": "paper",
-      "stop_price": 225.2913,
-      "target_price": 261.1575,
-      "meta": {
-        "strategy": "zen_trading",
-        "sector": "Technology",
-        "entered_score": 88,
-        "entered_reward_risk": 2.48
-      },
-      "_current_price": 241.1
-    },
     {
       "ticker": "MSFT",
       "shares": 3.794,
@@ -140,7 +84,7 @@
         "entered_score": 87,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 532.1
+      "_current_price": 528.1429
     },
     {
       "ticker": "TEA.AX",
@@ -159,7 +103,26 @@
         "entered_score": 88,
         "entered_reward_risk": 2.56
       },
-      "_current_price": 11.31
+      "_current_price": 11.27
+    },
+    {
+      "ticker": "QBE.AX",
+      "shares": 83.1947,
+      "buy_price": 24.04,
+      "buy_date": "2026-10-07",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($23.86)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 23.1093,
+      "target_price": 26.1,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Financial Services",
+        "entered_score": 85,
+        "entered_reward_risk": 2.21
+      },
+      "_current_price": 24.04
     }
   ],
   "closed_trades": [
@@ -277,28 +240,57 @@
       "pnl": -60.15,
       "pnl_pct": -3.01,
       "close_reason": "TREND_REVERSAL"
+    },
+    {
+      "ticker": "NVDA",
+      "shares": 8.4893,
+      "buy_price": 235.5899,
+      "buy_date": "2026-10-02",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($234.4976)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 225.2913,
+      "target_price": 261.1575,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Technology",
+        "entered_score": 88,
+        "entered_reward_risk": 2.48
+      },
+      "sell_price": 237.275,
+      "sell_date": "2026-10-07",
+      "pnl": 14.31,
+      "pnl_pct": 0.72,
+      "close_reason": "TREND_REVERSAL"
     }
   ],
   "drawdown": {
-    "realized_pnl": -163.03,
-    "unrealized_pnl": 65.56,
-    "total_pnl": -97.47,
-    "drawdown_pct": 0.97,
+    "realized_pnl": -148.72,
+    "unrealized_pnl": -0.2,
+    "total_pnl": -148.92,
+    "drawdown_pct": 1.49,
     "halted": false
   },
   "macro_zone": "SELECTIVE",
   "macro_halted": false,
   "actions_this_run": {
-    "closed": [],
+    "closed": [
+      {
+        "ticker": "NVDA",
+        "reason": "TREND_REVERSAL",
+        "exit_price": 237.275
+      }
+    ],
     "opened": [
       {
-        "ticker": "TEA.AX",
-        "entry_price": 11.31,
-        "shares": 99.206,
-        "position_cost": 1122.02,
-        "sector": "Industrials",
-        "stop_price": 10.302,
-        "target_price": 13.8892
+        "ticker": "QBE.AX",
+        "entry_price": 24.04,
+        "shares": 83.1947,
+        "position_cost": 2000.0,
+        "sector": "Financial Services",
+        "stop_price": 23.1093,
+        "target_price": 26.1
       }
     ]
   }
