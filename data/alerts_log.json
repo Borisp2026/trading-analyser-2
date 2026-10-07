@@ -2077,5 +2077,54 @@
     "message": "Gap up +3.5% from previous close",
     "date": "2026-10-06",
     "time": "18:42:30"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -6.82% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-07",
+    "time": "01:54:57"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-07",
+    "time": "01:54:57"
+  },
+  {
+    "ticker": "MSB.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.33% from previous close",
+    "date": "2026-10-07",
+    "time": "01:54:59"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.06% from previous close",
+    "date": "2026-10-07",
+    "time": "01:54:59"
+  },
+  {
+    "ticker": "CMM.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.06% from previous close",
+    "date": "2026-10-07",
+    "time": "01:55:01"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "VOLUME_BREAKOUT_UP",
+    "message": "Volume spike 2.68x avg + price +1.57%",
+    "date": "2026-10-07",
+    "time": "01:55:02"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.28% from previous close",
+    "date": "2026-10-07",
+    "time": "01:55:03"
   }
 ]
