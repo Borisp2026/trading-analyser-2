@@ -2329,5 +2329,40 @@
     "message": "Gap down -4.62% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-10-08",
     "time": "19:04:44"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=68.3 \u2014 consider taking profit",
+    "date": "2026-10-08",
+    "time": "23:44:11"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +13.04% from previous close",
+    "date": "2026-10-08",
+    "time": "23:44:11"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-08",
+    "time": "23:44:13"
+  },
+  {
+    "ticker": "PNV.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=70.8 \u2014 consider taking profit",
+    "date": "2026-10-08",
+    "time": "23:44:16"
+  },
+  {
+    "ticker": "QBE.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=76.7 \u2014 consider taking profit",
+    "date": "2026-10-08",
+    "time": "23:44:20"
   }
 ]
