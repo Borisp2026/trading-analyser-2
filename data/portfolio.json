@@ -1615,7 +1615,7 @@
       "buy_date": "2026-10-06",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($11.21)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 10.302,
       "target_price": 13.8892,
@@ -1624,7 +1624,12 @@
         "sector": "Industrials",
         "entered_score": 88,
         "entered_reward_risk": 2.56
-      }
+      },
+      "sell_price": 10.5,
+      "sell_date": "2026-10-08",
+      "pnl": -80.36,
+      "pnl_pct": -7.16,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "QBE.AX",
@@ -1633,7 +1638,7 @@
       "buy_date": "2026-10-07",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 20.8465,
       "target_price": 24.9639,
@@ -1643,7 +1648,12 @@
         "sector": "Financial Services",
         "entered_dc_num": 1,
         "entered_score": 52
-      }
+      },
+      "sell_price": 24.37,
+      "sell_date": "2026-10-08",
+      "pnl": 10.33,
+      "pnl_pct": 1.37,
+      "close_reason": "FAILED_CYCLE"
     },
     {
       "ticker": "QBE.AX",
@@ -1662,9 +1672,28 @@
         "entered_score": 85,
         "entered_reward_risk": 2.21
       }
+    },
+    {
+      "ticker": "AAPL",
+      "shares": 1.401,
+      "buy_price": 339.42,
+      "buy_date": "2026-10-08",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 268.0438,
+      "target_price": 374.3395,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Technology",
+        "entered_dc_num": 3,
+        "entered_score": 80
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 9042.19976284805,
+  "paper_cash": 10371.44777484805,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

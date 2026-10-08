@@ -1,69 +1,69 @@
 {
-  "generated_at": "2026-10-07T17:03:38",
-  "watchlist_count": 32,
+  "generated_at": "2026-10-08T17:02:22",
+  "watchlist_count": 33,
   "candidates": [
     {
       "ticker": "QBE.AX",
       "name": "QBE Insurance Group Limited",
-      "price": 24.04,
+      "price": 24.37,
       "sector": "Financial Services",
-      "zen_score": 85,
+      "zen_score": 86,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 4,
+        "consecutive_bars": 5,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 23.86,
-        "support": 21.8
+        "resistance": 24.06,
+        "support": 21.81
       },
-      "stop_price": 23.1093,
-      "target_price": 26.1,
-      "reward_risk": 2.21,
+      "stop_price": 23.3821,
+      "target_price": 26.62,
+      "reward_risk": 2.28,
       "position_size": 2000.0,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 4 bars",
-        "Breakout above 20-bar high ($23.86)",
-        "Reward:risk 2.21:1 (meets 2.0:1 minimum)"
+        "Heiken-Ashi trend BULLISH for 5 bars",
+        "Breakout above 20-bar high ($24.06)",
+        "Reward:risk 2.28:1 (meets 2.0:1 minimum)"
       ],
       "rank": 1,
-      "paper_trade_status": "OPENED_THIS_RUN"
+      "paper_trade_status": "ALREADY_OPEN"
     }
   ],
   "avoid_alerts": [
     {
-      "ticker": "NXT.AX",
-      "name": "NEXTDC Limited",
-      "price": 10.23,
-      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
-    },
-    {
-      "ticker": "MMI.AX",
-      "name": "Metro Mining Limited",
-      "price": 1.175,
-      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
-    },
-    {
       "ticker": "MSB.AX",
       "name": "Mesoblast Limited",
-      "price": 1.995,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "price": 1.935,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+    },
+    {
+      "ticker": "NXT.AX",
+      "name": "NEXTDC Limited",
+      "price": 10.28,
+      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
     },
     {
       "ticker": "CU6.AX",
       "name": "Clarity Pharmaceuticals Ltd",
-      "price": 1.95,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 1.96,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "MMI.AX",
+      "name": "Metro Mining Limited",
+      "price": 1.18,
+      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
     },
     {
       "ticker": "IPX.AX",
       "name": "IperionX Limited",
-      "price": 2.35,
-      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
+      "price": 2.24,
+      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
     }
   ],
   "open_trades": [
@@ -84,26 +84,7 @@
         "entered_score": 87,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 528.1429
-    },
-    {
-      "ticker": "TEA.AX",
-      "shares": 99.206,
-      "buy_price": 11.31,
-      "buy_date": "2026-10-06",
-      "signal": "ZEN_BUY",
-      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($11.21)",
-      "status": "open",
-      "type": "paper",
-      "stop_price": 10.302,
-      "target_price": 13.8892,
-      "meta": {
-        "strategy": "zen_trading",
-        "sector": "Industrials",
-        "entered_score": 88,
-        "entered_reward_risk": 2.56
-      },
-      "_current_price": 11.27
+      "_current_price": 525.61
     },
     {
       "ticker": "QBE.AX",
@@ -122,7 +103,7 @@
         "entered_score": 85,
         "entered_reward_risk": 2.21
       },
-      "_current_price": 24.04
+      "_current_price": 24.37
     }
   ],
   "closed_trades": [
@@ -263,13 +244,36 @@
       "pnl": 14.31,
       "pnl_pct": 0.72,
       "close_reason": "TREND_REVERSAL"
+    },
+    {
+      "ticker": "TEA.AX",
+      "shares": 99.206,
+      "buy_price": 11.31,
+      "buy_date": "2026-10-06",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($11.21)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 10.302,
+      "target_price": 13.8892,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Industrials",
+        "entered_score": 88,
+        "entered_reward_risk": 2.56
+      },
+      "sell_price": 10.5,
+      "sell_date": "2026-10-08",
+      "pnl": -80.36,
+      "pnl_pct": -7.16,
+      "close_reason": "TREND_REVERSAL"
     }
   ],
   "drawdown": {
-    "realized_pnl": -148.72,
-    "unrealized_pnl": -0.2,
-    "total_pnl": -148.92,
-    "drawdown_pct": 1.49,
+    "realized_pnl": -229.08,
+    "unrealized_pnl": 21.61,
+    "total_pnl": -207.47,
+    "drawdown_pct": 2.07,
     "halted": false
   },
   "macro_zone": "SELECTIVE",
@@ -277,21 +281,11 @@
   "actions_this_run": {
     "closed": [
       {
-        "ticker": "NVDA",
+        "ticker": "TEA.AX",
         "reason": "TREND_REVERSAL",
-        "exit_price": 237.275
+        "exit_price": 10.5
       }
     ],
-    "opened": [
-      {
-        "ticker": "QBE.AX",
-        "entry_price": 24.04,
-        "shares": 83.1947,
-        "position_cost": 2000.0,
-        "sector": "Financial Services",
-        "stop_price": 23.1093,
-        "target_price": 26.1
-      }
-    ]
+    "opened": []
   }
 }
