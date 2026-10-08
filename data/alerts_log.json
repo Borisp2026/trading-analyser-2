@@ -2315,5 +2315,19 @@
     "message": "MACD bullish crossover on 5-min chart",
     "date": "2026-10-08",
     "time": "02:54:49"
+  },
+  {
+    "ticker": "AAPL",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=72.0 \u2014 consider taking profit",
+    "date": "2026-10-08",
+    "time": "19:04:44"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.62% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-08",
+    "time": "19:04:44"
   }
 ]
