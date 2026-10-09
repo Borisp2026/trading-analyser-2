@@ -1,16 +1,176 @@
 {
-  "generated_at": "2026-10-08 23:44",
+  "generated_at": "2026-10-09 03:05",
   "scanned_count": 75,
   "ideas": [
     {
+      "ticker": "A4N.AX",
+      "price": 0.545,
+      "vwap": 0.5427,
+      "vs": 0.4314,
+      "rsi": 50.0,
+      "mo": 0.005,
+      "buyZone": 0.5427,
+      "sellZone": 0.5558
+    },
+    {
       "ticker": "AAPL",
       "price": 340.42,
-      "vwap": 339.0001,
-      "vs": 0.4189,
+      "vwap": 339.0002,
+      "vs": 0.4188,
       "rsi": 63.7,
-      "mo": 0.29,
-      "buyZone": 339.0001,
+      "mo": 0.28,
+      "buyZone": 339.0002,
       "sellZone": 342.4141
+    },
+    {
+      "ticker": "ALU.AX",
+      "price": 0.445,
+      "vwap": 0.4438,
+      "vs": 0.2756,
+      "rsi": 50.0,
+      "mo": 0.005,
+      "buyZone": 0.4438,
+      "sellZone": 0.4588
+    },
+    {
+      "ticker": "CMM.AX",
+      "price": 14.525,
+      "vwap": 14.442,
+      "vs": 0.5748,
+      "rsi": 53.3,
+      "mo": 0.045,
+      "buyZone": 14.442,
+      "sellZone": 14.6807
+    },
+    {
+      "ticker": "DNL.AX",
+      "price": 4.07,
+      "vwap": 4.0557,
+      "vs": 0.3516,
+      "rsi": 66.7,
+      "mo": 0.005,
+      "buyZone": 4.0557,
+      "sellZone": 4.1029
+    },
+    {
+      "ticker": "GMD.AX",
+      "price": 7.185,
+      "vwap": 7.1431,
+      "vs": 0.5873,
+      "rsi": 63.2,
+      "mo": 0.065,
+      "buyZone": 7.1431,
+      "sellZone": 7.2836
+    },
+    {
+      "ticker": "GWA.AX",
+      "price": 2.025,
+      "vwap": 2.0083,
+      "vs": 0.8318,
+      "rsi": 50.0,
+      "mo": 0.025,
+      "buyZone": 2.0083,
+      "sellZone": 2.045
+    },
+    {
+      "ticker": "MMI.AX",
+      "price": 1.175,
+      "vwap": 1.1552,
+      "vs": 1.7118,
+      "rsi": 50.0,
+      "mo": 0.025,
+      "buyZone": 1.1552,
+      "sellZone": 1.189
+    },
+    {
+      "ticker": "NST.AX",
+      "price": 24.325,
+      "vwap": 24.1897,
+      "vs": 0.5591,
+      "rsi": 63.8,
+      "mo": 0.045,
+      "buyZone": 24.1897,
+      "sellZone": 24.5229
+    },
+    {
+      "ticker": "NWH.AX",
+      "price": 7.625,
+      "vwap": 7.5782,
+      "vs": 0.6175,
+      "rsi": 54.5,
+      "mo": 0.085,
+      "buyZone": 7.5782,
+      "sellZone": 7.6986
+    },
+    {
+      "ticker": "PGF.AX",
+      "price": 3.21,
+      "vwap": 3.199,
+      "vs": 0.3426,
+      "rsi": 62.5,
+      "mo": 0.01,
+      "buyZone": 3.199,
+      "sellZone": 3.2279
+    },
+    {
+      "ticker": "PNV.AX",
+      "price": 0.945,
+      "vwap": 0.9358,
+      "vs": 0.9849,
+      "rsi": 56.8,
+      "mo": 0.005,
+      "buyZone": 0.9358,
+      "sellZone": 0.9639
+    },
+    {
+      "ticker": "QBE.AX",
+      "price": 24.81,
+      "vwap": 24.7779,
+      "vs": 0.1297,
+      "rsi": 53.7,
+      "mo": 0.03,
+      "buyZone": 24.7779,
+      "sellZone": 24.9286
+    },
+    {
+      "ticker": "QML.AX",
+      "price": 0.077,
+      "vwap": 0.0759,
+      "vs": 1.4269,
+      "rsi": 50.0,
+      "mo": 0.003,
+      "buyZone": 0.0759,
+      "sellZone": 0.0792
+    },
+    {
+      "ticker": "SLS.AX",
+      "price": 2.74,
+      "vwap": 2.7142,
+      "vs": 0.9516,
+      "rsi": 63.2,
+      "mo": 0.04,
+      "buyZone": 2.7142,
+      "sellZone": 2.7843
+    },
+    {
+      "ticker": "SS1.AX",
+      "price": 0.905,
+      "vwap": 0.894,
+      "vs": 1.2291,
+      "rsi": 50.0,
+      "mo": 0.015,
+      "buyZone": 0.894,
+      "sellZone": 0.9158
+    },
+    {
+      "ticker": "TEA.AX",
+      "price": 10.51,
+      "vwap": 10.3486,
+      "vs": 1.5595,
+      "rsi": 60.2,
+      "mo": 0.04,
+      "buyZone": 10.3486,
+      "sellZone": 10.6857
     },
     {
       "ticker": "TSLA",
@@ -21,6 +181,26 @@
       "mo": 2.8446,
       "buyZone": 372.588,
       "sellZone": 378.0043
+    },
+    {
+      "ticker": "UNI.AX",
+      "price": 8.01,
+      "vwap": 7.9443,
+      "vs": 0.8274,
+      "rsi": 71.7,
+      "mo": 0.055,
+      "buyZone": 7.9443,
+      "sellZone": 8.0814
+    },
+    {
+      "ticker": "VTEK.AX",
+      "price": 69.09,
+      "vwap": 68.9891,
+      "vs": 0.1463,
+      "rsi": 52.3,
+      "mo": 0.12,
+      "buyZone": 68.9891,
+      "sellZone": 69.2643
     }
   ]
 }

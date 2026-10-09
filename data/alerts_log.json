@@ -2364,5 +2364,47 @@
     "message": "RSI overbought: RSI=76.7 \u2014 consider taking profit",
     "date": "2026-10-08",
     "time": "23:44:20"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.06% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-09",
+    "time": "03:04:57"
+  },
+  {
+    "ticker": "MSB.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.2% from previous close",
+    "date": "2026-10-09",
+    "time": "03:04:57"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-09",
+    "time": "03:04:57"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.27% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-09",
+    "time": "03:05:00"
+  },
+  {
+    "ticker": "WDS.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-09",
+    "time": "03:05:01"
+  },
+  {
+    "ticker": "QBE.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-09",
+    "time": "03:05:02"
   }
 ]
