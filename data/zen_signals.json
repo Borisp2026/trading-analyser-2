@@ -1,91 +1,109 @@
 {
-  "generated_at": "2026-10-08T17:02:22",
+  "generated_at": "2026-10-09T16:40:17",
   "watchlist_count": 33,
   "candidates": [
     {
       "ticker": "QBE.AX",
       "name": "QBE Insurance Group Limited",
-      "price": 24.37,
+      "price": 25.15,
       "sector": "Financial Services",
-      "zen_score": 86,
+      "zen_score": 88,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 5,
+        "consecutive_bars": 6,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 24.06,
-        "support": 21.81
+        "resistance": 24.68,
+        "support": 22.085
       },
-      "stop_price": 23.3821,
-      "target_price": 26.62,
-      "reward_risk": 2.28,
+      "stop_price": 24.0993,
+      "target_price": 27.745,
+      "reward_risk": 2.47,
       "position_size": 2000.0,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 5 bars",
-        "Breakout above 20-bar high ($24.06)",
-        "Reward:risk 2.28:1 (meets 2.0:1 minimum)"
+        "Heiken-Ashi trend BULLISH for 6 bars",
+        "Breakout above 20-bar high ($24.68)",
+        "Reward:risk 2.47:1 (meets 2.0:1 minimum)"
       ],
       "rank": 1,
       "paper_trade_status": "ALREADY_OPEN"
+    },
+    {
+      "ticker": "GWA.AX",
+      "name": "GWA Group Limited",
+      "price": 2.05,
+      "sector": "Industrials",
+      "zen_score": 84,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 4,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 2.04,
+        "support": 1.94
+      },
+      "stop_price": 1.9739,
+      "target_price": 2.2022,
+      "reward_risk": 2.0,
+      "position_size": 2000.0,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 4 bars",
+        "Breakout above 20-bar high ($2.04)",
+        "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 2,
+      "paper_trade_status": "OPENED_THIS_RUN"
     }
   ],
   "avoid_alerts": [
     {
-      "ticker": "MSB.AX",
-      "name": "Mesoblast Limited",
-      "price": 1.935,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
-    },
-    {
       "ticker": "NXT.AX",
       "name": "NEXTDC Limited",
-      "price": 10.28,
-      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
+      "price": 10.37,
+      "detail": "Heiken-Ashi trend BEARISH for 12 bars"
     },
     {
       "ticker": "CU6.AX",
       "name": "Clarity Pharmaceuticals Ltd",
-      "price": 1.96,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "price": 1.845,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+    },
+    {
+      "ticker": "SS1.AX",
+      "name": "Sun Silver Limited",
+      "price": 0.92,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "MMI.AX",
       "name": "Metro Mining Limited",
       "price": 1.18,
-      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 12 bars"
     },
     {
       "ticker": "IPX.AX",
       "name": "IperionX Limited",
-      "price": 2.24,
-      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
+      "price": 2.2,
+      "detail": "Heiken-Ashi trend BEARISH for 12 bars"
+    },
+    {
+      "ticker": "MSB.AX",
+      "name": "Mesoblast Limited",
+      "price": 2.0,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     }
   ],
   "open_trades": [
-    {
-      "ticker": "MSFT",
-      "shares": 3.794,
-      "buy_price": 527.15,
-      "buy_date": "2026-10-05",
-      "signal": "ZEN_BUY",
-      "reason": "Heiken-Ashi trend BULLISH for 7 bars; Breakout above 20-bar high ($522.85)",
-      "status": "open",
-      "type": "paper",
-      "stop_price": 502.8157,
-      "target_price": 575.8187,
-      "meta": {
-        "strategy": "zen_trading",
-        "sector": "Technology",
-        "entered_score": 87,
-        "entered_reward_risk": 2.0
-      },
-      "_current_price": 525.61
-    },
     {
       "ticker": "QBE.AX",
       "shares": 83.1947,
@@ -103,7 +121,26 @@
         "entered_score": 85,
         "entered_reward_risk": 2.21
       },
-      "_current_price": 24.37
+      "_current_price": 25.15
+    },
+    {
+      "ticker": "GWA.AX",
+      "shares": 975.6098,
+      "buy_price": 2.05,
+      "buy_date": "2026-10-09",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($2.04)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 1.9739,
+      "target_price": 2.2022,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Industrials",
+        "entered_score": 84,
+        "entered_reward_risk": 2.0
+      },
+      "_current_price": 2.05
     }
   ],
   "closed_trades": [
@@ -246,6 +283,29 @@
       "close_reason": "TREND_REVERSAL"
     },
     {
+      "ticker": "MSFT",
+      "shares": 3.794,
+      "buy_price": 527.15,
+      "buy_date": "2026-10-05",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 7 bars; Breakout above 20-bar high ($522.85)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 502.8157,
+      "target_price": 575.8187,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Technology",
+        "entered_score": 87,
+        "entered_reward_risk": 2.0
+      },
+      "sell_price": 534.895,
+      "sell_date": "2026-10-09",
+      "pnl": 29.38,
+      "pnl_pct": 1.47,
+      "close_reason": "TREND_REVERSAL"
+    },
+    {
       "ticker": "TEA.AX",
       "shares": 99.206,
       "buy_price": 11.31,
@@ -270,10 +330,10 @@
     }
   ],
   "drawdown": {
-    "realized_pnl": -229.08,
-    "unrealized_pnl": 21.61,
-    "total_pnl": -207.47,
-    "drawdown_pct": 2.07,
+    "realized_pnl": -199.7,
+    "unrealized_pnl": 92.35,
+    "total_pnl": -107.35,
+    "drawdown_pct": 1.07,
     "halted": false
   },
   "macro_zone": "SELECTIVE",
@@ -281,11 +341,21 @@
   "actions_this_run": {
     "closed": [
       {
-        "ticker": "TEA.AX",
+        "ticker": "MSFT",
         "reason": "TREND_REVERSAL",
-        "exit_price": 10.5
+        "exit_price": 534.895
       }
     ],
-    "opened": []
+    "opened": [
+      {
+        "ticker": "GWA.AX",
+        "entry_price": 2.05,
+        "shares": 975.6098,
+        "position_cost": 2000.0,
+        "sector": "Industrials",
+        "stop_price": 1.9739,
+        "target_price": 2.2022
+      }
+    ]
   }
 }
