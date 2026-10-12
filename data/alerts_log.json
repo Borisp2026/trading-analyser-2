@@ -2406,5 +2406,75 @@
     "message": "MACD bullish crossover on 5-min chart",
     "date": "2026-10-09",
     "time": "03:05:02"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=25.0 turning up",
+    "date": "2026-10-12",
+    "time": "03:20:38"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.91% from previous close",
+    "date": "2026-10-12",
+    "time": "03:20:39"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.81% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-12",
+    "time": "03:20:39"
+  },
+  {
+    "ticker": "MMI.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -23.14% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-12",
+    "time": "03:20:42"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.35% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-12",
+    "time": "03:20:43"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.9% from previous close",
+    "date": "2026-10-12",
+    "time": "03:20:44"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.86% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-12",
+    "time": "03:20:44"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.14% from previous close",
+    "date": "2026-10-12",
+    "time": "03:20:46"
+  },
+  {
+    "ticker": "QBE.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-12",
+    "time": "03:20:47"
+  },
+  {
+    "ticker": "IVV.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=68.2 \u2014 consider taking profit",
+    "date": "2026-10-12",
+    "time": "03:20:48"
   }
 ]
