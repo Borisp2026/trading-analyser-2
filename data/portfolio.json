@@ -1714,9 +1714,47 @@
         "entered_score": 84,
         "entered_reward_risk": 2.0
       }
+    },
+    {
+      "ticker": "APA.AX",
+      "shares": 67.7871,
+      "buy_price": 11.04,
+      "buy_date": "2026-10-12",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #1 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 9.5648,
+      "target_price": 11.812,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Utilities",
+        "entered_dc_num": 2,
+        "entered_score": 55
+      }
+    },
+    {
+      "ticker": "QBE.AX",
+      "shares": 23.1832,
+      "buy_price": 25.16,
+      "buy_date": "2026-10-12",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 20.8465,
+      "target_price": 24.9639,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Financial Services",
+        "entered_dc_num": 1,
+        "entered_score": 52
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 10400.83931484805,
+  "paper_cash": 9069.18041884805,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
