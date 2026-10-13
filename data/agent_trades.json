@@ -19373,7 +19373,7 @@
       }
     }
   ],
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "target_trades": 100,
   "started_at": "2026-07-05T11:02:50.033576",
   "stats": {
@@ -22453,5 +22453,6 @@
     "condition_total": 220
   },
   "today_date": "2026-10-13",
-  "today_start_capital": 9937.82
+  "today_start_capital": 9937.82,
+  "completed_at": "2026-10-13T19:40:21.281875"
 }
