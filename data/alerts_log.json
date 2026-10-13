@@ -2546,5 +2546,40 @@
     "message": "Gap down -9.29% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-10-13",
     "time": "02:40:42"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-13",
+    "time": "23:25:56"
+  },
+  {
+    "ticker": "MMI.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-13",
+    "time": "23:25:59"
+  },
+  {
+    "ticker": "STO.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=70.6 \u2014 consider taking profit",
+    "date": "2026-10-13",
+    "time": "23:26:01"
+  },
+  {
+    "ticker": "QBE.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-13",
+    "time": "23:26:02"
+  },
+  {
+    "ticker": "VTEK.AX",
+    "signal_type": "INTRADAY_BREAKOUT",
+    "message": "Breaking above 20-bar intraday high ($68.230)",
+    "date": "2026-10-13",
+    "time": "23:26:03"
   }
 ]
