@@ -1704,7 +1704,7 @@
       "buy_date": "2026-10-09",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($2.04)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 1.9739,
       "target_price": 2.2022,
@@ -1713,7 +1713,12 @@
         "sector": "Industrials",
         "entered_score": 84,
         "entered_reward_risk": 2.0
-      }
+      },
+      "sell_price": 2.01,
+      "sell_date": "2026-10-13",
+      "pnl": -39.02,
+      "pnl_pct": -1.95,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "APA.AX",
@@ -1741,7 +1746,7 @@
       "buy_date": "2026-10-12",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 20.8465,
       "target_price": 24.9639,
@@ -1751,10 +1756,33 @@
         "sector": "Financial Services",
         "entered_dc_num": 1,
         "entered_score": 52
+      },
+      "sell_price": 25.62,
+      "sell_date": "2026-10-13",
+      "pnl": 10.66,
+      "pnl_pct": 1.83,
+      "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "STO.AX",
+      "shares": 224.4669,
+      "buy_price": 8.91,
+      "buy_date": "2026-10-13",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 5 bars; Breakout above 20-bar high ($8.81)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 8.5507,
+      "target_price": 9.6286,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Energy",
+        "entered_score": 85,
+        "entered_reward_risk": 2.0
       }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 9069.18041884805,
+  "paper_cash": 9624.10962184805,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
