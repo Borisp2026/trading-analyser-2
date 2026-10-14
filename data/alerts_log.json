@@ -2581,5 +2581,40 @@
     "message": "Breaking above 20-bar intraday high ($68.230)",
     "date": "2026-10-13",
     "time": "23:26:03"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-14",
+    "time": "02:03:10"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-14",
+    "time": "02:03:11"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-14",
+    "time": "02:03:11"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.72% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-14",
+    "time": "02:03:11"
+  },
+  {
+    "ticker": "MMI.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.09% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-14",
+    "time": "02:03:13"
   }
 ]
