@@ -1,148 +1,73 @@
 {
-  "generated_at": "2026-10-13T17:12:16",
+  "generated_at": "2026-10-14T14:45:10",
   "watchlist_count": 33,
-  "candidates": [
-    {
-      "ticker": "QBE.AX",
-      "name": "QBE Insurance Group Limited",
-      "price": 25.62,
-      "sector": "Financial Services",
-      "zen_score": 90,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 8,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 25.16,
-        "support": 22.65
-      },
-      "stop_price": 24.5893,
-      "target_price": 28.13,
-      "reward_risk": 2.44,
-      "position_size": 2000.0,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 8 bars",
-        "Breakout above 20-bar high ($25.16)",
-        "Reward:risk 2.44:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 1,
-      "paper_trade_status": "ALREADY_OPEN"
-    },
-    {
-      "ticker": "STO.AX",
-      "name": "Santos Limited",
-      "price": 8.91,
-      "sector": "Energy",
-      "zen_score": 85,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 5,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 8.81,
-        "support": 8.35
-      },
-      "stop_price": 8.5507,
-      "target_price": 9.6286,
-      "reward_risk": 2.0,
-      "position_size": 2000.0,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 5 bars",
-        "Breakout above 20-bar high ($8.81)",
-        "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 2,
-      "paper_trade_status": "OPENED_THIS_RUN"
-    }
-  ],
+  "candidates": [],
   "avoid_alerts": [
     {
       "ticker": "EOS.AX",
       "name": "Electro Optic Systems Holdings Limited",
-      "price": 9.12,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "price": 9.29,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     },
     {
       "ticker": "GLN.AX",
       "name": "Galan Lithium Limited",
-      "price": 0.225,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
-    },
-    {
-      "ticker": "MMI.AX",
-      "name": "Metro Mining Limited",
-      "price": 0.905,
-      "detail": "Heiken-Ashi trend BEARISH for 14 bars"
-    },
-    {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 597.07,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 0.235,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     },
     {
       "ticker": "MIN.AX",
       "name": "Mineral Resources Limited",
-      "price": 45.81,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "ILU.AX",
-      "name": "Iluka Resources Limited",
-      "price": 5.32,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "NWH.AX",
-      "name": "NRW Holdings Limited",
-      "price": 7.29,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "AMP.AX",
-      "name": "AMP Limited",
-      "price": 2.46,
+      "price": 46.64,
       "detail": "Heiken-Ashi trend BEARISH for 5 bars"
-    },
-    {
-      "ticker": "AFG.AX",
-      "name": "Australian Finance Group Limited",
-      "price": 1.25,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "CU6.AX",
-      "name": "Clarity Pharmaceuticals Ltd",
-      "price": 1.8,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
     },
     {
       "ticker": "NXT.AX",
       "name": "NEXTDC Limited",
-      "price": 9.38,
-      "detail": "Heiken-Ashi trend BEARISH for 14 bars"
+      "price": 9.57,
+      "detail": "Heiken-Ashi trend BEARISH for 15 bars"
     },
     {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "price": 227.32,
+      "ticker": "ILU.AX",
+      "name": "Iluka Resources Limited",
+      "price": 5.37,
       "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "PLS.AX",
       "name": "PLS Group Limited",
-      "price": 3.08,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 3.17,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "price": 585.1151,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "MMI.AX",
+      "name": "Metro Mining Limited",
+      "price": 0.87,
+      "detail": "Heiken-Ashi trend BEARISH for 15 bars"
+    },
+    {
+      "ticker": "CU6.AX",
+      "name": "Clarity Pharmaceuticals Ltd",
+      "price": 1.825,
+      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
+    },
+    {
+      "ticker": "NWH.AX",
+      "name": "NRW Holdings Limited",
+      "price": 7.29,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "price": 223.91,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     }
   ],
   "open_trades": [
@@ -163,7 +88,7 @@
         "entered_score": 85,
         "entered_reward_risk": 2.21
       },
-      "_current_price": 25.62
+      "_current_price": 25.19
     },
     {
       "ticker": "STO.AX",
@@ -182,7 +107,7 @@
         "entered_score": 85,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 8.91
+      "_current_price": 9.03
     }
   ],
   "closed_trades": [
@@ -396,31 +321,15 @@
   ],
   "drawdown": {
     "realized_pnl": -238.72,
-    "unrealized_pnl": 131.45,
-    "total_pnl": -107.27,
-    "drawdown_pct": 1.07,
+    "unrealized_pnl": 122.61,
+    "total_pnl": -116.11,
+    "drawdown_pct": 1.16,
     "halted": false
   },
   "macro_zone": "SELECTIVE",
   "macro_halted": false,
   "actions_this_run": {
-    "closed": [
-      {
-        "ticker": "GWA.AX",
-        "reason": "TREND_REVERSAL",
-        "exit_price": 2.01
-      }
-    ],
-    "opened": [
-      {
-        "ticker": "STO.AX",
-        "entry_price": 8.91,
-        "shares": 224.4669,
-        "position_cost": 2000.0,
-        "sector": "Energy",
-        "stop_price": 8.5507,
-        "target_price": 9.6286
-      }
-    ]
+    "closed": [],
+    "opened": []
   }
 }
