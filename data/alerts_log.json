@@ -2616,5 +2616,33 @@
     "message": "Gap down -3.09% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-10-14",
     "time": "02:03:13"
+  },
+  {
+    "ticker": "AAPL",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=29.0 turning up",
+    "date": "2026-10-14",
+    "time": "17:41:26"
+  },
+  {
+    "ticker": "NVDA",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-14",
+    "time": "17:41:27"
+  },
+  {
+    "ticker": "NVDA",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.24% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-14",
+    "time": "17:41:27"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.62% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-14",
+    "time": "17:41:27"
   }
 ]
