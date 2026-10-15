@@ -1536,7 +1536,7 @@
       "buy_date": "2026-09-29",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 16.5134,
       "target_price": 28.2731,
@@ -1546,7 +1546,12 @@
         "sector": "Basic Materials",
         "entered_dc_num": 4,
         "entered_score": 72
-      }
+      },
+      "sell_price": 24.32,
+      "sell_date": "2026-10-15",
+      "pnl": 15.2,
+      "pnl_pct": 4.42,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "MSFT",
@@ -1780,9 +1785,46 @@
         "entered_score": 85,
         "entered_reward_risk": 2.0
       }
+    },
+    {
+      "ticker": "IOZ.AX",
+      "shares": 57.3066,
+      "buy_price": 34.9,
+      "buy_date": "2026-10-15",
+      "signal": "CYCLE_BUY",
+      "reason": "At/above 1st Daily Cycle HCL, trendline drawable; RIGHT-translated cycle (Daily Cycle #5 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 33.9325,
+      "target_price": 35.0123,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC1_HCL",
+        "sector": "Unknown",
+        "entered_dc_num": 1,
+        "entered_score": 45
+      }
+    },
+    {
+      "ticker": "APA.AX",
+      "shares": 178.731,
+      "buy_price": 11.19,
+      "buy_date": "2026-10-15",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 5 bars; Breakout above 20-bar high ($11.1)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 10.8536,
+      "target_price": 11.8628,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Utilities",
+        "entered_score": 85,
+        "entered_reward_risk": 2.0
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 9624.10962184805,
+  "paper_cash": 5982.9874718480505,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
