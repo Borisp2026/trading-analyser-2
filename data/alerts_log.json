@@ -3099,5 +3099,117 @@
     "message": "Volume spike 15.46x avg + price +2.74%",
     "date": "2026-10-15",
     "time": "23:11:49"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "VOLUME_BREAKOUT_UP",
+    "message": "Volume spike 8.88x avg + price +4.92%",
+    "date": "2026-10-16",
+    "time": "01:19:08"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.92% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:08"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "INTRADAY_BREAKOUT",
+    "message": "Breaking above 20-bar intraday high ($0.183)",
+    "date": "2026-10-16",
+    "time": "01:19:08"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.71% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:08"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +6.46% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:08"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.18% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:08"
+  },
+  {
+    "ticker": "AFG.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.63% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:08"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=72.8 \u2014 consider taking profit",
+    "date": "2026-10-16",
+    "time": "01:19:09"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.91% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:09"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=75.1 \u2014 consider taking profit",
+    "date": "2026-10-16",
+    "time": "01:19:09"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.56% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:09"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.56% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:11"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +6.0% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:11"
+  },
+  {
+    "ticker": "CMM.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.48% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:11"
+  },
+  {
+    "ticker": "SS1.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.88% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:11"
+  },
+  {
+    "ticker": "CAR.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.39% from previous close",
+    "date": "2026-10-16",
+    "time": "01:19:12"
   }
 ]
