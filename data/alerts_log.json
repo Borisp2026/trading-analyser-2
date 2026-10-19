@@ -3274,5 +3274,26 @@
     "message": "Gap down -4.19% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-10-19",
     "time": "02:26:37"
+  },
+  {
+    "ticker": "AAPL",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-19",
+    "time": "18:54:34"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-19",
+    "time": "18:54:35"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.89% from previous close",
+    "date": "2026-10-19",
+    "time": "18:54:35"
   }
 ]
