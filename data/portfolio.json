@@ -1835,7 +1835,7 @@
       "buy_date": "2026-10-16",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 20.8465,
       "target_price": 24.9639,
@@ -1845,10 +1845,89 @@
         "sector": "Financial Services",
         "entered_dc_num": 1,
         "entered_score": 52
+      },
+      "sell_price": 25.95,
+      "sell_date": "2026-10-19",
+      "pnl": 4.93,
+      "pnl_pct": 0.93,
+      "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "STO.AX",
+      "shares": 38.5805,
+      "buy_price": 9.32,
+      "buy_date": "2026-10-19",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 6.728,
+      "target_price": 9.9876,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Energy",
+        "entered_dc_num": 3,
+        "entered_score": 80
+      }
+    },
+    {
+      "ticker": "NST.AX",
+      "shares": 11.728,
+      "buy_price": 25.04,
+      "buy_date": "2026-10-19",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 16.5134,
+      "target_price": 28.2731,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Basic Materials",
+        "entered_dc_num": 4,
+        "entered_score": 72
+      }
+    },
+    {
+      "ticker": "CAR.AX",
+      "shares": 83.2293,
+      "buy_price": 24.03,
+      "buy_date": "2026-10-19",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 14 bars; Breakout above 20-bar high ($23.99)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 22.9064,
+      "target_price": 26.82,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Communication Services",
+        "entered_score": 92,
+        "entered_reward_risk": 2.48
+      }
+    },
+    {
+      "ticker": "WDS.AX",
+      "shares": 58.7717,
+      "buy_price": 34.03,
+      "buy_date": "2026-10-19",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 9 bars; Breakout above 20-bar high ($33.5)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 32.8271,
+      "target_price": 36.8,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Energy",
+        "entered_score": 90,
+        "entered_reward_risk": 2.3
       }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 7472.121834848051,
+  "paper_cash": 3352.4471598480504,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
