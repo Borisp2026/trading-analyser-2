@@ -3372,5 +3372,103 @@
     "message": "MACD bullish crossover on 5-min chart",
     "date": "2026-10-20",
     "time": "17:37:59"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-20",
+    "time": "23:32:41"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-20",
+    "time": "23:32:41"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-20",
+    "time": "23:32:42"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=7.4 turning up",
+    "date": "2026-10-20",
+    "time": "23:32:45"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -9.26% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-20",
+    "time": "23:32:45"
+  },
+  {
+    "ticker": "APA.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=75.7 \u2014 consider taking profit",
+    "date": "2026-10-20",
+    "time": "23:32:46"
+  },
+  {
+    "ticker": "GWA.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.43% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-20",
+    "time": "23:32:46"
+  },
+  {
+    "ticker": "PNV.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 4.75x avg + price -1.63% \u2014 selling pressure",
+    "date": "2026-10-20",
+    "time": "23:32:47"
+  },
+  {
+    "ticker": "AMP.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-20",
+    "time": "23:32:47"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.46% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-20",
+    "time": "23:32:48"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-20",
+    "time": "23:32:49"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.41% from previous close",
+    "date": "2026-10-20",
+    "time": "23:32:49"
+  },
+  {
+    "ticker": "WDS.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-20",
+    "time": "23:32:50"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.78% from previous close",
+    "date": "2026-10-20",
+    "time": "23:32:50"
   }
 ]
