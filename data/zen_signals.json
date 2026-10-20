@@ -1,253 +1,117 @@
 {
-  "generated_at": "2026-10-19T16:40:52",
+  "generated_at": "2026-10-20T14:33:05",
   "watchlist_count": 33,
   "candidates": [
     {
-      "ticker": "CAR.AX",
-      "name": "CAR Group Limited",
-      "price": 24.03,
-      "sector": "Communication Services",
-      "zen_score": 92,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 14,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 23.99,
-        "support": 21.2
-      },
-      "stop_price": 22.9064,
-      "target_price": 26.82,
-      "reward_risk": 2.48,
-      "position_size": 2000.0,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 14 bars",
-        "Breakout above 20-bar high ($23.99)",
-        "Reward:risk 2.48:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 1,
-      "paper_trade_status": "OPENED_THIS_RUN"
-    },
-    {
-      "ticker": "STO.AX",
-      "name": "Santos Limited",
-      "price": 9.32,
-      "sector": "Energy",
-      "zen_score": 91,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 9,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 9.24,
-        "support": 8.35
-      },
-      "stop_price": 8.955,
-      "target_price": 10.21,
-      "reward_risk": 2.44,
-      "position_size": 2000.0,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 9 bars",
-        "Breakout above 20-bar high ($9.24)",
-        "Reward:risk 2.44:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 2,
-      "paper_trade_status": "ALREADY_OPEN"
-    },
-    {
-      "ticker": "WDS.AX",
-      "name": "Woodside Energy Group Ltd",
-      "price": 34.03,
-      "sector": "Energy",
+      "ticker": "APA.AX",
+      "name": "APA Group",
+      "price": 11.46,
+      "sector": "Utilities",
       "zen_score": 90,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 9,
+        "consecutive_bars": 8,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 33.5,
-        "support": 30.73
-      },
-      "stop_price": 32.8271,
-      "target_price": 36.8,
-      "reward_risk": 2.3,
-      "position_size": 2000.0,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 9 bars",
-        "Breakout above 20-bar high ($33.5)",
-        "Reward:risk 2.3:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 3,
-      "paper_trade_status": "OPENED_THIS_RUN"
-    },
-    {
-      "ticker": "APA.AX",
-      "name": "APA Group",
-      "price": 11.31,
-      "sector": "Utilities",
-      "zen_score": 89,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 7,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 11.3,
+        "resistance": 11.33,
         "support": 10.49
       },
-      "stop_price": 10.9857,
-      "target_price": 12.12,
-      "reward_risk": 2.5,
+      "stop_price": 11.1314,
+      "target_price": 12.3,
+      "reward_risk": 2.56,
       "position_size": 2000.0,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 7 bars",
-        "Breakout above 20-bar high ($11.3)",
-        "Reward:risk 2.5:1 (meets 2.0:1 minimum)"
+        "Heiken-Ashi trend BULLISH for 8 bars",
+        "Breakout above 20-bar high ($11.33)",
+        "Reward:risk 2.56:1 (meets 2.0:1 minimum)"
       ],
-      "rank": 4,
+      "rank": 1,
       "paper_trade_status": "ALREADY_OPEN"
-    },
-    {
-      "ticker": "AFG.AX",
-      "name": "Australian Finance Group Limited",
-      "price": 1.42,
-      "sector": "Financial Services",
-      "zen_score": 84,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 4,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 1.3825,
-        "support": 1.2375
-      },
-      "stop_price": 1.3336,
-      "target_price": 1.5928,
-      "reward_risk": 2.0,
-      "position_size": 1643.52,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 4 bars",
-        "Breakout above 20-bar high ($1.3825)",
-        "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 5,
-      "paper_trade_status": "NOT_OPENED"
     }
   ],
   "avoid_alerts": [
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 533.24,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 547.07,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
+      "price": 531.47,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "GLN.AX",
       "name": "Galan Lithium Limited",
       "price": 0.225,
-      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
-    },
-    {
-      "ticker": "MMI.AX",
-      "name": "Metro Mining Limited",
-      "price": 0.83,
-      "detail": "Heiken-Ashi trend BEARISH for 18 bars"
-    },
-    {
-      "ticker": "MIN.AX",
-      "name": "Mineral Resources Limited",
-      "price": 44.54,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
-    },
-    {
-      "ticker": "PLS.AX",
-      "name": "PLS Group Limited",
-      "price": 2.9,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
-    },
-    {
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "price": 368.935,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
     },
     {
       "ticker": "NWH.AX",
       "name": "NRW Holdings Limited",
-      "price": 6.93,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
+      "price": 6.7,
+      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "price": 546.3823,
+      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
     },
     {
       "ticker": "TEA.AX",
       "name": "Tasmea Limited",
-      "price": 9.31,
+      "price": 9.15,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+    },
+    {
+      "ticker": "MSB.AX",
+      "name": "Mesoblast Limited",
+      "price": 1.76,
       "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "PLS.AX",
+      "name": "PLS Group Limited",
+      "price": 2.93,
+      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
     },
     {
       "ticker": "NXT.AX",
       "name": "NEXTDC Limited",
       "price": 9.18,
-      "detail": "Heiken-Ashi trend BEARISH for 18 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 19 bars"
+    },
+    {
+      "ticker": "MMI.AX",
+      "name": "Metro Mining Limited",
+      "price": 0.82,
+      "detail": "Heiken-Ashi trend BEARISH for 19 bars"
+    },
+    {
+      "ticker": "ILU.AX",
+      "name": "Iluka Resources Limited",
+      "price": 5.19,
+      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 218.0414,
+      "price": 217.865,
+      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
+    },
+    {
+      "ticker": "MIN.AX",
+      "name": "Mineral Resources Limited",
+      "price": 45.46,
       "detail": "Heiken-Ashi trend BEARISH for 9 bars"
     },
     {
       "ticker": "IPX.AX",
       "name": "IperionX Limited",
-      "price": 2.04,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
-    },
-    {
-      "ticker": "ILU.AX",
-      "name": "Iluka Resources Limited",
-      "price": 5.23,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
-    },
-    {
-      "ticker": "TLX.AX",
-      "name": "Telix Pharmaceuticals Limited",
-      "price": 15.4,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
-    },
-    {
-      "ticker": "MSB.AX",
-      "name": "Mesoblast Limited",
-      "price": 1.77,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 1.96,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     }
   ],
   "open_trades": [
@@ -268,7 +132,7 @@
         "entered_score": 85,
         "entered_reward_risk": 2.21
       },
-      "_current_price": 25.95
+      "_current_price": 25.91
     },
     {
       "ticker": "STO.AX",
@@ -287,7 +151,7 @@
         "entered_score": 85,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 9.32
+      "_current_price": 9.26
     },
     {
       "ticker": "APA.AX",
@@ -306,7 +170,7 @@
         "entered_score": 85,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 11.31
+      "_current_price": 11.46
     },
     {
       "ticker": "CAR.AX",
@@ -325,7 +189,7 @@
         "entered_score": 92,
         "entered_reward_risk": 2.48
       },
-      "_current_price": 24.03
+      "_current_price": 24.07
     },
     {
       "ticker": "WDS.AX",
@@ -344,7 +208,7 @@
         "entered_score": 90,
         "entered_reward_risk": 2.3
       },
-      "_current_price": 34.03
+      "_current_price": 33.82
     }
   ],
   "closed_trades": [
@@ -558,8 +422,8 @@
   ],
   "drawdown": {
     "realized_pnl": -238.72,
-    "unrealized_pnl": 272.38,
-    "total_pnl": 33.66,
+    "unrealized_pnl": 273.38,
+    "total_pnl": 34.66,
     "drawdown_pct": 0.0,
     "halted": false
   },
@@ -567,25 +431,6 @@
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": [
-      {
-        "ticker": "CAR.AX",
-        "entry_price": 24.03,
-        "shares": 83.2293,
-        "position_cost": 2000.0,
-        "sector": "Communication Services",
-        "stop_price": 22.9064,
-        "target_price": 26.82
-      },
-      {
-        "ticker": "WDS.AX",
-        "entry_price": 34.03,
-        "shares": 58.7717,
-        "position_cost": 2000.0,
-        "sector": "Energy",
-        "stop_price": 32.8271,
-        "target_price": 36.8
-      }
-    ]
+    "opened": []
   }
 }
