@@ -1,33 +1,5 @@
 [
   {
-    "ticker": "TSLA",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +4.94% from previous close",
-    "date": "2026-08-31",
-    "time": "16:59:07"
-  },
-  {
-    "ticker": "TSLA",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.01% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-01",
-    "time": "17:24:43"
-  },
-  {
-    "ticker": "AAPL",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-02",
-    "time": "16:48:39"
-  },
-  {
-    "ticker": "NVDA",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.97% from previous close",
-    "date": "2026-09-02",
-    "time": "16:48:39"
-  },
-  {
     "ticker": "MSFT",
     "signal_type": "GAP_UP",
     "message": "Gap up +3.1% from previous close",
@@ -3470,5 +3442,61 @@
     "message": "Gap up +3.78% from previous close",
     "date": "2026-10-20",
     "time": "23:32:50"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-21",
+    "time": "02:00:44"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-21",
+    "time": "02:00:45"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -8.47% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-21",
+    "time": "02:00:47"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -38.34% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-21",
+    "time": "02:00:47"
+  },
+  {
+    "ticker": "GWA.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 2.69x avg + price -1.96% \u2014 selling pressure",
+    "date": "2026-10-21",
+    "time": "02:00:48"
+  },
+  {
+    "ticker": "MMI.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.05% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-21",
+    "time": "02:00:48"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.74% from previous close",
+    "date": "2026-10-21",
+    "time": "02:00:51"
+  },
+  {
+    "ticker": "IOZ.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-21",
+    "time": "02:00:53"
   }
 ]
