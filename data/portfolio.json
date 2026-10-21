@@ -1690,7 +1690,7 @@
       "buy_date": "2026-10-08",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 268.0438,
       "target_price": 374.3395,
@@ -1700,7 +1700,12 @@
         "sector": "Technology",
         "entered_dc_num": 3,
         "entered_score": 80
-      }
+      },
+      "sell_price": 340.1,
+      "sell_date": "2026-10-21",
+      "pnl": 0.95,
+      "pnl_pct": 0.2,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "GWA.AX",
@@ -1925,7 +1930,7 @@
       "buy_date": "2026-10-19",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 9 bars; Breakout above 20-bar high ($33.5)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 32.8271,
       "target_price": 36.8,
@@ -1934,7 +1939,12 @@
         "sector": "Energy",
         "entered_score": 90,
         "entered_reward_risk": 2.3
-      }
+      },
+      "sell_price": 33.96,
+      "sell_date": "2026-10-21",
+      "pnl": -4.11,
+      "pnl_pct": -0.21,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "WDS.AX",
@@ -1957,6 +1967,6 @@
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 3563.5173678480505,
+  "paper_cash": 6035.884399848051,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
