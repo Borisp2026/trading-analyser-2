@@ -1,19 +1,5 @@
 [
   {
-    "ticker": "MSFT",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.1% from previous close",
-    "date": "2026-09-03",
-    "time": "16:38:19"
-  },
-  {
-    "ticker": "TSLA",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +6.89% from previous close",
-    "date": "2026-09-03",
-    "time": "16:38:19"
-  },
-  {
     "ticker": "AMD",
     "signal_type": "MACD_BULLISH_CROSS",
     "message": "MACD bullish crossover on 5-min chart",
@@ -3498,5 +3484,19 @@
     "message": "MACD bullish crossover on 5-min chart",
     "date": "2026-10-21",
     "time": "02:00:53"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.54% from previous close",
+    "date": "2026-10-21",
+    "time": "17:47:25"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.51% from previous close",
+    "date": "2026-10-21",
+    "time": "17:47:25"
   }
 ]

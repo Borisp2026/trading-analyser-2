@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21 07:18",
+  "generated_at": "2026-10-21 17:47",
   "scanned_count": 78,
   "ideas": [
     {
@@ -21,6 +21,16 @@
       "mo": 0.005,
       "buyZone": 0.4123,
       "sellZone": 0.4325
+    },
+    {
+      "ticker": "AMD",
+      "price": 553.53,
+      "vwap": 546.8294,
+      "vs": 1.2254,
+      "rsi": 72.7,
+      "mo": 0.725,
+      "buyZone": 546.8294,
+      "sellZone": 559.2888
     },
     {
       "ticker": "CAR.AX",
@@ -101,16 +111,6 @@
       "mo": 0.003,
       "buyZone": 1.8462,
       "sellZone": 1.8924
-    },
-    {
-      "ticker": "MSFT",
-      "price": 532.13,
-      "vwap": 530.9289,
-      "vs": 0.2262,
-      "rsi": 49.9,
-      "mo": 0.4916,
-      "buyZone": 530.9289,
-      "sellZone": 534.5713
     },
     {
       "ticker": "NWH.AX",
