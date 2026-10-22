@@ -1,19 +1,5 @@
 [
   {
-    "ticker": "IPX.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -6.43% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-10",
-    "time": "00:43:19"
-  },
-  {
-    "ticker": "CU6.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=27.6 turning up",
-    "date": "2026-09-10",
-    "time": "00:43:20"
-  },
-  {
     "ticker": "CU6.AX",
     "signal_type": "GAP_DOWN",
     "message": "Gap down -3.18% \u2014 possible reversal opportunity OR continued sell",
@@ -3498,5 +3484,19 @@
     "message": "MACD bullish crossover on 5-min chart",
     "date": "2026-10-22",
     "time": "03:42:22"
+  },
+  {
+    "ticker": "NVDA",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.1% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "17:44:38"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -7.37% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "17:44:38"
   }
 ]
