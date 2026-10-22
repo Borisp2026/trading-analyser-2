@@ -1,145 +1,5 @@
 [
   {
-    "ticker": "CU6.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.18% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-10",
-    "time": "00:43:20"
-  },
-  {
-    "ticker": "MSB.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=31.2 turning up",
-    "date": "2026-09-10",
-    "time": "00:43:20"
-  },
-  {
-    "ticker": "PNV.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.33% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-10",
-    "time": "00:43:21"
-  },
-  {
-    "ticker": "ILU.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=19.6 turning up",
-    "date": "2026-09-10",
-    "time": "00:43:21"
-  },
-  {
-    "ticker": "ILU.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.04% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-10",
-    "time": "00:43:21"
-  },
-  {
-    "ticker": "CAR.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=19.6 turning up",
-    "date": "2026-09-10",
-    "time": "00:43:23"
-  },
-  {
-    "ticker": "VAS.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=12.8 turning up",
-    "date": "2026-09-10",
-    "time": "00:43:23"
-  },
-  {
-    "ticker": "IVV.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=29.8 turning up",
-    "date": "2026-09-10",
-    "time": "00:43:24"
-  },
-  {
-    "ticker": "VGS.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=24.5 turning up",
-    "date": "2026-09-10",
-    "time": "00:43:24"
-  },
-  {
-    "ticker": "MIN.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.15% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-10",
-    "time": "05:19:30"
-  },
-  {
-    "ticker": "AFG.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-10",
-    "time": "05:19:31"
-  },
-  {
-    "ticker": "NXT.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.44% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-10",
-    "time": "05:19:33"
-  },
-  {
-    "ticker": "PNV.AX",
-    "signal_type": "VOLUME_SELLOFF",
-    "message": "Volume spike 2.91x avg + price -4.76% \u2014 selling pressure",
-    "date": "2026-09-10",
-    "time": "05:19:36"
-  },
-  {
-    "ticker": "TEA.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.54% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-10",
-    "time": "05:19:37"
-  },
-  {
-    "ticker": "PLS.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.49% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-10",
-    "time": "05:19:38"
-  },
-  {
-    "ticker": "CAR.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=71.0 \u2014 consider taking profit",
-    "date": "2026-09-10",
-    "time": "05:19:40"
-  },
-  {
-    "ticker": "AAPL",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.23% from previous close",
-    "date": "2026-09-10",
-    "time": "19:21:42"
-  },
-  {
-    "ticker": "AMD",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.14% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-10",
-    "time": "19:21:43"
-  },
-  {
-    "ticker": "TOR.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -4.55% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-11",
-    "time": "01:15:56"
-  },
-  {
-    "ticker": "MIN.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-11",
-    "time": "01:15:57"
-  },
-  {
     "ticker": "IPX.AX",
     "signal_type": "GAP_DOWN",
     "message": "Gap down -5.09% \u2014 possible reversal opportunity OR continued sell",
@@ -3498,5 +3358,145 @@
     "message": "Gap down -7.37% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-10-22",
     "time": "17:44:38"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=24.0 turning up",
+    "date": "2026-10-22",
+    "time": "23:47:01"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.56% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "23:47:01"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 9.89x avg + price -5.56% \u2014 selling pressure",
+    "date": "2026-10-22",
+    "time": "23:47:01"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.56% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "23:47:01"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.81% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "23:47:02"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-22",
+    "time": "23:47:02"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 2.96x avg + price -4.44% \u2014 selling pressure",
+    "date": "2026-10-22",
+    "time": "23:47:02"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=21.8 turning up",
+    "date": "2026-10-22",
+    "time": "23:47:03"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=29.7 turning up",
+    "date": "2026-10-22",
+    "time": "23:47:03"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.57% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "23:47:03"
+  },
+  {
+    "ticker": "MMI.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=28.3 turning up",
+    "date": "2026-10-22",
+    "time": "23:47:04"
+  },
+  {
+    "ticker": "MMI.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.33% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "23:47:04"
+  },
+  {
+    "ticker": "NWH.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=23.1 turning up",
+    "date": "2026-10-22",
+    "time": "23:47:04"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.08% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "23:47:05"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.34% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "23:47:05"
+  },
+  {
+    "ticker": "CMM.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.83% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "23:47:05"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.21% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "23:47:06"
+  },
+  {
+    "ticker": "SS1.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.18% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-22",
+    "time": "23:47:06"
+  },
+  {
+    "ticker": "WDS.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=31.1 turning up",
+    "date": "2026-10-22",
+    "time": "23:47:06"
+  },
+  {
+    "ticker": "STO.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=15.1 turning up",
+    "date": "2026-10-22",
+    "time": "23:47:07"
   }
 ]
