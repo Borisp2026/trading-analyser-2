@@ -1785,7 +1785,7 @@
       "buy_date": "2026-10-13",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 5 bars; Breakout above 20-bar high ($8.81)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 8.5507,
       "target_price": 9.6286,
@@ -1794,7 +1794,12 @@
         "sector": "Energy",
         "entered_score": 85,
         "entered_reward_risk": 2.0
-      }
+      },
+      "sell_price": 9.05,
+      "sell_date": "2026-10-23",
+      "pnl": 31.43,
+      "pnl_pct": 1.57,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "IOZ.AX",
@@ -1982,7 +1987,7 @@
       "buy_date": "2026-10-22",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 20.8465,
       "target_price": 24.9639,
@@ -1992,10 +1997,15 @@
         "sector": "Financial Services",
         "entered_dc_num": 1,
         "entered_score": 42
-      }
+      },
+      "sell_price": 26.5,
+      "sell_date": "2026-10-23",
+      "pnl": 2.17,
+      "pnl_pct": 0.45,
+      "close_reason": "FAILED_CYCLE"
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 7221.450776848051,
+  "paper_cash": 9731.773621848051,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
