@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26 18:57",
+  "generated_at": "2026-10-26 23:00",
   "scanned_count": 78,
   "ideas": [
     {
@@ -41,16 +41,6 @@
       "mo": 0.008,
       "buyZone": 1.4248,
       "sellZone": 1.4386
-    },
-    {
-      "ticker": "AMD",
-      "price": 531.91,
-      "vwap": 527.9616,
-      "vs": 0.7478,
-      "rsi": 52.5,
-      "mo": 1.68,
-      "buyZone": 527.9616,
-      "sellZone": 536.5329
     },
     {
       "ticker": "AMP.AX",
@@ -213,6 +203,16 @@
       "sellZone": 0.7141
     },
     {
+      "ticker": "MSFT",
+      "price": 532.75,
+      "vwap": 530.4122,
+      "vs": 0.4408,
+      "rsi": 65.3,
+      "mo": 0.2875,
+      "buyZone": 530.4122,
+      "sellZone": 534.922
+    },
+    {
       "ticker": "NDQ.AX",
       "price": 59.98,
       "vwap": 59.91,
@@ -261,46 +261,6 @@
       "mo": 0.001,
       "buyZone": 0.0622,
       "sellZone": 0.0648
-    },
-    {
-      "ticker": "TEA.AX",
-      "price": 8.67,
-      "vwap": 8.6648,
-      "vs": 0.0599,
-      "rsi": 52.7,
-      "mo": 0.01,
-      "buyZone": 8.6648,
-      "sellZone": 8.7843
-    },
-    {
-      "ticker": "TNE.AX",
-      "price": 32.95,
-      "vwap": 32.7988,
-      "vs": 0.4609,
-      "rsi": 74.5,
-      "mo": 0.3,
-      "buyZone": 32.7988,
-      "sellZone": 33.1243
-    },
-    {
-      "ticker": "TWR.AX",
-      "price": 1.695,
-      "vwap": 1.6851,
-      "vs": 0.5863,
-      "rsi": 50.0,
-      "mo": 0.008,
-      "buyZone": 1.6851,
-      "sellZone": 1.7142
-    },
-    {
-      "ticker": "VGS.AX",
-      "price": 160.38,
-      "vwap": 160.1701,
-      "vs": 0.1311,
-      "rsi": 71.4,
-      "mo": 0.08,
-      "buyZone": 160.1701,
-      "sellZone": 160.6114
     }
   ]
 }
