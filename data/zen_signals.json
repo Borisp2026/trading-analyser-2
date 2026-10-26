@@ -1,260 +1,101 @@
 {
-  "generated_at": "2026-10-23T14:30:44",
+  "generated_at": "2026-10-26T16:21:16",
   "watchlist_count": 33,
-  "candidates": [
-    {
-      "ticker": "QBE.AX",
-      "name": "QBE Insurance Group Limited",
-      "price": 26.5,
-      "sector": "Financial Services",
-      "zen_score": 99,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 16,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 26.39,
-        "support": 22.7
-      },
-      "stop_price": 25.5286,
-      "target_price": 30.19,
-      "reward_risk": 3.8,
-      "position_size": 2000.0,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 16 bars",
-        "Breakout above 20-bar high ($26.39)",
-        "Reward:risk 3.8:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 1,
-      "paper_trade_status": "ALREADY_OPEN"
-    }
-  ],
+  "candidates": [],
   "avoid_alerts": [
-    {
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "price": 522.28,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
-    },
     {
       "ticker": "GLN.AX",
       "name": "Galan Lithium Limited",
-      "price": 0.2,
-      "detail": "Heiken-Ashi trend BEARISH for 13 bars"
+      "price": 0.205,
+      "detail": "Heiken-Ashi trend BEARISH for 14 bars"
     },
     {
       "ticker": "SS1.AX",
       "name": "Sun Silver Limited",
-      "price": 0.735,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "GMD.AX",
-      "name": "Genesis Minerals Limited",
-      "price": 6.16,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "NWH.AX",
-      "name": "NRW Holdings Limited",
-      "price": 6.02,
-      "detail": "Heiken-Ashi trend BEARISH for 12 bars"
-    },
-    {
-      "ticker": "CMM.AX",
-      "name": "Capricorn Metals Ltd",
-      "price": 12.39,
+      "price": 0.75,
       "detail": "Heiken-Ashi trend BEARISH for 5 bars"
-    },
-    {
-      "ticker": "IPX.AX",
-      "name": "IperionX Limited",
-      "price": 1.775,
-      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
     },
     {
       "ticker": "CU6.AX",
       "name": "Clarity Pharmaceuticals Ltd",
-      "price": 1.57,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 1.575,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
-      "ticker": "ILU.AX",
-      "name": "Iluka Resources Limited",
-      "price": 4.96,
-      "detail": "Heiken-Ashi trend BEARISH for 12 bars"
+      "ticker": "NWH.AX",
+      "name": "NRW Holdings Limited",
+      "price": 5.98,
+      "detail": "Heiken-Ashi trend BEARISH for 13 bars"
     },
     {
-      "ticker": "PLS.AX",
-      "name": "PLS Group Limited",
-      "price": 2.62,
-      "detail": "Heiken-Ashi trend BEARISH for 12 bars"
+      "ticker": "GMD.AX",
+      "name": "Genesis Minerals Limited",
+      "price": 6.38,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "TEA.AX",
       "name": "Tasmea Limited",
-      "price": 8.53,
-      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
+      "price": 8.67,
+      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
+    },
+    {
+      "ticker": "CMM.AX",
+      "name": "Capricorn Metals Ltd",
+      "price": 12.84,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     },
     {
       "ticker": "NXT.AX",
       "name": "NEXTDC Limited",
-      "price": 5.61,
-      "detail": "Heiken-Ashi trend BEARISH for 22 bars"
+      "price": 5.54,
+      "detail": "Heiken-Ashi trend BEARISH for 23 bars"
+    },
+    {
+      "ticker": "TLX.AX",
+      "name": "Telix Pharmaceuticals Limited",
+      "price": 12.85,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "PLS.AX",
+      "name": "PLS Group Limited",
+      "price": 2.84,
+      "detail": "Heiken-Ashi trend BEARISH for 13 bars"
+    },
+    {
+      "ticker": "IPX.AX",
+      "name": "IperionX Limited",
+      "price": 1.805,
+      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
+    },
+    {
+      "ticker": "ILU.AX",
+      "name": "Iluka Resources Limited",
+      "price": 5.07,
+      "detail": "Heiken-Ashi trend BEARISH for 13 bars"
+    },
+    {
+      "ticker": "PNV.AX",
+      "name": "PolyNovo Limited",
+      "price": 0.845,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "MMI.AX",
       "name": "Metro Mining Limited",
-      "price": 0.72,
-      "detail": "Heiken-Ashi trend BEARISH for 22 bars"
+      "price": 0.7,
+      "detail": "Heiken-Ashi trend BEARISH for 23 bars"
     },
     {
       "ticker": "TOR.AX",
       "name": "Torque Metals Limited",
       "price": 0.17,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "PNV.AX",
-      "name": "PolyNovo Limited",
-      "price": 0.88,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     }
   ],
-  "open_trades": [
-    {
-      "ticker": "QBE.AX",
-      "shares": 83.1947,
-      "buy_price": 24.04,
-      "buy_date": "2026-10-07",
-      "signal": "ZEN_BUY",
-      "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($23.86)",
-      "status": "open",
-      "type": "paper",
-      "stop_price": 23.1093,
-      "target_price": 26.1,
-      "meta": {
-        "strategy": "zen_trading",
-        "sector": "Financial Services",
-        "entered_score": 85,
-        "entered_reward_risk": 2.21
-      },
-      "_current_price": 26.5
-    },
-    {
-      "ticker": "APA.AX",
-      "shares": 178.731,
-      "buy_price": 11.19,
-      "buy_date": "2026-10-15",
-      "signal": "ZEN_BUY",
-      "reason": "Heiken-Ashi trend BULLISH for 5 bars; Breakout above 20-bar high ($11.1)",
-      "status": "open",
-      "type": "paper",
-      "stop_price": 10.8536,
-      "target_price": 11.8628,
-      "meta": {
-        "strategy": "zen_trading",
-        "sector": "Utilities",
-        "entered_score": 85,
-        "entered_reward_risk": 2.0
-      },
-      "_current_price": 11.52
-    },
-    {
-      "ticker": "CAR.AX",
-      "shares": 83.2293,
-      "buy_price": 24.03,
-      "buy_date": "2026-10-19",
-      "signal": "ZEN_BUY",
-      "reason": "Heiken-Ashi trend BULLISH for 14 bars; Breakout above 20-bar high ($23.99)",
-      "status": "open",
-      "type": "paper",
-      "stop_price": 22.9064,
-      "target_price": 26.82,
-      "meta": {
-        "strategy": "zen_trading",
-        "sector": "Communication Services",
-        "entered_score": 92,
-        "entered_reward_risk": 2.48
-      },
-      "_current_price": 25.02
-    }
-  ],
+  "open_trades": [],
   "closed_trades": [
-    {
-      "ticker": "AMD",
-      "shares": 1.9628,
-      "buy_price": 610.6475,
-      "buy_date": "2026-09-21",
-      "signal": "ZEN_BUY",
-      "reason": "Heiken-Ashi trend BULLISH for 5 bars; Breakout above 20-bar high ($559.91)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 559.7004,
-      "target_price": 730.0575,
-      "meta": {
-        "strategy": "zen_trading",
-        "sector": "Technology",
-        "entered_score": 86,
-        "entered_reward_risk": 2.34
-      },
-      "sell_price": 605.11,
-      "sell_date": "2026-09-28",
-      "pnl": -10.87,
-      "pnl_pct": -0.91,
-      "close_reason": "TREND_REVERSAL"
-    },
-    {
-      "ticker": "NWH.AX",
-      "shares": 243.4865,
-      "buy_price": 8.12,
-      "buy_date": "2026-09-23",
-      "signal": "ZEN_BUY",
-      "reason": "Heiken-Ashi trend BULLISH for 5 bars; Breakout above 20-bar high ($8.11)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 7.7093,
-      "target_price": 8.9414,
-      "meta": {
-        "strategy": "zen_trading",
-        "sector": "Industrials",
-        "entered_score": 85,
-        "entered_reward_risk": 2.0
-      },
-      "sell_price": 8.07,
-      "sell_date": "2026-09-25",
-      "pnl": -12.17,
-      "pnl_pct": -0.62,
-      "close_reason": "TREND_REVERSAL"
-    },
-    {
-      "ticker": "TEA.AX",
-      "shares": 75.6775,
-      "buy_price": 11.1,
-      "buy_date": "2026-09-24",
-      "signal": "ZEN_BUY",
-      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($10.91)",
-      "status": "closed",
-      "type": "paper",
-      "stop_price": 9.7786,
-      "target_price": 13.7428,
-      "meta": {
-        "strategy": "zen_trading",
-        "sector": "Industrials",
-        "entered_score": 86,
-        "entered_reward_risk": 2.0
-      },
-      "sell_price": 10.59,
-      "sell_date": "2026-09-29",
-      "pnl": -38.6,
-      "pnl_pct": -4.59,
-      "close_reason": "TREND_REVERSAL"
-    },
     {
       "ticker": "AMP.AX",
       "shares": 751.8797,
@@ -348,6 +189,29 @@
       "close_reason": "TREND_REVERSAL"
     },
     {
+      "ticker": "QBE.AX",
+      "shares": 83.1947,
+      "buy_price": 24.04,
+      "buy_date": "2026-10-07",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($23.86)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 23.1093,
+      "target_price": 26.1,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Financial Services",
+        "entered_score": 85,
+        "entered_reward_risk": 2.21
+      },
+      "sell_price": 26.18,
+      "sell_date": "2026-10-26",
+      "pnl": 178.04,
+      "pnl_pct": 8.9,
+      "close_reason": "TREND_REVERSAL"
+    },
+    {
       "ticker": "GWA.AX",
       "shares": 975.6098,
       "buy_price": 2.05,
@@ -394,6 +258,52 @@
       "close_reason": "TREND_REVERSAL"
     },
     {
+      "ticker": "APA.AX",
+      "shares": 178.731,
+      "buy_price": 11.19,
+      "buy_date": "2026-10-15",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 5 bars; Breakout above 20-bar high ($11.1)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 10.8536,
+      "target_price": 11.8628,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Utilities",
+        "entered_score": 85,
+        "entered_reward_risk": 2.0
+      },
+      "sell_price": 11.48,
+      "sell_date": "2026-10-26",
+      "pnl": 51.83,
+      "pnl_pct": 2.59,
+      "close_reason": "TREND_REVERSAL"
+    },
+    {
+      "ticker": "CAR.AX",
+      "shares": 83.2293,
+      "buy_price": 24.03,
+      "buy_date": "2026-10-19",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 14 bars; Breakout above 20-bar high ($23.99)",
+      "status": "closed",
+      "type": "paper",
+      "stop_price": 22.9064,
+      "target_price": 26.82,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Communication Services",
+        "entered_score": 92,
+        "entered_reward_risk": 2.48
+      },
+      "sell_price": 24.65,
+      "sell_date": "2026-10-26",
+      "pnl": 51.6,
+      "pnl_pct": 2.58,
+      "close_reason": "TREND_REVERSAL"
+    },
+    {
       "ticker": "WDS.AX",
       "shares": 58.7717,
       "buy_price": 34.03,
@@ -418,9 +328,9 @@
     }
   ],
   "drawdown": {
-    "realized_pnl": -211.4,
-    "unrealized_pnl": 346.04,
-    "total_pnl": 134.64,
+    "realized_pnl": 70.07,
+    "unrealized_pnl": 0.0,
+    "total_pnl": 70.07,
     "drawdown_pct": 0.0,
     "halted": false
   },
@@ -429,9 +339,19 @@
   "actions_this_run": {
     "closed": [
       {
-        "ticker": "STO.AX",
+        "ticker": "QBE.AX",
         "reason": "TREND_REVERSAL",
-        "exit_price": 9.05
+        "exit_price": 26.18
+      },
+      {
+        "ticker": "APA.AX",
+        "reason": "TREND_REVERSAL",
+        "exit_price": 11.48
+      },
+      {
+        "ticker": "CAR.AX",
+        "reason": "TREND_REVERSAL",
+        "exit_price": 24.65
       }
     ],
     "opened": []

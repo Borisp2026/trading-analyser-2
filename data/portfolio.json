@@ -1677,7 +1677,7 @@
       "buy_date": "2026-10-07",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($23.86)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 23.1093,
       "target_price": 26.1,
@@ -1686,7 +1686,12 @@
         "sector": "Financial Services",
         "entered_score": 85,
         "entered_reward_risk": 2.21
-      }
+      },
+      "sell_price": 26.18,
+      "sell_date": "2026-10-26",
+      "pnl": 178.04,
+      "pnl_pct": 8.9,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "AAPL",
@@ -1832,7 +1837,7 @@
       "buy_date": "2026-10-15",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 5 bars; Breakout above 20-bar high ($11.1)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 10.8536,
       "target_price": 11.8628,
@@ -1841,7 +1846,12 @@
         "sector": "Utilities",
         "entered_score": 85,
         "entered_reward_risk": 2.0
-      }
+      },
+      "sell_price": 11.48,
+      "sell_date": "2026-10-26",
+      "pnl": 51.83,
+      "pnl_pct": 2.59,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "QBE.AX",
@@ -1922,7 +1932,7 @@
       "buy_date": "2026-10-19",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 14 bars; Breakout above 20-bar high ($23.99)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 22.9064,
       "target_price": 26.82,
@@ -1931,7 +1941,12 @@
         "sector": "Communication Services",
         "entered_score": 92,
         "entered_reward_risk": 2.48
-      }
+      },
+      "sell_price": 24.65,
+      "sell_date": "2026-10-26",
+      "pnl": 51.6,
+      "pnl_pct": 2.58,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "WDS.AX",
@@ -2003,9 +2018,85 @@
       "pnl": 2.17,
       "pnl_pct": 0.45,
       "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "AAPL",
+      "shares": 1.311,
+      "buy_price": 344.32,
+      "buy_date": "2026-10-26",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 268.0438,
+      "target_price": 374.3395,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Technology",
+        "entered_dc_num": 3,
+        "entered_score": 80
+      }
+    },
+    {
+      "ticker": "NST.AX",
+      "shares": 12.0242,
+      "buy_price": 24.83,
+      "buy_date": "2026-10-26",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 16.5134,
+      "target_price": 28.2731,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Basic Materials",
+        "entered_dc_num": 4,
+        "entered_score": 72
+      }
+    },
+    {
+      "ticker": "TSLA",
+      "shares": 0.9719,
+      "buy_price": 394.33,
+      "buy_date": "2026-10-26",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #4 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 291.4324,
+      "target_price": 392.4357,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Consumer Cyclical",
+        "entered_dc_num": 5,
+        "entered_score": 72
+      }
+    },
+    {
+      "ticker": "QBE.AX",
+      "shares": 18.7494,
+      "buy_price": 26.18,
+      "buy_date": "2026-10-26",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 20.8465,
+      "target_price": 24.9639,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Financial Services",
+        "entered_dc_num": 1,
+        "entered_score": 42
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 9731.773621848051,
+  "paper_cash": 14389.171967848051,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
