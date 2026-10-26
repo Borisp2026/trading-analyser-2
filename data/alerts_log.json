@@ -1,13 +1,6 @@
 [
   {
     "ticker": "CU6.AX",
-    "signal_type": "VOLUME_SELLOFF",
-    "message": "Volume spike 3.54x avg + price -3.17% \u2014 selling pressure",
-    "date": "2026-09-15",
-    "time": "00:06:31"
-  },
-  {
-    "ticker": "CU6.AX",
     "signal_type": "GAP_DOWN",
     "message": "Gap down -3.17% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-09-15",
@@ -3498,5 +3491,12 @@
     "message": "Gap up +8.02% from previous close",
     "date": "2026-10-26",
     "time": "02:21:07"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.84% from previous close",
+    "date": "2026-10-26",
+    "time": "18:56:51"
   }
 ]
