@@ -1,19 +1,5 @@
 [
   {
-    "ticker": "PLS.AX",
-    "signal_type": "VOLUME_SELLOFF",
-    "message": "Volume spike 10.22x avg + price -2.43% \u2014 selling pressure",
-    "date": "2026-09-15",
-    "time": "00:06:34"
-  },
-  {
-    "ticker": "SS1.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-15",
-    "time": "00:06:34"
-  },
-  {
     "ticker": "SS1.AX",
     "signal_type": "GAP_DOWN",
     "message": "Gap down -4.35% \u2014 possible reversal opportunity OR continued sell",
@@ -3498,5 +3484,19 @@
     "message": "RSI oversold reversal: RSI=29.1 turning up",
     "date": "2026-10-27",
     "time": "01:52:26"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.37% from previous close",
+    "date": "2026-10-27",
+    "time": "18:29:03"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.57% from previous close",
+    "date": "2026-10-27",
+    "time": "18:29:03"
   }
 ]
