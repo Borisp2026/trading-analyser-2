@@ -1,82 +1,5 @@
 [
   {
-    "ticker": "SS1.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -4.35% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-15",
-    "time": "00:06:34"
-  },
-  {
-    "ticker": "NST.AX",
-    "signal_type": "VOLUME_BREAKOUT_UP",
-    "message": "Volume spike 13.64x avg + price +2.49%",
-    "date": "2026-09-15",
-    "time": "00:06:34"
-  },
-  {
-    "ticker": "STO.AX",
-    "signal_type": "VOLUME_BREAKOUT_UP",
-    "message": "Volume spike 16.62x avg + price +1.63%",
-    "date": "2026-09-15",
-    "time": "00:06:34"
-  },
-  {
-    "ticker": "QBE.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-15",
-    "time": "00:06:35"
-  },
-  {
-    "ticker": "TOR.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-15",
-    "time": "04:49:58"
-  },
-  {
-    "ticker": "GLN.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -4.05% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-15",
-    "time": "04:49:59"
-  },
-  {
-    "ticker": "GMD.AX",
-    "signal_type": "VOLUME_SELLOFF",
-    "message": "Volume spike 2.07x avg + price -2.88% \u2014 selling pressure",
-    "date": "2026-09-15",
-    "time": "04:49:59"
-  },
-  {
-    "ticker": "CU6.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +4.44% from previous close",
-    "date": "2026-09-15",
-    "time": "04:49:59"
-  },
-  {
-    "ticker": "NXT.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -4.4% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-15",
-    "time": "04:50:00"
-  },
-  {
-    "ticker": "NWH.AX",
-    "signal_type": "VOLUME_SELLOFF",
-    "message": "Volume spike 6.21x avg + price -1.83% \u2014 selling pressure",
-    "date": "2026-09-15",
-    "time": "04:50:00"
-  },
-  {
-    "ticker": "TEA.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.9% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-15",
-    "time": "04:50:01"
-  },
-  {
     "ticker": "PLS.AX",
     "signal_type": "GAP_DOWN",
     "message": "Gap down -3.29% \u2014 possible reversal opportunity OR continued sell",
@@ -3498,5 +3421,82 @@
     "message": "Gap up +3.57% from previous close",
     "date": "2026-10-27",
     "time": "18:29:03"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.88% from previous close",
+    "date": "2026-10-28",
+    "time": "01:33:33"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.39% from previous close",
+    "date": "2026-10-28",
+    "time": "01:33:33"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +10.31% from previous close",
+    "date": "2026-10-28",
+    "time": "01:33:33"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.45% from previous close",
+    "date": "2026-10-28",
+    "time": "01:33:33"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.42% from previous close",
+    "date": "2026-10-28",
+    "time": "01:33:33"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +9.91% from previous close",
+    "date": "2026-10-28",
+    "time": "01:33:34"
+  },
+  {
+    "ticker": "APA.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-28",
+    "time": "01:33:34"
+  },
+  {
+    "ticker": "GWA.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-28",
+    "time": "01:33:34"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.89% from previous close",
+    "date": "2026-10-28",
+    "time": "01:33:35"
+  },
+  {
+    "ticker": "CMM.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.84% from previous close",
+    "date": "2026-10-28",
+    "time": "01:33:35"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +6.42% from previous close",
+    "date": "2026-10-28",
+    "time": "01:33:35"
   }
 ]
