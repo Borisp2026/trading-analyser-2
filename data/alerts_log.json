@@ -1,61 +1,5 @@
 [
   {
-    "ticker": "PLS.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.29% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-15",
-    "time": "04:50:02"
-  },
-  {
-    "ticker": "SS1.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-15",
-    "time": "04:50:02"
-  },
-  {
-    "ticker": "WDS.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-15",
-    "time": "04:50:02"
-  },
-  {
-    "ticker": "CAR.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=31.4 turning up",
-    "date": "2026-09-15",
-    "time": "04:50:03"
-  },
-  {
-    "ticker": "IVV.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-15",
-    "time": "04:50:04"
-  },
-  {
-    "ticker": "IPX.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-16",
-    "time": "01:10:01"
-  },
-  {
-    "ticker": "CU6.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.88% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-16",
-    "time": "01:10:02"
-  },
-  {
-    "ticker": "TLX.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -5.35% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-16",
-    "time": "01:10:02"
-  },
-  {
     "ticker": "MMI.AX",
     "signal_type": "VOLUME_SELLOFF",
     "message": "Volume spike 4.42x avg + price -2.26% \u2014 selling pressure",
@@ -3498,5 +3442,61 @@
     "message": "Gap up +6.42% from previous close",
     "date": "2026-10-28",
     "time": "01:33:35"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=69.0 \u2014 consider taking profit",
+    "date": "2026-10-29",
+    "time": "02:03:19"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-29",
+    "time": "02:03:19"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +12.14% from previous close",
+    "date": "2026-10-29",
+    "time": "02:03:19"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.47% from previous close",
+    "date": "2026-10-29",
+    "time": "02:03:20"
+  },
+  {
+    "ticker": "MSB.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-10-29",
+    "time": "02:03:20"
+  },
+  {
+    "ticker": "MSB.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +18.88% from previous close",
+    "date": "2026-10-29",
+    "time": "02:03:20"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.94% from previous close",
+    "date": "2026-10-29",
+    "time": "02:03:20"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -7.53% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-29",
+    "time": "02:03:23"
   }
 ]
