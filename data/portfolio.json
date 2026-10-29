@@ -2099,9 +2099,27 @@
       "pnl": -2.81,
       "pnl_pct": -0.57,
       "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "AFG.AX",
+      "shares": 1148.1085,
+      "buy_price": 1.475,
+      "buy_date": "2026-10-29",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 12 bars; Breakout above 20-bar high ($1.47)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 1.3879,
+      "target_price": 1.7075,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Financial Services",
+        "entered_score": 93,
+        "entered_reward_risk": 2.67
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 14877.218849848052,
+  "paper_cash": 13183.758812348051,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

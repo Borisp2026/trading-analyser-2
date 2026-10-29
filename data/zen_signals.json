@@ -1,22 +1,74 @@
 {
-  "generated_at": "2026-10-28T16:19:28",
+  "generated_at": "2026-10-29T16:29:31",
   "watchlist_count": 33,
-  "candidates": [],
-  "avoid_alerts": [
+  "candidates": [
     {
-      "ticker": "TLX.AX",
-      "name": "Telix Pharmaceuticals Limited",
-      "price": 13.06,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
-    },
-    {
-      "ticker": "CU6.AX",
-      "name": "Clarity Pharmaceuticals Ltd",
-      "price": 1.565,
-      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
+      "ticker": "AFG.AX",
+      "name": "Australian Finance Group Limited",
+      "price": 1.475,
+      "sector": "Financial Services",
+      "zen_score": 93,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 12,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 1.47,
+        "support": 1.2375
+      },
+      "stop_price": 1.3879,
+      "target_price": 1.7075,
+      "reward_risk": 2.67,
+      "position_size": 1693.46,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 12 bars",
+        "Breakout above 20-bar high ($1.47)",
+        "Reward:risk 2.67:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 1,
+      "paper_trade_status": "OPENED_THIS_RUN"
     }
   ],
-  "open_trades": [],
+  "avoid_alerts": [
+    {
+      "ticker": "APA.AX",
+      "name": "APA Group",
+      "price": 11.21,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "QBE.AX",
+      "name": "QBE Insurance Group Limited",
+      "price": 25.79,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    }
+  ],
+  "open_trades": [
+    {
+      "ticker": "AFG.AX",
+      "shares": 1148.1085,
+      "buy_price": 1.475,
+      "buy_date": "2026-10-29",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 12 bars; Breakout above 20-bar high ($1.47)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 1.3879,
+      "target_price": 1.7075,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Financial Services",
+        "entered_score": 93,
+        "entered_reward_risk": 2.67
+      },
+      "_current_price": 1.475
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "AMP.AX",
@@ -260,6 +312,16 @@
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": []
+    "opened": [
+      {
+        "ticker": "AFG.AX",
+        "entry_price": 1.475,
+        "shares": 1148.1085,
+        "position_cost": 1693.46,
+        "sector": "Financial Services",
+        "stop_price": 1.3879,
+        "target_price": 1.7075
+      }
+    ]
   }
 }
