@@ -1,12 +1,5 @@
 [
   {
-    "ticker": "MMI.AX",
-    "signal_type": "VOLUME_SELLOFF",
-    "message": "Volume spike 4.42x avg + price -2.26% \u2014 selling pressure",
-    "date": "2026-09-16",
-    "time": "01:10:04"
-  },
-  {
     "ticker": "PNV.AX",
     "signal_type": "MACD_DEATH_CROSS",
     "message": "MACD death cross on 5-min chart",
@@ -3498,5 +3491,12 @@
     "message": "Gap down -7.53% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-10-29",
     "time": "02:03:23"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=30.5 turning up",
+    "date": "2026-10-29",
+    "time": "18:43:44"
   }
 ]
