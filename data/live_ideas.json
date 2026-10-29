@@ -1,55 +1,45 @@
 {
-  "generated_at": "2026-10-29 18:44",
+  "generated_at": "2026-10-29 22:59",
   "scanned_count": 78,
   "ideas": [
     {
       "ticker": "360.AX",
       "price": 20.83,
       "vwap": 20.8034,
-      "vs": 0.1277,
+      "vs": 0.1276,
       "rsi": 60.6,
       "mo": 0.17,
       "buyZone": 20.8034,
       "sellZone": 21.0057
     },
     {
-      "ticker": "AAPL",
-      "price": 349.98,
-      "vwap": 349.6616,
-      "vs": 0.0911,
-      "rsi": 72.2,
-      "mo": 0.2,
-      "buyZone": 349.6616,
-      "sellZone": 351.0262
-    },
-    {
       "ticker": "ACL.AX",
       "price": 3.24,
-      "vwap": 3.2227,
-      "vs": 0.536,
+      "vwap": 3.2253,
+      "vs": 0.4544,
       "rsi": 46.2,
       "mo": 0.01,
-      "buyZone": 3.2227,
+      "buyZone": 3.2253,
       "sellZone": 3.2764
     },
     {
       "ticker": "AFG.AX",
       "price": 1.475,
-      "vwap": 1.4683,
-      "vs": 0.4571,
+      "vwap": 1.4678,
+      "vs": 0.4891,
       "rsi": 60.5,
       "mo": 0.008,
-      "buyZone": 1.4683,
+      "buyZone": 1.4678,
       "sellZone": 1.4844
     },
     {
       "ticker": "AGI.AX",
       "price": 1.16,
-      "vwap": 1.1456,
-      "vs": 1.2561,
+      "vwap": 1.1534,
+      "vs": 0.5733,
       "rsi": 50.0,
       "mo": 0.04,
-      "buyZone": 1.1456,
+      "buyZone": 1.1534,
       "sellZone": 1.202
     },
     {
@@ -73,10 +63,20 @@
       "sellZone": 30.7743
     },
     {
+      "ticker": "CAR.AX",
+      "price": 24.39,
+      "vwap": 24.3782,
+      "vs": 0.0482,
+      "rsi": 66.7,
+      "mo": 0.06,
+      "buyZone": 24.3782,
+      "sellZone": 24.5557
+    },
+    {
       "ticker": "CU6.AX",
       "price": 1.67,
       "vwap": 1.648,
-      "vs": 1.3345,
+      "vs": 1.3336,
       "rsi": 71.4,
       "mo": 0.013,
       "buyZone": 1.648,
@@ -96,20 +96,30 @@
       "ticker": "ESR.AX",
       "price": 0.028,
       "vwap": 0.0276,
-      "vs": 1.2953,
+      "vs": 1.3006,
       "rsi": 50.0,
       "mo": 0.003,
       "buyZone": 0.0276,
       "sellZone": 0.0304
     },
     {
+      "ticker": "FMR.AX",
+      "price": 0.55,
+      "vwap": 0.5496,
+      "vs": 0.067,
+      "rsi": 50.0,
+      "mo": 0.01,
+      "buyZone": 0.5496,
+      "sellZone": 0.5623
+    },
+    {
       "ticker": "ILU.AX",
       "price": 5.9,
-      "vwap": 5.8535,
-      "vs": 0.7947,
+      "vwap": 5.8534,
+      "vs": 0.7965,
       "rsi": 58.5,
       "mo": 0.055,
-      "buyZone": 5.8535,
+      "buyZone": 5.8534,
       "sellZone": 5.9821
     },
     {
@@ -135,48 +145,58 @@
     {
       "ticker": "MSB.AX",
       "price": 2.32,
-      "vwap": 2.236,
-      "vs": 3.7589,
+      "vwap": 2.2217,
+      "vs": 4.4251,
       "rsi": 58.0,
       "mo": 0.08,
-      "buyZone": 2.236,
+      "buyZone": 2.2217,
       "sellZone": 2.4171
     },
     {
       "ticker": "MSFT",
-      "price": 526.95,
-      "vwap": 525.752,
-      "vs": 0.2279,
-      "rsi": 60.6,
-      "mo": 1.48,
-      "buyZone": 525.752,
-      "sellZone": 530.9145
+      "price": 530.43,
+      "vwap": 527.8614,
+      "vs": 0.4866,
+      "rsi": 68.5,
+      "mo": 3.54,
+      "buyZone": 527.8614,
+      "sellZone": 534.5781
     },
     {
       "ticker": "MXI.AX",
       "price": 1.98,
-      "vwap": 1.9709,
-      "vs": 0.4598,
+      "vwap": 1.9712,
+      "vs": 0.4476,
       "rsi": 61.4,
       "mo": 0.01,
-      "buyZone": 1.9709,
+      "buyZone": 1.9712,
       "sellZone": 1.9924
     },
     {
       "ticker": "NDQ.AX",
       "price": 60.84,
       "vwap": 60.8192,
-      "vs": 0.0341,
+      "vs": 0.0342,
       "rsi": 56.1,
       "mo": 0.18,
       "buyZone": 60.8192,
       "sellZone": 61.0214
     },
     {
+      "ticker": "NVDA",
+      "price": 213.72,
+      "vwap": 213.5864,
+      "vs": 0.0626,
+      "rsi": 52.6,
+      "mo": 1.115,
+      "buyZone": 213.5864,
+      "sellZone": 214.8396
+    },
+    {
       "ticker": "STO.AX",
       "price": 9.13,
       "vwap": 9.1166,
-      "vs": 0.1473,
+      "vs": 0.1472,
       "rsi": 47.7,
       "mo": 0.01,
       "buyZone": 9.1166,
@@ -205,12 +225,12 @@
     {
       "ticker": "VGS.AX",
       "price": 161.34,
-      "vwap": 161.174,
-      "vs": 0.103,
+      "vwap": 161.1736,
+      "vs": 0.1033,
       "rsi": 56.7,
       "mo": 0.23,
-      "buyZone": 161.174,
-      "sellZone": 161.5929
+      "buyZone": 161.1736,
+      "sellZone": 161.5943
     }
   ]
 }
