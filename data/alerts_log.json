@@ -1,26 +1,5 @@
 [
   {
-    "ticker": "IPX.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.32% from previous close",
-    "date": "2026-09-17",
-    "time": "01:22:12"
-  },
-  {
-    "ticker": "AFG.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=70.6 \u2014 consider taking profit",
-    "date": "2026-09-17",
-    "time": "01:22:13"
-  },
-  {
-    "ticker": "TLX.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.44% from previous close",
-    "date": "2026-09-17",
-    "time": "01:22:14"
-  },
-  {
     "ticker": "NWH.AX",
     "signal_type": "MACD_DEATH_CROSS",
     "message": "MACD death cross on 5-min chart",
@@ -3498,5 +3477,26 @@
     "message": "RSI oversold reversal: RSI=31.3 turning up",
     "date": "2026-10-30",
     "time": "02:25:35"
+  },
+  {
+    "ticker": "NVDA",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-30",
+    "time": "18:20:37"
+  },
+  {
+    "ticker": "NVDA",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.53% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-30",
+    "time": "18:20:37"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -12.21% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-30",
+    "time": "18:20:37"
   }
 ]
