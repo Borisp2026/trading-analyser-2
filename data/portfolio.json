@@ -2117,9 +2117,28 @@
         "entered_score": 93,
         "entered_reward_risk": 2.67
       }
+    },
+    {
+      "ticker": "CAR.AX",
+      "shares": 26.8527,
+      "buy_price": 24.5,
+      "buy_date": "2026-10-30",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #1 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 20.776,
+      "target_price": 28.4967,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Communication Services",
+        "entered_dc_num": 2,
+        "entered_score": 80
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 13183.758812348051,
+  "paper_cash": 12525.867662348051,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

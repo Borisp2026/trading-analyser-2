@@ -1,51 +1,45 @@
 {
-  "generated_at": "2026-10-29T16:29:31",
+  "generated_at": "2026-10-30T16:19:37",
   "watchlist_count": 33,
   "candidates": [
     {
       "ticker": "AFG.AX",
       "name": "Australian Finance Group Limited",
-      "price": 1.475,
+      "price": 1.49,
       "sector": "Financial Services",
       "zen_score": 93,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 12,
+        "consecutive_bars": 13,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 1.47,
+        "resistance": 1.4775,
         "support": 1.2375
       },
-      "stop_price": 1.3879,
-      "target_price": 1.7075,
-      "reward_risk": 2.67,
-      "position_size": 1693.46,
+      "stop_price": 1.3997,
+      "target_price": 1.73,
+      "reward_risk": 2.66,
+      "position_size": 1650.06,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 12 bars",
-        "Breakout above 20-bar high ($1.47)",
-        "Reward:risk 2.67:1 (meets 2.0:1 minimum)"
+        "Heiken-Ashi trend BULLISH for 13 bars",
+        "Breakout above 20-bar high ($1.4775)",
+        "Reward:risk 2.66:1 (meets 2.0:1 minimum)"
       ],
       "rank": 1,
-      "paper_trade_status": "OPENED_THIS_RUN"
+      "paper_trade_status": "ALREADY_OPEN"
     }
   ],
   "avoid_alerts": [
     {
       "ticker": "APA.AX",
       "name": "APA Group",
-      "price": 11.21,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "QBE.AX",
-      "name": "QBE Insurance Group Limited",
-      "price": 25.79,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 11.27,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     }
   ],
   "open_trades": [
@@ -66,7 +60,7 @@
         "entered_score": 93,
         "entered_reward_risk": 2.67
       },
-      "_current_price": 1.475
+      "_current_price": 1.49
     }
   ],
   "closed_trades": [
@@ -303,25 +297,15 @@
   ],
   "drawdown": {
     "realized_pnl": 70.07,
-    "unrealized_pnl": 0.0,
-    "total_pnl": 70.07,
+    "unrealized_pnl": 17.22,
+    "total_pnl": 87.29,
     "drawdown_pct": 0.0,
     "halted": false
   },
-  "macro_zone": "SELECTIVE",
+  "macro_zone": "DEPLOY",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": [
-      {
-        "ticker": "AFG.AX",
-        "entry_price": 1.475,
-        "shares": 1148.1085,
-        "position_cost": 1693.46,
-        "sector": "Financial Services",
-        "stop_price": 1.3879,
-        "target_price": 1.7075
-      }
-    ]
+    "opened": []
   }
 }
