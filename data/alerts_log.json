@@ -1,68 +1,5 @@
 [
   {
-    "ticker": "PNV.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-16",
-    "time": "01:10:04"
-  },
-  {
-    "ticker": "PLS.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=27.5 turning up",
-    "date": "2026-09-16",
-    "time": "01:10:06"
-  },
-  {
-    "ticker": "WDS.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=76.2 \u2014 consider taking profit",
-    "date": "2026-09-16",
-    "time": "01:10:06"
-  },
-  {
-    "ticker": "STO.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=76.5 \u2014 consider taking profit",
-    "date": "2026-09-16",
-    "time": "01:10:07"
-  },
-  {
-    "ticker": "IOZ.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-16",
-    "time": "01:10:08"
-  },
-  {
-    "ticker": "TEA.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +4.66% from previous close",
-    "date": "2026-09-16",
-    "time": "05:58:51"
-  },
-  {
-    "ticker": "CAR.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-16",
-    "time": "05:58:53"
-  },
-  {
-    "ticker": "AMD",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.69% from previous close",
-    "date": "2026-09-16",
-    "time": "17:23:22"
-  },
-  {
-    "ticker": "EOS.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-17",
-    "time": "01:22:11"
-  },
-  {
     "ticker": "IPX.AX",
     "signal_type": "GAP_UP",
     "message": "Gap up +3.32% from previous close",
@@ -3498,5 +3435,68 @@
     "message": "RSI oversold reversal: RSI=30.5 turning up",
     "date": "2026-10-29",
     "time": "18:43:44"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -10.2% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-30",
+    "time": "02:25:28"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -6.89% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-30",
+    "time": "02:25:29"
+  },
+  {
+    "ticker": "MSB.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.09% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-30",
+    "time": "02:25:29"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.04% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-30",
+    "time": "02:25:29"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.78% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-30",
+    "time": "02:25:29"
+  },
+  {
+    "ticker": "PNV.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.98% from previous close",
+    "date": "2026-10-30",
+    "time": "02:25:31"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-10-30",
+    "time": "02:25:31"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.85% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-10-30",
+    "time": "02:25:31"
+  },
+  {
+    "ticker": "VGS.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=31.3 turning up",
+    "date": "2026-10-30",
+    "time": "02:25:35"
   }
 ]
