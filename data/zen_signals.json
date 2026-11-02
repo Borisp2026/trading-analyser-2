@@ -1,47 +1,40 @@
 {
-  "generated_at": "2026-10-30T16:19:37",
+  "generated_at": "2026-11-02T19:52:10",
   "watchlist_count": 33,
   "candidates": [
     {
       "ticker": "AFG.AX",
       "name": "Australian Finance Group Limited",
-      "price": 1.49,
+      "price": 1.51,
       "sector": "Financial Services",
-      "zen_score": 93,
+      "zen_score": 94,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 13,
+        "consecutive_bars": 14,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 1.4775,
+        "resistance": 1.5075,
         "support": 1.2375
       },
-      "stop_price": 1.3997,
-      "target_price": 1.73,
-      "reward_risk": 2.66,
-      "position_size": 1650.06,
+      "stop_price": 1.4146,
+      "target_price": 1.78,
+      "reward_risk": 2.83,
+      "position_size": 1582.81,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 13 bars",
-        "Breakout above 20-bar high ($1.4775)",
-        "Reward:risk 2.66:1 (meets 2.0:1 minimum)"
+        "Heiken-Ashi trend BULLISH for 14 bars",
+        "Breakout above 20-bar high ($1.5075)",
+        "Reward:risk 2.83:1 (meets 2.0:1 minimum)"
       ],
       "rank": 1,
       "paper_trade_status": "ALREADY_OPEN"
     }
   ],
-  "avoid_alerts": [
-    {
-      "ticker": "APA.AX",
-      "name": "APA Group",
-      "price": 11.27,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
-    }
-  ],
+  "avoid_alerts": [],
   "open_trades": [
     {
       "ticker": "AFG.AX",
@@ -60,7 +53,7 @@
         "entered_score": 93,
         "entered_reward_risk": 2.67
       },
-      "_current_price": 1.49
+      "_current_price": 1.51
     }
   ],
   "closed_trades": [
@@ -297,12 +290,12 @@
   ],
   "drawdown": {
     "realized_pnl": 70.07,
-    "unrealized_pnl": 17.22,
-    "total_pnl": 87.29,
+    "unrealized_pnl": 40.18,
+    "total_pnl": 110.25,
     "drawdown_pct": 0.0,
     "halted": false
   },
-  "macro_zone": "DEPLOY",
+  "macro_zone": "CAUTION",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],

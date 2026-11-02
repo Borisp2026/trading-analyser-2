@@ -2026,7 +2026,7 @@
       "buy_date": "2026-10-26",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #2 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 268.0438,
       "target_price": 374.3395,
@@ -2036,7 +2036,12 @@
         "sector": "Technology",
         "entered_dc_num": 3,
         "entered_score": 80
-      }
+      },
+      "sell_price": 337.52,
+      "sell_date": "2026-11-02",
+      "pnl": -8.91,
+      "pnl_pct": -1.97,
+      "close_reason": "TRENDLINE_BREAK"
     },
     {
       "ticker": "NST.AX",
@@ -2045,7 +2050,7 @@
       "buy_date": "2026-10-26",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 16.5134,
       "target_price": 28.2731,
@@ -2055,7 +2060,12 @@
         "sector": "Basic Materials",
         "entered_dc_num": 4,
         "entered_score": 72
-      }
+      },
+      "sell_price": 24.07,
+      "sell_date": "2026-11-02",
+      "pnl": -9.14,
+      "pnl_pct": -3.06,
+      "close_reason": "TRENDLINE_BREAK"
     },
     {
       "ticker": "TSLA",
@@ -2139,6 +2149,6 @@
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 12525.867662348051,
+  "paper_cash": 13257.778876348051,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
