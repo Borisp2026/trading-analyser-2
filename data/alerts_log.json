@@ -1,68 +1,5 @@
 [
   {
-    "ticker": "NWH.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-17",
-    "time": "01:22:15"
-  },
-  {
-    "ticker": "TEA.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-17",
-    "time": "01:22:16"
-  },
-  {
-    "ticker": "SS1.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.09% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-17",
-    "time": "01:22:17"
-  },
-  {
-    "ticker": "NDQ.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=71.7 \u2014 consider taking profit",
-    "date": "2026-09-17",
-    "time": "01:22:19"
-  },
-  {
-    "ticker": "IVV.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=72.8 \u2014 consider taking profit",
-    "date": "2026-09-17",
-    "time": "01:22:20"
-  },
-  {
-    "ticker": "VGS.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=74.5 \u2014 consider taking profit",
-    "date": "2026-09-17",
-    "time": "01:22:20"
-  },
-  {
-    "ticker": "AMD",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +6.97% from previous close",
-    "date": "2026-09-17",
-    "time": "17:22:34"
-  },
-  {
-    "ticker": "MIN.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-18",
-    "time": "01:00:44"
-  },
-  {
-    "ticker": "IPX.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +6.99% from previous close",
-    "date": "2026-09-18",
-    "time": "01:00:44"
-  },
-  {
     "ticker": "GMD.AX",
     "signal_type": "GAP_UP",
     "message": "Gap up +3.81% from previous close",
@@ -3498,5 +3435,68 @@
     "message": "Gap down -12.21% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-10-30",
     "time": "18:20:37"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -6.57% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-02",
+    "time": "03:28:05"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-11-02",
+    "time": "03:28:06"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.46% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-02",
+    "time": "03:28:07"
+  },
+  {
+    "ticker": "MSB.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.42% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-02",
+    "time": "03:28:07"
+  },
+  {
+    "ticker": "APA.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-11-02",
+    "time": "03:28:08"
+  },
+  {
+    "ticker": "GWA.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-11-02",
+    "time": "03:28:08"
+  },
+  {
+    "ticker": "AMP.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -7.28% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-02",
+    "time": "03:28:10"
+  },
+  {
+    "ticker": "CMM.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.05% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-02",
+    "time": "03:28:10"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.15% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-02",
+    "time": "03:28:12"
   }
 ]
