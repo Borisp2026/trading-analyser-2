@@ -1,40 +1,27 @@
 {
-  "generated_at": "2026-11-02T19:52:10",
+  "generated_at": "2026-11-03T17:24:50",
   "watchlist_count": 33,
-  "candidates": [
+  "candidates": [],
+  "avoid_alerts": [
     {
-      "ticker": "AFG.AX",
-      "name": "Australian Finance Group Limited",
-      "price": 1.51,
-      "sector": "Financial Services",
-      "zen_score": 94,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 14,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 1.5075,
-        "support": 1.2375
-      },
-      "stop_price": 1.4146,
-      "target_price": 1.78,
-      "reward_risk": 2.83,
-      "position_size": 1582.81,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 14 bars",
-        "Breakout above 20-bar high ($1.5075)",
-        "Reward:risk 2.83:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 1,
-      "paper_trade_status": "ALREADY_OPEN"
+      "ticker": "EOS.AX",
+      "name": "Electro Optic Systems Holdings Limited",
+      "price": 7.85,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "PLS.AX",
+      "name": "PLS Group Limited",
+      "price": 2.63,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "price": 208.62,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     }
   ],
-  "avoid_alerts": [],
   "open_trades": [
     {
       "ticker": "AFG.AX",
@@ -53,7 +40,7 @@
         "entered_score": 93,
         "entered_reward_risk": 2.67
       },
-      "_current_price": 1.51
+      "_current_price": 1.535
     }
   ],
   "closed_trades": [
@@ -290,8 +277,8 @@
   ],
   "drawdown": {
     "realized_pnl": 70.07,
-    "unrealized_pnl": 40.18,
-    "total_pnl": 110.25,
+    "unrealized_pnl": 68.89,
+    "total_pnl": 138.96,
     "drawdown_pct": 0.0,
     "halted": false
   },

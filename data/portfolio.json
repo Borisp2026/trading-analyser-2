@@ -2146,9 +2146,28 @@
         "entered_dc_num": 2,
         "entered_score": 80
       }
+    },
+    {
+      "ticker": "GWA.AX",
+      "shares": 432.5238,
+      "buy_price": 2.1,
+      "buy_date": "2026-11-03",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #4 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 1.8688,
+      "target_price": 2.0706,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Industrials",
+        "entered_dc_num": 5,
+        "entered_score": 72
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 13257.778876348051,
+  "paper_cash": 12349.478896348051,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
