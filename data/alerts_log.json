@@ -1,12 +1,5 @@
 [
   {
-    "ticker": "IVV.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=68.1 \u2014 consider taking profit",
-    "date": "2026-09-18",
-    "time": "01:00:53"
-  },
-  {
     "ticker": "MIN.AX",
     "signal_type": "VOLUME_SELLOFF",
     "message": "Volume spike 2.85x avg + price -2.05% \u2014 selling pressure",
@@ -3498,5 +3491,12 @@
     "message": "Gap down -3.74% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-11-03",
     "time": "03:27:32"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.03% from previous close",
+    "date": "2026-11-03",
+    "time": "19:54:23"
   }
 ]
