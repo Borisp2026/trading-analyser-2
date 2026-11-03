@@ -1,156 +1,186 @@
 {
-  "generated_at": "2026-11-02 22:00",
+  "generated_at": "2026-11-03 03:27",
   "scanned_count": 77,
   "ideas": [
     {
       "ticker": "AAPL",
       "price": 339.11,
-      "vwap": 338.3681,
-      "vs": 0.2193,
+      "vwap": 339.099,
+      "vs": 0.0032,
       "rsi": 61.9,
       "mo": 1.78,
-      "buyZone": 338.3681,
+      "buyZone": 339.099,
       "sellZone": 341.5856
     },
     {
-      "ticker": "AMP.AX",
-      "price": 2.35,
-      "vwap": 2.3255,
-      "vs": 1.0543,
-      "rsi": 57.9,
+      "ticker": "AFG.AX",
+      "price": 1.52,
+      "vwap": 1.5139,
+      "vs": 0.4003,
+      "rsi": 57.1,
+      "mo": 0.003,
+      "buyZone": 1.5139,
+      "sellZone": 1.5323
+    },
+    {
+      "ticker": "BAP.AX",
+      "price": 0.84,
+      "vwap": 0.8386,
+      "vs": 0.17,
+      "rsi": 48.0,
       "mo": 0.005,
-      "buyZone": 2.3255,
-      "sellZone": 2.4079
+      "buyZone": 0.8386,
+      "sellZone": 0.8529
     },
     {
       "ticker": "BLX.AX",
-      "price": 1.825,
-      "vwap": 1.7772,
-      "vs": 2.6873,
+      "price": 1.85,
+      "vwap": 1.8262,
+      "vs": 1.3032,
       "rsi": 50.0,
-      "mo": 0.055,
-      "buyZone": 1.7772,
-      "sellZone": 1.8693
+      "mo": 0.043,
+      "buyZone": 1.8262,
+      "sellZone": 1.8758
     },
     {
-      "ticker": "BSL.AX",
-      "price": 33.48,
-      "vwap": 33.4271,
-      "vs": 0.1583,
-      "rsi": 62.9,
-      "mo": 0.1,
-      "buyZone": 33.4271,
-      "sellZone": 33.5771
-    },
-    {
-      "ticker": "CMM.AX",
-      "price": 12.68,
-      "vwap": 12.674,
-      "vs": 0.0473,
+      "ticker": "BOA.AX",
+      "price": 0.105,
+      "vwap": 0.1045,
+      "vs": 0.453,
       "rsi": 50.0,
-      "mo": 0.025,
-      "buyZone": 12.674,
-      "sellZone": 12.7886
+      "mo": 0.003,
+      "buyZone": 0.1045,
+      "sellZone": 0.107
     },
     {
       "ticker": "DMP.AX",
-      "price": 21.57,
-      "vwap": 21.5556,
-      "vs": 0.0669,
-      "rsi": 52.0,
-      "mo": 0.03,
-      "buyZone": 21.5556,
-      "sellZone": 21.7057
+      "price": 21.395,
+      "vwap": 21.3813,
+      "vs": 0.0641,
+      "rsi": 46.0,
+      "mo": 0.025,
+      "buyZone": 21.3813,
+      "sellZone": 21.6607
+    },
+    {
+      "ticker": "GDF.AX",
+      "price": 1.122,
+      "vwap": 1.1174,
+      "vs": 0.4158,
+      "rsi": 50.0,
+      "mo": 0.007,
+      "buyZone": 1.1174,
+      "sellZone": 1.127
+    },
+    {
+      "ticker": "GWA.AX",
+      "price": 2.095,
+      "vwap": 2.083,
+      "vs": 0.5771,
+      "rsi": 69.2,
+      "mo": 0.005,
+      "buyZone": 2.083,
+      "sellZone": 2.11
     },
     {
       "ticker": "HCW.AX",
-      "price": 0.74,
-      "vwap": 0.7372,
-      "vs": 0.3785,
-      "rsi": 60.9,
+      "price": 0.735,
+      "vwap": 0.7344,
+      "vs": 0.0803,
+      "rsi": 50.0,
       "mo": 0.005,
-      "buyZone": 0.7372,
-      "sellZone": 0.7475
-    },
-    {
-      "ticker": "ILU.AX",
-      "price": 5.8,
-      "vwap": 5.7796,
-      "vs": 0.3531,
-      "rsi": 58.9,
-      "mo": 0.005,
-      "buyZone": 5.7796,
-      "sellZone": 5.8743
+      "buyZone": 0.7344,
+      "sellZone": 0.7409
     },
     {
       "ticker": "MTO.AX",
       "price": 2.9,
-      "vwap": 2.8752,
-      "vs": 0.861,
-      "rsi": 69.2,
-      "mo": 0.02,
-      "buyZone": 2.8752,
-      "sellZone": 2.9279
-    },
-    {
-      "ticker": "SS1.AX",
-      "price": 0.77,
-      "vwap": 0.7522,
-      "vs": 2.3692,
-      "rsi": 71.2,
-      "mo": 0.01,
-      "buyZone": 0.7522,
-      "sellZone": 0.7843
-    },
-    {
-      "ticker": "TGM.AX",
-      "price": 0.19,
-      "vwap": 0.1883,
-      "vs": 0.9207,
+      "vwap": 2.8877,
+      "vs": 0.4274,
       "rsi": 50.0,
       "mo": 0.005,
-      "buyZone": 0.1883,
-      "sellZone": 0.2017
+      "buyZone": 2.8877,
+      "sellZone": 2.9189
+    },
+    {
+      "ticker": "NXT.AX",
+      "price": 6.255,
+      "vwap": 6.1913,
+      "vs": 1.0293,
+      "rsi": 69.7,
+      "mo": 0.065,
+      "buyZone": 6.1913,
+      "sellZone": 6.4121
+    },
+    {
+      "ticker": "PGC.AX",
+      "price": 0.155,
+      "vwap": 0.1536,
+      "vs": 0.883,
+      "rsi": 50.0,
+      "mo": 0.003,
+      "buyZone": 0.1536,
+      "sellZone": 0.1587
+    },
+    {
+      "ticker": "PLS.AX",
+      "price": 2.65,
+      "vwap": 2.6242,
+      "vs": 0.9845,
+      "rsi": 58.7,
+      "mo": 0.005,
+      "buyZone": 2.6242,
+      "sellZone": 2.71
+    },
+    {
+      "ticker": "QBE.AX",
+      "price": 25.725,
+      "vwap": 25.7031,
+      "vs": 0.0851,
+      "rsi": 56.0,
+      "mo": 0.05,
+      "buyZone": 25.7031,
+      "sellZone": 25.8586
+    },
+    {
+      "ticker": "STO.AX",
+      "price": 8.9,
+      "vwap": 8.8474,
+      "vs": 0.5941,
+      "rsi": 64.4,
+      "mo": 0.025,
+      "buyZone": 8.8474,
+      "sellZone": 9.0157
     },
     {
       "ticker": "TOR.AX",
-      "price": 0.17,
-      "vwap": 0.1687,
-      "vs": 0.7843,
+      "price": 0.175,
+      "vwap": 0.1724,
+      "vs": 1.5295,
       "rsi": 50.0,
       "mo": 0.003,
-      "buyZone": 0.1687,
-      "sellZone": 0.1744
+      "buyZone": 0.1724,
+      "sellZone": 0.1794
     },
     {
-      "ticker": "VGS.AX",
-      "price": 160.29,
-      "vwap": 160.0348,
-      "vs": 0.1595,
-      "rsi": 67.1,
-      "mo": 0.01,
-      "buyZone": 160.0348,
-      "sellZone": 160.4871
-    },
-    {
-      "ticker": "WBC.AX",
-      "price": 37.19,
-      "vwap": 37.0564,
-      "vs": 0.3606,
-      "rsi": 64.2,
-      "mo": 0.31,
-      "buyZone": 37.0564,
-      "sellZone": 37.5336
+      "ticker": "VTEK.AX",
+      "price": 61.01,
+      "vwap": 60.8166,
+      "vs": 0.318,
+      "rsi": 60.0,
+      "mo": 0.12,
+      "buyZone": 60.8166,
+      "sellZone": 61.3171
     },
     {
       "ticker": "WDS.AX",
-      "price": 33.42,
-      "vwap": 33.3581,
-      "vs": 0.1854,
-      "rsi": 46.5,
-      "mo": 0.19,
-      "buyZone": 33.3581,
-      "sellZone": 33.6579
+      "price": 32.18,
+      "vwap": 32.0829,
+      "vs": 0.3026,
+      "rsi": 52.6,
+      "mo": 0.04,
+      "buyZone": 32.0829,
+      "sellZone": 32.565
     }
   ]
 }

@@ -1,47 +1,5 @@
 [
   {
-    "ticker": "GMD.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.81% from previous close",
-    "date": "2026-09-18",
-    "time": "01:00:45"
-  },
-  {
-    "ticker": "CU6.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.81% from previous close",
-    "date": "2026-09-18",
-    "time": "01:00:46"
-  },
-  {
-    "ticker": "APA.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=74.1 \u2014 consider taking profit",
-    "date": "2026-09-18",
-    "time": "01:00:47"
-  },
-  {
-    "ticker": "CMM.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.33% from previous close",
-    "date": "2026-09-18",
-    "time": "01:00:49"
-  },
-  {
-    "ticker": "SS1.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +4.19% from previous close",
-    "date": "2026-09-18",
-    "time": "01:00:50"
-  },
-  {
-    "ticker": "NST.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=71.7 \u2014 consider taking profit",
-    "date": "2026-09-18",
-    "time": "01:00:51"
-  },
-  {
     "ticker": "IVV.AX",
     "signal_type": "RSI_OVERBOUGHT",
     "message": "RSI overbought: RSI=68.1 \u2014 consider taking profit",
@@ -3498,5 +3456,47 @@
     "message": "Gap down -3.15% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-11-02",
     "time": "03:28:12"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.15% from previous close",
+    "date": "2026-11-03",
+    "time": "03:27:28"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.72% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-03",
+    "time": "03:27:29"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.13% from previous close",
+    "date": "2026-11-03",
+    "time": "03:27:29"
+  },
+  {
+    "ticker": "MMI.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +6.67% from previous close",
+    "date": "2026-11-03",
+    "time": "03:27:30"
+  },
+  {
+    "ticker": "AMP.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -9.15% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-03",
+    "time": "03:27:31"
+  },
+  {
+    "ticker": "WDS.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.74% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-03",
+    "time": "03:27:32"
   }
 ]
