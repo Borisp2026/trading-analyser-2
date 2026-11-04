@@ -1,25 +1,49 @@
 {
-  "generated_at": "2026-11-03T17:24:50",
+  "generated_at": "2026-11-04T17:38:31",
   "watchlist_count": 33,
   "candidates": [],
   "avoid_alerts": [
     {
       "ticker": "EOS.AX",
       "name": "Electro Optic Systems Holdings Limited",
-      "price": 7.85,
+      "price": 7.24,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "CMM.AX",
+      "name": "Capricorn Metals Ltd",
+      "price": 12.71,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "price": 486.34,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "PLS.AX",
       "name": "PLS Group Limited",
-      "price": 2.63,
+      "price": 2.6,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "TOR.AX",
+      "name": "Torque Metals Limited",
+      "price": 0.16,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "GLN.AX",
+      "name": "Galan Lithium Limited",
+      "price": 0.205,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 208.62,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 203.1,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     }
   ],
   "open_trades": [
@@ -40,7 +64,7 @@
         "entered_score": 93,
         "entered_reward_risk": 2.67
       },
-      "_current_price": 1.535
+      "_current_price": 1.55
     }
   ],
   "closed_trades": [
@@ -277,8 +301,8 @@
   ],
   "drawdown": {
     "realized_pnl": 70.07,
-    "unrealized_pnl": 68.89,
-    "total_pnl": 138.96,
+    "unrealized_pnl": 86.11,
+    "total_pnl": 156.18,
     "drawdown_pct": 0.0,
     "halted": false
   },
