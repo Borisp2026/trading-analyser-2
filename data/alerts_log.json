@@ -1,19 +1,5 @@
 [
   {
-    "ticker": "SS1.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-18",
-    "time": "05:53:52"
-  },
-  {
-    "ticker": "CAR.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.42% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-18",
-    "time": "05:53:53"
-  },
-  {
     "ticker": "IOZ.AX",
     "signal_type": "MACD_BULLISH_CROSS",
     "message": "MACD bullish crossover on 5-min chart",
@@ -3498,5 +3484,19 @@
     "message": "MACD death cross on 5-min chart",
     "date": "2026-11-04",
     "time": "00:17:33"
+  },
+  {
+    "ticker": "AAPL",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +6.04% from previous close",
+    "date": "2026-11-04",
+    "time": "20:09:04"
+  },
+  {
+    "ticker": "MSFT",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +7.12% from previous close",
+    "date": "2026-11-04",
+    "time": "20:09:05"
   }
 ]
