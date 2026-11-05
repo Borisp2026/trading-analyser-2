@@ -1,48 +1,93 @@
 {
-  "generated_at": "2026-11-04T17:38:31",
+  "generated_at": "2026-11-05T17:43:49",
   "watchlist_count": 33,
-  "candidates": [],
+  "candidates": [
+    {
+      "ticker": "AFG.AX",
+      "name": "Australian Finance Group Limited",
+      "price": 1.57,
+      "sector": "Financial Services",
+      "zen_score": 97,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 17,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 1.56,
+        "support": 1.2375
+      },
+      "stop_price": 1.4775,
+      "target_price": 1.8925,
+      "reward_risk": 3.49,
+      "position_size": 1697.3,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 17 bars",
+        "Breakout above 20-bar high ($1.56)",
+        "Reward:risk 3.49:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 1,
+      "paper_trade_status": "ALREADY_OPEN"
+    },
+    {
+      "ticker": "CAR.AX",
+      "name": "CAR Group Limited",
+      "price": 26.67,
+      "sector": "Communication Services",
+      "zen_score": 86,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 6,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 25.66,
+        "support": 21.99
+      },
+      "stop_price": 24.9243,
+      "target_price": 30.34,
+      "reward_risk": 2.1,
+      "position_size": 1527.75,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 6 bars",
+        "Breakout above 20-bar high ($25.66)",
+        "Reward:risk 2.1:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 2,
+      "paper_trade_status": "OPENED_THIS_RUN"
+    }
+  ],
   "avoid_alerts": [
     {
       "ticker": "EOS.AX",
       "name": "Electro Optic Systems Holdings Limited",
-      "price": 7.24,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "price": 7.36,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     },
     {
-      "ticker": "CMM.AX",
-      "name": "Capricorn Metals Ltd",
-      "price": 12.71,
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "price": 183.295,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+    },
+    {
+      "ticker": "AMP.AX",
+      "name": "AMP Limited",
+      "price": 2.21,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 486.34,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "PLS.AX",
-      "name": "PLS Group Limited",
-      "price": 2.6,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
-    },
-    {
-      "ticker": "TOR.AX",
-      "name": "Torque Metals Limited",
-      "price": 0.16,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "GLN.AX",
-      "name": "Galan Lithium Limited",
-      "price": 0.205,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "price": 203.1,
+      "price": 417.125,
       "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     }
   ],
@@ -64,7 +109,26 @@
         "entered_score": 93,
         "entered_reward_risk": 2.67
       },
-      "_current_price": 1.55
+      "_current_price": 1.57
+    },
+    {
+      "ticker": "CAR.AX",
+      "shares": 57.2835,
+      "buy_price": 26.67,
+      "buy_date": "2026-11-05",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($25.66)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 24.9243,
+      "target_price": 30.34,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Communication Services",
+        "entered_score": 86,
+        "entered_reward_risk": 2.1
+      },
+      "_current_price": 26.67
     }
   ],
   "closed_trades": [
@@ -301,15 +365,25 @@
   ],
   "drawdown": {
     "realized_pnl": 70.07,
-    "unrealized_pnl": 86.11,
-    "total_pnl": 156.18,
+    "unrealized_pnl": 109.07,
+    "total_pnl": 179.14,
     "drawdown_pct": 0.0,
     "halted": false
   },
-  "macro_zone": "CAUTION",
+  "macro_zone": "SELECTIVE",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": []
+    "opened": [
+      {
+        "ticker": "CAR.AX",
+        "entry_price": 26.67,
+        "shares": 57.2835,
+        "position_cost": 1527.75,
+        "sector": "Communication Services",
+        "stop_price": 24.9243,
+        "target_price": 30.34
+      }
+    ]
   }
 }
