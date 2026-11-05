@@ -1,159 +1,5 @@
 [
   {
-    "ticker": "IOZ.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-18",
-    "time": "05:53:54"
-  },
-  {
-    "ticker": "NVDA",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-18",
-    "time": "16:49:17"
-  },
-  {
-    "ticker": "EOS.AX",
-    "signal_type": "INTRADAY_BREAKOUT",
-    "message": "Breaking above 20-bar intraday high ($10.600)",
-    "date": "2026-09-21",
-    "time": "02:24:17"
-  },
-  {
-    "ticker": "EOS.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.09% from previous close",
-    "date": "2026-09-21",
-    "time": "02:24:17"
-  },
-  {
-    "ticker": "GLN.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-21",
-    "time": "02:24:19"
-  },
-  {
-    "ticker": "GLN.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +5.33% from previous close",
-    "date": "2026-09-21",
-    "time": "02:24:19"
-  },
-  {
-    "ticker": "AFG.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.41% from previous close",
-    "date": "2026-09-21",
-    "time": "02:24:19"
-  },
-  {
-    "ticker": "MSB.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-21",
-    "time": "02:24:20"
-  },
-  {
-    "ticker": "TLX.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -6.33% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-21",
-    "time": "02:24:20"
-  },
-  {
-    "ticker": "ILU.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-21",
-    "time": "02:24:23"
-  },
-  {
-    "ticker": "WDS.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-21",
-    "time": "02:24:25"
-  },
-  {
-    "ticker": "MSFT",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-21",
-    "time": "18:23:33"
-  },
-  {
-    "ticker": "AMD",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +8.84% from previous close",
-    "date": "2026-09-21",
-    "time": "18:23:33"
-  },
-  {
-    "ticker": "CU6.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=68.1 \u2014 consider taking profit",
-    "date": "2026-09-22",
-    "time": "00:48:29"
-  },
-  {
-    "ticker": "CU6.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.02% from previous close",
-    "date": "2026-09-22",
-    "time": "00:48:29"
-  },
-  {
-    "ticker": "TLX.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +5.14% from previous close",
-    "date": "2026-09-22",
-    "time": "00:48:30"
-  },
-  {
-    "ticker": "NXT.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +4.74% from previous close",
-    "date": "2026-09-22",
-    "time": "00:48:30"
-  },
-  {
-    "ticker": "GWA.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-22",
-    "time": "00:48:30"
-  },
-  {
-    "ticker": "CAR.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=75.2 \u2014 consider taking profit",
-    "date": "2026-09-22",
-    "time": "00:48:33"
-  },
-  {
-    "ticker": "EOS.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +6.74% from previous close",
-    "date": "2026-09-22",
-    "time": "05:37:49"
-  },
-  {
-    "ticker": "IPX.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-22",
-    "time": "05:37:49"
-  },
-  {
-    "ticker": "TLX.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-22",
-    "time": "05:37:50"
-  },
-  {
     "ticker": "TLX.AX",
     "signal_type": "VOLUME_BREAKOUT_UP",
     "message": "Volume spike 2.31x avg + price +5.93%",
@@ -3498,5 +3344,159 @@
     "message": "Gap up +7.12% from previous close",
     "date": "2026-11-04",
     "time": "20:09:05"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +9.38% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:39"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +7.33% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:39"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.88% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:40"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +11.34% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:40"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=73.5 \u2014 consider taking profit",
+    "date": "2026-11-05",
+    "time": "00:51:41"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +14.86% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:41"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.41% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:41"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=83.6 \u2014 consider taking profit",
+    "date": "2026-11-05",
+    "time": "00:51:41"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +44.26% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:41"
+  },
+  {
+    "ticker": "PNV.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.57% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:42"
+  },
+  {
+    "ticker": "AMP.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.05% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:43"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +6.5% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:43"
+  },
+  {
+    "ticker": "CMM.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +10.66% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:43"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +8.27% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:44"
+  },
+  {
+    "ticker": "SS1.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +7.05% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:44"
+  },
+  {
+    "ticker": "WDS.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=13.0 turning up",
+    "date": "2026-11-05",
+    "time": "00:51:44"
+  },
+  {
+    "ticker": "WDS.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -6.54% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-05",
+    "time": "00:51:44"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +6.5% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:44"
+  },
+  {
+    "ticker": "STO.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-11-05",
+    "time": "00:51:45"
+  },
+  {
+    "ticker": "STO.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.47% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-05",
+    "time": "00:51:45"
+  },
+  {
+    "ticker": "CAR.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=75.8 \u2014 consider taking profit",
+    "date": "2026-11-05",
+    "time": "00:51:45"
+  },
+  {
+    "ticker": "CAR.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +8.31% from previous close",
+    "date": "2026-11-05",
+    "time": "00:51:45"
   }
 ]
