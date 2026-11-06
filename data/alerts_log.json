@@ -1,26 +1,5 @@
 [
   {
-    "ticker": "PLS.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=18.5 turning up",
-    "date": "2026-09-24",
-    "time": "01:21:42"
-  },
-  {
-    "ticker": "PLS.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -4.67% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-24",
-    "time": "01:21:42"
-  },
-  {
-    "ticker": "SS1.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -4.81% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-24",
-    "time": "01:21:42"
-  },
-  {
     "ticker": "WDS.AX",
     "signal_type": "RSI_OVERBOUGHT",
     "message": "RSI overbought: RSI=70.4 \u2014 consider taking profit",
@@ -3498,5 +3477,26 @@
     "message": "Gap down -4.2% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-11-06",
     "time": "01:00:19"
+  },
+  {
+    "ticker": "NVDA",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.14% from previous close",
+    "date": "2026-11-06",
+    "time": "19:45:46"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +10.12% from previous close",
+    "date": "2026-11-06",
+    "time": "19:45:46"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.91% from previous close",
+    "date": "2026-11-06",
+    "time": "19:45:47"
   }
 ]
