@@ -1,43 +1,12 @@
 {
-  "generated_at": "2026-11-05T17:43:49",
+  "generated_at": "2026-11-06T16:59:45",
   "watchlist_count": 33,
   "candidates": [
     {
-      "ticker": "AFG.AX",
-      "name": "Australian Finance Group Limited",
-      "price": 1.57,
-      "sector": "Financial Services",
-      "zen_score": 97,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 17,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 1.56,
-        "support": 1.2375
-      },
-      "stop_price": 1.4775,
-      "target_price": 1.8925,
-      "reward_risk": 3.49,
-      "position_size": 1697.3,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 17 bars",
-        "Breakout above 20-bar high ($1.56)",
-        "Reward:risk 3.49:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 1,
-      "paper_trade_status": "ALREADY_OPEN"
-    },
-    {
-      "ticker": "CAR.AX",
-      "name": "CAR Group Limited",
-      "price": 26.67,
-      "sector": "Communication Services",
+      "ticker": "GWA.AX",
+      "name": "GWA Group Limited",
+      "price": 2.12,
+      "sector": "Industrials",
       "zen_score": 86,
       "trend": {
         "direction": "BULLISH",
@@ -47,21 +16,21 @@
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 25.66,
-        "support": 21.99
+        "resistance": 2.1,
+        "support": 1.95
       },
-      "stop_price": 24.9243,
-      "target_price": 30.34,
-      "reward_risk": 2.1,
-      "position_size": 1527.75,
+      "stop_price": 2.0086,
+      "target_price": 2.3428,
+      "reward_risk": 2.0,
+      "position_size": 1903.05,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
         "Heiken-Ashi trend BULLISH for 6 bars",
-        "Breakout above 20-bar high ($25.66)",
-        "Reward:risk 2.1:1 (meets 2.0:1 minimum)"
+        "Breakout above 20-bar high ($2.1)",
+        "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
       ],
-      "rank": 2,
+      "rank": 1,
       "paper_trade_status": "OPENED_THIS_RUN"
     }
   ],
@@ -69,26 +38,44 @@
     {
       "ticker": "EOS.AX",
       "name": "Electro Optic Systems Holdings Limited",
-      "price": 7.36,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "price": 7.02,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     },
     {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "price": 183.295,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "ticker": "STO.AX",
+      "name": "Santos Limited",
+      "price": 8.56,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "AMP.AX",
       "name": "AMP Limited",
-      "price": 2.21,
+      "price": 2.22,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "WDS.AX",
+      "name": "Woodside Energy Group Ltd",
+      "price": 30.74,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "price": 188.53,
+      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
     },
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 417.125,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "price": 445.111,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "price": 361.61,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     }
   ],
   "open_trades": [
@@ -109,7 +96,7 @@
         "entered_score": 93,
         "entered_reward_risk": 2.67
       },
-      "_current_price": 1.57
+      "_current_price": 1.565
     },
     {
       "ticker": "CAR.AX",
@@ -128,7 +115,26 @@
         "entered_score": 86,
         "entered_reward_risk": 2.1
       },
-      "_current_price": 26.67
+      "_current_price": 26.07
+    },
+    {
+      "ticker": "GWA.AX",
+      "shares": 897.6651,
+      "buy_price": 2.12,
+      "buy_date": "2026-11-06",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($2.1)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 2.0086,
+      "target_price": 2.3428,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Industrials",
+        "entered_score": 86,
+        "entered_reward_risk": 2.0
+      },
+      "_current_price": 2.12
     }
   ],
   "closed_trades": [
@@ -365,24 +371,24 @@
   ],
   "drawdown": {
     "realized_pnl": 70.07,
-    "unrealized_pnl": 109.07,
-    "total_pnl": 179.14,
+    "unrealized_pnl": 68.96,
+    "total_pnl": 139.03,
     "drawdown_pct": 0.0,
     "halted": false
   },
-  "macro_zone": "SELECTIVE",
+  "macro_zone": "CAUTION",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
     "opened": [
       {
-        "ticker": "CAR.AX",
-        "entry_price": 26.67,
-        "shares": 57.2835,
-        "position_cost": 1527.75,
-        "sector": "Communication Services",
-        "stop_price": 24.9243,
-        "target_price": 30.34
+        "ticker": "GWA.AX",
+        "entry_price": 2.12,
+        "shares": 897.6651,
+        "position_cost": 1903.05,
+        "sector": "Industrials",
+        "stop_price": 2.0086,
+        "target_price": 2.3428
       }
     ]
   }
