@@ -1,80 +1,68 @@
 {
-  "generated_at": "2026-11-06T16:59:45",
+  "generated_at": "2026-11-09T20:14:57",
   "watchlist_count": 33,
   "candidates": [
     {
-      "ticker": "GWA.AX",
-      "name": "GWA Group Limited",
-      "price": 2.12,
-      "sector": "Industrials",
-      "zen_score": 86,
+      "ticker": "NXT.AX",
+      "name": "NEXTDC Limited",
+      "price": 10.52,
+      "sector": "Technology",
+      "zen_score": 88,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 6,
+        "consecutive_bars": 5,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 2.1,
-        "support": 1.95
+        "resistance": 10.5,
+        "support": 5.07
       },
-      "stop_price": 2.0086,
-      "target_price": 2.3428,
-      "reward_risk": 2.0,
-      "position_size": 1903.05,
-      "already_held_real": false,
+      "stop_price": 8.5807,
+      "target_price": 15.95,
+      "reward_risk": 2.8,
+      "position_size": 542.46,
+      "already_held_real": true,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 6 bars",
-        "Breakout above 20-bar high ($2.1)",
-        "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
+        "Heiken-Ashi trend BULLISH for 5 bars",
+        "Breakout above 20-bar high ($10.5)",
+        "Reward:risk 2.8:1 (meets 2.0:1 minimum)"
       ],
       "rank": 1,
-      "paper_trade_status": "OPENED_THIS_RUN"
+      "paper_trade_status": "SKIPPED_ALREADY_HELD_REAL"
     }
   ],
   "avoid_alerts": [
     {
-      "ticker": "EOS.AX",
-      "name": "Electro Optic Systems Holdings Limited",
-      "price": 7.02,
-      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
-    },
-    {
       "ticker": "STO.AX",
       "name": "Santos Limited",
-      "price": 8.56,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 8.62,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "AMP.AX",
       "name": "AMP Limited",
-      "price": 2.22,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "price": 2.19,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     },
     {
       "ticker": "WDS.AX",
       "name": "Woodside Energy Group Ltd",
-      "price": 30.74,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 30.7,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 188.53,
-      "detail": "Heiken-Ashi trend BEARISH for 7 bars"
+      "price": 177.63,
+      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
     },
     {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 445.111,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
-    },
-    {
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "price": 361.61,
+      "ticker": "TEA.AX",
+      "name": "Tasmea Limited",
+      "price": 9.08,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     }
   ],
@@ -96,7 +84,7 @@
         "entered_score": 93,
         "entered_reward_risk": 2.67
       },
-      "_current_price": 1.565
+      "_current_price": 1.55
     },
     {
       "ticker": "CAR.AX",
@@ -115,7 +103,7 @@
         "entered_score": 86,
         "entered_reward_risk": 2.1
       },
-      "_current_price": 26.07
+      "_current_price": 25.92
     },
     {
       "ticker": "GWA.AX",
@@ -134,7 +122,7 @@
         "entered_score": 86,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 2.12
+      "_current_price": 2.09
     }
   ],
   "closed_trades": [
@@ -371,8 +359,8 @@
   ],
   "drawdown": {
     "realized_pnl": 70.07,
-    "unrealized_pnl": 68.96,
-    "total_pnl": 139.03,
+    "unrealized_pnl": 16.22,
+    "total_pnl": 86.29,
     "drawdown_pct": 0.0,
     "halted": false
   },
@@ -380,16 +368,6 @@
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": [
-      {
-        "ticker": "GWA.AX",
-        "entry_price": 2.12,
-        "shares": 897.6651,
-        "position_cost": 1903.05,
-        "sector": "Industrials",
-        "stop_price": 2.0086,
-        "target_price": 2.3428
-      }
-    ]
+    "opened": []
   }
 }

@@ -2,111 +2,111 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 24.04,
-      "value_label": "VIX 24.0",
-      "score": 8.7,
-      "detail": "VIX 24.0 \u2014 lower than 9% of the past year",
+      "value": 19.92,
+      "value_label": "VIX 19.9",
+      "score": 19.8,
+      "detail": "VIX 19.9 \u2014 lower than 20% of the past year",
       "interpretation": "ELEVATED"
     },
     {
       "name": "VIX Term Structure",
-      "value": 1.027,
-      "value_label": "Ratio 1.027",
-      "score": 41.0,
-      "detail": "VIX/VIX3M = 1.027 (BACKWARDATION) \u2014 below 1.0 = calm",
-      "interpretation": "NEUTRAL"
+      "value": 0.949,
+      "value_label": "Ratio 0.949",
+      "score": 66.8,
+      "detail": "VIX/VIX3M = 0.949 (CONTANGO) \u2014 below 1.0 = calm",
+      "interpretation": "CALM"
     },
     {
       "name": "Market Breadth",
-      "value": 63.6,
-      "value_label": "7/11 sectors above 200MA",
-      "score": 67.3,
-      "detail": "7 of 11 SPDR sector ETFs above their 200-day SMA (64%)",
-      "interpretation": "NARROW"
+      "value": 81.8,
+      "value_label": "9/11 sectors above 200MA",
+      "score": 100,
+      "detail": "9 of 11 SPDR sector ETFs above their 200-day SMA (82%)",
+      "interpretation": "BROAD"
     },
     {
       "name": "Credit Spreads",
-      "value": 0.42,
-      "value_label": "Z-score +0.42",
-      "score": 39.6,
-      "detail": "HYG/TLT ratio z-score +0.42 vs 1-year avg (negative = tight = bullish)",
-      "interpretation": "NORMAL"
+      "value": 0.55,
+      "value_label": "Z-score +0.55",
+      "score": 36.4,
+      "detail": "HYG/TLT ratio z-score +0.55 vs 1-year avg (negative = tight = bullish)",
+      "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 61.99,
-      "value_label": "VIX ROC +62.0%",
-      "score": 0,
-      "detail": "VIX 20-day rate of change +62.0% (rapidly rising = fear = low score)",
+      "value": 30.97,
+      "value_label": "VIX ROC +31.0%",
+      "score": 23.8,
+      "detail": "VIX 20-day rate of change +31.0% (rapidly rising = fear = low score)",
       "interpretation": "FEARFUL"
     },
     {
       "name": "SPX Trend",
-      "value": 1.4,
-      "value_label": "SPX +1.4% vs 200MA",
+      "value": 3.35,
+      "value_label": "SPX +3.3% vs 200MA",
       "score": 70,
-      "detail": "S&P 500 $7,428 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,574 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "MIXED"
     }
   ],
-  "composite": 37.8,
+  "composite": 52.8,
   "us_signals": [
     {
       "name": "VIX Level",
-      "value": 24.04,
-      "value_label": "VIX 24.0",
-      "score": 8.7,
-      "detail": "VIX 24.0 \u2014 lower than 9% of the past year",
+      "value": 19.92,
+      "value_label": "VIX 19.9",
+      "score": 19.8,
+      "detail": "VIX 19.9 \u2014 lower than 20% of the past year",
       "interpretation": "ELEVATED"
     },
     {
       "name": "VIX Term Structure",
-      "value": 1.027,
-      "value_label": "Ratio 1.027",
-      "score": 41.0,
-      "detail": "VIX/VIX3M = 1.027 (BACKWARDATION) \u2014 below 1.0 = calm",
-      "interpretation": "NEUTRAL"
+      "value": 0.949,
+      "value_label": "Ratio 0.949",
+      "score": 66.8,
+      "detail": "VIX/VIX3M = 0.949 (CONTANGO) \u2014 below 1.0 = calm",
+      "interpretation": "CALM"
     },
     {
       "name": "Market Breadth",
-      "value": 63.6,
-      "value_label": "7/11 sectors above 200MA",
-      "score": 67.3,
-      "detail": "7 of 11 SPDR sector ETFs above their 200-day SMA (64%)",
-      "interpretation": "NARROW"
+      "value": 81.8,
+      "value_label": "9/11 sectors above 200MA",
+      "score": 100,
+      "detail": "9 of 11 SPDR sector ETFs above their 200-day SMA (82%)",
+      "interpretation": "BROAD"
     },
     {
       "name": "Credit Spreads",
-      "value": 0.42,
-      "value_label": "Z-score +0.42",
-      "score": 39.6,
-      "detail": "HYG/TLT ratio z-score +0.42 vs 1-year avg (negative = tight = bullish)",
-      "interpretation": "NORMAL"
+      "value": 0.55,
+      "value_label": "Z-score +0.55",
+      "score": 36.4,
+      "detail": "HYG/TLT ratio z-score +0.55 vs 1-year avg (negative = tight = bullish)",
+      "interpretation": "WIDE"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 61.99,
-      "value_label": "VIX ROC +62.0%",
-      "score": 0,
-      "detail": "VIX 20-day rate of change +62.0% (rapidly rising = fear = low score)",
+      "value": 30.97,
+      "value_label": "VIX ROC +31.0%",
+      "score": 23.8,
+      "detail": "VIX 20-day rate of change +31.0% (rapidly rising = fear = low score)",
       "interpretation": "FEARFUL"
     },
     {
       "name": "SPX Trend",
-      "value": 1.4,
-      "value_label": "SPX +1.4% vs 200MA",
+      "value": 3.35,
+      "value_label": "SPX +3.3% vs 200MA",
       "score": 70,
-      "detail": "S&P 500 $7,428 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,574 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "MIXED"
     }
   ],
-  "us_composite": 37.8,
+  "us_composite": 52.8,
   "asx_signals": [
     {
       "name": "ASX Trend",
       "score": 70,
-      "value": 9021.0,
-      "value_label": "XJO 9,021",
+      "value": 9030.0,
+      "value_label": "XJO 9,030",
       "detail": "XJO vs MA50(\u2713) MA200(\u2713)",
       "interpretation": "ABOVE 200MA"
     },
@@ -120,16 +120,16 @@
     },
     {
       "name": "ASX Volatility",
-      "score": 8.7,
-      "value": 24.0,
-      "value_label": "XVI 24.0",
-      "detail": "Lower than 9% of past year",
-      "interpretation": "FEARFUL"
+      "score": 19.8,
+      "value": 19.9,
+      "value_label": "XVI 19.9",
+      "detail": "Lower than 20% of past year",
+      "interpretation": "NEUTRAL"
     }
   ],
-  "asx_composite": 58.1,
-  "zone": "CAUTION",
-  "zone_desc": "Elevated risk \u2014 minimal deployment, hold cash",
-  "zone_color": "#ff6600",
-  "scanned_at": "2026-11-06T16:59:57.064286"
+  "asx_composite": 61.8,
+  "zone": "SELECTIVE",
+  "zone_desc": "Mixed conditions \u2014 selective deployment, reduce size",
+  "zone_color": "#ff9900",
+  "scanned_at": "2026-11-09T20:15:14.402315"
 }
