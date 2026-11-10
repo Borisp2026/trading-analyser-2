@@ -2264,9 +2264,64 @@
         "entered_score": 86,
         "entered_reward_risk": 2.0
       }
+    },
+    {
+      "ticker": "IOZ.AX",
+      "shares": 41.3634,
+      "buy_price": 36.6,
+      "buy_date": "2026-11-10",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #2 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 34.1824,
+      "target_price": 36.9329,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Unknown",
+        "entered_dc_num": 3,
+        "entered_score": 55
+      }
+    },
+    {
+      "ticker": "IOZ.AX",
+      "shares": 54.6448,
+      "buy_price": 36.6,
+      "buy_date": "2026-11-10",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($36.29)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 35.8,
+      "target_price": 38.32,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Unknown",
+        "entered_score": 84,
+        "entered_reward_risk": 2.15
+      }
+    },
+    {
+      "ticker": "NST.AX",
+      "shares": 52.0049,
+      "buy_price": 26.62,
+      "buy_date": "2026-11-10",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($26.14)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 24.6971,
+      "target_price": 30.4658,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Basic Materials",
+        "entered_score": 84,
+        "entered_reward_risk": 2.0
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 11152.862326538052,
+  "paper_cash": 6254.591768538053,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

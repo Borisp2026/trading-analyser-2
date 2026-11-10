@@ -1,69 +1,150 @@
 {
-  "generated_at": "2026-11-09T20:14:57",
+  "generated_at": "2026-11-10T17:21:32",
   "watchlist_count": 33,
   "candidates": [
     {
       "ticker": "NXT.AX",
       "name": "NEXTDC Limited",
-      "price": 10.52,
+      "price": 10.79,
       "sector": "Technology",
-      "zen_score": 88,
+      "zen_score": 95,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 5,
+        "consecutive_bars": 6,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 10.5,
+        "resistance": 10.6,
         "support": 5.07
       },
-      "stop_price": 8.5807,
-      "target_price": 15.95,
-      "reward_risk": 2.8,
-      "position_size": 542.46,
+      "stop_price": 9.3457,
+      "target_price": 16.32,
+      "reward_risk": 3.83,
+      "position_size": 747.07,
       "already_held_real": true,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 5 bars",
-        "Breakout above 20-bar high ($10.5)",
-        "Reward:risk 2.8:1 (meets 2.0:1 minimum)"
+        "Heiken-Ashi trend BULLISH for 6 bars",
+        "Breakout above 20-bar high ($10.6)",
+        "Reward:risk 3.83:1 (meets 2.0:1 minimum)"
       ],
       "rank": 1,
       "paper_trade_status": "SKIPPED_ALREADY_HELD_REAL"
+    },
+    {
+      "ticker": "IOZ.AX",
+      "name": "iShares Core S&P/ASX 200 ETF",
+      "price": 36.6,
+      "sector": "Unknown",
+      "zen_score": 84,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 4,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 36.29,
+        "support": 34.57
+      },
+      "stop_price": 35.8,
+      "target_price": 38.32,
+      "reward_risk": 2.15,
+      "position_size": 2000.0,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 4 bars",
+        "Breakout above 20-bar high ($36.29)",
+        "Reward:risk 2.15:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 2,
+      "paper_trade_status": "OPENED_THIS_RUN"
+    },
+    {
+      "ticker": "GMD.AX",
+      "name": "Genesis Minerals Limited",
+      "price": 7.72,
+      "sector": "Basic Materials",
+      "zen_score": 84,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 4,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 7.57,
+        "support": 6.105
+      },
+      "stop_price": 6.9621,
+      "target_price": 9.2358,
+      "reward_risk": 2.0,
+      "position_size": 1018.6,
+      "already_held_real": true,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 4 bars",
+        "Breakout above 20-bar high ($7.57)",
+        "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 3,
+      "paper_trade_status": "SKIPPED_ALREADY_HELD_REAL"
+    },
+    {
+      "ticker": "NST.AX",
+      "name": "Northern Star Resources Limited",
+      "price": 26.62,
+      "sector": "Basic Materials",
+      "zen_score": 84,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 4,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 26.14,
+        "support": 23.6
+      },
+      "stop_price": 24.6971,
+      "target_price": 30.4658,
+      "reward_risk": 2.0,
+      "position_size": 1384.37,
+      "already_held_real": false,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 4 bars",
+        "Breakout above 20-bar high ($26.14)",
+        "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 4,
+      "paper_trade_status": "OPENED_THIS_RUN"
     }
   ],
   "avoid_alerts": [
     {
       "ticker": "STO.AX",
       "name": "Santos Limited",
-      "price": 8.62,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
-    },
-    {
-      "ticker": "AMP.AX",
-      "name": "AMP Limited",
-      "price": 2.19,
+      "price": 8.6,
       "detail": "Heiken-Ashi trend BEARISH for 6 bars"
-    },
-    {
-      "ticker": "WDS.AX",
-      "name": "Woodside Energy Group Ltd",
-      "price": 30.7,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 177.63,
-      "detail": "Heiken-Ashi trend BEARISH for 8 bars"
+      "price": 167.6386,
+      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
     },
     {
-      "ticker": "TEA.AX",
-      "name": "Tasmea Limited",
-      "price": 9.08,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "ticker": "WDS.AX",
+      "name": "Woodside Energy Group Ltd",
+      "price": 30.74,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     }
   ],
   "open_trades": [
@@ -84,7 +165,7 @@
         "entered_score": 93,
         "entered_reward_risk": 2.67
       },
-      "_current_price": 1.55
+      "_current_price": 1.565
     },
     {
       "ticker": "CAR.AX",
@@ -103,7 +184,7 @@
         "entered_score": 86,
         "entered_reward_risk": 2.1
       },
-      "_current_price": 25.92
+      "_current_price": 26.07
     },
     {
       "ticker": "GWA.AX",
@@ -122,7 +203,45 @@
         "entered_score": 86,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 2.09
+      "_current_price": 2.11
+    },
+    {
+      "ticker": "IOZ.AX",
+      "shares": 54.6448,
+      "buy_price": 36.6,
+      "buy_date": "2026-11-10",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($36.29)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 35.8,
+      "target_price": 38.32,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Unknown",
+        "entered_score": 84,
+        "entered_reward_risk": 2.15
+      },
+      "_current_price": 36.6
+    },
+    {
+      "ticker": "NST.AX",
+      "shares": 52.0049,
+      "buy_price": 26.62,
+      "buy_date": "2026-11-10",
+      "signal": "ZEN_BUY",
+      "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($26.14)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 24.6971,
+      "target_price": 30.4658,
+      "meta": {
+        "strategy": "zen_trading",
+        "sector": "Basic Materials",
+        "entered_score": 84,
+        "entered_reward_risk": 2.0
+      },
+      "_current_price": 26.62
     }
   ],
   "closed_trades": [
@@ -359,15 +478,34 @@
   ],
   "drawdown": {
     "realized_pnl": 70.07,
-    "unrealized_pnl": 16.22,
-    "total_pnl": 86.29,
+    "unrealized_pnl": 59.98,
+    "total_pnl": 130.05,
     "drawdown_pct": 0.0,
     "halted": false
   },
-  "macro_zone": "CAUTION",
+  "macro_zone": "SELECTIVE",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": []
+    "opened": [
+      {
+        "ticker": "IOZ.AX",
+        "entry_price": 36.6,
+        "shares": 54.6448,
+        "position_cost": 2000.0,
+        "sector": "Unknown",
+        "stop_price": 35.8,
+        "target_price": 38.32
+      },
+      {
+        "ticker": "NST.AX",
+        "entry_price": 26.62,
+        "shares": 52.0049,
+        "position_cost": 1384.37,
+        "sector": "Basic Materials",
+        "stop_price": 24.6971,
+        "target_price": 30.4658
+      }
+    ]
   }
 }
