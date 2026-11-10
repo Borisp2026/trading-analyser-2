@@ -1,26 +1,5 @@
 [
   {
-    "ticker": "IPX.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-09-29",
-    "time": "00:03:51"
-  },
-  {
-    "ticker": "IPX.AX",
-    "signal_type": "VOLUME_SELLOFF",
-    "message": "Volume spike 9.47x avg + price -2.54% \u2014 selling pressure",
-    "date": "2026-09-29",
-    "time": "00:03:51"
-  },
-  {
-    "ticker": "GLN.AX",
-    "signal_type": "VOLUME_SELLOFF",
-    "message": "Volume spike 4.68x avg + price -4.76% \u2014 selling pressure",
-    "date": "2026-09-29",
-    "time": "00:03:51"
-  },
-  {
     "ticker": "GLN.AX",
     "signal_type": "GAP_DOWN",
     "message": "Gap down -4.76% \u2014 possible reversal opportunity OR continued sell",
@@ -3498,5 +3477,26 @@
     "message": "Gap up +5.07% from previous close",
     "date": "2026-11-10",
     "time": "04:25:56"
+  },
+  {
+    "ticker": "MSFT",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-10",
+    "time": "20:06:15"
+  },
+  {
+    "ticker": "NVDA",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -6.67% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-10",
+    "time": "20:06:16"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-10",
+    "time": "20:06:16"
   }
 ]
