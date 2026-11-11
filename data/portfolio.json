@@ -2319,9 +2319,28 @@
         "entered_score": 84,
         "entered_reward_risk": 2.0
       }
+    },
+    {
+      "ticker": "APA.AX",
+      "shares": 178.731,
+      "buy_price": 11.19,
+      "buy_date": "2026-11-11",
+      "signal": "CYCLE_BUY",
+      "reason": "At/above 2nd Daily Cycle HCL; LEFT-translated cycle (Daily Cycle #1 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 10.9172,
+      "target_price": 11.812,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "DC2_HCL",
+        "sector": "Utilities",
+        "entered_dc_num": 2,
+        "entered_score": 40
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 6254.591768538053,
+  "paper_cash": 4254.591878538053,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }

@@ -1,150 +1,45 @@
 {
-  "generated_at": "2026-11-10T17:21:32",
+  "generated_at": "2026-11-11T17:31:24",
   "watchlist_count": 33,
   "candidates": [
     {
-      "ticker": "NXT.AX",
-      "name": "NEXTDC Limited",
-      "price": 10.79,
-      "sector": "Technology",
-      "zen_score": 95,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 6,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 10.6,
-        "support": 5.07
-      },
-      "stop_price": 9.3457,
-      "target_price": 16.32,
-      "reward_risk": 3.83,
-      "position_size": 747.07,
-      "already_held_real": true,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 6 bars",
-        "Breakout above 20-bar high ($10.6)",
-        "Reward:risk 3.83:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 1,
-      "paper_trade_status": "SKIPPED_ALREADY_HELD_REAL"
-    },
-    {
-      "ticker": "IOZ.AX",
-      "name": "iShares Core S&P/ASX 200 ETF",
-      "price": 36.6,
-      "sector": "Unknown",
-      "zen_score": 84,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 4,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 36.29,
-        "support": 34.57
-      },
-      "stop_price": 35.8,
-      "target_price": 38.32,
-      "reward_risk": 2.15,
-      "position_size": 2000.0,
-      "already_held_real": false,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 4 bars",
-        "Breakout above 20-bar high ($36.29)",
-        "Reward:risk 2.15:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 2,
-      "paper_trade_status": "OPENED_THIS_RUN"
-    },
-    {
-      "ticker": "GMD.AX",
-      "name": "Genesis Minerals Limited",
-      "price": 7.72,
-      "sector": "Basic Materials",
-      "zen_score": 84,
-      "trend": {
-        "direction": "BULLISH",
-        "consecutive_bars": 4,
-        "last_bullish": true
-      },
-      "breakout": {
-        "bullish_breakout": true,
-        "bearish_breakout": false,
-        "resistance": 7.57,
-        "support": 6.105
-      },
-      "stop_price": 6.9621,
-      "target_price": 9.2358,
-      "reward_risk": 2.0,
-      "position_size": 1018.6,
-      "already_held_real": true,
-      "cooldown_days_remaining": 0,
-      "reasons": [
-        "Heiken-Ashi trend BULLISH for 4 bars",
-        "Breakout above 20-bar high ($7.57)",
-        "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
-      ],
-      "rank": 3,
-      "paper_trade_status": "SKIPPED_ALREADY_HELD_REAL"
-    },
-    {
       "ticker": "NST.AX",
       "name": "Northern Star Resources Limited",
-      "price": 26.62,
+      "price": 26.73,
       "sector": "Basic Materials",
-      "zen_score": 84,
+      "zen_score": 85,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 4,
+        "consecutive_bars": 5,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 26.14,
+        "resistance": 26.62,
         "support": 23.6
       },
-      "stop_price": 24.6971,
-      "target_price": 30.4658,
+      "stop_price": 24.7343,
+      "target_price": 30.7214,
       "reward_risk": 2.0,
-      "position_size": 1384.37,
+      "position_size": 1339.38,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 4 bars",
-        "Breakout above 20-bar high ($26.14)",
+        "Heiken-Ashi trend BULLISH for 5 bars",
+        "Breakout above 20-bar high ($26.62)",
         "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
       ],
-      "rank": 4,
-      "paper_trade_status": "OPENED_THIS_RUN"
+      "rank": 1,
+      "paper_trade_status": "ALREADY_OPEN"
     }
   ],
   "avoid_alerts": [
     {
-      "ticker": "STO.AX",
-      "name": "Santos Limited",
-      "price": 8.6,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
-    },
-    {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 167.6386,
-      "detail": "Heiken-Ashi trend BEARISH for 9 bars"
-    },
-    {
-      "ticker": "WDS.AX",
-      "name": "Woodside Energy Group Ltd",
-      "price": 30.74,
-      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
+      "price": 176.27,
+      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
     }
   ],
   "open_trades": [
@@ -165,7 +60,7 @@
         "entered_score": 93,
         "entered_reward_risk": 2.67
       },
-      "_current_price": 1.565
+      "_current_price": 1.56
     },
     {
       "ticker": "CAR.AX",
@@ -184,7 +79,7 @@
         "entered_score": 86,
         "entered_reward_risk": 2.1
       },
-      "_current_price": 26.07
+      "_current_price": 26.25
     },
     {
       "ticker": "GWA.AX",
@@ -203,7 +98,7 @@
         "entered_score": 86,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 2.11
+      "_current_price": 2.12
     },
     {
       "ticker": "IOZ.AX",
@@ -222,7 +117,7 @@
         "entered_score": 84,
         "entered_reward_risk": 2.15
       },
-      "_current_price": 36.6
+      "_current_price": 36.69
     },
     {
       "ticker": "NST.AX",
@@ -241,7 +136,7 @@
         "entered_score": 84,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 26.62
+      "_current_price": 26.73
     }
   ],
   "closed_trades": [
@@ -478,34 +373,15 @@
   ],
   "drawdown": {
     "realized_pnl": 70.07,
-    "unrealized_pnl": 59.98,
-    "total_pnl": 130.05,
+    "unrealized_pnl": 84.17,
+    "total_pnl": 154.24,
     "drawdown_pct": 0.0,
     "halted": false
   },
-  "macro_zone": "SELECTIVE",
+  "macro_zone": "CAUTION",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],
-    "opened": [
-      {
-        "ticker": "IOZ.AX",
-        "entry_price": 36.6,
-        "shares": 54.6448,
-        "position_cost": 2000.0,
-        "sector": "Unknown",
-        "stop_price": 35.8,
-        "target_price": 38.32
-      },
-      {
-        "ticker": "NST.AX",
-        "entry_price": 26.62,
-        "shares": 52.0049,
-        "position_cost": 1384.37,
-        "sector": "Basic Materials",
-        "stop_price": 24.6971,
-        "target_price": 30.4658
-      }
-    ]
+    "opened": []
   }
 }
