@@ -1,26 +1,5 @@
 [
   {
-    "ticker": "CMM.AX",
-    "signal_type": "VOLUME_SELLOFF",
-    "message": "Volume spike 11.36x avg + price -3.83% \u2014 selling pressure",
-    "date": "2026-09-29",
-    "time": "00:03:55"
-  },
-  {
-    "ticker": "CMM.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.83% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-09-29",
-    "time": "00:03:55"
-  },
-  {
-    "ticker": "PLS.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-09-29",
-    "time": "00:03:55"
-  },
-  {
     "ticker": "SS1.AX",
     "signal_type": "VOLUME_SELLOFF",
     "message": "Volume spike 2.24x avg + price -4.0% \u2014 selling pressure",
@@ -3498,5 +3477,26 @@
     "message": "RSI overbought: RSI=68.3 \u2014 consider taking profit",
     "date": "2026-11-11",
     "time": "00:38:17"
+  },
+  {
+    "ticker": "NVDA",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.96% from previous close",
+    "date": "2026-11-11",
+    "time": "19:55:46"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +8.48% from previous close",
+    "date": "2026-11-11",
+    "time": "19:55:46"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.13% from previous close",
+    "date": "2026-11-11",
+    "time": "19:55:46"
   }
 ]
