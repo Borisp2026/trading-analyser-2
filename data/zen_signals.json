@@ -1,45 +1,76 @@
 {
-  "generated_at": "2026-11-11T17:31:24",
+  "generated_at": "2026-11-12T17:47:10",
   "watchlist_count": 33,
   "candidates": [
     {
-      "ticker": "NST.AX",
-      "name": "Northern Star Resources Limited",
-      "price": 26.73,
-      "sector": "Basic Materials",
-      "zen_score": 85,
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "price": 582.94,
+      "sector": "Technology",
+      "zen_score": 84,
       "trend": {
         "direction": "BULLISH",
-        "consecutive_bars": 5,
+        "consecutive_bars": 4,
         "last_bullish": true
       },
       "breakout": {
         "bullish_breakout": true,
         "bearish_breakout": false,
-        "resistance": 26.62,
-        "support": 23.6
+        "resistance": 579.18,
+        "support": 402.1
       },
-      "stop_price": 24.7343,
-      "target_price": 30.7214,
+      "stop_price": 493.7172,
+      "target_price": 761.3856,
       "reward_risk": 2.0,
-      "position_size": 1339.38,
+      "position_size": 653.35,
       "already_held_real": false,
       "cooldown_days_remaining": 0,
       "reasons": [
-        "Heiken-Ashi trend BULLISH for 5 bars",
-        "Breakout above 20-bar high ($26.62)",
+        "Heiken-Ashi trend BULLISH for 4 bars",
+        "Breakout above 20-bar high ($579.18)",
         "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
       ],
       "rank": 1,
-      "paper_trade_status": "ALREADY_OPEN"
+      "paper_trade_status": "NOT_OPENED"
+    },
+    {
+      "ticker": "CU6.AX",
+      "name": "Clarity Pharmaceuticals Ltd",
+      "price": 2.05,
+      "sector": "Healthcare",
+      "zen_score": 84,
+      "trend": {
+        "direction": "BULLISH",
+        "consecutive_bars": 4,
+        "last_bullish": true
+      },
+      "breakout": {
+        "bullish_breakout": true,
+        "bearish_breakout": false,
+        "resistance": 1.865,
+        "support": 1.34
+      },
+      "stop_price": 1.7411,
+      "target_price": 2.6678,
+      "reward_risk": 2.0,
+      "position_size": 663.65,
+      "already_held_real": true,
+      "cooldown_days_remaining": 0,
+      "reasons": [
+        "Heiken-Ashi trend BULLISH for 4 bars",
+        "Breakout above 20-bar high ($1.865)",
+        "Reward:risk 2.0:1 (meets 2.0:1 minimum)"
+      ],
+      "rank": 2,
+      "paper_trade_status": "SKIPPED_ALREADY_HELD_REAL"
     }
   ],
   "avoid_alerts": [
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 176.27,
-      "detail": "Heiken-Ashi trend BEARISH for 10 bars"
+      "price": 165.93,
+      "detail": "Heiken-Ashi trend BEARISH for 11 bars"
     }
   ],
   "open_trades": [
@@ -79,7 +110,7 @@
         "entered_score": 86,
         "entered_reward_risk": 2.1
       },
-      "_current_price": 26.25
+      "_current_price": 26.09
     },
     {
       "ticker": "GWA.AX",
@@ -136,7 +167,7 @@
         "entered_score": 84,
         "entered_reward_risk": 2.0
       },
-      "_current_price": 26.73
+      "_current_price": 26.13
     }
   ],
   "closed_trades": [
@@ -373,12 +404,12 @@
   ],
   "drawdown": {
     "realized_pnl": 70.07,
-    "unrealized_pnl": 84.17,
-    "total_pnl": 154.24,
+    "unrealized_pnl": 43.8,
+    "total_pnl": 113.87,
     "drawdown_pct": 0.0,
     "halted": false
   },
-  "macro_zone": "CAUTION",
+  "macro_zone": "SELECTIVE",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],

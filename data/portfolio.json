@@ -2327,7 +2327,7 @@
       "buy_date": "2026-11-11",
       "signal": "CYCLE_BUY",
       "reason": "At/above 2nd Daily Cycle HCL; LEFT-translated cycle (Daily Cycle #1 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 10.9172,
       "target_price": 11.812,
@@ -2337,10 +2337,34 @@
         "sector": "Utilities",
         "entered_dc_num": 2,
         "entered_score": 40
+      },
+      "sell_price": 11.15,
+      "sell_date": "2026-11-12",
+      "pnl": -7.15,
+      "pnl_pct": -0.36,
+      "close_reason": "TRENDLINE_BREAK"
+    },
+    {
+      "ticker": "NST.AX",
+      "shares": 10.3988,
+      "buy_price": 26.13,
+      "buy_date": "2026-11-12",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #4 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 16.5134,
+      "target_price": 28.6973,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Basic Materials",
+        "entered_dc_num": 5,
+        "entered_score": 72
       }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 4254.591878538053,
+  "paper_cash": 5975.721884538053,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
