@@ -1,19 +1,5 @@
 [
   {
-    "ticker": "AMP.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -4.62% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-01",
-    "time": "01:18:20"
-  },
-  {
-    "ticker": "CMM.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=28.1 turning up",
-    "date": "2026-10-01",
-    "time": "01:18:20"
-  },
-  {
     "ticker": "CMM.AX",
     "signal_type": "GAP_DOWN",
     "message": "Gap down -3.15% \u2014 possible reversal opportunity OR continued sell",
@@ -3498,5 +3484,19 @@
     "message": "RSI oversold reversal: RSI=31.4 turning up",
     "date": "2026-11-13",
     "time": "01:28:21"
+  },
+  {
+    "ticker": "NVDA",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-11-13",
+    "time": "20:10:11"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -8.82% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-13",
+    "time": "20:10:11"
   }
 ]
