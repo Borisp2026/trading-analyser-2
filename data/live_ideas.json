@@ -1,96 +1,176 @@
 {
-  "generated_at": "2026-11-12 20:33",
+  "generated_at": "2026-11-13 01:28",
   "scanned_count": 78,
   "ideas": [
     {
-      "ticker": "ACL.AX",
-      "price": 3.33,
-      "vwap": 3.3195,
-      "vs": 0.3162,
-      "rsi": 65.0,
+      "ticker": "AMD",
+      "price": 585.5801,
+      "vwap": 575.8521,
+      "vs": 1.6893,
+      "rsi": 63.0,
+      "mo": 1.0321,
+      "buyZone": 575.8521,
+      "sellZone": 594.1961
+    },
+    {
+      "ticker": "CAR.AX",
+      "price": 26.145,
+      "vwap": 26.1112,
+      "vs": 0.1295,
+      "rsi": 50.0,
+      "mo": 0.065,
+      "buyZone": 26.1112,
+      "sellZone": 26.3713
+    },
+    {
+      "ticker": "CMM.AX",
+      "price": 13.76,
+      "vwap": 13.6903,
+      "vs": 0.5094,
+      "rsi": 50.0,
+      "mo": 0.05,
+      "buyZone": 13.6903,
+      "sellZone": 13.97
+    },
+    {
+      "ticker": "IPX.AX",
+      "price": 2.18,
+      "vwap": 2.1739,
+      "vs": 0.2824,
+      "rsi": 50.0,
       "mo": 0.02,
-      "buyZone": 3.3195,
-      "sellZone": 3.355
+      "buyZone": 2.1739,
+      "sellZone": 2.22
     },
     {
-      "ticker": "APA.AX",
-      "price": 11.15,
-      "vwap": 11.1459,
-      "vs": 0.0364,
-      "rsi": 53.8,
-      "mo": 0.005,
-      "buyZone": 11.1459,
-      "sellZone": 11.1971
+      "ticker": "LNQ.AX",
+      "price": 0.595,
+      "vwap": 0.5914,
+      "vs": 0.6157,
+      "rsi": 50.0,
+      "mo": 0.015,
+      "buyZone": 0.5914,
+      "sellZone": 0.617
     },
     {
-      "ticker": "BAP.AX",
-      "price": 0.875,
+      "ticker": "LYC.AX",
+      "price": 13.56,
+      "vwap": 13.5153,
+      "vs": 0.3304,
+      "rsi": 50.0,
+      "mo": 0.05,
+      "buyZone": 13.5153,
+      "sellZone": 13.7663
+    },
+    {
+      "ticker": "MIN.AX",
+      "price": 47.04,
+      "vwap": 47.0198,
+      "vs": 0.0429,
+      "rsi": 50.0,
+      "mo": 0.14,
+      "buyZone": 47.0198,
+      "sellZone": 47.6688
+    },
+    {
+      "ticker": "MMI.AX",
+      "price": 0.885,
       "vwap": 0.8696,
-      "vs": 0.6203,
-      "rsi": 62.7,
-      "mo": 0.005,
+      "vs": 1.7675,
+      "rsi": 50.0,
+      "mo": 0.023,
       "buyZone": 0.8696,
-      "sellZone": 0.8883
+      "sellZone": 0.8974
     },
     {
-      "ticker": "GMG.AX",
-      "price": 29.45,
-      "vwap": 29.3546,
-      "vs": 0.3249,
-      "rsi": 58.6,
-      "mo": 0.06,
-      "buyZone": 29.3546,
-      "sellZone": 29.5814
+      "ticker": "MSB.AX",
+      "price": 1.975,
+      "vwap": 1.954,
+      "vs": 1.0722,
+      "rsi": 50.0,
+      "mo": 0.03,
+      "buyZone": 1.954,
+      "sellZone": 2.0075
     },
     {
-      "ticker": "IOZ.AX",
-      "price": 36.69,
-      "vwap": 36.6286,
-      "vs": 0.1677,
-      "rsi": 72.2,
-      "mo": 0.02,
-      "buyZone": 36.6286,
-      "sellZone": 36.7529
+      "ticker": "NVDA",
+      "price": 166.04,
+      "vwap": 164.4251,
+      "vs": 0.9821,
+      "rsi": 62.5,
+      "mo": 2.0255,
+      "buyZone": 164.4251,
+      "sellZone": 168.8702
     },
     {
-      "ticker": "IVV.AX",
-      "price": 73.83,
-      "vwap": 73.7837,
-      "vs": 0.0627,
-      "rsi": 63.3,
-      "mo": 0.08,
-      "buyZone": 73.7837,
-      "sellZone": 73.9607
+      "ticker": "PLS.AX",
+      "price": 2.89,
+      "vwap": 2.8734,
+      "vs": 0.5771,
+      "rsi": 50.0,
+      "mo": 0.04,
+      "buyZone": 2.8734,
+      "sellZone": 2.9525
     },
     {
-      "ticker": "NWH.AX",
-      "price": 6.8,
-      "vwap": 6.7869,
-      "vs": 0.1936,
-      "rsi": 60.7,
-      "mo": 0.035,
-      "buyZone": 6.7869,
-      "sellZone": 6.8693
+      "ticker": "PNR.AX",
+      "price": 3.19,
+      "vwap": 3.1592,
+      "vs": 0.9756,
+      "rsi": 50.0,
+      "mo": 0.025,
+      "buyZone": 3.1592,
+      "sellZone": 3.2663
+    },
+    {
+      "ticker": "RMD.AX",
+      "price": 35.0,
+      "vwap": 34.9909,
+      "vs": 0.026,
+      "rsi": 50.0,
+      "mo": 0.09,
+      "buyZone": 34.9909,
+      "sellZone": 35.195
+    },
+    {
+      "ticker": "SS1.AX",
+      "price": 0.78,
+      "vwap": 0.7704,
+      "vs": 1.2523,
+      "rsi": 50.0,
+      "mo": 0.015,
+      "buyZone": 0.7704,
+      "sellZone": 0.7921
+    },
+    {
+      "ticker": "TEA.AX",
+      "price": 9.77,
+      "vwap": 9.7591,
+      "vs": 0.1113,
+      "rsi": 50.0,
+      "mo": 0.03,
+      "buyZone": 9.7591,
+      "sellZone": 9.9138
     },
     {
       "ticker": "TSLA",
-      "price": 396.925,
-      "vwap": 391.9023,
-      "vs": 1.2816,
-      "rsi": 70.8,
-      "mo": 6.8847,
-      "buyZone": 391.9023,
-      "sellZone": 401.4547
+      "price": 397.62,
+      "vwap": 391.9311,
+      "vs": 1.4515,
+      "rsi": 74.2,
+      "mo": 7.325,
+      "buyZone": 391.9311,
+      "sellZone": 402.607
     },
     {
-      "ticker": "VGS.AX",
-      "price": 164.64,
-      "vwap": 164.4253,
-      "vs": 0.1306,
-      "rsi": 68.1,
-      "mo": 0.22,
-      "buyZone": 164.4253,
-      "sellZone": 164.93
+      "ticker": "WBC.AX",
+      "price": 37.68,
+      "vwap": 37.673,
+      "vs": 0.0186,
+      "rsi": 50.0,
+      "mo": 0.025,
+      "buyZone": 37.673,
+      "sellZone": 37.8988
     }
   ]
 }
