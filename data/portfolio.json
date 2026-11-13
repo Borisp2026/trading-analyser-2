@@ -2127,7 +2127,7 @@
       "buy_date": "2026-10-29",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 12 bars; Breakout above 20-bar high ($1.47)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 1.3879,
       "target_price": 1.7075,
@@ -2136,7 +2136,12 @@
         "sector": "Financial Services",
         "entered_score": 93,
         "entered_reward_risk": 2.67
-      }
+      },
+      "sell_price": 1.545,
+      "sell_date": "2026-11-13",
+      "pnl": 80.37,
+      "pnl_pct": 4.75,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "CAR.AX",
@@ -2217,7 +2222,7 @@
       "buy_date": "2026-11-05",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($25.66)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 24.9243,
       "target_price": 30.34,
@@ -2226,7 +2231,12 @@
         "sector": "Communication Services",
         "entered_score": 86,
         "entered_reward_risk": 2.1
-      }
+      },
+      "sell_price": 26.05,
+      "sell_date": "2026-11-13",
+      "pnl": -35.52,
+      "pnl_pct": -2.32,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "QBE.AX",
@@ -2254,7 +2264,7 @@
       "buy_date": "2026-11-06",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 6 bars; Breakout above 20-bar high ($2.1)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 2.0086,
       "target_price": 2.3428,
@@ -2263,7 +2273,12 @@
         "sector": "Industrials",
         "entered_score": 86,
         "entered_reward_risk": 2.0
-      }
+      },
+      "sell_price": 2.09,
+      "sell_date": "2026-11-13",
+      "pnl": -26.93,
+      "pnl_pct": -1.42,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "IOZ.AX",
@@ -2291,7 +2306,7 @@
       "buy_date": "2026-11-10",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($36.29)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 35.8,
       "target_price": 38.32,
@@ -2300,7 +2315,12 @@
         "sector": "Unknown",
         "entered_score": 84,
         "entered_reward_risk": 2.15
-      }
+      },
+      "sell_price": 36.46,
+      "sell_date": "2026-11-13",
+      "pnl": -7.65,
+      "pnl_pct": -0.38,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "NST.AX",
@@ -2309,7 +2329,7 @@
       "buy_date": "2026-11-10",
       "signal": "ZEN_BUY",
       "reason": "Heiken-Ashi trend BULLISH for 4 bars; Breakout above 20-bar high ($26.14)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 24.6971,
       "target_price": 30.4658,
@@ -2318,7 +2338,12 @@
         "sector": "Basic Materials",
         "entered_score": 84,
         "entered_reward_risk": 2.0
-      }
+      },
+      "sell_price": 25.39,
+      "sell_date": "2026-11-13",
+      "pnl": -63.97,
+      "pnl_pct": -4.62,
+      "close_reason": "TREND_REVERSAL"
     },
     {
       "ticker": "APA.AX",
@@ -2362,9 +2387,28 @@
         "entered_dc_num": 5,
         "entered_score": 72
       }
+    },
+    {
+      "ticker": "AAPL",
+      "shares": 1.1068,
+      "buy_price": 358.1882,
+      "buy_date": "2026-11-13",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 267.8403,
+      "target_price": 350.9452,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Technology",
+        "entered_dc_num": 4,
+        "entered_score": 52
+      }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 5975.721884538053,
+  "paper_cash": 14034.215870278053,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
