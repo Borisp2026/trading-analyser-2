@@ -1,18 +1,42 @@
 {
-  "generated_at": "2026-11-13T17:25:22",
+  "generated_at": "2026-11-16T19:54:58",
   "watchlist_count": 33,
   "candidates": [],
   "avoid_alerts": [
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 160.99,
-      "detail": "Heiken-Ashi trend BEARISH for 12 bars"
+      "price": 156.41,
+      "detail": "Heiken-Ashi trend BEARISH for 13 bars"
+    },
+    {
+      "ticker": "SS1.AX",
+      "name": "Sun Silver Limited",
+      "price": 0.77,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "CMM.AX",
+      "name": "Capricorn Metals Ltd",
+      "price": 13.37,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+    },
+    {
+      "ticker": "MSB.AX",
+      "name": "Mesoblast Limited",
+      "price": 1.885,
+      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 523.905,
+      "price": 518.56,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "TOR.AX",
+      "name": "Torque Metals Limited",
+      "price": 0.165,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     }
   ],
@@ -259,33 +283,7 @@
   "macro_zone": "SELECTIVE",
   "macro_halted": false,
   "actions_this_run": {
-    "closed": [
-      {
-        "ticker": "AFG.AX",
-        "reason": "TREND_REVERSAL",
-        "exit_price": 1.545
-      },
-      {
-        "ticker": "CAR.AX",
-        "reason": "TREND_REVERSAL",
-        "exit_price": 26.05
-      },
-      {
-        "ticker": "GWA.AX",
-        "reason": "TREND_REVERSAL",
-        "exit_price": 2.09
-      },
-      {
-        "ticker": "IOZ.AX",
-        "reason": "TREND_REVERSAL",
-        "exit_price": 36.46
-      },
-      {
-        "ticker": "NST.AX",
-        "reason": "TREND_REVERSAL",
-        "exit_price": 25.39
-      }
-    ],
+    "closed": [],
     "opened": []
   }
 }

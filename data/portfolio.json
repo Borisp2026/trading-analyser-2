@@ -2376,7 +2376,7 @@
       "buy_date": "2026-11-12",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #4 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 16.5134,
       "target_price": 28.6973,
@@ -2386,7 +2386,12 @@
         "sector": "Basic Materials",
         "entered_dc_num": 5,
         "entered_score": 72
-      }
+      },
+      "sell_price": 24.8,
+      "sell_date": "2026-11-16",
+      "pnl": -13.83,
+      "pnl_pct": -5.09,
+      "close_reason": "TRENDLINE_BREAK"
     },
     {
       "ticker": "AAPL",
@@ -2395,7 +2400,7 @@
       "buy_date": "2026-11-13",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; RIGHT-translated cycle (Daily Cycle #3 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 267.8403,
       "target_price": 350.9452,
@@ -2405,10 +2410,34 @@
         "sector": "Technology",
         "entered_dc_num": 4,
         "entered_score": 52
+      },
+      "sell_price": 352.22,
+      "sell_date": "2026-11-16",
+      "pnl": -6.61,
+      "pnl_pct": -1.67,
+      "close_reason": "FAILED_CYCLE"
+    },
+    {
+      "ticker": "APA.AX",
+      "shares": 177.7778,
+      "buy_price": 11.25,
+      "buy_date": "2026-11-16",
+      "signal": "CYCLE_BUY",
+      "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #1 of IC)",
+      "status": "open",
+      "type": "paper",
+      "stop_price": 10.9172,
+      "target_price": 11.812,
+      "meta": {
+        "strategy": "cycle_trading",
+        "entry_zone": "CONFIRMED_ABOVE_IC_RESISTANCE",
+        "sector": "Utilities",
+        "entered_dc_num": 2,
+        "entered_score": 45
       }
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 14034.215870278053,
+  "paper_cash": 12681.942956278053,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
