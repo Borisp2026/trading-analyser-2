@@ -1,47 +1,5 @@
 [
   {
-    "ticker": "CMM.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.15% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-01",
-    "time": "01:18:20"
-  },
-  {
-    "ticker": "PLS.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.11% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-01",
-    "time": "01:18:20"
-  },
-  {
-    "ticker": "NST.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=27.4 turning up",
-    "date": "2026-10-01",
-    "time": "01:18:21"
-  },
-  {
-    "ticker": "NST.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.23% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-01",
-    "time": "01:18:21"
-  },
-  {
-    "ticker": "VAS.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=15.5 turning up",
-    "date": "2026-10-01",
-    "time": "01:18:22"
-  },
-  {
-    "ticker": "IOZ.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=24.5 turning up",
-    "date": "2026-10-01",
-    "time": "01:18:22"
-  },
-  {
     "ticker": "VTEK.AX",
     "signal_type": "RSI_OVERBOUGHT",
     "message": "RSI overbought: RSI=76.0 \u2014 consider taking profit",
@@ -3498,5 +3456,47 @@
     "message": "Gap down -8.82% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-11-13",
     "time": "20:10:11"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.33% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-16",
+    "time": "03:52:24"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.4% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-16",
+    "time": "03:52:24"
+  },
+  {
+    "ticker": "GLN.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -6.67% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-16",
+    "time": "03:52:24"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 2.52x avg + price -2.84% \u2014 selling pressure",
+    "date": "2026-11-16",
+    "time": "03:52:25"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.78% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-16",
+    "time": "03:52:27"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=28.3 turning up",
+    "date": "2026-11-16",
+    "time": "03:52:28"
   }
 ]
