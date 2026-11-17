@@ -1,7 +1,17 @@
 {
-  "generated_at": "2026-11-17 13:59",
+  "generated_at": "2026-11-17 22:04",
   "scanned_count": 77,
   "ideas": [
+    {
+      "ticker": "AAPL",
+      "price": 351.9,
+      "vwap": 351.3692,
+      "vs": 0.1511,
+      "rsi": 50.2,
+      "mo": 1.06,
+      "buyZone": 351.3692,
+      "sellZone": 354.0061
+    },
     {
       "ticker": "ALQ.AX",
       "price": 20.68,
@@ -11,6 +21,16 @@
       "mo": 0.085,
       "buyZone": 20.6575,
       "sellZone": 20.8164
+    },
+    {
+      "ticker": "AMD",
+      "price": 503.69,
+      "vwap": 494.2742,
+      "vs": 1.905,
+      "rsi": 63.6,
+      "mo": 12.675,
+      "buyZone": 494.2742,
+      "sellZone": 513.22
     },
     {
       "ticker": "AMP.AX",
@@ -103,6 +123,16 @@
       "sellZone": 0.8609
     },
     {
+      "ticker": "NVDA",
+      "price": 155.455,
+      "vwap": 153.8753,
+      "vs": 1.0266,
+      "rsi": 56.8,
+      "mo": 1.92,
+      "buyZone": 153.8753,
+      "sellZone": 157.6039
+    },
+    {
       "ticker": "NXL.AX",
       "price": 1.59,
       "vwap": 1.584,
@@ -171,6 +201,16 @@
       "mo": 0.01,
       "buyZone": 0.1574,
       "sellZone": 0.1701
+    },
+    {
+      "ticker": "TSLA",
+      "price": 380.145,
+      "vwap": 379.7221,
+      "vs": 0.1114,
+      "rsi": 46.1,
+      "mo": 0.285,
+      "buyZone": 379.7221,
+      "sellZone": 383.2313
     },
     {
       "ticker": "WZR.AX",
