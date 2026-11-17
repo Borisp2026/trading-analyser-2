@@ -1,43 +1,49 @@
 {
-  "generated_at": "2026-11-16T19:54:58",
+  "generated_at": "2026-11-17T18:50:03",
   "watchlist_count": 33,
   "candidates": [],
   "avoid_alerts": [
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 156.41,
-      "detail": "Heiken-Ashi trend BEARISH for 13 bars"
+      "price": 153.21,
+      "detail": "Heiken-Ashi trend BEARISH for 14 bars"
     },
     {
       "ticker": "SS1.AX",
       "name": "Sun Silver Limited",
-      "price": 0.77,
+      "price": 0.75,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "MSB.AX",
+      "name": "Mesoblast Limited",
+      "price": 1.795,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+    },
+    {
+      "ticker": "MMI.AX",
+      "name": "Metro Mining Limited",
+      "price": 0.85,
       "detail": "Heiken-Ashi trend BEARISH for 4 bars"
     },
     {
       "ticker": "CMM.AX",
       "name": "Capricorn Metals Ltd",
-      "price": 13.37,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
-    },
-    {
-      "ticker": "MSB.AX",
-      "name": "Mesoblast Limited",
-      "price": 1.885,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "price": 13.26,
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     },
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 518.56,
-      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
+      "price": 503.7903,
+      "detail": "Heiken-Ashi trend BEARISH for 6 bars"
     },
     {
       "ticker": "TOR.AX",
       "name": "Torque Metals Limited",
       "price": 0.165,
-      "detail": "Heiken-Ashi trend BEARISH for 4 bars"
+      "detail": "Heiken-Ashi trend BEARISH for 5 bars"
     }
   ],
   "open_trades": [],
@@ -280,7 +286,7 @@
     "drawdown_pct": 0.0,
     "halted": false
   },
-  "macro_zone": "SELECTIVE",
+  "macro_zone": "CAUTION",
   "macro_halted": false,
   "actions_this_run": {
     "closed": [],

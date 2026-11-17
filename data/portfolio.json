@@ -2287,7 +2287,7 @@
       "buy_date": "2026-11-10",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #2 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 34.1824,
       "target_price": 36.9329,
@@ -2297,7 +2297,12 @@
         "sector": "Unknown",
         "entered_dc_num": 3,
         "entered_score": 55
-      }
+      },
+      "sell_price": 35.66,
+      "sell_date": "2026-11-17",
+      "pnl": -38.88,
+      "pnl_pct": -2.57,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     },
     {
       "ticker": "IOZ.AX",
@@ -2424,7 +2429,7 @@
       "buy_date": "2026-11-16",
       "signal": "CYCLE_BUY",
       "reason": "90% confirmation: close above HCH resistance + 10D SMA, no trendline break; LEFT-translated cycle (Daily Cycle #1 of IC)",
-      "status": "open",
+      "status": "closed",
       "type": "paper",
       "stop_price": 10.9172,
       "target_price": 11.812,
@@ -2434,10 +2439,15 @@
         "sector": "Utilities",
         "entered_dc_num": 2,
         "entered_score": 45
-      }
+      },
+      "sell_price": 11.45,
+      "sell_date": "2026-11-17",
+      "pnl": 35.56,
+      "pnl_pct": 1.78,
+      "close_reason": "HIGH_RISK_ZONE_DC3_4"
     }
   ],
   "cash_balance": 10000,
-  "paper_cash": 12681.942956278053,
+  "paper_cash": 16192.517610278053,
   "notes": "Add your holdings in this format: {ticker, shares, buy_price, buy_date, exchange}"
 }
