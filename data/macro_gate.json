@@ -2,111 +2,111 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 27.2,
-      "value_label": "VIX 27.2",
-      "score": 2.4,
-      "detail": "VIX 27.2 \u2014 lower than 2% of the past year",
-      "interpretation": "ELEVATED"
+      "value": 32.36,
+      "value_label": "VIX 32.4",
+      "score": 0,
+      "detail": "VIX 32.4 \u2014 lower than 0% of the past year",
+      "interpretation": "FEAR"
     },
     {
       "name": "VIX Term Structure",
-      "value": 1.042,
-      "value_label": "Ratio 1.042",
-      "score": 36.1,
-      "detail": "VIX/VIX3M = 1.042 (BACKWARDATION) \u2014 below 1.0 = calm",
-      "interpretation": "NEUTRAL"
+      "value": 1.102,
+      "value_label": "Ratio 1.102",
+      "score": 16.1,
+      "detail": "VIX/VIX3M = 1.102 (BACKWARDATION) \u2014 below 1.0 = calm",
+      "interpretation": "STRESS"
     },
     {
       "name": "Market Breadth",
-      "value": 54.5,
-      "value_label": "6/11 sectors above 200MA",
-      "score": 49.1,
-      "detail": "6 of 11 SPDR sector ETFs above their 200-day SMA (55%)",
-      "interpretation": "NARROW"
+      "value": 36.4,
+      "value_label": "4/11 sectors above 200MA",
+      "score": 12.7,
+      "detail": "4 of 11 SPDR sector ETFs above their 200-day SMA (36%)",
+      "interpretation": "WEAK"
     },
     {
       "name": "Credit Spreads",
-      "value": 0.82,
-      "value_label": "Z-score +0.82",
-      "score": 29.4,
-      "detail": "HYG/TLT ratio z-score +0.82 vs 1-year avg (negative = tight = bullish)",
-      "interpretation": "WIDE"
+      "value": 0.25,
+      "value_label": "Z-score +0.25",
+      "score": 43.9,
+      "detail": "HYG/TLT ratio z-score +0.25 vs 1-year avg (negative = tight = bullish)",
+      "interpretation": "NORMAL"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 42.93,
-      "value_label": "VIX ROC +42.9%",
-      "score": 8.8,
-      "detail": "VIX 20-day rate of change +42.9% (rapidly rising = fear = low score)",
+      "value": 66.38,
+      "value_label": "VIX ROC +66.4%",
+      "score": 0,
+      "detail": "VIX 20-day rate of change +66.4% (rapidly rising = fear = low score)",
       "interpretation": "FEARFUL"
     },
     {
       "name": "SPX Trend",
-      "value": -1.62,
-      "value_label": "SPX -1.6% vs 200MA",
+      "value": -4.57,
+      "value_label": "SPX -4.6% vs 200MA",
       "score": 20,
-      "detail": "S&P 500 $7,229 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,013 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "MIXED"
     }
   ],
-  "composite": 24.3,
+  "composite": 15.5,
   "us_signals": [
     {
       "name": "VIX Level",
-      "value": 27.2,
-      "value_label": "VIX 27.2",
-      "score": 2.4,
-      "detail": "VIX 27.2 \u2014 lower than 2% of the past year",
-      "interpretation": "ELEVATED"
+      "value": 32.36,
+      "value_label": "VIX 32.4",
+      "score": 0,
+      "detail": "VIX 32.4 \u2014 lower than 0% of the past year",
+      "interpretation": "FEAR"
     },
     {
       "name": "VIX Term Structure",
-      "value": 1.042,
-      "value_label": "Ratio 1.042",
-      "score": 36.1,
-      "detail": "VIX/VIX3M = 1.042 (BACKWARDATION) \u2014 below 1.0 = calm",
-      "interpretation": "NEUTRAL"
+      "value": 1.102,
+      "value_label": "Ratio 1.102",
+      "score": 16.1,
+      "detail": "VIX/VIX3M = 1.102 (BACKWARDATION) \u2014 below 1.0 = calm",
+      "interpretation": "STRESS"
     },
     {
       "name": "Market Breadth",
-      "value": 54.5,
-      "value_label": "6/11 sectors above 200MA",
-      "score": 49.1,
-      "detail": "6 of 11 SPDR sector ETFs above their 200-day SMA (55%)",
-      "interpretation": "NARROW"
+      "value": 36.4,
+      "value_label": "4/11 sectors above 200MA",
+      "score": 12.7,
+      "detail": "4 of 11 SPDR sector ETFs above their 200-day SMA (36%)",
+      "interpretation": "WEAK"
     },
     {
       "name": "Credit Spreads",
-      "value": 0.82,
-      "value_label": "Z-score +0.82",
-      "score": 29.4,
-      "detail": "HYG/TLT ratio z-score +0.82 vs 1-year avg (negative = tight = bullish)",
-      "interpretation": "WIDE"
+      "value": 0.25,
+      "value_label": "Z-score +0.25",
+      "score": 43.9,
+      "detail": "HYG/TLT ratio z-score +0.25 vs 1-year avg (negative = tight = bullish)",
+      "interpretation": "NORMAL"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 42.93,
-      "value_label": "VIX ROC +42.9%",
-      "score": 8.8,
-      "detail": "VIX 20-day rate of change +42.9% (rapidly rising = fear = low score)",
+      "value": 66.38,
+      "value_label": "VIX ROC +66.4%",
+      "score": 0,
+      "detail": "VIX 20-day rate of change +66.4% (rapidly rising = fear = low score)",
       "interpretation": "FEARFUL"
     },
     {
       "name": "SPX Trend",
-      "value": -1.62,
-      "value_label": "SPX -1.6% vs 200MA",
+      "value": -4.57,
+      "value_label": "SPX -4.6% vs 200MA",
       "score": 20,
-      "detail": "S&P 500 $7,229 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,013 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "MIXED"
     }
   ],
-  "us_composite": 24.3,
+  "us_composite": 15.5,
   "asx_signals": [
     {
       "name": "ASX Trend",
       "score": 10,
-      "value": 8730.0,
-      "value_label": "XJO 8,730",
+      "value": 8593.0,
+      "value_label": "XJO 8,593",
       "detail": "XJO vs MA50(\u2717) MA200(\u2717)",
       "interpretation": "DOWNTREND"
     },
@@ -120,16 +120,16 @@
     },
     {
       "name": "ASX Volatility",
-      "score": 2.4,
-      "value": 27.2,
-      "value_label": "XVI 27.2",
-      "detail": "Lower than 2% of past year",
+      "score": 0.0,
+      "value": 32.4,
+      "value_label": "XVI 32.4",
+      "detail": "Lower than 0% of past year",
       "interpretation": "FEARFUL"
     }
   ],
-  "asx_composite": 36.0,
+  "asx_composite": 35.2,
   "zone": "RISK OFF",
   "zone_desc": "Defensive \u2014 avoid new longs, preserve capital",
   "zone_color": "#cc0000",
-  "scanned_at": "2026-11-19T18:43:39.298019"
+  "scanned_at": "2026-11-20T18:04:19.402479"
 }
