@@ -1,33 +1,5 @@
 [
   {
-    "ticker": "MMI.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -23.14% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-12",
-    "time": "03:20:42"
-  },
-  {
-    "ticker": "ILU.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.35% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-12",
-    "time": "03:20:43"
-  },
-  {
-    "ticker": "TEA.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.9% from previous close",
-    "date": "2026-10-12",
-    "time": "03:20:44"
-  },
-  {
-    "ticker": "PLS.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.86% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-12",
-    "time": "03:20:44"
-  },
-  {
     "ticker": "NST.AX",
     "signal_type": "GAP_UP",
     "message": "Gap up +4.14% from previous close",
@@ -3498,5 +3470,33 @@
     "message": "Gap up +3.03% from previous close",
     "date": "2026-11-23",
     "time": "04:47:03"
+  },
+  {
+    "ticker": "MSFT",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.15% from previous close",
+    "date": "2026-11-23",
+    "time": "15:31:55"
+  },
+  {
+    "ticker": "NVDA",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +35.79% from previous close",
+    "date": "2026-11-23",
+    "time": "15:31:55"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +8.93% from previous close",
+    "date": "2026-11-23",
+    "time": "15:31:56"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +13.72% from previous close",
+    "date": "2026-11-23",
+    "time": "15:31:56"
   }
 ]
