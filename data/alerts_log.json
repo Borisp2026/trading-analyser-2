@@ -1,82 +1,5 @@
 [
   {
-    "ticker": "PNV.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=70.8 \u2014 consider taking profit",
-    "date": "2026-10-08",
-    "time": "23:44:16"
-  },
-  {
-    "ticker": "QBE.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=76.7 \u2014 consider taking profit",
-    "date": "2026-10-08",
-    "time": "23:44:20"
-  },
-  {
-    "ticker": "CU6.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.06% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-09",
-    "time": "03:04:57"
-  },
-  {
-    "ticker": "MSB.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +3.2% from previous close",
-    "date": "2026-10-09",
-    "time": "03:04:57"
-  },
-  {
-    "ticker": "TLX.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-10-09",
-    "time": "03:04:57"
-  },
-  {
-    "ticker": "PLS.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -5.27% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-09",
-    "time": "03:05:00"
-  },
-  {
-    "ticker": "WDS.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-10-09",
-    "time": "03:05:01"
-  },
-  {
-    "ticker": "QBE.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-10-09",
-    "time": "03:05:02"
-  },
-  {
-    "ticker": "MIN.AX",
-    "signal_type": "RSI_OVERSOLD_REVERSAL",
-    "message": "RSI oversold reversal: RSI=25.0 turning up",
-    "date": "2026-10-12",
-    "time": "03:20:38"
-  },
-  {
-    "ticker": "IPX.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +5.91% from previous close",
-    "date": "2026-10-12",
-    "time": "03:20:39"
-  },
-  {
-    "ticker": "GLN.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -4.81% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-12",
-    "time": "03:20:39"
-  },
-  {
     "ticker": "MMI.AX",
     "signal_type": "GAP_DOWN",
     "message": "Gap down -23.14% \u2014 possible reversal opportunity OR continued sell",
@@ -3498,5 +3421,82 @@
     "message": "Gap down -7.26% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-11-20",
     "time": "20:51:25"
+  },
+  {
+    "ticker": "EOS.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.8% from previous close",
+    "date": "2026-11-23",
+    "time": "04:46:56"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -4.0% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-23",
+    "time": "04:46:56"
+  },
+  {
+    "ticker": "MIN.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-23",
+    "time": "04:46:56"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.19% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-23",
+    "time": "04:46:57"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-23",
+    "time": "04:46:59"
+  },
+  {
+    "ticker": "AMP.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-23",
+    "time": "04:47:01"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "VOLUME_SELLOFF",
+    "message": "Volume spike 5.77x avg + price -9.62% \u2014 selling pressure",
+    "date": "2026-11-23",
+    "time": "04:47:02"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -9.62% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-23",
+    "time": "04:47:02"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=75.3 \u2014 consider taking profit",
+    "date": "2026-11-23",
+    "time": "04:47:02"
+  },
+  {
+    "ticker": "PLS.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.39% from previous close",
+    "date": "2026-11-23",
+    "time": "04:47:02"
+  },
+  {
+    "ticker": "SS1.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.03% from previous close",
+    "date": "2026-11-23",
+    "time": "04:47:03"
   }
 ]
