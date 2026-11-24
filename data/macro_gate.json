@@ -2,134 +2,134 @@
   "signals": [
     {
       "name": "VIX Level",
-      "value": 26.62,
-      "value_label": "VIX 26.6",
-      "score": 4.3,
-      "detail": "VIX 26.6 \u2014 lower than 4% of the past year",
+      "value": 27.43,
+      "value_label": "VIX 27.4",
+      "score": 2.8,
+      "detail": "VIX 27.4 \u2014 lower than 3% of the past year",
       "interpretation": "ELEVATED"
     },
     {
       "name": "VIX Term Structure",
-      "value": 1.044,
-      "value_label": "Ratio 1.044",
-      "score": 35.4,
-      "detail": "VIX/VIX3M = 1.044 (BACKWARDATION) \u2014 below 1.0 = calm",
+      "value": 1.048,
+      "value_label": "Ratio 1.048",
+      "score": 34.0,
+      "detail": "VIX/VIX3M = 1.048 (BACKWARDATION) \u2014 below 1.0 = calm",
       "interpretation": "NEUTRAL"
     },
     {
       "name": "Market Breadth",
-      "value": 45.5,
-      "value_label": "5/11 sectors above 200MA",
-      "score": 30.9,
-      "detail": "5 of 11 SPDR sector ETFs above their 200-day SMA (45%)",
+      "value": 54.5,
+      "value_label": "6/11 sectors above 200MA",
+      "score": 49.1,
+      "detail": "6 of 11 SPDR sector ETFs above their 200-day SMA (55%)",
       "interpretation": "NARROW"
     },
     {
       "name": "Credit Spreads",
-      "value": 0.16,
-      "value_label": "Z-score +0.16",
-      "score": 46.1,
-      "detail": "HYG/TLT ratio z-score +0.16 vs 1-year avg (negative = tight = bullish)",
+      "value": 0.17,
+      "value_label": "Z-score +0.17",
+      "score": 45.8,
+      "detail": "HYG/TLT ratio z-score +0.17 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "NORMAL"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 44.75,
-      "value_label": "VIX ROC +44.8%",
-      "score": 6.6,
-      "detail": "VIX 20-day rate of change +44.8% (rapidly rising = fear = low score)",
+      "value": 56.56,
+      "value_label": "VIX ROC +56.6%",
+      "score": 0,
+      "detail": "VIX 20-day rate of change +56.6% (rapidly rising = fear = low score)",
       "interpretation": "FEARFUL"
     },
     {
       "name": "SPX Trend",
-      "value": -1.54,
-      "value_label": "SPX -1.5% vs 200MA",
+      "value": -2.35,
+      "value_label": "SPX -2.3% vs 200MA",
       "score": 20,
-      "detail": "S&P 500 $7,237 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,179 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "MIXED"
     }
   ],
-  "composite": 23.9,
+  "composite": 25.3,
   "us_signals": [
     {
       "name": "VIX Level",
-      "value": 26.62,
-      "value_label": "VIX 26.6",
-      "score": 4.3,
-      "detail": "VIX 26.6 \u2014 lower than 4% of the past year",
+      "value": 27.43,
+      "value_label": "VIX 27.4",
+      "score": 2.8,
+      "detail": "VIX 27.4 \u2014 lower than 3% of the past year",
       "interpretation": "ELEVATED"
     },
     {
       "name": "VIX Term Structure",
-      "value": 1.044,
-      "value_label": "Ratio 1.044",
-      "score": 35.4,
-      "detail": "VIX/VIX3M = 1.044 (BACKWARDATION) \u2014 below 1.0 = calm",
+      "value": 1.048,
+      "value_label": "Ratio 1.048",
+      "score": 34.0,
+      "detail": "VIX/VIX3M = 1.048 (BACKWARDATION) \u2014 below 1.0 = calm",
       "interpretation": "NEUTRAL"
     },
     {
       "name": "Market Breadth",
-      "value": 45.5,
-      "value_label": "5/11 sectors above 200MA",
-      "score": 30.9,
-      "detail": "5 of 11 SPDR sector ETFs above their 200-day SMA (45%)",
+      "value": 54.5,
+      "value_label": "6/11 sectors above 200MA",
+      "score": 49.1,
+      "detail": "6 of 11 SPDR sector ETFs above their 200-day SMA (55%)",
       "interpretation": "NARROW"
     },
     {
       "name": "Credit Spreads",
-      "value": 0.16,
-      "value_label": "Z-score +0.16",
-      "score": 46.1,
-      "detail": "HYG/TLT ratio z-score +0.16 vs 1-year avg (negative = tight = bullish)",
+      "value": 0.17,
+      "value_label": "Z-score +0.17",
+      "score": 45.8,
+      "detail": "HYG/TLT ratio z-score +0.17 vs 1-year avg (negative = tight = bullish)",
       "interpretation": "NORMAL"
     },
     {
       "name": "Put/Call Sentiment",
-      "value": 44.75,
-      "value_label": "VIX ROC +44.8%",
-      "score": 6.6,
-      "detail": "VIX 20-day rate of change +44.8% (rapidly rising = fear = low score)",
+      "value": 56.56,
+      "value_label": "VIX ROC +56.6%",
+      "score": 0,
+      "detail": "VIX 20-day rate of change +56.6% (rapidly rising = fear = low score)",
       "interpretation": "FEARFUL"
     },
     {
       "name": "SPX Trend",
-      "value": -1.54,
-      "value_label": "SPX -1.5% vs 200MA",
+      "value": -2.35,
+      "value_label": "SPX -2.3% vs 200MA",
       "score": 20,
-      "detail": "S&P 500 $7,237 \u2014 MA50 above MA200 (Golden cross)",
+      "detail": "S&P 500 $7,179 \u2014 MA50 above MA200 (Golden cross)",
       "interpretation": "MIXED"
     }
   ],
-  "us_composite": 23.9,
+  "us_composite": 25.3,
   "asx_signals": [
     {
       "name": "ASX Trend",
       "score": 10,
-      "value": 8571.0,
-      "value_label": "XJO 8,571",
+      "value": 8726.0,
+      "value_label": "XJO 8,726",
       "detail": "XJO vs MA50(\u2717) MA200(\u2717)",
       "interpretation": "DOWNTREND"
     },
     {
       "name": "ASX Breadth",
-      "score": 73.3,
-      "value": 67.0,
-      "value_label": "67% above 50MA",
-      "detail": "6/9 ASX sectors above 50-day MA",
-      "interpretation": "MIXED"
+      "score": 95.6,
+      "value": 78.0,
+      "value_label": "78% above 50MA",
+      "detail": "7/9 ASX sectors above 50-day MA",
+      "interpretation": "BROAD"
     },
     {
       "name": "ASX Volatility",
-      "score": 4.3,
-      "value": 26.6,
-      "value_label": "XVI 26.6",
-      "detail": "Lower than 4% of past year",
+      "score": 2.8,
+      "value": 27.4,
+      "value_label": "XVI 27.4",
+      "detail": "Lower than 3% of past year",
       "interpretation": "FEARFUL"
     }
   ],
-  "asx_composite": 29.2,
+  "asx_composite": 36.1,
   "zone": "RISK OFF",
   "zone_desc": "Defensive \u2014 avoid new longs, preserve capital",
   "zone_color": "#cc0000",
-  "scanned_at": "2026-11-23T21:47:34.876807"
+  "scanned_at": "2026-11-24T20:25:29.967951"
 }
