@@ -1,68 +1,5 @@
 [
   {
-    "ticker": "NST.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +4.14% from previous close",
-    "date": "2026-10-12",
-    "time": "03:20:46"
-  },
-  {
-    "ticker": "QBE.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-10-12",
-    "time": "03:20:47"
-  },
-  {
-    "ticker": "IVV.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=68.2 \u2014 consider taking profit",
-    "date": "2026-10-12",
-    "time": "03:20:48"
-  },
-  {
-    "ticker": "EOS.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -6.32% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-13",
-    "time": "02:40:36"
-  },
-  {
-    "ticker": "MIN.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -5.31% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-13",
-    "time": "02:40:37"
-  },
-  {
-    "ticker": "GLN.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -12.96% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-13",
-    "time": "02:40:37"
-  },
-  {
-    "ticker": "NXT.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-10-13",
-    "time": "02:40:39"
-  },
-  {
-    "ticker": "NXT.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -8.05% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-13",
-    "time": "02:40:39"
-  },
-  {
-    "ticker": "GWA.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-10-13",
-    "time": "02:40:40"
-  },
-  {
     "ticker": "MMI.AX",
     "signal_type": "GAP_DOWN",
     "message": "Gap down -23.98% \u2014 possible reversal opportunity OR continued sell",
@@ -3498,5 +3435,68 @@
     "message": "Gap up +13.72% from previous close",
     "date": "2026-11-23",
     "time": "15:31:56"
+  },
+  {
+    "ticker": "AFG.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-24",
+    "time": "02:34:38"
+  },
+  {
+    "ticker": "AFG.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.09% from previous close",
+    "date": "2026-11-24",
+    "time": "02:34:38"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.19% from previous close",
+    "date": "2026-11-24",
+    "time": "02:34:38"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.22% from previous close",
+    "date": "2026-11-24",
+    "time": "02:34:39"
+  },
+  {
+    "ticker": "NWH.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.49% from previous close",
+    "date": "2026-11-24",
+    "time": "02:34:40"
+  },
+  {
+    "ticker": "TEA.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +8.94% from previous close",
+    "date": "2026-11-24",
+    "time": "02:34:41"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.85% from previous close",
+    "date": "2026-11-24",
+    "time": "02:34:42"
+  },
+  {
+    "ticker": "NDQ.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +3.82% from previous close",
+    "date": "2026-11-24",
+    "time": "02:34:43"
+  },
+  {
+    "ticker": "VTEK.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +5.13% from previous close",
+    "date": "2026-11-24",
+    "time": "02:34:44"
   }
 ]
