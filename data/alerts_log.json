@@ -1,41 +1,6 @@
 [
   {
     "ticker": "MMI.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -23.98% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-13",
-    "time": "02:40:40"
-  },
-  {
-    "ticker": "ILU.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -5.11% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-13",
-    "time": "02:40:41"
-  },
-  {
-    "ticker": "TEA.AX",
-    "signal_type": "GAP_UP",
-    "message": "Gap up +4.81% from previous close",
-    "date": "2026-10-13",
-    "time": "02:40:42"
-  },
-  {
-    "ticker": "PLS.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -9.29% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-13",
-    "time": "02:40:42"
-  },
-  {
-    "ticker": "IPX.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-10-13",
-    "time": "23:25:56"
-  },
-  {
-    "ticker": "MMI.AX",
     "signal_type": "MACD_DEATH_CROSS",
     "message": "MACD death cross on 5-min chart",
     "date": "2026-10-13",
@@ -3498,5 +3463,40 @@
     "message": "Gap up +5.13% from previous close",
     "date": "2026-11-24",
     "time": "02:34:44"
+  },
+  {
+    "ticker": "MSFT",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.28% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-25",
+    "time": "15:32:13"
+  },
+  {
+    "ticker": "NVDA",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -7.79% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-25",
+    "time": "15:32:14"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=31.3 turning up",
+    "date": "2026-11-25",
+    "time": "15:32:14"
+  },
+  {
+    "ticker": "AMD",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -9.02% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-25",
+    "time": "15:32:14"
+  },
+  {
+    "ticker": "TSLA",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.68% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-25",
+    "time": "15:32:14"
   }
 ]
