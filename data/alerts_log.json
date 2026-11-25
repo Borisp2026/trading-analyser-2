@@ -1,47 +1,5 @@
 [
   {
-    "ticker": "MMI.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-10-13",
-    "time": "23:25:59"
-  },
-  {
-    "ticker": "STO.AX",
-    "signal_type": "RSI_OVERBOUGHT",
-    "message": "RSI overbought: RSI=70.6 \u2014 consider taking profit",
-    "date": "2026-10-13",
-    "time": "23:26:01"
-  },
-  {
-    "ticker": "QBE.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-10-13",
-    "time": "23:26:02"
-  },
-  {
-    "ticker": "VTEK.AX",
-    "signal_type": "INTRADAY_BREAKOUT",
-    "message": "Breaking above 20-bar intraday high ($68.230)",
-    "date": "2026-10-13",
-    "time": "23:26:03"
-  },
-  {
-    "ticker": "EOS.AX",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-10-14",
-    "time": "02:03:10"
-  },
-  {
-    "ticker": "IPX.AX",
-    "signal_type": "MACD_BULLISH_CROSS",
-    "message": "MACD bullish crossover on 5-min chart",
-    "date": "2026-10-14",
-    "time": "02:03:11"
-  },
-  {
     "ticker": "GMD.AX",
     "signal_type": "MACD_DEATH_CROSS",
     "message": "MACD death cross on 5-min chart",
@@ -3498,5 +3456,47 @@
     "message": "Gap down -5.68% \u2014 possible reversal opportunity OR continued sell",
     "date": "2026-11-25",
     "time": "15:32:14"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "INTRADAY_BREAKOUT",
+    "message": "Breaking above 20-bar intraday high ($0.115)",
+    "date": "2026-11-25",
+    "time": "23:46:48"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -3.59% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-25",
+    "time": "23:46:49"
+  },
+  {
+    "ticker": "GWA.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-25",
+    "time": "23:46:50"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "RSI_OVERBOUGHT",
+    "message": "RSI overbought: RSI=76.5 \u2014 consider taking profit",
+    "date": "2026-11-25",
+    "time": "23:46:53"
+  },
+  {
+    "ticker": "NST.AX",
+    "signal_type": "VOLUME_BREAKOUT_UP",
+    "message": "Volume spike 2.01x avg + price +1.63%",
+    "date": "2026-11-25",
+    "time": "23:46:53"
+  },
+  {
+    "ticker": "QBE.AX",
+    "signal_type": "RSI_OVERSOLD_REVERSAL",
+    "message": "RSI oversold reversal: RSI=30.9 turning up",
+    "date": "2026-11-25",
+    "time": "23:46:54"
   }
 ]
