@@ -1,61 +1,5 @@
 [
   {
-    "ticker": "NVDA",
-    "signal_type": "MACD_DEATH_CROSS",
-    "message": "MACD death cross on 5-min chart",
-    "date": "2026-10-14",
-    "time": "17:41:27"
-  },
-  {
-    "ticker": "NVDA",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.24% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-14",
-    "time": "17:41:27"
-  },
-  {
-    "ticker": "AMD",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -5.62% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-14",
-    "time": "17:41:27"
-  },
-  {
-    "ticker": "EOS.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -5.27% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-14",
-    "time": "23:41:29"
-  },
-  {
-    "ticker": "MIN.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -3.48% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-14",
-    "time": "23:41:30"
-  },
-  {
-    "ticker": "IPX.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -5.74% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-14",
-    "time": "23:41:30"
-  },
-  {
-    "ticker": "GLN.AX",
-    "signal_type": "VOLUME_SELLOFF",
-    "message": "Volume spike 6.03x avg + price -4.26% \u2014 selling pressure",
-    "date": "2026-10-14",
-    "time": "23:41:31"
-  },
-  {
-    "ticker": "GLN.AX",
-    "signal_type": "GAP_DOWN",
-    "message": "Gap down -4.26% \u2014 possible reversal opportunity OR continued sell",
-    "date": "2026-10-14",
-    "time": "23:41:31"
-  },
-  {
     "ticker": "CU6.AX",
     "signal_type": "GAP_DOWN",
     "message": "Gap down -3.01% \u2014 possible reversal opportunity OR continued sell",
@@ -3498,5 +3442,61 @@
     "message": "Volume spike 3.72x avg + price -1.57% \u2014 selling pressure",
     "date": "2026-11-26",
     "time": "16:30:53"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-27",
+    "time": "00:48:42"
+  },
+  {
+    "ticker": "TOR.AX",
+    "signal_type": "GAP_UP",
+    "message": "Gap up +4.17% from previous close",
+    "date": "2026-11-27",
+    "time": "00:48:42"
+  },
+  {
+    "ticker": "IPX.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-27",
+    "time": "00:48:42"
+  },
+  {
+    "ticker": "GMD.AX",
+    "signal_type": "MACD_BULLISH_CROSS",
+    "message": "MACD bullish crossover on 5-min chart",
+    "date": "2026-11-27",
+    "time": "00:48:43"
+  },
+  {
+    "ticker": "CU6.AX",
+    "signal_type": "GAP_DOWN",
+    "message": "Gap down -5.21% \u2014 possible reversal opportunity OR continued sell",
+    "date": "2026-11-27",
+    "time": "00:48:43"
+  },
+  {
+    "ticker": "TLX.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-27",
+    "time": "00:48:44"
+  },
+  {
+    "ticker": "NXT.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-27",
+    "time": "00:48:44"
+  },
+  {
+    "ticker": "ILU.AX",
+    "signal_type": "MACD_DEATH_CROSS",
+    "message": "MACD death cross on 5-min chart",
+    "date": "2026-11-27",
+    "time": "00:48:46"
   }
 ]
